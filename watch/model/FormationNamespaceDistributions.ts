@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationNamespaceUpdateByMoldDistributionStatistics from './FormationNamespaceUpdateByMoldDistributionStatistics';
 import FormationNamespaceUpdateByMoldDistributionSegment from './FormationNamespaceUpdateByMoldDistributionSegment';
 import FormationNamespaceUpdateByMoldDistribution from './FormationNamespaceUpdateByMoldDistribution';
@@ -23,27 +25,27 @@ import FormationNamespaceIncreaseCapacityByMoldDistributionSegment from './Forma
 import FormationNamespaceIncreaseCapacityByMoldDistribution from './FormationNamespaceIncreaseCapacityByMoldDistribution';
 
 export default class FormationNamespaceDistributions implements IModel {
-    private updateByMold: FormationNamespaceUpdateByMoldDistribution|null = null;
-    private increaseCapacityByMold: FormationNamespaceIncreaseCapacityByMoldDistribution|null = null;
-    public getUpdateByMold(): FormationNamespaceUpdateByMoldDistribution|null {
+    private updateByMold: Gs2Watch.FormationNamespaceUpdateByMoldDistribution|null = null;
+    private increaseCapacityByMold: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution|null = null;
+    public getUpdateByMold(): Gs2Watch.FormationNamespaceUpdateByMoldDistribution|null {
         return this.updateByMold;
     }
-    public setUpdateByMold(updateByMold: FormationNamespaceUpdateByMoldDistribution|null) {
+    public setUpdateByMold(updateByMold: Gs2Watch.FormationNamespaceUpdateByMoldDistribution|null) {
         this.updateByMold = updateByMold;
         return this;
     }
-    public withUpdateByMold(updateByMold: FormationNamespaceUpdateByMoldDistribution|null): this {
+    public withUpdateByMold(updateByMold: Gs2Watch.FormationNamespaceUpdateByMoldDistribution|null): this {
         this.updateByMold = updateByMold;
         return this;
     }
-    public getIncreaseCapacityByMold(): FormationNamespaceIncreaseCapacityByMoldDistribution|null {
+    public getIncreaseCapacityByMold(): Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution|null {
         return this.increaseCapacityByMold;
     }
-    public setIncreaseCapacityByMold(increaseCapacityByMold: FormationNamespaceIncreaseCapacityByMoldDistribution|null) {
+    public setIncreaseCapacityByMold(increaseCapacityByMold: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution|null) {
         this.increaseCapacityByMold = increaseCapacityByMold;
         return this;
     }
-    public withIncreaseCapacityByMold(increaseCapacityByMold: FormationNamespaceIncreaseCapacityByMoldDistribution|null): this {
+    public withIncreaseCapacityByMold(increaseCapacityByMold: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution|null): this {
         this.increaseCapacityByMold = increaseCapacityByMold;
         return this;
     }
@@ -53,8 +55,8 @@ export default class FormationNamespaceDistributions implements IModel {
             return null;
         }
         return new FormationNamespaceDistributions()
-            .withUpdateByMold(FormationNamespaceUpdateByMoldDistribution.fromDict(data["updateByMold"]))
-            .withIncreaseCapacityByMold(FormationNamespaceIncreaseCapacityByMoldDistribution.fromDict(data["increaseCapacityByMold"]));
+            .withUpdateByMold(Gs2Watch.FormationNamespaceUpdateByMoldDistribution.fromDict(data["updateByMold"]))
+            .withIncreaseCapacityByMold(Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution.fromDict(data["increaseCapacityByMold"]));
     }
 
     public toDict(): {[key: string]: any} {

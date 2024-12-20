@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DatastoreNamespaceStatistics from './DatastoreNamespaceStatistics';
 import DatastoreNamespaceDownloadByUserDistributionStatistics from './DatastoreNamespaceDownloadByUserDistributionStatistics';
 import DatastoreNamespaceDownloadByUserDistributionSegment from './DatastoreNamespaceDownloadByUserDistributionSegment';
@@ -34,8 +36,8 @@ export default class DatastoreNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: DatastoreNamespaceStatistics|null = null;
-    private distributions: DatastoreNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.DatastoreNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.DatastoreNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -220,25 +222,25 @@ export default class DatastoreNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): DatastoreNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.DatastoreNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DatastoreNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DatastoreNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DatastoreNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DatastoreNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): DatastoreNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.DatastoreNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: DatastoreNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.DatastoreNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: DatastoreNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.DatastoreNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -253,8 +255,8 @@ export default class DatastoreNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(DatastoreNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(DatastoreNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.DatastoreNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.DatastoreNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

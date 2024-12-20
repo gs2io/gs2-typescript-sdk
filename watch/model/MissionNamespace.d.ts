@@ -1,8 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MissionNamespaceStatistics from './MissionNamespaceStatistics';
-import MissionNamespaceDistributions from './MissionNamespaceDistributions';
-import MissionMissionGroupModel from './MissionMissionGroupModel';
-import MissionCounter from './MissionCounter';
+import * as Gs2Watch from '../../watch/model';
 export default class MissionNamespace implements IModel {
     private namespaceId;
     private year;
@@ -36,18 +33,18 @@ export default class MissionNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): MissionNamespaceStatistics | null;
-    setStatistics(statistics: MissionNamespaceStatistics | null): this;
-    withStatistics(statistics: MissionNamespaceStatistics | null): this;
-    getDistributions(): MissionNamespaceDistributions | null;
-    setDistributions(distributions: MissionNamespaceDistributions | null): this;
-    withDistributions(distributions: MissionNamespaceDistributions | null): this;
-    getMissionGroupModels(): MissionMissionGroupModel[] | null;
-    setMissionGroupModels(missionGroupModels: MissionMissionGroupModel[] | null): this;
-    withMissionGroupModels(missionGroupModels: MissionMissionGroupModel[] | null): this;
-    getCounters(): MissionCounter[] | null;
-    setCounters(counters: MissionCounter[] | null): this;
-    withCounters(counters: MissionCounter[] | null): this;
+    getStatistics(): Gs2Watch.MissionNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.MissionNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MissionNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.MissionNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.MissionNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MissionNamespaceDistributions | null): this;
+    getMissionGroupModels(): Gs2Watch.MissionMissionGroupModel[] | null;
+    setMissionGroupModels(missionGroupModels: Gs2Watch.MissionMissionGroupModel[] | null): this;
+    withMissionGroupModels(missionGroupModels: Gs2Watch.MissionMissionGroupModel[] | null): this;
+    getCounters(): Gs2Watch.MissionCounter[] | null;
+    setCounters(counters: Gs2Watch.MissionCounter[] | null): this;
+    withCounters(counters: Gs2Watch.MissionCounter[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionNamespace | null;

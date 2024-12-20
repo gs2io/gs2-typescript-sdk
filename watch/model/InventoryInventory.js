@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryInventoryStatistics_1 = tslib_1.__importDefault(require("./InventoryInventoryStatistics"));
-var InventoryInventoryDistributions_1 = tslib_1.__importDefault(require("./InventoryInventoryDistributions"));
-var InventoryItemSet_1 = tslib_1.__importDefault(require("./InventoryItemSet"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:inventory:namespace:{namespaceName}:inventory:{inventoryName}";
 var InventoryInventory = /** @class */ (function () {
     function InventoryInventory() {
@@ -222,12 +220,12 @@ var InventoryInventory = /** @class */ (function () {
         return new InventoryInventory()
             .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
-            .withStatistics(InventoryInventoryStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(InventoryInventoryDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.InventoryInventoryStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InventoryInventoryDistributions.fromDict(data["distributions"]))
             .withItemSets(data.itemSets ?
             data.itemSets.map(function (item) {
-                return InventoryItemSet_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InventoryItemSet.fromDict(item);
+            }) : null);
     };
     InventoryInventory.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var InventoryInventory = /** @class */ (function () {
             "itemSets": this.getItemSets() ?
                 this.getItemSets().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InventoryInventory;

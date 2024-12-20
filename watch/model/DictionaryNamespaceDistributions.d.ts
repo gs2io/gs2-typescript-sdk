@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import DictionaryNamespaceEntryByNameDistribution from './DictionaryNamespaceEntryByNameDistribution';
-import DictionaryNamespaceEntryByUserDistribution from './DictionaryNamespaceEntryByUserDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class DictionaryNamespaceDistributions implements IModel {
     private entryByName;
     private entryByUser;
-    getEntryByName(): DictionaryNamespaceEntryByNameDistribution | null;
-    setEntryByName(entryByName: DictionaryNamespaceEntryByNameDistribution | null): this;
-    withEntryByName(entryByName: DictionaryNamespaceEntryByNameDistribution | null): this;
-    getEntryByUser(): DictionaryNamespaceEntryByUserDistribution | null;
-    setEntryByUser(entryByUser: DictionaryNamespaceEntryByUserDistribution | null): this;
-    withEntryByUser(entryByUser: DictionaryNamespaceEntryByUserDistribution | null): this;
+    getEntryByName(): Gs2Watch.DictionaryNamespaceEntryByNameDistribution | null;
+    setEntryByName(entryByName: Gs2Watch.DictionaryNamespaceEntryByNameDistribution | null): this;
+    withEntryByName(entryByName: Gs2Watch.DictionaryNamespaceEntryByNameDistribution | null): this;
+    getEntryByUser(): Gs2Watch.DictionaryNamespaceEntryByUserDistribution | null;
+    setEntryByUser(entryByUser: Gs2Watch.DictionaryNamespaceEntryByUserDistribution | null): this;
+    withEntryByUser(entryByUser: Gs2Watch.DictionaryNamespaceEntryByUserDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DictionaryNamespaceDistributions | null;

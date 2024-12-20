@@ -49,7 +49,7 @@ var DescribeBillingActivitiesResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.BillingActivity.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeBillingActivitiesResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeBillingActivitiesResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

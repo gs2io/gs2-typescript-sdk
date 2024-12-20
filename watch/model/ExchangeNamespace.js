@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExchangeNamespaceStatistics_1 = tslib_1.__importDefault(require("./ExchangeNamespaceStatistics"));
-var ExchangeNamespaceDistributions_1 = tslib_1.__importDefault(require("./ExchangeNamespaceDistributions"));
-var ExchangeRateModel_1 = tslib_1.__importDefault(require("./ExchangeRateModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:exchange:namespace:{namespaceName}";
 var ExchangeNamespace = /** @class */ (function () {
     function ExchangeNamespace() {
@@ -237,12 +235,12 @@ var ExchangeNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ExchangeNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ExchangeNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExchangeNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExchangeNamespaceDistributions.fromDict(data["distributions"]))
             .withRateModels(data.rateModels ?
             data.rateModels.map(function (item) {
-                return ExchangeRateModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExchangeRateModel.fromDict(item);
+            }) : null);
     };
     ExchangeNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var ExchangeNamespace = /** @class */ (function () {
             "rateModels": this.getRateModels() ?
                 this.getRateModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExchangeNamespace;

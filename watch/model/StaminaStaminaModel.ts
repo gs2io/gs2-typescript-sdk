@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import StaminaStaminaModelStatistics from './StaminaStaminaModelStatistics';
 import StaminaStaminaModelConsumeDistributionStatistics from './StaminaStaminaModelConsumeDistributionStatistics';
 import StaminaStaminaModelConsumeDistributionSegment from './StaminaStaminaModelConsumeDistributionSegment';
@@ -28,8 +30,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class StaminaStaminaModel implements IModel {
     private staminaModelId: string|null = null;
     private staminaName: string|null = null;
-    private statistics: StaminaStaminaModelStatistics|null = null;
-    private distributions: StaminaStaminaModelDistributions|null = null;
+    private statistics: Gs2Watch.StaminaStaminaModelStatistics|null = null;
+    private distributions: Gs2Watch.StaminaStaminaModelDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -208,25 +210,25 @@ export default class StaminaStaminaModel implements IModel {
         this.staminaName = staminaName;
         return this;
     }
-    public getStatistics(): StaminaStaminaModelStatistics|null {
+    public getStatistics(): Gs2Watch.StaminaStaminaModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: StaminaStaminaModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.StaminaStaminaModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: StaminaStaminaModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.StaminaStaminaModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): StaminaStaminaModelDistributions|null {
+    public getDistributions(): Gs2Watch.StaminaStaminaModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: StaminaStaminaModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.StaminaStaminaModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: StaminaStaminaModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.StaminaStaminaModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -238,8 +240,8 @@ export default class StaminaStaminaModel implements IModel {
         return new StaminaStaminaModel()
             .withStaminaModelId(data["staminaModelId"])
             .withStaminaName(data["staminaName"])
-            .withStatistics(StaminaStaminaModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(StaminaStaminaModelDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.StaminaStaminaModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.StaminaStaminaModelDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

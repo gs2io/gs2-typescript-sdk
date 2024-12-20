@@ -394,7 +394,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.createVersionModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -416,6 +416,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             'scheduleVersions': (_r = (_q = request.getScheduleVersions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
             'needSignature': (_s = request.getNeedSignature()) !== null && _s !== void 0 ? _s : null,
             'signatureKeyId': (_t = request.getSignatureKeyId()) !== null && _t !== void 0 ? _t : null,
+            'approveRequirement': (_u = request.getApproveRequirement()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -454,7 +455,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.updateVersionModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -476,6 +477,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             'scheduleVersions': (_s = (_r = request.getScheduleVersions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
             'needSignature': (_t = request.getNeedSignature()) !== null && _t !== void 0 ? _t : null,
             'signatureKeyId': (_u = request.getSignatureKeyId()) !== null && _u !== void 0 ? _u : null,
+            'approveRequirement': (_v = request.getApproveRequirement()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -673,6 +675,75 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.AcceptByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2VersionRestClient.prototype.reject = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion/reject')
+            .replace('{service}', 'version')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'versionName': (_f = request.getVersionName()) !== null && _f !== void 0 ? _f : null,
+            'version': (_h = (_g = request.getVersion()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.RejectResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2VersionRestClient.prototype.rejectByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion/reject')
+            .replace('{service}', 'version')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'versionName': (_h = request.getVersionName()) !== null && _h !== void 0 ? _h : null,
+            'version': (_k = (_j = request.getVersion()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.RejectByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

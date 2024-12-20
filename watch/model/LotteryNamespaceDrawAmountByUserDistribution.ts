@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LotteryNamespaceDrawAmountByUserDistributionStatistics from './LotteryNamespaceDrawAmountByUserDistributionStatistics';
 import LotteryNamespaceDrawAmountByUserDistributionSegment from './LotteryNamespaceDrawAmountByUserDistributionSegment';
 
 export default class LotteryNamespaceDrawAmountByUserDistribution implements IModel {
-    private statistics: LotteryNamespaceDrawAmountByUserDistributionStatistics|null = null;
-    private distribution: LotteryNamespaceDrawAmountByUserDistributionSegment[]|null = null;
-    public getStatistics(): LotteryNamespaceDrawAmountByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LotteryNamespaceDrawAmountByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LotteryNamespaceDrawAmountByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): LotteryNamespaceDrawAmountByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: LotteryNamespaceDrawAmountByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: LotteryNamespaceDrawAmountByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class LotteryNamespaceDrawAmountByUserDistribution implements IMo
             return null;
         }
         return new LotteryNamespaceDrawAmountByUserDistribution()
-            .withStatistics(LotteryNamespaceDrawAmountByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return LotteryNamespaceDrawAmountByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: LotteryNamespaceDrawAmountByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

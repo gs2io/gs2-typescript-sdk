@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingNamespaceStatistics from './RankingNamespaceStatistics';
 import RankingNamespacePutDistributionStatistics from './RankingNamespacePutDistributionStatistics';
 import RankingNamespacePutDistributionSegment from './RankingNamespacePutDistributionSegment';
@@ -34,9 +36,9 @@ export default class RankingNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: RankingNamespaceStatistics|null = null;
-    private distributions: RankingNamespaceDistributions|null = null;
-    private categoryModels: RankingCategoryModel[]|null = null;
+    private statistics: Gs2Watch.RankingNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.RankingNamespaceDistributions|null = null;
+    private categoryModels: Gs2Watch.RankingCategoryModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -221,36 +223,36 @@ export default class RankingNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): RankingNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.RankingNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: RankingNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.RankingNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: RankingNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.RankingNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): RankingNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.RankingNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: RankingNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.RankingNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: RankingNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.RankingNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getCategoryModels(): RankingCategoryModel[]|null {
+    public getCategoryModels(): Gs2Watch.RankingCategoryModel[]|null {
         return this.categoryModels;
     }
-    public setCategoryModels(categoryModels: RankingCategoryModel[]|null) {
+    public setCategoryModels(categoryModels: Gs2Watch.RankingCategoryModel[]|null) {
         this.categoryModels = categoryModels;
         return this;
     }
-    public withCategoryModels(categoryModels: RankingCategoryModel[]|null): this {
+    public withCategoryModels(categoryModels: Gs2Watch.RankingCategoryModel[]|null): this {
         this.categoryModels = categoryModels;
         return this;
     }
@@ -265,13 +267,13 @@ export default class RankingNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(RankingNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(RankingNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.RankingNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.RankingNamespaceDistributions.fromDict(data["distributions"]))
             .withCategoryModels(data.categoryModels ?
                 data.categoryModels.map((item: {[key: string]: any}) => {
-                    return RankingCategoryModel.fromDict(item);
+                    return Gs2Watch.RankingCategoryModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -284,10 +286,10 @@ export default class RankingNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "categoryModels": this.getCategoryModels() ?
-                this.getCategoryModels()!.map((item: RankingCategoryModel) => {
+                this.getCategoryModels()!.map((item: Gs2Watch.RankingCategoryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

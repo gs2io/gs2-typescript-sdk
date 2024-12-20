@@ -33,6 +33,7 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
         this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
+        this.approveRequirement = null;
     }
     CreateVersionModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -188,6 +189,17 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
         this.signatureKeyId = signatureKeyId;
         return this;
     };
+    CreateVersionModelMasterRequest.prototype.getApproveRequirement = function () {
+        return this.approveRequirement;
+    };
+    CreateVersionModelMasterRequest.prototype.setApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.withApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
     CreateVersionModelMasterRequest.fromDict = function (data) {
         return new CreateVersionModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -204,7 +216,8 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
                 return Gs2Version.ScheduleVersion.fromDict(item);
             }) : null)
             .withNeedSignature(data["needSignature"])
-            .withSignatureKeyId(data["signatureKeyId"]);
+            .withSignatureKeyId(data["signatureKeyId"])
+            .withApproveRequirement(data["approveRequirement"]);
     };
     CreateVersionModelMasterRequest.prototype.toDict = function () {
         var _a, _b, _c;
@@ -224,6 +237,7 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
                 }) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
+            "approveRequirement": this.getApproveRequirement(),
         };
     };
     return CreateVersionModelMasterRequest;

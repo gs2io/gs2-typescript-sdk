@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FriendNamespaceAcceptByUserDistributionStatistics from './FriendNamespaceAcceptByUserDistributionStatistics';
 import FriendNamespaceAcceptByUserDistributionSegment from './FriendNamespaceAcceptByUserDistributionSegment';
 
 export default class FriendNamespaceAcceptByUserDistribution implements IModel {
-    private statistics: FriendNamespaceAcceptByUserDistributionStatistics|null = null;
-    private distribution: FriendNamespaceAcceptByUserDistributionSegment[]|null = null;
-    public getStatistics(): FriendNamespaceAcceptByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.FriendNamespaceAcceptByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.FriendNamespaceAcceptByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FriendNamespaceAcceptByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FriendNamespaceAcceptByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FriendNamespaceAcceptByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FriendNamespaceAcceptByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): FriendNamespaceAcceptByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: FriendNamespaceAcceptByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: FriendNamespaceAcceptByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class FriendNamespaceAcceptByUserDistribution implements IModel {
             return null;
         }
         return new FriendNamespaceAcceptByUserDistribution()
-            .withStatistics(FriendNamespaceAcceptByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FriendNamespaceAcceptByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return FriendNamespaceAcceptByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: FriendNamespaceAcceptByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.FriendNamespaceAcceptByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import ShowcaseNamespaceBuyDistribution from './ShowcaseNamespaceBuyDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class ShowcaseNamespaceDistributions implements IModel {
     private buy;
-    getBuy(): ShowcaseNamespaceBuyDistribution | null;
-    setBuy(buy: ShowcaseNamespaceBuyDistribution | null): this;
-    withBuy(buy: ShowcaseNamespaceBuyDistribution | null): this;
+    getBuy(): Gs2Watch.ShowcaseNamespaceBuyDistribution | null;
+    setBuy(buy: Gs2Watch.ShowcaseNamespaceBuyDistribution | null): this;
+    withBuy(buy: Gs2Watch.ShowcaseNamespaceBuyDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ShowcaseNamespaceDistributions | null;

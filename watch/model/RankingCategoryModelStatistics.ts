@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class RankingCategoryModelStatistics implements IModel {
     private put: number|null = null;
     public getPut(): number|null {

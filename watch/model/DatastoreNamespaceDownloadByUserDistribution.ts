@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DatastoreNamespaceDownloadByUserDistributionStatistics from './DatastoreNamespaceDownloadByUserDistributionStatistics';
 import DatastoreNamespaceDownloadByUserDistributionSegment from './DatastoreNamespaceDownloadByUserDistributionSegment';
 
 export default class DatastoreNamespaceDownloadByUserDistribution implements IModel {
-    private statistics: DatastoreNamespaceDownloadByUserDistributionStatistics|null = null;
-    private distribution: DatastoreNamespaceDownloadByUserDistributionSegment[]|null = null;
-    public getStatistics(): DatastoreNamespaceDownloadByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DatastoreNamespaceDownloadByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DatastoreNamespaceDownloadByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): DatastoreNamespaceDownloadByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: DatastoreNamespaceDownloadByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: DatastoreNamespaceDownloadByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class DatastoreNamespaceDownloadByUserDistribution implements IMo
             return null;
         }
         return new DatastoreNamespaceDownloadByUserDistribution()
-            .withStatistics(DatastoreNamespaceDownloadByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return DatastoreNamespaceDownloadByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: DatastoreNamespaceDownloadByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

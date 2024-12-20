@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import QuestQuestGroupModelQuestDistribution from './QuestQuestGroupModelQuestDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestQuestGroupModelDistributions implements IModel {
     private quest;
-    getQuest(): QuestQuestGroupModelQuestDistribution | null;
-    setQuest(quest: QuestQuestGroupModelQuestDistribution | null): this;
-    withQuest(quest: QuestQuestGroupModelQuestDistribution | null): this;
+    getQuest(): Gs2Watch.QuestQuestGroupModelQuestDistribution | null;
+    setQuest(quest: Gs2Watch.QuestQuestGroupModelQuestDistribution | null): this;
+    withQuest(quest: Gs2Watch.QuestQuestGroupModelQuestDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestQuestGroupModelDistributions | null;

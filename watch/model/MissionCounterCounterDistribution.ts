@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionCounterCounterDistributionStatistics from './MissionCounterCounterDistributionStatistics';
 import MissionCounterCounterDistributionSegment from './MissionCounterCounterDistributionSegment';
 
 export default class MissionCounterCounterDistribution implements IModel {
-    private statistics: MissionCounterCounterDistributionStatistics|null = null;
-    private distribution: MissionCounterCounterDistributionSegment[]|null = null;
-    public getStatistics(): MissionCounterCounterDistributionStatistics|null {
+    private statistics: Gs2Watch.MissionCounterCounterDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MissionCounterCounterDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MissionCounterCounterDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MissionCounterCounterDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MissionCounterCounterDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MissionCounterCounterDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MissionCounterCounterDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MissionCounterCounterDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MissionCounterCounterDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MissionCounterCounterDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MissionCounterCounterDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MissionCounterCounterDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MissionCounterCounterDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MissionCounterCounterDistribution implements IModel {
             return null;
         }
         return new MissionCounterCounterDistribution()
-            .withStatistics(MissionCounterCounterDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MissionCounterCounterDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MissionCounterCounterDistributionSegment.fromDict(item);
+                    return Gs2Watch.MissionCounterCounterDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MissionCounterCounterDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MissionCounterCounterDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

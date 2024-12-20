@@ -22,6 +22,7 @@ export default class WaitDumpUserDataRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
+    private ownerId: string|null = null;
     private transactionId: string|null = null;
     private userId: string|null = null;
     private microserviceName: string|null = null;
@@ -53,6 +54,17 @@ export default class WaitDumpUserDataRequest implements IRequest {
 
     public withContextStack(contextStack: string|null): this {
         this.contextStack = contextStack;
+        return this;
+    }
+    public getOwnerId(): string|null {
+        return this.ownerId;
+    }
+    public setOwnerId(ownerId: string|null) {
+        this.ownerId = ownerId;
+        return this;
+    }
+    public withOwnerId(ownerId: string|null): this {
+        this.ownerId = ownerId;
         return this;
     }
     public getTransactionId(): string|null {
@@ -116,6 +128,7 @@ export default class WaitDumpUserDataRequest implements IRequest {
 
     public static fromDict(data: {[key: string]: any}): WaitDumpUserDataRequest {
         return new WaitDumpUserDataRequest()
+            .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
             .withMicroserviceName(data["microserviceName"])
@@ -124,6 +137,7 @@ export default class WaitDumpUserDataRequest implements IRequest {
 
     public toDict(): {[key: string]: any} {
         return {
+            "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
             "userId": this.getUserId(),
             "microserviceName": this.getMicroserviceName(),

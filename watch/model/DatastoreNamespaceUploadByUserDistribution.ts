@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DatastoreNamespaceUploadByUserDistributionStatistics from './DatastoreNamespaceUploadByUserDistributionStatistics';
 import DatastoreNamespaceUploadByUserDistributionSegment from './DatastoreNamespaceUploadByUserDistributionSegment';
 
 export default class DatastoreNamespaceUploadByUserDistribution implements IModel {
-    private statistics: DatastoreNamespaceUploadByUserDistributionStatistics|null = null;
-    private distribution: DatastoreNamespaceUploadByUserDistributionSegment[]|null = null;
-    public getStatistics(): DatastoreNamespaceUploadByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DatastoreNamespaceUploadByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DatastoreNamespaceUploadByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): DatastoreNamespaceUploadByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: DatastoreNamespaceUploadByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: DatastoreNamespaceUploadByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class DatastoreNamespaceUploadByUserDistribution implements IMode
             return null;
         }
         return new DatastoreNamespaceUploadByUserDistribution()
-            .withStatistics(DatastoreNamespaceUploadByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return DatastoreNamespaceUploadByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: DatastoreNamespaceUploadByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

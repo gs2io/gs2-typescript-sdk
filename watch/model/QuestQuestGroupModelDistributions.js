@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestQuestGroupModelQuestDistribution_1 = tslib_1.__importDefault(require("./QuestQuestGroupModelQuestDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var QuestQuestGroupModelDistributions = /** @class */ (function () {
     function QuestQuestGroupModelDistributions() {
         this.quest = null;
@@ -37,7 +37,7 @@ var QuestQuestGroupModelDistributions = /** @class */ (function () {
             return null;
         }
         return new QuestQuestGroupModelDistributions()
-            .withQuest(QuestQuestGroupModelQuestDistribution_1.default.fromDict(data["quest"]));
+            .withQuest(Gs2Watch.QuestQuestGroupModelQuestDistribution.fromDict(data["quest"]));
     };
     QuestQuestGroupModelDistributions.prototype.toDict = function () {
         var _a;

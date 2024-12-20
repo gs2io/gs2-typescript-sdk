@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class StaminaStaminaModelStatistics implements IModel {
     private consume: number|null = null;
     private consumeAmount: number|null = null;

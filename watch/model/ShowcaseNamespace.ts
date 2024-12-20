@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseNamespaceStatistics from './ShowcaseNamespaceStatistics';
 import ShowcaseNamespaceBuyDistributionStatistics from './ShowcaseNamespaceBuyDistributionStatistics';
 import ShowcaseNamespaceBuyDistributionSegment from './ShowcaseNamespaceBuyDistributionSegment';
@@ -40,9 +42,9 @@ export default class ShowcaseNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: ShowcaseNamespaceStatistics|null = null;
-    private distributions: ShowcaseNamespaceDistributions|null = null;
-    private showcases: ShowcaseShowcase[]|null = null;
+    private statistics: Gs2Watch.ShowcaseNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.ShowcaseNamespaceDistributions|null = null;
+    private showcases: Gs2Watch.ShowcaseShowcase[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -227,36 +229,36 @@ export default class ShowcaseNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): ShowcaseNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.ShowcaseNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ShowcaseNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ShowcaseNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ShowcaseNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ShowcaseNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ShowcaseNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.ShowcaseNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ShowcaseNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ShowcaseNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ShowcaseNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ShowcaseNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getShowcases(): ShowcaseShowcase[]|null {
+    public getShowcases(): Gs2Watch.ShowcaseShowcase[]|null {
         return this.showcases;
     }
-    public setShowcases(showcases: ShowcaseShowcase[]|null) {
+    public setShowcases(showcases: Gs2Watch.ShowcaseShowcase[]|null) {
         this.showcases = showcases;
         return this;
     }
-    public withShowcases(showcases: ShowcaseShowcase[]|null): this {
+    public withShowcases(showcases: Gs2Watch.ShowcaseShowcase[]|null): this {
         this.showcases = showcases;
         return this;
     }
@@ -271,13 +273,13 @@ export default class ShowcaseNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ShowcaseNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(ShowcaseNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ShowcaseNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ShowcaseNamespaceDistributions.fromDict(data["distributions"]))
             .withShowcases(data.showcases ?
                 data.showcases.map((item: {[key: string]: any}) => {
-                    return ShowcaseShowcase.fromDict(item);
+                    return Gs2Watch.ShowcaseShowcase.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -290,10 +292,10 @@ export default class ShowcaseNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "showcases": this.getShowcases() ?
-                this.getShowcases()!.map((item: ShowcaseShowcase) => {
+                this.getShowcases()!.map((item: Gs2Watch.ShowcaseShowcase) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

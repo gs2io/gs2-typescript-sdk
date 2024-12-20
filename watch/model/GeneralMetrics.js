@@ -16,12 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var GeneralDauWauMau_1 = tslib_1.__importDefault(require("./GeneralDauWauMau"));
-var SessionDuration_1 = tslib_1.__importDefault(require("./SessionDuration"));
-var FirstEngagement_1 = tslib_1.__importDefault(require("./FirstEngagement"));
-var Engagements_1 = tslib_1.__importDefault(require("./Engagements"));
-var ChurnRateAggregate_1 = tslib_1.__importDefault(require("./ChurnRateAggregate"));
-var UseServices_1 = tslib_1.__importDefault(require("./UseServices"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var GeneralMetrics = /** @class */ (function () {
     function GeneralMetrics() {
         this.dauWauMau = null;
@@ -102,12 +97,12 @@ var GeneralMetrics = /** @class */ (function () {
             return null;
         }
         return new GeneralMetrics()
-            .withDauWauMau(GeneralDauWauMau_1.default.fromDict(data["dauWauMau"]))
-            .withSessionDuration(SessionDuration_1.default.fromDict(data["sessionDuration"]))
-            .withFirstEngagement(FirstEngagement_1.default.fromDict(data["firstEngagement"]))
-            .withEngagements(Engagements_1.default.fromDict(data["engagements"]))
-            .withChurnRates(ChurnRateAggregate_1.default.fromDict(data["churnRates"]))
-            .withUseServices(UseServices_1.default.fromDict(data["useServices"]));
+            .withDauWauMau(Gs2Watch.GeneralDauWauMau.fromDict(data["dauWauMau"]))
+            .withSessionDuration(Gs2Watch.SessionDuration.fromDict(data["sessionDuration"]))
+            .withFirstEngagement(Gs2Watch.FirstEngagement.fromDict(data["firstEngagement"]))
+            .withEngagements(Gs2Watch.Engagements.fromDict(data["engagements"]))
+            .withChurnRates(Gs2Watch.ChurnRateAggregate.fromDict(data["churnRates"]))
+            .withUseServices(Gs2Watch.UseServices.fromDict(data["useServices"]));
     };
     GeneralMetrics.prototype.toDict = function () {
         var _a, _b, _c, _d, _e, _f;

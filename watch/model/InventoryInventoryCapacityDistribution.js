@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryInventoryCapacityDistributionStatistics_1 = tslib_1.__importDefault(require("./InventoryInventoryCapacityDistributionStatistics"));
-var InventoryInventoryCapacityDistributionSegment_1 = tslib_1.__importDefault(require("./InventoryInventoryCapacityDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryInventoryCapacityDistribution = /** @class */ (function () {
     function InventoryInventoryCapacityDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var InventoryInventoryCapacityDistribution = /** @class */ (function () {
             return null;
         }
         return new InventoryInventoryCapacityDistribution()
-            .withStatistics(InventoryInventoryCapacityDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InventoryInventoryCapacityDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return InventoryInventoryCapacityDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InventoryInventoryCapacityDistributionSegment.fromDict(item);
+            }) : null);
     };
     InventoryInventoryCapacityDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var InventoryInventoryCapacityDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InventoryInventoryCapacityDistribution;

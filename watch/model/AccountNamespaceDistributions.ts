@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import AccountNamespaceTypeDistributionStatistics from './AccountNamespaceTypeDistributionStatistics';
 import AccountNamespaceTypeDistributionSegment from './AccountNamespaceTypeDistributionSegment';
 import AccountNamespaceTypeDistribution from './AccountNamespaceTypeDistribution';
 
 export default class AccountNamespaceDistributions implements IModel {
-    private type: AccountNamespaceTypeDistribution|null = null;
-    public getType(): AccountNamespaceTypeDistribution|null {
+    private type: Gs2Watch.AccountNamespaceTypeDistribution|null = null;
+    public getType(): Gs2Watch.AccountNamespaceTypeDistribution|null {
         return this.type;
     }
-    public setType(type: AccountNamespaceTypeDistribution|null) {
+    public setType(type: Gs2Watch.AccountNamespaceTypeDistribution|null) {
         this.type = type;
         return this;
     }
-    public withType(type: AccountNamespaceTypeDistribution|null): this {
+    public withType(type: Gs2Watch.AccountNamespaceTypeDistribution|null): this {
         this.type = type;
         return this;
     }
@@ -38,7 +40,7 @@ export default class AccountNamespaceDistributions implements IModel {
             return null;
         }
         return new AccountNamespaceDistributions()
-            .withType(AccountNamespaceTypeDistribution.fromDict(data["type"]));
+            .withType(Gs2Watch.AccountNamespaceTypeDistribution.fromDict(data["type"]));
     }
 
     public toDict(): {[key: string]: any} {

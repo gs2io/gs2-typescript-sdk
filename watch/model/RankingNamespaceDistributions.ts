@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingNamespacePutDistributionStatistics from './RankingNamespacePutDistributionStatistics';
 import RankingNamespacePutDistributionSegment from './RankingNamespacePutDistributionSegment';
 import RankingNamespacePutDistribution from './RankingNamespacePutDistribution';
 
 export default class RankingNamespaceDistributions implements IModel {
-    private put: RankingNamespacePutDistribution|null = null;
-    public getPut(): RankingNamespacePutDistribution|null {
+    private put: Gs2Watch.RankingNamespacePutDistribution|null = null;
+    public getPut(): Gs2Watch.RankingNamespacePutDistribution|null {
         return this.put;
     }
-    public setPut(put: RankingNamespacePutDistribution|null) {
+    public setPut(put: Gs2Watch.RankingNamespacePutDistribution|null) {
         this.put = put;
         return this;
     }
-    public withPut(put: RankingNamespacePutDistribution|null): this {
+    public withPut(put: Gs2Watch.RankingNamespacePutDistribution|null): this {
         this.put = put;
         return this;
     }
@@ -38,7 +40,7 @@ export default class RankingNamespaceDistributions implements IModel {
             return null;
         }
         return new RankingNamespaceDistributions()
-            .withPut(RankingNamespacePutDistribution.fromDict(data["put"]));
+            .withPut(Gs2Watch.RankingNamespacePutDistribution.fromDict(data["put"]));
     }
 
     public toDict(): {[key: string]: any} {

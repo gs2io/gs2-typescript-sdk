@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryLotteryDrawResultDistributionStatistics_1 = tslib_1.__importDefault(require("./LotteryLotteryDrawResultDistributionStatistics"));
-var LotteryLotteryDrawResultDistributionSegment_1 = tslib_1.__importDefault(require("./LotteryLotteryDrawResultDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LotteryLotteryDrawResultDistribution = /** @class */ (function () {
     function LotteryLotteryDrawResultDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var LotteryLotteryDrawResultDistribution = /** @class */ (function () {
             return null;
         }
         return new LotteryLotteryDrawResultDistribution()
-            .withStatistics(LotteryLotteryDrawResultDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LotteryLotteryDrawResultDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return LotteryLotteryDrawResultDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LotteryLotteryDrawResultDistributionSegment.fromDict(item);
+            }) : null);
     };
     LotteryLotteryDrawResultDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var LotteryLotteryDrawResultDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LotteryLotteryDrawResultDistribution;

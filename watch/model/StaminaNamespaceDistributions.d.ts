@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import StaminaNamespaceConsumeDistribution from './StaminaNamespaceConsumeDistribution';
-import StaminaNamespaceRecoverDistribution from './StaminaNamespaceRecoverDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class StaminaNamespaceDistributions implements IModel {
     private consume;
     private recover;
-    getConsume(): StaminaNamespaceConsumeDistribution | null;
-    setConsume(consume: StaminaNamespaceConsumeDistribution | null): this;
-    withConsume(consume: StaminaNamespaceConsumeDistribution | null): this;
-    getRecover(): StaminaNamespaceRecoverDistribution | null;
-    setRecover(recover: StaminaNamespaceRecoverDistribution | null): this;
-    withRecover(recover: StaminaNamespaceRecoverDistribution | null): this;
+    getConsume(): Gs2Watch.StaminaNamespaceConsumeDistribution | null;
+    setConsume(consume: Gs2Watch.StaminaNamespaceConsumeDistribution | null): this;
+    withConsume(consume: Gs2Watch.StaminaNamespaceConsumeDistribution | null): this;
+    getRecover(): Gs2Watch.StaminaNamespaceRecoverDistribution | null;
+    setRecover(recover: Gs2Watch.StaminaNamespaceRecoverDistribution | null): this;
+    withRecover(recover: Gs2Watch.StaminaNamespaceRecoverDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StaminaNamespaceDistributions | null;

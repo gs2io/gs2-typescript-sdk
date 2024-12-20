@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import AccountNamespaceTypeDistribution from './AccountNamespaceTypeDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class AccountNamespaceDistributions implements IModel {
     private type;
-    getType(): AccountNamespaceTypeDistribution | null;
-    setType(type: AccountNamespaceTypeDistribution | null): this;
-    withType(type: AccountNamespaceTypeDistribution | null): this;
+    getType(): Gs2Watch.AccountNamespaceTypeDistribution | null;
+    setType(type: Gs2Watch.AccountNamespaceTypeDistribution | null): this;
+    withType(type: Gs2Watch.AccountNamespaceTypeDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AccountNamespaceDistributions | null;

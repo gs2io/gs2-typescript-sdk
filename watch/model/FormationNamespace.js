@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationNamespaceStatistics_1 = tslib_1.__importDefault(require("./FormationNamespaceStatistics"));
-var FormationNamespaceDistributions_1 = tslib_1.__importDefault(require("./FormationNamespaceDistributions"));
-var FormationMold_1 = tslib_1.__importDefault(require("./FormationMold"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}";
 var FormationNamespace = /** @class */ (function () {
     function FormationNamespace() {
@@ -237,12 +235,12 @@ var FormationNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(FormationNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(FormationNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.FormationNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationNamespaceDistributions.fromDict(data["distributions"]))
             .withMolds(data.molds ?
             data.molds.map(function (item) {
-                return FormationMold_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FormationMold.fromDict(item);
+            }) : null);
     };
     FormationNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var FormationNamespace = /** @class */ (function () {
             "molds": this.getMolds() ?
                 this.getMolds().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FormationNamespace;

@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ExchangeNamespaceStatistics from './ExchangeNamespaceStatistics';
-import ExchangeNamespaceDistributions from './ExchangeNamespaceDistributions';
-import ExchangeRateModel from './ExchangeRateModel';
+import * as Gs2Watch from '../../watch/model';
 export default class ExchangeNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class ExchangeNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): ExchangeNamespaceStatistics | null;
-    setStatistics(statistics: ExchangeNamespaceStatistics | null): this;
-    withStatistics(statistics: ExchangeNamespaceStatistics | null): this;
-    getDistributions(): ExchangeNamespaceDistributions | null;
-    setDistributions(distributions: ExchangeNamespaceDistributions | null): this;
-    withDistributions(distributions: ExchangeNamespaceDistributions | null): this;
-    getRateModels(): ExchangeRateModel[] | null;
-    setRateModels(rateModels: ExchangeRateModel[] | null): this;
-    withRateModels(rateModels: ExchangeRateModel[] | null): this;
+    getStatistics(): Gs2Watch.ExchangeNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExchangeNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExchangeNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.ExchangeNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.ExchangeNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ExchangeNamespaceDistributions | null): this;
+    getRateModels(): Gs2Watch.ExchangeRateModel[] | null;
+    setRateModels(rateModels: Gs2Watch.ExchangeRateModel[] | null): this;
+    withRateModels(rateModels: Gs2Watch.ExchangeRateModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExchangeNamespace | null;

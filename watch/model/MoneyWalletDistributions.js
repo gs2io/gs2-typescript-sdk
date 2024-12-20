@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyWalletFreeDistribution_1 = tslib_1.__importDefault(require("./MoneyWalletFreeDistribution"));
-var MoneyWalletPaidDistribution_1 = tslib_1.__importDefault(require("./MoneyWalletPaidDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyWalletDistributions = /** @class */ (function () {
     function MoneyWalletDistributions() {
         this.free = null;
@@ -50,8 +49,8 @@ var MoneyWalletDistributions = /** @class */ (function () {
             return null;
         }
         return new MoneyWalletDistributions()
-            .withFree(MoneyWalletFreeDistribution_1.default.fromDict(data["free"]))
-            .withPaid(MoneyWalletPaidDistribution_1.default.fromDict(data["paid"]));
+            .withFree(Gs2Watch.MoneyWalletFreeDistribution.fromDict(data["free"]))
+            .withPaid(Gs2Watch.MoneyWalletPaidDistribution.fromDict(data["paid"]));
     };
     MoneyWalletDistributions.prototype.toDict = function () {
         var _a, _b;

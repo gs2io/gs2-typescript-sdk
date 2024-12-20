@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyWalletFreeDistributionStatistics from './MoneyWalletFreeDistributionStatistics';
 import MoneyWalletFreeDistributionSegment from './MoneyWalletFreeDistributionSegment';
 
 export default class MoneyWalletFreeDistribution implements IModel {
-    private statistics: MoneyWalletFreeDistributionStatistics|null = null;
-    private distribution: MoneyWalletFreeDistributionSegment[]|null = null;
-    public getStatistics(): MoneyWalletFreeDistributionStatistics|null {
+    private statistics: Gs2Watch.MoneyWalletFreeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MoneyWalletFreeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MoneyWalletFreeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyWalletFreeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyWalletFreeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyWalletFreeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyWalletFreeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MoneyWalletFreeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MoneyWalletFreeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MoneyWalletFreeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MoneyWalletFreeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MoneyWalletFreeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MoneyWalletFreeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MoneyWalletFreeDistribution implements IModel {
             return null;
         }
         return new MoneyWalletFreeDistribution()
-            .withStatistics(MoneyWalletFreeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyWalletFreeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MoneyWalletFreeDistributionSegment.fromDict(item);
+                    return Gs2Watch.MoneyWalletFreeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MoneyWalletFreeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MoneyWalletFreeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

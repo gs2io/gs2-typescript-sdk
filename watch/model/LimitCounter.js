@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitCounterStatistics_1 = tslib_1.__importDefault(require("./LimitCounterStatistics"));
-var LimitCounterDistributions_1 = tslib_1.__importDefault(require("./LimitCounterDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:limit:namespace:{namespaceName}:limitModel:{limitName}:counter:{counterName}";
 var LimitCounter = /** @class */ (function () {
     function LimitCounter() {
@@ -248,8 +247,8 @@ var LimitCounter = /** @class */ (function () {
             .withCounterId(data["counterId"])
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
-            .withStatistics(LimitCounterStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(LimitCounterDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.LimitCounterStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LimitCounterDistributions.fromDict(data["distributions"]));
     };
     LimitCounter.prototype.toDict = function () {
         var _a, _b;

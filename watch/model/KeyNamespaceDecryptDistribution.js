@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var KeyNamespaceDecryptDistributionStatistics_1 = tslib_1.__importDefault(require("./KeyNamespaceDecryptDistributionStatistics"));
-var KeyNamespaceDecryptDistributionSegment_1 = tslib_1.__importDefault(require("./KeyNamespaceDecryptDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var KeyNamespaceDecryptDistribution = /** @class */ (function () {
     function KeyNamespaceDecryptDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var KeyNamespaceDecryptDistribution = /** @class */ (function () {
             return null;
         }
         return new KeyNamespaceDecryptDistribution()
-            .withStatistics(KeyNamespaceDecryptDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.KeyNamespaceDecryptDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return KeyNamespaceDecryptDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.KeyNamespaceDecryptDistributionSegment.fromDict(item);
+            }) : null);
     };
     KeyNamespaceDecryptDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var KeyNamespaceDecryptDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return KeyNamespaceDecryptDistribution;

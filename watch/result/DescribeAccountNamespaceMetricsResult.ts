@@ -40,7 +40,7 @@ export default class DescribeAccountNamespaceMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.AccountNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeAccountNamespaceMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.AccountNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

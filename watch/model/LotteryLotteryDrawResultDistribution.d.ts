@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import LotteryLotteryDrawResultDistributionStatistics from './LotteryLotteryDrawResultDistributionStatistics';
-import LotteryLotteryDrawResultDistributionSegment from './LotteryLotteryDrawResultDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class LotteryLotteryDrawResultDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): LotteryLotteryDrawResultDistributionStatistics | null;
-    setStatistics(statistics: LotteryLotteryDrawResultDistributionStatistics | null): this;
-    withStatistics(statistics: LotteryLotteryDrawResultDistributionStatistics | null): this;
-    getDistribution(): LotteryLotteryDrawResultDistributionSegment[] | null;
-    setDistribution(distribution: LotteryLotteryDrawResultDistributionSegment[] | null): this;
-    withDistribution(distribution: LotteryLotteryDrawResultDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.LotteryLotteryDrawResultDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.LotteryLotteryDrawResultDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LotteryLotteryDrawResultDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.LotteryLotteryDrawResultDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.LotteryLotteryDrawResultDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.LotteryLotteryDrawResultDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LotteryLotteryDrawResultDistribution | null;

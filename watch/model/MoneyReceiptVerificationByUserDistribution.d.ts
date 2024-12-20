@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import MoneyReceiptVerificationByUserDistributionStatistics from './MoneyReceiptVerificationByUserDistributionStatistics';
-import MoneyReceiptVerificationByUserDistributionSegment from './MoneyReceiptVerificationByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyReceiptVerificationByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): MoneyReceiptVerificationByUserDistributionStatistics | null;
-    setStatistics(statistics: MoneyReceiptVerificationByUserDistributionStatistics | null): this;
-    withStatistics(statistics: MoneyReceiptVerificationByUserDistributionStatistics | null): this;
-    getDistribution(): MoneyReceiptVerificationByUserDistributionSegment[] | null;
-    setDistribution(distribution: MoneyReceiptVerificationByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: MoneyReceiptVerificationByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.MoneyReceiptVerificationByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.MoneyReceiptVerificationByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MoneyReceiptVerificationByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.MoneyReceiptVerificationByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.MoneyReceiptVerificationByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.MoneyReceiptVerificationByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyReceiptVerificationByUserDistribution | null;

@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import InboxNamespaceStatistics from './InboxNamespaceStatistics';
-import InboxNamespaceDistributions from './InboxNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class InboxNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class InboxNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): InboxNamespaceStatistics | null;
-    setStatistics(statistics: InboxNamespaceStatistics | null): this;
-    withStatistics(statistics: InboxNamespaceStatistics | null): this;
-    getDistributions(): InboxNamespaceDistributions | null;
-    setDistributions(distributions: InboxNamespaceDistributions | null): this;
-    withDistributions(distributions: InboxNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.InboxNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.InboxNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InboxNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.InboxNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.InboxNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.InboxNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InboxNamespace | null;

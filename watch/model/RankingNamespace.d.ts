@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RankingNamespaceStatistics from './RankingNamespaceStatistics';
-import RankingNamespaceDistributions from './RankingNamespaceDistributions';
-import RankingCategoryModel from './RankingCategoryModel';
+import * as Gs2Watch from '../../watch/model';
 export default class RankingNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class RankingNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): RankingNamespaceStatistics | null;
-    setStatistics(statistics: RankingNamespaceStatistics | null): this;
-    withStatistics(statistics: RankingNamespaceStatistics | null): this;
-    getDistributions(): RankingNamespaceDistributions | null;
-    setDistributions(distributions: RankingNamespaceDistributions | null): this;
-    withDistributions(distributions: RankingNamespaceDistributions | null): this;
-    getCategoryModels(): RankingCategoryModel[] | null;
-    setCategoryModels(categoryModels: RankingCategoryModel[] | null): this;
-    withCategoryModels(categoryModels: RankingCategoryModel[] | null): this;
+    getStatistics(): Gs2Watch.RankingNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.RankingNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.RankingNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.RankingNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.RankingNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.RankingNamespaceDistributions | null): this;
+    getCategoryModels(): Gs2Watch.RankingCategoryModel[] | null;
+    setCategoryModels(categoryModels: Gs2Watch.RankingCategoryModel[] | null): this;
+    withCategoryModels(categoryModels: Gs2Watch.RankingCategoryModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RankingNamespace | null;

@@ -37,14 +37,14 @@ var DescribeRankingNamespaceMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.RankingNamespace.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeRankingNamespaceMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeRankingNamespaceMetricsResult;

@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyNamespaceStatistics_1 = tslib_1.__importDefault(require("./MoneyNamespaceStatistics"));
-var MoneyNamespaceDistributions_1 = tslib_1.__importDefault(require("./MoneyNamespaceDistributions"));
-var MoneyWallet_1 = tslib_1.__importDefault(require("./MoneyWallet"));
-var MoneyReceipt_1 = tslib_1.__importDefault(require("./MoneyReceipt"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:money:namespace:{namespaceName}";
 var MoneyNamespace = /** @class */ (function () {
     function MoneyNamespace() {
@@ -250,16 +247,16 @@ var MoneyNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MoneyNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(MoneyNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.MoneyNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyNamespaceDistributions.fromDict(data["distributions"]))
             .withWallets(data.wallets ?
             data.wallets.map(function (item) {
-                return MoneyWallet_1.default.fromDict(item);
-            }) : [])
+                return Gs2Watch.MoneyWallet.fromDict(item);
+            }) : null)
             .withReceipts(data.receipts ?
             data.receipts.map(function (item) {
-                return MoneyReceipt_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MoneyReceipt.fromDict(item);
+            }) : null);
     };
     MoneyNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -274,11 +271,11 @@ var MoneyNamespace = /** @class */ (function () {
             "wallets": this.getWallets() ?
                 this.getWallets().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "receipts": this.getReceipts() ?
                 this.getReceipts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MoneyNamespace;

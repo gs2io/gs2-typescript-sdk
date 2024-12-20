@@ -24,6 +24,7 @@ var AcceptVersion = /** @class */ (function () {
         this.versionName = null;
         this.userId = null;
         this.version = null;
+        this.status = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -158,6 +159,17 @@ var AcceptVersion = /** @class */ (function () {
         this.version = version;
         return this;
     };
+    AcceptVersion.prototype.getStatus = function () {
+        return this.status;
+    };
+    AcceptVersion.prototype.setStatus = function (status) {
+        this.status = status;
+        return this;
+    };
+    AcceptVersion.prototype.withStatus = function (status) {
+        this.status = status;
+        return this;
+    };
     AcceptVersion.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -200,6 +212,7 @@ var AcceptVersion = /** @class */ (function () {
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
             .withVersion(Gs2Version.Version.fromDict(data["version"]))
+            .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -211,6 +224,7 @@ var AcceptVersion = /** @class */ (function () {
             "versionName": this.getVersionName(),
             "userId": this.getUserId(),
             "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

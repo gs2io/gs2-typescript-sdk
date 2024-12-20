@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class Chart implements IModel {
     private timestamp: number|null = null;
     private value: number|null = null;
@@ -65,7 +67,7 @@ export default class Chart implements IModel {
                 data.groupBys.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -76,7 +78,7 @@ export default class Chart implements IModel {
                 this.getGroupBys()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

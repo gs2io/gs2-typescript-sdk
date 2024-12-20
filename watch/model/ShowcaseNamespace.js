@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ShowcaseNamespaceStatistics_1 = tslib_1.__importDefault(require("./ShowcaseNamespaceStatistics"));
-var ShowcaseNamespaceDistributions_1 = tslib_1.__importDefault(require("./ShowcaseNamespaceDistributions"));
-var ShowcaseShowcase_1 = tslib_1.__importDefault(require("./ShowcaseShowcase"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:showcase:namespace:{namespaceName}";
 var ShowcaseNamespace = /** @class */ (function () {
     function ShowcaseNamespace() {
@@ -237,12 +235,12 @@ var ShowcaseNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ShowcaseNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ShowcaseNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ShowcaseNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ShowcaseNamespaceDistributions.fromDict(data["distributions"]))
             .withShowcases(data.showcases ?
             data.showcases.map(function (item) {
-                return ShowcaseShowcase_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ShowcaseShowcase.fromDict(item);
+            }) : null);
     };
     ShowcaseNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var ShowcaseNamespace = /** @class */ (function () {
             "showcases": this.getShowcases() ?
                 this.getShowcases().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ShowcaseNamespace;

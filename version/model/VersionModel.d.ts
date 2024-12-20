@@ -12,6 +12,7 @@ export default class VersionModel implements IModel {
     private scheduleVersions;
     private needSignature;
     private signatureKeyId;
+    private approveRequirement;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -51,6 +52,9 @@ export default class VersionModel implements IModel {
     getSignatureKeyId(): string | null;
     setSignatureKeyId(signatureKeyId: string | null): this;
     withSignatureKeyId(signatureKeyId: string | null): this;
+    getApproveRequirement(): string | null;
+    setApproveRequirement(approveRequirement: string | null): this;
+    withApproveRequirement(approveRequirement: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): VersionModel | null;

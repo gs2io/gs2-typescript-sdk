@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionMissionGroupModelStatistics from './MissionMissionGroupModelStatistics';
 import MissionMissionGroupModelReceiveDistributionStatistics from './MissionMissionGroupModelReceiveDistributionStatistics';
 import MissionMissionGroupModelReceiveDistributionSegment from './MissionMissionGroupModelReceiveDistributionSegment';
@@ -25,8 +27,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class MissionMissionGroupModel implements IModel {
     private missionGroupModelId: string|null = null;
     private missionGroupName: string|null = null;
-    private statistics: MissionMissionGroupModelStatistics|null = null;
-    private distributions: MissionMissionGroupModelDistributions|null = null;
+    private statistics: Gs2Watch.MissionMissionGroupModelStatistics|null = null;
+    private distributions: Gs2Watch.MissionMissionGroupModelDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -205,25 +207,25 @@ export default class MissionMissionGroupModel implements IModel {
         this.missionGroupName = missionGroupName;
         return this;
     }
-    public getStatistics(): MissionMissionGroupModelStatistics|null {
+    public getStatistics(): Gs2Watch.MissionMissionGroupModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MissionMissionGroupModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MissionMissionGroupModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MissionMissionGroupModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MissionMissionGroupModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MissionMissionGroupModelDistributions|null {
+    public getDistributions(): Gs2Watch.MissionMissionGroupModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MissionMissionGroupModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MissionMissionGroupModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MissionMissionGroupModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MissionMissionGroupModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -235,8 +237,8 @@ export default class MissionMissionGroupModel implements IModel {
         return new MissionMissionGroupModel()
             .withMissionGroupModelId(data["missionGroupModelId"])
             .withMissionGroupName(data["missionGroupName"])
-            .withStatistics(MissionMissionGroupModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(MissionMissionGroupModelDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MissionMissionGroupModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MissionMissionGroupModelDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

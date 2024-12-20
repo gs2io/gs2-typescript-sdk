@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InventoryNamespaceStatistics from './InventoryNamespaceStatistics';
 import InventoryNamespaceAcquireDistributionStatistics from './InventoryNamespaceAcquireDistributionStatistics';
 import InventoryNamespaceAcquireDistributionSegment from './InventoryNamespaceAcquireDistributionSegment';
@@ -67,9 +69,9 @@ export default class InventoryNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: InventoryNamespaceStatistics|null = null;
-    private distributions: InventoryNamespaceDistributions|null = null;
-    private inventories: InventoryInventory[]|null = null;
+    private statistics: Gs2Watch.InventoryNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.InventoryNamespaceDistributions|null = null;
+    private inventories: Gs2Watch.InventoryInventory[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -254,36 +256,36 @@ export default class InventoryNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): InventoryNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.InventoryNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: InventoryNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.InventoryNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: InventoryNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.InventoryNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): InventoryNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.InventoryNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: InventoryNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.InventoryNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: InventoryNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.InventoryNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getInventories(): InventoryInventory[]|null {
+    public getInventories(): Gs2Watch.InventoryInventory[]|null {
         return this.inventories;
     }
-    public setInventories(inventories: InventoryInventory[]|null) {
+    public setInventories(inventories: Gs2Watch.InventoryInventory[]|null) {
         this.inventories = inventories;
         return this;
     }
-    public withInventories(inventories: InventoryInventory[]|null): this {
+    public withInventories(inventories: Gs2Watch.InventoryInventory[]|null): this {
         this.inventories = inventories;
         return this;
     }
@@ -298,13 +300,13 @@ export default class InventoryNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(InventoryNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(InventoryNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.InventoryNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InventoryNamespaceDistributions.fromDict(data["distributions"]))
             .withInventories(data.inventories ?
                 data.inventories.map((item: {[key: string]: any}) => {
-                    return InventoryInventory.fromDict(item);
+                    return Gs2Watch.InventoryInventory.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -317,10 +319,10 @@ export default class InventoryNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "inventories": this.getInventories() ?
-                this.getInventories()!.map((item: InventoryInventory) => {
+                this.getInventories()!.map((item: Gs2Watch.InventoryInventory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

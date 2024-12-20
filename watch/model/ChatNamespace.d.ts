@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ChatNamespaceStatistics from './ChatNamespaceStatistics';
-import ChatNamespaceDistributions from './ChatNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class ChatNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class ChatNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): ChatNamespaceStatistics | null;
-    setStatistics(statistics: ChatNamespaceStatistics | null): this;
-    withStatistics(statistics: ChatNamespaceStatistics | null): this;
-    getDistributions(): ChatNamespaceDistributions | null;
-    setDistributions(distributions: ChatNamespaceDistributions | null): this;
-    withDistributions(distributions: ChatNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.ChatNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.ChatNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ChatNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.ChatNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.ChatNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ChatNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ChatNamespace | null;

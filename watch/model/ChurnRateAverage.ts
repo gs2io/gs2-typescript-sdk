@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class ChurnRateAverage implements IModel {
     private churnRate: number|null = null;
     public getChurnRate(): number|null {

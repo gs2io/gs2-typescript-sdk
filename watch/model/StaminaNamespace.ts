@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import StaminaNamespaceStatistics from './StaminaNamespaceStatistics';
 import StaminaNamespaceConsumeDistributionStatistics from './StaminaNamespaceConsumeDistributionStatistics';
 import StaminaNamespaceConsumeDistributionSegment from './StaminaNamespaceConsumeDistributionSegment';
@@ -40,9 +42,9 @@ export default class StaminaNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: StaminaNamespaceStatistics|null = null;
-    private distributions: StaminaNamespaceDistributions|null = null;
-    private staminaModels: StaminaStaminaModel[]|null = null;
+    private statistics: Gs2Watch.StaminaNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.StaminaNamespaceDistributions|null = null;
+    private staminaModels: Gs2Watch.StaminaStaminaModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -227,36 +229,36 @@ export default class StaminaNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): StaminaNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.StaminaNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: StaminaNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.StaminaNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: StaminaNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.StaminaNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): StaminaNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.StaminaNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: StaminaNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.StaminaNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: StaminaNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.StaminaNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getStaminaModels(): StaminaStaminaModel[]|null {
+    public getStaminaModels(): Gs2Watch.StaminaStaminaModel[]|null {
         return this.staminaModels;
     }
-    public setStaminaModels(staminaModels: StaminaStaminaModel[]|null) {
+    public setStaminaModels(staminaModels: Gs2Watch.StaminaStaminaModel[]|null) {
         this.staminaModels = staminaModels;
         return this;
     }
-    public withStaminaModels(staminaModels: StaminaStaminaModel[]|null): this {
+    public withStaminaModels(staminaModels: Gs2Watch.StaminaStaminaModel[]|null): this {
         this.staminaModels = staminaModels;
         return this;
     }
@@ -271,13 +273,13 @@ export default class StaminaNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(StaminaNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(StaminaNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.StaminaNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.StaminaNamespaceDistributions.fromDict(data["distributions"]))
             .withStaminaModels(data.staminaModels ?
                 data.staminaModels.map((item: {[key: string]: any}) => {
-                    return StaminaStaminaModel.fromDict(item);
+                    return Gs2Watch.StaminaStaminaModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -290,10 +292,10 @@ export default class StaminaNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "staminaModels": this.getStaminaModels() ?
-                this.getStaminaModels()!.map((item: StaminaStaminaModel) => {
+                this.getStaminaModels()!.map((item: Gs2Watch.StaminaStaminaModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

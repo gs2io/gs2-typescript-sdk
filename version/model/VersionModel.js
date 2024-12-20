@@ -31,6 +31,7 @@ var VersionModel = /** @class */ (function () {
         this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
+        this.approveRequirement = null;
     }
     VersionModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -219,6 +220,17 @@ var VersionModel = /** @class */ (function () {
         this.signatureKeyId = signatureKeyId;
         return this;
     };
+    VersionModel.prototype.getApproveRequirement = function () {
+        return this.approveRequirement;
+    };
+    VersionModel.prototype.setApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
+    VersionModel.prototype.withApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
     VersionModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -237,7 +249,8 @@ var VersionModel = /** @class */ (function () {
                 return Gs2Version.ScheduleVersion.fromDict(item);
             }) : null)
             .withNeedSignature(data["needSignature"])
-            .withSignatureKeyId(data["signatureKeyId"]);
+            .withSignatureKeyId(data["signatureKeyId"])
+            .withApproveRequirement(data["approveRequirement"]);
     };
     VersionModel.prototype.toDict = function () {
         var _a, _b, _c;
@@ -256,6 +269,7 @@ var VersionModel = /** @class */ (function () {
                 }) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
+            "approveRequirement": this.getApproveRequirement(),
         };
     };
     return VersionModel;

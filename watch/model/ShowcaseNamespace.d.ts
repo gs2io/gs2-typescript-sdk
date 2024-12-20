@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ShowcaseNamespaceStatistics from './ShowcaseNamespaceStatistics';
-import ShowcaseNamespaceDistributions from './ShowcaseNamespaceDistributions';
-import ShowcaseShowcase from './ShowcaseShowcase';
+import * as Gs2Watch from '../../watch/model';
 export default class ShowcaseNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class ShowcaseNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): ShowcaseNamespaceStatistics | null;
-    setStatistics(statistics: ShowcaseNamespaceStatistics | null): this;
-    withStatistics(statistics: ShowcaseNamespaceStatistics | null): this;
-    getDistributions(): ShowcaseNamespaceDistributions | null;
-    setDistributions(distributions: ShowcaseNamespaceDistributions | null): this;
-    withDistributions(distributions: ShowcaseNamespaceDistributions | null): this;
-    getShowcases(): ShowcaseShowcase[] | null;
-    setShowcases(showcases: ShowcaseShowcase[] | null): this;
-    withShowcases(showcases: ShowcaseShowcase[] | null): this;
+    getStatistics(): Gs2Watch.ShowcaseNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.ShowcaseNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ShowcaseNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.ShowcaseNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.ShowcaseNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ShowcaseNamespaceDistributions | null): this;
+    getShowcases(): Gs2Watch.ShowcaseShowcase[] | null;
+    setShowcases(showcases: Gs2Watch.ShowcaseShowcase[] | null): this;
+    withShowcases(showcases: Gs2Watch.ShowcaseShowcase[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ShowcaseNamespace | null;

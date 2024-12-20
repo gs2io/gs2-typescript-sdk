@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryNamespaceIncreaseCapacityAmountDistributionStatistics_1 = tslib_1.__importDefault(require("./InventoryNamespaceIncreaseCapacityAmountDistributionStatistics"));
-var InventoryNamespaceIncreaseCapacityAmountDistributionSegment_1 = tslib_1.__importDefault(require("./InventoryNamespaceIncreaseCapacityAmountDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryNamespaceIncreaseCapacityAmountDistribution = /** @class */ (function () {
     function InventoryNamespaceIncreaseCapacityAmountDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var InventoryNamespaceIncreaseCapacityAmountDistribution = /** @class */ (functi
             return null;
         }
         return new InventoryNamespaceIncreaseCapacityAmountDistribution()
-            .withStatistics(InventoryNamespaceIncreaseCapacityAmountDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return InventoryNamespaceIncreaseCapacityAmountDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionSegment.fromDict(item);
+            }) : null);
     };
     InventoryNamespaceIncreaseCapacityAmountDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var InventoryNamespaceIncreaseCapacityAmountDistribution = /** @class */ (functi
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InventoryNamespaceIncreaseCapacityAmountDistribution;

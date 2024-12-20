@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestNamespaceQuestDistributionStatistics from './QuestNamespaceQuestDistributionStatistics';
 import QuestNamespaceQuestDistributionSegment from './QuestNamespaceQuestDistributionSegment';
 
 export default class QuestNamespaceQuestDistribution implements IModel {
-    private statistics: QuestNamespaceQuestDistributionStatistics|null = null;
-    private distribution: QuestNamespaceQuestDistributionSegment[]|null = null;
-    public getStatistics(): QuestNamespaceQuestDistributionStatistics|null {
+    private statistics: Gs2Watch.QuestNamespaceQuestDistributionStatistics|null = null;
+    private distribution: Gs2Watch.QuestNamespaceQuestDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.QuestNamespaceQuestDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: QuestNamespaceQuestDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.QuestNamespaceQuestDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: QuestNamespaceQuestDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.QuestNamespaceQuestDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): QuestNamespaceQuestDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.QuestNamespaceQuestDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: QuestNamespaceQuestDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.QuestNamespaceQuestDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: QuestNamespaceQuestDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.QuestNamespaceQuestDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class QuestNamespaceQuestDistribution implements IModel {
             return null;
         }
         return new QuestNamespaceQuestDistribution()
-            .withStatistics(QuestNamespaceQuestDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.QuestNamespaceQuestDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return QuestNamespaceQuestDistributionSegment.fromDict(item);
+                    return Gs2Watch.QuestNamespaceQuestDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: QuestNamespaceQuestDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.QuestNamespaceQuestDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

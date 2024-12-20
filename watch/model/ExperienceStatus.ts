@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceStatusRankDistributionStatistics from './ExperienceStatusRankDistributionStatistics';
 import ExperienceStatusRankDistributionSegment from './ExperienceStatusRankDistributionSegment';
 import ExperienceStatusRankDistribution from './ExperienceStatusRankDistribution';
@@ -28,7 +30,7 @@ export default class ExperienceStatus implements IModel {
     private statusId: string|null = null;
     private experienceName: string|null = null;
     private propertyId: string|null = null;
-    private distributions: ExperienceStatusDistributions|null = null;
+    private distributions: Gs2Watch.ExperienceStatusDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -247,14 +249,14 @@ export default class ExperienceStatus implements IModel {
         this.propertyId = propertyId;
         return this;
     }
-    public getDistributions(): ExperienceStatusDistributions|null {
+    public getDistributions(): Gs2Watch.ExperienceStatusDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ExperienceStatusDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ExperienceStatusDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ExperienceStatusDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ExperienceStatusDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -267,7 +269,7 @@ export default class ExperienceStatus implements IModel {
             .withStatusId(data["statusId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withDistributions(ExperienceStatusDistributions.fromDict(data["distributions"]));
+            .withDistributions(Gs2Watch.ExperienceStatusDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

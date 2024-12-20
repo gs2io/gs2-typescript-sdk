@@ -40,7 +40,7 @@ export default class DescribeMissionMissionGroupModelMetricsResult implements IR
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.MissionMissionGroupModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMissionMissionGroupModelMetricsResult implements IR
                 this.getItems()!.map((item: Gs2Watch.MissionMissionGroupModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

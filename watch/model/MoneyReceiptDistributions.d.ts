@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import MoneyReceiptVerificationByUserDistribution from './MoneyReceiptVerificationByUserDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyReceiptDistributions implements IModel {
     private verificationByUser;
-    getVerificationByUser(): MoneyReceiptVerificationByUserDistribution | null;
-    setVerificationByUser(verificationByUser: MoneyReceiptVerificationByUserDistribution | null): this;
-    withVerificationByUser(verificationByUser: MoneyReceiptVerificationByUserDistribution | null): this;
+    getVerificationByUser(): Gs2Watch.MoneyReceiptVerificationByUserDistribution | null;
+    setVerificationByUser(verificationByUser: Gs2Watch.MoneyReceiptVerificationByUserDistribution | null): this;
+    withVerificationByUser(verificationByUser: Gs2Watch.MoneyReceiptVerificationByUserDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyReceiptDistributions | null;

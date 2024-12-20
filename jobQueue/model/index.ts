@@ -16,7 +16,6 @@ permissions and limitations under the License.
 import Namespace from "./Namespace"
 import Job from "./Job"
 import JobResult from "./JobResult"
-import DeadLetterJob from "./DeadLetterJob"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
 import JobEntry from "./JobEntry"
@@ -26,7 +25,6 @@ export {
     Namespace,
     Job,
     JobResult,
-    DeadLetterJob,
     NotificationSetting,
     LogSetting,
     JobEntry,

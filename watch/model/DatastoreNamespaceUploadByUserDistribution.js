@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DatastoreNamespaceUploadByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./DatastoreNamespaceUploadByUserDistributionStatistics"));
-var DatastoreNamespaceUploadByUserDistributionSegment_1 = tslib_1.__importDefault(require("./DatastoreNamespaceUploadByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var DatastoreNamespaceUploadByUserDistribution = /** @class */ (function () {
     function DatastoreNamespaceUploadByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var DatastoreNamespaceUploadByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new DatastoreNamespaceUploadByUserDistribution()
-            .withStatistics(DatastoreNamespaceUploadByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return DatastoreNamespaceUploadByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     DatastoreNamespaceUploadByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var DatastoreNamespaceUploadByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DatastoreNamespaceUploadByUserDistribution;

@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceNamespaceAddExperienceByExperienceDistribution_1 = tslib_1.__importDefault(require("./ExperienceNamespaceAddExperienceByExperienceDistribution"));
-var ExperienceNamespaceAddRankCapByExperienceDistribution_1 = tslib_1.__importDefault(require("./ExperienceNamespaceAddRankCapByExperienceDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceNamespaceDistributions = /** @class */ (function () {
     function ExperienceNamespaceDistributions() {
         this.addExperienceByExperience = null;
@@ -50,8 +49,8 @@ var ExperienceNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new ExperienceNamespaceDistributions()
-            .withAddExperienceByExperience(ExperienceNamespaceAddExperienceByExperienceDistribution_1.default.fromDict(data["addExperienceByExperience"]))
-            .withAddRankCapByExperience(ExperienceNamespaceAddRankCapByExperienceDistribution_1.default.fromDict(data["addRankCapByExperience"]));
+            .withAddExperienceByExperience(Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution.fromDict(data["addExperienceByExperience"]))
+            .withAddRankCapByExperience(Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution.fromDict(data["addRankCapByExperience"]));
     };
     ExperienceNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

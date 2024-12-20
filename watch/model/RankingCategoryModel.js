@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingCategoryModelStatistics_1 = tslib_1.__importDefault(require("./RankingCategoryModelStatistics"));
-var RankingCategoryModelDistributions_1 = tslib_1.__importDefault(require("./RankingCategoryModelDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:ranking:namespace:{namespaceName}:categoryModel:{categoryName}";
 var RankingCategoryModel = /** @class */ (function () {
     function RankingCategoryModel() {
@@ -209,8 +208,8 @@ var RankingCategoryModel = /** @class */ (function () {
         return new RankingCategoryModel()
             .withCategoryModelId(data["categoryModelId"])
             .withCategoryName(data["categoryName"])
-            .withStatistics(RankingCategoryModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(RankingCategoryModelDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.RankingCategoryModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.RankingCategoryModelDistributions.fromDict(data["distributions"]));
     };
     RankingCategoryModel.prototype.toDict = function () {
         var _a, _b;

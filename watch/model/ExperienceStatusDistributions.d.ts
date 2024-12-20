@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceStatusRankDistribution from './ExperienceStatusRankDistribution';
-import ExperienceStatusRankCapDistribution from './ExperienceStatusRankCapDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceStatusDistributions implements IModel {
     private rank;
     private rankCap;
-    getRank(): ExperienceStatusRankDistribution | null;
-    setRank(rank: ExperienceStatusRankDistribution | null): this;
-    withRank(rank: ExperienceStatusRankDistribution | null): this;
-    getRankCap(): ExperienceStatusRankCapDistribution | null;
-    setRankCap(rankCap: ExperienceStatusRankCapDistribution | null): this;
-    withRankCap(rankCap: ExperienceStatusRankCapDistribution | null): this;
+    getRank(): Gs2Watch.ExperienceStatusRankDistribution | null;
+    setRank(rank: Gs2Watch.ExperienceStatusRankDistribution | null): this;
+    withRank(rank: Gs2Watch.ExperienceStatusRankDistribution | null): this;
+    getRankCap(): Gs2Watch.ExperienceStatusRankCapDistribution | null;
+    setRankCap(rankCap: Gs2Watch.ExperienceStatusRankCapDistribution | null): this;
+    withRankCap(rankCap: Gs2Watch.ExperienceStatusRankCapDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceStatusDistributions | null;

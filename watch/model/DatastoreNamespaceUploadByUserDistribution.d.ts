@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import DatastoreNamespaceUploadByUserDistributionStatistics from './DatastoreNamespaceUploadByUserDistributionStatistics';
-import DatastoreNamespaceUploadByUserDistributionSegment from './DatastoreNamespaceUploadByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class DatastoreNamespaceUploadByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): DatastoreNamespaceUploadByUserDistributionStatistics | null;
-    setStatistics(statistics: DatastoreNamespaceUploadByUserDistributionStatistics | null): this;
-    withStatistics(statistics: DatastoreNamespaceUploadByUserDistributionStatistics | null): this;
-    getDistribution(): DatastoreNamespaceUploadByUserDistributionSegment[] | null;
-    setDistribution(distribution: DatastoreNamespaceUploadByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: DatastoreNamespaceUploadByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.DatastoreNamespaceUploadByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.DatastoreNamespaceUploadByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DatastoreNamespaceUploadByUserDistribution | null;

@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import MissionCounterCounterDistributionStatistics from './MissionCounterCounterDistributionStatistics';
-import MissionCounterCounterDistributionSegment from './MissionCounterCounterDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class MissionCounterCounterDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): MissionCounterCounterDistributionStatistics | null;
-    setStatistics(statistics: MissionCounterCounterDistributionStatistics | null): this;
-    withStatistics(statistics: MissionCounterCounterDistributionStatistics | null): this;
-    getDistribution(): MissionCounterCounterDistributionSegment[] | null;
-    setDistribution(distribution: MissionCounterCounterDistributionSegment[] | null): this;
-    withDistribution(distribution: MissionCounterCounterDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.MissionCounterCounterDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.MissionCounterCounterDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MissionCounterCounterDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.MissionCounterCounterDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.MissionCounterCounterDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.MissionCounterCounterDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionCounterCounterDistribution | null;

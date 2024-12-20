@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InboxNamespaceSendByUserDistributionStatistics from './InboxNamespaceSendByUserDistributionStatistics';
 import InboxNamespaceSendByUserDistributionSegment from './InboxNamespaceSendByUserDistributionSegment';
 
 export default class InboxNamespaceSendByUserDistribution implements IModel {
-    private statistics: InboxNamespaceSendByUserDistributionStatistics|null = null;
-    private distribution: InboxNamespaceSendByUserDistributionSegment[]|null = null;
-    public getStatistics(): InboxNamespaceSendByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.InboxNamespaceSendByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.InboxNamespaceSendByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.InboxNamespaceSendByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: InboxNamespaceSendByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.InboxNamespaceSendByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: InboxNamespaceSendByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.InboxNamespaceSendByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): InboxNamespaceSendByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.InboxNamespaceSendByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: InboxNamespaceSendByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.InboxNamespaceSendByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: InboxNamespaceSendByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.InboxNamespaceSendByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class InboxNamespaceSendByUserDistribution implements IModel {
             return null;
         }
         return new InboxNamespaceSendByUserDistribution()
-            .withStatistics(InboxNamespaceSendByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InboxNamespaceSendByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return InboxNamespaceSendByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.InboxNamespaceSendByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: InboxNamespaceSendByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.InboxNamespaceSendByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

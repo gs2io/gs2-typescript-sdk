@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guard from '../../guard/model'
 import BlockingPolicyModel from './BlockingPolicyModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guard:{namespaceName}";
 
@@ -22,7 +24,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private blockingPolicy: BlockingPolicyModel|null = null;
+    private blockingPolicy: Gs2Guard.BlockingPolicyModel|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -119,14 +121,14 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getBlockingPolicy(): BlockingPolicyModel|null {
+    public getBlockingPolicy(): Gs2Guard.BlockingPolicyModel|null {
         return this.blockingPolicy;
     }
-    public setBlockingPolicy(blockingPolicy: BlockingPolicyModel|null) {
+    public setBlockingPolicy(blockingPolicy: Gs2Guard.BlockingPolicyModel|null) {
         this.blockingPolicy = blockingPolicy;
         return this;
     }
-    public withBlockingPolicy(blockingPolicy: BlockingPolicyModel|null): this {
+    public withBlockingPolicy(blockingPolicy: Gs2Guard.BlockingPolicyModel|null): this {
         this.blockingPolicy = blockingPolicy;
         return this;
     }
@@ -172,7 +174,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withBlockingPolicy(BlockingPolicyModel.fromDict(data["blockingPolicy"]))
+            .withBlockingPolicy(Gs2Guard.BlockingPolicyModel.fromDict(data["blockingPolicy"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

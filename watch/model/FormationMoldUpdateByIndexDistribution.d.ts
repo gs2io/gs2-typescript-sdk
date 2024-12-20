@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FormationMoldUpdateByIndexDistributionStatistics from './FormationMoldUpdateByIndexDistributionStatistics';
-import FormationMoldUpdateByIndexDistributionSegment from './FormationMoldUpdateByIndexDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationMoldUpdateByIndexDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FormationMoldUpdateByIndexDistributionStatistics | null;
-    setStatistics(statistics: FormationMoldUpdateByIndexDistributionStatistics | null): this;
-    withStatistics(statistics: FormationMoldUpdateByIndexDistributionStatistics | null): this;
-    getDistribution(): FormationMoldUpdateByIndexDistributionSegment[] | null;
-    setDistribution(distribution: FormationMoldUpdateByIndexDistributionSegment[] | null): this;
-    withDistribution(distribution: FormationMoldUpdateByIndexDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationMoldUpdateByIndexDistribution | null;

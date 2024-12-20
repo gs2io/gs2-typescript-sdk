@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ChatNamespacePostByRoomDistributionStatistics from './ChatNamespacePostByRoomDistributionStatistics';
 import ChatNamespacePostByRoomDistributionSegment from './ChatNamespacePostByRoomDistributionSegment';
 import ChatNamespacePostByRoomDistribution from './ChatNamespacePostByRoomDistribution';
@@ -26,39 +28,39 @@ import ChatNamespacePostByCategoryDistributionSegment from './ChatNamespacePostB
 import ChatNamespacePostByCategoryDistribution from './ChatNamespacePostByCategoryDistribution';
 
 export default class ChatNamespaceDistributions implements IModel {
-    private postByRoom: ChatNamespacePostByRoomDistribution|null = null;
-    private postByUser: ChatNamespacePostByUserDistribution|null = null;
-    private postByCategory: ChatNamespacePostByCategoryDistribution|null = null;
-    public getPostByRoom(): ChatNamespacePostByRoomDistribution|null {
+    private postByRoom: Gs2Watch.ChatNamespacePostByRoomDistribution|null = null;
+    private postByUser: Gs2Watch.ChatNamespacePostByUserDistribution|null = null;
+    private postByCategory: Gs2Watch.ChatNamespacePostByCategoryDistribution|null = null;
+    public getPostByRoom(): Gs2Watch.ChatNamespacePostByRoomDistribution|null {
         return this.postByRoom;
     }
-    public setPostByRoom(postByRoom: ChatNamespacePostByRoomDistribution|null) {
+    public setPostByRoom(postByRoom: Gs2Watch.ChatNamespacePostByRoomDistribution|null) {
         this.postByRoom = postByRoom;
         return this;
     }
-    public withPostByRoom(postByRoom: ChatNamespacePostByRoomDistribution|null): this {
+    public withPostByRoom(postByRoom: Gs2Watch.ChatNamespacePostByRoomDistribution|null): this {
         this.postByRoom = postByRoom;
         return this;
     }
-    public getPostByUser(): ChatNamespacePostByUserDistribution|null {
+    public getPostByUser(): Gs2Watch.ChatNamespacePostByUserDistribution|null {
         return this.postByUser;
     }
-    public setPostByUser(postByUser: ChatNamespacePostByUserDistribution|null) {
+    public setPostByUser(postByUser: Gs2Watch.ChatNamespacePostByUserDistribution|null) {
         this.postByUser = postByUser;
         return this;
     }
-    public withPostByUser(postByUser: ChatNamespacePostByUserDistribution|null): this {
+    public withPostByUser(postByUser: Gs2Watch.ChatNamespacePostByUserDistribution|null): this {
         this.postByUser = postByUser;
         return this;
     }
-    public getPostByCategory(): ChatNamespacePostByCategoryDistribution|null {
+    public getPostByCategory(): Gs2Watch.ChatNamespacePostByCategoryDistribution|null {
         return this.postByCategory;
     }
-    public setPostByCategory(postByCategory: ChatNamespacePostByCategoryDistribution|null) {
+    public setPostByCategory(postByCategory: Gs2Watch.ChatNamespacePostByCategoryDistribution|null) {
         this.postByCategory = postByCategory;
         return this;
     }
-    public withPostByCategory(postByCategory: ChatNamespacePostByCategoryDistribution|null): this {
+    public withPostByCategory(postByCategory: Gs2Watch.ChatNamespacePostByCategoryDistribution|null): this {
         this.postByCategory = postByCategory;
         return this;
     }
@@ -68,9 +70,9 @@ export default class ChatNamespaceDistributions implements IModel {
             return null;
         }
         return new ChatNamespaceDistributions()
-            .withPostByRoom(ChatNamespacePostByRoomDistribution.fromDict(data["postByRoom"]))
-            .withPostByUser(ChatNamespacePostByUserDistribution.fromDict(data["postByUser"]))
-            .withPostByCategory(ChatNamespacePostByCategoryDistribution.fromDict(data["postByCategory"]));
+            .withPostByRoom(Gs2Watch.ChatNamespacePostByRoomDistribution.fromDict(data["postByRoom"]))
+            .withPostByUser(Gs2Watch.ChatNamespacePostByUserDistribution.fromDict(data["postByUser"]))
+            .withPostByCategory(Gs2Watch.ChatNamespacePostByCategoryDistribution.fromDict(data["postByCategory"]));
     }
 
     public toDict(): {[key: string]: any} {

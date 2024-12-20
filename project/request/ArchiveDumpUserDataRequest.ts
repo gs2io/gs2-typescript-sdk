@@ -22,6 +22,7 @@ export default class ArchiveDumpUserDataRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
+    private ownerId: string|null = null;
     private transactionId: string|null = null;
 
     public getRequestId(): string|null {
@@ -51,6 +52,17 @@ export default class ArchiveDumpUserDataRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
+    public getOwnerId(): string|null {
+        return this.ownerId;
+    }
+    public setOwnerId(ownerId: string|null) {
+        this.ownerId = ownerId;
+        return this;
+    }
+    public withOwnerId(ownerId: string|null): this {
+        this.ownerId = ownerId;
+        return this;
+    }
     public getTransactionId(): string|null {
         return this.transactionId;
     }
@@ -65,11 +77,13 @@ export default class ArchiveDumpUserDataRequest implements IRequest {
 
     public static fromDict(data: {[key: string]: any}): ArchiveDumpUserDataRequest {
         return new ArchiveDumpUserDataRequest()
+            .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
         };
     }

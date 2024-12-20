@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestNamespaceStatistics_1 = tslib_1.__importDefault(require("./QuestNamespaceStatistics"));
-var QuestNamespaceDistributions_1 = tslib_1.__importDefault(require("./QuestNamespaceDistributions"));
-var QuestQuestGroupModel_1 = tslib_1.__importDefault(require("./QuestQuestGroupModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:quest:namespace:{namespaceName}";
 var QuestNamespace = /** @class */ (function () {
     function QuestNamespace() {
@@ -237,12 +235,12 @@ var QuestNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(QuestNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(QuestNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.QuestNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.QuestNamespaceDistributions.fromDict(data["distributions"]))
             .withQuestGroupModels(data.questGroupModels ?
             data.questGroupModels.map(function (item) {
-                return QuestQuestGroupModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.QuestQuestGroupModel.fromDict(item);
+            }) : null);
     };
     QuestNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var QuestNamespace = /** @class */ (function () {
             "questGroupModels": this.getQuestGroupModels() ?
                 this.getQuestGroupModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return QuestNamespace;

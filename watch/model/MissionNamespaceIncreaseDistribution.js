@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionNamespaceIncreaseDistributionStatistics_1 = tslib_1.__importDefault(require("./MissionNamespaceIncreaseDistributionStatistics"));
-var MissionNamespaceIncreaseDistributionSegment_1 = tslib_1.__importDefault(require("./MissionNamespaceIncreaseDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MissionNamespaceIncreaseDistribution = /** @class */ (function () {
     function MissionNamespaceIncreaseDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MissionNamespaceIncreaseDistribution = /** @class */ (function () {
             return null;
         }
         return new MissionNamespaceIncreaseDistribution()
-            .withStatistics(MissionNamespaceIncreaseDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MissionNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MissionNamespaceIncreaseDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MissionNamespaceIncreaseDistributionSegment.fromDict(item);
+            }) : null);
     };
     MissionNamespaceIncreaseDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MissionNamespaceIncreaseDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MissionNamespaceIncreaseDistribution;

@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InboxNamespaceSendByUserDistribution_1 = tslib_1.__importDefault(require("./InboxNamespaceSendByUserDistribution"));
-var InboxNamespaceReadElapsedMinutesDistribution_1 = tslib_1.__importDefault(require("./InboxNamespaceReadElapsedMinutesDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InboxNamespaceDistributions = /** @class */ (function () {
     function InboxNamespaceDistributions() {
         this.sendByUser = null;
@@ -50,8 +49,8 @@ var InboxNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new InboxNamespaceDistributions()
-            .withSendByUser(InboxNamespaceSendByUserDistribution_1.default.fromDict(data["sendByUser"]))
-            .withReadElapsedMinutes(InboxNamespaceReadElapsedMinutesDistribution_1.default.fromDict(data["readElapsedMinutes"]));
+            .withSendByUser(Gs2Watch.InboxNamespaceSendByUserDistribution.fromDict(data["sendByUser"]))
+            .withReadElapsedMinutes(Gs2Watch.InboxNamespaceReadElapsedMinutesDistribution.fromDict(data["readElapsedMinutes"]));
     };
     InboxNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

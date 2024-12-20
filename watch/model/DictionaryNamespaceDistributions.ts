@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DictionaryNamespaceEntryByNameDistributionStatistics from './DictionaryNamespaceEntryByNameDistributionStatistics';
 import DictionaryNamespaceEntryByNameDistributionSegment from './DictionaryNamespaceEntryByNameDistributionSegment';
 import DictionaryNamespaceEntryByNameDistribution from './DictionaryNamespaceEntryByNameDistribution';
@@ -23,27 +25,27 @@ import DictionaryNamespaceEntryByUserDistributionSegment from './DictionaryNames
 import DictionaryNamespaceEntryByUserDistribution from './DictionaryNamespaceEntryByUserDistribution';
 
 export default class DictionaryNamespaceDistributions implements IModel {
-    private entryByName: DictionaryNamespaceEntryByNameDistribution|null = null;
-    private entryByUser: DictionaryNamespaceEntryByUserDistribution|null = null;
-    public getEntryByName(): DictionaryNamespaceEntryByNameDistribution|null {
+    private entryByName: Gs2Watch.DictionaryNamespaceEntryByNameDistribution|null = null;
+    private entryByUser: Gs2Watch.DictionaryNamespaceEntryByUserDistribution|null = null;
+    public getEntryByName(): Gs2Watch.DictionaryNamespaceEntryByNameDistribution|null {
         return this.entryByName;
     }
-    public setEntryByName(entryByName: DictionaryNamespaceEntryByNameDistribution|null) {
+    public setEntryByName(entryByName: Gs2Watch.DictionaryNamespaceEntryByNameDistribution|null) {
         this.entryByName = entryByName;
         return this;
     }
-    public withEntryByName(entryByName: DictionaryNamespaceEntryByNameDistribution|null): this {
+    public withEntryByName(entryByName: Gs2Watch.DictionaryNamespaceEntryByNameDistribution|null): this {
         this.entryByName = entryByName;
         return this;
     }
-    public getEntryByUser(): DictionaryNamespaceEntryByUserDistribution|null {
+    public getEntryByUser(): Gs2Watch.DictionaryNamespaceEntryByUserDistribution|null {
         return this.entryByUser;
     }
-    public setEntryByUser(entryByUser: DictionaryNamespaceEntryByUserDistribution|null) {
+    public setEntryByUser(entryByUser: Gs2Watch.DictionaryNamespaceEntryByUserDistribution|null) {
         this.entryByUser = entryByUser;
         return this;
     }
-    public withEntryByUser(entryByUser: DictionaryNamespaceEntryByUserDistribution|null): this {
+    public withEntryByUser(entryByUser: Gs2Watch.DictionaryNamespaceEntryByUserDistribution|null): this {
         this.entryByUser = entryByUser;
         return this;
     }
@@ -53,8 +55,8 @@ export default class DictionaryNamespaceDistributions implements IModel {
             return null;
         }
         return new DictionaryNamespaceDistributions()
-            .withEntryByName(DictionaryNamespaceEntryByNameDistribution.fromDict(data["entryByName"]))
-            .withEntryByUser(DictionaryNamespaceEntryByUserDistribution.fromDict(data["entryByUser"]));
+            .withEntryByName(Gs2Watch.DictionaryNamespaceEntryByNameDistribution.fromDict(data["entryByName"]))
+            .withEntryByUser(Gs2Watch.DictionaryNamespaceEntryByUserDistribution.fromDict(data["entryByUser"]));
     }
 
     public toDict(): {[key: string]: any} {

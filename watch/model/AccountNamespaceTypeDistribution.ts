@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import AccountNamespaceTypeDistributionStatistics from './AccountNamespaceTypeDistributionStatistics';
 import AccountNamespaceTypeDistributionSegment from './AccountNamespaceTypeDistributionSegment';
 
 export default class AccountNamespaceTypeDistribution implements IModel {
-    private statistics: AccountNamespaceTypeDistributionStatistics|null = null;
-    private distribution: AccountNamespaceTypeDistributionSegment[]|null = null;
-    public getStatistics(): AccountNamespaceTypeDistributionStatistics|null {
+    private statistics: Gs2Watch.AccountNamespaceTypeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.AccountNamespaceTypeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.AccountNamespaceTypeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: AccountNamespaceTypeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.AccountNamespaceTypeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: AccountNamespaceTypeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.AccountNamespaceTypeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): AccountNamespaceTypeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.AccountNamespaceTypeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: AccountNamespaceTypeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.AccountNamespaceTypeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: AccountNamespaceTypeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.AccountNamespaceTypeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class AccountNamespaceTypeDistribution implements IModel {
             return null;
         }
         return new AccountNamespaceTypeDistribution()
-            .withStatistics(AccountNamespaceTypeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.AccountNamespaceTypeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return AccountNamespaceTypeDistributionSegment.fromDict(item);
+                    return Gs2Watch.AccountNamespaceTypeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: AccountNamespaceTypeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.AccountNamespaceTypeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

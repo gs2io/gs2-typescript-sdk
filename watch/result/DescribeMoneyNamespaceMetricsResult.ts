@@ -40,7 +40,7 @@ export default class DescribeMoneyNamespaceMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.MoneyNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMoneyNamespaceMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.MoneyNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

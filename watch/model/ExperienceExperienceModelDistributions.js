@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceExperienceModelAddExperienceByUserDistribution_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddExperienceByUserDistribution"));
-var ExperienceExperienceModelAddExperienceAmountByUserDistribution_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddExperienceAmountByUserDistribution"));
-var ExperienceExperienceModelAddRankCapByUserDistribution_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddRankCapByUserDistribution"));
-var ExperienceExperienceModelAddRankCapAmountByUserDistribution_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddRankCapAmountByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceExperienceModelDistributions = /** @class */ (function () {
     function ExperienceExperienceModelDistributions() {
         this.addExperienceByUser = null;
@@ -76,10 +73,10 @@ var ExperienceExperienceModelDistributions = /** @class */ (function () {
             return null;
         }
         return new ExperienceExperienceModelDistributions()
-            .withAddExperienceByUser(ExperienceExperienceModelAddExperienceByUserDistribution_1.default.fromDict(data["addExperienceByUser"]))
-            .withAddExperienceAmountByUser(ExperienceExperienceModelAddExperienceAmountByUserDistribution_1.default.fromDict(data["addExperienceAmountByUser"]))
-            .withAddRankCapByUser(ExperienceExperienceModelAddRankCapByUserDistribution_1.default.fromDict(data["addRankCapByUser"]))
-            .withAddRankCapAmountByUser(ExperienceExperienceModelAddRankCapAmountByUserDistribution_1.default.fromDict(data["addRankCapAmountByUser"]));
+            .withAddExperienceByUser(Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution.fromDict(data["addExperienceByUser"]))
+            .withAddExperienceAmountByUser(Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution.fromDict(data["addExperienceAmountByUser"]))
+            .withAddRankCapByUser(Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution.fromDict(data["addRankCapByUser"]))
+            .withAddRankCapAmountByUser(Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution.fromDict(data["addRankCapAmountByUser"]));
     };
     ExperienceExperienceModelDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

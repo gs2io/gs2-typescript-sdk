@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationFormSlotDistributionStatistics from './FormationFormSlotDistributionStatistics';
 import FormationFormSlotDistributionSegment from './FormationFormSlotDistributionSegment';
 import FormationFormSlotDistribution from './FormationFormSlotDistribution';
@@ -23,27 +25,27 @@ import FormationFormUsageDistributionSegment from './FormationFormUsageDistribut
 import FormationFormUsageDistribution from './FormationFormUsageDistribution';
 
 export default class FormationFormDistributions implements IModel {
-    private slot: FormationFormSlotDistribution|null = null;
-    private usage: FormationFormUsageDistribution|null = null;
-    public getSlot(): FormationFormSlotDistribution|null {
+    private slot: Gs2Watch.FormationFormSlotDistribution|null = null;
+    private usage: Gs2Watch.FormationFormUsageDistribution|null = null;
+    public getSlot(): Gs2Watch.FormationFormSlotDistribution|null {
         return this.slot;
     }
-    public setSlot(slot: FormationFormSlotDistribution|null) {
+    public setSlot(slot: Gs2Watch.FormationFormSlotDistribution|null) {
         this.slot = slot;
         return this;
     }
-    public withSlot(slot: FormationFormSlotDistribution|null): this {
+    public withSlot(slot: Gs2Watch.FormationFormSlotDistribution|null): this {
         this.slot = slot;
         return this;
     }
-    public getUsage(): FormationFormUsageDistribution|null {
+    public getUsage(): Gs2Watch.FormationFormUsageDistribution|null {
         return this.usage;
     }
-    public setUsage(usage: FormationFormUsageDistribution|null) {
+    public setUsage(usage: Gs2Watch.FormationFormUsageDistribution|null) {
         this.usage = usage;
         return this;
     }
-    public withUsage(usage: FormationFormUsageDistribution|null): this {
+    public withUsage(usage: Gs2Watch.FormationFormUsageDistribution|null): this {
         this.usage = usage;
         return this;
     }
@@ -53,8 +55,8 @@ export default class FormationFormDistributions implements IModel {
             return null;
         }
         return new FormationFormDistributions()
-            .withSlot(FormationFormSlotDistribution.fromDict(data["slot"]))
-            .withUsage(FormationFormUsageDistribution.fromDict(data["usage"]));
+            .withSlot(Gs2Watch.FormationFormSlotDistribution.fromDict(data["slot"]))
+            .withUsage(Gs2Watch.FormationFormUsageDistribution.fromDict(data["usage"]));
     }
 
     public toDict(): {[key: string]: any} {

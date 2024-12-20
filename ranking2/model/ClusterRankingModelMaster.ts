@@ -35,6 +35,7 @@ export default class ClusterRankingModelMaster implements IModel {
     private entryPeriodEventId: string|null = null;
     private rankingRewards: Gs2Ranking2.RankingReward[]|null = null;
     private accessPeriodEventId: string|null = null;
+    private rewardCalculationIndex: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -262,6 +263,17 @@ export default class ClusterRankingModelMaster implements IModel {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
+    public getRewardCalculationIndex(): string|null {
+        return this.rewardCalculationIndex;
+    }
+    public setRewardCalculationIndex(rewardCalculationIndex: string|null) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
+    public withRewardCalculationIndex(rewardCalculationIndex: string|null): this {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -318,6 +330,7 @@ export default class ClusterRankingModelMaster implements IModel {
                 }
             ) : null)
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withRewardCalculationIndex(data["rewardCalculationIndex"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -342,6 +355,7 @@ export default class ClusterRankingModelMaster implements IModel {
                 }
             ) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

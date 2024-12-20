@@ -5,6 +5,7 @@ export default class AcceptVersion implements IModel {
     private versionName;
     private userId;
     private version;
+    private status;
     private createdAt;
     private updatedAt;
     private revision;
@@ -27,6 +28,9 @@ export default class AcceptVersion implements IModel {
     getVersion(): Gs2Version.Version | null;
     setVersion(version: Gs2Version.Version | null): this;
     withVersion(version: Gs2Version.Version | null): this;
+    getStatus(): string | null;
+    setStatus(status: string | null): this;
+    withStatus(status: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

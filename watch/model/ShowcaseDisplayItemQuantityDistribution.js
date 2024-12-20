@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ShowcaseDisplayItemQuantityDistributionStatistics_1 = tslib_1.__importDefault(require("./ShowcaseDisplayItemQuantityDistributionStatistics"));
-var ShowcaseDisplayItemQuantityDistributionSegment_1 = tslib_1.__importDefault(require("./ShowcaseDisplayItemQuantityDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ShowcaseDisplayItemQuantityDistribution = /** @class */ (function () {
     function ShowcaseDisplayItemQuantityDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ShowcaseDisplayItemQuantityDistribution = /** @class */ (function () {
             return null;
         }
         return new ShowcaseDisplayItemQuantityDistribution()
-            .withStatistics(ShowcaseDisplayItemQuantityDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ShowcaseDisplayItemQuantityDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ShowcaseDisplayItemQuantityDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ShowcaseDisplayItemQuantityDistributionSegment.fromDict(item);
+            }) : null);
     };
     ShowcaseDisplayItemQuantityDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ShowcaseDisplayItemQuantityDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ShowcaseDisplayItemQuantityDistribution;

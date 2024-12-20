@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ChatNamespacePostByUserDistributionStatistics from './ChatNamespacePostByUserDistributionStatistics';
-import ChatNamespacePostByUserDistributionSegment from './ChatNamespacePostByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ChatNamespacePostByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ChatNamespacePostByUserDistributionStatistics | null;
-    setStatistics(statistics: ChatNamespacePostByUserDistributionStatistics | null): this;
-    withStatistics(statistics: ChatNamespacePostByUserDistributionStatistics | null): this;
-    getDistribution(): ChatNamespacePostByUserDistributionSegment[] | null;
-    setDistribution(distribution: ChatNamespacePostByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: ChatNamespacePostByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ChatNamespacePostByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ChatNamespacePostByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ChatNamespacePostByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ChatNamespacePostByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ChatNamespacePostByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ChatNamespacePostByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ChatNamespacePostByUserDistribution | null;

@@ -11,6 +11,7 @@ export default class GlobalRankingModel implements IModel {
     private entryPeriodEventId;
     private rankingRewards;
     private accessPeriodEventId;
+    private rewardCalculationIndex;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -47,6 +48,9 @@ export default class GlobalRankingModel implements IModel {
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    getRewardCalculationIndex(): string | null;
+    setRewardCalculationIndex(rewardCalculationIndex: string | null): this;
+    withRewardCalculationIndex(rewardCalculationIndex: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GlobalRankingModel | null;

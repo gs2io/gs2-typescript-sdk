@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyReceiptVerificationByUserDistribution_1 = tslib_1.__importDefault(require("./MoneyReceiptVerificationByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyReceiptDistributions = /** @class */ (function () {
     function MoneyReceiptDistributions() {
         this.verificationByUser = null;
@@ -37,7 +37,7 @@ var MoneyReceiptDistributions = /** @class */ (function () {
             return null;
         }
         return new MoneyReceiptDistributions()
-            .withVerificationByUser(MoneyReceiptVerificationByUserDistribution_1.default.fromDict(data["verificationByUser"]));
+            .withVerificationByUser(Gs2Watch.MoneyReceiptVerificationByUserDistribution.fromDict(data["verificationByUser"]));
     };
     MoneyReceiptDistributions.prototype.toDict = function () {
         var _a;

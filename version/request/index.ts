@@ -37,6 +37,8 @@ import DescribeAcceptVersionsRequest from "./DescribeAcceptVersionsRequest"
 import DescribeAcceptVersionsByUserIdRequest from "./DescribeAcceptVersionsByUserIdRequest"
 import AcceptRequest from "./AcceptRequest"
 import AcceptByUserIdRequest from "./AcceptByUserIdRequest"
+import RejectRequest from "./RejectRequest"
+import RejectByUserIdRequest from "./RejectByUserIdRequest"
 import GetAcceptVersionRequest from "./GetAcceptVersionRequest"
 import GetAcceptVersionByUserIdRequest from "./GetAcceptVersionByUserIdRequest"
 import DeleteAcceptVersionRequest from "./DeleteAcceptVersionRequest"
@@ -74,6 +76,8 @@ export {
     DescribeAcceptVersionsByUserIdRequest,
     AcceptRequest,
     AcceptByUserIdRequest,
+    RejectRequest,
+    RejectByUserIdRequest,
     GetAcceptVersionRequest,
     GetAcceptVersionByUserIdRequest,
     DeleteAcceptVersionRequest,

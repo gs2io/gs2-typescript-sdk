@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InboxNamespaceReadElapsedMinutesDistributionStatistics from './InboxNamespaceReadElapsedMinutesDistributionStatistics';
 import InboxNamespaceReadElapsedMinutesDistributionSegment from './InboxNamespaceReadElapsedMinutesDistributionSegment';
 
 export default class InboxNamespaceReadElapsedMinutesDistribution implements IModel {
-    private statistics: InboxNamespaceReadElapsedMinutesDistributionStatistics|null = null;
-    private distribution: InboxNamespaceReadElapsedMinutesDistributionSegment[]|null = null;
-    public getStatistics(): InboxNamespaceReadElapsedMinutesDistributionStatistics|null {
+    private statistics: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics|null = null;
+    private distribution: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: InboxNamespaceReadElapsedMinutesDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: InboxNamespaceReadElapsedMinutesDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): InboxNamespaceReadElapsedMinutesDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: InboxNamespaceReadElapsedMinutesDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: InboxNamespaceReadElapsedMinutesDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class InboxNamespaceReadElapsedMinutesDistribution implements IMo
             return null;
         }
         return new InboxNamespaceReadElapsedMinutesDistribution()
-            .withStatistics(InboxNamespaceReadElapsedMinutesDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return InboxNamespaceReadElapsedMinutesDistributionSegment.fromDict(item);
+                    return Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: InboxNamespaceReadElapsedMinutesDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

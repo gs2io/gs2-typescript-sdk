@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseDisplayItemQuantityDistributionStatistics from './ShowcaseDisplayItemQuantityDistributionStatistics';
 import ShowcaseDisplayItemQuantityDistributionSegment from './ShowcaseDisplayItemQuantityDistributionSegment';
 import ShowcaseDisplayItemQuantityDistribution from './ShowcaseDisplayItemQuantityDistribution';
 
 export default class ShowcaseDisplayItemDistributions implements IModel {
-    private quantity: ShowcaseDisplayItemQuantityDistribution|null = null;
-    public getQuantity(): ShowcaseDisplayItemQuantityDistribution|null {
+    private quantity: Gs2Watch.ShowcaseDisplayItemQuantityDistribution|null = null;
+    public getQuantity(): Gs2Watch.ShowcaseDisplayItemQuantityDistribution|null {
         return this.quantity;
     }
-    public setQuantity(quantity: ShowcaseDisplayItemQuantityDistribution|null) {
+    public setQuantity(quantity: Gs2Watch.ShowcaseDisplayItemQuantityDistribution|null) {
         this.quantity = quantity;
         return this;
     }
-    public withQuantity(quantity: ShowcaseDisplayItemQuantityDistribution|null): this {
+    public withQuantity(quantity: Gs2Watch.ShowcaseDisplayItemQuantityDistribution|null): this {
         this.quantity = quantity;
         return this;
     }
@@ -38,7 +40,7 @@ export default class ShowcaseDisplayItemDistributions implements IModel {
             return null;
         }
         return new ShowcaseDisplayItemDistributions()
-            .withQuantity(ShowcaseDisplayItemQuantityDistribution.fromDict(data["quantity"]));
+            .withQuantity(Gs2Watch.ShowcaseDisplayItemQuantityDistribution.fromDict(data["quantity"]));
     }
 
     public toDict(): {[key: string]: any} {

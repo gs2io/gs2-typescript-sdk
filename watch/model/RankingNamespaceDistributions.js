@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingNamespacePutDistribution_1 = tslib_1.__importDefault(require("./RankingNamespacePutDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var RankingNamespaceDistributions = /** @class */ (function () {
     function RankingNamespaceDistributions() {
         this.put = null;
@@ -37,7 +37,7 @@ var RankingNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new RankingNamespaceDistributions()
-            .withPut(RankingNamespacePutDistribution_1.default.fromDict(data["put"]));
+            .withPut(Gs2Watch.RankingNamespacePutDistribution.fromDict(data["put"]));
     };
     RankingNamespaceDistributions.prototype.toDict = function () {
         var _a;

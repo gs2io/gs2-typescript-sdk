@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationNamespaceStatistics from './FormationNamespaceStatistics';
 import FormationNamespaceUpdateByMoldDistributionStatistics from './FormationNamespaceUpdateByMoldDistributionStatistics';
 import FormationNamespaceUpdateByMoldDistributionSegment from './FormationNamespaceUpdateByMoldDistributionSegment';
@@ -49,9 +51,9 @@ export default class FormationNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: FormationNamespaceStatistics|null = null;
-    private distributions: FormationNamespaceDistributions|null = null;
-    private molds: FormationMold[]|null = null;
+    private statistics: Gs2Watch.FormationNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.FormationNamespaceDistributions|null = null;
+    private molds: Gs2Watch.FormationMold[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -236,36 +238,36 @@ export default class FormationNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): FormationNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.FormationNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): FormationNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.FormationNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: FormationNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.FormationNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: FormationNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.FormationNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getMolds(): FormationMold[]|null {
+    public getMolds(): Gs2Watch.FormationMold[]|null {
         return this.molds;
     }
-    public setMolds(molds: FormationMold[]|null) {
+    public setMolds(molds: Gs2Watch.FormationMold[]|null) {
         this.molds = molds;
         return this;
     }
-    public withMolds(molds: FormationMold[]|null): this {
+    public withMolds(molds: Gs2Watch.FormationMold[]|null): this {
         this.molds = molds;
         return this;
     }
@@ -280,13 +282,13 @@ export default class FormationNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(FormationNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(FormationNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.FormationNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationNamespaceDistributions.fromDict(data["distributions"]))
             .withMolds(data.molds ?
                 data.molds.map((item: {[key: string]: any}) => {
-                    return FormationMold.fromDict(item);
+                    return Gs2Watch.FormationMold.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -299,10 +301,10 @@ export default class FormationNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "molds": this.getMolds() ?
-                this.getMolds()!.map((item: FormationMold) => {
+                this.getMolds()!.map((item: Gs2Watch.FormationMold) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

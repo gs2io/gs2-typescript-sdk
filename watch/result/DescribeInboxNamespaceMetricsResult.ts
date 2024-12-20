@@ -40,7 +40,7 @@ export default class DescribeInboxNamespaceMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.InboxNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeInboxNamespaceMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.InboxNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

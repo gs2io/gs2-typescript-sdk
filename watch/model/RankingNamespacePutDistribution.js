@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingNamespacePutDistributionStatistics_1 = tslib_1.__importDefault(require("./RankingNamespacePutDistributionStatistics"));
-var RankingNamespacePutDistributionSegment_1 = tslib_1.__importDefault(require("./RankingNamespacePutDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var RankingNamespacePutDistribution = /** @class */ (function () {
     function RankingNamespacePutDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var RankingNamespacePutDistribution = /** @class */ (function () {
             return null;
         }
         return new RankingNamespacePutDistribution()
-            .withStatistics(RankingNamespacePutDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.RankingNamespacePutDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return RankingNamespacePutDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.RankingNamespacePutDistributionSegment.fromDict(item);
+            }) : null);
     };
     RankingNamespacePutDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var RankingNamespacePutDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RankingNamespacePutDistribution;

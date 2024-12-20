@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import StaminaStaminaModelStatistics from './StaminaStaminaModelStatistics';
-import StaminaStaminaModelDistributions from './StaminaStaminaModelDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class StaminaStaminaModel implements IModel {
     private staminaModelId;
     private staminaName;
@@ -21,12 +20,12 @@ export default class StaminaStaminaModel implements IModel {
     getStaminaName(): string | null;
     setStaminaName(staminaName: string | null): this;
     withStaminaName(staminaName: string | null): this;
-    getStatistics(): StaminaStaminaModelStatistics | null;
-    setStatistics(statistics: StaminaStaminaModelStatistics | null): this;
-    withStatistics(statistics: StaminaStaminaModelStatistics | null): this;
-    getDistributions(): StaminaStaminaModelDistributions | null;
-    setDistributions(distributions: StaminaStaminaModelDistributions | null): this;
-    withDistributions(distributions: StaminaStaminaModelDistributions | null): this;
+    getStatistics(): Gs2Watch.StaminaStaminaModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.StaminaStaminaModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.StaminaStaminaModelStatistics | null): this;
+    getDistributions(): Gs2Watch.StaminaStaminaModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.StaminaStaminaModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.StaminaStaminaModelDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StaminaStaminaModel | null;

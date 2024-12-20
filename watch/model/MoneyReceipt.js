@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyReceiptStatistics_1 = tslib_1.__importDefault(require("./MoneyReceiptStatistics"));
-var MoneyReceiptDistributions_1 = tslib_1.__importDefault(require("./MoneyReceiptDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:money:namespace:{namespaceName}:receipt:{contentsId}";
 var MoneyReceipt = /** @class */ (function () {
     function MoneyReceipt() {
@@ -209,8 +208,8 @@ var MoneyReceipt = /** @class */ (function () {
         return new MoneyReceipt()
             .withReceiptId(data["receiptId"])
             .withContentsId(data["contentsId"])
-            .withStatistics(MoneyReceiptStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(MoneyReceiptDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MoneyReceiptStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyReceiptDistributions.fromDict(data["distributions"]));
     };
     MoneyReceipt.prototype.toDict = function () {
         var _a, _b;

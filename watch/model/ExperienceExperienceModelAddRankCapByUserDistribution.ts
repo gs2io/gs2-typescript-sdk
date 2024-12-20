@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceExperienceModelAddRankCapByUserDistributionStatistics from './ExperienceExperienceModelAddRankCapByUserDistributionStatistics';
 import ExperienceExperienceModelAddRankCapByUserDistributionSegment from './ExperienceExperienceModelAddRankCapByUserDistributionSegment';
 
 export default class ExperienceExperienceModelAddRankCapByUserDistribution implements IModel {
-    private statistics: ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null = null;
-    private distribution: ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null = null;
-    public getStatistics(): ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExperienceExperienceModelAddRankCapByUserDistribution imple
             return null;
         }
         return new ExperienceExperienceModelAddRankCapByUserDistribution()
-            .withStatistics(ExperienceExperienceModelAddRankCapByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExperienceExperienceModelAddRankCapByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExperienceExperienceModelAddRankCapByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

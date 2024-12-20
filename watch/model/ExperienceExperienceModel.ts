@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceExperienceModelStatistics from './ExperienceExperienceModelStatistics';
 import ExperienceExperienceModelAddExperienceByUserDistributionStatistics from './ExperienceExperienceModelAddExperienceByUserDistributionStatistics';
 import ExperienceExperienceModelAddExperienceByUserDistributionSegment from './ExperienceExperienceModelAddExperienceByUserDistributionSegment';
@@ -42,9 +44,9 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class ExperienceExperienceModel implements IModel {
     private experienceModelId: string|null = null;
     private experienceName: string|null = null;
-    private statistics: ExperienceExperienceModelStatistics|null = null;
-    private distributions: ExperienceExperienceModelDistributions|null = null;
-    private statuses: ExperienceStatus[]|null = null;
+    private statistics: Gs2Watch.ExperienceExperienceModelStatistics|null = null;
+    private distributions: Gs2Watch.ExperienceExperienceModelDistributions|null = null;
+    private statuses: Gs2Watch.ExperienceStatus[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -223,36 +225,36 @@ export default class ExperienceExperienceModel implements IModel {
         this.experienceName = experienceName;
         return this;
     }
-    public getStatistics(): ExperienceExperienceModelStatistics|null {
+    public getStatistics(): Gs2Watch.ExperienceExperienceModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceExperienceModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceExperienceModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceExperienceModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceExperienceModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ExperienceExperienceModelDistributions|null {
+    public getDistributions(): Gs2Watch.ExperienceExperienceModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ExperienceExperienceModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ExperienceExperienceModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ExperienceExperienceModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ExperienceExperienceModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getStatuses(): ExperienceStatus[]|null {
+    public getStatuses(): Gs2Watch.ExperienceStatus[]|null {
         return this.statuses;
     }
-    public setStatuses(statuses: ExperienceStatus[]|null) {
+    public setStatuses(statuses: Gs2Watch.ExperienceStatus[]|null) {
         this.statuses = statuses;
         return this;
     }
-    public withStatuses(statuses: ExperienceStatus[]|null): this {
+    public withStatuses(statuses: Gs2Watch.ExperienceStatus[]|null): this {
         this.statuses = statuses;
         return this;
     }
@@ -264,13 +266,13 @@ export default class ExperienceExperienceModel implements IModel {
         return new ExperienceExperienceModel()
             .withExperienceModelId(data["experienceModelId"])
             .withExperienceName(data["experienceName"])
-            .withStatistics(ExperienceExperienceModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(ExperienceExperienceModelDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExperienceExperienceModelDistributions.fromDict(data["distributions"]))
             .withStatuses(data.statuses ?
                 data.statuses.map((item: {[key: string]: any}) => {
-                    return ExperienceStatus.fromDict(item);
+                    return Gs2Watch.ExperienceStatus.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -280,10 +282,10 @@ export default class ExperienceExperienceModel implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "statuses": this.getStatuses() ?
-                this.getStatuses()!.map((item: ExperienceStatus) => {
+                this.getStatuses()!.map((item: Gs2Watch.ExperienceStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import EngagementHistory from './EngagementHistory';
 import EngagementAverage from './EngagementAverage';
 
 export default class Engagements implements IModel {
-    private history: EngagementHistory[]|null = null;
-    private avg: EngagementAverage|null = null;
-    public getHistory(): EngagementHistory[]|null {
+    private history: Gs2Watch.EngagementHistory[]|null = null;
+    private avg: Gs2Watch.EngagementAverage|null = null;
+    public getHistory(): Gs2Watch.EngagementHistory[]|null {
         return this.history;
     }
-    public setHistory(history: EngagementHistory[]|null) {
+    public setHistory(history: Gs2Watch.EngagementHistory[]|null) {
         this.history = history;
         return this;
     }
-    public withHistory(history: EngagementHistory[]|null): this {
+    public withHistory(history: Gs2Watch.EngagementHistory[]|null): this {
         this.history = history;
         return this;
     }
-    public getAvg(): EngagementAverage|null {
+    public getAvg(): Gs2Watch.EngagementAverage|null {
         return this.avg;
     }
-    public setAvg(avg: EngagementAverage|null) {
+    public setAvg(avg: Gs2Watch.EngagementAverage|null) {
         this.avg = avg;
         return this;
     }
-    public withAvg(avg: EngagementAverage|null): this {
+    public withAvg(avg: Gs2Watch.EngagementAverage|null): this {
         this.avg = avg;
         return this;
     }
@@ -51,19 +53,19 @@ export default class Engagements implements IModel {
         return new Engagements()
             .withHistory(data.history ?
                 data.history.map((item: {[key: string]: any}) => {
-                    return EngagementHistory.fromDict(item);
+                    return Gs2Watch.EngagementHistory.fromDict(item);
                 }
-            ) : [])
-            .withAvg(EngagementAverage.fromDict(data["avg"]));
+            ) : null)
+            .withAvg(Gs2Watch.EngagementAverage.fromDict(data["avg"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "history": this.getHistory() ?
-                this.getHistory()!.map((item: EngagementHistory) => {
+                this.getHistory()!.map((item: Gs2Watch.EngagementHistory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "avg": this.getAvg()?.toDict(),
         };
     }

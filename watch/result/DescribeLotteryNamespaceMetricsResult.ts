@@ -40,7 +40,7 @@ export default class DescribeLotteryNamespaceMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.LotteryNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeLotteryNamespaceMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.LotteryNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

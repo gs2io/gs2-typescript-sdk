@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitLimitModelStatistics from './LimitLimitModelStatistics';
 import LimitLimitModelIncreaseDistributionStatistics from './LimitLimitModelIncreaseDistributionStatistics';
 import LimitLimitModelIncreaseDistributionSegment from './LimitLimitModelIncreaseDistributionSegment';
@@ -40,9 +42,9 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class LimitLimitModel implements IModel {
     private limitModelId: string|null = null;
     private limitName: string|null = null;
-    private statistics: LimitLimitModelStatistics|null = null;
-    private distributions: LimitLimitModelDistributions|null = null;
-    private counters: LimitCounter[]|null = null;
+    private statistics: Gs2Watch.LimitLimitModelStatistics|null = null;
+    private distributions: Gs2Watch.LimitLimitModelDistributions|null = null;
+    private counters: Gs2Watch.LimitCounter[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -221,36 +223,36 @@ export default class LimitLimitModel implements IModel {
         this.limitName = limitName;
         return this;
     }
-    public getStatistics(): LimitLimitModelStatistics|null {
+    public getStatistics(): Gs2Watch.LimitLimitModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LimitLimitModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LimitLimitModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LimitLimitModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LimitLimitModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): LimitLimitModelDistributions|null {
+    public getDistributions(): Gs2Watch.LimitLimitModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: LimitLimitModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.LimitLimitModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: LimitLimitModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.LimitLimitModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getCounters(): LimitCounter[]|null {
+    public getCounters(): Gs2Watch.LimitCounter[]|null {
         return this.counters;
     }
-    public setCounters(counters: LimitCounter[]|null) {
+    public setCounters(counters: Gs2Watch.LimitCounter[]|null) {
         this.counters = counters;
         return this;
     }
-    public withCounters(counters: LimitCounter[]|null): this {
+    public withCounters(counters: Gs2Watch.LimitCounter[]|null): this {
         this.counters = counters;
         return this;
     }
@@ -262,13 +264,13 @@ export default class LimitLimitModel implements IModel {
         return new LimitLimitModel()
             .withLimitModelId(data["limitModelId"])
             .withLimitName(data["limitName"])
-            .withStatistics(LimitLimitModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(LimitLimitModelDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.LimitLimitModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LimitLimitModelDistributions.fromDict(data["distributions"]))
             .withCounters(data.counters ?
                 data.counters.map((item: {[key: string]: any}) => {
-                    return LimitCounter.fromDict(item);
+                    return Gs2Watch.LimitCounter.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -278,10 +280,10 @@ export default class LimitLimitModel implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "counters": this.getCounters() ?
-                this.getCounters()!.map((item: LimitCounter) => {
+                this.getCounters()!.map((item: Gs2Watch.LimitCounter) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

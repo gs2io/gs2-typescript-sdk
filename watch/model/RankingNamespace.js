@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingNamespaceStatistics_1 = tslib_1.__importDefault(require("./RankingNamespaceStatistics"));
-var RankingNamespaceDistributions_1 = tslib_1.__importDefault(require("./RankingNamespaceDistributions"));
-var RankingCategoryModel_1 = tslib_1.__importDefault(require("./RankingCategoryModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:ranking:namespace:{namespaceName}";
 var RankingNamespace = /** @class */ (function () {
     function RankingNamespace() {
@@ -237,12 +235,12 @@ var RankingNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(RankingNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(RankingNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.RankingNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.RankingNamespaceDistributions.fromDict(data["distributions"]))
             .withCategoryModels(data.categoryModels ?
             data.categoryModels.map(function (item) {
-                return RankingCategoryModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.RankingCategoryModel.fromDict(item);
+            }) : null);
     };
     RankingNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var RankingNamespace = /** @class */ (function () {
             "categoryModels": this.getCategoryModels() ?
                 this.getCategoryModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RankingNamespace;

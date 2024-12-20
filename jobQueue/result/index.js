@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDeadLetterJobByUserIdResult = exports.GetDeadLetterJobByUserIdResult = exports.DescribeDeadLetterJobsByUserIdResult = exports.GetJobResultByUserIdResult = exports.GetJobResultResult = exports.DeleteByStampTaskResult = exports.PushByStampSheetResult = exports.DeleteJobByUserIdResult = exports.DeleteJobResult = exports.RunByUserIdResult = exports.RunResult = exports.PushByUserIdResult = exports.GetJobByUserIdResult = exports.DescribeJobsByUserIdResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetJobResultByUserIdResult = exports.GetJobResultResult = exports.DeleteByStampTaskResult = exports.PushByStampSheetResult = exports.DeleteJobByUserIdResult = exports.DeleteJobResult = exports.RunByUserIdResult = exports.RunResult = exports.PushByUserIdResult = exports.GetJobByUserIdResult = exports.DescribeJobsByUserIdResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -65,10 +65,4 @@ var GetJobResultResult_1 = tslib_1.__importDefault(require("./GetJobResultResult
 exports.GetJobResultResult = GetJobResultResult_1.default;
 var GetJobResultByUserIdResult_1 = tslib_1.__importDefault(require("./GetJobResultByUserIdResult"));
 exports.GetJobResultByUserIdResult = GetJobResultByUserIdResult_1.default;
-var DescribeDeadLetterJobsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeDeadLetterJobsByUserIdResult"));
-exports.DescribeDeadLetterJobsByUserIdResult = DescribeDeadLetterJobsByUserIdResult_1.default;
-var GetDeadLetterJobByUserIdResult_1 = tslib_1.__importDefault(require("./GetDeadLetterJobByUserIdResult"));
-exports.GetDeadLetterJobByUserIdResult = GetDeadLetterJobByUserIdResult_1.default;
-var DeleteDeadLetterJobByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteDeadLetterJobByUserIdResult"));
-exports.DeleteDeadLetterJobByUserIdResult = DeleteDeadLetterJobByUserIdResult_1.default;
 //# sourceMappingURL=index.js.map

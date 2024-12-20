@@ -2,6 +2,7 @@ import IRequest from '../../core/interface/IRequest';
 export default class WaitDumpUserDataRequest implements IRequest {
     private requestId;
     private contextStack;
+    private ownerId;
     private transactionId;
     private userId;
     private microserviceName;
@@ -13,6 +14,9 @@ export default class WaitDumpUserDataRequest implements IRequest {
     getContextStack(): string | null;
     setContextStack(contextStack: string | null): this;
     withContextStack(contextStack: string | null): this;
+    getOwnerId(): string | null;
+    setOwnerId(ownerId: string | null): this;
+    withOwnerId(ownerId: string | null): this;
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;

@@ -180,12 +180,12 @@ export default class GetChartRequest implements IRequest {
                 data.filters.map((item: {[key: string]: any}) => {
                     return Gs2Watch.Filter.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGroupBys(data.groupBys ?
                 data.groupBys.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCountBy(data["countBy"])
             .withBegin(data["begin"])
             .withEnd(data["end"])
@@ -202,12 +202,12 @@ export default class GetChartRequest implements IRequest {
                 this.getFilters()!.map((item: Gs2Watch.Filter) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "groupBys": this.getGroupBys() ?
                 this.getGroupBys()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "countBy": this.getCountBy(),
             "begin": this.getBegin(),
             "end": this.getEnd(),

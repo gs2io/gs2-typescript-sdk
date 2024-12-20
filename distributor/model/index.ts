@@ -18,6 +18,8 @@ import DistributorModelMaster from "./DistributorModelMaster"
 import DistributorModel from "./DistributorModel"
 import CurrentDistributorMaster from "./CurrentDistributorMaster"
 import StampSheetResult from "./StampSheetResult"
+import BatchRequestPayload from "./BatchRequestPayload"
+import BatchResultPayload from "./BatchResultPayload"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
 import VerifyAction from "./VerifyAction"
@@ -37,6 +39,8 @@ export {
     DistributorModel,
     CurrentDistributorMaster,
     StampSheetResult,
+    BatchRequestPayload,
+    BatchResultPayload,
     AcquireAction,
     ConsumeAction,
     VerifyAction,

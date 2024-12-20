@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import LimitNamespaceIncreaseDistributionStatistics from './LimitNamespaceIncreaseDistributionStatistics';
-import LimitNamespaceIncreaseDistributionSegment from './LimitNamespaceIncreaseDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitNamespaceIncreaseDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): LimitNamespaceIncreaseDistributionStatistics | null;
-    setStatistics(statistics: LimitNamespaceIncreaseDistributionStatistics | null): this;
-    withStatistics(statistics: LimitNamespaceIncreaseDistributionStatistics | null): this;
-    getDistribution(): LimitNamespaceIncreaseDistributionSegment[] | null;
-    setDistribution(distribution: LimitNamespaceIncreaseDistributionSegment[] | null): this;
-    withDistribution(distribution: LimitNamespaceIncreaseDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.LimitNamespaceIncreaseDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.LimitNamespaceIncreaseDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LimitNamespaceIncreaseDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.LimitNamespaceIncreaseDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.LimitNamespaceIncreaseDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.LimitNamespaceIncreaseDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitNamespaceIncreaseDistribution | null;

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DatastoreNamespaceDataSizeDistributionStatistics from './DatastoreNamespaceDataSizeDistributionStatistics';
 import DatastoreNamespaceDataSizeDistributionSegment from './DatastoreNamespaceDataSizeDistributionSegment';
 
 export default class DatastoreNamespaceDataSizeDistribution implements IModel {
-    private statistics: DatastoreNamespaceDataSizeDistributionStatistics|null = null;
-    private distribution: DatastoreNamespaceDataSizeDistributionSegment[]|null = null;
-    public getStatistics(): DatastoreNamespaceDataSizeDistributionStatistics|null {
+    private statistics: Gs2Watch.DatastoreNamespaceDataSizeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.DatastoreNamespaceDataSizeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DatastoreNamespaceDataSizeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DatastoreNamespaceDataSizeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DatastoreNamespaceDataSizeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DatastoreNamespaceDataSizeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): DatastoreNamespaceDataSizeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: DatastoreNamespaceDataSizeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: DatastoreNamespaceDataSizeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class DatastoreNamespaceDataSizeDistribution implements IModel {
             return null;
         }
         return new DatastoreNamespaceDataSizeDistribution()
-            .withStatistics(DatastoreNamespaceDataSizeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DatastoreNamespaceDataSizeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return DatastoreNamespaceDataSizeDistributionSegment.fromDict(item);
+                    return Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: DatastoreNamespaceDataSizeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.DatastoreNamespaceDataSizeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

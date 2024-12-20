@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MatchmakingNamespaceResultDistributionStatistics from './MatchmakingNamespaceResultDistributionStatistics';
 import MatchmakingNamespaceResultDistributionSegment from './MatchmakingNamespaceResultDistributionSegment';
 
 export default class MatchmakingNamespaceResultDistribution implements IModel {
-    private statistics: MatchmakingNamespaceResultDistributionStatistics|null = null;
-    private distribution: MatchmakingNamespaceResultDistributionSegment[]|null = null;
-    public getStatistics(): MatchmakingNamespaceResultDistributionStatistics|null {
+    private statistics: Gs2Watch.MatchmakingNamespaceResultDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MatchmakingNamespaceResultDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MatchmakingNamespaceResultDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MatchmakingNamespaceResultDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MatchmakingNamespaceResultDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MatchmakingNamespaceResultDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MatchmakingNamespaceResultDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MatchmakingNamespaceResultDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MatchmakingNamespaceResultDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MatchmakingNamespaceResultDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MatchmakingNamespaceResultDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MatchmakingNamespaceResultDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MatchmakingNamespaceResultDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MatchmakingNamespaceResultDistribution implements IModel {
             return null;
         }
         return new MatchmakingNamespaceResultDistribution()
-            .withStatistics(MatchmakingNamespaceResultDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MatchmakingNamespaceResultDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MatchmakingNamespaceResultDistributionSegment.fromDict(item);
+                    return Gs2Watch.MatchmakingNamespaceResultDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MatchmakingNamespaceResultDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MatchmakingNamespaceResultDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

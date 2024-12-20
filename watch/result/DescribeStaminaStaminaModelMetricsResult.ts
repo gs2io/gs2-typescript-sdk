@@ -40,7 +40,7 @@ export default class DescribeStaminaStaminaModelMetricsResult implements IResult
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.StaminaStaminaModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeStaminaStaminaModelMetricsResult implements IResult
                 this.getItems()!.map((item: Gs2Watch.StaminaStaminaModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

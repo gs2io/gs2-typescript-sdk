@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyNamespaceWithdrawDistributionStatistics from './MoneyNamespaceWithdrawDistributionStatistics';
 import MoneyNamespaceWithdrawDistributionSegment from './MoneyNamespaceWithdrawDistributionSegment';
 
 export default class MoneyNamespaceWithdrawDistribution implements IModel {
-    private statistics: MoneyNamespaceWithdrawDistributionStatistics|null = null;
-    private distribution: MoneyNamespaceWithdrawDistributionSegment[]|null = null;
-    public getStatistics(): MoneyNamespaceWithdrawDistributionStatistics|null {
+    private statistics: Gs2Watch.MoneyNamespaceWithdrawDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MoneyNamespaceWithdrawDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MoneyNamespaceWithdrawDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyNamespaceWithdrawDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyNamespaceWithdrawDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyNamespaceWithdrawDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyNamespaceWithdrawDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MoneyNamespaceWithdrawDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MoneyNamespaceWithdrawDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MoneyNamespaceWithdrawDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MoneyNamespaceWithdrawDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MoneyNamespaceWithdrawDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MoneyNamespaceWithdrawDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MoneyNamespaceWithdrawDistribution implements IModel {
             return null;
         }
         return new MoneyNamespaceWithdrawDistribution()
-            .withStatistics(MoneyNamespaceWithdrawDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyNamespaceWithdrawDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MoneyNamespaceWithdrawDistributionSegment.fromDict(item);
+                    return Gs2Watch.MoneyNamespaceWithdrawDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MoneyNamespaceWithdrawDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MoneyNamespaceWithdrawDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

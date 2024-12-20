@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DictionaryNamespaceEntryByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./DictionaryNamespaceEntryByUserDistributionStatistics"));
-var DictionaryNamespaceEntryByUserDistributionSegment_1 = tslib_1.__importDefault(require("./DictionaryNamespaceEntryByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var DictionaryNamespaceEntryByUserDistribution = /** @class */ (function () {
     function DictionaryNamespaceEntryByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var DictionaryNamespaceEntryByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new DictionaryNamespaceEntryByUserDistribution()
-            .withStatistics(DictionaryNamespaceEntryByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DictionaryNamespaceEntryByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return DictionaryNamespaceEntryByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.DictionaryNamespaceEntryByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     DictionaryNamespaceEntryByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var DictionaryNamespaceEntryByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DictionaryNamespaceEntryByUserDistribution;

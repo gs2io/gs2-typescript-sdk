@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics"));
-var ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceExperienceModelAddExperienceAmountByUserDistribution = /** @class */ (function () {
     function ExperienceExperienceModelAddExperienceAmountByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ExperienceExperienceModelAddExperienceAmountByUserDistribution = /** @class 
             return null;
         }
         return new ExperienceExperienceModelAddExperienceAmountByUserDistribution()
-            .withStatistics(ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     ExperienceExperienceModelAddExperienceAmountByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ExperienceExperienceModelAddExperienceAmountByUserDistribution = /** @class 
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceExperienceModelAddExperienceAmountByUserDistribution;

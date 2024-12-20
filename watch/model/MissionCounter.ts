@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionCounterCounterDistributionStatistics from './MissionCounterCounterDistributionStatistics';
 import MissionCounterCounterDistributionSegment from './MissionCounterCounterDistributionSegment';
 import MissionCounterCounterDistribution from './MissionCounterCounterDistribution';
@@ -24,7 +26,7 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class MissionCounter implements IModel {
     private counterId: string|null = null;
     private counterName: string|null = null;
-    private distributions: MissionCounterDistributions|null = null;
+    private distributions: Gs2Watch.MissionCounterDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -232,14 +234,14 @@ export default class MissionCounter implements IModel {
         this.counterName = counterName;
         return this;
     }
-    public getDistributions(): MissionCounterDistributions|null {
+    public getDistributions(): Gs2Watch.MissionCounterDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MissionCounterDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MissionCounterDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MissionCounterDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MissionCounterDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -251,7 +253,7 @@ export default class MissionCounter implements IModel {
         return new MissionCounter()
             .withCounterId(data["counterId"])
             .withCounterName(data["counterName"])
-            .withDistributions(MissionCounterDistributions.fromDict(data["distributions"]));
+            .withDistributions(Gs2Watch.MissionCounterDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

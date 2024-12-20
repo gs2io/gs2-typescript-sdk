@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import DatastoreNamespaceDownloadByUserDistributionStatistics from './DatastoreNamespaceDownloadByUserDistributionStatistics';
-import DatastoreNamespaceDownloadByUserDistributionSegment from './DatastoreNamespaceDownloadByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class DatastoreNamespaceDownloadByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): DatastoreNamespaceDownloadByUserDistributionStatistics | null;
-    setStatistics(statistics: DatastoreNamespaceDownloadByUserDistributionStatistics | null): this;
-    withStatistics(statistics: DatastoreNamespaceDownloadByUserDistributionStatistics | null): this;
-    getDistribution(): DatastoreNamespaceDownloadByUserDistributionSegment[] | null;
-    setDistribution(distribution: DatastoreNamespaceDownloadByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: DatastoreNamespaceDownloadByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.DatastoreNamespaceDownloadByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DatastoreNamespaceDownloadByUserDistribution | null;

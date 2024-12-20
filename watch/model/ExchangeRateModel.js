@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExchangeRateModelStatistics_1 = tslib_1.__importDefault(require("./ExchangeRateModelStatistics"));
-var ExchangeRateModelDistributions_1 = tslib_1.__importDefault(require("./ExchangeRateModelDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:exchange:namespace:{namespaceName}:rateModel:{rateName}";
 var ExchangeRateModel = /** @class */ (function () {
     function ExchangeRateModel() {
@@ -209,8 +208,8 @@ var ExchangeRateModel = /** @class */ (function () {
         return new ExchangeRateModel()
             .withRateModelId(data["rateModelId"])
             .withRateName(data["rateName"])
-            .withStatistics(ExchangeRateModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ExchangeRateModelDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.ExchangeRateModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExchangeRateModelDistributions.fromDict(data["distributions"]));
     };
     ExchangeRateModel.prototype.toDict = function () {
         var _a, _b;

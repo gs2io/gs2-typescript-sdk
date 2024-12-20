@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DatastoreNamespaceDownloadByUserDistribution_1 = tslib_1.__importDefault(require("./DatastoreNamespaceDownloadByUserDistribution"));
-var DatastoreNamespaceUploadByUserDistribution_1 = tslib_1.__importDefault(require("./DatastoreNamespaceUploadByUserDistribution"));
-var DatastoreNamespaceDataSizeDistribution_1 = tslib_1.__importDefault(require("./DatastoreNamespaceDataSizeDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var DatastoreNamespaceDistributions = /** @class */ (function () {
     function DatastoreNamespaceDistributions() {
         this.downloadByUser = null;
@@ -63,9 +61,9 @@ var DatastoreNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new DatastoreNamespaceDistributions()
-            .withDownloadByUser(DatastoreNamespaceDownloadByUserDistribution_1.default.fromDict(data["downloadByUser"]))
-            .withUploadByUser(DatastoreNamespaceUploadByUserDistribution_1.default.fromDict(data["uploadByUser"]))
-            .withDataSize(DatastoreNamespaceDataSizeDistribution_1.default.fromDict(data["dataSize"]));
+            .withDownloadByUser(Gs2Watch.DatastoreNamespaceDownloadByUserDistribution.fromDict(data["downloadByUser"]))
+            .withUploadByUser(Gs2Watch.DatastoreNamespaceUploadByUserDistribution.fromDict(data["uploadByUser"]))
+            .withDataSize(Gs2Watch.DatastoreNamespaceDataSizeDistribution.fromDict(data["dataSize"]));
     };
     DatastoreNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c;

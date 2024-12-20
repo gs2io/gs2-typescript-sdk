@@ -37,14 +37,14 @@ var DescribeQuestQuestModelMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.QuestQuestModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeQuestQuestModelMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeQuestQuestModelMetricsResult;

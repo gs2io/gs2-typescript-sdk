@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryLotteryDrawResultDistribution_1 = tslib_1.__importDefault(require("./LotteryLotteryDrawResultDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LotteryLotteryDistributions = /** @class */ (function () {
     function LotteryLotteryDistributions() {
         this.drawResult = null;
@@ -37,7 +37,7 @@ var LotteryLotteryDistributions = /** @class */ (function () {
             return null;
         }
         return new LotteryLotteryDistributions()
-            .withDrawResult(LotteryLotteryDrawResultDistribution_1.default.fromDict(data["drawResult"]));
+            .withDrawResult(Gs2Watch.LotteryLotteryDrawResultDistribution.fromDict(data["drawResult"]));
     };
     LotteryLotteryDistributions.prototype.toDict = function () {
         var _a;

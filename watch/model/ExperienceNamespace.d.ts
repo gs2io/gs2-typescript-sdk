@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceNamespaceStatistics from './ExperienceNamespaceStatistics';
-import ExperienceNamespaceDistributions from './ExperienceNamespaceDistributions';
-import ExperienceExperienceModel from './ExperienceExperienceModel';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class ExperienceNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): ExperienceNamespaceStatistics | null;
-    setStatistics(statistics: ExperienceNamespaceStatistics | null): this;
-    withStatistics(statistics: ExperienceNamespaceStatistics | null): this;
-    getDistributions(): ExperienceNamespaceDistributions | null;
-    setDistributions(distributions: ExperienceNamespaceDistributions | null): this;
-    withDistributions(distributions: ExperienceNamespaceDistributions | null): this;
-    getExperienceModels(): ExperienceExperienceModel[] | null;
-    setExperienceModels(experienceModels: ExperienceExperienceModel[] | null): this;
-    withExperienceModels(experienceModels: ExperienceExperienceModel[] | null): this;
+    getStatistics(): Gs2Watch.ExperienceNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExperienceNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExperienceNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.ExperienceNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.ExperienceNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ExperienceNamespaceDistributions | null): this;
+    getExperienceModels(): Gs2Watch.ExperienceExperienceModel[] | null;
+    setExperienceModels(experienceModels: Gs2Watch.ExperienceExperienceModel[] | null): this;
+    withExperienceModels(experienceModels: Gs2Watch.ExperienceExperienceModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceNamespace | null;

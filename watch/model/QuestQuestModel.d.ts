@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import QuestQuestModelStatistics from './QuestQuestModelStatistics';
-import QuestQuestModelDistributions from './QuestQuestModelDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestQuestModel implements IModel {
     private questModelId;
     private questName;
@@ -22,12 +21,12 @@ export default class QuestQuestModel implements IModel {
     getQuestName(): string | null;
     setQuestName(questName: string | null): this;
     withQuestName(questName: string | null): this;
-    getStatistics(): QuestQuestModelStatistics | null;
-    setStatistics(statistics: QuestQuestModelStatistics | null): this;
-    withStatistics(statistics: QuestQuestModelStatistics | null): this;
-    getDistributions(): QuestQuestModelDistributions | null;
-    setDistributions(distributions: QuestQuestModelDistributions | null): this;
-    withDistributions(distributions: QuestQuestModelDistributions | null): this;
+    getStatistics(): Gs2Watch.QuestQuestModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.QuestQuestModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.QuestQuestModelStatistics | null): this;
+    getDistributions(): Gs2Watch.QuestQuestModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.QuestQuestModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.QuestQuestModelDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestQuestModel | null;

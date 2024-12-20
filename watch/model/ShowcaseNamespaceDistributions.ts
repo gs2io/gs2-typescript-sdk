@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseNamespaceBuyDistributionStatistics from './ShowcaseNamespaceBuyDistributionStatistics';
 import ShowcaseNamespaceBuyDistributionSegment from './ShowcaseNamespaceBuyDistributionSegment';
 import ShowcaseNamespaceBuyDistribution from './ShowcaseNamespaceBuyDistribution';
 
 export default class ShowcaseNamespaceDistributions implements IModel {
-    private buy: ShowcaseNamespaceBuyDistribution|null = null;
-    public getBuy(): ShowcaseNamespaceBuyDistribution|null {
+    private buy: Gs2Watch.ShowcaseNamespaceBuyDistribution|null = null;
+    public getBuy(): Gs2Watch.ShowcaseNamespaceBuyDistribution|null {
         return this.buy;
     }
-    public setBuy(buy: ShowcaseNamespaceBuyDistribution|null) {
+    public setBuy(buy: Gs2Watch.ShowcaseNamespaceBuyDistribution|null) {
         this.buy = buy;
         return this;
     }
-    public withBuy(buy: ShowcaseNamespaceBuyDistribution|null): this {
+    public withBuy(buy: Gs2Watch.ShowcaseNamespaceBuyDistribution|null): this {
         this.buy = buy;
         return this;
     }
@@ -38,7 +40,7 @@ export default class ShowcaseNamespaceDistributions implements IModel {
             return null;
         }
         return new ShowcaseNamespaceDistributions()
-            .withBuy(ShowcaseNamespaceBuyDistribution.fromDict(data["buy"]));
+            .withBuy(Gs2Watch.ShowcaseNamespaceBuyDistribution.fromDict(data["buy"]));
     }
 
     public toDict(): {[key: string]: any} {

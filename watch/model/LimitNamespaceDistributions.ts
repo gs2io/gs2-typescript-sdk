@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitNamespaceIncreaseDistributionStatistics from './LimitNamespaceIncreaseDistributionStatistics';
 import LimitNamespaceIncreaseDistributionSegment from './LimitNamespaceIncreaseDistributionSegment';
 import LimitNamespaceIncreaseDistribution from './LimitNamespaceIncreaseDistribution';
 
 export default class LimitNamespaceDistributions implements IModel {
-    private increase: LimitNamespaceIncreaseDistribution|null = null;
-    public getIncrease(): LimitNamespaceIncreaseDistribution|null {
+    private increase: Gs2Watch.LimitNamespaceIncreaseDistribution|null = null;
+    public getIncrease(): Gs2Watch.LimitNamespaceIncreaseDistribution|null {
         return this.increase;
     }
-    public setIncrease(increase: LimitNamespaceIncreaseDistribution|null) {
+    public setIncrease(increase: Gs2Watch.LimitNamespaceIncreaseDistribution|null) {
         this.increase = increase;
         return this;
     }
-    public withIncrease(increase: LimitNamespaceIncreaseDistribution|null): this {
+    public withIncrease(increase: Gs2Watch.LimitNamespaceIncreaseDistribution|null): this {
         this.increase = increase;
         return this;
     }
@@ -38,7 +40,7 @@ export default class LimitNamespaceDistributions implements IModel {
             return null;
         }
         return new LimitNamespaceDistributions()
-            .withIncrease(LimitNamespaceIncreaseDistribution.fromDict(data["increase"]));
+            .withIncrease(Gs2Watch.LimitNamespaceIncreaseDistribution.fromDict(data["increase"]));
     }
 
     public toDict(): {[key: string]: any} {

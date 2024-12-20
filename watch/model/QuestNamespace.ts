@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestNamespaceStatistics from './QuestNamespaceStatistics';
 import QuestNamespaceQuestDistributionStatistics from './QuestNamespaceQuestDistributionStatistics';
 import QuestNamespaceQuestDistributionSegment from './QuestNamespaceQuestDistributionSegment';
@@ -40,9 +42,9 @@ export default class QuestNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: QuestNamespaceStatistics|null = null;
-    private distributions: QuestNamespaceDistributions|null = null;
-    private questGroupModels: QuestQuestGroupModel[]|null = null;
+    private statistics: Gs2Watch.QuestNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.QuestNamespaceDistributions|null = null;
+    private questGroupModels: Gs2Watch.QuestQuestGroupModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -227,36 +229,36 @@ export default class QuestNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): QuestNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.QuestNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: QuestNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.QuestNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: QuestNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.QuestNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): QuestNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.QuestNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: QuestNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.QuestNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: QuestNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.QuestNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getQuestGroupModels(): QuestQuestGroupModel[]|null {
+    public getQuestGroupModels(): Gs2Watch.QuestQuestGroupModel[]|null {
         return this.questGroupModels;
     }
-    public setQuestGroupModels(questGroupModels: QuestQuestGroupModel[]|null) {
+    public setQuestGroupModels(questGroupModels: Gs2Watch.QuestQuestGroupModel[]|null) {
         this.questGroupModels = questGroupModels;
         return this;
     }
-    public withQuestGroupModels(questGroupModels: QuestQuestGroupModel[]|null): this {
+    public withQuestGroupModels(questGroupModels: Gs2Watch.QuestQuestGroupModel[]|null): this {
         this.questGroupModels = questGroupModels;
         return this;
     }
@@ -271,13 +273,13 @@ export default class QuestNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(QuestNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(QuestNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.QuestNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.QuestNamespaceDistributions.fromDict(data["distributions"]))
             .withQuestGroupModels(data.questGroupModels ?
                 data.questGroupModels.map((item: {[key: string]: any}) => {
-                    return QuestQuestGroupModel.fromDict(item);
+                    return Gs2Watch.QuestQuestGroupModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -290,10 +292,10 @@ export default class QuestNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "questGroupModels": this.getQuestGroupModels() ?
-                this.getQuestGroupModels()!.map((item: QuestQuestGroupModel) => {
+                this.getQuestGroupModels()!.map((item: Gs2Watch.QuestQuestGroupModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

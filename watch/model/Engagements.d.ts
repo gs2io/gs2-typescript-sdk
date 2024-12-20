@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import EngagementHistory from './EngagementHistory';
-import EngagementAverage from './EngagementAverage';
+import * as Gs2Watch from '../../watch/model';
 export default class Engagements implements IModel {
     private history;
     private avg;
-    getHistory(): EngagementHistory[] | null;
-    setHistory(history: EngagementHistory[] | null): this;
-    withHistory(history: EngagementHistory[] | null): this;
-    getAvg(): EngagementAverage | null;
-    setAvg(avg: EngagementAverage | null): this;
-    withAvg(avg: EngagementAverage | null): this;
+    getHistory(): Gs2Watch.EngagementHistory[] | null;
+    setHistory(history: Gs2Watch.EngagementHistory[] | null): this;
+    withHistory(history: Gs2Watch.EngagementHistory[] | null): this;
+    getAvg(): Gs2Watch.EngagementAverage | null;
+    setAvg(avg: Gs2Watch.EngagementAverage | null): this;
+    withAvg(avg: Gs2Watch.EngagementAverage | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Engagements | null;

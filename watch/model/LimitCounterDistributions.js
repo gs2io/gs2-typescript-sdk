@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitCounterCounterDistribution_1 = tslib_1.__importDefault(require("./LimitCounterCounterDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitCounterDistributions = /** @class */ (function () {
     function LimitCounterDistributions() {
         this.counter = null;
@@ -37,7 +37,7 @@ var LimitCounterDistributions = /** @class */ (function () {
             return null;
         }
         return new LimitCounterDistributions()
-            .withCounter(LimitCounterCounterDistribution_1.default.fromDict(data["counter"]));
+            .withCounter(Gs2Watch.LimitCounterCounterDistribution.fromDict(data["counter"]));
     };
     LimitCounterDistributions.prototype.toDict = function () {
         var _a;

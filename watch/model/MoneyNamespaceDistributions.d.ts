@@ -1,25 +1,22 @@
 import IModel from '../../core/interface/IModel';
-import MoneyNamespaceVerificationDistribution from './MoneyNamespaceVerificationDistribution';
-import MoneyNamespaceDepositDistribution from './MoneyNamespaceDepositDistribution';
-import MoneyNamespaceWithdrawDistribution from './MoneyNamespaceWithdrawDistribution';
-import MoneyNamespaceRevenueDistribution from './MoneyNamespaceRevenueDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyNamespaceDistributions implements IModel {
     private verification;
     private deposit;
     private withdraw;
     private revenue;
-    getVerification(): MoneyNamespaceVerificationDistribution | null;
-    setVerification(verification: MoneyNamespaceVerificationDistribution | null): this;
-    withVerification(verification: MoneyNamespaceVerificationDistribution | null): this;
-    getDeposit(): MoneyNamespaceDepositDistribution | null;
-    setDeposit(deposit: MoneyNamespaceDepositDistribution | null): this;
-    withDeposit(deposit: MoneyNamespaceDepositDistribution | null): this;
-    getWithdraw(): MoneyNamespaceWithdrawDistribution | null;
-    setWithdraw(withdraw: MoneyNamespaceWithdrawDistribution | null): this;
-    withWithdraw(withdraw: MoneyNamespaceWithdrawDistribution | null): this;
-    getRevenue(): MoneyNamespaceRevenueDistribution | null;
-    setRevenue(revenue: MoneyNamespaceRevenueDistribution | null): this;
-    withRevenue(revenue: MoneyNamespaceRevenueDistribution | null): this;
+    getVerification(): Gs2Watch.MoneyNamespaceVerificationDistribution | null;
+    setVerification(verification: Gs2Watch.MoneyNamespaceVerificationDistribution | null): this;
+    withVerification(verification: Gs2Watch.MoneyNamespaceVerificationDistribution | null): this;
+    getDeposit(): Gs2Watch.MoneyNamespaceDepositDistribution | null;
+    setDeposit(deposit: Gs2Watch.MoneyNamespaceDepositDistribution | null): this;
+    withDeposit(deposit: Gs2Watch.MoneyNamespaceDepositDistribution | null): this;
+    getWithdraw(): Gs2Watch.MoneyNamespaceWithdrawDistribution | null;
+    setWithdraw(withdraw: Gs2Watch.MoneyNamespaceWithdrawDistribution | null): this;
+    withWithdraw(withdraw: Gs2Watch.MoneyNamespaceWithdrawDistribution | null): this;
+    getRevenue(): Gs2Watch.MoneyNamespaceRevenueDistribution | null;
+    setRevenue(revenue: Gs2Watch.MoneyNamespaceRevenueDistribution | null): this;
+    withRevenue(revenue: Gs2Watch.MoneyNamespaceRevenueDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyNamespaceDistributions | null;

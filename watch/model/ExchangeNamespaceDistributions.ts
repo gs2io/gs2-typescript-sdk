@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExchangeNamespaceExchangeDistributionStatistics from './ExchangeNamespaceExchangeDistributionStatistics';
 import ExchangeNamespaceExchangeDistributionSegment from './ExchangeNamespaceExchangeDistributionSegment';
 import ExchangeNamespaceExchangeDistribution from './ExchangeNamespaceExchangeDistribution';
@@ -29,51 +31,51 @@ import ExchangeNamespaceExchangeAmountByUserDistributionSegment from './Exchange
 import ExchangeNamespaceExchangeAmountByUserDistribution from './ExchangeNamespaceExchangeAmountByUserDistribution';
 
 export default class ExchangeNamespaceDistributions implements IModel {
-    private exchange: ExchangeNamespaceExchangeDistribution|null = null;
-    private exchangeAmount: ExchangeNamespaceExchangeAmountDistribution|null = null;
-    private exchangeByUser: ExchangeNamespaceExchangeByUserDistribution|null = null;
-    private exchangeAmountByUser: ExchangeNamespaceExchangeAmountByUserDistribution|null = null;
-    public getExchange(): ExchangeNamespaceExchangeDistribution|null {
+    private exchange: Gs2Watch.ExchangeNamespaceExchangeDistribution|null = null;
+    private exchangeAmount: Gs2Watch.ExchangeNamespaceExchangeAmountDistribution|null = null;
+    private exchangeByUser: Gs2Watch.ExchangeNamespaceExchangeByUserDistribution|null = null;
+    private exchangeAmountByUser: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution|null = null;
+    public getExchange(): Gs2Watch.ExchangeNamespaceExchangeDistribution|null {
         return this.exchange;
     }
-    public setExchange(exchange: ExchangeNamespaceExchangeDistribution|null) {
+    public setExchange(exchange: Gs2Watch.ExchangeNamespaceExchangeDistribution|null) {
         this.exchange = exchange;
         return this;
     }
-    public withExchange(exchange: ExchangeNamespaceExchangeDistribution|null): this {
+    public withExchange(exchange: Gs2Watch.ExchangeNamespaceExchangeDistribution|null): this {
         this.exchange = exchange;
         return this;
     }
-    public getExchangeAmount(): ExchangeNamespaceExchangeAmountDistribution|null {
+    public getExchangeAmount(): Gs2Watch.ExchangeNamespaceExchangeAmountDistribution|null {
         return this.exchangeAmount;
     }
-    public setExchangeAmount(exchangeAmount: ExchangeNamespaceExchangeAmountDistribution|null) {
+    public setExchangeAmount(exchangeAmount: Gs2Watch.ExchangeNamespaceExchangeAmountDistribution|null) {
         this.exchangeAmount = exchangeAmount;
         return this;
     }
-    public withExchangeAmount(exchangeAmount: ExchangeNamespaceExchangeAmountDistribution|null): this {
+    public withExchangeAmount(exchangeAmount: Gs2Watch.ExchangeNamespaceExchangeAmountDistribution|null): this {
         this.exchangeAmount = exchangeAmount;
         return this;
     }
-    public getExchangeByUser(): ExchangeNamespaceExchangeByUserDistribution|null {
+    public getExchangeByUser(): Gs2Watch.ExchangeNamespaceExchangeByUserDistribution|null {
         return this.exchangeByUser;
     }
-    public setExchangeByUser(exchangeByUser: ExchangeNamespaceExchangeByUserDistribution|null) {
+    public setExchangeByUser(exchangeByUser: Gs2Watch.ExchangeNamespaceExchangeByUserDistribution|null) {
         this.exchangeByUser = exchangeByUser;
         return this;
     }
-    public withExchangeByUser(exchangeByUser: ExchangeNamespaceExchangeByUserDistribution|null): this {
+    public withExchangeByUser(exchangeByUser: Gs2Watch.ExchangeNamespaceExchangeByUserDistribution|null): this {
         this.exchangeByUser = exchangeByUser;
         return this;
     }
-    public getExchangeAmountByUser(): ExchangeNamespaceExchangeAmountByUserDistribution|null {
+    public getExchangeAmountByUser(): Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution|null {
         return this.exchangeAmountByUser;
     }
-    public setExchangeAmountByUser(exchangeAmountByUser: ExchangeNamespaceExchangeAmountByUserDistribution|null) {
+    public setExchangeAmountByUser(exchangeAmountByUser: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution|null) {
         this.exchangeAmountByUser = exchangeAmountByUser;
         return this;
     }
-    public withExchangeAmountByUser(exchangeAmountByUser: ExchangeNamespaceExchangeAmountByUserDistribution|null): this {
+    public withExchangeAmountByUser(exchangeAmountByUser: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution|null): this {
         this.exchangeAmountByUser = exchangeAmountByUser;
         return this;
     }
@@ -83,10 +85,10 @@ export default class ExchangeNamespaceDistributions implements IModel {
             return null;
         }
         return new ExchangeNamespaceDistributions()
-            .withExchange(ExchangeNamespaceExchangeDistribution.fromDict(data["exchange"]))
-            .withExchangeAmount(ExchangeNamespaceExchangeAmountDistribution.fromDict(data["exchangeAmount"]))
-            .withExchangeByUser(ExchangeNamespaceExchangeByUserDistribution.fromDict(data["exchangeByUser"]))
-            .withExchangeAmountByUser(ExchangeNamespaceExchangeAmountByUserDistribution.fromDict(data["exchangeAmountByUser"]));
+            .withExchange(Gs2Watch.ExchangeNamespaceExchangeDistribution.fromDict(data["exchange"]))
+            .withExchangeAmount(Gs2Watch.ExchangeNamespaceExchangeAmountDistribution.fromDict(data["exchangeAmount"]))
+            .withExchangeByUser(Gs2Watch.ExchangeNamespaceExchangeByUserDistribution.fromDict(data["exchangeByUser"]))
+            .withExchangeAmountByUser(Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution.fromDict(data["exchangeAmountByUser"]));
     }
 
     public toDict(): {[key: string]: any} {

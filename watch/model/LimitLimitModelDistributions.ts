@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitLimitModelIncreaseDistributionStatistics from './LimitLimitModelIncreaseDistributionStatistics';
 import LimitLimitModelIncreaseDistributionSegment from './LimitLimitModelIncreaseDistributionSegment';
 import LimitLimitModelIncreaseDistribution from './LimitLimitModelIncreaseDistribution';
@@ -29,51 +31,51 @@ import LimitLimitModelIncreaseAmountByUserDistributionSegment from './LimitLimit
 import LimitLimitModelIncreaseAmountByUserDistribution from './LimitLimitModelIncreaseAmountByUserDistribution';
 
 export default class LimitLimitModelDistributions implements IModel {
-    private increase: LimitLimitModelIncreaseDistribution|null = null;
-    private increaseAmount: LimitLimitModelIncreaseAmountDistribution|null = null;
-    private increaseByUser: LimitLimitModelIncreaseByUserDistribution|null = null;
-    private increaseAmountByUser: LimitLimitModelIncreaseAmountByUserDistribution|null = null;
-    public getIncrease(): LimitLimitModelIncreaseDistribution|null {
+    private increase: Gs2Watch.LimitLimitModelIncreaseDistribution|null = null;
+    private increaseAmount: Gs2Watch.LimitLimitModelIncreaseAmountDistribution|null = null;
+    private increaseByUser: Gs2Watch.LimitLimitModelIncreaseByUserDistribution|null = null;
+    private increaseAmountByUser: Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution|null = null;
+    public getIncrease(): Gs2Watch.LimitLimitModelIncreaseDistribution|null {
         return this.increase;
     }
-    public setIncrease(increase: LimitLimitModelIncreaseDistribution|null) {
+    public setIncrease(increase: Gs2Watch.LimitLimitModelIncreaseDistribution|null) {
         this.increase = increase;
         return this;
     }
-    public withIncrease(increase: LimitLimitModelIncreaseDistribution|null): this {
+    public withIncrease(increase: Gs2Watch.LimitLimitModelIncreaseDistribution|null): this {
         this.increase = increase;
         return this;
     }
-    public getIncreaseAmount(): LimitLimitModelIncreaseAmountDistribution|null {
+    public getIncreaseAmount(): Gs2Watch.LimitLimitModelIncreaseAmountDistribution|null {
         return this.increaseAmount;
     }
-    public setIncreaseAmount(increaseAmount: LimitLimitModelIncreaseAmountDistribution|null) {
+    public setIncreaseAmount(increaseAmount: Gs2Watch.LimitLimitModelIncreaseAmountDistribution|null) {
         this.increaseAmount = increaseAmount;
         return this;
     }
-    public withIncreaseAmount(increaseAmount: LimitLimitModelIncreaseAmountDistribution|null): this {
+    public withIncreaseAmount(increaseAmount: Gs2Watch.LimitLimitModelIncreaseAmountDistribution|null): this {
         this.increaseAmount = increaseAmount;
         return this;
     }
-    public getIncreaseByUser(): LimitLimitModelIncreaseByUserDistribution|null {
+    public getIncreaseByUser(): Gs2Watch.LimitLimitModelIncreaseByUserDistribution|null {
         return this.increaseByUser;
     }
-    public setIncreaseByUser(increaseByUser: LimitLimitModelIncreaseByUserDistribution|null) {
+    public setIncreaseByUser(increaseByUser: Gs2Watch.LimitLimitModelIncreaseByUserDistribution|null) {
         this.increaseByUser = increaseByUser;
         return this;
     }
-    public withIncreaseByUser(increaseByUser: LimitLimitModelIncreaseByUserDistribution|null): this {
+    public withIncreaseByUser(increaseByUser: Gs2Watch.LimitLimitModelIncreaseByUserDistribution|null): this {
         this.increaseByUser = increaseByUser;
         return this;
     }
-    public getIncreaseAmountByUser(): LimitLimitModelIncreaseAmountByUserDistribution|null {
+    public getIncreaseAmountByUser(): Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution|null {
         return this.increaseAmountByUser;
     }
-    public setIncreaseAmountByUser(increaseAmountByUser: LimitLimitModelIncreaseAmountByUserDistribution|null) {
+    public setIncreaseAmountByUser(increaseAmountByUser: Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution|null) {
         this.increaseAmountByUser = increaseAmountByUser;
         return this;
     }
-    public withIncreaseAmountByUser(increaseAmountByUser: LimitLimitModelIncreaseAmountByUserDistribution|null): this {
+    public withIncreaseAmountByUser(increaseAmountByUser: Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution|null): this {
         this.increaseAmountByUser = increaseAmountByUser;
         return this;
     }
@@ -83,10 +85,10 @@ export default class LimitLimitModelDistributions implements IModel {
             return null;
         }
         return new LimitLimitModelDistributions()
-            .withIncrease(LimitLimitModelIncreaseDistribution.fromDict(data["increase"]))
-            .withIncreaseAmount(LimitLimitModelIncreaseAmountDistribution.fromDict(data["increaseAmount"]))
-            .withIncreaseByUser(LimitLimitModelIncreaseByUserDistribution.fromDict(data["increaseByUser"]))
-            .withIncreaseAmountByUser(LimitLimitModelIncreaseAmountByUserDistribution.fromDict(data["increaseAmountByUser"]));
+            .withIncrease(Gs2Watch.LimitLimitModelIncreaseDistribution.fromDict(data["increase"]))
+            .withIncreaseAmount(Gs2Watch.LimitLimitModelIncreaseAmountDistribution.fromDict(data["increaseAmount"]))
+            .withIncreaseByUser(Gs2Watch.LimitLimitModelIncreaseByUserDistribution.fromDict(data["increaseByUser"]))
+            .withIncreaseAmountByUser(Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution.fromDict(data["increaseAmountByUser"]));
     }
 
     public toDict(): {[key: string]: any} {

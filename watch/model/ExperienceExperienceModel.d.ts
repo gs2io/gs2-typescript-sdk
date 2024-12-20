@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceExperienceModelStatistics from './ExperienceExperienceModelStatistics';
-import ExperienceExperienceModelDistributions from './ExperienceExperienceModelDistributions';
-import ExperienceStatus from './ExperienceStatus';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceExperienceModel implements IModel {
     private experienceModelId;
     private experienceName;
@@ -23,15 +21,15 @@ export default class ExperienceExperienceModel implements IModel {
     getExperienceName(): string | null;
     setExperienceName(experienceName: string | null): this;
     withExperienceName(experienceName: string | null): this;
-    getStatistics(): ExperienceExperienceModelStatistics | null;
-    setStatistics(statistics: ExperienceExperienceModelStatistics | null): this;
-    withStatistics(statistics: ExperienceExperienceModelStatistics | null): this;
-    getDistributions(): ExperienceExperienceModelDistributions | null;
-    setDistributions(distributions: ExperienceExperienceModelDistributions | null): this;
-    withDistributions(distributions: ExperienceExperienceModelDistributions | null): this;
-    getStatuses(): ExperienceStatus[] | null;
-    setStatuses(statuses: ExperienceStatus[] | null): this;
-    withStatuses(statuses: ExperienceStatus[] | null): this;
+    getStatistics(): Gs2Watch.ExperienceExperienceModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExperienceExperienceModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExperienceExperienceModelStatistics | null): this;
+    getDistributions(): Gs2Watch.ExperienceExperienceModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.ExperienceExperienceModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ExperienceExperienceModelDistributions | null): this;
+    getStatuses(): Gs2Watch.ExperienceStatus[] | null;
+    setStatuses(statuses: Gs2Watch.ExperienceStatus[] | null): this;
+    withStatuses(statuses: Gs2Watch.ExperienceStatus[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceExperienceModel | null;

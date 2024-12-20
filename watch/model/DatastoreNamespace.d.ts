@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import DatastoreNamespaceStatistics from './DatastoreNamespaceStatistics';
-import DatastoreNamespaceDistributions from './DatastoreNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class DatastoreNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class DatastoreNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): DatastoreNamespaceStatistics | null;
-    setStatistics(statistics: DatastoreNamespaceStatistics | null): this;
-    withStatistics(statistics: DatastoreNamespaceStatistics | null): this;
-    getDistributions(): DatastoreNamespaceDistributions | null;
-    setDistributions(distributions: DatastoreNamespaceDistributions | null): this;
-    withDistributions(distributions: DatastoreNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.DatastoreNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.DatastoreNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.DatastoreNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.DatastoreNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.DatastoreNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.DatastoreNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DatastoreNamespace | null;

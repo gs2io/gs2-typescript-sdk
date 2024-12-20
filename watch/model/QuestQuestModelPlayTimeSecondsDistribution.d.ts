@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import QuestQuestModelPlayTimeSecondsDistributionStatistics from './QuestQuestModelPlayTimeSecondsDistributionStatistics';
-import QuestQuestModelPlayTimeSecondsDistributionSegment from './QuestQuestModelPlayTimeSecondsDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestQuestModelPlayTimeSecondsDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): QuestQuestModelPlayTimeSecondsDistributionStatistics | null;
-    setStatistics(statistics: QuestQuestModelPlayTimeSecondsDistributionStatistics | null): this;
-    withStatistics(statistics: QuestQuestModelPlayTimeSecondsDistributionStatistics | null): this;
-    getDistribution(): QuestQuestModelPlayTimeSecondsDistributionSegment[] | null;
-    setDistribution(distribution: QuestQuestModelPlayTimeSecondsDistributionSegment[] | null): this;
-    withDistribution(distribution: QuestQuestModelPlayTimeSecondsDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestQuestModelPlayTimeSecondsDistribution | null;

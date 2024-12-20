@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionMissionGroupModelStatistics_1 = tslib_1.__importDefault(require("./MissionMissionGroupModelStatistics"));
-var MissionMissionGroupModelDistributions_1 = tslib_1.__importDefault(require("./MissionMissionGroupModelDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:mission:namespace:{namespaceName}:missionGroupModel:{missionGroupName}";
 var MissionMissionGroupModel = /** @class */ (function () {
     function MissionMissionGroupModel() {
@@ -209,8 +208,8 @@ var MissionMissionGroupModel = /** @class */ (function () {
         return new MissionMissionGroupModel()
             .withMissionGroupModelId(data["missionGroupModelId"])
             .withMissionGroupName(data["missionGroupName"])
-            .withStatistics(MissionMissionGroupModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(MissionMissionGroupModelDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MissionMissionGroupModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MissionMissionGroupModelDistributions.fromDict(data["distributions"]));
     };
     MissionMissionGroupModel.prototype.toDict = function () {
         var _a, _b;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class GeneralDauWauMauHistory implements IModel {
     private date: string|null = null;
     private dau: number|null = null;

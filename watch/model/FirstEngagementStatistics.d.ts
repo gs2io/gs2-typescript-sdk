@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import FirstEngagementStatisticsLoginDays from './FirstEngagementStatisticsLoginDays';
+import * as Gs2Watch from '../../watch/model';
 export default class FirstEngagementStatistics implements IModel {
     private loginDays;
-    getLoginDays(): FirstEngagementStatisticsLoginDays | null;
-    setLoginDays(loginDays: FirstEngagementStatisticsLoginDays | null): this;
-    withLoginDays(loginDays: FirstEngagementStatisticsLoginDays | null): this;
+    getLoginDays(): Gs2Watch.FirstEngagementStatisticsLoginDays | null;
+    setLoginDays(loginDays: Gs2Watch.FirstEngagementStatisticsLoginDays | null): this;
+    withLoginDays(loginDays: Gs2Watch.FirstEngagementStatisticsLoginDays | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FirstEngagementStatistics | null;

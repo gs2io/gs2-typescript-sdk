@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ShowcaseShowcaseStatistics from './ShowcaseShowcaseStatistics';
-import ShowcaseShowcaseDistributions from './ShowcaseShowcaseDistributions';
-import ShowcaseDisplayItem from './ShowcaseDisplayItem';
+import * as Gs2Watch from '../../watch/model';
 export default class ShowcaseShowcase implements IModel {
     private showcaseId;
     private showcaseName;
@@ -23,15 +21,15 @@ export default class ShowcaseShowcase implements IModel {
     getShowcaseName(): string | null;
     setShowcaseName(showcaseName: string | null): this;
     withShowcaseName(showcaseName: string | null): this;
-    getStatistics(): ShowcaseShowcaseStatistics | null;
-    setStatistics(statistics: ShowcaseShowcaseStatistics | null): this;
-    withStatistics(statistics: ShowcaseShowcaseStatistics | null): this;
-    getDistributions(): ShowcaseShowcaseDistributions | null;
-    setDistributions(distributions: ShowcaseShowcaseDistributions | null): this;
-    withDistributions(distributions: ShowcaseShowcaseDistributions | null): this;
-    getDisplayItems(): ShowcaseDisplayItem[] | null;
-    setDisplayItems(displayItems: ShowcaseDisplayItem[] | null): this;
-    withDisplayItems(displayItems: ShowcaseDisplayItem[] | null): this;
+    getStatistics(): Gs2Watch.ShowcaseShowcaseStatistics | null;
+    setStatistics(statistics: Gs2Watch.ShowcaseShowcaseStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ShowcaseShowcaseStatistics | null): this;
+    getDistributions(): Gs2Watch.ShowcaseShowcaseDistributions | null;
+    setDistributions(distributions: Gs2Watch.ShowcaseShowcaseDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ShowcaseShowcaseDistributions | null): this;
+    getDisplayItems(): Gs2Watch.ShowcaseDisplayItem[] | null;
+    setDisplayItems(displayItems: Gs2Watch.ShowcaseDisplayItem[] | null): this;
+    withDisplayItems(displayItems: Gs2Watch.ShowcaseDisplayItem[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ShowcaseShowcase | null;

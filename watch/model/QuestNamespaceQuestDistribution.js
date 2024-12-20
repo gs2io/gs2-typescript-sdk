@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestNamespaceQuestDistributionStatistics_1 = tslib_1.__importDefault(require("./QuestNamespaceQuestDistributionStatistics"));
-var QuestNamespaceQuestDistributionSegment_1 = tslib_1.__importDefault(require("./QuestNamespaceQuestDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var QuestNamespaceQuestDistribution = /** @class */ (function () {
     function QuestNamespaceQuestDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var QuestNamespaceQuestDistribution = /** @class */ (function () {
             return null;
         }
         return new QuestNamespaceQuestDistribution()
-            .withStatistics(QuestNamespaceQuestDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.QuestNamespaceQuestDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return QuestNamespaceQuestDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.QuestNamespaceQuestDistributionSegment.fromDict(item);
+            }) : null);
     };
     QuestNamespaceQuestDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var QuestNamespaceQuestDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return QuestNamespaceQuestDistribution;

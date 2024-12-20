@@ -40,7 +40,7 @@ export default class DescribeInventoryItemSetMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.InventoryItemSet.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeInventoryItemSetMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.InventoryItemSet) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

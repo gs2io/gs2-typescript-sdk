@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExchangeRateModelAmountDistribution_1 = tslib_1.__importDefault(require("./ExchangeRateModelAmountDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExchangeRateModelDistributions = /** @class */ (function () {
     function ExchangeRateModelDistributions() {
         this.amount = null;
@@ -37,7 +37,7 @@ var ExchangeRateModelDistributions = /** @class */ (function () {
             return null;
         }
         return new ExchangeRateModelDistributions()
-            .withAmount(ExchangeRateModelAmountDistribution_1.default.fromDict(data["amount"]));
+            .withAmount(Gs2Watch.ExchangeRateModelAmountDistribution.fromDict(data["amount"]));
     };
     ExchangeRateModelDistributions.prototype.toDict = function () {
         var _a;

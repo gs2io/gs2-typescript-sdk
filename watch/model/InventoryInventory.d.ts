@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import InventoryInventoryStatistics from './InventoryInventoryStatistics';
-import InventoryInventoryDistributions from './InventoryInventoryDistributions';
-import InventoryItemSet from './InventoryItemSet';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryInventory implements IModel {
     private inventoryId;
     private inventoryName;
@@ -23,15 +21,15 @@ export default class InventoryInventory implements IModel {
     getInventoryName(): string | null;
     setInventoryName(inventoryName: string | null): this;
     withInventoryName(inventoryName: string | null): this;
-    getStatistics(): InventoryInventoryStatistics | null;
-    setStatistics(statistics: InventoryInventoryStatistics | null): this;
-    withStatistics(statistics: InventoryInventoryStatistics | null): this;
-    getDistributions(): InventoryInventoryDistributions | null;
-    setDistributions(distributions: InventoryInventoryDistributions | null): this;
-    withDistributions(distributions: InventoryInventoryDistributions | null): this;
-    getItemSets(): InventoryItemSet[] | null;
-    setItemSets(itemSets: InventoryItemSet[] | null): this;
-    withItemSets(itemSets: InventoryItemSet[] | null): this;
+    getStatistics(): Gs2Watch.InventoryInventoryStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryInventoryStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryInventoryStatistics | null): this;
+    getDistributions(): Gs2Watch.InventoryInventoryDistributions | null;
+    setDistributions(distributions: Gs2Watch.InventoryInventoryDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.InventoryInventoryDistributions | null): this;
+    getItemSets(): Gs2Watch.InventoryItemSet[] | null;
+    setItemSets(itemSets: Gs2Watch.InventoryItemSet[] | null): this;
+    withItemSets(itemSets: Gs2Watch.InventoryItemSet[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryInventory | null;

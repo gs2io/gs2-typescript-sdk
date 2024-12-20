@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LotteryLotteryDrawResultDistributionStatistics from './LotteryLotteryDrawResultDistributionStatistics';
 import LotteryLotteryDrawResultDistributionSegment from './LotteryLotteryDrawResultDistributionSegment';
 
 export default class LotteryLotteryDrawResultDistribution implements IModel {
-    private statistics: LotteryLotteryDrawResultDistributionStatistics|null = null;
-    private distribution: LotteryLotteryDrawResultDistributionSegment[]|null = null;
-    public getStatistics(): LotteryLotteryDrawResultDistributionStatistics|null {
+    private statistics: Gs2Watch.LotteryLotteryDrawResultDistributionStatistics|null = null;
+    private distribution: Gs2Watch.LotteryLotteryDrawResultDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.LotteryLotteryDrawResultDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LotteryLotteryDrawResultDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LotteryLotteryDrawResultDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LotteryLotteryDrawResultDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LotteryLotteryDrawResultDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): LotteryLotteryDrawResultDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.LotteryLotteryDrawResultDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: LotteryLotteryDrawResultDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.LotteryLotteryDrawResultDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: LotteryLotteryDrawResultDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.LotteryLotteryDrawResultDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class LotteryLotteryDrawResultDistribution implements IModel {
             return null;
         }
         return new LotteryLotteryDrawResultDistribution()
-            .withStatistics(LotteryLotteryDrawResultDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LotteryLotteryDrawResultDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return LotteryLotteryDrawResultDistributionSegment.fromDict(item);
+                    return Gs2Watch.LotteryLotteryDrawResultDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: LotteryLotteryDrawResultDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.LotteryLotteryDrawResultDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

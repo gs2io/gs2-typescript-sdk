@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InventoryItemSetStatistics from './InventoryItemSetStatistics';
 import InventoryItemSetCountDistributionStatistics from './InventoryItemSetCountDistributionStatistics';
 import InventoryItemSetCountDistributionSegment from './InventoryItemSetCountDistributionSegment';
@@ -26,8 +28,8 @@ export default class InventoryItemSet implements IModel {
     private itemSetId: string|null = null;
     private itemName: string|null = null;
     private itemSetName: string|null = null;
-    private statistics: InventoryItemSetStatistics|null = null;
-    private distributions: InventoryItemSetDistributions|null = null;
+    private statistics: Gs2Watch.InventoryItemSetStatistics|null = null;
+    private distributions: Gs2Watch.InventoryItemSetDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -277,25 +279,25 @@ export default class InventoryItemSet implements IModel {
         this.itemSetName = itemSetName;
         return this;
     }
-    public getStatistics(): InventoryItemSetStatistics|null {
+    public getStatistics(): Gs2Watch.InventoryItemSetStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: InventoryItemSetStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.InventoryItemSetStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: InventoryItemSetStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.InventoryItemSetStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): InventoryItemSetDistributions|null {
+    public getDistributions(): Gs2Watch.InventoryItemSetDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: InventoryItemSetDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.InventoryItemSetDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: InventoryItemSetDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.InventoryItemSetDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -308,8 +310,8 @@ export default class InventoryItemSet implements IModel {
             .withItemSetId(data["itemSetId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withStatistics(InventoryItemSetStatistics.fromDict(data["statistics"]))
-            .withDistributions(InventoryItemSetDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.InventoryItemSetStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InventoryItemSetDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

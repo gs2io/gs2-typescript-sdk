@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import RankingNamespacePutDistribution from './RankingNamespacePutDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class RankingNamespaceDistributions implements IModel {
     private put;
-    getPut(): RankingNamespacePutDistribution | null;
-    setPut(put: RankingNamespacePutDistribution | null): this;
-    withPut(put: RankingNamespacePutDistribution | null): this;
+    getPut(): Gs2Watch.RankingNamespacePutDistribution | null;
+    setPut(put: Gs2Watch.RankingNamespacePutDistribution | null): this;
+    withPut(put: Gs2Watch.RankingNamespacePutDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RankingNamespaceDistributions | null;

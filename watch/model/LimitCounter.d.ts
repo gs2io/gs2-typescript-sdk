@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LimitCounterStatistics from './LimitCounterStatistics';
-import LimitCounterDistributions from './LimitCounterDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitCounter implements IModel {
     private counterId;
     private limitName;
@@ -26,12 +25,12 @@ export default class LimitCounter implements IModel {
     getCounterName(): string | null;
     setCounterName(counterName: string | null): this;
     withCounterName(counterName: string | null): this;
-    getStatistics(): LimitCounterStatistics | null;
-    setStatistics(statistics: LimitCounterStatistics | null): this;
-    withStatistics(statistics: LimitCounterStatistics | null): this;
-    getDistributions(): LimitCounterDistributions | null;
-    setDistributions(distributions: LimitCounterDistributions | null): this;
-    withDistributions(distributions: LimitCounterDistributions | null): this;
+    getStatistics(): Gs2Watch.LimitCounterStatistics | null;
+    setStatistics(statistics: Gs2Watch.LimitCounterStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LimitCounterStatistics | null): this;
+    getDistributions(): Gs2Watch.LimitCounterDistributions | null;
+    setDistributions(distributions: Gs2Watch.LimitCounterDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.LimitCounterDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitCounter | null;

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationFormStatistics from './FormationFormStatistics';
 import FormationFormSlotDistributionStatistics from './FormationFormSlotDistributionStatistics';
 import FormationFormSlotDistributionSegment from './FormationFormSlotDistributionSegment';
@@ -28,8 +30,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class FormationForm implements IModel {
     private formId: string|null = null;
     private index: number|null = null;
-    private statistics: FormationFormStatistics|null = null;
-    private distributions: FormationFormDistributions|null = null;
+    private statistics: Gs2Watch.FormationFormStatistics|null = null;
+    private distributions: Gs2Watch.FormationFormDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -237,25 +239,25 @@ export default class FormationForm implements IModel {
         this.index = index;
         return this;
     }
-    public getStatistics(): FormationFormStatistics|null {
+    public getStatistics(): Gs2Watch.FormationFormStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationFormStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationFormStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationFormStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationFormStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): FormationFormDistributions|null {
+    public getDistributions(): Gs2Watch.FormationFormDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: FormationFormDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.FormationFormDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: FormationFormDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.FormationFormDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -267,8 +269,8 @@ export default class FormationForm implements IModel {
         return new FormationForm()
             .withFormId(data["formId"])
             .withIndex(data["index"])
-            .withStatistics(FormationFormStatistics.fromDict(data["statistics"]))
-            .withDistributions(FormationFormDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.FormationFormStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationFormDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

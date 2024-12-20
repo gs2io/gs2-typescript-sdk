@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LotteryLotteryDrawResultDistributionStatistics from './LotteryLotteryDrawResultDistributionStatistics';
 import LotteryLotteryDrawResultDistributionSegment from './LotteryLotteryDrawResultDistributionSegment';
 import LotteryLotteryDrawResultDistribution from './LotteryLotteryDrawResultDistribution';
 
 export default class LotteryLotteryDistributions implements IModel {
-    private drawResult: LotteryLotteryDrawResultDistribution|null = null;
-    public getDrawResult(): LotteryLotteryDrawResultDistribution|null {
+    private drawResult: Gs2Watch.LotteryLotteryDrawResultDistribution|null = null;
+    public getDrawResult(): Gs2Watch.LotteryLotteryDrawResultDistribution|null {
         return this.drawResult;
     }
-    public setDrawResult(drawResult: LotteryLotteryDrawResultDistribution|null) {
+    public setDrawResult(drawResult: Gs2Watch.LotteryLotteryDrawResultDistribution|null) {
         this.drawResult = drawResult;
         return this;
     }
-    public withDrawResult(drawResult: LotteryLotteryDrawResultDistribution|null): this {
+    public withDrawResult(drawResult: Gs2Watch.LotteryLotteryDrawResultDistribution|null): this {
         this.drawResult = drawResult;
         return this;
     }
@@ -38,7 +40,7 @@ export default class LotteryLotteryDistributions implements IModel {
             return null;
         }
         return new LotteryLotteryDistributions()
-            .withDrawResult(LotteryLotteryDrawResultDistribution.fromDict(data["drawResult"]));
+            .withDrawResult(Gs2Watch.LotteryLotteryDrawResultDistribution.fromDict(data["drawResult"]));
     }
 
     public toDict(): {[key: string]: any} {

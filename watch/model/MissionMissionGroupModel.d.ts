@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MissionMissionGroupModelStatistics from './MissionMissionGroupModelStatistics';
-import MissionMissionGroupModelDistributions from './MissionMissionGroupModelDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class MissionMissionGroupModel implements IModel {
     private missionGroupModelId;
     private missionGroupName;
@@ -21,12 +20,12 @@ export default class MissionMissionGroupModel implements IModel {
     getMissionGroupName(): string | null;
     setMissionGroupName(missionGroupName: string | null): this;
     withMissionGroupName(missionGroupName: string | null): this;
-    getStatistics(): MissionMissionGroupModelStatistics | null;
-    setStatistics(statistics: MissionMissionGroupModelStatistics | null): this;
-    withStatistics(statistics: MissionMissionGroupModelStatistics | null): this;
-    getDistributions(): MissionMissionGroupModelDistributions | null;
-    setDistributions(distributions: MissionMissionGroupModelDistributions | null): this;
-    withDistributions(distributions: MissionMissionGroupModelDistributions | null): this;
+    getStatistics(): Gs2Watch.MissionMissionGroupModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.MissionMissionGroupModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MissionMissionGroupModelStatistics | null): this;
+    getDistributions(): Gs2Watch.MissionMissionGroupModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.MissionMissionGroupModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MissionMissionGroupModelDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionMissionGroupModel | null;

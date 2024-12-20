@@ -40,7 +40,7 @@ export default class DescribeQuestQuestGroupModelMetricsResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.QuestQuestGroupModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeQuestQuestGroupModelMetricsResult implements IResul
                 this.getItems()!.map((item: Gs2Watch.QuestQuestGroupModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

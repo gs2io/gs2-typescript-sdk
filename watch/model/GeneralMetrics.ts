@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import GeneralDauWauMauHistory from './GeneralDauWauMauHistory';
 import GeneralDauWauMauAverage from './GeneralDauWauMauAverage';
 import GeneralDauWauMau from './GeneralDauWauMau';
@@ -34,75 +36,75 @@ import ChurnRateAggregate from './ChurnRateAggregate';
 import UseServices from './UseServices';
 
 export default class GeneralMetrics implements IModel {
-    private dauWauMau: GeneralDauWauMau|null = null;
-    private sessionDuration: SessionDuration|null = null;
-    private firstEngagement: FirstEngagement|null = null;
-    private engagements: Engagements|null = null;
-    private churnRates: ChurnRateAggregate|null = null;
-    private useServices: UseServices|null = null;
-    public getDauWauMau(): GeneralDauWauMau|null {
+    private dauWauMau: Gs2Watch.GeneralDauWauMau|null = null;
+    private sessionDuration: Gs2Watch.SessionDuration|null = null;
+    private firstEngagement: Gs2Watch.FirstEngagement|null = null;
+    private engagements: Gs2Watch.Engagements|null = null;
+    private churnRates: Gs2Watch.ChurnRateAggregate|null = null;
+    private useServices: Gs2Watch.UseServices|null = null;
+    public getDauWauMau(): Gs2Watch.GeneralDauWauMau|null {
         return this.dauWauMau;
     }
-    public setDauWauMau(dauWauMau: GeneralDauWauMau|null) {
+    public setDauWauMau(dauWauMau: Gs2Watch.GeneralDauWauMau|null) {
         this.dauWauMau = dauWauMau;
         return this;
     }
-    public withDauWauMau(dauWauMau: GeneralDauWauMau|null): this {
+    public withDauWauMau(dauWauMau: Gs2Watch.GeneralDauWauMau|null): this {
         this.dauWauMau = dauWauMau;
         return this;
     }
-    public getSessionDuration(): SessionDuration|null {
+    public getSessionDuration(): Gs2Watch.SessionDuration|null {
         return this.sessionDuration;
     }
-    public setSessionDuration(sessionDuration: SessionDuration|null) {
+    public setSessionDuration(sessionDuration: Gs2Watch.SessionDuration|null) {
         this.sessionDuration = sessionDuration;
         return this;
     }
-    public withSessionDuration(sessionDuration: SessionDuration|null): this {
+    public withSessionDuration(sessionDuration: Gs2Watch.SessionDuration|null): this {
         this.sessionDuration = sessionDuration;
         return this;
     }
-    public getFirstEngagement(): FirstEngagement|null {
+    public getFirstEngagement(): Gs2Watch.FirstEngagement|null {
         return this.firstEngagement;
     }
-    public setFirstEngagement(firstEngagement: FirstEngagement|null) {
+    public setFirstEngagement(firstEngagement: Gs2Watch.FirstEngagement|null) {
         this.firstEngagement = firstEngagement;
         return this;
     }
-    public withFirstEngagement(firstEngagement: FirstEngagement|null): this {
+    public withFirstEngagement(firstEngagement: Gs2Watch.FirstEngagement|null): this {
         this.firstEngagement = firstEngagement;
         return this;
     }
-    public getEngagements(): Engagements|null {
+    public getEngagements(): Gs2Watch.Engagements|null {
         return this.engagements;
     }
-    public setEngagements(engagements: Engagements|null) {
+    public setEngagements(engagements: Gs2Watch.Engagements|null) {
         this.engagements = engagements;
         return this;
     }
-    public withEngagements(engagements: Engagements|null): this {
+    public withEngagements(engagements: Gs2Watch.Engagements|null): this {
         this.engagements = engagements;
         return this;
     }
-    public getChurnRates(): ChurnRateAggregate|null {
+    public getChurnRates(): Gs2Watch.ChurnRateAggregate|null {
         return this.churnRates;
     }
-    public setChurnRates(churnRates: ChurnRateAggregate|null) {
+    public setChurnRates(churnRates: Gs2Watch.ChurnRateAggregate|null) {
         this.churnRates = churnRates;
         return this;
     }
-    public withChurnRates(churnRates: ChurnRateAggregate|null): this {
+    public withChurnRates(churnRates: Gs2Watch.ChurnRateAggregate|null): this {
         this.churnRates = churnRates;
         return this;
     }
-    public getUseServices(): UseServices|null {
+    public getUseServices(): Gs2Watch.UseServices|null {
         return this.useServices;
     }
-    public setUseServices(useServices: UseServices|null) {
+    public setUseServices(useServices: Gs2Watch.UseServices|null) {
         this.useServices = useServices;
         return this;
     }
-    public withUseServices(useServices: UseServices|null): this {
+    public withUseServices(useServices: Gs2Watch.UseServices|null): this {
         this.useServices = useServices;
         return this;
     }
@@ -112,12 +114,12 @@ export default class GeneralMetrics implements IModel {
             return null;
         }
         return new GeneralMetrics()
-            .withDauWauMau(GeneralDauWauMau.fromDict(data["dauWauMau"]))
-            .withSessionDuration(SessionDuration.fromDict(data["sessionDuration"]))
-            .withFirstEngagement(FirstEngagement.fromDict(data["firstEngagement"]))
-            .withEngagements(Engagements.fromDict(data["engagements"]))
-            .withChurnRates(ChurnRateAggregate.fromDict(data["churnRates"]))
-            .withUseServices(UseServices.fromDict(data["useServices"]));
+            .withDauWauMau(Gs2Watch.GeneralDauWauMau.fromDict(data["dauWauMau"]))
+            .withSessionDuration(Gs2Watch.SessionDuration.fromDict(data["sessionDuration"]))
+            .withFirstEngagement(Gs2Watch.FirstEngagement.fromDict(data["firstEngagement"]))
+            .withEngagements(Gs2Watch.Engagements.fromDict(data["engagements"]))
+            .withChurnRates(Gs2Watch.ChurnRateAggregate.fromDict(data["churnRates"]))
+            .withUseServices(Gs2Watch.UseServices.fromDict(data["useServices"]));
     }
 
     public toDict(): {[key: string]: any} {

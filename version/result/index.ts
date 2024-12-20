@@ -37,6 +37,8 @@ import DescribeAcceptVersionsResult from "./DescribeAcceptVersionsResult"
 import DescribeAcceptVersionsByUserIdResult from "./DescribeAcceptVersionsByUserIdResult"
 import AcceptResult from "./AcceptResult"
 import AcceptByUserIdResult from "./AcceptByUserIdResult"
+import RejectResult from "./RejectResult"
+import RejectByUserIdResult from "./RejectByUserIdResult"
 import GetAcceptVersionResult from "./GetAcceptVersionResult"
 import GetAcceptVersionByUserIdResult from "./GetAcceptVersionByUserIdResult"
 import DeleteAcceptVersionResult from "./DeleteAcceptVersionResult"
@@ -74,6 +76,8 @@ export {
     DescribeAcceptVersionsByUserIdResult,
     AcceptResult,
     AcceptByUserIdResult,
+    RejectResult,
+    RejectByUserIdResult,
     GetAcceptVersionResult,
     GetAcceptVersionByUserIdResult,
     DeleteAcceptVersionResult,

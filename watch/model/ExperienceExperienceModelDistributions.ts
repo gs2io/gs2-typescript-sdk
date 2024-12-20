@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceExperienceModelAddExperienceByUserDistributionStatistics from './ExperienceExperienceModelAddExperienceByUserDistributionStatistics';
 import ExperienceExperienceModelAddExperienceByUserDistributionSegment from './ExperienceExperienceModelAddExperienceByUserDistributionSegment';
 import ExperienceExperienceModelAddExperienceByUserDistribution from './ExperienceExperienceModelAddExperienceByUserDistribution';
@@ -29,51 +31,51 @@ import ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment from '
 import ExperienceExperienceModelAddRankCapAmountByUserDistribution from './ExperienceExperienceModelAddRankCapAmountByUserDistribution';
 
 export default class ExperienceExperienceModelDistributions implements IModel {
-    private addExperienceByUser: ExperienceExperienceModelAddExperienceByUserDistribution|null = null;
-    private addExperienceAmountByUser: ExperienceExperienceModelAddExperienceAmountByUserDistribution|null = null;
-    private addRankCapByUser: ExperienceExperienceModelAddRankCapByUserDistribution|null = null;
-    private addRankCapAmountByUser: ExperienceExperienceModelAddRankCapAmountByUserDistribution|null = null;
-    public getAddExperienceByUser(): ExperienceExperienceModelAddExperienceByUserDistribution|null {
+    private addExperienceByUser: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution|null = null;
+    private addExperienceAmountByUser: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution|null = null;
+    private addRankCapByUser: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution|null = null;
+    private addRankCapAmountByUser: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution|null = null;
+    public getAddExperienceByUser(): Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution|null {
         return this.addExperienceByUser;
     }
-    public setAddExperienceByUser(addExperienceByUser: ExperienceExperienceModelAddExperienceByUserDistribution|null) {
+    public setAddExperienceByUser(addExperienceByUser: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution|null) {
         this.addExperienceByUser = addExperienceByUser;
         return this;
     }
-    public withAddExperienceByUser(addExperienceByUser: ExperienceExperienceModelAddExperienceByUserDistribution|null): this {
+    public withAddExperienceByUser(addExperienceByUser: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution|null): this {
         this.addExperienceByUser = addExperienceByUser;
         return this;
     }
-    public getAddExperienceAmountByUser(): ExperienceExperienceModelAddExperienceAmountByUserDistribution|null {
+    public getAddExperienceAmountByUser(): Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution|null {
         return this.addExperienceAmountByUser;
     }
-    public setAddExperienceAmountByUser(addExperienceAmountByUser: ExperienceExperienceModelAddExperienceAmountByUserDistribution|null) {
+    public setAddExperienceAmountByUser(addExperienceAmountByUser: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution|null) {
         this.addExperienceAmountByUser = addExperienceAmountByUser;
         return this;
     }
-    public withAddExperienceAmountByUser(addExperienceAmountByUser: ExperienceExperienceModelAddExperienceAmountByUserDistribution|null): this {
+    public withAddExperienceAmountByUser(addExperienceAmountByUser: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution|null): this {
         this.addExperienceAmountByUser = addExperienceAmountByUser;
         return this;
     }
-    public getAddRankCapByUser(): ExperienceExperienceModelAddRankCapByUserDistribution|null {
+    public getAddRankCapByUser(): Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution|null {
         return this.addRankCapByUser;
     }
-    public setAddRankCapByUser(addRankCapByUser: ExperienceExperienceModelAddRankCapByUserDistribution|null) {
+    public setAddRankCapByUser(addRankCapByUser: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution|null) {
         this.addRankCapByUser = addRankCapByUser;
         return this;
     }
-    public withAddRankCapByUser(addRankCapByUser: ExperienceExperienceModelAddRankCapByUserDistribution|null): this {
+    public withAddRankCapByUser(addRankCapByUser: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution|null): this {
         this.addRankCapByUser = addRankCapByUser;
         return this;
     }
-    public getAddRankCapAmountByUser(): ExperienceExperienceModelAddRankCapAmountByUserDistribution|null {
+    public getAddRankCapAmountByUser(): Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution|null {
         return this.addRankCapAmountByUser;
     }
-    public setAddRankCapAmountByUser(addRankCapAmountByUser: ExperienceExperienceModelAddRankCapAmountByUserDistribution|null) {
+    public setAddRankCapAmountByUser(addRankCapAmountByUser: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution|null) {
         this.addRankCapAmountByUser = addRankCapAmountByUser;
         return this;
     }
-    public withAddRankCapAmountByUser(addRankCapAmountByUser: ExperienceExperienceModelAddRankCapAmountByUserDistribution|null): this {
+    public withAddRankCapAmountByUser(addRankCapAmountByUser: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution|null): this {
         this.addRankCapAmountByUser = addRankCapAmountByUser;
         return this;
     }
@@ -83,10 +85,10 @@ export default class ExperienceExperienceModelDistributions implements IModel {
             return null;
         }
         return new ExperienceExperienceModelDistributions()
-            .withAddExperienceByUser(ExperienceExperienceModelAddExperienceByUserDistribution.fromDict(data["addExperienceByUser"]))
-            .withAddExperienceAmountByUser(ExperienceExperienceModelAddExperienceAmountByUserDistribution.fromDict(data["addExperienceAmountByUser"]))
-            .withAddRankCapByUser(ExperienceExperienceModelAddRankCapByUserDistribution.fromDict(data["addRankCapByUser"]))
-            .withAddRankCapAmountByUser(ExperienceExperienceModelAddRankCapAmountByUserDistribution.fromDict(data["addRankCapAmountByUser"]));
+            .withAddExperienceByUser(Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution.fromDict(data["addExperienceByUser"]))
+            .withAddExperienceAmountByUser(Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution.fromDict(data["addExperienceAmountByUser"]))
+            .withAddRankCapByUser(Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution.fromDict(data["addRankCapByUser"]))
+            .withAddRankCapAmountByUser(Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution.fromDict(data["addRankCapAmountByUser"]));
     }
 
     public toDict(): {[key: string]: any} {

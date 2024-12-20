@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import InventoryInventoryConsumeAmountDistributionStatistics from './InventoryInventoryConsumeAmountDistributionStatistics';
-import InventoryInventoryConsumeAmountDistributionSegment from './InventoryInventoryConsumeAmountDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryInventoryConsumeAmountDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): InventoryInventoryConsumeAmountDistributionStatistics | null;
-    setStatistics(statistics: InventoryInventoryConsumeAmountDistributionStatistics | null): this;
-    withStatistics(statistics: InventoryInventoryConsumeAmountDistributionStatistics | null): this;
-    getDistribution(): InventoryInventoryConsumeAmountDistributionSegment[] | null;
-    setDistribution(distribution: InventoryInventoryConsumeAmountDistributionSegment[] | null): this;
-    withDistribution(distribution: InventoryInventoryConsumeAmountDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.InventoryInventoryConsumeAmountDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryInventoryConsumeAmountDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryInventoryConsumeAmountDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.InventoryInventoryConsumeAmountDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.InventoryInventoryConsumeAmountDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.InventoryInventoryConsumeAmountDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryInventoryConsumeAmountDistribution | null;

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitNamespaceIncreaseDistributionStatistics from './LimitNamespaceIncreaseDistributionStatistics';
 import LimitNamespaceIncreaseDistributionSegment from './LimitNamespaceIncreaseDistributionSegment';
 
 export default class LimitNamespaceIncreaseDistribution implements IModel {
-    private statistics: LimitNamespaceIncreaseDistributionStatistics|null = null;
-    private distribution: LimitNamespaceIncreaseDistributionSegment[]|null = null;
-    public getStatistics(): LimitNamespaceIncreaseDistributionStatistics|null {
+    private statistics: Gs2Watch.LimitNamespaceIncreaseDistributionStatistics|null = null;
+    private distribution: Gs2Watch.LimitNamespaceIncreaseDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.LimitNamespaceIncreaseDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LimitNamespaceIncreaseDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LimitNamespaceIncreaseDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LimitNamespaceIncreaseDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LimitNamespaceIncreaseDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): LimitNamespaceIncreaseDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.LimitNamespaceIncreaseDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: LimitNamespaceIncreaseDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.LimitNamespaceIncreaseDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: LimitNamespaceIncreaseDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.LimitNamespaceIncreaseDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class LimitNamespaceIncreaseDistribution implements IModel {
             return null;
         }
         return new LimitNamespaceIncreaseDistribution()
-            .withStatistics(LimitNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LimitNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return LimitNamespaceIncreaseDistributionSegment.fromDict(item);
+                    return Gs2Watch.LimitNamespaceIncreaseDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: LimitNamespaceIncreaseDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.LimitNamespaceIncreaseDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

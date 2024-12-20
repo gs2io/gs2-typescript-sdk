@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationMoldUpdateByIndexDistributionStatistics from './FormationMoldUpdateByIndexDistributionStatistics';
 import FormationMoldUpdateByIndexDistributionSegment from './FormationMoldUpdateByIndexDistributionSegment';
 
 export default class FormationMoldUpdateByIndexDistribution implements IModel {
-    private statistics: FormationMoldUpdateByIndexDistributionStatistics|null = null;
-    private distribution: FormationMoldUpdateByIndexDistributionSegment[]|null = null;
-    public getStatistics(): FormationMoldUpdateByIndexDistributionStatistics|null {
+    private statistics: Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics|null = null;
+    private distribution: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationMoldUpdateByIndexDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationMoldUpdateByIndexDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): FormationMoldUpdateByIndexDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: FormationMoldUpdateByIndexDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: FormationMoldUpdateByIndexDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class FormationMoldUpdateByIndexDistribution implements IModel {
             return null;
         }
         return new FormationMoldUpdateByIndexDistribution()
-            .withStatistics(FormationMoldUpdateByIndexDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FormationMoldUpdateByIndexDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return FormationMoldUpdateByIndexDistributionSegment.fromDict(item);
+                    return Gs2Watch.FormationMoldUpdateByIndexDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: FormationMoldUpdateByIndexDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.FormationMoldUpdateByIndexDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

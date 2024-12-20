@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingNamespacePutDistributionStatistics from './RankingNamespacePutDistributionStatistics';
 import RankingNamespacePutDistributionSegment from './RankingNamespacePutDistributionSegment';
 
 export default class RankingNamespacePutDistribution implements IModel {
-    private statistics: RankingNamespacePutDistributionStatistics|null = null;
-    private distribution: RankingNamespacePutDistributionSegment[]|null = null;
-    public getStatistics(): RankingNamespacePutDistributionStatistics|null {
+    private statistics: Gs2Watch.RankingNamespacePutDistributionStatistics|null = null;
+    private distribution: Gs2Watch.RankingNamespacePutDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.RankingNamespacePutDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: RankingNamespacePutDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.RankingNamespacePutDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: RankingNamespacePutDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.RankingNamespacePutDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): RankingNamespacePutDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.RankingNamespacePutDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: RankingNamespacePutDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.RankingNamespacePutDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: RankingNamespacePutDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.RankingNamespacePutDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class RankingNamespacePutDistribution implements IModel {
             return null;
         }
         return new RankingNamespacePutDistribution()
-            .withStatistics(RankingNamespacePutDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.RankingNamespacePutDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return RankingNamespacePutDistributionSegment.fromDict(item);
+                    return Gs2Watch.RankingNamespacePutDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: RankingNamespacePutDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.RankingNamespacePutDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

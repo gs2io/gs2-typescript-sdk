@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ShowcaseDisplayItemQuantityDistributionStatistics from './ShowcaseDisplayItemQuantityDistributionStatistics';
-import ShowcaseDisplayItemQuantityDistributionSegment from './ShowcaseDisplayItemQuantityDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ShowcaseDisplayItemQuantityDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ShowcaseDisplayItemQuantityDistributionStatistics | null;
-    setStatistics(statistics: ShowcaseDisplayItemQuantityDistributionStatistics | null): this;
-    withStatistics(statistics: ShowcaseDisplayItemQuantityDistributionStatistics | null): this;
-    getDistribution(): ShowcaseDisplayItemQuantityDistributionSegment[] | null;
-    setDistribution(distribution: ShowcaseDisplayItemQuantityDistributionSegment[] | null): this;
-    withDistribution(distribution: ShowcaseDisplayItemQuantityDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ShowcaseDisplayItemQuantityDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ShowcaseDisplayItemQuantityDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ShowcaseDisplayItemQuantityDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ShowcaseDisplayItemQuantityDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ShowcaseDisplayItemQuantityDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ShowcaseDisplayItemQuantityDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ShowcaseDisplayItemQuantityDistribution | null;

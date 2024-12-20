@@ -155,12 +155,12 @@ export default class GetDistributionRequest implements IRequest {
                 data.filters.map((item: {[key: string]: any}) => {
                     return Gs2Watch.Filter.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGroupBys(data.groupBys ?
                 data.groupBys.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withBegin(data["begin"])
             .withEnd(data["end"])
             .withPageToken(data["pageToken"])
@@ -175,12 +175,12 @@ export default class GetDistributionRequest implements IRequest {
                 this.getFilters()!.map((item: Gs2Watch.Filter) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "groupBys": this.getGroupBys() ?
                 this.getGroupBys()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "begin": this.getBegin(),
             "end": this.getEnd(),
             "pageToken": this.getPageToken(),

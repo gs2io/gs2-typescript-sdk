@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ExchangeRateModelStatistics from './ExchangeRateModelStatistics';
-import ExchangeRateModelDistributions from './ExchangeRateModelDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class ExchangeRateModel implements IModel {
     private rateModelId;
     private rateName;
@@ -21,12 +20,12 @@ export default class ExchangeRateModel implements IModel {
     getRateName(): string | null;
     setRateName(rateName: string | null): this;
     withRateName(rateName: string | null): this;
-    getStatistics(): ExchangeRateModelStatistics | null;
-    setStatistics(statistics: ExchangeRateModelStatistics | null): this;
-    withStatistics(statistics: ExchangeRateModelStatistics | null): this;
-    getDistributions(): ExchangeRateModelDistributions | null;
-    setDistributions(distributions: ExchangeRateModelDistributions | null): this;
-    withDistributions(distributions: ExchangeRateModelDistributions | null): this;
+    getStatistics(): Gs2Watch.ExchangeRateModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExchangeRateModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExchangeRateModelStatistics | null): this;
+    getDistributions(): Gs2Watch.ExchangeRateModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.ExchangeRateModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ExchangeRateModelDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExchangeRateModel | null;

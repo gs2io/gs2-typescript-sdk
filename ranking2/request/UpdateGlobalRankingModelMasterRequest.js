@@ -30,6 +30,7 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
         this.sum = null;
         this.orderDirection = null;
         this.rankingRewards = null;
+        this.rewardCalculationIndex = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
     }
@@ -154,6 +155,17 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
         this.rankingRewards = rankingRewards;
         return this;
     };
+    UpdateGlobalRankingModelMasterRequest.prototype.getRewardCalculationIndex = function () {
+        return this.rewardCalculationIndex;
+    };
+    UpdateGlobalRankingModelMasterRequest.prototype.setRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
+    UpdateGlobalRankingModelMasterRequest.prototype.withRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
     UpdateGlobalRankingModelMasterRequest.prototype.getEntryPeriodEventId = function () {
         return this.entryPeriodEventId;
     };
@@ -190,6 +202,7 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
             data.rankingRewards.map(function (item) {
                 return Gs2Ranking2.RankingReward.fromDict(item);
             }) : null)
+            .withRewardCalculationIndex(data["rewardCalculationIndex"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     };
@@ -207,6 +220,7 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
                 this.getRankingRewards().map(function (item) {
                     return item.toDict();
                 }) : null,
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };

@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LotteryNamespaceStatistics from './LotteryNamespaceStatistics';
-import LotteryNamespaceDistributions from './LotteryNamespaceDistributions';
-import LotteryLottery from './LotteryLottery';
+import * as Gs2Watch from '../../watch/model';
 export default class LotteryNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class LotteryNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): LotteryNamespaceStatistics | null;
-    setStatistics(statistics: LotteryNamespaceStatistics | null): this;
-    withStatistics(statistics: LotteryNamespaceStatistics | null): this;
-    getDistributions(): LotteryNamespaceDistributions | null;
-    setDistributions(distributions: LotteryNamespaceDistributions | null): this;
-    withDistributions(distributions: LotteryNamespaceDistributions | null): this;
-    getLotteries(): LotteryLottery[] | null;
-    setLotteries(lotteries: LotteryLottery[] | null): this;
-    withLotteries(lotteries: LotteryLottery[] | null): this;
+    getStatistics(): Gs2Watch.LotteryNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.LotteryNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LotteryNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.LotteryNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.LotteryNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.LotteryNamespaceDistributions | null): this;
+    getLotteries(): Gs2Watch.LotteryLottery[] | null;
+    setLotteries(lotteries: Gs2Watch.LotteryLottery[] | null): this;
+    withLotteries(lotteries: Gs2Watch.LotteryLottery[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LotteryNamespace | null;

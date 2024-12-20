@@ -40,7 +40,7 @@ export default class DescribeFriendNamespaceMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.FriendNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeFriendNamespaceMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.FriendNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

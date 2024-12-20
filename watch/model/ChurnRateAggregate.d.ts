@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ChurnRateHistory from './ChurnRateHistory';
-import ChurnRateAverage from './ChurnRateAverage';
+import * as Gs2Watch from '../../watch/model';
 export default class ChurnRateAggregate implements IModel {
     private history;
     private avg;
-    getHistory(): ChurnRateHistory[] | null;
-    setHistory(history: ChurnRateHistory[] | null): this;
-    withHistory(history: ChurnRateHistory[] | null): this;
-    getAvg(): ChurnRateAverage | null;
-    setAvg(avg: ChurnRateAverage | null): this;
-    withAvg(avg: ChurnRateAverage | null): this;
+    getHistory(): Gs2Watch.ChurnRateHistory[] | null;
+    setHistory(history: Gs2Watch.ChurnRateHistory[] | null): this;
+    withHistory(history: Gs2Watch.ChurnRateHistory[] | null): this;
+    getAvg(): Gs2Watch.ChurnRateAverage | null;
+    setAvg(avg: Gs2Watch.ChurnRateAverage | null): this;
+    withAvg(avg: Gs2Watch.ChurnRateAverage | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ChurnRateAggregate | null;

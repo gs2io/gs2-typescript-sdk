@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LimitLimitModelStatistics from './LimitLimitModelStatistics';
-import LimitLimitModelDistributions from './LimitLimitModelDistributions';
-import LimitCounter from './LimitCounter';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitLimitModel implements IModel {
     private limitModelId;
     private limitName;
@@ -23,15 +21,15 @@ export default class LimitLimitModel implements IModel {
     getLimitName(): string | null;
     setLimitName(limitName: string | null): this;
     withLimitName(limitName: string | null): this;
-    getStatistics(): LimitLimitModelStatistics | null;
-    setStatistics(statistics: LimitLimitModelStatistics | null): this;
-    withStatistics(statistics: LimitLimitModelStatistics | null): this;
-    getDistributions(): LimitLimitModelDistributions | null;
-    setDistributions(distributions: LimitLimitModelDistributions | null): this;
-    withDistributions(distributions: LimitLimitModelDistributions | null): this;
-    getCounters(): LimitCounter[] | null;
-    setCounters(counters: LimitCounter[] | null): this;
-    withCounters(counters: LimitCounter[] | null): this;
+    getStatistics(): Gs2Watch.LimitLimitModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.LimitLimitModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LimitLimitModelStatistics | null): this;
+    getDistributions(): Gs2Watch.LimitLimitModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.LimitLimitModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.LimitLimitModelDistributions | null): this;
+    getCounters(): Gs2Watch.LimitCounter[] | null;
+    setCounters(counters: Gs2Watch.LimitCounter[] | null): this;
+    withCounters(counters: Gs2Watch.LimitCounter[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitLimitModel | null;

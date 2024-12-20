@@ -33,6 +33,7 @@ export default class VersionModel implements IModel {
     private scheduleVersions: Gs2Version.ScheduleVersion[]|null = null;
     private needSignature: boolean|null = null;
     private signatureKeyId: string|null = null;
+    private approveRequirement: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -235,6 +236,17 @@ export default class VersionModel implements IModel {
         this.signatureKeyId = signatureKeyId;
         return this;
     }
+    public getApproveRequirement(): string|null {
+        return this.approveRequirement;
+    }
+    public setApproveRequirement(approveRequirement: string|null) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    }
+    public withApproveRequirement(approveRequirement: string|null): this {
+        this.approveRequirement = approveRequirement;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VersionModel|null {
         if (data == undefined || data == null) {
@@ -255,7 +267,8 @@ export default class VersionModel implements IModel {
                 }
             ) : null)
             .withNeedSignature(data["needSignature"])
-            .withSignatureKeyId(data["signatureKeyId"]);
+            .withSignatureKeyId(data["signatureKeyId"])
+            .withApproveRequirement(data["approveRequirement"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -275,6 +288,7 @@ export default class VersionModel implements IModel {
             ) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
+            "approveRequirement": this.getApproveRequirement(),
         };
     }
 }

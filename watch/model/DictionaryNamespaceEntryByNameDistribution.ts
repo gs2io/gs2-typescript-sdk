@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DictionaryNamespaceEntryByNameDistributionStatistics from './DictionaryNamespaceEntryByNameDistributionStatistics';
 import DictionaryNamespaceEntryByNameDistributionSegment from './DictionaryNamespaceEntryByNameDistributionSegment';
 
 export default class DictionaryNamespaceEntryByNameDistribution implements IModel {
-    private statistics: DictionaryNamespaceEntryByNameDistributionStatistics|null = null;
-    private distribution: DictionaryNamespaceEntryByNameDistributionSegment[]|null = null;
-    public getStatistics(): DictionaryNamespaceEntryByNameDistributionStatistics|null {
+    private statistics: Gs2Watch.DictionaryNamespaceEntryByNameDistributionStatistics|null = null;
+    private distribution: Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.DictionaryNamespaceEntryByNameDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DictionaryNamespaceEntryByNameDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DictionaryNamespaceEntryByNameDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DictionaryNamespaceEntryByNameDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DictionaryNamespaceEntryByNameDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): DictionaryNamespaceEntryByNameDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: DictionaryNamespaceEntryByNameDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: DictionaryNamespaceEntryByNameDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class DictionaryNamespaceEntryByNameDistribution implements IMode
             return null;
         }
         return new DictionaryNamespaceEntryByNameDistribution()
-            .withStatistics(DictionaryNamespaceEntryByNameDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.DictionaryNamespaceEntryByNameDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return DictionaryNamespaceEntryByNameDistributionSegment.fromDict(item);
+                    return Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: DictionaryNamespaceEntryByNameDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.DictionaryNamespaceEntryByNameDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

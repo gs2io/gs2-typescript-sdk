@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import QuestNamespaceStatistics from './QuestNamespaceStatistics';
-import QuestNamespaceDistributions from './QuestNamespaceDistributions';
-import QuestQuestGroupModel from './QuestQuestGroupModel';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class QuestNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): QuestNamespaceStatistics | null;
-    setStatistics(statistics: QuestNamespaceStatistics | null): this;
-    withStatistics(statistics: QuestNamespaceStatistics | null): this;
-    getDistributions(): QuestNamespaceDistributions | null;
-    setDistributions(distributions: QuestNamespaceDistributions | null): this;
-    withDistributions(distributions: QuestNamespaceDistributions | null): this;
-    getQuestGroupModels(): QuestQuestGroupModel[] | null;
-    setQuestGroupModels(questGroupModels: QuestQuestGroupModel[] | null): this;
-    withQuestGroupModels(questGroupModels: QuestQuestGroupModel[] | null): this;
+    getStatistics(): Gs2Watch.QuestNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.QuestNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.QuestNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.QuestNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.QuestNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.QuestNamespaceDistributions | null): this;
+    getQuestGroupModels(): Gs2Watch.QuestQuestGroupModel[] | null;
+    setQuestGroupModels(questGroupModels: Gs2Watch.QuestQuestGroupModel[] | null): this;
+    withQuestGroupModels(questGroupModels: Gs2Watch.QuestQuestGroupModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestNamespace | null;

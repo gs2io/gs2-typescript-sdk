@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyWalletPaidDistributionStatistics_1 = tslib_1.__importDefault(require("./MoneyWalletPaidDistributionStatistics"));
-var MoneyWalletPaidDistributionSegment_1 = tslib_1.__importDefault(require("./MoneyWalletPaidDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyWalletPaidDistribution = /** @class */ (function () {
     function MoneyWalletPaidDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MoneyWalletPaidDistribution = /** @class */ (function () {
             return null;
         }
         return new MoneyWalletPaidDistribution()
-            .withStatistics(MoneyWalletPaidDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyWalletPaidDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MoneyWalletPaidDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MoneyWalletPaidDistributionSegment.fromDict(item);
+            }) : null);
     };
     MoneyWalletPaidDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MoneyWalletPaidDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MoneyWalletPaidDistribution;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.BatchResultPayload = exports.BatchRequestPayload = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,10 @@ var CurrentDistributorMaster_1 = tslib_1.__importDefault(require("./CurrentDistr
 exports.CurrentDistributorMaster = CurrentDistributorMaster_1.default;
 var StampSheetResult_1 = tslib_1.__importDefault(require("./StampSheetResult"));
 exports.StampSheetResult = StampSheetResult_1.default;
+var BatchRequestPayload_1 = tslib_1.__importDefault(require("./BatchRequestPayload"));
+exports.BatchRequestPayload = BatchRequestPayload_1.default;
+var BatchResultPayload_1 = tslib_1.__importDefault(require("./BatchResultPayload"));
+exports.BatchResultPayload = BatchResultPayload_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));

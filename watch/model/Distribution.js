@@ -64,7 +64,7 @@ var Distribution = /** @class */ (function () {
             .withGroupBys(data.groupBys ?
             data.groupBys.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     Distribution.prototype.toDict = function () {
         return {
@@ -73,7 +73,7 @@ var Distribution = /** @class */ (function () {
             "groupBys": this.getGroupBys() ?
                 this.getGroupBys().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return Distribution;

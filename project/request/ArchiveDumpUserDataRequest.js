@@ -19,6 +19,7 @@ var ArchiveDumpUserDataRequest = /** @class */ (function () {
     function ArchiveDumpUserDataRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.ownerId = null;
         this.transactionId = null;
     }
     ArchiveDumpUserDataRequest.prototype.getRequestId = function () {
@@ -43,6 +44,17 @@ var ArchiveDumpUserDataRequest = /** @class */ (function () {
         this.contextStack = contextStack;
         return this;
     };
+    ArchiveDumpUserDataRequest.prototype.getOwnerId = function () {
+        return this.ownerId;
+    };
+    ArchiveDumpUserDataRequest.prototype.setOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
+        return this;
+    };
+    ArchiveDumpUserDataRequest.prototype.withOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
+        return this;
+    };
     ArchiveDumpUserDataRequest.prototype.getTransactionId = function () {
         return this.transactionId;
     };
@@ -56,10 +68,12 @@ var ArchiveDumpUserDataRequest = /** @class */ (function () {
     };
     ArchiveDumpUserDataRequest.fromDict = function (data) {
         return new ArchiveDumpUserDataRequest()
+            .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"]);
     };
     ArchiveDumpUserDataRequest.prototype.toDict = function () {
         return {
+            "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
         };
     };

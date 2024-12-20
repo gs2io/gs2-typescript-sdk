@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitLimitModelIncreaseAmountByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseAmountByUserDistributionStatistics"));
-var LimitLimitModelIncreaseAmountByUserDistributionSegment_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseAmountByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitLimitModelIncreaseAmountByUserDistribution = /** @class */ (function () {
     function LimitLimitModelIncreaseAmountByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var LimitLimitModelIncreaseAmountByUserDistribution = /** @class */ (function ()
             return null;
         }
         return new LimitLimitModelIncreaseAmountByUserDistribution()
-            .withStatistics(LimitLimitModelIncreaseAmountByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LimitLimitModelIncreaseAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return LimitLimitModelIncreaseAmountByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LimitLimitModelIncreaseAmountByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     LimitLimitModelIncreaseAmountByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var LimitLimitModelIncreaseAmountByUserDistribution = /** @class */ (function ()
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LimitLimitModelIncreaseAmountByUserDistribution;

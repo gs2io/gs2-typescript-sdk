@@ -172,11 +172,11 @@ var GetChartRequest = /** @class */ (function () {
             .withFilters(data.filters ?
             data.filters.map(function (item) {
                 return Gs2Watch.Filter.fromDict(item);
-            }) : [])
+            }) : null)
             .withGroupBys(data.groupBys ?
             data.groupBys.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCountBy(data["countBy"])
             .withBegin(data["begin"])
             .withEnd(data["end"])
@@ -191,11 +191,11 @@ var GetChartRequest = /** @class */ (function () {
             "filters": this.getFilters() ?
                 this.getFilters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "groupBys": this.getGroupBys() ?
                 this.getGroupBys().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "countBy": this.getCountBy(),
             "begin": this.getBegin(),
             "end": this.getEnd(),

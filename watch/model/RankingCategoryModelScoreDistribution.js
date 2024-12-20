@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingCategoryModelScoreDistributionStatistics_1 = tslib_1.__importDefault(require("./RankingCategoryModelScoreDistributionStatistics"));
-var RankingCategoryModelScoreDistributionSegment_1 = tslib_1.__importDefault(require("./RankingCategoryModelScoreDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var RankingCategoryModelScoreDistribution = /** @class */ (function () {
     function RankingCategoryModelScoreDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var RankingCategoryModelScoreDistribution = /** @class */ (function () {
             return null;
         }
         return new RankingCategoryModelScoreDistribution()
-            .withStatistics(RankingCategoryModelScoreDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.RankingCategoryModelScoreDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return RankingCategoryModelScoreDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.RankingCategoryModelScoreDistributionSegment.fromDict(item);
+            }) : null);
     };
     RankingCategoryModelScoreDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var RankingCategoryModelScoreDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RankingCategoryModelScoreDistribution;

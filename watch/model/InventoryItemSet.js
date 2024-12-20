@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryItemSetStatistics_1 = tslib_1.__importDefault(require("./InventoryItemSetStatistics"));
-var InventoryItemSetDistributions_1 = tslib_1.__importDefault(require("./InventoryItemSetDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:inventory:namespace:{namespaceName}:inventory:{inventoryName}:itemSet:{itemSetName}:{itemName}";
 var InventoryItemSet = /** @class */ (function () {
     function InventoryItemSet() {
@@ -276,8 +275,8 @@ var InventoryItemSet = /** @class */ (function () {
             .withItemSetId(data["itemSetId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withStatistics(InventoryItemSetStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(InventoryItemSetDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.InventoryItemSetStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InventoryItemSetDistributions.fromDict(data["distributions"]));
     };
     InventoryItemSet.prototype.toDict = function () {
         var _a, _b;

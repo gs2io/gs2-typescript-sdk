@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FriendNamespaceStatistics from './FriendNamespaceStatistics';
 import FriendNamespaceAcceptByUserDistributionStatistics from './FriendNamespaceAcceptByUserDistributionStatistics';
 import FriendNamespaceAcceptByUserDistributionSegment from './FriendNamespaceAcceptByUserDistributionSegment';
@@ -37,8 +39,8 @@ export default class FriendNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: FriendNamespaceStatistics|null = null;
-    private distributions: FriendNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.FriendNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.FriendNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -223,25 +225,25 @@ export default class FriendNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): FriendNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.FriendNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FriendNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FriendNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FriendNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FriendNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): FriendNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.FriendNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: FriendNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.FriendNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: FriendNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.FriendNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -256,8 +258,8 @@ export default class FriendNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(FriendNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(FriendNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.FriendNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FriendNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

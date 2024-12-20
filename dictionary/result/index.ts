@@ -48,6 +48,16 @@ import DeleteEntriesByUserIdResult from "./DeleteEntriesByUserIdResult"
 import AddEntriesByStampSheetResult from "./AddEntriesByStampSheetResult"
 import DeleteEntriesByStampTaskResult from "./DeleteEntriesByStampTaskResult"
 import VerifyEntryByStampTaskResult from "./VerifyEntryByStampTaskResult"
+import DescribeLikesResult from "./DescribeLikesResult"
+import DescribeLikesByUserIdResult from "./DescribeLikesByUserIdResult"
+import AddLikesResult from "./AddLikesResult"
+import AddLikesByUserIdResult from "./AddLikesByUserIdResult"
+import GetLikeResult from "./GetLikeResult"
+import GetLikeByUserIdResult from "./GetLikeByUserIdResult"
+import ResetLikesResult from "./ResetLikesResult"
+import ResetLikesByUserIdResult from "./ResetLikesByUserIdResult"
+import DeleteLikesResult from "./DeleteLikesResult"
+import DeleteLikesByUserIdResult from "./DeleteLikesByUserIdResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentEntryMasterResult from "./GetCurrentEntryMasterResult"
 import UpdateCurrentEntryMasterResult from "./UpdateCurrentEntryMasterResult"
@@ -89,6 +99,16 @@ export {
     AddEntriesByStampSheetResult,
     DeleteEntriesByStampTaskResult,
     VerifyEntryByStampTaskResult,
+    DescribeLikesResult,
+    DescribeLikesByUserIdResult,
+    AddLikesResult,
+    AddLikesByUserIdResult,
+    GetLikeResult,
+    GetLikeByUserIdResult,
+    ResetLikesResult,
+    ResetLikesByUserIdResult,
+    DeleteLikesResult,
+    DeleteLikesByUserIdResult,
     ExportMasterResult,
     GetCurrentEntryMasterResult,
     UpdateCurrentEntryMasterResult,

@@ -15,6 +15,7 @@ export default class CreateVersionModelMasterRequest implements IRequest {
     private scheduleVersions;
     private needSignature;
     private signatureKeyId;
+    private approveRequirement;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -57,6 +58,9 @@ export default class CreateVersionModelMasterRequest implements IRequest {
     getSignatureKeyId(): string | null;
     setSignatureKeyId(signatureKeyId: string | null): this;
     withSignatureKeyId(signatureKeyId: string | null): this;
+    getApproveRequirement(): string | null;
+    setApproveRequirement(approveRequirement: string | null): this;
+    withApproveRequirement(approveRequirement: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateVersionModelMasterRequest;

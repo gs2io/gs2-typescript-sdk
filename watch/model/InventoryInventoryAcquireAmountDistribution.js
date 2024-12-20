@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryInventoryAcquireAmountDistributionStatistics_1 = tslib_1.__importDefault(require("./InventoryInventoryAcquireAmountDistributionStatistics"));
-var InventoryInventoryAcquireAmountDistributionSegment_1 = tslib_1.__importDefault(require("./InventoryInventoryAcquireAmountDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryInventoryAcquireAmountDistribution = /** @class */ (function () {
     function InventoryInventoryAcquireAmountDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var InventoryInventoryAcquireAmountDistribution = /** @class */ (function () {
             return null;
         }
         return new InventoryInventoryAcquireAmountDistribution()
-            .withStatistics(InventoryInventoryAcquireAmountDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InventoryInventoryAcquireAmountDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return InventoryInventoryAcquireAmountDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InventoryInventoryAcquireAmountDistributionSegment.fromDict(item);
+            }) : null);
     };
     InventoryInventoryAcquireAmountDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var InventoryInventoryAcquireAmountDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InventoryInventoryAcquireAmountDistribution;

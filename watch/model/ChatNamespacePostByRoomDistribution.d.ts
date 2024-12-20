@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ChatNamespacePostByRoomDistributionStatistics from './ChatNamespacePostByRoomDistributionStatistics';
-import ChatNamespacePostByRoomDistributionSegment from './ChatNamespacePostByRoomDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ChatNamespacePostByRoomDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ChatNamespacePostByRoomDistributionStatistics | null;
-    setStatistics(statistics: ChatNamespacePostByRoomDistributionStatistics | null): this;
-    withStatistics(statistics: ChatNamespacePostByRoomDistributionStatistics | null): this;
-    getDistribution(): ChatNamespacePostByRoomDistributionSegment[] | null;
-    setDistribution(distribution: ChatNamespacePostByRoomDistributionSegment[] | null): this;
-    withDistribution(distribution: ChatNamespacePostByRoomDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ChatNamespacePostByRoomDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ChatNamespacePostByRoomDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ChatNamespacePostByRoomDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ChatNamespacePostByRoomDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ChatNamespacePostByRoomDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ChatNamespacePostByRoomDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ChatNamespacePostByRoomDistribution | null;

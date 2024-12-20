@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AccountNamespaceTypeDistributionStatistics_1 = tslib_1.__importDefault(require("./AccountNamespaceTypeDistributionStatistics"));
-var AccountNamespaceTypeDistributionSegment_1 = tslib_1.__importDefault(require("./AccountNamespaceTypeDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var AccountNamespaceTypeDistribution = /** @class */ (function () {
     function AccountNamespaceTypeDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var AccountNamespaceTypeDistribution = /** @class */ (function () {
             return null;
         }
         return new AccountNamespaceTypeDistribution()
-            .withStatistics(AccountNamespaceTypeDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.AccountNamespaceTypeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return AccountNamespaceTypeDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.AccountNamespaceTypeDistributionSegment.fromDict(item);
+            }) : null);
     };
     AccountNamespaceTypeDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var AccountNamespaceTypeDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return AccountNamespaceTypeDistribution;

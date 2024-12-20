@@ -37,14 +37,14 @@ var DescribeChatNamespaceMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.ChatNamespace.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeChatNamespaceMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeChatNamespaceMetricsResult;

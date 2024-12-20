@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationFormUsageDistributionStatistics_1 = tslib_1.__importDefault(require("./FormationFormUsageDistributionStatistics"));
-var FormationFormUsageDistributionSegment_1 = tslib_1.__importDefault(require("./FormationFormUsageDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FormationFormUsageDistribution = /** @class */ (function () {
     function FormationFormUsageDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var FormationFormUsageDistribution = /** @class */ (function () {
             return null;
         }
         return new FormationFormUsageDistribution()
-            .withStatistics(FormationFormUsageDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FormationFormUsageDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return FormationFormUsageDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FormationFormUsageDistributionSegment.fromDict(item);
+            }) : null);
     };
     FormationFormUsageDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var FormationFormUsageDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FormationFormUsageDistribution;

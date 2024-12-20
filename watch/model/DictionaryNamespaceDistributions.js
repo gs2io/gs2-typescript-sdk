@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DictionaryNamespaceEntryByNameDistribution_1 = tslib_1.__importDefault(require("./DictionaryNamespaceEntryByNameDistribution"));
-var DictionaryNamespaceEntryByUserDistribution_1 = tslib_1.__importDefault(require("./DictionaryNamespaceEntryByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var DictionaryNamespaceDistributions = /** @class */ (function () {
     function DictionaryNamespaceDistributions() {
         this.entryByName = null;
@@ -50,8 +49,8 @@ var DictionaryNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new DictionaryNamespaceDistributions()
-            .withEntryByName(DictionaryNamespaceEntryByNameDistribution_1.default.fromDict(data["entryByName"]))
-            .withEntryByUser(DictionaryNamespaceEntryByUserDistribution_1.default.fromDict(data["entryByUser"]));
+            .withEntryByName(Gs2Watch.DictionaryNamespaceEntryByNameDistribution.fromDict(data["entryByName"]))
+            .withEntryByUser(Gs2Watch.DictionaryNamespaceEntryByUserDistribution.fromDict(data["entryByUser"]));
     };
     DictionaryNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

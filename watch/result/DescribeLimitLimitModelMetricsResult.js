@@ -37,14 +37,14 @@ var DescribeLimitLimitModelMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.LimitLimitModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeLimitLimitModelMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeLimitLimitModelMetricsResult;

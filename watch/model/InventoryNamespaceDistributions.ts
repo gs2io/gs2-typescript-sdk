@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InventoryNamespaceAcquireDistributionStatistics from './InventoryNamespaceAcquireDistributionStatistics';
 import InventoryNamespaceAcquireDistributionSegment from './InventoryNamespaceAcquireDistributionSegment';
 import InventoryNamespaceAcquireDistribution from './InventoryNamespaceAcquireDistribution';
@@ -35,75 +37,75 @@ import InventoryNamespaceIncreaseCapacityAmountDistributionSegment from './Inven
 import InventoryNamespaceIncreaseCapacityAmountDistribution from './InventoryNamespaceIncreaseCapacityAmountDistribution';
 
 export default class InventoryNamespaceDistributions implements IModel {
-    private acquire: InventoryNamespaceAcquireDistribution|null = null;
-    private acquireAmount: InventoryNamespaceAcquireAmountDistribution|null = null;
-    private consume: InventoryNamespaceConsumeDistribution|null = null;
-    private consumeAmount: InventoryNamespaceConsumeAmountDistribution|null = null;
-    private increaseCapacity: InventoryNamespaceIncreaseCapacityDistribution|null = null;
-    private increaseCapacityAmount: InventoryNamespaceIncreaseCapacityAmountDistribution|null = null;
-    public getAcquire(): InventoryNamespaceAcquireDistribution|null {
+    private acquire: Gs2Watch.InventoryNamespaceAcquireDistribution|null = null;
+    private acquireAmount: Gs2Watch.InventoryNamespaceAcquireAmountDistribution|null = null;
+    private consume: Gs2Watch.InventoryNamespaceConsumeDistribution|null = null;
+    private consumeAmount: Gs2Watch.InventoryNamespaceConsumeAmountDistribution|null = null;
+    private increaseCapacity: Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution|null = null;
+    private increaseCapacityAmount: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution|null = null;
+    public getAcquire(): Gs2Watch.InventoryNamespaceAcquireDistribution|null {
         return this.acquire;
     }
-    public setAcquire(acquire: InventoryNamespaceAcquireDistribution|null) {
+    public setAcquire(acquire: Gs2Watch.InventoryNamespaceAcquireDistribution|null) {
         this.acquire = acquire;
         return this;
     }
-    public withAcquire(acquire: InventoryNamespaceAcquireDistribution|null): this {
+    public withAcquire(acquire: Gs2Watch.InventoryNamespaceAcquireDistribution|null): this {
         this.acquire = acquire;
         return this;
     }
-    public getAcquireAmount(): InventoryNamespaceAcquireAmountDistribution|null {
+    public getAcquireAmount(): Gs2Watch.InventoryNamespaceAcquireAmountDistribution|null {
         return this.acquireAmount;
     }
-    public setAcquireAmount(acquireAmount: InventoryNamespaceAcquireAmountDistribution|null) {
+    public setAcquireAmount(acquireAmount: Gs2Watch.InventoryNamespaceAcquireAmountDistribution|null) {
         this.acquireAmount = acquireAmount;
         return this;
     }
-    public withAcquireAmount(acquireAmount: InventoryNamespaceAcquireAmountDistribution|null): this {
+    public withAcquireAmount(acquireAmount: Gs2Watch.InventoryNamespaceAcquireAmountDistribution|null): this {
         this.acquireAmount = acquireAmount;
         return this;
     }
-    public getConsume(): InventoryNamespaceConsumeDistribution|null {
+    public getConsume(): Gs2Watch.InventoryNamespaceConsumeDistribution|null {
         return this.consume;
     }
-    public setConsume(consume: InventoryNamespaceConsumeDistribution|null) {
+    public setConsume(consume: Gs2Watch.InventoryNamespaceConsumeDistribution|null) {
         this.consume = consume;
         return this;
     }
-    public withConsume(consume: InventoryNamespaceConsumeDistribution|null): this {
+    public withConsume(consume: Gs2Watch.InventoryNamespaceConsumeDistribution|null): this {
         this.consume = consume;
         return this;
     }
-    public getConsumeAmount(): InventoryNamespaceConsumeAmountDistribution|null {
+    public getConsumeAmount(): Gs2Watch.InventoryNamespaceConsumeAmountDistribution|null {
         return this.consumeAmount;
     }
-    public setConsumeAmount(consumeAmount: InventoryNamespaceConsumeAmountDistribution|null) {
+    public setConsumeAmount(consumeAmount: Gs2Watch.InventoryNamespaceConsumeAmountDistribution|null) {
         this.consumeAmount = consumeAmount;
         return this;
     }
-    public withConsumeAmount(consumeAmount: InventoryNamespaceConsumeAmountDistribution|null): this {
+    public withConsumeAmount(consumeAmount: Gs2Watch.InventoryNamespaceConsumeAmountDistribution|null): this {
         this.consumeAmount = consumeAmount;
         return this;
     }
-    public getIncreaseCapacity(): InventoryNamespaceIncreaseCapacityDistribution|null {
+    public getIncreaseCapacity(): Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution|null {
         return this.increaseCapacity;
     }
-    public setIncreaseCapacity(increaseCapacity: InventoryNamespaceIncreaseCapacityDistribution|null) {
+    public setIncreaseCapacity(increaseCapacity: Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution|null) {
         this.increaseCapacity = increaseCapacity;
         return this;
     }
-    public withIncreaseCapacity(increaseCapacity: InventoryNamespaceIncreaseCapacityDistribution|null): this {
+    public withIncreaseCapacity(increaseCapacity: Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution|null): this {
         this.increaseCapacity = increaseCapacity;
         return this;
     }
-    public getIncreaseCapacityAmount(): InventoryNamespaceIncreaseCapacityAmountDistribution|null {
+    public getIncreaseCapacityAmount(): Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution|null {
         return this.increaseCapacityAmount;
     }
-    public setIncreaseCapacityAmount(increaseCapacityAmount: InventoryNamespaceIncreaseCapacityAmountDistribution|null) {
+    public setIncreaseCapacityAmount(increaseCapacityAmount: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution|null) {
         this.increaseCapacityAmount = increaseCapacityAmount;
         return this;
     }
-    public withIncreaseCapacityAmount(increaseCapacityAmount: InventoryNamespaceIncreaseCapacityAmountDistribution|null): this {
+    public withIncreaseCapacityAmount(increaseCapacityAmount: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution|null): this {
         this.increaseCapacityAmount = increaseCapacityAmount;
         return this;
     }
@@ -113,12 +115,12 @@ export default class InventoryNamespaceDistributions implements IModel {
             return null;
         }
         return new InventoryNamespaceDistributions()
-            .withAcquire(InventoryNamespaceAcquireDistribution.fromDict(data["acquire"]))
-            .withAcquireAmount(InventoryNamespaceAcquireAmountDistribution.fromDict(data["acquireAmount"]))
-            .withConsume(InventoryNamespaceConsumeDistribution.fromDict(data["consume"]))
-            .withConsumeAmount(InventoryNamespaceConsumeAmountDistribution.fromDict(data["consumeAmount"]))
-            .withIncreaseCapacity(InventoryNamespaceIncreaseCapacityDistribution.fromDict(data["increaseCapacity"]))
-            .withIncreaseCapacityAmount(InventoryNamespaceIncreaseCapacityAmountDistribution.fromDict(data["increaseCapacityAmount"]));
+            .withAcquire(Gs2Watch.InventoryNamespaceAcquireDistribution.fromDict(data["acquire"]))
+            .withAcquireAmount(Gs2Watch.InventoryNamespaceAcquireAmountDistribution.fromDict(data["acquireAmount"]))
+            .withConsume(Gs2Watch.InventoryNamespaceConsumeDistribution.fromDict(data["consume"]))
+            .withConsumeAmount(Gs2Watch.InventoryNamespaceConsumeAmountDistribution.fromDict(data["consumeAmount"]))
+            .withIncreaseCapacity(Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution.fromDict(data["increaseCapacity"]))
+            .withIncreaseCapacityAmount(Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution.fromDict(data["increaseCapacityAmount"]));
     }
 
     public toDict(): {[key: string]: any} {

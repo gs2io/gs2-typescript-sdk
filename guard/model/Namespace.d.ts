@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BlockingPolicyModel from './BlockingPolicyModel';
+import * as Gs2Guard from '../../guard/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -22,9 +22,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getBlockingPolicy(): BlockingPolicyModel | null;
-    setBlockingPolicy(blockingPolicy: BlockingPolicyModel | null): this;
-    withBlockingPolicy(blockingPolicy: BlockingPolicyModel | null): this;
+    getBlockingPolicy(): Gs2Guard.BlockingPolicyModel | null;
+    setBlockingPolicy(blockingPolicy: Gs2Guard.BlockingPolicyModel | null): this;
+    withBlockingPolicy(blockingPolicy: Gs2Guard.BlockingPolicyModel | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

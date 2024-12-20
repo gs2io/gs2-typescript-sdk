@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryNamespaceDrawAmountByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawAmountByUserDistributionStatistics"));
-var LotteryNamespaceDrawAmountByUserDistributionSegment_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawAmountByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LotteryNamespaceDrawAmountByUserDistribution = /** @class */ (function () {
     function LotteryNamespaceDrawAmountByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var LotteryNamespaceDrawAmountByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new LotteryNamespaceDrawAmountByUserDistribution()
-            .withStatistics(LotteryNamespaceDrawAmountByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return LotteryNamespaceDrawAmountByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LotteryNamespaceDrawAmountByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     LotteryNamespaceDrawAmountByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var LotteryNamespaceDrawAmountByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LotteryNamespaceDrawAmountByUserDistribution;

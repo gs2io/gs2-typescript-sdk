@@ -40,7 +40,7 @@ export default class DescribeMatchmakingNamespaceMetricsResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.MatchmakingNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMatchmakingNamespaceMetricsResult implements IResul
                 this.getItems()!.map((item: Gs2Watch.MatchmakingNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

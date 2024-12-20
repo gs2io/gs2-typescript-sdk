@@ -27,6 +27,7 @@ var ClusterRankingData = /** @class */ (function () {
         this.rank = null;
         this.score = null;
         this.metadata = null;
+        this.invertCreatedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -262,6 +263,17 @@ var ClusterRankingData = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    ClusterRankingData.prototype.getInvertCreatedAt = function () {
+        return this.invertCreatedAt;
+    };
+    ClusterRankingData.prototype.setInvertCreatedAt = function (invertCreatedAt) {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    };
+    ClusterRankingData.prototype.withInvertCreatedAt = function (invertCreatedAt) {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    };
     ClusterRankingData.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -309,6 +321,7 @@ var ClusterRankingData = /** @class */ (function () {
             .withRank(data["rank"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
+            .withInvertCreatedAt(data["invertCreatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -324,6 +337,7 @@ var ClusterRankingData = /** @class */ (function () {
             "rank": this.getRank(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
+            "invertCreatedAt": this.getInvertCreatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

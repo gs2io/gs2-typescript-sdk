@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DictionaryNamespaceStatistics from './DictionaryNamespaceStatistics';
 import DictionaryNamespaceEntryByNameDistributionStatistics from './DictionaryNamespaceEntryByNameDistributionStatistics';
 import DictionaryNamespaceEntryByNameDistributionSegment from './DictionaryNamespaceEntryByNameDistributionSegment';
@@ -31,8 +33,8 @@ export default class DictionaryNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: DictionaryNamespaceStatistics|null = null;
-    private distributions: DictionaryNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.DictionaryNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.DictionaryNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -217,25 +219,25 @@ export default class DictionaryNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): DictionaryNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.DictionaryNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: DictionaryNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.DictionaryNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: DictionaryNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.DictionaryNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): DictionaryNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.DictionaryNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: DictionaryNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.DictionaryNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: DictionaryNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.DictionaryNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -250,8 +252,8 @@ export default class DictionaryNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(DictionaryNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(DictionaryNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.DictionaryNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.DictionaryNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

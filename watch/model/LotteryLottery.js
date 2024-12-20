@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryLotteryStatistics_1 = tslib_1.__importDefault(require("./LotteryLotteryStatistics"));
-var LotteryLotteryDistributions_1 = tslib_1.__importDefault(require("./LotteryLotteryDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:lottery:namespace:{namespaceName}:lottery:{lotteryName}";
 var LotteryLottery = /** @class */ (function () {
     function LotteryLottery() {
@@ -209,8 +208,8 @@ var LotteryLottery = /** @class */ (function () {
         return new LotteryLottery()
             .withLotteryId(data["lotteryId"])
             .withLotteryName(data["lotteryName"])
-            .withStatistics(LotteryLotteryStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(LotteryLotteryDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.LotteryLotteryStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LotteryLotteryDistributions.fromDict(data["distributions"]));
     };
     LotteryLottery.prototype.toDict = function () {
         var _a, _b;

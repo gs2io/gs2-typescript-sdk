@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionNamespaceStatistics from './MissionNamespaceStatistics';
 import MissionNamespaceIncreaseDistributionStatistics from './MissionNamespaceIncreaseDistributionStatistics';
 import MissionNamespaceIncreaseDistributionSegment from './MissionNamespaceIncreaseDistributionSegment';
@@ -45,10 +47,10 @@ export default class MissionNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: MissionNamespaceStatistics|null = null;
-    private distributions: MissionNamespaceDistributions|null = null;
-    private missionGroupModels: MissionMissionGroupModel[]|null = null;
-    private counters: MissionCounter[]|null = null;
+    private statistics: Gs2Watch.MissionNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.MissionNamespaceDistributions|null = null;
+    private missionGroupModels: Gs2Watch.MissionMissionGroupModel[]|null = null;
+    private counters: Gs2Watch.MissionCounter[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -233,47 +235,47 @@ export default class MissionNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): MissionNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.MissionNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MissionNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MissionNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MissionNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MissionNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MissionNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.MissionNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MissionNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MissionNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MissionNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MissionNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getMissionGroupModels(): MissionMissionGroupModel[]|null {
+    public getMissionGroupModels(): Gs2Watch.MissionMissionGroupModel[]|null {
         return this.missionGroupModels;
     }
-    public setMissionGroupModels(missionGroupModels: MissionMissionGroupModel[]|null) {
+    public setMissionGroupModels(missionGroupModels: Gs2Watch.MissionMissionGroupModel[]|null) {
         this.missionGroupModels = missionGroupModels;
         return this;
     }
-    public withMissionGroupModels(missionGroupModels: MissionMissionGroupModel[]|null): this {
+    public withMissionGroupModels(missionGroupModels: Gs2Watch.MissionMissionGroupModel[]|null): this {
         this.missionGroupModels = missionGroupModels;
         return this;
     }
-    public getCounters(): MissionCounter[]|null {
+    public getCounters(): Gs2Watch.MissionCounter[]|null {
         return this.counters;
     }
-    public setCounters(counters: MissionCounter[]|null) {
+    public setCounters(counters: Gs2Watch.MissionCounter[]|null) {
         this.counters = counters;
         return this;
     }
-    public withCounters(counters: MissionCounter[]|null): this {
+    public withCounters(counters: Gs2Watch.MissionCounter[]|null): this {
         this.counters = counters;
         return this;
     }
@@ -288,18 +290,18 @@ export default class MissionNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MissionNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(MissionNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.MissionNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MissionNamespaceDistributions.fromDict(data["distributions"]))
             .withMissionGroupModels(data.missionGroupModels ?
                 data.missionGroupModels.map((item: {[key: string]: any}) => {
-                    return MissionMissionGroupModel.fromDict(item);
+                    return Gs2Watch.MissionMissionGroupModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCounters(data.counters ?
                 data.counters.map((item: {[key: string]: any}) => {
-                    return MissionCounter.fromDict(item);
+                    return Gs2Watch.MissionCounter.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -312,15 +314,15 @@ export default class MissionNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "missionGroupModels": this.getMissionGroupModels() ?
-                this.getMissionGroupModels()!.map((item: MissionMissionGroupModel) => {
+                this.getMissionGroupModels()!.map((item: Gs2Watch.MissionMissionGroupModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "counters": this.getCounters() ?
-                this.getCounters()!.map((item: MissionCounter) => {
+                this.getCounters()!.map((item: Gs2Watch.MissionCounter) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

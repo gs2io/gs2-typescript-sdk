@@ -28,7 +28,4 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
     deleteByStampTask(request: Request.DeleteByStampTaskRequest): Promise<Result.DeleteByStampTaskResult>;
     getJobResult(request: Request.GetJobResultRequest): Promise<Result.GetJobResultResult>;
     getJobResultByUserId(request: Request.GetJobResultByUserIdRequest): Promise<Result.GetJobResultByUserIdResult>;
-    describeDeadLetterJobsByUserId(request: Request.DescribeDeadLetterJobsByUserIdRequest): Promise<Result.DescribeDeadLetterJobsByUserIdResult>;
-    getDeadLetterJobByUserId(request: Request.GetDeadLetterJobByUserIdRequest): Promise<Result.GetDeadLetterJobByUserIdResult>;
-    deleteDeadLetterJobByUserId(request: Request.DeleteDeadLetterJobByUserIdRequest): Promise<Result.DeleteDeadLetterJobByUserIdResult>;
 }

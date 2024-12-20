@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InboxNamespaceStatistics_1 = tslib_1.__importDefault(require("./InboxNamespaceStatistics"));
-var InboxNamespaceDistributions_1 = tslib_1.__importDefault(require("./InboxNamespaceDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:inbox:namespace:{namespaceName}";
 var InboxNamespace = /** @class */ (function () {
     function InboxNamespace() {
@@ -224,8 +223,8 @@ var InboxNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(InboxNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(InboxNamespaceDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.InboxNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InboxNamespaceDistributions.fromDict(data["distributions"]));
     };
     InboxNamespace.prototype.toDict = function () {
         var _a, _b;

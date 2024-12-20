@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ChatNamespacePostByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./ChatNamespacePostByUserDistributionStatistics"));
-var ChatNamespacePostByUserDistributionSegment_1 = tslib_1.__importDefault(require("./ChatNamespacePostByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ChatNamespacePostByUserDistribution = /** @class */ (function () {
     function ChatNamespacePostByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ChatNamespacePostByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new ChatNamespacePostByUserDistribution()
-            .withStatistics(ChatNamespacePostByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ChatNamespacePostByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ChatNamespacePostByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ChatNamespacePostByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     ChatNamespacePostByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ChatNamespacePostByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ChatNamespacePostByUserDistribution;

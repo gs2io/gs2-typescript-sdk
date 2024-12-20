@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingCategoryModelStatistics from './RankingCategoryModelStatistics';
 import RankingCategoryModelScoreDistributionStatistics from './RankingCategoryModelScoreDistributionStatistics';
 import RankingCategoryModelScoreDistributionSegment from './RankingCategoryModelScoreDistributionSegment';
@@ -25,8 +27,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class RankingCategoryModel implements IModel {
     private categoryModelId: string|null = null;
     private categoryName: string|null = null;
-    private statistics: RankingCategoryModelStatistics|null = null;
-    private distributions: RankingCategoryModelDistributions|null = null;
+    private statistics: Gs2Watch.RankingCategoryModelStatistics|null = null;
+    private distributions: Gs2Watch.RankingCategoryModelDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -205,25 +207,25 @@ export default class RankingCategoryModel implements IModel {
         this.categoryName = categoryName;
         return this;
     }
-    public getStatistics(): RankingCategoryModelStatistics|null {
+    public getStatistics(): Gs2Watch.RankingCategoryModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: RankingCategoryModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.RankingCategoryModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: RankingCategoryModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.RankingCategoryModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): RankingCategoryModelDistributions|null {
+    public getDistributions(): Gs2Watch.RankingCategoryModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: RankingCategoryModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.RankingCategoryModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: RankingCategoryModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.RankingCategoryModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -235,8 +237,8 @@ export default class RankingCategoryModel implements IModel {
         return new RankingCategoryModel()
             .withCategoryModelId(data["categoryModelId"])
             .withCategoryName(data["categoryName"])
-            .withStatistics(RankingCategoryModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(RankingCategoryModelDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.RankingCategoryModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.RankingCategoryModelDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

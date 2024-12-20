@@ -474,6 +474,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
             'scheduleVersions': request.getScheduleVersions()?.map((item) => item.toDict()) ?? null,
             'needSignature': request.getNeedSignature() ?? null,
             'signatureKeyId': request.getSignatureKeyId() ?? null,
+            'approveRequirement': request.getApproveRequirement() ?? null,
         };
         return axios.post(
             url,
@@ -542,6 +543,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
             'scheduleVersions': request.getScheduleVersions()?.map((item) => item.toDict()) ?? null,
             'needSignature': request.getNeedSignature() ?? null,
             'signatureKeyId': request.getSignatureKeyId() ?? null,
+            'approveRequirement': request.getApproveRequirement() ?? null,
         };
         return axios.put(
             url,
@@ -771,6 +773,83 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.AcceptByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public reject(request: Request.RejectRequest): Promise<Result.RejectResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion/reject')
+            .replace('{service}', 'version')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'versionName': request.getVersionName() ?? null,
+            'version': request.getVersion()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RejectResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public rejectByUserId(request: Request.RejectByUserIdRequest): Promise<Result.RejectByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion/reject')
+            .replace('{service}', 'version')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'versionName': request.getVersionName() ?? null,
+            'version': request.getVersion()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RejectByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

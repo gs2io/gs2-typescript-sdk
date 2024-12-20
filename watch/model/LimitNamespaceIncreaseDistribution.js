@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitNamespaceIncreaseDistributionStatistics_1 = tslib_1.__importDefault(require("./LimitNamespaceIncreaseDistributionStatistics"));
-var LimitNamespaceIncreaseDistributionSegment_1 = tslib_1.__importDefault(require("./LimitNamespaceIncreaseDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitNamespaceIncreaseDistribution = /** @class */ (function () {
     function LimitNamespaceIncreaseDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var LimitNamespaceIncreaseDistribution = /** @class */ (function () {
             return null;
         }
         return new LimitNamespaceIncreaseDistribution()
-            .withStatistics(LimitNamespaceIncreaseDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LimitNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return LimitNamespaceIncreaseDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LimitNamespaceIncreaseDistributionSegment.fromDict(item);
+            }) : null);
     };
     LimitNamespaceIncreaseDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var LimitNamespaceIncreaseDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LimitNamespaceIncreaseDistribution;

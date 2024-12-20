@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AccountNamespaceTypeDistribution_1 = tslib_1.__importDefault(require("./AccountNamespaceTypeDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var AccountNamespaceDistributions = /** @class */ (function () {
     function AccountNamespaceDistributions() {
         this.type = null;
@@ -37,7 +37,7 @@ var AccountNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new AccountNamespaceDistributions()
-            .withType(AccountNamespaceTypeDistribution_1.default.fromDict(data["type"]));
+            .withType(Gs2Watch.AccountNamespaceTypeDistribution.fromDict(data["type"]));
     };
     AccountNamespaceDistributions.prototype.toDict = function () {
         var _a;

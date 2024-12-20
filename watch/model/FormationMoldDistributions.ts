@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationMoldCapacityDistributionStatistics from './FormationMoldCapacityDistributionStatistics';
 import FormationMoldCapacityDistributionSegment from './FormationMoldCapacityDistributionSegment';
 import FormationMoldCapacityDistribution from './FormationMoldCapacityDistribution';
@@ -23,27 +25,27 @@ import FormationMoldUpdateByIndexDistributionSegment from './FormationMoldUpdate
 import FormationMoldUpdateByIndexDistribution from './FormationMoldUpdateByIndexDistribution';
 
 export default class FormationMoldDistributions implements IModel {
-    private capacity: FormationMoldCapacityDistribution|null = null;
-    private updateByIndex: FormationMoldUpdateByIndexDistribution|null = null;
-    public getCapacity(): FormationMoldCapacityDistribution|null {
+    private capacity: Gs2Watch.FormationMoldCapacityDistribution|null = null;
+    private updateByIndex: Gs2Watch.FormationMoldUpdateByIndexDistribution|null = null;
+    public getCapacity(): Gs2Watch.FormationMoldCapacityDistribution|null {
         return this.capacity;
     }
-    public setCapacity(capacity: FormationMoldCapacityDistribution|null) {
+    public setCapacity(capacity: Gs2Watch.FormationMoldCapacityDistribution|null) {
         this.capacity = capacity;
         return this;
     }
-    public withCapacity(capacity: FormationMoldCapacityDistribution|null): this {
+    public withCapacity(capacity: Gs2Watch.FormationMoldCapacityDistribution|null): this {
         this.capacity = capacity;
         return this;
     }
-    public getUpdateByIndex(): FormationMoldUpdateByIndexDistribution|null {
+    public getUpdateByIndex(): Gs2Watch.FormationMoldUpdateByIndexDistribution|null {
         return this.updateByIndex;
     }
-    public setUpdateByIndex(updateByIndex: FormationMoldUpdateByIndexDistribution|null) {
+    public setUpdateByIndex(updateByIndex: Gs2Watch.FormationMoldUpdateByIndexDistribution|null) {
         this.updateByIndex = updateByIndex;
         return this;
     }
-    public withUpdateByIndex(updateByIndex: FormationMoldUpdateByIndexDistribution|null): this {
+    public withUpdateByIndex(updateByIndex: Gs2Watch.FormationMoldUpdateByIndexDistribution|null): this {
         this.updateByIndex = updateByIndex;
         return this;
     }
@@ -53,8 +55,8 @@ export default class FormationMoldDistributions implements IModel {
             return null;
         }
         return new FormationMoldDistributions()
-            .withCapacity(FormationMoldCapacityDistribution.fromDict(data["capacity"]))
-            .withUpdateByIndex(FormationMoldUpdateByIndexDistribution.fromDict(data["updateByIndex"]));
+            .withCapacity(Gs2Watch.FormationMoldCapacityDistribution.fromDict(data["capacity"]))
+            .withUpdateByIndex(Gs2Watch.FormationMoldUpdateByIndexDistribution.fromDict(data["updateByIndex"]));
     }
 
     public toDict(): {[key: string]: any} {

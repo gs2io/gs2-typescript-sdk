@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionMissionGroupModelReceiveDistribution_1 = tslib_1.__importDefault(require("./MissionMissionGroupModelReceiveDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MissionMissionGroupModelDistributions = /** @class */ (function () {
     function MissionMissionGroupModelDistributions() {
         this.receive = null;
@@ -37,7 +37,7 @@ var MissionMissionGroupModelDistributions = /** @class */ (function () {
             return null;
         }
         return new MissionMissionGroupModelDistributions()
-            .withReceive(MissionMissionGroupModelReceiveDistribution_1.default.fromDict(data["receive"]));
+            .withReceive(Gs2Watch.MissionMissionGroupModelReceiveDistribution.fromDict(data["receive"]));
     };
     MissionMissionGroupModelDistributions.prototype.toDict = function () {
         var _a;

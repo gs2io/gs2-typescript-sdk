@@ -14,6 +14,7 @@ export default class ClusterRankingModelMaster implements IModel {
     private entryPeriodEventId;
     private rankingRewards;
     private accessPeriodEventId;
+    private rewardCalculationIndex;
     private createdAt;
     private updatedAt;
     private revision;
@@ -62,6 +63,9 @@ export default class ClusterRankingModelMaster implements IModel {
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    getRewardCalculationIndex(): string | null;
+    setRewardCalculationIndex(rewardCalculationIndex: string | null): this;
+    withRewardCalculationIndex(rewardCalculationIndex: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

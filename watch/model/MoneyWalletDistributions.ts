@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyWalletFreeDistributionStatistics from './MoneyWalletFreeDistributionStatistics';
 import MoneyWalletFreeDistributionSegment from './MoneyWalletFreeDistributionSegment';
 import MoneyWalletFreeDistribution from './MoneyWalletFreeDistribution';
@@ -23,27 +25,27 @@ import MoneyWalletPaidDistributionSegment from './MoneyWalletPaidDistributionSeg
 import MoneyWalletPaidDistribution from './MoneyWalletPaidDistribution';
 
 export default class MoneyWalletDistributions implements IModel {
-    private free: MoneyWalletFreeDistribution|null = null;
-    private paid: MoneyWalletPaidDistribution|null = null;
-    public getFree(): MoneyWalletFreeDistribution|null {
+    private free: Gs2Watch.MoneyWalletFreeDistribution|null = null;
+    private paid: Gs2Watch.MoneyWalletPaidDistribution|null = null;
+    public getFree(): Gs2Watch.MoneyWalletFreeDistribution|null {
         return this.free;
     }
-    public setFree(free: MoneyWalletFreeDistribution|null) {
+    public setFree(free: Gs2Watch.MoneyWalletFreeDistribution|null) {
         this.free = free;
         return this;
     }
-    public withFree(free: MoneyWalletFreeDistribution|null): this {
+    public withFree(free: Gs2Watch.MoneyWalletFreeDistribution|null): this {
         this.free = free;
         return this;
     }
-    public getPaid(): MoneyWalletPaidDistribution|null {
+    public getPaid(): Gs2Watch.MoneyWalletPaidDistribution|null {
         return this.paid;
     }
-    public setPaid(paid: MoneyWalletPaidDistribution|null) {
+    public setPaid(paid: Gs2Watch.MoneyWalletPaidDistribution|null) {
         this.paid = paid;
         return this;
     }
-    public withPaid(paid: MoneyWalletPaidDistribution|null): this {
+    public withPaid(paid: Gs2Watch.MoneyWalletPaidDistribution|null): this {
         this.paid = paid;
         return this;
     }
@@ -53,8 +55,8 @@ export default class MoneyWalletDistributions implements IModel {
             return null;
         }
         return new MoneyWalletDistributions()
-            .withFree(MoneyWalletFreeDistribution.fromDict(data["free"]))
-            .withPaid(MoneyWalletPaidDistribution.fromDict(data["paid"]));
+            .withFree(Gs2Watch.MoneyWalletFreeDistribution.fromDict(data["free"]))
+            .withPaid(Gs2Watch.MoneyWalletPaidDistribution.fromDict(data["paid"]));
     }
 
     public toDict(): {[key: string]: any} {

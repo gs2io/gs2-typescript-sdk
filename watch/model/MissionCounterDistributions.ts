@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionCounterCounterDistributionStatistics from './MissionCounterCounterDistributionStatistics';
 import MissionCounterCounterDistributionSegment from './MissionCounterCounterDistributionSegment';
 import MissionCounterCounterDistribution from './MissionCounterCounterDistribution';
 
 export default class MissionCounterDistributions implements IModel {
-    private counter: MissionCounterCounterDistribution|null = null;
-    public getCounter(): MissionCounterCounterDistribution|null {
+    private counter: Gs2Watch.MissionCounterCounterDistribution|null = null;
+    public getCounter(): Gs2Watch.MissionCounterCounterDistribution|null {
         return this.counter;
     }
-    public setCounter(counter: MissionCounterCounterDistribution|null) {
+    public setCounter(counter: Gs2Watch.MissionCounterCounterDistribution|null) {
         this.counter = counter;
         return this;
     }
-    public withCounter(counter: MissionCounterCounterDistribution|null): this {
+    public withCounter(counter: Gs2Watch.MissionCounterCounterDistribution|null): this {
         this.counter = counter;
         return this;
     }
@@ -38,7 +40,7 @@ export default class MissionCounterDistributions implements IModel {
             return null;
         }
         return new MissionCounterDistributions()
-            .withCounter(MissionCounterCounterDistribution.fromDict(data["counter"]));
+            .withCounter(Gs2Watch.MissionCounterCounterDistribution.fromDict(data["counter"]));
     }
 
     public toDict(): {[key: string]: any} {

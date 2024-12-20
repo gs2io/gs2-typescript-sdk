@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics"));
-var ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceExperienceModelAddRankCapAmountByUserDistribution = /** @class */ (function () {
     function ExperienceExperienceModelAddRankCapAmountByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ExperienceExperienceModelAddRankCapAmountByUserDistribution = /** @class */ 
             return null;
         }
         return new ExperienceExperienceModelAddRankCapAmountByUserDistribution()
-            .withStatistics(ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     ExperienceExperienceModelAddRankCapAmountByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ExperienceExperienceModelAddRankCapAmountByUserDistribution = /** @class */ 
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceExperienceModelAddRankCapAmountByUserDistribution;

@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FriendNamespaceNewFollowByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./FriendNamespaceNewFollowByUserDistributionStatistics"));
-var FriendNamespaceNewFollowByUserDistributionSegment_1 = tslib_1.__importDefault(require("./FriendNamespaceNewFollowByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FriendNamespaceNewFollowByUserDistribution = /** @class */ (function () {
     function FriendNamespaceNewFollowByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var FriendNamespaceNewFollowByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new FriendNamespaceNewFollowByUserDistribution()
-            .withStatistics(FriendNamespaceNewFollowByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FriendNamespaceNewFollowByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return FriendNamespaceNewFollowByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FriendNamespaceNewFollowByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     FriendNamespaceNewFollowByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var FriendNamespaceNewFollowByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FriendNamespaceNewFollowByUserDistribution;

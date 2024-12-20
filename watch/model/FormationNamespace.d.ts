@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import FormationNamespaceStatistics from './FormationNamespaceStatistics';
-import FormationNamespaceDistributions from './FormationNamespaceDistributions';
-import FormationMold from './FormationMold';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class FormationNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): FormationNamespaceStatistics | null;
-    setStatistics(statistics: FormationNamespaceStatistics | null): this;
-    withStatistics(statistics: FormationNamespaceStatistics | null): this;
-    getDistributions(): FormationNamespaceDistributions | null;
-    setDistributions(distributions: FormationNamespaceDistributions | null): this;
-    withDistributions(distributions: FormationNamespaceDistributions | null): this;
-    getMolds(): FormationMold[] | null;
-    setMolds(molds: FormationMold[] | null): this;
-    withMolds(molds: FormationMold[] | null): this;
+    getStatistics(): Gs2Watch.FormationNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.FormationNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.FormationNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.FormationNamespaceDistributions | null): this;
+    getMolds(): Gs2Watch.FormationMold[] | null;
+    setMolds(molds: Gs2Watch.FormationMold[] | null): this;
+    withMolds(molds: Gs2Watch.FormationMold[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationNamespace | null;

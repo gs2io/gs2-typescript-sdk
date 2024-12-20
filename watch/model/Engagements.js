@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var EngagementHistory_1 = tslib_1.__importDefault(require("./EngagementHistory"));
-var EngagementAverage_1 = tslib_1.__importDefault(require("./EngagementAverage"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var Engagements = /** @class */ (function () {
     function Engagements() {
         this.history = null;
@@ -52,9 +51,9 @@ var Engagements = /** @class */ (function () {
         return new Engagements()
             .withHistory(data.history ?
             data.history.map(function (item) {
-                return EngagementHistory_1.default.fromDict(item);
-            }) : [])
-            .withAvg(EngagementAverage_1.default.fromDict(data["avg"]));
+                return Gs2Watch.EngagementHistory.fromDict(item);
+            }) : null)
+            .withAvg(Gs2Watch.EngagementAverage.fromDict(data["avg"]));
     };
     Engagements.prototype.toDict = function () {
         var _a;
@@ -62,7 +61,7 @@ var Engagements = /** @class */ (function () {
             "history": this.getHistory() ?
                 this.getHistory().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "avg": (_a = this.getAvg()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };

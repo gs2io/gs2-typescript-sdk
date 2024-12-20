@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class InventoryInventoryStatistics implements IModel {
     private acquired: number|null = null;
     private consume: number|null = null;

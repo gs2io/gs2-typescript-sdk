@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExchangeRateModelAmountDistributionStatistics from './ExchangeRateModelAmountDistributionStatistics';
 import ExchangeRateModelAmountDistributionSegment from './ExchangeRateModelAmountDistributionSegment';
 import ExchangeRateModelAmountDistribution from './ExchangeRateModelAmountDistribution';
 
 export default class ExchangeRateModelDistributions implements IModel {
-    private amount: ExchangeRateModelAmountDistribution|null = null;
-    public getAmount(): ExchangeRateModelAmountDistribution|null {
+    private amount: Gs2Watch.ExchangeRateModelAmountDistribution|null = null;
+    public getAmount(): Gs2Watch.ExchangeRateModelAmountDistribution|null {
         return this.amount;
     }
-    public setAmount(amount: ExchangeRateModelAmountDistribution|null) {
+    public setAmount(amount: Gs2Watch.ExchangeRateModelAmountDistribution|null) {
         this.amount = amount;
         return this;
     }
-    public withAmount(amount: ExchangeRateModelAmountDistribution|null): this {
+    public withAmount(amount: Gs2Watch.ExchangeRateModelAmountDistribution|null): this {
         this.amount = amount;
         return this;
     }
@@ -38,7 +40,7 @@ export default class ExchangeRateModelDistributions implements IModel {
             return null;
         }
         return new ExchangeRateModelDistributions()
-            .withAmount(ExchangeRateModelAmountDistribution.fromDict(data["amount"]));
+            .withAmount(Gs2Watch.ExchangeRateModelAmountDistribution.fromDict(data["amount"]));
     }
 
     public toDict(): {[key: string]: any} {

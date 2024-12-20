@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import MoneyNamespaceVerificationDistributionStatistics from './MoneyNamespaceVerificationDistributionStatistics';
-import MoneyNamespaceVerificationDistributionSegment from './MoneyNamespaceVerificationDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyNamespaceVerificationDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): MoneyNamespaceVerificationDistributionStatistics | null;
-    setStatistics(statistics: MoneyNamespaceVerificationDistributionStatistics | null): this;
-    withStatistics(statistics: MoneyNamespaceVerificationDistributionStatistics | null): this;
-    getDistribution(): MoneyNamespaceVerificationDistributionSegment[] | null;
-    setDistribution(distribution: MoneyNamespaceVerificationDistributionSegment[] | null): this;
-    withDistribution(distribution: MoneyNamespaceVerificationDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.MoneyNamespaceVerificationDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.MoneyNamespaceVerificationDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MoneyNamespaceVerificationDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.MoneyNamespaceVerificationDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.MoneyNamespaceVerificationDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.MoneyNamespaceVerificationDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyNamespaceVerificationDistribution | null;

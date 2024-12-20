@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceNamespaceStatistics from './ExperienceNamespaceStatistics';
 import ExperienceNamespaceAddExperienceByExperienceDistributionStatistics from './ExperienceNamespaceAddExperienceByExperienceDistributionStatistics';
 import ExperienceNamespaceAddExperienceByExperienceDistributionSegment from './ExperienceNamespaceAddExperienceByExperienceDistributionSegment';
@@ -54,9 +56,9 @@ export default class ExperienceNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: ExperienceNamespaceStatistics|null = null;
-    private distributions: ExperienceNamespaceDistributions|null = null;
-    private experienceModels: ExperienceExperienceModel[]|null = null;
+    private statistics: Gs2Watch.ExperienceNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.ExperienceNamespaceDistributions|null = null;
+    private experienceModels: Gs2Watch.ExperienceExperienceModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -241,36 +243,36 @@ export default class ExperienceNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): ExperienceNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.ExperienceNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ExperienceNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.ExperienceNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ExperienceNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ExperienceNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ExperienceNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ExperienceNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getExperienceModels(): ExperienceExperienceModel[]|null {
+    public getExperienceModels(): Gs2Watch.ExperienceExperienceModel[]|null {
         return this.experienceModels;
     }
-    public setExperienceModels(experienceModels: ExperienceExperienceModel[]|null) {
+    public setExperienceModels(experienceModels: Gs2Watch.ExperienceExperienceModel[]|null) {
         this.experienceModels = experienceModels;
         return this;
     }
-    public withExperienceModels(experienceModels: ExperienceExperienceModel[]|null): this {
+    public withExperienceModels(experienceModels: Gs2Watch.ExperienceExperienceModel[]|null): this {
         this.experienceModels = experienceModels;
         return this;
     }
@@ -285,13 +287,13 @@ export default class ExperienceNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ExperienceNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(ExperienceNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExperienceNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExperienceNamespaceDistributions.fromDict(data["distributions"]))
             .withExperienceModels(data.experienceModels ?
                 data.experienceModels.map((item: {[key: string]: any}) => {
-                    return ExperienceExperienceModel.fromDict(item);
+                    return Gs2Watch.ExperienceExperienceModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -304,10 +306,10 @@ export default class ExperienceNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "experienceModels": this.getExperienceModels() ?
-                this.getExperienceModels()!.map((item: ExperienceExperienceModel) => {
+                this.getExperienceModels()!.map((item: Gs2Watch.ExperienceExperienceModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

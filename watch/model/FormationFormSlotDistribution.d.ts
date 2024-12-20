@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FormationFormSlotDistributionStatistics from './FormationFormSlotDistributionStatistics';
-import FormationFormSlotDistributionSegment from './FormationFormSlotDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationFormSlotDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FormationFormSlotDistributionStatistics | null;
-    setStatistics(statistics: FormationFormSlotDistributionStatistics | null): this;
-    withStatistics(statistics: FormationFormSlotDistributionStatistics | null): this;
-    getDistribution(): FormationFormSlotDistributionSegment[] | null;
-    setDistribution(distribution: FormationFormSlotDistributionSegment[] | null): this;
-    withDistribution(distribution: FormationFormSlotDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FormationFormSlotDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationFormSlotDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationFormSlotDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.FormationFormSlotDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FormationFormSlotDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FormationFormSlotDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationFormSlotDistribution | null;

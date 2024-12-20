@@ -37,14 +37,14 @@ var DescribeMoneyWalletMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.MoneyWallet.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeMoneyWalletMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeMoneyWalletMetricsResult;

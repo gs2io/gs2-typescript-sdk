@@ -27,6 +27,7 @@ var SubscribeRankingData = /** @class */ (function () {
         this.scorerUserId = null;
         this.score = null;
         this.metadata = null;
+        this.invertCreatedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -262,6 +263,17 @@ var SubscribeRankingData = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    SubscribeRankingData.prototype.getInvertCreatedAt = function () {
+        return this.invertCreatedAt;
+    };
+    SubscribeRankingData.prototype.setInvertCreatedAt = function (invertCreatedAt) {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    };
+    SubscribeRankingData.prototype.withInvertCreatedAt = function (invertCreatedAt) {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    };
     SubscribeRankingData.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -309,6 +321,7 @@ var SubscribeRankingData = /** @class */ (function () {
             .withScorerUserId(data["scorerUserId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
+            .withInvertCreatedAt(data["invertCreatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -324,6 +337,7 @@ var SubscribeRankingData = /** @class */ (function () {
             "scorerUserId": this.getScorerUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
+            "invertCreatedAt": this.getInvertCreatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

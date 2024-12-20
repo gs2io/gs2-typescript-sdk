@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ChatNamespacePostByRoomDistribution_1 = tslib_1.__importDefault(require("./ChatNamespacePostByRoomDistribution"));
-var ChatNamespacePostByUserDistribution_1 = tslib_1.__importDefault(require("./ChatNamespacePostByUserDistribution"));
-var ChatNamespacePostByCategoryDistribution_1 = tslib_1.__importDefault(require("./ChatNamespacePostByCategoryDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ChatNamespaceDistributions = /** @class */ (function () {
     function ChatNamespaceDistributions() {
         this.postByRoom = null;
@@ -63,9 +61,9 @@ var ChatNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new ChatNamespaceDistributions()
-            .withPostByRoom(ChatNamespacePostByRoomDistribution_1.default.fromDict(data["postByRoom"]))
-            .withPostByUser(ChatNamespacePostByUserDistribution_1.default.fromDict(data["postByUser"]))
-            .withPostByCategory(ChatNamespacePostByCategoryDistribution_1.default.fromDict(data["postByCategory"]));
+            .withPostByRoom(Gs2Watch.ChatNamespacePostByRoomDistribution.fromDict(data["postByRoom"]))
+            .withPostByUser(Gs2Watch.ChatNamespacePostByUserDistribution.fromDict(data["postByUser"]))
+            .withPostByCategory(Gs2Watch.ChatNamespacePostByCategoryDistribution.fromDict(data["postByCategory"]));
     };
     ChatNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c;

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExchangeRateModelAmountDistributionStatistics from './ExchangeRateModelAmountDistributionStatistics';
 import ExchangeRateModelAmountDistributionSegment from './ExchangeRateModelAmountDistributionSegment';
 
 export default class ExchangeRateModelAmountDistribution implements IModel {
-    private statistics: ExchangeRateModelAmountDistributionStatistics|null = null;
-    private distribution: ExchangeRateModelAmountDistributionSegment[]|null = null;
-    public getStatistics(): ExchangeRateModelAmountDistributionStatistics|null {
+    private statistics: Gs2Watch.ExchangeRateModelAmountDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExchangeRateModelAmountDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExchangeRateModelAmountDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExchangeRateModelAmountDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExchangeRateModelAmountDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExchangeRateModelAmountDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExchangeRateModelAmountDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExchangeRateModelAmountDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExchangeRateModelAmountDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExchangeRateModelAmountDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExchangeRateModelAmountDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExchangeRateModelAmountDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExchangeRateModelAmountDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExchangeRateModelAmountDistribution implements IModel {
             return null;
         }
         return new ExchangeRateModelAmountDistribution()
-            .withStatistics(ExchangeRateModelAmountDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExchangeRateModelAmountDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExchangeRateModelAmountDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExchangeRateModelAmountDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExchangeRateModelAmountDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExchangeRateModelAmountDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

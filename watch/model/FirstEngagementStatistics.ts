@@ -15,18 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FirstEngagementStatisticsLoginDays from './FirstEngagementStatisticsLoginDays';
 
 export default class FirstEngagementStatistics implements IModel {
-    private loginDays: FirstEngagementStatisticsLoginDays|null = null;
-    public getLoginDays(): FirstEngagementStatisticsLoginDays|null {
+    private loginDays: Gs2Watch.FirstEngagementStatisticsLoginDays|null = null;
+    public getLoginDays(): Gs2Watch.FirstEngagementStatisticsLoginDays|null {
         return this.loginDays;
     }
-    public setLoginDays(loginDays: FirstEngagementStatisticsLoginDays|null) {
+    public setLoginDays(loginDays: Gs2Watch.FirstEngagementStatisticsLoginDays|null) {
         this.loginDays = loginDays;
         return this;
     }
-    public withLoginDays(loginDays: FirstEngagementStatisticsLoginDays|null): this {
+    public withLoginDays(loginDays: Gs2Watch.FirstEngagementStatisticsLoginDays|null): this {
         this.loginDays = loginDays;
         return this;
     }
@@ -36,7 +38,7 @@ export default class FirstEngagementStatistics implements IModel {
             return null;
         }
         return new FirstEngagementStatistics()
-            .withLoginDays(FirstEngagementStatisticsLoginDays.fromDict(data["loginDays"]));
+            .withLoginDays(Gs2Watch.FirstEngagementStatisticsLoginDays.fromDict(data["loginDays"]));
     }
 
     public toDict(): {[key: string]: any} {

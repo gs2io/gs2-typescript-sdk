@@ -16,12 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryNamespaceAcquireDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceAcquireDistribution"));
-var InventoryNamespaceAcquireAmountDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceAcquireAmountDistribution"));
-var InventoryNamespaceConsumeDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceConsumeDistribution"));
-var InventoryNamespaceConsumeAmountDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceConsumeAmountDistribution"));
-var InventoryNamespaceIncreaseCapacityDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceIncreaseCapacityDistribution"));
-var InventoryNamespaceIncreaseCapacityAmountDistribution_1 = tslib_1.__importDefault(require("./InventoryNamespaceIncreaseCapacityAmountDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryNamespaceDistributions = /** @class */ (function () {
     function InventoryNamespaceDistributions() {
         this.acquire = null;
@@ -102,12 +97,12 @@ var InventoryNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new InventoryNamespaceDistributions()
-            .withAcquire(InventoryNamespaceAcquireDistribution_1.default.fromDict(data["acquire"]))
-            .withAcquireAmount(InventoryNamespaceAcquireAmountDistribution_1.default.fromDict(data["acquireAmount"]))
-            .withConsume(InventoryNamespaceConsumeDistribution_1.default.fromDict(data["consume"]))
-            .withConsumeAmount(InventoryNamespaceConsumeAmountDistribution_1.default.fromDict(data["consumeAmount"]))
-            .withIncreaseCapacity(InventoryNamespaceIncreaseCapacityDistribution_1.default.fromDict(data["increaseCapacity"]))
-            .withIncreaseCapacityAmount(InventoryNamespaceIncreaseCapacityAmountDistribution_1.default.fromDict(data["increaseCapacityAmount"]));
+            .withAcquire(Gs2Watch.InventoryNamespaceAcquireDistribution.fromDict(data["acquire"]))
+            .withAcquireAmount(Gs2Watch.InventoryNamespaceAcquireAmountDistribution.fromDict(data["acquireAmount"]))
+            .withConsume(Gs2Watch.InventoryNamespaceConsumeDistribution.fromDict(data["consume"]))
+            .withConsumeAmount(Gs2Watch.InventoryNamespaceConsumeAmountDistribution.fromDict(data["consumeAmount"]))
+            .withIncreaseCapacity(Gs2Watch.InventoryNamespaceIncreaseCapacityDistribution.fromDict(data["increaseCapacity"]))
+            .withIncreaseCapacityAmount(Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistribution.fromDict(data["increaseCapacityAmount"]));
     };
     InventoryNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d, _e, _f;

@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestQuestGroupModelStatistics_1 = tslib_1.__importDefault(require("./QuestQuestGroupModelStatistics"));
-var QuestQuestGroupModelDistributions_1 = tslib_1.__importDefault(require("./QuestQuestGroupModelDistributions"));
-var QuestQuestModel_1 = tslib_1.__importDefault(require("./QuestQuestModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:quest:namespace:{namespaceName}:questGroupModel:{questGroupName}";
 var QuestQuestGroupModel = /** @class */ (function () {
     function QuestQuestGroupModel() {
@@ -222,12 +220,12 @@ var QuestQuestGroupModel = /** @class */ (function () {
         return new QuestQuestGroupModel()
             .withQuestGroupModelId(data["questGroupModelId"])
             .withQuestGroupName(data["questGroupName"])
-            .withStatistics(QuestQuestGroupModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(QuestQuestGroupModelDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.QuestQuestGroupModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.QuestQuestGroupModelDistributions.fromDict(data["distributions"]))
             .withQuestModels(data.questModels ?
             data.questModels.map(function (item) {
-                return QuestQuestModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.QuestQuestModel.fromDict(item);
+            }) : null);
     };
     QuestQuestGroupModel.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var QuestQuestGroupModel = /** @class */ (function () {
             "questModels": this.getQuestModels() ?
                 this.getQuestModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return QuestQuestGroupModel;

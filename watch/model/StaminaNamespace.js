@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var StaminaNamespaceStatistics_1 = tslib_1.__importDefault(require("./StaminaNamespaceStatistics"));
-var StaminaNamespaceDistributions_1 = tslib_1.__importDefault(require("./StaminaNamespaceDistributions"));
-var StaminaStaminaModel_1 = tslib_1.__importDefault(require("./StaminaStaminaModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:stamina:namespace:{namespaceName}";
 var StaminaNamespace = /** @class */ (function () {
     function StaminaNamespace() {
@@ -237,12 +235,12 @@ var StaminaNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(StaminaNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(StaminaNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.StaminaNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.StaminaNamespaceDistributions.fromDict(data["distributions"]))
             .withStaminaModels(data.staminaModels ?
             data.staminaModels.map(function (item) {
-                return StaminaStaminaModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.StaminaStaminaModel.fromDict(item);
+            }) : null);
     };
     StaminaNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var StaminaNamespace = /** @class */ (function () {
             "staminaModels": this.getStaminaModels() ?
                 this.getStaminaModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return StaminaNamespace;

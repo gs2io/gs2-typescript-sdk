@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import InventoryNamespaceAcquireDistributionStatistics from './InventoryNamespaceAcquireDistributionStatistics';
-import InventoryNamespaceAcquireDistributionSegment from './InventoryNamespaceAcquireDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryNamespaceAcquireDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): InventoryNamespaceAcquireDistributionStatistics | null;
-    setStatistics(statistics: InventoryNamespaceAcquireDistributionStatistics | null): this;
-    withStatistics(statistics: InventoryNamespaceAcquireDistributionStatistics | null): this;
-    getDistribution(): InventoryNamespaceAcquireDistributionSegment[] | null;
-    setDistribution(distribution: InventoryNamespaceAcquireDistributionSegment[] | null): this;
-    withDistribution(distribution: InventoryNamespaceAcquireDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.InventoryNamespaceAcquireDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryNamespaceAcquireDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryNamespaceAcquireDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.InventoryNamespaceAcquireDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.InventoryNamespaceAcquireDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.InventoryNamespaceAcquireDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryNamespaceAcquireDistribution | null;

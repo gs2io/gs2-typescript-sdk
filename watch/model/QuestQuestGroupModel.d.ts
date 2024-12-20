@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import QuestQuestGroupModelStatistics from './QuestQuestGroupModelStatistics';
-import QuestQuestGroupModelDistributions from './QuestQuestGroupModelDistributions';
-import QuestQuestModel from './QuestQuestModel';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestQuestGroupModel implements IModel {
     private questGroupModelId;
     private questGroupName;
@@ -23,15 +21,15 @@ export default class QuestQuestGroupModel implements IModel {
     getQuestGroupName(): string | null;
     setQuestGroupName(questGroupName: string | null): this;
     withQuestGroupName(questGroupName: string | null): this;
-    getStatistics(): QuestQuestGroupModelStatistics | null;
-    setStatistics(statistics: QuestQuestGroupModelStatistics | null): this;
-    withStatistics(statistics: QuestQuestGroupModelStatistics | null): this;
-    getDistributions(): QuestQuestGroupModelDistributions | null;
-    setDistributions(distributions: QuestQuestGroupModelDistributions | null): this;
-    withDistributions(distributions: QuestQuestGroupModelDistributions | null): this;
-    getQuestModels(): QuestQuestModel[] | null;
-    setQuestModels(questModels: QuestQuestModel[] | null): this;
-    withQuestModels(questModels: QuestQuestModel[] | null): this;
+    getStatistics(): Gs2Watch.QuestQuestGroupModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.QuestQuestGroupModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.QuestQuestGroupModelStatistics | null): this;
+    getDistributions(): Gs2Watch.QuestQuestGroupModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.QuestQuestGroupModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.QuestQuestGroupModelDistributions | null): this;
+    getQuestModels(): Gs2Watch.QuestQuestModel[] | null;
+    setQuestModels(questModels: Gs2Watch.QuestQuestModel[] | null): this;
+    withQuestModels(questModels: Gs2Watch.QuestQuestModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestQuestGroupModel | null;

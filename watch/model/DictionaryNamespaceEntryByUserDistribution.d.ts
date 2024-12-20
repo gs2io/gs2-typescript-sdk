@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import DictionaryNamespaceEntryByUserDistributionStatistics from './DictionaryNamespaceEntryByUserDistributionStatistics';
-import DictionaryNamespaceEntryByUserDistributionSegment from './DictionaryNamespaceEntryByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class DictionaryNamespaceEntryByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): DictionaryNamespaceEntryByUserDistributionStatistics | null;
-    setStatistics(statistics: DictionaryNamespaceEntryByUserDistributionStatistics | null): this;
-    withStatistics(statistics: DictionaryNamespaceEntryByUserDistributionStatistics | null): this;
-    getDistribution(): DictionaryNamespaceEntryByUserDistributionSegment[] | null;
-    setDistribution(distribution: DictionaryNamespaceEntryByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: DictionaryNamespaceEntryByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.DictionaryNamespaceEntryByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.DictionaryNamespaceEntryByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.DictionaryNamespaceEntryByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.DictionaryNamespaceEntryByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.DictionaryNamespaceEntryByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.DictionaryNamespaceEntryByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DictionaryNamespaceEntryByUserDistribution | null;

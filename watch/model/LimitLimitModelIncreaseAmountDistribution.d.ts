@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import LimitLimitModelIncreaseAmountDistributionStatistics from './LimitLimitModelIncreaseAmountDistributionStatistics';
-import LimitLimitModelIncreaseAmountDistributionSegment from './LimitLimitModelIncreaseAmountDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitLimitModelIncreaseAmountDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): LimitLimitModelIncreaseAmountDistributionStatistics | null;
-    setStatistics(statistics: LimitLimitModelIncreaseAmountDistributionStatistics | null): this;
-    withStatistics(statistics: LimitLimitModelIncreaseAmountDistributionStatistics | null): this;
-    getDistribution(): LimitLimitModelIncreaseAmountDistributionSegment[] | null;
-    setDistribution(distribution: LimitLimitModelIncreaseAmountDistributionSegment[] | null): this;
-    withDistribution(distribution: LimitLimitModelIncreaseAmountDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitLimitModelIncreaseAmountDistribution | null;

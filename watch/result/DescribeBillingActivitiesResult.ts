@@ -55,7 +55,7 @@ export default class DescribeBillingActivitiesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.BillingActivity.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeBillingActivitiesResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.BillingActivity) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

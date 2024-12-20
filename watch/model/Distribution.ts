@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class Distribution implements IModel {
     private value: number|null = null;
     private count: number|null = null;
@@ -65,7 +67,7 @@ export default class Distribution implements IModel {
                 data.groupBys.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -76,7 +78,7 @@ export default class Distribution implements IModel {
                 this.getGroupBys()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

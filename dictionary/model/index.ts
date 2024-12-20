@@ -17,6 +17,7 @@ import Namespace from "./Namespace"
 import EntryModel from "./EntryModel"
 import EntryModelMaster from "./EntryModelMaster"
 import Entry from "./Entry"
+import Like from "./Like"
 import CurrentEntryMaster from "./CurrentEntryMaster"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -28,6 +29,7 @@ export {
     EntryModel,
     EntryModelMaster,
     Entry,
+    Like,
     CurrentEntryMaster,
     Config,
     GitHubCheckoutSetting,

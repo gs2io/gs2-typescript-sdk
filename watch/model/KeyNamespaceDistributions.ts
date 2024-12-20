@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import KeyNamespaceEncryptDistributionStatistics from './KeyNamespaceEncryptDistributionStatistics';
 import KeyNamespaceEncryptDistributionSegment from './KeyNamespaceEncryptDistributionSegment';
 import KeyNamespaceEncryptDistribution from './KeyNamespaceEncryptDistribution';
@@ -23,27 +25,27 @@ import KeyNamespaceDecryptDistributionSegment from './KeyNamespaceDecryptDistrib
 import KeyNamespaceDecryptDistribution from './KeyNamespaceDecryptDistribution';
 
 export default class KeyNamespaceDistributions implements IModel {
-    private encrypt: KeyNamespaceEncryptDistribution|null = null;
-    private decrypt: KeyNamespaceDecryptDistribution|null = null;
-    public getEncrypt(): KeyNamespaceEncryptDistribution|null {
+    private encrypt: Gs2Watch.KeyNamespaceEncryptDistribution|null = null;
+    private decrypt: Gs2Watch.KeyNamespaceDecryptDistribution|null = null;
+    public getEncrypt(): Gs2Watch.KeyNamespaceEncryptDistribution|null {
         return this.encrypt;
     }
-    public setEncrypt(encrypt: KeyNamespaceEncryptDistribution|null) {
+    public setEncrypt(encrypt: Gs2Watch.KeyNamespaceEncryptDistribution|null) {
         this.encrypt = encrypt;
         return this;
     }
-    public withEncrypt(encrypt: KeyNamespaceEncryptDistribution|null): this {
+    public withEncrypt(encrypt: Gs2Watch.KeyNamespaceEncryptDistribution|null): this {
         this.encrypt = encrypt;
         return this;
     }
-    public getDecrypt(): KeyNamespaceDecryptDistribution|null {
+    public getDecrypt(): Gs2Watch.KeyNamespaceDecryptDistribution|null {
         return this.decrypt;
     }
-    public setDecrypt(decrypt: KeyNamespaceDecryptDistribution|null) {
+    public setDecrypt(decrypt: Gs2Watch.KeyNamespaceDecryptDistribution|null) {
         this.decrypt = decrypt;
         return this;
     }
-    public withDecrypt(decrypt: KeyNamespaceDecryptDistribution|null): this {
+    public withDecrypt(decrypt: Gs2Watch.KeyNamespaceDecryptDistribution|null): this {
         this.decrypt = decrypt;
         return this;
     }
@@ -53,8 +55,8 @@ export default class KeyNamespaceDistributions implements IModel {
             return null;
         }
         return new KeyNamespaceDistributions()
-            .withEncrypt(KeyNamespaceEncryptDistribution.fromDict(data["encrypt"]))
-            .withDecrypt(KeyNamespaceDecryptDistribution.fromDict(data["decrypt"]));
+            .withEncrypt(Gs2Watch.KeyNamespaceEncryptDistribution.fromDict(data["encrypt"]))
+            .withDecrypt(Gs2Watch.KeyNamespaceDecryptDistribution.fromDict(data["decrypt"]));
     }
 
     public toDict(): {[key: string]: any} {

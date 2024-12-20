@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationFormUsageDistributionStatistics from './FormationFormUsageDistributionStatistics';
 import FormationFormUsageDistributionSegment from './FormationFormUsageDistributionSegment';
 
 export default class FormationFormUsageDistribution implements IModel {
-    private statistics: FormationFormUsageDistributionStatistics|null = null;
-    private distribution: FormationFormUsageDistributionSegment[]|null = null;
-    public getStatistics(): FormationFormUsageDistributionStatistics|null {
+    private statistics: Gs2Watch.FormationFormUsageDistributionStatistics|null = null;
+    private distribution: Gs2Watch.FormationFormUsageDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.FormationFormUsageDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationFormUsageDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationFormUsageDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationFormUsageDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationFormUsageDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): FormationFormUsageDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.FormationFormUsageDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: FormationFormUsageDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.FormationFormUsageDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: FormationFormUsageDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.FormationFormUsageDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class FormationFormUsageDistribution implements IModel {
             return null;
         }
         return new FormationFormUsageDistribution()
-            .withStatistics(FormationFormUsageDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FormationFormUsageDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return FormationFormUsageDistributionSegment.fromDict(item);
+                    return Gs2Watch.FormationFormUsageDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: FormationFormUsageDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.FormationFormUsageDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

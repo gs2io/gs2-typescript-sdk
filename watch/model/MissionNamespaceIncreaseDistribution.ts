@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionNamespaceIncreaseDistributionStatistics from './MissionNamespaceIncreaseDistributionStatistics';
 import MissionNamespaceIncreaseDistributionSegment from './MissionNamespaceIncreaseDistributionSegment';
 
 export default class MissionNamespaceIncreaseDistribution implements IModel {
-    private statistics: MissionNamespaceIncreaseDistributionStatistics|null = null;
-    private distribution: MissionNamespaceIncreaseDistributionSegment[]|null = null;
-    public getStatistics(): MissionNamespaceIncreaseDistributionStatistics|null {
+    private statistics: Gs2Watch.MissionNamespaceIncreaseDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MissionNamespaceIncreaseDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MissionNamespaceIncreaseDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MissionNamespaceIncreaseDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MissionNamespaceIncreaseDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MissionNamespaceIncreaseDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MissionNamespaceIncreaseDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MissionNamespaceIncreaseDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MissionNamespaceIncreaseDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MissionNamespaceIncreaseDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MissionNamespaceIncreaseDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MissionNamespaceIncreaseDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MissionNamespaceIncreaseDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MissionNamespaceIncreaseDistribution implements IModel {
             return null;
         }
         return new MissionNamespaceIncreaseDistribution()
-            .withStatistics(MissionNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MissionNamespaceIncreaseDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MissionNamespaceIncreaseDistributionSegment.fromDict(item);
+                    return Gs2Watch.MissionNamespaceIncreaseDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MissionNamespaceIncreaseDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MissionNamespaceIncreaseDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

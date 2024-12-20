@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class StatsEvent implements IModel {
     private grn: string|null = null;
     private service: string|null = null;
@@ -129,7 +131,7 @@ export default class StatsEvent implements IModel {
                 data.tags.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCallAt(data["callAt"]);
     }
 
@@ -145,7 +147,7 @@ export default class StatsEvent implements IModel {
                 this.getTags()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "callAt": this.getCallAt(),
         };
     }

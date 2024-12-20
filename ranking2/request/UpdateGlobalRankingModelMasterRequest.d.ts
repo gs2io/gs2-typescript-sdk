@@ -12,6 +12,7 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
     private sum;
     private orderDirection;
     private rankingRewards;
+    private rewardCalculationIndex;
     private entryPeriodEventId;
     private accessPeriodEventId;
     getRequestId(): string | null;
@@ -47,6 +48,9 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
     getRankingRewards(): Gs2Ranking2.RankingReward[] | null;
     setRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[] | null): this;
     withRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[] | null): this;
+    getRewardCalculationIndex(): string | null;
+    setRewardCalculationIndex(rewardCalculationIndex: string | null): this;
+    withRewardCalculationIndex(rewardCalculationIndex: string | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;

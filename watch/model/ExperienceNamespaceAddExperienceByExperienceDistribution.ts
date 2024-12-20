@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceNamespaceAddExperienceByExperienceDistributionStatistics from './ExperienceNamespaceAddExperienceByExperienceDistributionStatistics';
 import ExperienceNamespaceAddExperienceByExperienceDistributionSegment from './ExperienceNamespaceAddExperienceByExperienceDistributionSegment';
 
 export default class ExperienceNamespaceAddExperienceByExperienceDistribution implements IModel {
-    private statistics: ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null = null;
-    private distribution: ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null = null;
-    public getStatistics(): ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null {
+    private statistics: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExperienceNamespaceAddExperienceByExperienceDistribution im
             return null;
         }
         return new ExperienceNamespaceAddExperienceByExperienceDistribution()
-            .withStatistics(ExperienceNamespaceAddExperienceByExperienceDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExperienceNamespaceAddExperienceByExperienceDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExperienceNamespaceAddExperienceByExperienceDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

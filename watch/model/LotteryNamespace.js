@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryNamespaceStatistics_1 = tslib_1.__importDefault(require("./LotteryNamespaceStatistics"));
-var LotteryNamespaceDistributions_1 = tslib_1.__importDefault(require("./LotteryNamespaceDistributions"));
-var LotteryLottery_1 = tslib_1.__importDefault(require("./LotteryLottery"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:lottery:namespace:{namespaceName}";
 var LotteryNamespace = /** @class */ (function () {
     function LotteryNamespace() {
@@ -237,12 +235,12 @@ var LotteryNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(LotteryNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(LotteryNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.LotteryNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LotteryNamespaceDistributions.fromDict(data["distributions"]))
             .withLotteries(data.lotteries ?
             data.lotteries.map(function (item) {
-                return LotteryLottery_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LotteryLottery.fromDict(item);
+            }) : null);
     };
     LotteryNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var LotteryNamespace = /** @class */ (function () {
             "lotteries": this.getLotteries() ?
                 this.getLotteries().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LotteryNamespace;

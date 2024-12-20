@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import InventoryNamespaceStatistics from './InventoryNamespaceStatistics';
-import InventoryNamespaceDistributions from './InventoryNamespaceDistributions';
-import InventoryInventory from './InventoryInventory';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class InventoryNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): InventoryNamespaceStatistics | null;
-    setStatistics(statistics: InventoryNamespaceStatistics | null): this;
-    withStatistics(statistics: InventoryNamespaceStatistics | null): this;
-    getDistributions(): InventoryNamespaceDistributions | null;
-    setDistributions(distributions: InventoryNamespaceDistributions | null): this;
-    withDistributions(distributions: InventoryNamespaceDistributions | null): this;
-    getInventories(): InventoryInventory[] | null;
-    setInventories(inventories: InventoryInventory[] | null): this;
-    withInventories(inventories: InventoryInventory[] | null): this;
+    getStatistics(): Gs2Watch.InventoryNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.InventoryNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.InventoryNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.InventoryNamespaceDistributions | null): this;
+    getInventories(): Gs2Watch.InventoryInventory[] | null;
+    setInventories(inventories: Gs2Watch.InventoryInventory[] | null): this;
+    withInventories(inventories: Gs2Watch.InventoryInventory[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryNamespace | null;

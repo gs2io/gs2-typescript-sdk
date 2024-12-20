@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ChurnRateHistory from './ChurnRateHistory';
 import ChurnRateAverage from './ChurnRateAverage';
 
 export default class ChurnRateAggregate implements IModel {
-    private history: ChurnRateHistory[]|null = null;
-    private avg: ChurnRateAverage|null = null;
-    public getHistory(): ChurnRateHistory[]|null {
+    private history: Gs2Watch.ChurnRateHistory[]|null = null;
+    private avg: Gs2Watch.ChurnRateAverage|null = null;
+    public getHistory(): Gs2Watch.ChurnRateHistory[]|null {
         return this.history;
     }
-    public setHistory(history: ChurnRateHistory[]|null) {
+    public setHistory(history: Gs2Watch.ChurnRateHistory[]|null) {
         this.history = history;
         return this;
     }
-    public withHistory(history: ChurnRateHistory[]|null): this {
+    public withHistory(history: Gs2Watch.ChurnRateHistory[]|null): this {
         this.history = history;
         return this;
     }
-    public getAvg(): ChurnRateAverage|null {
+    public getAvg(): Gs2Watch.ChurnRateAverage|null {
         return this.avg;
     }
-    public setAvg(avg: ChurnRateAverage|null) {
+    public setAvg(avg: Gs2Watch.ChurnRateAverage|null) {
         this.avg = avg;
         return this;
     }
-    public withAvg(avg: ChurnRateAverage|null): this {
+    public withAvg(avg: Gs2Watch.ChurnRateAverage|null): this {
         this.avg = avg;
         return this;
     }
@@ -51,19 +53,19 @@ export default class ChurnRateAggregate implements IModel {
         return new ChurnRateAggregate()
             .withHistory(data.history ?
                 data.history.map((item: {[key: string]: any}) => {
-                    return ChurnRateHistory.fromDict(item);
+                    return Gs2Watch.ChurnRateHistory.fromDict(item);
                 }
-            ) : [])
-            .withAvg(ChurnRateAverage.fromDict(data["avg"]));
+            ) : null)
+            .withAvg(Gs2Watch.ChurnRateAverage.fromDict(data["avg"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "history": this.getHistory() ?
-                this.getHistory()!.map((item: ChurnRateHistory) => {
+                this.getHistory()!.map((item: Gs2Watch.ChurnRateHistory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "avg": this.getAvg()?.toDict(),
         };
     }

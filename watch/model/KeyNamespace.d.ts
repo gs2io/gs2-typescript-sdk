@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import KeyNamespaceStatistics from './KeyNamespaceStatistics';
-import KeyNamespaceDistributions from './KeyNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class KeyNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class KeyNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): KeyNamespaceStatistics | null;
-    setStatistics(statistics: KeyNamespaceStatistics | null): this;
-    withStatistics(statistics: KeyNamespaceStatistics | null): this;
-    getDistributions(): KeyNamespaceDistributions | null;
-    setDistributions(distributions: KeyNamespaceDistributions | null): this;
-    withDistributions(distributions: KeyNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.KeyNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.KeyNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.KeyNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.KeyNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.KeyNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.KeyNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): KeyNamespace | null;

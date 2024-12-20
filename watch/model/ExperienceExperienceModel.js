@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceExperienceModelStatistics_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelStatistics"));
-var ExperienceExperienceModelDistributions_1 = tslib_1.__importDefault(require("./ExperienceExperienceModelDistributions"));
-var ExperienceStatus_1 = tslib_1.__importDefault(require("./ExperienceStatus"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:experience:namespace:{namespaceName}:experienceModel:{experienceName}";
 var ExperienceExperienceModel = /** @class */ (function () {
     function ExperienceExperienceModel() {
@@ -222,12 +220,12 @@ var ExperienceExperienceModel = /** @class */ (function () {
         return new ExperienceExperienceModel()
             .withExperienceModelId(data["experienceModelId"])
             .withExperienceName(data["experienceName"])
-            .withStatistics(ExperienceExperienceModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ExperienceExperienceModelDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExperienceExperienceModelDistributions.fromDict(data["distributions"]))
             .withStatuses(data.statuses ?
             data.statuses.map(function (item) {
-                return ExperienceStatus_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceStatus.fromDict(item);
+            }) : null);
     };
     ExperienceExperienceModel.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var ExperienceExperienceModel = /** @class */ (function () {
             "statuses": this.getStatuses() ?
                 this.getStatuses().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceExperienceModel;

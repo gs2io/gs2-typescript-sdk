@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyNamespaceStatistics from './MoneyNamespaceStatistics';
 import MoneyNamespaceVerificationDistributionStatistics from './MoneyNamespaceVerificationDistributionStatistics';
 import MoneyNamespaceVerificationDistributionSegment from './MoneyNamespaceVerificationDistributionSegment';
@@ -52,10 +54,10 @@ export default class MoneyNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: MoneyNamespaceStatistics|null = null;
-    private distributions: MoneyNamespaceDistributions|null = null;
-    private wallets: MoneyWallet[]|null = null;
-    private receipts: MoneyReceipt[]|null = null;
+    private statistics: Gs2Watch.MoneyNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.MoneyNamespaceDistributions|null = null;
+    private wallets: Gs2Watch.MoneyWallet[]|null = null;
+    private receipts: Gs2Watch.MoneyReceipt[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -240,47 +242,47 @@ export default class MoneyNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): MoneyNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.MoneyNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MoneyNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.MoneyNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MoneyNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MoneyNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MoneyNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MoneyNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getWallets(): MoneyWallet[]|null {
+    public getWallets(): Gs2Watch.MoneyWallet[]|null {
         return this.wallets;
     }
-    public setWallets(wallets: MoneyWallet[]|null) {
+    public setWallets(wallets: Gs2Watch.MoneyWallet[]|null) {
         this.wallets = wallets;
         return this;
     }
-    public withWallets(wallets: MoneyWallet[]|null): this {
+    public withWallets(wallets: Gs2Watch.MoneyWallet[]|null): this {
         this.wallets = wallets;
         return this;
     }
-    public getReceipts(): MoneyReceipt[]|null {
+    public getReceipts(): Gs2Watch.MoneyReceipt[]|null {
         return this.receipts;
     }
-    public setReceipts(receipts: MoneyReceipt[]|null) {
+    public setReceipts(receipts: Gs2Watch.MoneyReceipt[]|null) {
         this.receipts = receipts;
         return this;
     }
-    public withReceipts(receipts: MoneyReceipt[]|null): this {
+    public withReceipts(receipts: Gs2Watch.MoneyReceipt[]|null): this {
         this.receipts = receipts;
         return this;
     }
@@ -295,18 +297,18 @@ export default class MoneyNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MoneyNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(MoneyNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.MoneyNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyNamespaceDistributions.fromDict(data["distributions"]))
             .withWallets(data.wallets ?
                 data.wallets.map((item: {[key: string]: any}) => {
-                    return MoneyWallet.fromDict(item);
+                    return Gs2Watch.MoneyWallet.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withReceipts(data.receipts ?
                 data.receipts.map((item: {[key: string]: any}) => {
-                    return MoneyReceipt.fromDict(item);
+                    return Gs2Watch.MoneyReceipt.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -319,15 +321,15 @@ export default class MoneyNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "wallets": this.getWallets() ?
-                this.getWallets()!.map((item: MoneyWallet) => {
+                this.getWallets()!.map((item: Gs2Watch.MoneyWallet) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "receipts": this.getReceipts() ?
-                this.getReceipts()!.map((item: MoneyReceipt) => {
+                this.getReceipts()!.map((item: Gs2Watch.MoneyReceipt) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

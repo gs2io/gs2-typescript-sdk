@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingCategoryModelScoreDistributionStatistics from './RankingCategoryModelScoreDistributionStatistics';
 import RankingCategoryModelScoreDistributionSegment from './RankingCategoryModelScoreDistributionSegment';
 import RankingCategoryModelScoreDistribution from './RankingCategoryModelScoreDistribution';
 
 export default class RankingCategoryModelDistributions implements IModel {
-    private score: RankingCategoryModelScoreDistribution|null = null;
-    public getScore(): RankingCategoryModelScoreDistribution|null {
+    private score: Gs2Watch.RankingCategoryModelScoreDistribution|null = null;
+    public getScore(): Gs2Watch.RankingCategoryModelScoreDistribution|null {
         return this.score;
     }
-    public setScore(score: RankingCategoryModelScoreDistribution|null) {
+    public setScore(score: Gs2Watch.RankingCategoryModelScoreDistribution|null) {
         this.score = score;
         return this;
     }
-    public withScore(score: RankingCategoryModelScoreDistribution|null): this {
+    public withScore(score: Gs2Watch.RankingCategoryModelScoreDistribution|null): this {
         this.score = score;
         return this;
     }
@@ -38,7 +40,7 @@ export default class RankingCategoryModelDistributions implements IModel {
             return null;
         }
         return new RankingCategoryModelDistributions()
-            .withScore(RankingCategoryModelScoreDistribution.fromDict(data["score"]));
+            .withScore(Gs2Watch.RankingCategoryModelScoreDistribution.fromDict(data["score"]));
     }
 
     public toDict(): {[key: string]: any} {

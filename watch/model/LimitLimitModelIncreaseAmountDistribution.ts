@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitLimitModelIncreaseAmountDistributionStatistics from './LimitLimitModelIncreaseAmountDistributionStatistics';
 import LimitLimitModelIncreaseAmountDistributionSegment from './LimitLimitModelIncreaseAmountDistributionSegment';
 
 export default class LimitLimitModelIncreaseAmountDistribution implements IModel {
-    private statistics: LimitLimitModelIncreaseAmountDistributionStatistics|null = null;
-    private distribution: LimitLimitModelIncreaseAmountDistributionSegment[]|null = null;
-    public getStatistics(): LimitLimitModelIncreaseAmountDistributionStatistics|null {
+    private statistics: Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics|null = null;
+    private distribution: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LimitLimitModelIncreaseAmountDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LimitLimitModelIncreaseAmountDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): LimitLimitModelIncreaseAmountDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: LimitLimitModelIncreaseAmountDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: LimitLimitModelIncreaseAmountDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class LimitLimitModelIncreaseAmountDistribution implements IModel
             return null;
         }
         return new LimitLimitModelIncreaseAmountDistribution()
-            .withStatistics(LimitLimitModelIncreaseAmountDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LimitLimitModelIncreaseAmountDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return LimitLimitModelIncreaseAmountDistributionSegment.fromDict(item);
+                    return Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: LimitLimitModelIncreaseAmountDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.LimitLimitModelIncreaseAmountDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

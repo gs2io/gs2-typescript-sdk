@@ -31,6 +31,7 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
     private sum: boolean|null = null;
     private orderDirection: string|null = null;
     private rankingRewards: Gs2Ranking2.RankingReward[]|null = null;
+    private rewardCalculationIndex: string|null = null;
     private entryPeriodEventId: string|null = null;
     private accessPeriodEventId: string|null = null;
 
@@ -160,6 +161,17 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
         this.rankingRewards = rankingRewards;
         return this;
     }
+    public getRewardCalculationIndex(): string|null {
+        return this.rewardCalculationIndex;
+    }
+    public setRewardCalculationIndex(rewardCalculationIndex: string|null) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
+    public withRewardCalculationIndex(rewardCalculationIndex: string|null): this {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
     public getEntryPeriodEventId(): string|null {
         return this.entryPeriodEventId;
     }
@@ -198,6 +210,7 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
                     return Gs2Ranking2.RankingReward.fromDict(item);
                 }
             ) : null)
+            .withRewardCalculationIndex(data["rewardCalculationIndex"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     }
@@ -217,6 +230,7 @@ export default class UpdateGlobalRankingModelMasterRequest implements IRequest {
                     return item.toDict();
                 }
             ) : null,
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };

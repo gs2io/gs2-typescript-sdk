@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:dictionary:namespace:{namespaceName}:entryModel:{entryModelName}";
 
 export default class DictionaryEntryModel implements IModel {

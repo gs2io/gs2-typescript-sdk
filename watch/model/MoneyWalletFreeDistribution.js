@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyWalletFreeDistributionStatistics_1 = tslib_1.__importDefault(require("./MoneyWalletFreeDistributionStatistics"));
-var MoneyWalletFreeDistributionSegment_1 = tslib_1.__importDefault(require("./MoneyWalletFreeDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyWalletFreeDistribution = /** @class */ (function () {
     function MoneyWalletFreeDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MoneyWalletFreeDistribution = /** @class */ (function () {
             return null;
         }
         return new MoneyWalletFreeDistribution()
-            .withStatistics(MoneyWalletFreeDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyWalletFreeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MoneyWalletFreeDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MoneyWalletFreeDistributionSegment.fromDict(item);
+            }) : null);
     };
     MoneyWalletFreeDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MoneyWalletFreeDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MoneyWalletFreeDistribution;

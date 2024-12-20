@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExchangeNamespaceExchangeDistribution_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeDistribution"));
-var ExchangeNamespaceExchangeAmountDistribution_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeAmountDistribution"));
-var ExchangeNamespaceExchangeByUserDistribution_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeByUserDistribution"));
-var ExchangeNamespaceExchangeAmountByUserDistribution_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeAmountByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExchangeNamespaceDistributions = /** @class */ (function () {
     function ExchangeNamespaceDistributions() {
         this.exchange = null;
@@ -76,10 +73,10 @@ var ExchangeNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new ExchangeNamespaceDistributions()
-            .withExchange(ExchangeNamespaceExchangeDistribution_1.default.fromDict(data["exchange"]))
-            .withExchangeAmount(ExchangeNamespaceExchangeAmountDistribution_1.default.fromDict(data["exchangeAmount"]))
-            .withExchangeByUser(ExchangeNamespaceExchangeByUserDistribution_1.default.fromDict(data["exchangeByUser"]))
-            .withExchangeAmountByUser(ExchangeNamespaceExchangeAmountByUserDistribution_1.default.fromDict(data["exchangeAmountByUser"]));
+            .withExchange(Gs2Watch.ExchangeNamespaceExchangeDistribution.fromDict(data["exchange"]))
+            .withExchangeAmount(Gs2Watch.ExchangeNamespaceExchangeAmountDistribution.fromDict(data["exchangeAmount"]))
+            .withExchangeByUser(Gs2Watch.ExchangeNamespaceExchangeByUserDistribution.fromDict(data["exchangeByUser"]))
+            .withExchangeAmountByUser(Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistribution.fromDict(data["exchangeAmountByUser"]));
     };
     ExchangeNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

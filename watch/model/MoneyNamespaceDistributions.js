@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyNamespaceVerificationDistribution_1 = tslib_1.__importDefault(require("./MoneyNamespaceVerificationDistribution"));
-var MoneyNamespaceDepositDistribution_1 = tslib_1.__importDefault(require("./MoneyNamespaceDepositDistribution"));
-var MoneyNamespaceWithdrawDistribution_1 = tslib_1.__importDefault(require("./MoneyNamespaceWithdrawDistribution"));
-var MoneyNamespaceRevenueDistribution_1 = tslib_1.__importDefault(require("./MoneyNamespaceRevenueDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyNamespaceDistributions = /** @class */ (function () {
     function MoneyNamespaceDistributions() {
         this.verification = null;
@@ -76,10 +73,10 @@ var MoneyNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new MoneyNamespaceDistributions()
-            .withVerification(MoneyNamespaceVerificationDistribution_1.default.fromDict(data["verification"]))
-            .withDeposit(MoneyNamespaceDepositDistribution_1.default.fromDict(data["deposit"]))
-            .withWithdraw(MoneyNamespaceWithdrawDistribution_1.default.fromDict(data["withdraw"]))
-            .withRevenue(MoneyNamespaceRevenueDistribution_1.default.fromDict(data["revenue"]));
+            .withVerification(Gs2Watch.MoneyNamespaceVerificationDistribution.fromDict(data["verification"]))
+            .withDeposit(Gs2Watch.MoneyNamespaceDepositDistribution.fromDict(data["deposit"]))
+            .withWithdraw(Gs2Watch.MoneyNamespaceWithdrawDistribution.fromDict(data["withdraw"]))
+            .withRevenue(Gs2Watch.MoneyNamespaceRevenueDistribution.fromDict(data["revenue"]));
     };
     MoneyNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

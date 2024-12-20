@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import KeyNamespaceDecryptDistributionStatistics from './KeyNamespaceDecryptDistributionStatistics';
 import KeyNamespaceDecryptDistributionSegment from './KeyNamespaceDecryptDistributionSegment';
 
 export default class KeyNamespaceDecryptDistribution implements IModel {
-    private statistics: KeyNamespaceDecryptDistributionStatistics|null = null;
-    private distribution: KeyNamespaceDecryptDistributionSegment[]|null = null;
-    public getStatistics(): KeyNamespaceDecryptDistributionStatistics|null {
+    private statistics: Gs2Watch.KeyNamespaceDecryptDistributionStatistics|null = null;
+    private distribution: Gs2Watch.KeyNamespaceDecryptDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.KeyNamespaceDecryptDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: KeyNamespaceDecryptDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.KeyNamespaceDecryptDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: KeyNamespaceDecryptDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.KeyNamespaceDecryptDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): KeyNamespaceDecryptDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.KeyNamespaceDecryptDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: KeyNamespaceDecryptDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.KeyNamespaceDecryptDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: KeyNamespaceDecryptDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.KeyNamespaceDecryptDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class KeyNamespaceDecryptDistribution implements IModel {
             return null;
         }
         return new KeyNamespaceDecryptDistribution()
-            .withStatistics(KeyNamespaceDecryptDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.KeyNamespaceDecryptDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return KeyNamespaceDecryptDistributionSegment.fromDict(item);
+                    return Gs2Watch.KeyNamespaceDecryptDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: KeyNamespaceDecryptDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.KeyNamespaceDecryptDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

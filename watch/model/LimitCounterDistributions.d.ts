@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import LimitCounterCounterDistribution from './LimitCounterCounterDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitCounterDistributions implements IModel {
     private counter;
-    getCounter(): LimitCounterCounterDistribution | null;
-    setCounter(counter: LimitCounterCounterDistribution | null): this;
-    withCounter(counter: LimitCounterCounterDistribution | null): this;
+    getCounter(): Gs2Watch.LimitCounterCounterDistribution | null;
+    setCounter(counter: Gs2Watch.LimitCounterCounterDistribution | null): this;
+    withCounter(counter: Gs2Watch.LimitCounterCounterDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitCounterDistributions | null;

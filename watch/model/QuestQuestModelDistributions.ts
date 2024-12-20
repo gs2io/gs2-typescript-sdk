@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestQuestModelPlayTimeSecondsDistributionStatistics from './QuestQuestModelPlayTimeSecondsDistributionStatistics';
 import QuestQuestModelPlayTimeSecondsDistributionSegment from './QuestQuestModelPlayTimeSecondsDistributionSegment';
 import QuestQuestModelPlayTimeSecondsDistribution from './QuestQuestModelPlayTimeSecondsDistribution';
 
 export default class QuestQuestModelDistributions implements IModel {
-    private playTimeSeconds: QuestQuestModelPlayTimeSecondsDistribution|null = null;
-    public getPlayTimeSeconds(): QuestQuestModelPlayTimeSecondsDistribution|null {
+    private playTimeSeconds: Gs2Watch.QuestQuestModelPlayTimeSecondsDistribution|null = null;
+    public getPlayTimeSeconds(): Gs2Watch.QuestQuestModelPlayTimeSecondsDistribution|null {
         return this.playTimeSeconds;
     }
-    public setPlayTimeSeconds(playTimeSeconds: QuestQuestModelPlayTimeSecondsDistribution|null) {
+    public setPlayTimeSeconds(playTimeSeconds: Gs2Watch.QuestQuestModelPlayTimeSecondsDistribution|null) {
         this.playTimeSeconds = playTimeSeconds;
         return this;
     }
-    public withPlayTimeSeconds(playTimeSeconds: QuestQuestModelPlayTimeSecondsDistribution|null): this {
+    public withPlayTimeSeconds(playTimeSeconds: Gs2Watch.QuestQuestModelPlayTimeSecondsDistribution|null): this {
         this.playTimeSeconds = playTimeSeconds;
         return this;
     }
@@ -38,7 +40,7 @@ export default class QuestQuestModelDistributions implements IModel {
             return null;
         }
         return new QuestQuestModelDistributions()
-            .withPlayTimeSeconds(QuestQuestModelPlayTimeSecondsDistribution.fromDict(data["playTimeSeconds"]));
+            .withPlayTimeSeconds(Gs2Watch.QuestQuestModelPlayTimeSecondsDistribution.fromDict(data["playTimeSeconds"]));
     }
 
     public toDict(): {[key: string]: any} {

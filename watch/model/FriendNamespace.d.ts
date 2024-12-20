@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import FriendNamespaceStatistics from './FriendNamespaceStatistics';
-import FriendNamespaceDistributions from './FriendNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class FriendNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class FriendNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): FriendNamespaceStatistics | null;
-    setStatistics(statistics: FriendNamespaceStatistics | null): this;
-    withStatistics(statistics: FriendNamespaceStatistics | null): this;
-    getDistributions(): FriendNamespaceDistributions | null;
-    setDistributions(distributions: FriendNamespaceDistributions | null): this;
-    withDistributions(distributions: FriendNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.FriendNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.FriendNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FriendNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.FriendNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.FriendNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.FriendNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FriendNamespace | null;

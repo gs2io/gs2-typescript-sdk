@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import RankingCategoryModelScoreDistributionStatistics from './RankingCategoryModelScoreDistributionStatistics';
-import RankingCategoryModelScoreDistributionSegment from './RankingCategoryModelScoreDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class RankingCategoryModelScoreDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): RankingCategoryModelScoreDistributionStatistics | null;
-    setStatistics(statistics: RankingCategoryModelScoreDistributionStatistics | null): this;
-    withStatistics(statistics: RankingCategoryModelScoreDistributionStatistics | null): this;
-    getDistribution(): RankingCategoryModelScoreDistributionSegment[] | null;
-    setDistribution(distribution: RankingCategoryModelScoreDistributionSegment[] | null): this;
-    withDistribution(distribution: RankingCategoryModelScoreDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.RankingCategoryModelScoreDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.RankingCategoryModelScoreDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.RankingCategoryModelScoreDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.RankingCategoryModelScoreDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.RankingCategoryModelScoreDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.RankingCategoryModelScoreDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RankingCategoryModelScoreDistribution | null;

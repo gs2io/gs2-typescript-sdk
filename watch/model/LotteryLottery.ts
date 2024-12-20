@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LotteryLotteryStatistics from './LotteryLotteryStatistics';
 import LotteryLotteryDrawResultDistributionStatistics from './LotteryLotteryDrawResultDistributionStatistics';
 import LotteryLotteryDrawResultDistributionSegment from './LotteryLotteryDrawResultDistributionSegment';
@@ -25,8 +27,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class LotteryLottery implements IModel {
     private lotteryId: string|null = null;
     private lotteryName: string|null = null;
-    private statistics: LotteryLotteryStatistics|null = null;
-    private distributions: LotteryLotteryDistributions|null = null;
+    private statistics: Gs2Watch.LotteryLotteryStatistics|null = null;
+    private distributions: Gs2Watch.LotteryLotteryDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -205,25 +207,25 @@ export default class LotteryLottery implements IModel {
         this.lotteryName = lotteryName;
         return this;
     }
-    public getStatistics(): LotteryLotteryStatistics|null {
+    public getStatistics(): Gs2Watch.LotteryLotteryStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LotteryLotteryStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LotteryLotteryStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LotteryLotteryStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LotteryLotteryStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): LotteryLotteryDistributions|null {
+    public getDistributions(): Gs2Watch.LotteryLotteryDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: LotteryLotteryDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.LotteryLotteryDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: LotteryLotteryDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.LotteryLotteryDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -235,8 +237,8 @@ export default class LotteryLottery implements IModel {
         return new LotteryLottery()
             .withLotteryId(data["lotteryId"])
             .withLotteryName(data["lotteryName"])
-            .withStatistics(LotteryLotteryStatistics.fromDict(data["statistics"]))
-            .withDistributions(LotteryLotteryDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.LotteryLotteryStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LotteryLotteryDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

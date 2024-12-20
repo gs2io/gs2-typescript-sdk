@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceStatusRankCapDistributionStatistics from './ExperienceStatusRankCapDistributionStatistics';
 import ExperienceStatusRankCapDistributionSegment from './ExperienceStatusRankCapDistributionSegment';
 
 export default class ExperienceStatusRankCapDistribution implements IModel {
-    private statistics: ExperienceStatusRankCapDistributionStatistics|null = null;
-    private distribution: ExperienceStatusRankCapDistributionSegment[]|null = null;
-    public getStatistics(): ExperienceStatusRankCapDistributionStatistics|null {
+    private statistics: Gs2Watch.ExperienceStatusRankCapDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExperienceStatusRankCapDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExperienceStatusRankCapDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceStatusRankCapDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceStatusRankCapDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceStatusRankCapDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceStatusRankCapDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExperienceStatusRankCapDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExperienceStatusRankCapDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExperienceStatusRankCapDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExperienceStatusRankCapDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExperienceStatusRankCapDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExperienceStatusRankCapDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExperienceStatusRankCapDistribution implements IModel {
             return null;
         }
         return new ExperienceStatusRankCapDistribution()
-            .withStatistics(ExperienceStatusRankCapDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceStatusRankCapDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExperienceStatusRankCapDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExperienceStatusRankCapDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExperienceStatusRankCapDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExperienceStatusRankCapDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

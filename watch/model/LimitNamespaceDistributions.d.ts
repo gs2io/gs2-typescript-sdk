@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import LimitNamespaceIncreaseDistribution from './LimitNamespaceIncreaseDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitNamespaceDistributions implements IModel {
     private increase;
-    getIncrease(): LimitNamespaceIncreaseDistribution | null;
-    setIncrease(increase: LimitNamespaceIncreaseDistribution | null): this;
-    withIncrease(increase: LimitNamespaceIncreaseDistribution | null): this;
+    getIncrease(): Gs2Watch.LimitNamespaceIncreaseDistribution | null;
+    setIncrease(increase: Gs2Watch.LimitNamespaceIncreaseDistribution | null): this;
+    withIncrease(increase: Gs2Watch.LimitNamespaceIncreaseDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitNamespaceDistributions | null;

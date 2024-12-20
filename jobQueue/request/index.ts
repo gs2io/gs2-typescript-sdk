@@ -37,9 +37,6 @@ import PushByStampSheetRequest from "./PushByStampSheetRequest"
 import DeleteByStampTaskRequest from "./DeleteByStampTaskRequest"
 import GetJobResultRequest from "./GetJobResultRequest"
 import GetJobResultByUserIdRequest from "./GetJobResultByUserIdRequest"
-import DescribeDeadLetterJobsByUserIdRequest from "./DescribeDeadLetterJobsByUserIdRequest"
-import GetDeadLetterJobByUserIdRequest from "./GetDeadLetterJobByUserIdRequest"
-import DeleteDeadLetterJobByUserIdRequest from "./DeleteDeadLetterJobByUserIdRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -66,7 +63,4 @@ export {
     DeleteByStampTaskRequest,
     GetJobResultRequest,
     GetJobResultByUserIdRequest,
-    DescribeDeadLetterJobsByUserIdRequest,
-    GetDeadLetterJobByUserIdRequest,
-    DeleteDeadLetterJobByUserIdRequest,
 };

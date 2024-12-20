@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import MoneyWalletFreeDistribution from './MoneyWalletFreeDistribution';
-import MoneyWalletPaidDistribution from './MoneyWalletPaidDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyWalletDistributions implements IModel {
     private free;
     private paid;
-    getFree(): MoneyWalletFreeDistribution | null;
-    setFree(free: MoneyWalletFreeDistribution | null): this;
-    withFree(free: MoneyWalletFreeDistribution | null): this;
-    getPaid(): MoneyWalletPaidDistribution | null;
-    setPaid(paid: MoneyWalletPaidDistribution | null): this;
-    withPaid(paid: MoneyWalletPaidDistribution | null): this;
+    getFree(): Gs2Watch.MoneyWalletFreeDistribution | null;
+    setFree(free: Gs2Watch.MoneyWalletFreeDistribution | null): this;
+    withFree(free: Gs2Watch.MoneyWalletFreeDistribution | null): this;
+    getPaid(): Gs2Watch.MoneyWalletPaidDistribution | null;
+    setPaid(paid: Gs2Watch.MoneyWalletPaidDistribution | null): this;
+    withPaid(paid: Gs2Watch.MoneyWalletPaidDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyWalletDistributions | null;

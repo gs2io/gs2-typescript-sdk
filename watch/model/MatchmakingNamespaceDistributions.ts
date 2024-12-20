@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MatchmakingNamespaceResultDistributionStatistics from './MatchmakingNamespaceResultDistributionStatistics';
 import MatchmakingNamespaceResultDistributionSegment from './MatchmakingNamespaceResultDistributionSegment';
 import MatchmakingNamespaceResultDistribution from './MatchmakingNamespaceResultDistribution';
@@ -23,27 +25,27 @@ import MatchmakingNamespaceWaitElapsedSecondsDistributionSegment from './Matchma
 import MatchmakingNamespaceWaitElapsedSecondsDistribution from './MatchmakingNamespaceWaitElapsedSecondsDistribution';
 
 export default class MatchmakingNamespaceDistributions implements IModel {
-    private result: MatchmakingNamespaceResultDistribution|null = null;
-    private waitElapsedSeconds: MatchmakingNamespaceWaitElapsedSecondsDistribution|null = null;
-    public getResult(): MatchmakingNamespaceResultDistribution|null {
+    private result: Gs2Watch.MatchmakingNamespaceResultDistribution|null = null;
+    private waitElapsedSeconds: Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution|null = null;
+    public getResult(): Gs2Watch.MatchmakingNamespaceResultDistribution|null {
         return this.result;
     }
-    public setResult(result: MatchmakingNamespaceResultDistribution|null) {
+    public setResult(result: Gs2Watch.MatchmakingNamespaceResultDistribution|null) {
         this.result = result;
         return this;
     }
-    public withResult(result: MatchmakingNamespaceResultDistribution|null): this {
+    public withResult(result: Gs2Watch.MatchmakingNamespaceResultDistribution|null): this {
         this.result = result;
         return this;
     }
-    public getWaitElapsedSeconds(): MatchmakingNamespaceWaitElapsedSecondsDistribution|null {
+    public getWaitElapsedSeconds(): Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution|null {
         return this.waitElapsedSeconds;
     }
-    public setWaitElapsedSeconds(waitElapsedSeconds: MatchmakingNamespaceWaitElapsedSecondsDistribution|null) {
+    public setWaitElapsedSeconds(waitElapsedSeconds: Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution|null) {
         this.waitElapsedSeconds = waitElapsedSeconds;
         return this;
     }
-    public withWaitElapsedSeconds(waitElapsedSeconds: MatchmakingNamespaceWaitElapsedSecondsDistribution|null): this {
+    public withWaitElapsedSeconds(waitElapsedSeconds: Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution|null): this {
         this.waitElapsedSeconds = waitElapsedSeconds;
         return this;
     }
@@ -53,8 +55,8 @@ export default class MatchmakingNamespaceDistributions implements IModel {
             return null;
         }
         return new MatchmakingNamespaceDistributions()
-            .withResult(MatchmakingNamespaceResultDistribution.fromDict(data["result"]))
-            .withWaitElapsedSeconds(MatchmakingNamespaceWaitElapsedSecondsDistribution.fromDict(data["waitElapsedSeconds"]));
+            .withResult(Gs2Watch.MatchmakingNamespaceResultDistribution.fromDict(data["result"]))
+            .withWaitElapsedSeconds(Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution.fromDict(data["waitElapsedSeconds"]));
     }
 
     public toDict(): {[key: string]: any} {

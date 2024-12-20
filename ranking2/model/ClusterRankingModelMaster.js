@@ -33,6 +33,7 @@ var ClusterRankingModelMaster = /** @class */ (function () {
         this.entryPeriodEventId = null;
         this.rankingRewards = null;
         this.accessPeriodEventId = null;
+        this.rewardCalculationIndex = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -246,6 +247,17 @@ var ClusterRankingModelMaster = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    ClusterRankingModelMaster.prototype.getRewardCalculationIndex = function () {
+        return this.rewardCalculationIndex;
+    };
+    ClusterRankingModelMaster.prototype.setRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
+    ClusterRankingModelMaster.prototype.withRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
     ClusterRankingModelMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -300,6 +312,7 @@ var ClusterRankingModelMaster = /** @class */ (function () {
                 return Gs2Ranking2.RankingReward.fromDict(item);
             }) : null)
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withRewardCalculationIndex(data["rewardCalculationIndex"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -322,6 +335,7 @@ var ClusterRankingModelMaster = /** @class */ (function () {
                     return item.toDict();
                 }) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

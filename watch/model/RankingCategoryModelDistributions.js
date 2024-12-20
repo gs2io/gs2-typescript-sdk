@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingCategoryModelScoreDistribution_1 = tslib_1.__importDefault(require("./RankingCategoryModelScoreDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var RankingCategoryModelDistributions = /** @class */ (function () {
     function RankingCategoryModelDistributions() {
         this.score = null;
@@ -37,7 +37,7 @@ var RankingCategoryModelDistributions = /** @class */ (function () {
             return null;
         }
         return new RankingCategoryModelDistributions()
-            .withScore(RankingCategoryModelScoreDistribution_1.default.fromDict(data["score"]));
+            .withScore(Gs2Watch.RankingCategoryModelScoreDistribution.fromDict(data["score"]));
     };
     RankingCategoryModelDistributions.prototype.toDict = function () {
         var _a;

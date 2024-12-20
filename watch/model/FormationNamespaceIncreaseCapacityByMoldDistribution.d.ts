@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FormationNamespaceIncreaseCapacityByMoldDistributionStatistics from './FormationNamespaceIncreaseCapacityByMoldDistributionStatistics';
-import FormationNamespaceIncreaseCapacityByMoldDistributionSegment from './FormationNamespaceIncreaseCapacityByMoldDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationNamespaceIncreaseCapacityByMoldDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null;
-    setStatistics(statistics: FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null): this;
-    withStatistics(statistics: FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null): this;
-    getDistribution(): FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null;
-    setDistribution(distribution: FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null): this;
-    withDistribution(distribution: FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationNamespaceIncreaseCapacityByMoldDistribution | null;

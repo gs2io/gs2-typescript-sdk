@@ -40,7 +40,7 @@ export default class DescribeLimitLimitModelMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.LimitLimitModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeLimitLimitModelMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.LimitLimitModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

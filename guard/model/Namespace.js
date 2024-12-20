@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BlockingPolicyModel_1 = tslib_1.__importDefault(require("./BlockingPolicyModel"));
+var Gs2Guard = tslib_1.__importStar(require("../../guard/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guard:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -161,7 +161,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withBlockingPolicy(BlockingPolicyModel_1.default.fromDict(data["blockingPolicy"]))
+            .withBlockingPolicy(Gs2Guard.BlockingPolicyModel.fromDict(data["blockingPolicy"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

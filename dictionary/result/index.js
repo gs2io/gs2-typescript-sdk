@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.VerifyEntryByStampTaskResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.DeleteEntriesResult = exports.VerifyEntryByUserIdResult = exports.VerifyEntryResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.DeleteLikesByUserIdResult = exports.DeleteLikesResult = exports.ResetLikesByUserIdResult = exports.ResetLikesResult = exports.GetLikeByUserIdResult = exports.GetLikeResult = exports.AddLikesByUserIdResult = exports.AddLikesResult = exports.DescribeLikesByUserIdResult = exports.DescribeLikesResult = exports.VerifyEntryByStampTaskResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.DeleteEntriesResult = exports.VerifyEntryByUserIdResult = exports.VerifyEntryResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -87,6 +87,26 @@ var DeleteEntriesByStampTaskResult_1 = tslib_1.__importDefault(require("./Delete
 exports.DeleteEntriesByStampTaskResult = DeleteEntriesByStampTaskResult_1.default;
 var VerifyEntryByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyEntryByStampTaskResult"));
 exports.VerifyEntryByStampTaskResult = VerifyEntryByStampTaskResult_1.default;
+var DescribeLikesResult_1 = tslib_1.__importDefault(require("./DescribeLikesResult"));
+exports.DescribeLikesResult = DescribeLikesResult_1.default;
+var DescribeLikesByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeLikesByUserIdResult"));
+exports.DescribeLikesByUserIdResult = DescribeLikesByUserIdResult_1.default;
+var AddLikesResult_1 = tslib_1.__importDefault(require("./AddLikesResult"));
+exports.AddLikesResult = AddLikesResult_1.default;
+var AddLikesByUserIdResult_1 = tslib_1.__importDefault(require("./AddLikesByUserIdResult"));
+exports.AddLikesByUserIdResult = AddLikesByUserIdResult_1.default;
+var GetLikeResult_1 = tslib_1.__importDefault(require("./GetLikeResult"));
+exports.GetLikeResult = GetLikeResult_1.default;
+var GetLikeByUserIdResult_1 = tslib_1.__importDefault(require("./GetLikeByUserIdResult"));
+exports.GetLikeByUserIdResult = GetLikeByUserIdResult_1.default;
+var ResetLikesResult_1 = tslib_1.__importDefault(require("./ResetLikesResult"));
+exports.ResetLikesResult = ResetLikesResult_1.default;
+var ResetLikesByUserIdResult_1 = tslib_1.__importDefault(require("./ResetLikesByUserIdResult"));
+exports.ResetLikesByUserIdResult = ResetLikesByUserIdResult_1.default;
+var DeleteLikesResult_1 = tslib_1.__importDefault(require("./DeleteLikesResult"));
+exports.DeleteLikesResult = DeleteLikesResult_1.default;
+var DeleteLikesByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteLikesByUserIdResult"));
+exports.DeleteLikesByUserIdResult = DeleteLikesByUserIdResult_1.default;
 var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentEntryMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentEntryMasterResult"));

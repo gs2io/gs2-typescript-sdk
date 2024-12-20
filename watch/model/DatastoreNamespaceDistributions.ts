@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import DatastoreNamespaceDownloadByUserDistributionStatistics from './DatastoreNamespaceDownloadByUserDistributionStatistics';
 import DatastoreNamespaceDownloadByUserDistributionSegment from './DatastoreNamespaceDownloadByUserDistributionSegment';
 import DatastoreNamespaceDownloadByUserDistribution from './DatastoreNamespaceDownloadByUserDistribution';
@@ -26,39 +28,39 @@ import DatastoreNamespaceDataSizeDistributionSegment from './DatastoreNamespaceD
 import DatastoreNamespaceDataSizeDistribution from './DatastoreNamespaceDataSizeDistribution';
 
 export default class DatastoreNamespaceDistributions implements IModel {
-    private downloadByUser: DatastoreNamespaceDownloadByUserDistribution|null = null;
-    private uploadByUser: DatastoreNamespaceUploadByUserDistribution|null = null;
-    private dataSize: DatastoreNamespaceDataSizeDistribution|null = null;
-    public getDownloadByUser(): DatastoreNamespaceDownloadByUserDistribution|null {
+    private downloadByUser: Gs2Watch.DatastoreNamespaceDownloadByUserDistribution|null = null;
+    private uploadByUser: Gs2Watch.DatastoreNamespaceUploadByUserDistribution|null = null;
+    private dataSize: Gs2Watch.DatastoreNamespaceDataSizeDistribution|null = null;
+    public getDownloadByUser(): Gs2Watch.DatastoreNamespaceDownloadByUserDistribution|null {
         return this.downloadByUser;
     }
-    public setDownloadByUser(downloadByUser: DatastoreNamespaceDownloadByUserDistribution|null) {
+    public setDownloadByUser(downloadByUser: Gs2Watch.DatastoreNamespaceDownloadByUserDistribution|null) {
         this.downloadByUser = downloadByUser;
         return this;
     }
-    public withDownloadByUser(downloadByUser: DatastoreNamespaceDownloadByUserDistribution|null): this {
+    public withDownloadByUser(downloadByUser: Gs2Watch.DatastoreNamespaceDownloadByUserDistribution|null): this {
         this.downloadByUser = downloadByUser;
         return this;
     }
-    public getUploadByUser(): DatastoreNamespaceUploadByUserDistribution|null {
+    public getUploadByUser(): Gs2Watch.DatastoreNamespaceUploadByUserDistribution|null {
         return this.uploadByUser;
     }
-    public setUploadByUser(uploadByUser: DatastoreNamespaceUploadByUserDistribution|null) {
+    public setUploadByUser(uploadByUser: Gs2Watch.DatastoreNamespaceUploadByUserDistribution|null) {
         this.uploadByUser = uploadByUser;
         return this;
     }
-    public withUploadByUser(uploadByUser: DatastoreNamespaceUploadByUserDistribution|null): this {
+    public withUploadByUser(uploadByUser: Gs2Watch.DatastoreNamespaceUploadByUserDistribution|null): this {
         this.uploadByUser = uploadByUser;
         return this;
     }
-    public getDataSize(): DatastoreNamespaceDataSizeDistribution|null {
+    public getDataSize(): Gs2Watch.DatastoreNamespaceDataSizeDistribution|null {
         return this.dataSize;
     }
-    public setDataSize(dataSize: DatastoreNamespaceDataSizeDistribution|null) {
+    public setDataSize(dataSize: Gs2Watch.DatastoreNamespaceDataSizeDistribution|null) {
         this.dataSize = dataSize;
         return this;
     }
-    public withDataSize(dataSize: DatastoreNamespaceDataSizeDistribution|null): this {
+    public withDataSize(dataSize: Gs2Watch.DatastoreNamespaceDataSizeDistribution|null): this {
         this.dataSize = dataSize;
         return this;
     }
@@ -68,9 +70,9 @@ export default class DatastoreNamespaceDistributions implements IModel {
             return null;
         }
         return new DatastoreNamespaceDistributions()
-            .withDownloadByUser(DatastoreNamespaceDownloadByUserDistribution.fromDict(data["downloadByUser"]))
-            .withUploadByUser(DatastoreNamespaceUploadByUserDistribution.fromDict(data["uploadByUser"]))
-            .withDataSize(DatastoreNamespaceDataSizeDistribution.fromDict(data["dataSize"]));
+            .withDownloadByUser(Gs2Watch.DatastoreNamespaceDownloadByUserDistribution.fromDict(data["downloadByUser"]))
+            .withUploadByUser(Gs2Watch.DatastoreNamespaceUploadByUserDistribution.fromDict(data["uploadByUser"]))
+            .withDataSize(Gs2Watch.DatastoreNamespaceDataSizeDistribution.fromDict(data["dataSize"]));
     }
 
     public toDict(): {[key: string]: any} {

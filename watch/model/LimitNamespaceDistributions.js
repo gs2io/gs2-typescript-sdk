@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitNamespaceIncreaseDistribution_1 = tslib_1.__importDefault(require("./LimitNamespaceIncreaseDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitNamespaceDistributions = /** @class */ (function () {
     function LimitNamespaceDistributions() {
         this.increase = null;
@@ -37,7 +37,7 @@ var LimitNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new LimitNamespaceDistributions()
-            .withIncrease(LimitNamespaceIncreaseDistribution_1.default.fromDict(data["increase"]));
+            .withIncrease(Gs2Watch.LimitNamespaceIncreaseDistribution.fromDict(data["increase"]));
     };
     LimitNamespaceDistributions.prototype.toDict = function () {
         var _a;

@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import InventoryItemSetStatistics from './InventoryItemSetStatistics';
-import InventoryItemSetDistributions from './InventoryItemSetDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryItemSet implements IModel {
     private itemSetId;
     private itemName;
@@ -27,12 +26,12 @@ export default class InventoryItemSet implements IModel {
     getItemSetName(): string | null;
     setItemSetName(itemSetName: string | null): this;
     withItemSetName(itemSetName: string | null): this;
-    getStatistics(): InventoryItemSetStatistics | null;
-    setStatistics(statistics: InventoryItemSetStatistics | null): this;
-    withStatistics(statistics: InventoryItemSetStatistics | null): this;
-    getDistributions(): InventoryItemSetDistributions | null;
-    setDistributions(distributions: InventoryItemSetDistributions | null): this;
-    withDistributions(distributions: InventoryItemSetDistributions | null): this;
+    getStatistics(): Gs2Watch.InventoryItemSetStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryItemSetStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryItemSetStatistics | null): this;
+    getDistributions(): Gs2Watch.InventoryItemSetDistributions | null;
+    setDistributions(distributions: Gs2Watch.InventoryItemSetDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.InventoryItemSetDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryItemSet | null;

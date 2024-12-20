@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import KeyNamespaceStatistics from './KeyNamespaceStatistics';
 import KeyNamespaceEncryptDistributionStatistics from './KeyNamespaceEncryptDistributionStatistics';
 import KeyNamespaceEncryptDistributionSegment from './KeyNamespaceEncryptDistributionSegment';
@@ -31,8 +33,8 @@ export default class KeyNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: KeyNamespaceStatistics|null = null;
-    private distributions: KeyNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.KeyNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.KeyNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -217,25 +219,25 @@ export default class KeyNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): KeyNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.KeyNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: KeyNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.KeyNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: KeyNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.KeyNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): KeyNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.KeyNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: KeyNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.KeyNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: KeyNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.KeyNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -250,8 +252,8 @@ export default class KeyNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(KeyNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(KeyNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.KeyNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.KeyNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitLimitModelStatistics_1 = tslib_1.__importDefault(require("./LimitLimitModelStatistics"));
-var LimitLimitModelDistributions_1 = tslib_1.__importDefault(require("./LimitLimitModelDistributions"));
-var LimitCounter_1 = tslib_1.__importDefault(require("./LimitCounter"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:limit:namespace:{namespaceName}:limitModel:{limitName}";
 var LimitLimitModel = /** @class */ (function () {
     function LimitLimitModel() {
@@ -222,12 +220,12 @@ var LimitLimitModel = /** @class */ (function () {
         return new LimitLimitModel()
             .withLimitModelId(data["limitModelId"])
             .withLimitName(data["limitName"])
-            .withStatistics(LimitLimitModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(LimitLimitModelDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.LimitLimitModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LimitLimitModelDistributions.fromDict(data["distributions"]))
             .withCounters(data.counters ?
             data.counters.map(function (item) {
-                return LimitCounter_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LimitCounter.fromDict(item);
+            }) : null);
     };
     LimitLimitModel.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var LimitLimitModel = /** @class */ (function () {
             "counters": this.getCounters() ?
                 this.getCounters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LimitLimitModel;

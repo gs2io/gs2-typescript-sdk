@@ -40,7 +40,7 @@ export default class DescribeMoneyReceiptMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.MoneyReceipt.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMoneyReceiptMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.MoneyReceipt) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

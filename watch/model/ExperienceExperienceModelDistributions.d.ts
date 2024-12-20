@@ -1,25 +1,22 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceExperienceModelAddExperienceByUserDistribution from './ExperienceExperienceModelAddExperienceByUserDistribution';
-import ExperienceExperienceModelAddExperienceAmountByUserDistribution from './ExperienceExperienceModelAddExperienceAmountByUserDistribution';
-import ExperienceExperienceModelAddRankCapByUserDistribution from './ExperienceExperienceModelAddRankCapByUserDistribution';
-import ExperienceExperienceModelAddRankCapAmountByUserDistribution from './ExperienceExperienceModelAddRankCapAmountByUserDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceExperienceModelDistributions implements IModel {
     private addExperienceByUser;
     private addExperienceAmountByUser;
     private addRankCapByUser;
     private addRankCapAmountByUser;
-    getAddExperienceByUser(): ExperienceExperienceModelAddExperienceByUserDistribution | null;
-    setAddExperienceByUser(addExperienceByUser: ExperienceExperienceModelAddExperienceByUserDistribution | null): this;
-    withAddExperienceByUser(addExperienceByUser: ExperienceExperienceModelAddExperienceByUserDistribution | null): this;
-    getAddExperienceAmountByUser(): ExperienceExperienceModelAddExperienceAmountByUserDistribution | null;
-    setAddExperienceAmountByUser(addExperienceAmountByUser: ExperienceExperienceModelAddExperienceAmountByUserDistribution | null): this;
-    withAddExperienceAmountByUser(addExperienceAmountByUser: ExperienceExperienceModelAddExperienceAmountByUserDistribution | null): this;
-    getAddRankCapByUser(): ExperienceExperienceModelAddRankCapByUserDistribution | null;
-    setAddRankCapByUser(addRankCapByUser: ExperienceExperienceModelAddRankCapByUserDistribution | null): this;
-    withAddRankCapByUser(addRankCapByUser: ExperienceExperienceModelAddRankCapByUserDistribution | null): this;
-    getAddRankCapAmountByUser(): ExperienceExperienceModelAddRankCapAmountByUserDistribution | null;
-    setAddRankCapAmountByUser(addRankCapAmountByUser: ExperienceExperienceModelAddRankCapAmountByUserDistribution | null): this;
-    withAddRankCapAmountByUser(addRankCapAmountByUser: ExperienceExperienceModelAddRankCapAmountByUserDistribution | null): this;
+    getAddExperienceByUser(): Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution | null;
+    setAddExperienceByUser(addExperienceByUser: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution | null): this;
+    withAddExperienceByUser(addExperienceByUser: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistribution | null): this;
+    getAddExperienceAmountByUser(): Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution | null;
+    setAddExperienceAmountByUser(addExperienceAmountByUser: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution | null): this;
+    withAddExperienceAmountByUser(addExperienceAmountByUser: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistribution | null): this;
+    getAddRankCapByUser(): Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution | null;
+    setAddRankCapByUser(addRankCapByUser: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution | null): this;
+    withAddRankCapByUser(addRankCapByUser: Gs2Watch.ExperienceExperienceModelAddRankCapByUserDistribution | null): this;
+    getAddRankCapAmountByUser(): Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution | null;
+    setAddRankCapAmountByUser(addRankCapAmountByUser: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution | null): this;
+    withAddRankCapAmountByUser(addRankCapAmountByUser: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceExperienceModelDistributions | null;

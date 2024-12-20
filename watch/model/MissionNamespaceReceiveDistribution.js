@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionNamespaceReceiveDistributionStatistics_1 = tslib_1.__importDefault(require("./MissionNamespaceReceiveDistributionStatistics"));
-var MissionNamespaceReceiveDistributionSegment_1 = tslib_1.__importDefault(require("./MissionNamespaceReceiveDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MissionNamespaceReceiveDistribution = /** @class */ (function () {
     function MissionNamespaceReceiveDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MissionNamespaceReceiveDistribution = /** @class */ (function () {
             return null;
         }
         return new MissionNamespaceReceiveDistribution()
-            .withStatistics(MissionNamespaceReceiveDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MissionNamespaceReceiveDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MissionNamespaceReceiveDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MissionNamespaceReceiveDistributionSegment.fromDict(item);
+            }) : null);
     };
     MissionNamespaceReceiveDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MissionNamespaceReceiveDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MissionNamespaceReceiveDistribution;

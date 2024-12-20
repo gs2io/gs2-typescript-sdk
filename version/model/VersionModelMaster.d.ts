@@ -13,6 +13,7 @@ export default class VersionModelMaster implements IModel {
     private scheduleVersions;
     private needSignature;
     private signatureKeyId;
+    private approveRequirement;
     private createdAt;
     private updatedAt;
     private revision;
@@ -58,6 +59,9 @@ export default class VersionModelMaster implements IModel {
     getSignatureKeyId(): string | null;
     setSignatureKeyId(signatureKeyId: string | null): this;
     withSignatureKeyId(signatureKeyId: string | null): this;
+    getApproveRequirement(): string | null;
+    setApproveRequirement(approveRequirement: string | null): this;
+    withApproveRequirement(approveRequirement: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

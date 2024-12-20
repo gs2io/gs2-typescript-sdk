@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import StaminaStaminaModelConsumeDistributionStatistics from './StaminaStaminaModelConsumeDistributionStatistics';
 import StaminaStaminaModelConsumeDistributionSegment from './StaminaStaminaModelConsumeDistributionSegment';
 import StaminaStaminaModelConsumeDistribution from './StaminaStaminaModelConsumeDistribution';
@@ -23,27 +25,27 @@ import StaminaStaminaModelRecoverDistributionSegment from './StaminaStaminaModel
 import StaminaStaminaModelRecoverDistribution from './StaminaStaminaModelRecoverDistribution';
 
 export default class StaminaStaminaModelDistributions implements IModel {
-    private consume: StaminaStaminaModelConsumeDistribution|null = null;
-    private recover: StaminaStaminaModelRecoverDistribution|null = null;
-    public getConsume(): StaminaStaminaModelConsumeDistribution|null {
+    private consume: Gs2Watch.StaminaStaminaModelConsumeDistribution|null = null;
+    private recover: Gs2Watch.StaminaStaminaModelRecoverDistribution|null = null;
+    public getConsume(): Gs2Watch.StaminaStaminaModelConsumeDistribution|null {
         return this.consume;
     }
-    public setConsume(consume: StaminaStaminaModelConsumeDistribution|null) {
+    public setConsume(consume: Gs2Watch.StaminaStaminaModelConsumeDistribution|null) {
         this.consume = consume;
         return this;
     }
-    public withConsume(consume: StaminaStaminaModelConsumeDistribution|null): this {
+    public withConsume(consume: Gs2Watch.StaminaStaminaModelConsumeDistribution|null): this {
         this.consume = consume;
         return this;
     }
-    public getRecover(): StaminaStaminaModelRecoverDistribution|null {
+    public getRecover(): Gs2Watch.StaminaStaminaModelRecoverDistribution|null {
         return this.recover;
     }
-    public setRecover(recover: StaminaStaminaModelRecoverDistribution|null) {
+    public setRecover(recover: Gs2Watch.StaminaStaminaModelRecoverDistribution|null) {
         this.recover = recover;
         return this;
     }
-    public withRecover(recover: StaminaStaminaModelRecoverDistribution|null): this {
+    public withRecover(recover: Gs2Watch.StaminaStaminaModelRecoverDistribution|null): this {
         this.recover = recover;
         return this;
     }
@@ -53,8 +55,8 @@ export default class StaminaStaminaModelDistributions implements IModel {
             return null;
         }
         return new StaminaStaminaModelDistributions()
-            .withConsume(StaminaStaminaModelConsumeDistribution.fromDict(data["consume"]))
-            .withRecover(StaminaStaminaModelRecoverDistribution.fromDict(data["recover"]));
+            .withConsume(Gs2Watch.StaminaStaminaModelConsumeDistribution.fromDict(data["consume"]))
+            .withRecover(Gs2Watch.StaminaStaminaModelRecoverDistribution.fromDict(data["recover"]));
     }
 
     public toDict(): {[key: string]: any} {

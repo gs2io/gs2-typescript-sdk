@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationMoldStatistics from './FormationMoldStatistics';
 import FormationMoldCapacityDistributionStatistics from './FormationMoldCapacityDistributionStatistics';
 import FormationMoldCapacityDistributionSegment from './FormationMoldCapacityDistributionSegment';
@@ -37,9 +39,9 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class FormationMold implements IModel {
     private moldId: string|null = null;
     private moldModelName: string|null = null;
-    private statistics: FormationMoldStatistics|null = null;
-    private distributions: FormationMoldDistributions|null = null;
-    private forms: FormationForm[]|null = null;
+    private statistics: Gs2Watch.FormationMoldStatistics|null = null;
+    private distributions: Gs2Watch.FormationMoldDistributions|null = null;
+    private forms: Gs2Watch.FormationForm[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -218,36 +220,36 @@ export default class FormationMold implements IModel {
         this.moldModelName = moldModelName;
         return this;
     }
-    public getStatistics(): FormationMoldStatistics|null {
+    public getStatistics(): Gs2Watch.FormationMoldStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationMoldStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationMoldStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationMoldStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationMoldStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): FormationMoldDistributions|null {
+    public getDistributions(): Gs2Watch.FormationMoldDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: FormationMoldDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.FormationMoldDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: FormationMoldDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.FormationMoldDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getForms(): FormationForm[]|null {
+    public getForms(): Gs2Watch.FormationForm[]|null {
         return this.forms;
     }
-    public setForms(forms: FormationForm[]|null) {
+    public setForms(forms: Gs2Watch.FormationForm[]|null) {
         this.forms = forms;
         return this;
     }
-    public withForms(forms: FormationForm[]|null): this {
+    public withForms(forms: Gs2Watch.FormationForm[]|null): this {
         this.forms = forms;
         return this;
     }
@@ -259,13 +261,13 @@ export default class FormationMold implements IModel {
         return new FormationMold()
             .withMoldId(data["moldId"])
             .withMoldModelName(data["moldModelName"])
-            .withStatistics(FormationMoldStatistics.fromDict(data["statistics"]))
-            .withDistributions(FormationMoldDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.FormationMoldStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationMoldDistributions.fromDict(data["distributions"]))
             .withForms(data.forms ?
                 data.forms.map((item: {[key: string]: any}) => {
-                    return FormationForm.fromDict(item);
+                    return Gs2Watch.FormationForm.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -275,10 +277,10 @@ export default class FormationMold implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "forms": this.getForms() ?
-                this.getForms()!.map((item: FormationForm) => {
+                this.getForms()!.map((item: Gs2Watch.FormationForm) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

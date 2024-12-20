@@ -37,9 +37,6 @@ import PushByStampSheetResult from "./PushByStampSheetResult"
 import DeleteByStampTaskResult from "./DeleteByStampTaskResult"
 import GetJobResultResult from "./GetJobResultResult"
 import GetJobResultByUserIdResult from "./GetJobResultByUserIdResult"
-import DescribeDeadLetterJobsByUserIdResult from "./DescribeDeadLetterJobsByUserIdResult"
-import GetDeadLetterJobByUserIdResult from "./GetDeadLetterJobByUserIdResult"
-import DeleteDeadLetterJobByUserIdResult from "./DeleteDeadLetterJobByUserIdResult"
 
 export {
     DescribeNamespacesResult,
@@ -66,7 +63,4 @@ export {
     DeleteByStampTaskResult,
     GetJobResultResult,
     GetJobResultByUserIdResult,
-    DescribeDeadLetterJobsByUserIdResult,
-    GetDeadLetterJobByUserIdResult,
-    DeleteDeadLetterJobByUserIdResult,
 };

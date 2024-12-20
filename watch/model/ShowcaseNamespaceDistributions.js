@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ShowcaseNamespaceBuyDistribution_1 = tslib_1.__importDefault(require("./ShowcaseNamespaceBuyDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ShowcaseNamespaceDistributions = /** @class */ (function () {
     function ShowcaseNamespaceDistributions() {
         this.buy = null;
@@ -37,7 +37,7 @@ var ShowcaseNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new ShowcaseNamespaceDistributions()
-            .withBuy(ShowcaseNamespaceBuyDistribution_1.default.fromDict(data["buy"]));
+            .withBuy(Gs2Watch.ShowcaseNamespaceBuyDistribution.fromDict(data["buy"]));
     };
     ShowcaseNamespaceDistributions.prototype.toDict = function () {
         var _a;

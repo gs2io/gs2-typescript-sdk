@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import LotteryNamespaceDrawDistributionStatistics from './LotteryNamespaceDrawDistributionStatistics';
-import LotteryNamespaceDrawDistributionSegment from './LotteryNamespaceDrawDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class LotteryNamespaceDrawDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): LotteryNamespaceDrawDistributionStatistics | null;
-    setStatistics(statistics: LotteryNamespaceDrawDistributionStatistics | null): this;
-    withStatistics(statistics: LotteryNamespaceDrawDistributionStatistics | null): this;
-    getDistribution(): LotteryNamespaceDrawDistributionSegment[] | null;
-    setDistribution(distribution: LotteryNamespaceDrawDistributionSegment[] | null): this;
-    withDistribution(distribution: LotteryNamespaceDrawDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.LotteryNamespaceDrawDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.LotteryNamespaceDrawDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LotteryNamespaceDrawDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.LotteryNamespaceDrawDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.LotteryNamespaceDrawDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.LotteryNamespaceDrawDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LotteryNamespaceDrawDistribution | null;

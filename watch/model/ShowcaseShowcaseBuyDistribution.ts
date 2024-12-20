@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseShowcaseBuyDistributionStatistics from './ShowcaseShowcaseBuyDistributionStatistics';
 import ShowcaseShowcaseBuyDistributionSegment from './ShowcaseShowcaseBuyDistributionSegment';
 
 export default class ShowcaseShowcaseBuyDistribution implements IModel {
-    private statistics: ShowcaseShowcaseBuyDistributionStatistics|null = null;
-    private distribution: ShowcaseShowcaseBuyDistributionSegment[]|null = null;
-    public getStatistics(): ShowcaseShowcaseBuyDistributionStatistics|null {
+    private statistics: Gs2Watch.ShowcaseShowcaseBuyDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ShowcaseShowcaseBuyDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ShowcaseShowcaseBuyDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ShowcaseShowcaseBuyDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ShowcaseShowcaseBuyDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ShowcaseShowcaseBuyDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ShowcaseShowcaseBuyDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ShowcaseShowcaseBuyDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ShowcaseShowcaseBuyDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ShowcaseShowcaseBuyDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ShowcaseShowcaseBuyDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ShowcaseShowcaseBuyDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ShowcaseShowcaseBuyDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ShowcaseShowcaseBuyDistribution implements IModel {
             return null;
         }
         return new ShowcaseShowcaseBuyDistribution()
-            .withStatistics(ShowcaseShowcaseBuyDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ShowcaseShowcaseBuyDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ShowcaseShowcaseBuyDistributionSegment.fromDict(item);
+                    return Gs2Watch.ShowcaseShowcaseBuyDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ShowcaseShowcaseBuyDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ShowcaseShowcaseBuyDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

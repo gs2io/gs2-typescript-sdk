@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExchangeNamespaceStatistics from './ExchangeNamespaceStatistics';
 import ExchangeNamespaceExchangeDistributionStatistics from './ExchangeNamespaceExchangeDistributionStatistics';
 import ExchangeNamespaceExchangeDistributionSegment from './ExchangeNamespaceExchangeDistributionSegment';
@@ -43,9 +45,9 @@ export default class ExchangeNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: ExchangeNamespaceStatistics|null = null;
-    private distributions: ExchangeNamespaceDistributions|null = null;
-    private rateModels: ExchangeRateModel[]|null = null;
+    private statistics: Gs2Watch.ExchangeNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.ExchangeNamespaceDistributions|null = null;
+    private rateModels: Gs2Watch.ExchangeRateModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -230,36 +232,36 @@ export default class ExchangeNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): ExchangeNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.ExchangeNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExchangeNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExchangeNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExchangeNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExchangeNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ExchangeNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.ExchangeNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ExchangeNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ExchangeNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ExchangeNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ExchangeNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getRateModels(): ExchangeRateModel[]|null {
+    public getRateModels(): Gs2Watch.ExchangeRateModel[]|null {
         return this.rateModels;
     }
-    public setRateModels(rateModels: ExchangeRateModel[]|null) {
+    public setRateModels(rateModels: Gs2Watch.ExchangeRateModel[]|null) {
         this.rateModels = rateModels;
         return this;
     }
-    public withRateModels(rateModels: ExchangeRateModel[]|null): this {
+    public withRateModels(rateModels: Gs2Watch.ExchangeRateModel[]|null): this {
         this.rateModels = rateModels;
         return this;
     }
@@ -274,13 +276,13 @@ export default class ExchangeNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ExchangeNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(ExchangeNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExchangeNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExchangeNamespaceDistributions.fromDict(data["distributions"]))
             .withRateModels(data.rateModels ?
                 data.rateModels.map((item: {[key: string]: any}) => {
-                    return ExchangeRateModel.fromDict(item);
+                    return Gs2Watch.ExchangeRateModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -293,10 +295,10 @@ export default class ExchangeNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "rateModels": this.getRateModels() ?
-                this.getRateModels()!.map((item: ExchangeRateModel) => {
+                this.getRateModels()!.map((item: Gs2Watch.ExchangeRateModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

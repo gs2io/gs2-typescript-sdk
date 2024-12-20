@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import StaminaNamespaceConsumeDistributionStatistics from './StaminaNamespaceConsumeDistributionStatistics';
 import StaminaNamespaceConsumeDistributionSegment from './StaminaNamespaceConsumeDistributionSegment';
 
 export default class StaminaNamespaceConsumeDistribution implements IModel {
-    private statistics: StaminaNamespaceConsumeDistributionStatistics|null = null;
-    private distribution: StaminaNamespaceConsumeDistributionSegment[]|null = null;
-    public getStatistics(): StaminaNamespaceConsumeDistributionStatistics|null {
+    private statistics: Gs2Watch.StaminaNamespaceConsumeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.StaminaNamespaceConsumeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.StaminaNamespaceConsumeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: StaminaNamespaceConsumeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.StaminaNamespaceConsumeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: StaminaNamespaceConsumeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.StaminaNamespaceConsumeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): StaminaNamespaceConsumeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.StaminaNamespaceConsumeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: StaminaNamespaceConsumeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.StaminaNamespaceConsumeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: StaminaNamespaceConsumeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.StaminaNamespaceConsumeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class StaminaNamespaceConsumeDistribution implements IModel {
             return null;
         }
         return new StaminaNamespaceConsumeDistribution()
-            .withStatistics(StaminaNamespaceConsumeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.StaminaNamespaceConsumeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return StaminaNamespaceConsumeDistributionSegment.fromDict(item);
+                    return Gs2Watch.StaminaNamespaceConsumeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: StaminaNamespaceConsumeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.StaminaNamespaceConsumeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

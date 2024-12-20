@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ExchangeNamespaceExchangeByUserDistributionStatistics from './ExchangeNamespaceExchangeByUserDistributionStatistics';
-import ExchangeNamespaceExchangeByUserDistributionSegment from './ExchangeNamespaceExchangeByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ExchangeNamespaceExchangeByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ExchangeNamespaceExchangeByUserDistributionStatistics | null;
-    setStatistics(statistics: ExchangeNamespaceExchangeByUserDistributionStatistics | null): this;
-    withStatistics(statistics: ExchangeNamespaceExchangeByUserDistributionStatistics | null): this;
-    getDistribution(): ExchangeNamespaceExchangeByUserDistributionSegment[] | null;
-    setDistribution(distribution: ExchangeNamespaceExchangeByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: ExchangeNamespaceExchangeByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ExchangeNamespaceExchangeByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExchangeNamespaceExchangeByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExchangeNamespaceExchangeByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ExchangeNamespaceExchangeByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ExchangeNamespaceExchangeByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ExchangeNamespaceExchangeByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExchangeNamespaceExchangeByUserDistribution | null;

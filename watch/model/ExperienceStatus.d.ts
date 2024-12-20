@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceStatusDistributions from './ExperienceStatusDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceStatus implements IModel {
     private statusId;
     private experienceName;
@@ -24,9 +24,9 @@ export default class ExperienceStatus implements IModel {
     getPropertyId(): string | null;
     setPropertyId(propertyId: string | null): this;
     withPropertyId(propertyId: string | null): this;
-    getDistributions(): ExperienceStatusDistributions | null;
-    setDistributions(distributions: ExperienceStatusDistributions | null): this;
-    withDistributions(distributions: ExperienceStatusDistributions | null): this;
+    getDistributions(): Gs2Watch.ExperienceStatusDistributions | null;
+    setDistributions(distributions: Gs2Watch.ExperienceStatusDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.ExperienceStatusDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceStatus | null;

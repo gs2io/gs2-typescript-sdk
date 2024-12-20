@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseNamespaceBuyDistributionStatistics from './ShowcaseNamespaceBuyDistributionStatistics';
 import ShowcaseNamespaceBuyDistributionSegment from './ShowcaseNamespaceBuyDistributionSegment';
 
 export default class ShowcaseNamespaceBuyDistribution implements IModel {
-    private statistics: ShowcaseNamespaceBuyDistributionStatistics|null = null;
-    private distribution: ShowcaseNamespaceBuyDistributionSegment[]|null = null;
-    public getStatistics(): ShowcaseNamespaceBuyDistributionStatistics|null {
+    private statistics: Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ShowcaseNamespaceBuyDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ShowcaseNamespaceBuyDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ShowcaseNamespaceBuyDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ShowcaseNamespaceBuyDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ShowcaseNamespaceBuyDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ShowcaseNamespaceBuyDistribution implements IModel {
             return null;
         }
         return new ShowcaseNamespaceBuyDistribution()
-            .withStatistics(ShowcaseNamespaceBuyDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ShowcaseNamespaceBuyDistributionSegment.fromDict(item);
+                    return Gs2Watch.ShowcaseNamespaceBuyDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ShowcaseNamespaceBuyDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

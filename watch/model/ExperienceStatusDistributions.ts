@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceStatusRankDistributionStatistics from './ExperienceStatusRankDistributionStatistics';
 import ExperienceStatusRankDistributionSegment from './ExperienceStatusRankDistributionSegment';
 import ExperienceStatusRankDistribution from './ExperienceStatusRankDistribution';
@@ -23,27 +25,27 @@ import ExperienceStatusRankCapDistributionSegment from './ExperienceStatusRankCa
 import ExperienceStatusRankCapDistribution from './ExperienceStatusRankCapDistribution';
 
 export default class ExperienceStatusDistributions implements IModel {
-    private rank: ExperienceStatusRankDistribution|null = null;
-    private rankCap: ExperienceStatusRankCapDistribution|null = null;
-    public getRank(): ExperienceStatusRankDistribution|null {
+    private rank: Gs2Watch.ExperienceStatusRankDistribution|null = null;
+    private rankCap: Gs2Watch.ExperienceStatusRankCapDistribution|null = null;
+    public getRank(): Gs2Watch.ExperienceStatusRankDistribution|null {
         return this.rank;
     }
-    public setRank(rank: ExperienceStatusRankDistribution|null) {
+    public setRank(rank: Gs2Watch.ExperienceStatusRankDistribution|null) {
         this.rank = rank;
         return this;
     }
-    public withRank(rank: ExperienceStatusRankDistribution|null): this {
+    public withRank(rank: Gs2Watch.ExperienceStatusRankDistribution|null): this {
         this.rank = rank;
         return this;
     }
-    public getRankCap(): ExperienceStatusRankCapDistribution|null {
+    public getRankCap(): Gs2Watch.ExperienceStatusRankCapDistribution|null {
         return this.rankCap;
     }
-    public setRankCap(rankCap: ExperienceStatusRankCapDistribution|null) {
+    public setRankCap(rankCap: Gs2Watch.ExperienceStatusRankCapDistribution|null) {
         this.rankCap = rankCap;
         return this;
     }
-    public withRankCap(rankCap: ExperienceStatusRankCapDistribution|null): this {
+    public withRankCap(rankCap: Gs2Watch.ExperienceStatusRankCapDistribution|null): this {
         this.rankCap = rankCap;
         return this;
     }
@@ -53,8 +55,8 @@ export default class ExperienceStatusDistributions implements IModel {
             return null;
         }
         return new ExperienceStatusDistributions()
-            .withRank(ExperienceStatusRankDistribution.fromDict(data["rank"]))
-            .withRankCap(ExperienceStatusRankCapDistribution.fromDict(data["rankCap"]));
+            .withRank(Gs2Watch.ExperienceStatusRankDistribution.fromDict(data["rank"]))
+            .withRankCap(Gs2Watch.ExperienceStatusRankCapDistribution.fromDict(data["rankCap"]));
     }
 
     public toDict(): {[key: string]: any} {

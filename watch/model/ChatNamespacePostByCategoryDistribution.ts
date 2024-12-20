@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ChatNamespacePostByCategoryDistributionStatistics from './ChatNamespacePostByCategoryDistributionStatistics';
 import ChatNamespacePostByCategoryDistributionSegment from './ChatNamespacePostByCategoryDistributionSegment';
 
 export default class ChatNamespacePostByCategoryDistribution implements IModel {
-    private statistics: ChatNamespacePostByCategoryDistributionStatistics|null = null;
-    private distribution: ChatNamespacePostByCategoryDistributionSegment[]|null = null;
-    public getStatistics(): ChatNamespacePostByCategoryDistributionStatistics|null {
+    private statistics: Gs2Watch.ChatNamespacePostByCategoryDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ChatNamespacePostByCategoryDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ChatNamespacePostByCategoryDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ChatNamespacePostByCategoryDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ChatNamespacePostByCategoryDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ChatNamespacePostByCategoryDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ChatNamespacePostByCategoryDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ChatNamespacePostByCategoryDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ChatNamespacePostByCategoryDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ChatNamespacePostByCategoryDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ChatNamespacePostByCategoryDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ChatNamespacePostByCategoryDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ChatNamespacePostByCategoryDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ChatNamespacePostByCategoryDistribution implements IModel {
             return null;
         }
         return new ChatNamespacePostByCategoryDistribution()
-            .withStatistics(ChatNamespacePostByCategoryDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ChatNamespacePostByCategoryDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ChatNamespacePostByCategoryDistributionSegment.fromDict(item);
+                    return Gs2Watch.ChatNamespacePostByCategoryDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ChatNamespacePostByCategoryDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ChatNamespacePostByCategoryDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

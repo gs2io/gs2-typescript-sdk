@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import GeneralDauWauMauHistory from './GeneralDauWauMauHistory';
-import GeneralDauWauMauAverage from './GeneralDauWauMauAverage';
+import * as Gs2Watch from '../../watch/model';
 export default class GeneralDauWauMau implements IModel {
     private history;
     private avg;
-    getHistory(): GeneralDauWauMauHistory[] | null;
-    setHistory(history: GeneralDauWauMauHistory[] | null): this;
-    withHistory(history: GeneralDauWauMauHistory[] | null): this;
-    getAvg(): GeneralDauWauMauAverage | null;
-    setAvg(avg: GeneralDauWauMauAverage | null): this;
-    withAvg(avg: GeneralDauWauMauAverage | null): this;
+    getHistory(): Gs2Watch.GeneralDauWauMauHistory[] | null;
+    setHistory(history: Gs2Watch.GeneralDauWauMauHistory[] | null): this;
+    withHistory(history: Gs2Watch.GeneralDauWauMauHistory[] | null): this;
+    getAvg(): Gs2Watch.GeneralDauWauMauAverage | null;
+    setAvg(avg: Gs2Watch.GeneralDauWauMauAverage | null): this;
+    withAvg(avg: Gs2Watch.GeneralDauWauMauAverage | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GeneralDauWauMau | null;

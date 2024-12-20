@@ -32,6 +32,7 @@ var VersionModelMaster = /** @class */ (function () {
         this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
+        this.approveRequirement = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -234,6 +235,17 @@ var VersionModelMaster = /** @class */ (function () {
         this.signatureKeyId = signatureKeyId;
         return this;
     };
+    VersionModelMaster.prototype.getApproveRequirement = function () {
+        return this.approveRequirement;
+    };
+    VersionModelMaster.prototype.setApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
+    VersionModelMaster.prototype.withApproveRequirement = function (approveRequirement) {
+        this.approveRequirement = approveRequirement;
+        return this;
+    };
     VersionModelMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -287,6 +299,7 @@ var VersionModelMaster = /** @class */ (function () {
             }) : null)
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"])
+            .withApproveRequirement(data["approveRequirement"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -309,6 +322,7 @@ var VersionModelMaster = /** @class */ (function () {
                 }) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
+            "approveRequirement": this.getApproveRequirement(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

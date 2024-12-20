@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MoneyWalletStatistics from './MoneyWalletStatistics';
-import MoneyWalletDistributions from './MoneyWalletDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyWallet implements IModel {
     private walletId;
     private slot;
@@ -22,12 +21,12 @@ export default class MoneyWallet implements IModel {
     getSlot(): number | null;
     setSlot(slot: number | null): this;
     withSlot(slot: number | null): this;
-    getStatistics(): MoneyWalletStatistics | null;
-    setStatistics(statistics: MoneyWalletStatistics | null): this;
-    withStatistics(statistics: MoneyWalletStatistics | null): this;
-    getDistributions(): MoneyWalletDistributions | null;
-    setDistributions(distributions: MoneyWalletDistributions | null): this;
-    withDistributions(distributions: MoneyWalletDistributions | null): this;
+    getStatistics(): Gs2Watch.MoneyWalletStatistics | null;
+    setStatistics(statistics: Gs2Watch.MoneyWalletStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MoneyWalletStatistics | null): this;
+    getDistributions(): Gs2Watch.MoneyWalletDistributions | null;
+    setDistributions(distributions: Gs2Watch.MoneyWalletDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MoneyWalletDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyWallet | null;

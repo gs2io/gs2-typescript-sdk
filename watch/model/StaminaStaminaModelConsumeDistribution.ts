@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import StaminaStaminaModelConsumeDistributionStatistics from './StaminaStaminaModelConsumeDistributionStatistics';
 import StaminaStaminaModelConsumeDistributionSegment from './StaminaStaminaModelConsumeDistributionSegment';
 
 export default class StaminaStaminaModelConsumeDistribution implements IModel {
-    private statistics: StaminaStaminaModelConsumeDistributionStatistics|null = null;
-    private distribution: StaminaStaminaModelConsumeDistributionSegment[]|null = null;
-    public getStatistics(): StaminaStaminaModelConsumeDistributionStatistics|null {
+    private statistics: Gs2Watch.StaminaStaminaModelConsumeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.StaminaStaminaModelConsumeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.StaminaStaminaModelConsumeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: StaminaStaminaModelConsumeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.StaminaStaminaModelConsumeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: StaminaStaminaModelConsumeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.StaminaStaminaModelConsumeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): StaminaStaminaModelConsumeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.StaminaStaminaModelConsumeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: StaminaStaminaModelConsumeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.StaminaStaminaModelConsumeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: StaminaStaminaModelConsumeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.StaminaStaminaModelConsumeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class StaminaStaminaModelConsumeDistribution implements IModel {
             return null;
         }
         return new StaminaStaminaModelConsumeDistribution()
-            .withStatistics(StaminaStaminaModelConsumeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.StaminaStaminaModelConsumeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return StaminaStaminaModelConsumeDistributionSegment.fromDict(item);
+                    return Gs2Watch.StaminaStaminaModelConsumeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: StaminaStaminaModelConsumeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.StaminaStaminaModelConsumeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

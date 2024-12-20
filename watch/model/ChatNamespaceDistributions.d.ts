@@ -1,20 +1,18 @@
 import IModel from '../../core/interface/IModel';
-import ChatNamespacePostByRoomDistribution from './ChatNamespacePostByRoomDistribution';
-import ChatNamespacePostByUserDistribution from './ChatNamespacePostByUserDistribution';
-import ChatNamespacePostByCategoryDistribution from './ChatNamespacePostByCategoryDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class ChatNamespaceDistributions implements IModel {
     private postByRoom;
     private postByUser;
     private postByCategory;
-    getPostByRoom(): ChatNamespacePostByRoomDistribution | null;
-    setPostByRoom(postByRoom: ChatNamespacePostByRoomDistribution | null): this;
-    withPostByRoom(postByRoom: ChatNamespacePostByRoomDistribution | null): this;
-    getPostByUser(): ChatNamespacePostByUserDistribution | null;
-    setPostByUser(postByUser: ChatNamespacePostByUserDistribution | null): this;
-    withPostByUser(postByUser: ChatNamespacePostByUserDistribution | null): this;
-    getPostByCategory(): ChatNamespacePostByCategoryDistribution | null;
-    setPostByCategory(postByCategory: ChatNamespacePostByCategoryDistribution | null): this;
-    withPostByCategory(postByCategory: ChatNamespacePostByCategoryDistribution | null): this;
+    getPostByRoom(): Gs2Watch.ChatNamespacePostByRoomDistribution | null;
+    setPostByRoom(postByRoom: Gs2Watch.ChatNamespacePostByRoomDistribution | null): this;
+    withPostByRoom(postByRoom: Gs2Watch.ChatNamespacePostByRoomDistribution | null): this;
+    getPostByUser(): Gs2Watch.ChatNamespacePostByUserDistribution | null;
+    setPostByUser(postByUser: Gs2Watch.ChatNamespacePostByUserDistribution | null): this;
+    withPostByUser(postByUser: Gs2Watch.ChatNamespacePostByUserDistribution | null): this;
+    getPostByCategory(): Gs2Watch.ChatNamespacePostByCategoryDistribution | null;
+    setPostByCategory(postByCategory: Gs2Watch.ChatNamespacePostByCategoryDistribution | null): this;
+    withPostByCategory(postByCategory: Gs2Watch.ChatNamespacePostByCategoryDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ChatNamespaceDistributions | null;

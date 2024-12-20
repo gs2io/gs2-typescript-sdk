@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FirstEngagementStatistics_1 = tslib_1.__importDefault(require("./FirstEngagementStatistics"));
-var FirstEngagementDistributionSegment_1 = tslib_1.__importDefault(require("./FirstEngagementDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FirstEngagement = /** @class */ (function () {
     function FirstEngagement() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var FirstEngagement = /** @class */ (function () {
             return null;
         }
         return new FirstEngagement()
-            .withStatistics(FirstEngagementStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FirstEngagementStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return FirstEngagementDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FirstEngagementDistributionSegment.fromDict(item);
+            }) : null);
     };
     FirstEngagement.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var FirstEngagement = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FirstEngagement;

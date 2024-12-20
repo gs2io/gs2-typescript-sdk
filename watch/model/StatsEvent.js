@@ -128,7 +128,7 @@ var StatsEvent = /** @class */ (function () {
             .withTags(data.tags ?
             data.tags.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCallAt(data["callAt"]);
     };
     StatsEvent.prototype.toDict = function () {
@@ -142,7 +142,7 @@ var StatsEvent = /** @class */ (function () {
             "tags": this.getTags() ?
                 this.getTags().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "callAt": this.getCallAt(),
         };
     };

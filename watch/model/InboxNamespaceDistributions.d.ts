@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import InboxNamespaceSendByUserDistribution from './InboxNamespaceSendByUserDistribution';
-import InboxNamespaceReadElapsedMinutesDistribution from './InboxNamespaceReadElapsedMinutesDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class InboxNamespaceDistributions implements IModel {
     private sendByUser;
     private readElapsedMinutes;
-    getSendByUser(): InboxNamespaceSendByUserDistribution | null;
-    setSendByUser(sendByUser: InboxNamespaceSendByUserDistribution | null): this;
-    withSendByUser(sendByUser: InboxNamespaceSendByUserDistribution | null): this;
-    getReadElapsedMinutes(): InboxNamespaceReadElapsedMinutesDistribution | null;
-    setReadElapsedMinutes(readElapsedMinutes: InboxNamespaceReadElapsedMinutesDistribution | null): this;
-    withReadElapsedMinutes(readElapsedMinutes: InboxNamespaceReadElapsedMinutesDistribution | null): this;
+    getSendByUser(): Gs2Watch.InboxNamespaceSendByUserDistribution | null;
+    setSendByUser(sendByUser: Gs2Watch.InboxNamespaceSendByUserDistribution | null): this;
+    withSendByUser(sendByUser: Gs2Watch.InboxNamespaceSendByUserDistribution | null): this;
+    getReadElapsedMinutes(): Gs2Watch.InboxNamespaceReadElapsedMinutesDistribution | null;
+    setReadElapsedMinutes(readElapsedMinutes: Gs2Watch.InboxNamespaceReadElapsedMinutesDistribution | null): this;
+    withReadElapsedMinutes(readElapsedMinutes: Gs2Watch.InboxNamespaceReadElapsedMinutesDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InboxNamespaceDistributions | null;

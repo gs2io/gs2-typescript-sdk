@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ShowcaseShowcaseStatistics_1 = tslib_1.__importDefault(require("./ShowcaseShowcaseStatistics"));
-var ShowcaseShowcaseDistributions_1 = tslib_1.__importDefault(require("./ShowcaseShowcaseDistributions"));
-var ShowcaseDisplayItem_1 = tslib_1.__importDefault(require("./ShowcaseDisplayItem"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:showcase:namespace:{namespaceName}:showcase:{showcaseName}";
 var ShowcaseShowcase = /** @class */ (function () {
     function ShowcaseShowcase() {
@@ -222,12 +220,12 @@ var ShowcaseShowcase = /** @class */ (function () {
         return new ShowcaseShowcase()
             .withShowcaseId(data["showcaseId"])
             .withShowcaseName(data["showcaseName"])
-            .withStatistics(ShowcaseShowcaseStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ShowcaseShowcaseDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ShowcaseShowcaseStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ShowcaseShowcaseDistributions.fromDict(data["distributions"]))
             .withDisplayItems(data.displayItems ?
             data.displayItems.map(function (item) {
-                return ShowcaseDisplayItem_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ShowcaseDisplayItem.fromDict(item);
+            }) : null);
     };
     ShowcaseShowcase.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var ShowcaseShowcase = /** @class */ (function () {
             "displayItems": this.getDisplayItems() ?
                 this.getDisplayItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ShowcaseShowcase;

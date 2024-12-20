@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyReceiptStatistics from './MoneyReceiptStatistics';
 import MoneyReceiptVerificationByUserDistributionStatistics from './MoneyReceiptVerificationByUserDistributionStatistics';
 import MoneyReceiptVerificationByUserDistributionSegment from './MoneyReceiptVerificationByUserDistributionSegment';
@@ -25,8 +27,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class MoneyReceipt implements IModel {
     private receiptId: string|null = null;
     private contentsId: string|null = null;
-    private statistics: MoneyReceiptStatistics|null = null;
-    private distributions: MoneyReceiptDistributions|null = null;
+    private statistics: Gs2Watch.MoneyReceiptStatistics|null = null;
+    private distributions: Gs2Watch.MoneyReceiptDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -205,25 +207,25 @@ export default class MoneyReceipt implements IModel {
         this.contentsId = contentsId;
         return this;
     }
-    public getStatistics(): MoneyReceiptStatistics|null {
+    public getStatistics(): Gs2Watch.MoneyReceiptStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyReceiptStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyReceiptStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyReceiptStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyReceiptStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MoneyReceiptDistributions|null {
+    public getDistributions(): Gs2Watch.MoneyReceiptDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MoneyReceiptDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MoneyReceiptDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MoneyReceiptDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MoneyReceiptDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -235,8 +237,8 @@ export default class MoneyReceipt implements IModel {
         return new MoneyReceipt()
             .withReceiptId(data["receiptId"])
             .withContentsId(data["contentsId"])
-            .withStatistics(MoneyReceiptStatistics.fromDict(data["statistics"]))
-            .withDistributions(MoneyReceiptDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MoneyReceiptStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyReceiptDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

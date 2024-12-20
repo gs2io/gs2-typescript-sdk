@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MatchmakingNamespaceWaitElapsedSecondsDistributionStatistics_1 = tslib_1.__importDefault(require("./MatchmakingNamespaceWaitElapsedSecondsDistributionStatistics"));
-var MatchmakingNamespaceWaitElapsedSecondsDistributionSegment_1 = tslib_1.__importDefault(require("./MatchmakingNamespaceWaitElapsedSecondsDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MatchmakingNamespaceWaitElapsedSecondsDistribution = /** @class */ (function () {
     function MatchmakingNamespaceWaitElapsedSecondsDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MatchmakingNamespaceWaitElapsedSecondsDistribution = /** @class */ (function
             return null;
         }
         return new MatchmakingNamespaceWaitElapsedSecondsDistribution()
-            .withStatistics(MatchmakingNamespaceWaitElapsedSecondsDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MatchmakingNamespaceWaitElapsedSecondsDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistributionSegment.fromDict(item);
+            }) : null);
     };
     MatchmakingNamespaceWaitElapsedSecondsDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MatchmakingNamespaceWaitElapsedSecondsDistribution = /** @class */ (function
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MatchmakingNamespaceWaitElapsedSecondsDistribution;

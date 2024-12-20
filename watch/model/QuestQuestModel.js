@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestQuestModelStatistics_1 = tslib_1.__importDefault(require("./QuestQuestModelStatistics"));
-var QuestQuestModelDistributions_1 = tslib_1.__importDefault(require("./QuestQuestModelDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:quest:namespace:{namespaceName}:questGroupModel:{questGroupName}:questModel:{questName}";
 var QuestQuestModel = /** @class */ (function () {
     function QuestQuestModel() {
@@ -235,8 +234,8 @@ var QuestQuestModel = /** @class */ (function () {
         return new QuestQuestModel()
             .withQuestModelId(data["questModelId"])
             .withQuestName(data["questName"])
-            .withStatistics(QuestQuestModelStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(QuestQuestModelDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.QuestQuestModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.QuestQuestModelDistributions.fromDict(data["distributions"]));
     };
     QuestQuestModel.prototype.toDict = function () {
         var _a, _b;

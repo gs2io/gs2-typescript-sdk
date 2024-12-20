@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RankingCategoryModelStatistics from './RankingCategoryModelStatistics';
-import RankingCategoryModelDistributions from './RankingCategoryModelDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class RankingCategoryModel implements IModel {
     private categoryModelId;
     private categoryName;
@@ -21,12 +20,12 @@ export default class RankingCategoryModel implements IModel {
     getCategoryName(): string | null;
     setCategoryName(categoryName: string | null): this;
     withCategoryName(categoryName: string | null): this;
-    getStatistics(): RankingCategoryModelStatistics | null;
-    setStatistics(statistics: RankingCategoryModelStatistics | null): this;
-    withStatistics(statistics: RankingCategoryModelStatistics | null): this;
-    getDistributions(): RankingCategoryModelDistributions | null;
-    setDistributions(distributions: RankingCategoryModelDistributions | null): this;
-    withDistributions(distributions: RankingCategoryModelDistributions | null): this;
+    getStatistics(): Gs2Watch.RankingCategoryModelStatistics | null;
+    setStatistics(statistics: Gs2Watch.RankingCategoryModelStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.RankingCategoryModelStatistics | null): this;
+    getDistributions(): Gs2Watch.RankingCategoryModelDistributions | null;
+    setDistributions(distributions: Gs2Watch.RankingCategoryModelDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.RankingCategoryModelDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RankingCategoryModel | null;

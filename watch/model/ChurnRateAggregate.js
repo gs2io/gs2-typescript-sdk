@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ChurnRateHistory_1 = tslib_1.__importDefault(require("./ChurnRateHistory"));
-var ChurnRateAverage_1 = tslib_1.__importDefault(require("./ChurnRateAverage"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ChurnRateAggregate = /** @class */ (function () {
     function ChurnRateAggregate() {
         this.history = null;
@@ -52,9 +51,9 @@ var ChurnRateAggregate = /** @class */ (function () {
         return new ChurnRateAggregate()
             .withHistory(data.history ?
             data.history.map(function (item) {
-                return ChurnRateHistory_1.default.fromDict(item);
-            }) : [])
-            .withAvg(ChurnRateAverage_1.default.fromDict(data["avg"]));
+                return Gs2Watch.ChurnRateHistory.fromDict(item);
+            }) : null)
+            .withAvg(Gs2Watch.ChurnRateAverage.fromDict(data["avg"]));
     };
     ChurnRateAggregate.prototype.toDict = function () {
         var _a;
@@ -62,7 +61,7 @@ var ChurnRateAggregate = /** @class */ (function () {
             "history": this.getHistory() ?
                 this.getHistory().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "avg": (_a = this.getAvg()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };

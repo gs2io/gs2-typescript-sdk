@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import RankingCategoryModelScoreDistributionStatistics from './RankingCategoryModelScoreDistributionStatistics';
 import RankingCategoryModelScoreDistributionSegment from './RankingCategoryModelScoreDistributionSegment';
 
 export default class RankingCategoryModelScoreDistribution implements IModel {
-    private statistics: RankingCategoryModelScoreDistributionStatistics|null = null;
-    private distribution: RankingCategoryModelScoreDistributionSegment[]|null = null;
-    public getStatistics(): RankingCategoryModelScoreDistributionStatistics|null {
+    private statistics: Gs2Watch.RankingCategoryModelScoreDistributionStatistics|null = null;
+    private distribution: Gs2Watch.RankingCategoryModelScoreDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.RankingCategoryModelScoreDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: RankingCategoryModelScoreDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.RankingCategoryModelScoreDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: RankingCategoryModelScoreDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.RankingCategoryModelScoreDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): RankingCategoryModelScoreDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.RankingCategoryModelScoreDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: RankingCategoryModelScoreDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.RankingCategoryModelScoreDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: RankingCategoryModelScoreDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.RankingCategoryModelScoreDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class RankingCategoryModelScoreDistribution implements IModel {
             return null;
         }
         return new RankingCategoryModelScoreDistribution()
-            .withStatistics(RankingCategoryModelScoreDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.RankingCategoryModelScoreDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return RankingCategoryModelScoreDistributionSegment.fromDict(item);
+                    return Gs2Watch.RankingCategoryModelScoreDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: RankingCategoryModelScoreDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.RankingCategoryModelScoreDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

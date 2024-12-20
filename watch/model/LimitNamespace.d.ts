@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LimitNamespaceStatistics from './LimitNamespaceStatistics';
-import LimitNamespaceDistributions from './LimitNamespaceDistributions';
-import LimitLimitModel from './LimitLimitModel';
+import * as Gs2Watch from '../../watch/model';
 export default class LimitNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class LimitNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): LimitNamespaceStatistics | null;
-    setStatistics(statistics: LimitNamespaceStatistics | null): this;
-    withStatistics(statistics: LimitNamespaceStatistics | null): this;
-    getDistributions(): LimitNamespaceDistributions | null;
-    setDistributions(distributions: LimitNamespaceDistributions | null): this;
-    withDistributions(distributions: LimitNamespaceDistributions | null): this;
-    getLimitModels(): LimitLimitModel[] | null;
-    setLimitModels(limitModels: LimitLimitModel[] | null): this;
-    withLimitModels(limitModels: LimitLimitModel[] | null): this;
+    getStatistics(): Gs2Watch.LimitNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.LimitNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LimitNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.LimitNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.LimitNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.LimitNamespaceDistributions | null): this;
+    getLimitModels(): Gs2Watch.LimitLimitModel[] | null;
+    setLimitModels(limitModels: Gs2Watch.LimitLimitModel[] | null): this;
+    withLimitModels(limitModels: Gs2Watch.LimitLimitModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LimitNamespace | null;

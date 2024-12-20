@@ -30,6 +30,7 @@ var GlobalRankingModel = /** @class */ (function () {
         this.entryPeriodEventId = null;
         this.rankingRewards = null;
         this.accessPeriodEventId = null;
+        this.rewardCalculationIndex = null;
     }
     GlobalRankingModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -207,6 +208,17 @@ var GlobalRankingModel = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    GlobalRankingModel.prototype.getRewardCalculationIndex = function () {
+        return this.rewardCalculationIndex;
+    };
+    GlobalRankingModel.prototype.setRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
+    GlobalRankingModel.prototype.withRewardCalculationIndex = function (rewardCalculationIndex) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    };
     GlobalRankingModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -224,7 +236,8 @@ var GlobalRankingModel = /** @class */ (function () {
             data.rankingRewards.map(function (item) {
                 return Gs2Ranking2.RankingReward.fromDict(item);
             }) : null)
-            .withAccessPeriodEventId(data["accessPeriodEventId"]);
+            .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withRewardCalculationIndex(data["rewardCalculationIndex"]);
     };
     GlobalRankingModel.prototype.toDict = function () {
         return {
@@ -241,6 +254,7 @@ var GlobalRankingModel = /** @class */ (function () {
                     return item.toDict();
                 }) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
         };
     };
     return GlobalRankingModel;

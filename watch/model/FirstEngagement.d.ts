@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FirstEngagementStatistics from './FirstEngagementStatistics';
-import FirstEngagementDistributionSegment from './FirstEngagementDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FirstEngagement implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FirstEngagementStatistics | null;
-    setStatistics(statistics: FirstEngagementStatistics | null): this;
-    withStatistics(statistics: FirstEngagementStatistics | null): this;
-    getDistribution(): FirstEngagementDistributionSegment[] | null;
-    setDistribution(distribution: FirstEngagementDistributionSegment[] | null): this;
-    withDistribution(distribution: FirstEngagementDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FirstEngagementStatistics | null;
+    setStatistics(statistics: Gs2Watch.FirstEngagementStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FirstEngagementStatistics | null): this;
+    getDistribution(): Gs2Watch.FirstEngagementDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FirstEngagementDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FirstEngagementDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FirstEngagement | null;

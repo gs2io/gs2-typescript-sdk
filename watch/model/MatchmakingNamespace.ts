@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MatchmakingNamespaceStatistics from './MatchmakingNamespaceStatistics';
 import MatchmakingNamespaceResultDistributionStatistics from './MatchmakingNamespaceResultDistributionStatistics';
 import MatchmakingNamespaceResultDistributionSegment from './MatchmakingNamespaceResultDistributionSegment';
@@ -31,8 +33,8 @@ export default class MatchmakingNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: MatchmakingNamespaceStatistics|null = null;
-    private distributions: MatchmakingNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.MatchmakingNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.MatchmakingNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -217,25 +219,25 @@ export default class MatchmakingNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): MatchmakingNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.MatchmakingNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MatchmakingNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MatchmakingNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MatchmakingNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MatchmakingNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MatchmakingNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.MatchmakingNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MatchmakingNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MatchmakingNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MatchmakingNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MatchmakingNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -250,8 +252,8 @@ export default class MatchmakingNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MatchmakingNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(MatchmakingNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MatchmakingNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MatchmakingNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

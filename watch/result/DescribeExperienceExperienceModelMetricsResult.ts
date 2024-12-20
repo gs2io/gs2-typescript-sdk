@@ -40,7 +40,7 @@ export default class DescribeExperienceExperienceModelMetricsResult implements I
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.ExperienceExperienceModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeExperienceExperienceModelMetricsResult implements I
                 this.getItems()!.map((item: Gs2Watch.ExperienceExperienceModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

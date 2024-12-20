@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FriendNamespaceSendRequestByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./FriendNamespaceSendRequestByUserDistributionStatistics"));
-var FriendNamespaceSendRequestByUserDistributionSegment_1 = tslib_1.__importDefault(require("./FriendNamespaceSendRequestByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FriendNamespaceSendRequestByUserDistribution = /** @class */ (function () {
     function FriendNamespaceSendRequestByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var FriendNamespaceSendRequestByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new FriendNamespaceSendRequestByUserDistribution()
-            .withStatistics(FriendNamespaceSendRequestByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FriendNamespaceSendRequestByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return FriendNamespaceSendRequestByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FriendNamespaceSendRequestByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     FriendNamespaceSendRequestByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var FriendNamespaceSendRequestByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FriendNamespaceSendRequestByUserDistribution;

@@ -44,6 +44,9 @@ import SetTransactionDefaultConfigResult from "./SetTransactionDefaultConfigResu
 import SetTransactionDefaultConfigByUserIdResult from "./SetTransactionDefaultConfigByUserIdResult"
 import FreezeMasterDataResult from "./FreezeMasterDataResult"
 import FreezeMasterDataByUserIdResult from "./FreezeMasterDataByUserIdResult"
+import SignFreezeMasterDataTimestampResult from "./SignFreezeMasterDataTimestampResult"
+import FreezeMasterDataBySignedTimestampResult from "./FreezeMasterDataBySignedTimestampResult"
+import BatchExecuteApiResult from "./BatchExecuteApiResult"
 import IfExpressionByUserIdResult from "./IfExpressionByUserIdResult"
 import AndExpressionByUserIdResult from "./AndExpressionByUserIdResult"
 import OrExpressionByUserIdResult from "./OrExpressionByUserIdResult"
@@ -88,6 +91,9 @@ export {
     SetTransactionDefaultConfigByUserIdResult,
     FreezeMasterDataResult,
     FreezeMasterDataByUserIdResult,
+    SignFreezeMasterDataTimestampResult,
+    FreezeMasterDataBySignedTimestampResult,
+    BatchExecuteApiResult,
     IfExpressionByUserIdResult,
     AndExpressionByUserIdResult,
     OrExpressionByUserIdResult,

@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ExchangeRateModelAmountDistributionStatistics from './ExchangeRateModelAmountDistributionStatistics';
-import ExchangeRateModelAmountDistributionSegment from './ExchangeRateModelAmountDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ExchangeRateModelAmountDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ExchangeRateModelAmountDistributionStatistics | null;
-    setStatistics(statistics: ExchangeRateModelAmountDistributionStatistics | null): this;
-    withStatistics(statistics: ExchangeRateModelAmountDistributionStatistics | null): this;
-    getDistribution(): ExchangeRateModelAmountDistributionSegment[] | null;
-    setDistribution(distribution: ExchangeRateModelAmountDistributionSegment[] | null): this;
-    withDistribution(distribution: ExchangeRateModelAmountDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ExchangeRateModelAmountDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExchangeRateModelAmountDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExchangeRateModelAmountDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ExchangeRateModelAmountDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ExchangeRateModelAmountDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ExchangeRateModelAmountDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExchangeRateModelAmountDistribution | null;

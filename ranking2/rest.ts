@@ -520,6 +520,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             'sum': request.getSum() ?? null,
             'orderDirection': request.getOrderDirection() ?? null,
             'rankingRewards': request.getRankingRewards()?.map((item) => item.toDict()) ?? null,
+            'rewardCalculationIndex': request.getRewardCalculationIndex() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
         };
@@ -587,6 +588,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             'sum': request.getSum() ?? null,
             'orderDirection': request.getOrderDirection() ?? null,
             'rankingRewards': request.getRankingRewards()?.map((item) => item.toDict()) ?? null,
+            'rewardCalculationIndex': request.getRewardCalculationIndex() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
         };
@@ -1575,6 +1577,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             'scoreTtlDays': request.getScoreTtlDays() ?? null,
             'orderDirection': request.getOrderDirection() ?? null,
             'rankingRewards': request.getRankingRewards()?.map((item) => item.toDict()) ?? null,
+            'rewardCalculationIndex': request.getRewardCalculationIndex() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
         };
@@ -1644,6 +1647,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             'scoreTtlDays': request.getScoreTtlDays() ?? null,
             'orderDirection': request.getOrderDirection() ?? null,
             'rankingRewards': request.getRankingRewards()?.map((item) => item.toDict()) ?? null,
+            'rewardCalculationIndex': request.getRewardCalculationIndex() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
         };

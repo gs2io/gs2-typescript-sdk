@@ -19,6 +19,7 @@ var WaitDumpUserDataRequest = /** @class */ (function () {
     function WaitDumpUserDataRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.ownerId = null;
         this.transactionId = null;
         this.userId = null;
         this.microserviceName = null;
@@ -45,6 +46,17 @@ var WaitDumpUserDataRequest = /** @class */ (function () {
     };
     WaitDumpUserDataRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getOwnerId = function () {
+        return this.ownerId;
+    };
+    WaitDumpUserDataRequest.prototype.setOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
         return this;
     };
     WaitDumpUserDataRequest.prototype.getTransactionId = function () {
@@ -104,6 +116,7 @@ var WaitDumpUserDataRequest = /** @class */ (function () {
     };
     WaitDumpUserDataRequest.fromDict = function (data) {
         return new WaitDumpUserDataRequest()
+            .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
             .withMicroserviceName(data["microserviceName"])
@@ -111,6 +124,7 @@ var WaitDumpUserDataRequest = /** @class */ (function () {
     };
     WaitDumpUserDataRequest.prototype.toDict = function () {
         return {
+            "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
             "userId": this.getUserId(),
             "microserviceName": this.getMicroserviceName(),

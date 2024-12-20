@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceNamespaceStatistics_1 = tslib_1.__importDefault(require("./ExperienceNamespaceStatistics"));
-var ExperienceNamespaceDistributions_1 = tslib_1.__importDefault(require("./ExperienceNamespaceDistributions"));
-var ExperienceExperienceModel_1 = tslib_1.__importDefault(require("./ExperienceExperienceModel"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:experience:namespace:{namespaceName}";
 var ExperienceNamespace = /** @class */ (function () {
     function ExperienceNamespace() {
@@ -237,12 +235,12 @@ var ExperienceNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ExperienceNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ExperienceNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.ExperienceNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ExperienceNamespaceDistributions.fromDict(data["distributions"]))
             .withExperienceModels(data.experienceModels ?
             data.experienceModels.map(function (item) {
-                return ExperienceExperienceModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceExperienceModel.fromDict(item);
+            }) : null);
     };
     ExperienceNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var ExperienceNamespace = /** @class */ (function () {
             "experienceModels": this.getExperienceModels() ?
                 this.getExperienceModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceNamespace;

@@ -37,14 +37,14 @@ var DescribeStaminaStaminaModelMetricsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Watch.StaminaStaminaModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeStaminaStaminaModelMetricsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeStaminaStaminaModelMetricsResult;

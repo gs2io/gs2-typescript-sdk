@@ -25,6 +25,7 @@ export default class AcceptVersion implements IModel {
     private versionName: string|null = null;
     private userId: string|null = null;
     private version: Gs2Version.Version|null = null;
+    private status: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -176,6 +177,17 @@ export default class AcceptVersion implements IModel {
         this.version = version;
         return this;
     }
+    public getStatus(): string|null {
+        return this.status;
+    }
+    public setStatus(status: string|null) {
+        this.status = status;
+        return this;
+    }
+    public withStatus(status: string|null): this {
+        this.status = status;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -219,6 +231,7 @@ export default class AcceptVersion implements IModel {
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
             .withVersion(Gs2Version.Version.fromDict(data["version"]))
+            .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -230,6 +243,7 @@ export default class AcceptVersion implements IModel {
             "versionName": this.getVersionName(),
             "userId": this.getUserId(),
             "version": this.getVersion()?.toDict(),
+            "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

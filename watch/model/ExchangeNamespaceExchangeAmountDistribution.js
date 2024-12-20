@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExchangeNamespaceExchangeAmountDistributionStatistics_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeAmountDistributionStatistics"));
-var ExchangeNamespaceExchangeAmountDistributionSegment_1 = tslib_1.__importDefault(require("./ExchangeNamespaceExchangeAmountDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExchangeNamespaceExchangeAmountDistribution = /** @class */ (function () {
     function ExchangeNamespaceExchangeAmountDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ExchangeNamespaceExchangeAmountDistribution = /** @class */ (function () {
             return null;
         }
         return new ExchangeNamespaceExchangeAmountDistribution()
-            .withStatistics(ExchangeNamespaceExchangeAmountDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExchangeNamespaceExchangeAmountDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ExchangeNamespaceExchangeAmountDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExchangeNamespaceExchangeAmountDistributionSegment.fromDict(item);
+            }) : null);
     };
     ExchangeNamespaceExchangeAmountDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ExchangeNamespaceExchangeAmountDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExchangeNamespaceExchangeAmountDistribution;

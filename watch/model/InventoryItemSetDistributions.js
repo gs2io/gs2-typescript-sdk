@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryItemSetCountDistribution_1 = tslib_1.__importDefault(require("./InventoryItemSetCountDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryItemSetDistributions = /** @class */ (function () {
     function InventoryItemSetDistributions() {
         this.count = null;
@@ -37,7 +37,7 @@ var InventoryItemSetDistributions = /** @class */ (function () {
             return null;
         }
         return new InventoryItemSetDistributions()
-            .withCount(InventoryItemSetCountDistribution_1.default.fromDict(data["count"]));
+            .withCount(Gs2Watch.InventoryItemSetCountDistribution.fromDict(data["count"]));
     };
     InventoryItemSetDistributions.prototype.toDict = function () {
         var _a;

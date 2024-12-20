@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MissionCounterDistributions from './MissionCounterDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class MissionCounter implements IModel {
     private counterId;
     private counterName;
@@ -20,9 +20,9 @@ export default class MissionCounter implements IModel {
     getCounterName(): string | null;
     setCounterName(counterName: string | null): this;
     withCounterName(counterName: string | null): this;
-    getDistributions(): MissionCounterDistributions | null;
-    setDistributions(distributions: MissionCounterDistributions | null): this;
-    withDistributions(distributions: MissionCounterDistributions | null): this;
+    getDistributions(): Gs2Watch.MissionCounterDistributions | null;
+    setDistributions(distributions: Gs2Watch.MissionCounterDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MissionCounterDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionCounter | null;

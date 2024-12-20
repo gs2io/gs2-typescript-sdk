@@ -40,7 +40,7 @@ export default class DescribeLimitCounterMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.LimitCounter.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeLimitCounterMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.LimitCounter) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

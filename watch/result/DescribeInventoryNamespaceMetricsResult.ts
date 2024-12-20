@@ -40,7 +40,7 @@ export default class DescribeInventoryNamespaceMetricsResult implements IResult 
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.InventoryNamespace.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeInventoryNamespaceMetricsResult implements IResult 
                 this.getItems()!.map((item: Gs2Watch.InventoryNamespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

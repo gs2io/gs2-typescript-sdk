@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationMoldStatistics_1 = tslib_1.__importDefault(require("./FormationMoldStatistics"));
-var FormationMoldDistributions_1 = tslib_1.__importDefault(require("./FormationMoldDistributions"));
-var FormationForm_1 = tslib_1.__importDefault(require("./FormationForm"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldModelName}";
 var FormationMold = /** @class */ (function () {
     function FormationMold() {
@@ -222,12 +220,12 @@ var FormationMold = /** @class */ (function () {
         return new FormationMold()
             .withMoldId(data["moldId"])
             .withMoldModelName(data["moldModelName"])
-            .withStatistics(FormationMoldStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(FormationMoldDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.FormationMoldStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationMoldDistributions.fromDict(data["distributions"]))
             .withForms(data.forms ?
             data.forms.map(function (item) {
-                return FormationForm_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FormationForm.fromDict(item);
+            }) : null);
     };
     FormationMold.prototype.toDict = function () {
         var _a, _b;
@@ -239,7 +237,7 @@ var FormationMold = /** @class */ (function () {
             "forms": this.getForms() ?
                 this.getForms().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FormationMold;

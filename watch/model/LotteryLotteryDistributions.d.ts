@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
-import LotteryLotteryDrawResultDistribution from './LotteryLotteryDrawResultDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class LotteryLotteryDistributions implements IModel {
     private drawResult;
-    getDrawResult(): LotteryLotteryDrawResultDistribution | null;
-    setDrawResult(drawResult: LotteryLotteryDrawResultDistribution | null): this;
-    withDrawResult(drawResult: LotteryLotteryDrawResultDistribution | null): this;
+    getDrawResult(): Gs2Watch.LotteryLotteryDrawResultDistribution | null;
+    setDrawResult(drawResult: Gs2Watch.LotteryLotteryDrawResultDistribution | null): this;
+    withDrawResult(drawResult: Gs2Watch.LotteryLotteryDrawResultDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LotteryLotteryDistributions | null;

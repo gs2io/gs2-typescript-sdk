@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var KeyNamespaceEncryptDistribution_1 = tslib_1.__importDefault(require("./KeyNamespaceEncryptDistribution"));
-var KeyNamespaceDecryptDistribution_1 = tslib_1.__importDefault(require("./KeyNamespaceDecryptDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var KeyNamespaceDistributions = /** @class */ (function () {
     function KeyNamespaceDistributions() {
         this.encrypt = null;
@@ -50,8 +49,8 @@ var KeyNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new KeyNamespaceDistributions()
-            .withEncrypt(KeyNamespaceEncryptDistribution_1.default.fromDict(data["encrypt"]))
-            .withDecrypt(KeyNamespaceDecryptDistribution_1.default.fromDict(data["decrypt"]));
+            .withEncrypt(Gs2Watch.KeyNamespaceEncryptDistribution.fromDict(data["encrypt"]))
+            .withDecrypt(Gs2Watch.KeyNamespaceDecryptDistribution.fromDict(data["decrypt"]));
     };
     KeyNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

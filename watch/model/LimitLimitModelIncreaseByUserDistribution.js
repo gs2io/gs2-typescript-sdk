@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitLimitModelIncreaseByUserDistributionStatistics_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseByUserDistributionStatistics"));
-var LimitLimitModelIncreaseByUserDistributionSegment_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseByUserDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitLimitModelIncreaseByUserDistribution = /** @class */ (function () {
     function LimitLimitModelIncreaseByUserDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var LimitLimitModelIncreaseByUserDistribution = /** @class */ (function () {
             return null;
         }
         return new LimitLimitModelIncreaseByUserDistribution()
-            .withStatistics(LimitLimitModelIncreaseByUserDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.LimitLimitModelIncreaseByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return LimitLimitModelIncreaseByUserDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.LimitLimitModelIncreaseByUserDistributionSegment.fromDict(item);
+            }) : null);
     };
     LimitLimitModelIncreaseByUserDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var LimitLimitModelIncreaseByUserDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return LimitLimitModelIncreaseByUserDistribution;

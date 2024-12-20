@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryNamespaceStatistics_1 = tslib_1.__importDefault(require("./InventoryNamespaceStatistics"));
-var InventoryNamespaceDistributions_1 = tslib_1.__importDefault(require("./InventoryNamespaceDistributions"));
-var InventoryInventory_1 = tslib_1.__importDefault(require("./InventoryInventory"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:inventory:namespace:{namespaceName}";
 var InventoryNamespace = /** @class */ (function () {
     function InventoryNamespace() {
@@ -237,12 +235,12 @@ var InventoryNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(InventoryNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(InventoryNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.InventoryNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.InventoryNamespaceDistributions.fromDict(data["distributions"]))
             .withInventories(data.inventories ?
             data.inventories.map(function (item) {
-                return InventoryInventory_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InventoryInventory.fromDict(item);
+            }) : null);
     };
     InventoryNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -257,7 +255,7 @@ var InventoryNamespace = /** @class */ (function () {
             "inventories": this.getInventories() ?
                 this.getInventories().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InventoryNamespace;

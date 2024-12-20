@@ -29,6 +29,7 @@ export default class SubscribeRankingData implements IModel {
     private scorerUserId: string|null = null;
     private score: number|null = null;
     private metadata: string|null = null;
+    private invertCreatedAt: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -287,6 +288,17 @@ export default class SubscribeRankingData implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getInvertCreatedAt(): number|null {
+        return this.invertCreatedAt;
+    }
+    public setInvertCreatedAt(invertCreatedAt: number|null) {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    }
+    public withInvertCreatedAt(invertCreatedAt: number|null): this {
+        this.invertCreatedAt = invertCreatedAt;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -335,6 +347,7 @@ export default class SubscribeRankingData implements IModel {
             .withScorerUserId(data["scorerUserId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
+            .withInvertCreatedAt(data["invertCreatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -351,6 +364,7 @@ export default class SubscribeRankingData implements IModel {
             "scorerUserId": this.getScorerUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
+            "invertCreatedAt": this.getInvertCreatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

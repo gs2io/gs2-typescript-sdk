@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceNamespaceAddExperienceByExperienceDistributionStatistics_1 = tslib_1.__importDefault(require("./ExperienceNamespaceAddExperienceByExperienceDistributionStatistics"));
-var ExperienceNamespaceAddExperienceByExperienceDistributionSegment_1 = tslib_1.__importDefault(require("./ExperienceNamespaceAddExperienceByExperienceDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceNamespaceAddExperienceByExperienceDistribution = /** @class */ (function () {
     function ExperienceNamespaceAddExperienceByExperienceDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ExperienceNamespaceAddExperienceByExperienceDistribution = /** @class */ (fu
             return null;
         }
         return new ExperienceNamespaceAddExperienceByExperienceDistribution()
-            .withStatistics(ExperienceNamespaceAddExperienceByExperienceDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ExperienceNamespaceAddExperienceByExperienceDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistributionSegment.fromDict(item);
+            }) : null);
     };
     ExperienceNamespaceAddExperienceByExperienceDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ExperienceNamespaceAddExperienceByExperienceDistribution = /** @class */ (fu
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceNamespaceAddExperienceByExperienceDistribution;

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InventoryInventoryConsumeDistributionStatistics from './InventoryInventoryConsumeDistributionStatistics';
 import InventoryInventoryConsumeDistributionSegment from './InventoryInventoryConsumeDistributionSegment';
 
 export default class InventoryInventoryConsumeDistribution implements IModel {
-    private statistics: InventoryInventoryConsumeDistributionStatistics|null = null;
-    private distribution: InventoryInventoryConsumeDistributionSegment[]|null = null;
-    public getStatistics(): InventoryInventoryConsumeDistributionStatistics|null {
+    private statistics: Gs2Watch.InventoryInventoryConsumeDistributionStatistics|null = null;
+    private distribution: Gs2Watch.InventoryInventoryConsumeDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.InventoryInventoryConsumeDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: InventoryInventoryConsumeDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.InventoryInventoryConsumeDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: InventoryInventoryConsumeDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.InventoryInventoryConsumeDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): InventoryInventoryConsumeDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.InventoryInventoryConsumeDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: InventoryInventoryConsumeDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.InventoryInventoryConsumeDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: InventoryInventoryConsumeDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.InventoryInventoryConsumeDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class InventoryInventoryConsumeDistribution implements IModel {
             return null;
         }
         return new InventoryInventoryConsumeDistribution()
-            .withStatistics(InventoryInventoryConsumeDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InventoryInventoryConsumeDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return InventoryInventoryConsumeDistributionSegment.fromDict(item);
+                    return Gs2Watch.InventoryInventoryConsumeDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: InventoryInventoryConsumeDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.InventoryInventoryConsumeDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

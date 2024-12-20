@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MatchmakingNamespaceResultDistribution_1 = tslib_1.__importDefault(require("./MatchmakingNamespaceResultDistribution"));
-var MatchmakingNamespaceWaitElapsedSecondsDistribution_1 = tslib_1.__importDefault(require("./MatchmakingNamespaceWaitElapsedSecondsDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MatchmakingNamespaceDistributions = /** @class */ (function () {
     function MatchmakingNamespaceDistributions() {
         this.result = null;
@@ -50,8 +49,8 @@ var MatchmakingNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new MatchmakingNamespaceDistributions()
-            .withResult(MatchmakingNamespaceResultDistribution_1.default.fromDict(data["result"]))
-            .withWaitElapsedSeconds(MatchmakingNamespaceWaitElapsedSecondsDistribution_1.default.fromDict(data["waitElapsedSeconds"]));
+            .withResult(Gs2Watch.MatchmakingNamespaceResultDistribution.fromDict(data["result"]))
+            .withWaitElapsedSeconds(Gs2Watch.MatchmakingNamespaceWaitElapsedSecondsDistribution.fromDict(data["waitElapsedSeconds"]));
     };
     MatchmakingNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

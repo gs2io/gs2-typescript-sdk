@@ -16,11 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InventoryInventoryCapacityDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryCapacityDistribution"));
-var InventoryInventoryAcquireDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryAcquireDistribution"));
-var InventoryInventoryAcquireAmountDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryAcquireAmountDistribution"));
-var InventoryInventoryConsumeDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryConsumeDistribution"));
-var InventoryInventoryConsumeAmountDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryConsumeAmountDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InventoryInventoryDistributions = /** @class */ (function () {
     function InventoryInventoryDistributions() {
         this.capacity = null;
@@ -89,11 +85,11 @@ var InventoryInventoryDistributions = /** @class */ (function () {
             return null;
         }
         return new InventoryInventoryDistributions()
-            .withCapacity(InventoryInventoryCapacityDistribution_1.default.fromDict(data["capacity"]))
-            .withAcquire(InventoryInventoryAcquireDistribution_1.default.fromDict(data["acquire"]))
-            .withAcquireAmount(InventoryInventoryAcquireAmountDistribution_1.default.fromDict(data["acquireAmount"]))
-            .withConsume(InventoryInventoryConsumeDistribution_1.default.fromDict(data["consume"]))
-            .withConsumeAmount(InventoryInventoryConsumeAmountDistribution_1.default.fromDict(data["consumeAmount"]));
+            .withCapacity(Gs2Watch.InventoryInventoryCapacityDistribution.fromDict(data["capacity"]))
+            .withAcquire(Gs2Watch.InventoryInventoryAcquireDistribution.fromDict(data["acquire"]))
+            .withAcquireAmount(Gs2Watch.InventoryInventoryAcquireAmountDistribution.fromDict(data["acquireAmount"]))
+            .withConsume(Gs2Watch.InventoryInventoryConsumeDistribution.fromDict(data["consume"]))
+            .withConsumeAmount(Gs2Watch.InventoryInventoryConsumeAmountDistribution.fromDict(data["consumeAmount"]));
     };
     InventoryInventoryDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d, _e;

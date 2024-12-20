@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LimitNamespaceStatistics from './LimitNamespaceStatistics';
 import LimitNamespaceIncreaseDistributionStatistics from './LimitNamespaceIncreaseDistributionStatistics';
 import LimitNamespaceIncreaseDistributionSegment from './LimitNamespaceIncreaseDistributionSegment';
@@ -49,9 +51,9 @@ export default class LimitNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: LimitNamespaceStatistics|null = null;
-    private distributions: LimitNamespaceDistributions|null = null;
-    private limitModels: LimitLimitModel[]|null = null;
+    private statistics: Gs2Watch.LimitNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.LimitNamespaceDistributions|null = null;
+    private limitModels: Gs2Watch.LimitLimitModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -236,36 +238,36 @@ export default class LimitNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): LimitNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.LimitNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LimitNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LimitNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LimitNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LimitNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): LimitNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.LimitNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: LimitNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.LimitNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: LimitNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.LimitNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getLimitModels(): LimitLimitModel[]|null {
+    public getLimitModels(): Gs2Watch.LimitLimitModel[]|null {
         return this.limitModels;
     }
-    public setLimitModels(limitModels: LimitLimitModel[]|null) {
+    public setLimitModels(limitModels: Gs2Watch.LimitLimitModel[]|null) {
         this.limitModels = limitModels;
         return this;
     }
-    public withLimitModels(limitModels: LimitLimitModel[]|null): this {
+    public withLimitModels(limitModels: Gs2Watch.LimitLimitModel[]|null): this {
         this.limitModels = limitModels;
         return this;
     }
@@ -280,13 +282,13 @@ export default class LimitNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(LimitNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(LimitNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.LimitNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LimitNamespaceDistributions.fromDict(data["distributions"]))
             .withLimitModels(data.limitModels ?
                 data.limitModels.map((item: {[key: string]: any}) => {
-                    return LimitLimitModel.fromDict(item);
+                    return Gs2Watch.LimitLimitModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -299,10 +301,10 @@ export default class LimitNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "limitModels": this.getLimitModels() ?
-                this.getLimitModels()!.map((item: LimitLimitModel) => {
+                this.getLimitModels()!.map((item: Gs2Watch.LimitLimitModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

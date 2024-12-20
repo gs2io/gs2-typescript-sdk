@@ -40,7 +40,7 @@ export default class DescribeFormationMoldMetricsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.FormationMold.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeFormationMoldMetricsResult implements IResult {
                 this.getItems()!.map((item: Gs2Watch.FormationMold) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

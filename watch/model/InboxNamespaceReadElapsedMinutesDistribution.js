@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InboxNamespaceReadElapsedMinutesDistributionStatistics_1 = tslib_1.__importDefault(require("./InboxNamespaceReadElapsedMinutesDistributionStatistics"));
-var InboxNamespaceReadElapsedMinutesDistributionSegment_1 = tslib_1.__importDefault(require("./InboxNamespaceReadElapsedMinutesDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var InboxNamespaceReadElapsedMinutesDistribution = /** @class */ (function () {
     function InboxNamespaceReadElapsedMinutesDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var InboxNamespaceReadElapsedMinutesDistribution = /** @class */ (function () {
             return null;
         }
         return new InboxNamespaceReadElapsedMinutesDistribution()
-            .withStatistics(InboxNamespaceReadElapsedMinutesDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return InboxNamespaceReadElapsedMinutesDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.InboxNamespaceReadElapsedMinutesDistributionSegment.fromDict(item);
+            }) : null);
     };
     InboxNamespaceReadElapsedMinutesDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var InboxNamespaceReadElapsedMinutesDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return InboxNamespaceReadElapsedMinutesDistribution;

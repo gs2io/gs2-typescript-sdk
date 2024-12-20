@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import FormationMoldStatistics from './FormationMoldStatistics';
-import FormationMoldDistributions from './FormationMoldDistributions';
-import FormationForm from './FormationForm';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationMold implements IModel {
     private moldId;
     private moldModelName;
@@ -23,15 +21,15 @@ export default class FormationMold implements IModel {
     getMoldModelName(): string | null;
     setMoldModelName(moldModelName: string | null): this;
     withMoldModelName(moldModelName: string | null): this;
-    getStatistics(): FormationMoldStatistics | null;
-    setStatistics(statistics: FormationMoldStatistics | null): this;
-    withStatistics(statistics: FormationMoldStatistics | null): this;
-    getDistributions(): FormationMoldDistributions | null;
-    setDistributions(distributions: FormationMoldDistributions | null): this;
-    withDistributions(distributions: FormationMoldDistributions | null): this;
-    getForms(): FormationForm[] | null;
-    setForms(forms: FormationForm[] | null): this;
-    withForms(forms: FormationForm[] | null): this;
+    getStatistics(): Gs2Watch.FormationMoldStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationMoldStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationMoldStatistics | null): this;
+    getDistributions(): Gs2Watch.FormationMoldDistributions | null;
+    setDistributions(distributions: Gs2Watch.FormationMoldDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.FormationMoldDistributions | null): this;
+    getForms(): Gs2Watch.FormationForm[] | null;
+    setForms(forms: Gs2Watch.FormationForm[] | null): this;
+    withForms(forms: Gs2Watch.FormationForm[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationMold | null;

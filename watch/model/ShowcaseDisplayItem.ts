@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ShowcaseDisplayItemStatistics from './ShowcaseDisplayItemStatistics';
 import ShowcaseDisplayItemQuantityDistributionStatistics from './ShowcaseDisplayItemQuantityDistributionStatistics';
 import ShowcaseDisplayItemQuantityDistributionSegment from './ShowcaseDisplayItemQuantityDistributionSegment';
@@ -24,8 +26,8 @@ const grnFormat: string = "";
 
 export default class ShowcaseDisplayItem implements IModel {
     private displayItemId: string|null = null;
-    private statistics: ShowcaseDisplayItemStatistics|null = null;
-    private distributions: ShowcaseDisplayItemDistributions|null = null;
+    private statistics: Gs2Watch.ShowcaseDisplayItemStatistics|null = null;
+    private distributions: Gs2Watch.ShowcaseDisplayItemDistributions|null = null;
 
     public static isValid(grn: string): boolean {
         return true;
@@ -46,25 +48,25 @@ export default class ShowcaseDisplayItem implements IModel {
         this.displayItemId = displayItemId;
         return this;
     }
-    public getStatistics(): ShowcaseDisplayItemStatistics|null {
+    public getStatistics(): Gs2Watch.ShowcaseDisplayItemStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ShowcaseDisplayItemStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ShowcaseDisplayItemStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ShowcaseDisplayItemStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ShowcaseDisplayItemStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ShowcaseDisplayItemDistributions|null {
+    public getDistributions(): Gs2Watch.ShowcaseDisplayItemDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ShowcaseDisplayItemDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ShowcaseDisplayItemDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ShowcaseDisplayItemDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ShowcaseDisplayItemDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -75,8 +77,8 @@ export default class ShowcaseDisplayItem implements IModel {
         }
         return new ShowcaseDisplayItem()
             .withDisplayItemId(data["displayItemId"])
-            .withStatistics(ShowcaseDisplayItemStatistics.fromDict(data["statistics"]))
-            .withDistributions(ShowcaseDisplayItemDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.ShowcaseDisplayItemStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ShowcaseDisplayItemDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

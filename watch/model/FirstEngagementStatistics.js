@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FirstEngagementStatisticsLoginDays_1 = tslib_1.__importDefault(require("./FirstEngagementStatisticsLoginDays"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FirstEngagementStatistics = /** @class */ (function () {
     function FirstEngagementStatistics() {
         this.loginDays = null;
@@ -37,7 +37,7 @@ var FirstEngagementStatistics = /** @class */ (function () {
             return null;
         }
         return new FirstEngagementStatistics()
-            .withLoginDays(FirstEngagementStatisticsLoginDays_1.default.fromDict(data["loginDays"]));
+            .withLoginDays(Gs2Watch.FirstEngagementStatisticsLoginDays.fromDict(data["loginDays"]));
     };
     FirstEngagementStatistics.prototype.toDict = function () {
         var _a;

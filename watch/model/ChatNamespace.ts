@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ChatNamespaceStatistics from './ChatNamespaceStatistics';
 import ChatNamespacePostByRoomDistributionStatistics from './ChatNamespacePostByRoomDistributionStatistics';
 import ChatNamespacePostByRoomDistributionSegment from './ChatNamespacePostByRoomDistributionSegment';
@@ -34,8 +36,8 @@ export default class ChatNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: ChatNamespaceStatistics|null = null;
-    private distributions: ChatNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.ChatNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.ChatNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -220,25 +222,25 @@ export default class ChatNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): ChatNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.ChatNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ChatNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ChatNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ChatNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ChatNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): ChatNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.ChatNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: ChatNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.ChatNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: ChatNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.ChatNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -253,8 +255,8 @@ export default class ChatNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ChatNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(ChatNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.ChatNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ChatNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

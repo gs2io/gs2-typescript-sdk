@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var StaminaStaminaModelConsumeDistribution_1 = tslib_1.__importDefault(require("./StaminaStaminaModelConsumeDistribution"));
-var StaminaStaminaModelRecoverDistribution_1 = tslib_1.__importDefault(require("./StaminaStaminaModelRecoverDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var StaminaStaminaModelDistributions = /** @class */ (function () {
     function StaminaStaminaModelDistributions() {
         this.consume = null;
@@ -50,8 +49,8 @@ var StaminaStaminaModelDistributions = /** @class */ (function () {
             return null;
         }
         return new StaminaStaminaModelDistributions()
-            .withConsume(StaminaStaminaModelConsumeDistribution_1.default.fromDict(data["consume"]))
-            .withRecover(StaminaStaminaModelRecoverDistribution_1.default.fromDict(data["recover"]));
+            .withConsume(Gs2Watch.StaminaStaminaModelConsumeDistribution.fromDict(data["consume"]))
+            .withRecover(Gs2Watch.StaminaStaminaModelRecoverDistribution.fromDict(data["recover"]));
     };
     StaminaStaminaModelDistributions.prototype.toDict = function () {
         var _a, _b;

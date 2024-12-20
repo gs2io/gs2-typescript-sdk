@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyNamespaceVerificationDistributionStatistics from './MoneyNamespaceVerificationDistributionStatistics';
 import MoneyNamespaceVerificationDistributionSegment from './MoneyNamespaceVerificationDistributionSegment';
 import MoneyNamespaceVerificationDistribution from './MoneyNamespaceVerificationDistribution';
@@ -29,51 +31,51 @@ import MoneyNamespaceRevenueDistributionSegment from './MoneyNamespaceRevenueDis
 import MoneyNamespaceRevenueDistribution from './MoneyNamespaceRevenueDistribution';
 
 export default class MoneyNamespaceDistributions implements IModel {
-    private verification: MoneyNamespaceVerificationDistribution|null = null;
-    private deposit: MoneyNamespaceDepositDistribution|null = null;
-    private withdraw: MoneyNamespaceWithdrawDistribution|null = null;
-    private revenue: MoneyNamespaceRevenueDistribution|null = null;
-    public getVerification(): MoneyNamespaceVerificationDistribution|null {
+    private verification: Gs2Watch.MoneyNamespaceVerificationDistribution|null = null;
+    private deposit: Gs2Watch.MoneyNamespaceDepositDistribution|null = null;
+    private withdraw: Gs2Watch.MoneyNamespaceWithdrawDistribution|null = null;
+    private revenue: Gs2Watch.MoneyNamespaceRevenueDistribution|null = null;
+    public getVerification(): Gs2Watch.MoneyNamespaceVerificationDistribution|null {
         return this.verification;
     }
-    public setVerification(verification: MoneyNamespaceVerificationDistribution|null) {
+    public setVerification(verification: Gs2Watch.MoneyNamespaceVerificationDistribution|null) {
         this.verification = verification;
         return this;
     }
-    public withVerification(verification: MoneyNamespaceVerificationDistribution|null): this {
+    public withVerification(verification: Gs2Watch.MoneyNamespaceVerificationDistribution|null): this {
         this.verification = verification;
         return this;
     }
-    public getDeposit(): MoneyNamespaceDepositDistribution|null {
+    public getDeposit(): Gs2Watch.MoneyNamespaceDepositDistribution|null {
         return this.deposit;
     }
-    public setDeposit(deposit: MoneyNamespaceDepositDistribution|null) {
+    public setDeposit(deposit: Gs2Watch.MoneyNamespaceDepositDistribution|null) {
         this.deposit = deposit;
         return this;
     }
-    public withDeposit(deposit: MoneyNamespaceDepositDistribution|null): this {
+    public withDeposit(deposit: Gs2Watch.MoneyNamespaceDepositDistribution|null): this {
         this.deposit = deposit;
         return this;
     }
-    public getWithdraw(): MoneyNamespaceWithdrawDistribution|null {
+    public getWithdraw(): Gs2Watch.MoneyNamespaceWithdrawDistribution|null {
         return this.withdraw;
     }
-    public setWithdraw(withdraw: MoneyNamespaceWithdrawDistribution|null) {
+    public setWithdraw(withdraw: Gs2Watch.MoneyNamespaceWithdrawDistribution|null) {
         this.withdraw = withdraw;
         return this;
     }
-    public withWithdraw(withdraw: MoneyNamespaceWithdrawDistribution|null): this {
+    public withWithdraw(withdraw: Gs2Watch.MoneyNamespaceWithdrawDistribution|null): this {
         this.withdraw = withdraw;
         return this;
     }
-    public getRevenue(): MoneyNamespaceRevenueDistribution|null {
+    public getRevenue(): Gs2Watch.MoneyNamespaceRevenueDistribution|null {
         return this.revenue;
     }
-    public setRevenue(revenue: MoneyNamespaceRevenueDistribution|null) {
+    public setRevenue(revenue: Gs2Watch.MoneyNamespaceRevenueDistribution|null) {
         this.revenue = revenue;
         return this;
     }
-    public withRevenue(revenue: MoneyNamespaceRevenueDistribution|null): this {
+    public withRevenue(revenue: Gs2Watch.MoneyNamespaceRevenueDistribution|null): this {
         this.revenue = revenue;
         return this;
     }
@@ -83,10 +85,10 @@ export default class MoneyNamespaceDistributions implements IModel {
             return null;
         }
         return new MoneyNamespaceDistributions()
-            .withVerification(MoneyNamespaceVerificationDistribution.fromDict(data["verification"]))
-            .withDeposit(MoneyNamespaceDepositDistribution.fromDict(data["deposit"]))
-            .withWithdraw(MoneyNamespaceWithdrawDistribution.fromDict(data["withdraw"]))
-            .withRevenue(MoneyNamespaceRevenueDistribution.fromDict(data["revenue"]));
+            .withVerification(Gs2Watch.MoneyNamespaceVerificationDistribution.fromDict(data["verification"]))
+            .withDeposit(Gs2Watch.MoneyNamespaceDepositDistribution.fromDict(data["deposit"]))
+            .withWithdraw(Gs2Watch.MoneyNamespaceWithdrawDistribution.fromDict(data["withdraw"]))
+            .withRevenue(Gs2Watch.MoneyNamespaceRevenueDistribution.fromDict(data["revenue"]));
     }
 
     public toDict(): {[key: string]: any} {

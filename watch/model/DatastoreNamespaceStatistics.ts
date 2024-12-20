@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class DatastoreNamespaceStatistics implements IModel {
     private upload: number|null = null;
     private download: number|null = null;

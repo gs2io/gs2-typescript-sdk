@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ExperienceExperienceModelAddExperienceByUserDistributionStatistics from './ExperienceExperienceModelAddExperienceByUserDistributionStatistics';
-import ExperienceExperienceModelAddExperienceByUserDistributionSegment from './ExperienceExperienceModelAddExperienceByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ExperienceExperienceModelAddExperienceByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null;
-    setStatistics(statistics: ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null): this;
-    withStatistics(statistics: ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null): this;
-    getDistribution(): ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null;
-    setDistribution(distribution: ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddExperienceByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceExperienceModelAddExperienceByUserDistribution | null;

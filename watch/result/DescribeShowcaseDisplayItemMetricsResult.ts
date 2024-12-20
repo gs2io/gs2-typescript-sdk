@@ -40,7 +40,7 @@ export default class DescribeShowcaseDisplayItemMetricsResult implements IResult
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.ShowcaseDisplayItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeShowcaseDisplayItemMetricsResult implements IResult
                 this.getItems()!.map((item: Gs2Watch.ShowcaseDisplayItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

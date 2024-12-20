@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestQuestGroupModelQuestDistributionStatistics from './QuestQuestGroupModelQuestDistributionStatistics';
 import QuestQuestGroupModelQuestDistributionSegment from './QuestQuestGroupModelQuestDistributionSegment';
 import QuestQuestGroupModelQuestDistribution from './QuestQuestGroupModelQuestDistribution';
 
 export default class QuestQuestGroupModelDistributions implements IModel {
-    private quest: QuestQuestGroupModelQuestDistribution|null = null;
-    public getQuest(): QuestQuestGroupModelQuestDistribution|null {
+    private quest: Gs2Watch.QuestQuestGroupModelQuestDistribution|null = null;
+    public getQuest(): Gs2Watch.QuestQuestGroupModelQuestDistribution|null {
         return this.quest;
     }
-    public setQuest(quest: QuestQuestGroupModelQuestDistribution|null) {
+    public setQuest(quest: Gs2Watch.QuestQuestGroupModelQuestDistribution|null) {
         this.quest = quest;
         return this;
     }
-    public withQuest(quest: QuestQuestGroupModelQuestDistribution|null): this {
+    public withQuest(quest: Gs2Watch.QuestQuestGroupModelQuestDistribution|null): this {
         this.quest = quest;
         return this;
     }
@@ -38,7 +40,7 @@ export default class QuestQuestGroupModelDistributions implements IModel {
             return null;
         }
         return new QuestQuestGroupModelDistributions()
-            .withQuest(QuestQuestGroupModelQuestDistribution.fromDict(data["quest"]));
+            .withQuest(Gs2Watch.QuestQuestGroupModelQuestDistribution.fromDict(data["quest"]));
     }
 
     public toDict(): {[key: string]: any} {

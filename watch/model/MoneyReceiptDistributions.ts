@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyReceiptVerificationByUserDistributionStatistics from './MoneyReceiptVerificationByUserDistributionStatistics';
 import MoneyReceiptVerificationByUserDistributionSegment from './MoneyReceiptVerificationByUserDistributionSegment';
 import MoneyReceiptVerificationByUserDistribution from './MoneyReceiptVerificationByUserDistribution';
 
 export default class MoneyReceiptDistributions implements IModel {
-    private verificationByUser: MoneyReceiptVerificationByUserDistribution|null = null;
-    public getVerificationByUser(): MoneyReceiptVerificationByUserDistribution|null {
+    private verificationByUser: Gs2Watch.MoneyReceiptVerificationByUserDistribution|null = null;
+    public getVerificationByUser(): Gs2Watch.MoneyReceiptVerificationByUserDistribution|null {
         return this.verificationByUser;
     }
-    public setVerificationByUser(verificationByUser: MoneyReceiptVerificationByUserDistribution|null) {
+    public setVerificationByUser(verificationByUser: Gs2Watch.MoneyReceiptVerificationByUserDistribution|null) {
         this.verificationByUser = verificationByUser;
         return this;
     }
-    public withVerificationByUser(verificationByUser: MoneyReceiptVerificationByUserDistribution|null): this {
+    public withVerificationByUser(verificationByUser: Gs2Watch.MoneyReceiptVerificationByUserDistribution|null): this {
         this.verificationByUser = verificationByUser;
         return this;
     }
@@ -38,7 +40,7 @@ export default class MoneyReceiptDistributions implements IModel {
             return null;
         }
         return new MoneyReceiptDistributions()
-            .withVerificationByUser(MoneyReceiptVerificationByUserDistribution.fromDict(data["verificationByUser"]));
+            .withVerificationByUser(Gs2Watch.MoneyReceiptVerificationByUserDistribution.fromDict(data["verificationByUser"]));
     }
 
     public toDict(): {[key: string]: any} {

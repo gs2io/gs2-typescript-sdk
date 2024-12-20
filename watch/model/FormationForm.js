@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationFormStatistics_1 = tslib_1.__importDefault(require("./FormationFormStatistics"));
-var FormationFormDistributions_1 = tslib_1.__importDefault(require("./FormationFormDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldModelName}:form:{index}";
 var FormationForm = /** @class */ (function () {
     function FormationForm() {
@@ -235,8 +234,8 @@ var FormationForm = /** @class */ (function () {
         return new FormationForm()
             .withFormId(data["formId"])
             .withIndex(data["index"])
-            .withStatistics(FormationFormStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(FormationFormDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.FormationFormStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.FormationFormDistributions.fromDict(data["distributions"]));
     };
     FormationForm.prototype.toDict = function () {
         var _a, _b;

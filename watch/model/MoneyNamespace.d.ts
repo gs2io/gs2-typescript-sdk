@@ -1,8 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MoneyNamespaceStatistics from './MoneyNamespaceStatistics';
-import MoneyNamespaceDistributions from './MoneyNamespaceDistributions';
-import MoneyWallet from './MoneyWallet';
-import MoneyReceipt from './MoneyReceipt';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyNamespace implements IModel {
     private namespaceId;
     private year;
@@ -36,18 +33,18 @@ export default class MoneyNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): MoneyNamespaceStatistics | null;
-    setStatistics(statistics: MoneyNamespaceStatistics | null): this;
-    withStatistics(statistics: MoneyNamespaceStatistics | null): this;
-    getDistributions(): MoneyNamespaceDistributions | null;
-    setDistributions(distributions: MoneyNamespaceDistributions | null): this;
-    withDistributions(distributions: MoneyNamespaceDistributions | null): this;
-    getWallets(): MoneyWallet[] | null;
-    setWallets(wallets: MoneyWallet[] | null): this;
-    withWallets(wallets: MoneyWallet[] | null): this;
-    getReceipts(): MoneyReceipt[] | null;
-    setReceipts(receipts: MoneyReceipt[] | null): this;
-    withReceipts(receipts: MoneyReceipt[] | null): this;
+    getStatistics(): Gs2Watch.MoneyNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.MoneyNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MoneyNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.MoneyNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.MoneyNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MoneyNamespaceDistributions | null): this;
+    getWallets(): Gs2Watch.MoneyWallet[] | null;
+    setWallets(wallets: Gs2Watch.MoneyWallet[] | null): this;
+    withWallets(wallets: Gs2Watch.MoneyWallet[] | null): this;
+    getReceipts(): Gs2Watch.MoneyReceipt[] | null;
+    setReceipts(receipts: Gs2Watch.MoneyReceipt[] | null): this;
+    withReceipts(receipts: Gs2Watch.MoneyReceipt[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyNamespace | null;

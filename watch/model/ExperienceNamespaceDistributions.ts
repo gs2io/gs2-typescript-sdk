@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceNamespaceAddExperienceByExperienceDistributionStatistics from './ExperienceNamespaceAddExperienceByExperienceDistributionStatistics';
 import ExperienceNamespaceAddExperienceByExperienceDistributionSegment from './ExperienceNamespaceAddExperienceByExperienceDistributionSegment';
 import ExperienceNamespaceAddExperienceByExperienceDistribution from './ExperienceNamespaceAddExperienceByExperienceDistribution';
@@ -23,27 +25,27 @@ import ExperienceNamespaceAddRankCapByExperienceDistributionSegment from './Expe
 import ExperienceNamespaceAddRankCapByExperienceDistribution from './ExperienceNamespaceAddRankCapByExperienceDistribution';
 
 export default class ExperienceNamespaceDistributions implements IModel {
-    private addExperienceByExperience: ExperienceNamespaceAddExperienceByExperienceDistribution|null = null;
-    private addRankCapByExperience: ExperienceNamespaceAddRankCapByExperienceDistribution|null = null;
-    public getAddExperienceByExperience(): ExperienceNamespaceAddExperienceByExperienceDistribution|null {
+    private addExperienceByExperience: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution|null = null;
+    private addRankCapByExperience: Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution|null = null;
+    public getAddExperienceByExperience(): Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution|null {
         return this.addExperienceByExperience;
     }
-    public setAddExperienceByExperience(addExperienceByExperience: ExperienceNamespaceAddExperienceByExperienceDistribution|null) {
+    public setAddExperienceByExperience(addExperienceByExperience: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution|null) {
         this.addExperienceByExperience = addExperienceByExperience;
         return this;
     }
-    public withAddExperienceByExperience(addExperienceByExperience: ExperienceNamespaceAddExperienceByExperienceDistribution|null): this {
+    public withAddExperienceByExperience(addExperienceByExperience: Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution|null): this {
         this.addExperienceByExperience = addExperienceByExperience;
         return this;
     }
-    public getAddRankCapByExperience(): ExperienceNamespaceAddRankCapByExperienceDistribution|null {
+    public getAddRankCapByExperience(): Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution|null {
         return this.addRankCapByExperience;
     }
-    public setAddRankCapByExperience(addRankCapByExperience: ExperienceNamespaceAddRankCapByExperienceDistribution|null) {
+    public setAddRankCapByExperience(addRankCapByExperience: Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution|null) {
         this.addRankCapByExperience = addRankCapByExperience;
         return this;
     }
-    public withAddRankCapByExperience(addRankCapByExperience: ExperienceNamespaceAddRankCapByExperienceDistribution|null): this {
+    public withAddRankCapByExperience(addRankCapByExperience: Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution|null): this {
         this.addRankCapByExperience = addRankCapByExperience;
         return this;
     }
@@ -53,8 +55,8 @@ export default class ExperienceNamespaceDistributions implements IModel {
             return null;
         }
         return new ExperienceNamespaceDistributions()
-            .withAddExperienceByExperience(ExperienceNamespaceAddExperienceByExperienceDistribution.fromDict(data["addExperienceByExperience"]))
-            .withAddRankCapByExperience(ExperienceNamespaceAddRankCapByExperienceDistribution.fromDict(data["addRankCapByExperience"]));
+            .withAddExperienceByExperience(Gs2Watch.ExperienceNamespaceAddExperienceByExperienceDistribution.fromDict(data["addExperienceByExperience"]))
+            .withAddRankCapByExperience(Gs2Watch.ExperienceNamespaceAddRankCapByExperienceDistribution.fromDict(data["addRankCapByExperience"]));
     }
 
     public toDict(): {[key: string]: any} {

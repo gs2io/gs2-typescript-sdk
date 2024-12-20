@@ -9,6 +9,7 @@ export default class ClusterRankingData implements IModel {
     private rank;
     private score;
     private metadata;
+    private invertCreatedAt;
     private createdAt;
     private updatedAt;
     private revision;
@@ -48,6 +49,9 @@ export default class ClusterRankingData implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getInvertCreatedAt(): number | null;
+    setInvertCreatedAt(invertCreatedAt: number | null): this;
+    withInvertCreatedAt(invertCreatedAt: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

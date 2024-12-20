@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyNamespaceRevenueDistributionStatistics_1 = tslib_1.__importDefault(require("./MoneyNamespaceRevenueDistributionStatistics"));
-var MoneyNamespaceRevenueDistributionSegment_1 = tslib_1.__importDefault(require("./MoneyNamespaceRevenueDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MoneyNamespaceRevenueDistribution = /** @class */ (function () {
     function MoneyNamespaceRevenueDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var MoneyNamespaceRevenueDistribution = /** @class */ (function () {
             return null;
         }
         return new MoneyNamespaceRevenueDistribution()
-            .withStatistics(MoneyNamespaceRevenueDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyNamespaceRevenueDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return MoneyNamespaceRevenueDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MoneyNamespaceRevenueDistributionSegment.fromDict(item);
+            }) : null);
     };
     MoneyNamespaceRevenueDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var MoneyNamespaceRevenueDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MoneyNamespaceRevenueDistribution;

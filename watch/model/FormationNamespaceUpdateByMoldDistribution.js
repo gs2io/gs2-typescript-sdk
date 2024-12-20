@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationNamespaceUpdateByMoldDistributionStatistics_1 = tslib_1.__importDefault(require("./FormationNamespaceUpdateByMoldDistributionStatistics"));
-var FormationNamespaceUpdateByMoldDistributionSegment_1 = tslib_1.__importDefault(require("./FormationNamespaceUpdateByMoldDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FormationNamespaceUpdateByMoldDistribution = /** @class */ (function () {
     function FormationNamespaceUpdateByMoldDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var FormationNamespaceUpdateByMoldDistribution = /** @class */ (function () {
             return null;
         }
         return new FormationNamespaceUpdateByMoldDistribution()
-            .withStatistics(FormationNamespaceUpdateByMoldDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FormationNamespaceUpdateByMoldDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return FormationNamespaceUpdateByMoldDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.FormationNamespaceUpdateByMoldDistributionSegment.fromDict(item);
+            }) : null);
     };
     FormationNamespaceUpdateByMoldDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var FormationNamespaceUpdateByMoldDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return FormationNamespaceUpdateByMoldDistribution;

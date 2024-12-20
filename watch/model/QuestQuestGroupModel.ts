@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestQuestGroupModelStatistics from './QuestQuestGroupModelStatistics';
 import QuestQuestGroupModelQuestDistributionStatistics from './QuestQuestGroupModelQuestDistributionStatistics';
 import QuestQuestGroupModelQuestDistributionSegment from './QuestQuestGroupModelQuestDistributionSegment';
@@ -31,9 +33,9 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class QuestQuestGroupModel implements IModel {
     private questGroupModelId: string|null = null;
     private questGroupName: string|null = null;
-    private statistics: QuestQuestGroupModelStatistics|null = null;
-    private distributions: QuestQuestGroupModelDistributions|null = null;
-    private questModels: QuestQuestModel[]|null = null;
+    private statistics: Gs2Watch.QuestQuestGroupModelStatistics|null = null;
+    private distributions: Gs2Watch.QuestQuestGroupModelDistributions|null = null;
+    private questModels: Gs2Watch.QuestQuestModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -212,36 +214,36 @@ export default class QuestQuestGroupModel implements IModel {
         this.questGroupName = questGroupName;
         return this;
     }
-    public getStatistics(): QuestQuestGroupModelStatistics|null {
+    public getStatistics(): Gs2Watch.QuestQuestGroupModelStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: QuestQuestGroupModelStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.QuestQuestGroupModelStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: QuestQuestGroupModelStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.QuestQuestGroupModelStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): QuestQuestGroupModelDistributions|null {
+    public getDistributions(): Gs2Watch.QuestQuestGroupModelDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: QuestQuestGroupModelDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.QuestQuestGroupModelDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: QuestQuestGroupModelDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.QuestQuestGroupModelDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getQuestModels(): QuestQuestModel[]|null {
+    public getQuestModels(): Gs2Watch.QuestQuestModel[]|null {
         return this.questModels;
     }
-    public setQuestModels(questModels: QuestQuestModel[]|null) {
+    public setQuestModels(questModels: Gs2Watch.QuestQuestModel[]|null) {
         this.questModels = questModels;
         return this;
     }
-    public withQuestModels(questModels: QuestQuestModel[]|null): this {
+    public withQuestModels(questModels: Gs2Watch.QuestQuestModel[]|null): this {
         this.questModels = questModels;
         return this;
     }
@@ -253,13 +255,13 @@ export default class QuestQuestGroupModel implements IModel {
         return new QuestQuestGroupModel()
             .withQuestGroupModelId(data["questGroupModelId"])
             .withQuestGroupName(data["questGroupName"])
-            .withStatistics(QuestQuestGroupModelStatistics.fromDict(data["statistics"]))
-            .withDistributions(QuestQuestGroupModelDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.QuestQuestGroupModelStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.QuestQuestGroupModelDistributions.fromDict(data["distributions"]))
             .withQuestModels(data.questModels ?
                 data.questModels.map((item: {[key: string]: any}) => {
-                    return QuestQuestModel.fromDict(item);
+                    return Gs2Watch.QuestQuestModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -269,10 +271,10 @@ export default class QuestQuestGroupModel implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "questModels": this.getQuestModels() ?
-                this.getQuestModels()!.map((item: QuestQuestModel) => {
+                this.getQuestModels()!.map((item: Gs2Watch.QuestQuestModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

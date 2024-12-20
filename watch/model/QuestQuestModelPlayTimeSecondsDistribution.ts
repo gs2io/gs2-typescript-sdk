@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import QuestQuestModelPlayTimeSecondsDistributionStatistics from './QuestQuestModelPlayTimeSecondsDistributionStatistics';
 import QuestQuestModelPlayTimeSecondsDistributionSegment from './QuestQuestModelPlayTimeSecondsDistributionSegment';
 
 export default class QuestQuestModelPlayTimeSecondsDistribution implements IModel {
-    private statistics: QuestQuestModelPlayTimeSecondsDistributionStatistics|null = null;
-    private distribution: QuestQuestModelPlayTimeSecondsDistributionSegment[]|null = null;
-    public getStatistics(): QuestQuestModelPlayTimeSecondsDistributionStatistics|null {
+    private statistics: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics|null = null;
+    private distribution: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: QuestQuestModelPlayTimeSecondsDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: QuestQuestModelPlayTimeSecondsDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): QuestQuestModelPlayTimeSecondsDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: QuestQuestModelPlayTimeSecondsDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: QuestQuestModelPlayTimeSecondsDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class QuestQuestModelPlayTimeSecondsDistribution implements IMode
             return null;
         }
         return new QuestQuestModelPlayTimeSecondsDistribution()
-            .withStatistics(QuestQuestModelPlayTimeSecondsDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return QuestQuestModelPlayTimeSecondsDistributionSegment.fromDict(item);
+                    return Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: QuestQuestModelPlayTimeSecondsDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.QuestQuestModelPlayTimeSecondsDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

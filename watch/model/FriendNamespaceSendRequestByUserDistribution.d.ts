@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FriendNamespaceSendRequestByUserDistributionStatistics from './FriendNamespaceSendRequestByUserDistributionStatistics';
-import FriendNamespaceSendRequestByUserDistributionSegment from './FriendNamespaceSendRequestByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FriendNamespaceSendRequestByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FriendNamespaceSendRequestByUserDistributionStatistics | null;
-    setStatistics(statistics: FriendNamespaceSendRequestByUserDistributionStatistics | null): this;
-    withStatistics(statistics: FriendNamespaceSendRequestByUserDistributionStatistics | null): this;
-    getDistribution(): FriendNamespaceSendRequestByUserDistributionSegment[] | null;
-    setDistribution(distribution: FriendNamespaceSendRequestByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: FriendNamespaceSendRequestByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FriendNamespaceSendRequestByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.FriendNamespaceSendRequestByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FriendNamespaceSendRequestByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.FriendNamespaceSendRequestByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FriendNamespaceSendRequestByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FriendNamespaceSendRequestByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FriendNamespaceSendRequestByUserDistribution | null;

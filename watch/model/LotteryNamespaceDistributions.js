@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LotteryNamespaceDrawDistribution_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawDistribution"));
-var LotteryNamespaceDrawAmountDistribution_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawAmountDistribution"));
-var LotteryNamespaceDrawByUserDistribution_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawByUserDistribution"));
-var LotteryNamespaceDrawAmountByUserDistribution_1 = tslib_1.__importDefault(require("./LotteryNamespaceDrawAmountByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LotteryNamespaceDistributions = /** @class */ (function () {
     function LotteryNamespaceDistributions() {
         this.draw = null;
@@ -76,10 +73,10 @@ var LotteryNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new LotteryNamespaceDistributions()
-            .withDraw(LotteryNamespaceDrawDistribution_1.default.fromDict(data["draw"]))
-            .withDrawAmount(LotteryNamespaceDrawAmountDistribution_1.default.fromDict(data["drawAmount"]))
-            .withDrawByUser(LotteryNamespaceDrawByUserDistribution_1.default.fromDict(data["drawByUser"]))
-            .withDrawAmountByUser(LotteryNamespaceDrawAmountByUserDistribution_1.default.fromDict(data["drawAmountByUser"]));
+            .withDraw(Gs2Watch.LotteryNamespaceDrawDistribution.fromDict(data["draw"]))
+            .withDrawAmount(Gs2Watch.LotteryNamespaceDrawAmountDistribution.fromDict(data["drawAmount"]))
+            .withDrawByUser(Gs2Watch.LotteryNamespaceDrawByUserDistribution.fromDict(data["drawByUser"]))
+            .withDrawAmountByUser(Gs2Watch.LotteryNamespaceDrawAmountByUserDistribution.fromDict(data["drawAmountByUser"]));
     };
     LotteryNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

@@ -33,6 +33,7 @@ export default class ClusterRankingModel implements IModel {
     private entryPeriodEventId: string|null = null;
     private rankingRewards: Gs2Ranking2.RankingReward[]|null = null;
     private accessPeriodEventId: string|null = null;
+    private rewardCalculationIndex: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -235,6 +236,17 @@ export default class ClusterRankingModel implements IModel {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
+    public getRewardCalculationIndex(): string|null {
+        return this.rewardCalculationIndex;
+    }
+    public setRewardCalculationIndex(rewardCalculationIndex: string|null) {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
+    public withRewardCalculationIndex(rewardCalculationIndex: string|null): this {
+        this.rewardCalculationIndex = rewardCalculationIndex;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): ClusterRankingModel|null {
         if (data == undefined || data == null) {
@@ -255,7 +267,8 @@ export default class ClusterRankingModel implements IModel {
                     return Gs2Ranking2.RankingReward.fromDict(item);
                 }
             ) : null)
-            .withAccessPeriodEventId(data["accessPeriodEventId"]);
+            .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withRewardCalculationIndex(data["rewardCalculationIndex"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -275,6 +288,7 @@ export default class ClusterRankingModel implements IModel {
                 }
             ) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "rewardCalculationIndex": this.getRewardCalculationIndex(),
         };
     }
 }

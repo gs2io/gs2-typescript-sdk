@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FormationMoldCapacityDistributionStatistics from './FormationMoldCapacityDistributionStatistics';
 import FormationMoldCapacityDistributionSegment from './FormationMoldCapacityDistributionSegment';
 
 export default class FormationMoldCapacityDistribution implements IModel {
-    private statistics: FormationMoldCapacityDistributionStatistics|null = null;
-    private distribution: FormationMoldCapacityDistributionSegment[]|null = null;
-    public getStatistics(): FormationMoldCapacityDistributionStatistics|null {
+    private statistics: Gs2Watch.FormationMoldCapacityDistributionStatistics|null = null;
+    private distribution: Gs2Watch.FormationMoldCapacityDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.FormationMoldCapacityDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FormationMoldCapacityDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FormationMoldCapacityDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FormationMoldCapacityDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FormationMoldCapacityDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): FormationMoldCapacityDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.FormationMoldCapacityDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: FormationMoldCapacityDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.FormationMoldCapacityDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: FormationMoldCapacityDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.FormationMoldCapacityDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class FormationMoldCapacityDistribution implements IModel {
             return null;
         }
         return new FormationMoldCapacityDistribution()
-            .withStatistics(FormationMoldCapacityDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FormationMoldCapacityDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return FormationMoldCapacityDistributionSegment.fromDict(item);
+                    return Gs2Watch.FormationMoldCapacityDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: FormationMoldCapacityDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.FormationMoldCapacityDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

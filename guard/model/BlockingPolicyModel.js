@@ -194,13 +194,13 @@ var BlockingPolicyModel = /** @class */ (function () {
             .withPassServices(data.passServices ?
             data.passServices.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withDefaultRestriction(data["defaultRestriction"])
             .withLocationDetection(data["locationDetection"])
             .withLocations(data.locations ?
             data.locations.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withLocationRestriction(data["locationRestriction"])
             .withAnonymousIpDetection(data["anonymousIpDetection"])
             .withAnonymousIpRestriction(data["anonymousIpRestriction"])
@@ -212,7 +212,7 @@ var BlockingPolicyModel = /** @class */ (function () {
             .withIpAddresses(data.ipAddresses ?
             data.ipAddresses.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withIpAddressRestriction(data["ipAddressRestriction"]);
     };
     BlockingPolicyModel.prototype.toDict = function () {
@@ -220,13 +220,13 @@ var BlockingPolicyModel = /** @class */ (function () {
             "passServices": this.getPassServices() ?
                 this.getPassServices().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "defaultRestriction": this.getDefaultRestriction(),
             "locationDetection": this.getLocationDetection(),
             "locations": this.getLocations() ?
                 this.getLocations().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "locationRestriction": this.getLocationRestriction(),
             "anonymousIpDetection": this.getAnonymousIpDetection(),
             "anonymousIpRestriction": this.getAnonymousIpRestriction(),
@@ -238,7 +238,7 @@ var BlockingPolicyModel = /** @class */ (function () {
             "ipAddresses": this.getIpAddresses() ?
                 this.getIpAddresses().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "ipAddressRestriction": this.getIpAddressRestriction(),
         };
     };

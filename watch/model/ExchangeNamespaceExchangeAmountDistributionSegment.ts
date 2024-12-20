@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class ExchangeNamespaceExchangeAmountDistributionSegment implements IModel {
     private rateName: string|null = null;
     private sum: number|null = null;

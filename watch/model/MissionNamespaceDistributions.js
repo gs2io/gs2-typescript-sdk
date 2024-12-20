@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionNamespaceIncreaseDistribution_1 = tslib_1.__importDefault(require("./MissionNamespaceIncreaseDistribution"));
-var MissionNamespaceIncreaseAmountDistribution_1 = tslib_1.__importDefault(require("./MissionNamespaceIncreaseAmountDistribution"));
-var MissionNamespaceReceiveDistribution_1 = tslib_1.__importDefault(require("./MissionNamespaceReceiveDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var MissionNamespaceDistributions = /** @class */ (function () {
     function MissionNamespaceDistributions() {
         this.increase = null;
@@ -63,9 +61,9 @@ var MissionNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new MissionNamespaceDistributions()
-            .withIncrease(MissionNamespaceIncreaseDistribution_1.default.fromDict(data["increase"]))
-            .withIncreaseAmount(MissionNamespaceIncreaseAmountDistribution_1.default.fromDict(data["increaseAmount"]))
-            .withReceive(MissionNamespaceReceiveDistribution_1.default.fromDict(data["receive"]));
+            .withIncrease(Gs2Watch.MissionNamespaceIncreaseDistribution.fromDict(data["increase"]))
+            .withIncreaseAmount(Gs2Watch.MissionNamespaceIncreaseAmountDistribution.fromDict(data["increaseAmount"]))
+            .withReceive(Gs2Watch.MissionNamespaceReceiveDistribution.fromDict(data["receive"]));
     };
     MissionNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c;

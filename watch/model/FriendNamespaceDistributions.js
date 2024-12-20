@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FriendNamespaceAcceptByUserDistribution_1 = tslib_1.__importDefault(require("./FriendNamespaceAcceptByUserDistribution"));
-var FriendNamespaceRejectByUserDistribution_1 = tslib_1.__importDefault(require("./FriendNamespaceRejectByUserDistribution"));
-var FriendNamespaceSendRequestByUserDistribution_1 = tslib_1.__importDefault(require("./FriendNamespaceSendRequestByUserDistribution"));
-var FriendNamespaceNewFollowByUserDistribution_1 = tslib_1.__importDefault(require("./FriendNamespaceNewFollowByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FriendNamespaceDistributions = /** @class */ (function () {
     function FriendNamespaceDistributions() {
         this.acceptByUser = null;
@@ -76,10 +73,10 @@ var FriendNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new FriendNamespaceDistributions()
-            .withAcceptByUser(FriendNamespaceAcceptByUserDistribution_1.default.fromDict(data["acceptByUser"]))
-            .withRejectByUser(FriendNamespaceRejectByUserDistribution_1.default.fromDict(data["rejectByUser"]))
-            .withSendRequestByUser(FriendNamespaceSendRequestByUserDistribution_1.default.fromDict(data["sendRequestByUser"]))
-            .withNewFollowByUser(FriendNamespaceNewFollowByUserDistribution_1.default.fromDict(data["newFollowByUser"]));
+            .withAcceptByUser(Gs2Watch.FriendNamespaceAcceptByUserDistribution.fromDict(data["acceptByUser"]))
+            .withRejectByUser(Gs2Watch.FriendNamespaceRejectByUserDistribution.fromDict(data["rejectByUser"]))
+            .withSendRequestByUser(Gs2Watch.FriendNamespaceSendRequestByUserDistribution.fromDict(data["sendRequestByUser"]))
+            .withNewFollowByUser(Gs2Watch.FriendNamespaceNewFollowByUserDistribution.fromDict(data["newFollowByUser"]));
     };
     FriendNamespaceDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

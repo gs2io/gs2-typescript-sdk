@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Guard from '../../guard/model'
+
 export default class BlockingPolicyModel implements IModel {
     private passServices: string[]|null = null;
     private defaultRestriction: string|null = null;
@@ -195,14 +197,14 @@ export default class BlockingPolicyModel implements IModel {
                 data.passServices.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withDefaultRestriction(data["defaultRestriction"])
             .withLocationDetection(data["locationDetection"])
             .withLocations(data.locations ?
                 data.locations.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withLocationRestriction(data["locationRestriction"])
             .withAnonymousIpDetection(data["anonymousIpDetection"])
             .withAnonymousIpRestriction(data["anonymousIpRestriction"])
@@ -215,7 +217,7 @@ export default class BlockingPolicyModel implements IModel {
                 data.ipAddresses.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withIpAddressRestriction(data["ipAddressRestriction"]);
     }
 
@@ -225,14 +227,14 @@ export default class BlockingPolicyModel implements IModel {
                 this.getPassServices()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "defaultRestriction": this.getDefaultRestriction(),
             "locationDetection": this.getLocationDetection(),
             "locations": this.getLocations() ?
                 this.getLocations()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "locationRestriction": this.getLocationRestriction(),
             "anonymousIpDetection": this.getAnonymousIpDetection(),
             "anonymousIpRestriction": this.getAnonymousIpRestriction(),
@@ -245,7 +247,7 @@ export default class BlockingPolicyModel implements IModel {
                 this.getIpAddresses()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "ipAddressRestriction": this.getIpAddressRestriction(),
         };
     }

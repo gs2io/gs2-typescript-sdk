@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LimitLimitModelIncreaseDistribution_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseDistribution"));
-var LimitLimitModelIncreaseAmountDistribution_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseAmountDistribution"));
-var LimitLimitModelIncreaseByUserDistribution_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseByUserDistribution"));
-var LimitLimitModelIncreaseAmountByUserDistribution_1 = tslib_1.__importDefault(require("./LimitLimitModelIncreaseAmountByUserDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var LimitLimitModelDistributions = /** @class */ (function () {
     function LimitLimitModelDistributions() {
         this.increase = null;
@@ -76,10 +73,10 @@ var LimitLimitModelDistributions = /** @class */ (function () {
             return null;
         }
         return new LimitLimitModelDistributions()
-            .withIncrease(LimitLimitModelIncreaseDistribution_1.default.fromDict(data["increase"]))
-            .withIncreaseAmount(LimitLimitModelIncreaseAmountDistribution_1.default.fromDict(data["increaseAmount"]))
-            .withIncreaseByUser(LimitLimitModelIncreaseByUserDistribution_1.default.fromDict(data["increaseByUser"]))
-            .withIncreaseAmountByUser(LimitLimitModelIncreaseAmountByUserDistribution_1.default.fromDict(data["increaseAmountByUser"]));
+            .withIncrease(Gs2Watch.LimitLimitModelIncreaseDistribution.fromDict(data["increase"]))
+            .withIncreaseAmount(Gs2Watch.LimitLimitModelIncreaseAmountDistribution.fromDict(data["increaseAmount"]))
+            .withIncreaseByUser(Gs2Watch.LimitLimitModelIncreaseByUserDistribution.fromDict(data["increaseByUser"]))
+            .withIncreaseAmountByUser(Gs2Watch.LimitLimitModelIncreaseAmountByUserDistribution.fromDict(data["increaseAmountByUser"]));
     };
     LimitLimitModelDistributions.prototype.toDict = function () {
         var _a, _b, _c, _d;

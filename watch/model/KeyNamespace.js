@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var KeyNamespaceStatistics_1 = tslib_1.__importDefault(require("./KeyNamespaceStatistics"));
-var KeyNamespaceDistributions_1 = tslib_1.__importDefault(require("./KeyNamespaceDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:key:namespace:{namespaceName}";
 var KeyNamespace = /** @class */ (function () {
     function KeyNamespace() {
@@ -224,8 +223,8 @@ var KeyNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(KeyNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(KeyNamespaceDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.KeyNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.KeyNamespaceDistributions.fromDict(data["distributions"]));
     };
     KeyNamespace.prototype.toDict = function () {
         var _a, _b;

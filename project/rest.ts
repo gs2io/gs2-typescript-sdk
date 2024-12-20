@@ -878,9 +878,10 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitDumpUserData(request: Request.WaitDumpUserDataRequest): Promise<Result.WaitDumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress/{transactionId}/wait')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
+            .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -916,9 +917,10 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public archiveDumpUserData(request: Request.ArchiveDumpUserDataRequest): Promise<Result.ArchiveDumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress/{transactionId}/archive')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/archive')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
+            .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();

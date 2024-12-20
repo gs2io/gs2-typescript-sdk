@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class ExchangeRateModelStatistics implements IModel {
     private exchange: number|null = null;
     private amount: number|null = null;

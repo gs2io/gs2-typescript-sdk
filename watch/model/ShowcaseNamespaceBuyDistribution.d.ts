@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import ShowcaseNamespaceBuyDistributionStatistics from './ShowcaseNamespaceBuyDistributionStatistics';
-import ShowcaseNamespaceBuyDistributionSegment from './ShowcaseNamespaceBuyDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class ShowcaseNamespaceBuyDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): ShowcaseNamespaceBuyDistributionStatistics | null;
-    setStatistics(statistics: ShowcaseNamespaceBuyDistributionStatistics | null): this;
-    withStatistics(statistics: ShowcaseNamespaceBuyDistributionStatistics | null): this;
-    getDistribution(): ShowcaseNamespaceBuyDistributionSegment[] | null;
-    setDistribution(distribution: ShowcaseNamespaceBuyDistributionSegment[] | null): this;
-    withDistribution(distribution: ShowcaseNamespaceBuyDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.ShowcaseNamespaceBuyDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.ShowcaseNamespaceBuyDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ShowcaseNamespaceBuyDistribution | null;

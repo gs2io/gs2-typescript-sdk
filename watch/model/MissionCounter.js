@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionCounterDistributions_1 = tslib_1.__importDefault(require("./MissionCounterDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:mission:namespace:{namespaceName}:missionGroupModel:{missionGroupName}:counter:{counterName}";
 var MissionCounter = /** @class */ (function () {
     function MissionCounter() {
@@ -222,7 +222,7 @@ var MissionCounter = /** @class */ (function () {
         return new MissionCounter()
             .withCounterId(data["counterId"])
             .withCounterName(data["counterName"])
-            .withDistributions(MissionCounterDistributions_1.default.fromDict(data["distributions"]));
+            .withDistributions(Gs2Watch.MissionCounterDistributions.fromDict(data["distributions"]));
     };
     MissionCounter.prototype.toDict = function () {
         var _a;

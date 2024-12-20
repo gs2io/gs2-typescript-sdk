@@ -28,6 +28,8 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     describeAcceptVersionsByUserId(request: Request.DescribeAcceptVersionsByUserIdRequest): Promise<Result.DescribeAcceptVersionsByUserIdResult>;
     accept(request: Request.AcceptRequest): Promise<Result.AcceptResult>;
     acceptByUserId(request: Request.AcceptByUserIdRequest): Promise<Result.AcceptByUserIdResult>;
+    reject(request: Request.RejectRequest): Promise<Result.RejectResult>;
+    rejectByUserId(request: Request.RejectByUserIdRequest): Promise<Result.RejectByUserIdResult>;
     getAcceptVersion(request: Request.GetAcceptVersionRequest): Promise<Result.GetAcceptVersionResult>;
     getAcceptVersionByUserId(request: Request.GetAcceptVersionByUserIdRequest): Promise<Result.GetAcceptVersionByUserIdResult>;
     deleteAcceptVersion(request: Request.DeleteAcceptVersionRequest): Promise<Result.DeleteAcceptVersionResult>;

@@ -1,20 +1,18 @@
 import IModel from '../../core/interface/IModel';
-import MissionNamespaceIncreaseDistribution from './MissionNamespaceIncreaseDistribution';
-import MissionNamespaceIncreaseAmountDistribution from './MissionNamespaceIncreaseAmountDistribution';
-import MissionNamespaceReceiveDistribution from './MissionNamespaceReceiveDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class MissionNamespaceDistributions implements IModel {
     private increase;
     private increaseAmount;
     private receive;
-    getIncrease(): MissionNamespaceIncreaseDistribution | null;
-    setIncrease(increase: MissionNamespaceIncreaseDistribution | null): this;
-    withIncrease(increase: MissionNamespaceIncreaseDistribution | null): this;
-    getIncreaseAmount(): MissionNamespaceIncreaseAmountDistribution | null;
-    setIncreaseAmount(increaseAmount: MissionNamespaceIncreaseAmountDistribution | null): this;
-    withIncreaseAmount(increaseAmount: MissionNamespaceIncreaseAmountDistribution | null): this;
-    getReceive(): MissionNamespaceReceiveDistribution | null;
-    setReceive(receive: MissionNamespaceReceiveDistribution | null): this;
-    withReceive(receive: MissionNamespaceReceiveDistribution | null): this;
+    getIncrease(): Gs2Watch.MissionNamespaceIncreaseDistribution | null;
+    setIncrease(increase: Gs2Watch.MissionNamespaceIncreaseDistribution | null): this;
+    withIncrease(increase: Gs2Watch.MissionNamespaceIncreaseDistribution | null): this;
+    getIncreaseAmount(): Gs2Watch.MissionNamespaceIncreaseAmountDistribution | null;
+    setIncreaseAmount(increaseAmount: Gs2Watch.MissionNamespaceIncreaseAmountDistribution | null): this;
+    withIncreaseAmount(increaseAmount: Gs2Watch.MissionNamespaceIncreaseAmountDistribution | null): this;
+    getReceive(): Gs2Watch.MissionNamespaceReceiveDistribution | null;
+    setReceive(receive: Gs2Watch.MissionNamespaceReceiveDistribution | null): this;
+    withReceive(receive: Gs2Watch.MissionNamespaceReceiveDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionNamespaceDistributions | null;

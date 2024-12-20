@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Watch from '../../watch/model'
+
 export default class KeyNamespaceStatistics implements IModel {
     private encrypt: number|null = null;
     private decrypt: number|null = null;

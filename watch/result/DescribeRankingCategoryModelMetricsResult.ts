@@ -40,7 +40,7 @@ export default class DescribeRankingCategoryModelMetricsResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Watch.RankingCategoryModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeRankingCategoryModelMetricsResult implements IResul
                 this.getItems()!.map((item: Gs2Watch.RankingCategoryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

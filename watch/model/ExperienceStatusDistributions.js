@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceStatusRankDistribution_1 = tslib_1.__importDefault(require("./ExperienceStatusRankDistribution"));
-var ExperienceStatusRankCapDistribution_1 = tslib_1.__importDefault(require("./ExperienceStatusRankCapDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceStatusDistributions = /** @class */ (function () {
     function ExperienceStatusDistributions() {
         this.rank = null;
@@ -50,8 +49,8 @@ var ExperienceStatusDistributions = /** @class */ (function () {
             return null;
         }
         return new ExperienceStatusDistributions()
-            .withRank(ExperienceStatusRankDistribution_1.default.fromDict(data["rank"]))
-            .withRankCap(ExperienceStatusRankCapDistribution_1.default.fromDict(data["rankCap"]));
+            .withRank(Gs2Watch.ExperienceStatusRankDistribution.fromDict(data["rank"]))
+            .withRankCap(Gs2Watch.ExperienceStatusRankCapDistribution.fromDict(data["rankCap"]));
     };
     ExperienceStatusDistributions.prototype.toDict = function () {
         var _a, _b;

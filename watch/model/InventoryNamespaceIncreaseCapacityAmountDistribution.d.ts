@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import InventoryNamespaceIncreaseCapacityAmountDistributionStatistics from './InventoryNamespaceIncreaseCapacityAmountDistributionStatistics';
-import InventoryNamespaceIncreaseCapacityAmountDistributionSegment from './InventoryNamespaceIncreaseCapacityAmountDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class InventoryNamespaceIncreaseCapacityAmountDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null;
-    setStatistics(statistics: InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null): this;
-    withStatistics(statistics: InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null): this;
-    getDistribution(): InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null;
-    setDistribution(distribution: InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null): this;
-    withDistribution(distribution: InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.InventoryNamespaceIncreaseCapacityAmountDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryNamespaceIncreaseCapacityAmountDistribution | null;

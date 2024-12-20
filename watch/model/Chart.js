@@ -64,7 +64,7 @@ var Chart = /** @class */ (function () {
             .withGroupBys(data.groupBys ?
             data.groupBys.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     Chart.prototype.toDict = function () {
         return {
@@ -73,7 +73,7 @@ var Chart = /** @class */ (function () {
             "groupBys": this.getGroupBys() ?
                 this.getGroupBys().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return Chart;

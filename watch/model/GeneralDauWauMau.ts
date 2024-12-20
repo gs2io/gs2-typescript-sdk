@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import GeneralDauWauMauHistory from './GeneralDauWauMauHistory';
 import GeneralDauWauMauAverage from './GeneralDauWauMauAverage';
 
 export default class GeneralDauWauMau implements IModel {
-    private history: GeneralDauWauMauHistory[]|null = null;
-    private avg: GeneralDauWauMauAverage|null = null;
-    public getHistory(): GeneralDauWauMauHistory[]|null {
+    private history: Gs2Watch.GeneralDauWauMauHistory[]|null = null;
+    private avg: Gs2Watch.GeneralDauWauMauAverage|null = null;
+    public getHistory(): Gs2Watch.GeneralDauWauMauHistory[]|null {
         return this.history;
     }
-    public setHistory(history: GeneralDauWauMauHistory[]|null) {
+    public setHistory(history: Gs2Watch.GeneralDauWauMauHistory[]|null) {
         this.history = history;
         return this;
     }
-    public withHistory(history: GeneralDauWauMauHistory[]|null): this {
+    public withHistory(history: Gs2Watch.GeneralDauWauMauHistory[]|null): this {
         this.history = history;
         return this;
     }
-    public getAvg(): GeneralDauWauMauAverage|null {
+    public getAvg(): Gs2Watch.GeneralDauWauMauAverage|null {
         return this.avg;
     }
-    public setAvg(avg: GeneralDauWauMauAverage|null) {
+    public setAvg(avg: Gs2Watch.GeneralDauWauMauAverage|null) {
         this.avg = avg;
         return this;
     }
-    public withAvg(avg: GeneralDauWauMauAverage|null): this {
+    public withAvg(avg: Gs2Watch.GeneralDauWauMauAverage|null): this {
         this.avg = avg;
         return this;
     }
@@ -51,19 +53,19 @@ export default class GeneralDauWauMau implements IModel {
         return new GeneralDauWauMau()
             .withHistory(data.history ?
                 data.history.map((item: {[key: string]: any}) => {
-                    return GeneralDauWauMauHistory.fromDict(item);
+                    return Gs2Watch.GeneralDauWauMauHistory.fromDict(item);
                 }
-            ) : [])
-            .withAvg(GeneralDauWauMauAverage.fromDict(data["avg"]));
+            ) : null)
+            .withAvg(Gs2Watch.GeneralDauWauMauAverage.fromDict(data["avg"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "history": this.getHistory() ?
-                this.getHistory()!.map((item: GeneralDauWauMauHistory) => {
+                this.getHistory()!.map((item: Gs2Watch.GeneralDauWauMauHistory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "avg": this.getAvg()?.toDict(),
         };
     }

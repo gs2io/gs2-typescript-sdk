@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import AccountNamespaceStatistics from './AccountNamespaceStatistics';
 import AccountNamespaceTypeDistributionStatistics from './AccountNamespaceTypeDistributionStatistics';
 import AccountNamespaceTypeDistributionSegment from './AccountNamespaceTypeDistributionSegment';
@@ -28,8 +30,8 @@ export default class AccountNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: AccountNamespaceStatistics|null = null;
-    private distributions: AccountNamespaceDistributions|null = null;
+    private statistics: Gs2Watch.AccountNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.AccountNamespaceDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -214,25 +216,25 @@ export default class AccountNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): AccountNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.AccountNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: AccountNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.AccountNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: AccountNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.AccountNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): AccountNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.AccountNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: AccountNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.AccountNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: AccountNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.AccountNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -247,8 +249,8 @@ export default class AccountNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(AccountNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(AccountNamespaceDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.AccountNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.AccountNamespaceDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

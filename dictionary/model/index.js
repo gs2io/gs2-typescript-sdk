@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.CurrentEntryMaster = exports.Entry = exports.EntryModelMaster = exports.EntryModel = exports.Namespace = void 0;
+exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.CurrentEntryMaster = exports.Like = exports.Entry = exports.EntryModelMaster = exports.EntryModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ var EntryModelMaster_1 = tslib_1.__importDefault(require("./EntryModelMaster"));
 exports.EntryModelMaster = EntryModelMaster_1.default;
 var Entry_1 = tslib_1.__importDefault(require("./Entry"));
 exports.Entry = Entry_1.default;
+var Like_1 = tslib_1.__importDefault(require("./Like"));
+exports.Like = Like_1.default;
 var CurrentEntryMaster_1 = tslib_1.__importDefault(require("./CurrentEntryMaster"));
 exports.CurrentEntryMaster = CurrentEntryMaster_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));

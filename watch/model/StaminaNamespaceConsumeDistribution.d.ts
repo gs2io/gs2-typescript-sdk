@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import StaminaNamespaceConsumeDistributionStatistics from './StaminaNamespaceConsumeDistributionStatistics';
-import StaminaNamespaceConsumeDistributionSegment from './StaminaNamespaceConsumeDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class StaminaNamespaceConsumeDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): StaminaNamespaceConsumeDistributionStatistics | null;
-    setStatistics(statistics: StaminaNamespaceConsumeDistributionStatistics | null): this;
-    withStatistics(statistics: StaminaNamespaceConsumeDistributionStatistics | null): this;
-    getDistribution(): StaminaNamespaceConsumeDistributionSegment[] | null;
-    setDistribution(distribution: StaminaNamespaceConsumeDistributionSegment[] | null): this;
-    withDistribution(distribution: StaminaNamespaceConsumeDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.StaminaNamespaceConsumeDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.StaminaNamespaceConsumeDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.StaminaNamespaceConsumeDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.StaminaNamespaceConsumeDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.StaminaNamespaceConsumeDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.StaminaNamespaceConsumeDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StaminaNamespaceConsumeDistribution | null;

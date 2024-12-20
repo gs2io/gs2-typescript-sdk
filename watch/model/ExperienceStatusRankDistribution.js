@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ExperienceStatusRankDistributionStatistics_1 = tslib_1.__importDefault(require("./ExperienceStatusRankDistributionStatistics"));
-var ExperienceStatusRankDistributionSegment_1 = tslib_1.__importDefault(require("./ExperienceStatusRankDistributionSegment"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var ExperienceStatusRankDistribution = /** @class */ (function () {
     function ExperienceStatusRankDistribution() {
         this.statistics = null;
@@ -50,11 +49,11 @@ var ExperienceStatusRankDistribution = /** @class */ (function () {
             return null;
         }
         return new ExperienceStatusRankDistribution()
-            .withStatistics(ExperienceStatusRankDistributionStatistics_1.default.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceStatusRankDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return ExperienceStatusRankDistributionSegment_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.ExperienceStatusRankDistributionSegment.fromDict(item);
+            }) : null);
     };
     ExperienceStatusRankDistribution.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var ExperienceStatusRankDistribution = /** @class */ (function () {
             "distribution": this.getDistribution() ?
                 this.getDistribution().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceStatusRankDistribution;

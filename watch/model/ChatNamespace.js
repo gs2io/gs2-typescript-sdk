@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ChatNamespaceStatistics_1 = tslib_1.__importDefault(require("./ChatNamespaceStatistics"));
-var ChatNamespaceDistributions_1 = tslib_1.__importDefault(require("./ChatNamespaceDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:chat:namespace:{namespaceName}";
 var ChatNamespace = /** @class */ (function () {
     function ChatNamespace() {
@@ -224,8 +223,8 @@ var ChatNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(ChatNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(ChatNamespaceDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.ChatNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.ChatNamespaceDistributions.fromDict(data["distributions"]));
     };
     ChatNamespace.prototype.toDict = function () {
         var _a, _b;

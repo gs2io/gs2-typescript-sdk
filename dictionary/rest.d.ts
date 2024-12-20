@@ -39,6 +39,16 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult>;
     deleteEntriesByStampTask(request: Request.DeleteEntriesByStampTaskRequest): Promise<Result.DeleteEntriesByStampTaskResult>;
     verifyEntryByStampTask(request: Request.VerifyEntryByStampTaskRequest): Promise<Result.VerifyEntryByStampTaskResult>;
+    describeLikes(request: Request.DescribeLikesRequest): Promise<Result.DescribeLikesResult>;
+    describeLikesByUserId(request: Request.DescribeLikesByUserIdRequest): Promise<Result.DescribeLikesByUserIdResult>;
+    addLikes(request: Request.AddLikesRequest): Promise<Result.AddLikesResult>;
+    addLikesByUserId(request: Request.AddLikesByUserIdRequest): Promise<Result.AddLikesByUserIdResult>;
+    getLike(request: Request.GetLikeRequest): Promise<Result.GetLikeResult>;
+    getLikeByUserId(request: Request.GetLikeByUserIdRequest): Promise<Result.GetLikeByUserIdResult>;
+    resetLikes(request: Request.ResetLikesRequest): Promise<Result.ResetLikesResult>;
+    resetLikesByUserId(request: Request.ResetLikesByUserIdRequest): Promise<Result.ResetLikesByUserIdResult>;
+    deleteLikes(request: Request.DeleteLikesRequest): Promise<Result.DeleteLikesResult>;
+    deleteLikesByUserId(request: Request.DeleteLikesByUserIdRequest): Promise<Result.DeleteLikesByUserIdResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentEntryMaster(request: Request.GetCurrentEntryMasterRequest): Promise<Result.GetCurrentEntryMasterResult>;
     updateCurrentEntryMaster(request: Request.UpdateCurrentEntryMasterRequest): Promise<Result.UpdateCurrentEntryMasterResult>;

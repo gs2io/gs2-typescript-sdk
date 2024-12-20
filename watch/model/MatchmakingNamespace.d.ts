@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MatchmakingNamespaceStatistics from './MatchmakingNamespaceStatistics';
-import MatchmakingNamespaceDistributions from './MatchmakingNamespaceDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class MatchmakingNamespace implements IModel {
     private namespaceId;
     private year;
@@ -32,12 +31,12 @@ export default class MatchmakingNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): MatchmakingNamespaceStatistics | null;
-    setStatistics(statistics: MatchmakingNamespaceStatistics | null): this;
-    withStatistics(statistics: MatchmakingNamespaceStatistics | null): this;
-    getDistributions(): MatchmakingNamespaceDistributions | null;
-    setDistributions(distributions: MatchmakingNamespaceDistributions | null): this;
-    withDistributions(distributions: MatchmakingNamespaceDistributions | null): this;
+    getStatistics(): Gs2Watch.MatchmakingNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.MatchmakingNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MatchmakingNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.MatchmakingNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.MatchmakingNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MatchmakingNamespaceDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MatchmakingNamespace | null;

@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics from './ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics';
 import ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment from './ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment';
 
 export default class ExperienceExperienceModelAddRankCapAmountByUserDistribution implements IModel {
-    private statistics: ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null = null;
-    private distribution: ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null = null;
-    public getStatistics(): ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExperienceExperienceModelAddRankCapAmountByUserDistribution
             return null;
         }
         return new ExperienceExperienceModelAddRankCapAmountByUserDistribution()
-            .withStatistics(ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExperienceExperienceModelAddRankCapAmountByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import FormationFormStatistics from './FormationFormStatistics';
-import FormationFormDistributions from './FormationFormDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class FormationForm implements IModel {
     private formId;
     private index;
@@ -22,12 +21,12 @@ export default class FormationForm implements IModel {
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;
-    getStatistics(): FormationFormStatistics | null;
-    setStatistics(statistics: FormationFormStatistics | null): this;
-    withStatistics(statistics: FormationFormStatistics | null): this;
-    getDistributions(): FormationFormDistributions | null;
-    setDistributions(distributions: FormationFormDistributions | null): this;
-    withDistributions(distributions: FormationFormDistributions | null): this;
+    getStatistics(): Gs2Watch.FormationFormStatistics | null;
+    setStatistics(statistics: Gs2Watch.FormationFormStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FormationFormStatistics | null): this;
+    getDistributions(): Gs2Watch.FormationFormDistributions | null;
+    setDistributions(distributions: Gs2Watch.FormationFormDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.FormationFormDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FormationForm | null;

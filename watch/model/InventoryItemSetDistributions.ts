@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import InventoryItemSetCountDistributionStatistics from './InventoryItemSetCountDistributionStatistics';
 import InventoryItemSetCountDistributionSegment from './InventoryItemSetCountDistributionSegment';
 import InventoryItemSetCountDistribution from './InventoryItemSetCountDistribution';
 
 export default class InventoryItemSetDistributions implements IModel {
-    private count: InventoryItemSetCountDistribution|null = null;
-    public getCount(): InventoryItemSetCountDistribution|null {
+    private count: Gs2Watch.InventoryItemSetCountDistribution|null = null;
+    public getCount(): Gs2Watch.InventoryItemSetCountDistribution|null {
         return this.count;
     }
-    public setCount(count: InventoryItemSetCountDistribution|null) {
+    public setCount(count: Gs2Watch.InventoryItemSetCountDistribution|null) {
         this.count = count;
         return this;
     }
-    public withCount(count: InventoryItemSetCountDistribution|null): this {
+    public withCount(count: Gs2Watch.InventoryItemSetCountDistribution|null): this {
         this.count = count;
         return this;
     }
@@ -38,7 +40,7 @@ export default class InventoryItemSetDistributions implements IModel {
             return null;
         }
         return new InventoryItemSetDistributions()
-            .withCount(InventoryItemSetCountDistribution.fromDict(data["count"]));
+            .withCount(Gs2Watch.InventoryItemSetCountDistribution.fromDict(data["count"]));
     }
 
     public toDict(): {[key: string]: any} {

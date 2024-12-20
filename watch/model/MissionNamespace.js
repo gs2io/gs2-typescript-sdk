@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionNamespaceStatistics_1 = tslib_1.__importDefault(require("./MissionNamespaceStatistics"));
-var MissionNamespaceDistributions_1 = tslib_1.__importDefault(require("./MissionNamespaceDistributions"));
-var MissionMissionGroupModel_1 = tslib_1.__importDefault(require("./MissionMissionGroupModel"));
-var MissionCounter_1 = tslib_1.__importDefault(require("./MissionCounter"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:mission:namespace:{namespaceName}";
 var MissionNamespace = /** @class */ (function () {
     function MissionNamespace() {
@@ -250,16 +247,16 @@ var MissionNamespace = /** @class */ (function () {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MissionNamespaceStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(MissionNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.MissionNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MissionNamespaceDistributions.fromDict(data["distributions"]))
             .withMissionGroupModels(data.missionGroupModels ?
             data.missionGroupModels.map(function (item) {
-                return MissionMissionGroupModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Watch.MissionMissionGroupModel.fromDict(item);
+            }) : null)
             .withCounters(data.counters ?
             data.counters.map(function (item) {
-                return MissionCounter_1.default.fromDict(item);
-            }) : []);
+                return Gs2Watch.MissionCounter.fromDict(item);
+            }) : null);
     };
     MissionNamespace.prototype.toDict = function () {
         var _a, _b;
@@ -274,11 +271,11 @@ var MissionNamespace = /** @class */ (function () {
             "missionGroupModels": this.getMissionGroupModels() ?
                 this.getMissionGroupModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "counters": this.getCounters() ?
                 this.getCounters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return MissionNamespace;

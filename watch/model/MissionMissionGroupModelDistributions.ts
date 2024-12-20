@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MissionMissionGroupModelReceiveDistributionStatistics from './MissionMissionGroupModelReceiveDistributionStatistics';
 import MissionMissionGroupModelReceiveDistributionSegment from './MissionMissionGroupModelReceiveDistributionSegment';
 import MissionMissionGroupModelReceiveDistribution from './MissionMissionGroupModelReceiveDistribution';
 
 export default class MissionMissionGroupModelDistributions implements IModel {
-    private receive: MissionMissionGroupModelReceiveDistribution|null = null;
-    public getReceive(): MissionMissionGroupModelReceiveDistribution|null {
+    private receive: Gs2Watch.MissionMissionGroupModelReceiveDistribution|null = null;
+    public getReceive(): Gs2Watch.MissionMissionGroupModelReceiveDistribution|null {
         return this.receive;
     }
-    public setReceive(receive: MissionMissionGroupModelReceiveDistribution|null) {
+    public setReceive(receive: Gs2Watch.MissionMissionGroupModelReceiveDistribution|null) {
         this.receive = receive;
         return this;
     }
-    public withReceive(receive: MissionMissionGroupModelReceiveDistribution|null): this {
+    public withReceive(receive: Gs2Watch.MissionMissionGroupModelReceiveDistribution|null): this {
         this.receive = receive;
         return this;
     }
@@ -38,7 +40,7 @@ export default class MissionMissionGroupModelDistributions implements IModel {
             return null;
         }
         return new MissionMissionGroupModelDistributions()
-            .withReceive(MissionMissionGroupModelReceiveDistribution.fromDict(data["receive"]));
+            .withReceive(Gs2Watch.MissionMissionGroupModelReceiveDistribution.fromDict(data["receive"]));
     }
 
     public toDict(): {[key: string]: any} {

@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import QuestQuestGroupModelQuestDistributionStatistics from './QuestQuestGroupModelQuestDistributionStatistics';
-import QuestQuestGroupModelQuestDistributionSegment from './QuestQuestGroupModelQuestDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class QuestQuestGroupModelQuestDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): QuestQuestGroupModelQuestDistributionStatistics | null;
-    setStatistics(statistics: QuestQuestGroupModelQuestDistributionStatistics | null): this;
-    withStatistics(statistics: QuestQuestGroupModelQuestDistributionStatistics | null): this;
-    getDistribution(): QuestQuestGroupModelQuestDistributionSegment[] | null;
-    setDistribution(distribution: QuestQuestGroupModelQuestDistributionSegment[] | null): this;
-    withDistribution(distribution: QuestQuestGroupModelQuestDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.QuestQuestGroupModelQuestDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.QuestQuestGroupModelQuestDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.QuestQuestGroupModelQuestDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.QuestQuestGroupModelQuestDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.QuestQuestGroupModelQuestDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.QuestQuestGroupModelQuestDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QuestQuestGroupModelQuestDistribution | null;

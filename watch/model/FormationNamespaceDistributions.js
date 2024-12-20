@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationNamespaceUpdateByMoldDistribution_1 = tslib_1.__importDefault(require("./FormationNamespaceUpdateByMoldDistribution"));
-var FormationNamespaceIncreaseCapacityByMoldDistribution_1 = tslib_1.__importDefault(require("./FormationNamespaceIncreaseCapacityByMoldDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FormationNamespaceDistributions = /** @class */ (function () {
     function FormationNamespaceDistributions() {
         this.updateByMold = null;
@@ -50,8 +49,8 @@ var FormationNamespaceDistributions = /** @class */ (function () {
             return null;
         }
         return new FormationNamespaceDistributions()
-            .withUpdateByMold(FormationNamespaceUpdateByMoldDistribution_1.default.fromDict(data["updateByMold"]))
-            .withIncreaseCapacityByMold(FormationNamespaceIncreaseCapacityByMoldDistribution_1.default.fromDict(data["increaseCapacityByMold"]));
+            .withUpdateByMold(Gs2Watch.FormationNamespaceUpdateByMoldDistribution.fromDict(data["updateByMold"]))
+            .withIncreaseCapacityByMold(Gs2Watch.FormationNamespaceIncreaseCapacityByMoldDistribution.fromDict(data["increaseCapacityByMold"]));
     };
     FormationNamespaceDistributions.prototype.toDict = function () {
         var _a, _b;

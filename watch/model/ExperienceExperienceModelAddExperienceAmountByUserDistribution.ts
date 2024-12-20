@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics from './ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics';
 import ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment from './ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment';
 
 export default class ExperienceExperienceModelAddExperienceAmountByUserDistribution implements IModel {
-    private statistics: ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null = null;
-    private distribution: ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null = null;
-    public getStatistics(): ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExperienceExperienceModelAddExperienceAmountByUserDistribut
             return null;
         }
         return new ExperienceExperienceModelAddExperienceAmountByUserDistribution()
-            .withStatistics(ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExperienceExperienceModelAddExperienceAmountByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

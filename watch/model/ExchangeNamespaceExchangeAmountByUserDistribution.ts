@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import ExchangeNamespaceExchangeAmountByUserDistributionStatistics from './ExchangeNamespaceExchangeAmountByUserDistributionStatistics';
 import ExchangeNamespaceExchangeAmountByUserDistributionSegment from './ExchangeNamespaceExchangeAmountByUserDistributionSegment';
 
 export default class ExchangeNamespaceExchangeAmountByUserDistribution implements IModel {
-    private statistics: ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null = null;
-    private distribution: ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null = null;
-    public getStatistics(): ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null {
+    private statistics: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null = null;
+    private distribution: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class ExchangeNamespaceExchangeAmountByUserDistribution implement
             return null;
         }
         return new ExchangeNamespaceExchangeAmountByUserDistribution()
-            .withStatistics(ExchangeNamespaceExchangeAmountByUserDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return ExchangeNamespaceExchangeAmountByUserDistributionSegment.fromDict(item);
+                    return Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: ExchangeNamespaceExchangeAmountByUserDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.ExchangeNamespaceExchangeAmountByUserDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

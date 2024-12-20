@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyWalletStatistics_1 = tslib_1.__importDefault(require("./MoneyWalletStatistics"));
-var MoneyWalletDistributions_1 = tslib_1.__importDefault(require("./MoneyWalletDistributions"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:money:namespace:{namespaceName}:receipt:{contentsId}:wallet:{slot}";
 var MoneyWallet = /** @class */ (function () {
     function MoneyWallet() {
@@ -235,8 +234,8 @@ var MoneyWallet = /** @class */ (function () {
         return new MoneyWallet()
             .withWalletId(data["walletId"])
             .withSlot(data["slot"])
-            .withStatistics(MoneyWalletStatistics_1.default.fromDict(data["statistics"]))
-            .withDistributions(MoneyWalletDistributions_1.default.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MoneyWalletStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyWalletDistributions.fromDict(data["distributions"]));
     };
     MoneyWallet.prototype.toDict = function () {
         var _a, _b;

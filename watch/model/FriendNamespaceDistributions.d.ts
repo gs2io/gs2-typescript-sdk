@@ -1,25 +1,22 @@
 import IModel from '../../core/interface/IModel';
-import FriendNamespaceAcceptByUserDistribution from './FriendNamespaceAcceptByUserDistribution';
-import FriendNamespaceRejectByUserDistribution from './FriendNamespaceRejectByUserDistribution';
-import FriendNamespaceSendRequestByUserDistribution from './FriendNamespaceSendRequestByUserDistribution';
-import FriendNamespaceNewFollowByUserDistribution from './FriendNamespaceNewFollowByUserDistribution';
+import * as Gs2Watch from '../../watch/model';
 export default class FriendNamespaceDistributions implements IModel {
     private acceptByUser;
     private rejectByUser;
     private sendRequestByUser;
     private newFollowByUser;
-    getAcceptByUser(): FriendNamespaceAcceptByUserDistribution | null;
-    setAcceptByUser(acceptByUser: FriendNamespaceAcceptByUserDistribution | null): this;
-    withAcceptByUser(acceptByUser: FriendNamespaceAcceptByUserDistribution | null): this;
-    getRejectByUser(): FriendNamespaceRejectByUserDistribution | null;
-    setRejectByUser(rejectByUser: FriendNamespaceRejectByUserDistribution | null): this;
-    withRejectByUser(rejectByUser: FriendNamespaceRejectByUserDistribution | null): this;
-    getSendRequestByUser(): FriendNamespaceSendRequestByUserDistribution | null;
-    setSendRequestByUser(sendRequestByUser: FriendNamespaceSendRequestByUserDistribution | null): this;
-    withSendRequestByUser(sendRequestByUser: FriendNamespaceSendRequestByUserDistribution | null): this;
-    getNewFollowByUser(): FriendNamespaceNewFollowByUserDistribution | null;
-    setNewFollowByUser(newFollowByUser: FriendNamespaceNewFollowByUserDistribution | null): this;
-    withNewFollowByUser(newFollowByUser: FriendNamespaceNewFollowByUserDistribution | null): this;
+    getAcceptByUser(): Gs2Watch.FriendNamespaceAcceptByUserDistribution | null;
+    setAcceptByUser(acceptByUser: Gs2Watch.FriendNamespaceAcceptByUserDistribution | null): this;
+    withAcceptByUser(acceptByUser: Gs2Watch.FriendNamespaceAcceptByUserDistribution | null): this;
+    getRejectByUser(): Gs2Watch.FriendNamespaceRejectByUserDistribution | null;
+    setRejectByUser(rejectByUser: Gs2Watch.FriendNamespaceRejectByUserDistribution | null): this;
+    withRejectByUser(rejectByUser: Gs2Watch.FriendNamespaceRejectByUserDistribution | null): this;
+    getSendRequestByUser(): Gs2Watch.FriendNamespaceSendRequestByUserDistribution | null;
+    setSendRequestByUser(sendRequestByUser: Gs2Watch.FriendNamespaceSendRequestByUserDistribution | null): this;
+    withSendRequestByUser(sendRequestByUser: Gs2Watch.FriendNamespaceSendRequestByUserDistribution | null): this;
+    getNewFollowByUser(): Gs2Watch.FriendNamespaceNewFollowByUserDistribution | null;
+    setNewFollowByUser(newFollowByUser: Gs2Watch.FriendNamespaceNewFollowByUserDistribution | null): this;
+    withNewFollowByUser(newFollowByUser: Gs2Watch.FriendNamespaceNewFollowByUserDistribution | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FriendNamespaceDistributions | null;

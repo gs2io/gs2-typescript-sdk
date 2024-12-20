@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import FriendNamespaceRejectByUserDistributionStatistics from './FriendNamespaceRejectByUserDistributionStatistics';
-import FriendNamespaceRejectByUserDistributionSegment from './FriendNamespaceRejectByUserDistributionSegment';
+import * as Gs2Watch from '../../watch/model';
 export default class FriendNamespaceRejectByUserDistribution implements IModel {
     private statistics;
     private distribution;
-    getStatistics(): FriendNamespaceRejectByUserDistributionStatistics | null;
-    setStatistics(statistics: FriendNamespaceRejectByUserDistributionStatistics | null): this;
-    withStatistics(statistics: FriendNamespaceRejectByUserDistributionStatistics | null): this;
-    getDistribution(): FriendNamespaceRejectByUserDistributionSegment[] | null;
-    setDistribution(distribution: FriendNamespaceRejectByUserDistributionSegment[] | null): this;
-    withDistribution(distribution: FriendNamespaceRejectByUserDistributionSegment[] | null): this;
+    getStatistics(): Gs2Watch.FriendNamespaceRejectByUserDistributionStatistics | null;
+    setStatistics(statistics: Gs2Watch.FriendNamespaceRejectByUserDistributionStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.FriendNamespaceRejectByUserDistributionStatistics | null): this;
+    getDistribution(): Gs2Watch.FriendNamespaceRejectByUserDistributionSegment[] | null;
+    setDistribution(distribution: Gs2Watch.FriendNamespaceRejectByUserDistributionSegment[] | null): this;
+    withDistribution(distribution: Gs2Watch.FriendNamespaceRejectByUserDistributionSegment[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FriendNamespaceRejectByUserDistribution | null;

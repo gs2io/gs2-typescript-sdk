@@ -15,32 +15,34 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import FirstEngagementStatisticsLoginDays from './FirstEngagementStatisticsLoginDays';
 import FirstEngagementStatistics from './FirstEngagementStatistics';
 import FirstEngagementDistributionSegment from './FirstEngagementDistributionSegment';
 
 export default class FirstEngagement implements IModel {
-    private statistics: FirstEngagementStatistics|null = null;
-    private distribution: FirstEngagementDistributionSegment[]|null = null;
-    public getStatistics(): FirstEngagementStatistics|null {
+    private statistics: Gs2Watch.FirstEngagementStatistics|null = null;
+    private distribution: Gs2Watch.FirstEngagementDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.FirstEngagementStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: FirstEngagementStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.FirstEngagementStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: FirstEngagementStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.FirstEngagementStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): FirstEngagementDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.FirstEngagementDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: FirstEngagementDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.FirstEngagementDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: FirstEngagementDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.FirstEngagementDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -50,22 +52,22 @@ export default class FirstEngagement implements IModel {
             return null;
         }
         return new FirstEngagement()
-            .withStatistics(FirstEngagementStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.FirstEngagementStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return FirstEngagementDistributionSegment.fromDict(item);
+                    return Gs2Watch.FirstEngagementDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: FirstEngagementDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.FirstEngagementDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

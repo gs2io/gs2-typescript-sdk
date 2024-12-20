@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MoneyReceiptStatistics from './MoneyReceiptStatistics';
-import MoneyReceiptDistributions from './MoneyReceiptDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class MoneyReceipt implements IModel {
     private receiptId;
     private contentsId;
@@ -21,12 +20,12 @@ export default class MoneyReceipt implements IModel {
     getContentsId(): string | null;
     setContentsId(contentsId: string | null): this;
     withContentsId(contentsId: string | null): this;
-    getStatistics(): MoneyReceiptStatistics | null;
-    setStatistics(statistics: MoneyReceiptStatistics | null): this;
-    withStatistics(statistics: MoneyReceiptStatistics | null): this;
-    getDistributions(): MoneyReceiptDistributions | null;
-    setDistributions(distributions: MoneyReceiptDistributions | null): this;
-    withDistributions(distributions: MoneyReceiptDistributions | null): this;
+    getStatistics(): Gs2Watch.MoneyReceiptStatistics | null;
+    setStatistics(statistics: Gs2Watch.MoneyReceiptStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.MoneyReceiptStatistics | null): this;
+    getDistributions(): Gs2Watch.MoneyReceiptDistributions | null;
+    setDistributions(distributions: Gs2Watch.MoneyReceiptDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.MoneyReceiptDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoneyReceipt | null;

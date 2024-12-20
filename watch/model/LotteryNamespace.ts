@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import LotteryNamespaceStatistics from './LotteryNamespaceStatistics';
 import LotteryNamespaceDrawDistributionStatistics from './LotteryNamespaceDrawDistributionStatistics';
 import LotteryNamespaceDrawDistributionSegment from './LotteryNamespaceDrawDistributionSegment';
@@ -43,9 +45,9 @@ export default class LotteryNamespace implements IModel {
     private month: number|null = null;
     private day: number|null = null;
     private namespaceName: string|null = null;
-    private statistics: LotteryNamespaceStatistics|null = null;
-    private distributions: LotteryNamespaceDistributions|null = null;
-    private lotteries: LotteryLottery[]|null = null;
+    private statistics: Gs2Watch.LotteryNamespaceStatistics|null = null;
+    private distributions: Gs2Watch.LotteryNamespaceDistributions|null = null;
+    private lotteries: Gs2Watch.LotteryLottery[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -230,36 +232,36 @@ export default class LotteryNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getStatistics(): LotteryNamespaceStatistics|null {
+    public getStatistics(): Gs2Watch.LotteryNamespaceStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: LotteryNamespaceStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.LotteryNamespaceStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: LotteryNamespaceStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.LotteryNamespaceStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): LotteryNamespaceDistributions|null {
+    public getDistributions(): Gs2Watch.LotteryNamespaceDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: LotteryNamespaceDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.LotteryNamespaceDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: LotteryNamespaceDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.LotteryNamespaceDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
-    public getLotteries(): LotteryLottery[]|null {
+    public getLotteries(): Gs2Watch.LotteryLottery[]|null {
         return this.lotteries;
     }
-    public setLotteries(lotteries: LotteryLottery[]|null) {
+    public setLotteries(lotteries: Gs2Watch.LotteryLottery[]|null) {
         this.lotteries = lotteries;
         return this;
     }
-    public withLotteries(lotteries: LotteryLottery[]|null): this {
+    public withLotteries(lotteries: Gs2Watch.LotteryLottery[]|null): this {
         this.lotteries = lotteries;
         return this;
     }
@@ -274,13 +276,13 @@ export default class LotteryNamespace implements IModel {
             .withMonth(data["month"])
             .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(LotteryNamespaceStatistics.fromDict(data["statistics"]))
-            .withDistributions(LotteryNamespaceDistributions.fromDict(data["distributions"]))
+            .withStatistics(Gs2Watch.LotteryNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.LotteryNamespaceDistributions.fromDict(data["distributions"]))
             .withLotteries(data.lotteries ?
                 data.lotteries.map((item: {[key: string]: any}) => {
-                    return LotteryLottery.fromDict(item);
+                    return Gs2Watch.LotteryLottery.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -293,10 +295,10 @@ export default class LotteryNamespace implements IModel {
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "lotteries": this.getLotteries() ?
-                this.getLotteries()!.map((item: LotteryLottery) => {
+                this.getLotteries()!.map((item: Gs2Watch.LotteryLottery) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

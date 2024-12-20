@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import StaminaNamespaceStatistics from './StaminaNamespaceStatistics';
-import StaminaNamespaceDistributions from './StaminaNamespaceDistributions';
-import StaminaStaminaModel from './StaminaStaminaModel';
+import * as Gs2Watch from '../../watch/model';
 export default class StaminaNamespace implements IModel {
     private namespaceId;
     private year;
@@ -34,15 +32,15 @@ export default class StaminaNamespace implements IModel {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getStatistics(): StaminaNamespaceStatistics | null;
-    setStatistics(statistics: StaminaNamespaceStatistics | null): this;
-    withStatistics(statistics: StaminaNamespaceStatistics | null): this;
-    getDistributions(): StaminaNamespaceDistributions | null;
-    setDistributions(distributions: StaminaNamespaceDistributions | null): this;
-    withDistributions(distributions: StaminaNamespaceDistributions | null): this;
-    getStaminaModels(): StaminaStaminaModel[] | null;
-    setStaminaModels(staminaModels: StaminaStaminaModel[] | null): this;
-    withStaminaModels(staminaModels: StaminaStaminaModel[] | null): this;
+    getStatistics(): Gs2Watch.StaminaNamespaceStatistics | null;
+    setStatistics(statistics: Gs2Watch.StaminaNamespaceStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.StaminaNamespaceStatistics | null): this;
+    getDistributions(): Gs2Watch.StaminaNamespaceDistributions | null;
+    setDistributions(distributions: Gs2Watch.StaminaNamespaceDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.StaminaNamespaceDistributions | null): this;
+    getStaminaModels(): Gs2Watch.StaminaStaminaModel[] | null;
+    setStaminaModels(staminaModels: Gs2Watch.StaminaStaminaModel[] | null): this;
+    withStaminaModels(staminaModels: Gs2Watch.StaminaStaminaModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StaminaNamespace | null;

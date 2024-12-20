@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyWalletStatistics from './MoneyWalletStatistics';
 import MoneyWalletFreeDistributionStatistics from './MoneyWalletFreeDistributionStatistics';
 import MoneyWalletFreeDistributionSegment from './MoneyWalletFreeDistributionSegment';
@@ -28,8 +30,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 export default class MoneyWallet implements IModel {
     private walletId: string|null = null;
     private slot: number|null = null;
-    private statistics: MoneyWalletStatistics|null = null;
-    private distributions: MoneyWalletDistributions|null = null;
+    private statistics: Gs2Watch.MoneyWalletStatistics|null = null;
+    private distributions: Gs2Watch.MoneyWalletDistributions|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -237,25 +239,25 @@ export default class MoneyWallet implements IModel {
         this.slot = slot;
         return this;
     }
-    public getStatistics(): MoneyWalletStatistics|null {
+    public getStatistics(): Gs2Watch.MoneyWalletStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyWalletStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyWalletStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyWalletStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyWalletStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistributions(): MoneyWalletDistributions|null {
+    public getDistributions(): Gs2Watch.MoneyWalletDistributions|null {
         return this.distributions;
     }
-    public setDistributions(distributions: MoneyWalletDistributions|null) {
+    public setDistributions(distributions: Gs2Watch.MoneyWalletDistributions|null) {
         this.distributions = distributions;
         return this;
     }
-    public withDistributions(distributions: MoneyWalletDistributions|null): this {
+    public withDistributions(distributions: Gs2Watch.MoneyWalletDistributions|null): this {
         this.distributions = distributions;
         return this;
     }
@@ -267,8 +269,8 @@ export default class MoneyWallet implements IModel {
         return new MoneyWallet()
             .withWalletId(data["walletId"])
             .withSlot(data["slot"])
-            .withStatistics(MoneyWalletStatistics.fromDict(data["statistics"]))
-            .withDistributions(MoneyWalletDistributions.fromDict(data["distributions"]));
+            .withStatistics(Gs2Watch.MoneyWalletStatistics.fromDict(data["statistics"]))
+            .withDistributions(Gs2Watch.MoneyWalletDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {

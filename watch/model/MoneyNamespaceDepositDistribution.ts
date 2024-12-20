@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Watch from '../../watch/model'
 import MoneyNamespaceDepositDistributionStatistics from './MoneyNamespaceDepositDistributionStatistics';
 import MoneyNamespaceDepositDistributionSegment from './MoneyNamespaceDepositDistributionSegment';
 
 export default class MoneyNamespaceDepositDistribution implements IModel {
-    private statistics: MoneyNamespaceDepositDistributionStatistics|null = null;
-    private distribution: MoneyNamespaceDepositDistributionSegment[]|null = null;
-    public getStatistics(): MoneyNamespaceDepositDistributionStatistics|null {
+    private statistics: Gs2Watch.MoneyNamespaceDepositDistributionStatistics|null = null;
+    private distribution: Gs2Watch.MoneyNamespaceDepositDistributionSegment[]|null = null;
+    public getStatistics(): Gs2Watch.MoneyNamespaceDepositDistributionStatistics|null {
         return this.statistics;
     }
-    public setStatistics(statistics: MoneyNamespaceDepositDistributionStatistics|null) {
+    public setStatistics(statistics: Gs2Watch.MoneyNamespaceDepositDistributionStatistics|null) {
         this.statistics = statistics;
         return this;
     }
-    public withStatistics(statistics: MoneyNamespaceDepositDistributionStatistics|null): this {
+    public withStatistics(statistics: Gs2Watch.MoneyNamespaceDepositDistributionStatistics|null): this {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): MoneyNamespaceDepositDistributionSegment[]|null {
+    public getDistribution(): Gs2Watch.MoneyNamespaceDepositDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: MoneyNamespaceDepositDistributionSegment[]|null) {
+    public setDistribution(distribution: Gs2Watch.MoneyNamespaceDepositDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: MoneyNamespaceDepositDistributionSegment[]|null): this {
+    public withDistribution(distribution: Gs2Watch.MoneyNamespaceDepositDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -49,22 +51,22 @@ export default class MoneyNamespaceDepositDistribution implements IModel {
             return null;
         }
         return new MoneyNamespaceDepositDistribution()
-            .withStatistics(MoneyNamespaceDepositDistributionStatistics.fromDict(data["statistics"]))
+            .withStatistics(Gs2Watch.MoneyNamespaceDepositDistributionStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return MoneyNamespaceDepositDistributionSegment.fromDict(item);
+                    return Gs2Watch.MoneyNamespaceDepositDistributionSegment.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: MoneyNamespaceDepositDistributionSegment) => {
+                this.getDistribution()!.map((item: Gs2Watch.MoneyNamespaceDepositDistributionSegment) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

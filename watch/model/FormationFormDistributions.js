@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormationFormSlotDistribution_1 = tslib_1.__importDefault(require("./FormationFormSlotDistribution"));
-var FormationFormUsageDistribution_1 = tslib_1.__importDefault(require("./FormationFormUsageDistribution"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var FormationFormDistributions = /** @class */ (function () {
     function FormationFormDistributions() {
         this.slot = null;
@@ -50,8 +49,8 @@ var FormationFormDistributions = /** @class */ (function () {
             return null;
         }
         return new FormationFormDistributions()
-            .withSlot(FormationFormSlotDistribution_1.default.fromDict(data["slot"]))
-            .withUsage(FormationFormUsageDistribution_1.default.fromDict(data["usage"]));
+            .withSlot(Gs2Watch.FormationFormSlotDistribution.fromDict(data["slot"]))
+            .withUsage(Gs2Watch.FormationFormUsageDistribution.fromDict(data["usage"]));
     };
     FormationFormDistributions.prototype.toDict = function () {
         var _a, _b;

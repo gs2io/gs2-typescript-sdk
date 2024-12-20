@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var GeneralDauWauMauHistory_1 = tslib_1.__importDefault(require("./GeneralDauWauMauHistory"));
-var GeneralDauWauMauAverage_1 = tslib_1.__importDefault(require("./GeneralDauWauMauAverage"));
+var Gs2Watch = tslib_1.__importStar(require("../../watch/model"));
 var GeneralDauWauMau = /** @class */ (function () {
     function GeneralDauWauMau() {
         this.history = null;
@@ -52,9 +51,9 @@ var GeneralDauWauMau = /** @class */ (function () {
         return new GeneralDauWauMau()
             .withHistory(data.history ?
             data.history.map(function (item) {
-                return GeneralDauWauMauHistory_1.default.fromDict(item);
-            }) : [])
-            .withAvg(GeneralDauWauMauAverage_1.default.fromDict(data["avg"]));
+                return Gs2Watch.GeneralDauWauMauHistory.fromDict(item);
+            }) : null)
+            .withAvg(Gs2Watch.GeneralDauWauMauAverage.fromDict(data["avg"]));
     };
     GeneralDauWauMau.prototype.toDict = function () {
         var _a;
@@ -62,7 +61,7 @@ var GeneralDauWauMau = /** @class */ (function () {
             "history": this.getHistory() ?
                 this.getHistory().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "avg": (_a = this.getAvg()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };

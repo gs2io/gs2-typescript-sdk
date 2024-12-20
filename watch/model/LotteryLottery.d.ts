@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LotteryLotteryStatistics from './LotteryLotteryStatistics';
-import LotteryLotteryDistributions from './LotteryLotteryDistributions';
+import * as Gs2Watch from '../../watch/model';
 export default class LotteryLottery implements IModel {
     private lotteryId;
     private lotteryName;
@@ -21,12 +20,12 @@ export default class LotteryLottery implements IModel {
     getLotteryName(): string | null;
     setLotteryName(lotteryName: string | null): this;
     withLotteryName(lotteryName: string | null): this;
-    getStatistics(): LotteryLotteryStatistics | null;
-    setStatistics(statistics: LotteryLotteryStatistics | null): this;
-    withStatistics(statistics: LotteryLotteryStatistics | null): this;
-    getDistributions(): LotteryLotteryDistributions | null;
-    setDistributions(distributions: LotteryLotteryDistributions | null): this;
-    withDistributions(distributions: LotteryLotteryDistributions | null): this;
+    getStatistics(): Gs2Watch.LotteryLotteryStatistics | null;
+    setStatistics(statistics: Gs2Watch.LotteryLotteryStatistics | null): this;
+    withStatistics(statistics: Gs2Watch.LotteryLotteryStatistics | null): this;
+    getDistributions(): Gs2Watch.LotteryLotteryDistributions | null;
+    setDistributions(distributions: Gs2Watch.LotteryLotteryDistributions | null): this;
+    withDistributions(distributions: Gs2Watch.LotteryLotteryDistributions | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LotteryLottery | null;
