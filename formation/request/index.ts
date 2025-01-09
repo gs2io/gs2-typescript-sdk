@@ -69,6 +69,7 @@ import GetFormRequest from "./GetFormRequest"
 import GetFormByUserIdRequest from "./GetFormByUserIdRequest"
 import GetFormWithSignatureRequest from "./GetFormWithSignatureRequest"
 import GetFormWithSignatureByUserIdRequest from "./GetFormWithSignatureByUserIdRequest"
+import SetFormRequest from "./SetFormRequest"
 import SetFormByUserIdRequest from "./SetFormByUserIdRequest"
 import SetFormWithSignatureRequest from "./SetFormWithSignatureRequest"
 import AcquireActionsToFormPropertiesRequest from "./AcquireActionsToFormPropertiesRequest"
@@ -146,6 +147,7 @@ export {
     GetFormByUserIdRequest,
     GetFormWithSignatureRequest,
     GetFormWithSignatureByUserIdRequest,
+    SetFormRequest,
     SetFormByUserIdRequest,
     SetFormWithSignatureRequest,
     AcquireActionsToFormPropertiesRequest,

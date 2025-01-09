@@ -69,6 +69,7 @@ import GetFormResult from "./GetFormResult"
 import GetFormByUserIdResult from "./GetFormByUserIdResult"
 import GetFormWithSignatureResult from "./GetFormWithSignatureResult"
 import GetFormWithSignatureByUserIdResult from "./GetFormWithSignatureByUserIdResult"
+import SetFormResult from "./SetFormResult"
 import SetFormByUserIdResult from "./SetFormByUserIdResult"
 import SetFormWithSignatureResult from "./SetFormWithSignatureResult"
 import AcquireActionsToFormPropertiesResult from "./AcquireActionsToFormPropertiesResult"
@@ -146,6 +147,7 @@ export {
     GetFormByUserIdResult,
     GetFormWithSignatureResult,
     GetFormWithSignatureByUserIdResult,
+    SetFormResult,
     SetFormByUserIdResult,
     SetFormWithSignatureResult,
     AcquireActionsToFormPropertiesResult,

@@ -1449,6 +1449,81 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public applyStamina(request: Request.ApplyStaminaRequest): Promise<Result.ApplyStaminaResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/apply')
+            .replace('{service}', 'stamina')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{staminaName}', String(request.getStaminaName() ?? 'null') === "" ? "null" : String(request.getStaminaName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ApplyStaminaResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public applyStaminaByUserId(request: Request.ApplyStaminaByUserIdRequest): Promise<Result.ApplyStaminaByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/apply')
+            .replace('{service}', 'stamina')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{staminaName}', String(request.getStaminaName() ?? 'null') === "" ? "null" : String(request.getStaminaName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ApplyStaminaByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public recoverStaminaByUserId(request: Request.RecoverStaminaByUserIdRequest): Promise<Result.RecoverStaminaByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover')
             .replace('{service}', 'stamina')

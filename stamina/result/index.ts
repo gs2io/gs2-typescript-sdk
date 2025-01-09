@@ -59,6 +59,8 @@ import GetStaminaByUserIdResult from "./GetStaminaByUserIdResult"
 import UpdateStaminaByUserIdResult from "./UpdateStaminaByUserIdResult"
 import ConsumeStaminaResult from "./ConsumeStaminaResult"
 import ConsumeStaminaByUserIdResult from "./ConsumeStaminaByUserIdResult"
+import ApplyStaminaResult from "./ApplyStaminaResult"
+import ApplyStaminaByUserIdResult from "./ApplyStaminaByUserIdResult"
 import RecoverStaminaByUserIdResult from "./RecoverStaminaByUserIdResult"
 import RaiseMaxValueByUserIdResult from "./RaiseMaxValueByUserIdResult"
 import DecreaseMaxValueResult from "./DecreaseMaxValueResult"
@@ -125,6 +127,8 @@ export {
     UpdateStaminaByUserIdResult,
     ConsumeStaminaResult,
     ConsumeStaminaByUserIdResult,
+    ApplyStaminaResult,
+    ApplyStaminaByUserIdResult,
     RecoverStaminaByUserIdResult,
     RaiseMaxValueByUserIdResult,
     DecreaseMaxValueResult,

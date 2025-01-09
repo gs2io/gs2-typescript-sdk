@@ -60,6 +60,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getFormByUserId(request: Request.GetFormByUserIdRequest): Promise<Result.GetFormByUserIdResult>;
     getFormWithSignature(request: Request.GetFormWithSignatureRequest): Promise<Result.GetFormWithSignatureResult>;
     getFormWithSignatureByUserId(request: Request.GetFormWithSignatureByUserIdRequest): Promise<Result.GetFormWithSignatureByUserIdResult>;
+    setForm(request: Request.SetFormRequest): Promise<Result.SetFormResult>;
     setFormByUserId(request: Request.SetFormByUserIdRequest): Promise<Result.SetFormByUserIdResult>;
     setFormWithSignature(request: Request.SetFormWithSignatureRequest): Promise<Result.SetFormWithSignatureResult>;
     acquireActionsToFormProperties(request: Request.AcquireActionsToFormPropertiesRequest): Promise<Result.AcquireActionsToFormPropertiesResult>;
