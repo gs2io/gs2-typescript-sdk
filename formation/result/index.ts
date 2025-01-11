@@ -83,6 +83,7 @@ import GetPropertyFormResult from "./GetPropertyFormResult"
 import GetPropertyFormByUserIdResult from "./GetPropertyFormByUserIdResult"
 import GetPropertyFormWithSignatureResult from "./GetPropertyFormWithSignatureResult"
 import GetPropertyFormWithSignatureByUserIdResult from "./GetPropertyFormWithSignatureByUserIdResult"
+import SetPropertyFormResult from "./SetPropertyFormResult"
 import SetPropertyFormByUserIdResult from "./SetPropertyFormByUserIdResult"
 import SetPropertyFormWithSignatureResult from "./SetPropertyFormWithSignatureResult"
 import AcquireActionsToPropertyFormPropertiesResult from "./AcquireActionsToPropertyFormPropertiesResult"
@@ -161,6 +162,7 @@ export {
     GetPropertyFormByUserIdResult,
     GetPropertyFormWithSignatureResult,
     GetPropertyFormWithSignatureByUserIdResult,
+    SetPropertyFormResult,
     SetPropertyFormByUserIdResult,
     SetPropertyFormWithSignatureResult,
     AcquireActionsToPropertyFormPropertiesResult,
