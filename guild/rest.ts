@@ -780,6 +780,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attribute3': request.getAttribute3() ?? null,
             'attribute4': request.getAttribute4() ?? null,
             'attribute5': request.getAttribute5() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'memberMetadata': request.getMemberMetadata() ?? null,
             'joinPolicy': request.getJoinPolicy() ?? null,
             'customRoles': request.getCustomRoles()?.map((item) => item.toDict()) ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -827,6 +829,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attribute3': request.getAttribute3() ?? null,
             'attribute4': request.getAttribute4() ?? null,
             'attribute5': request.getAttribute5() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'memberMetadata': request.getMemberMetadata() ?? null,
             'joinPolicy': request.getJoinPolicy() ?? null,
             'customRoles': request.getCustomRoles()?.map((item) => item.toDict()) ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -936,6 +940,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attribute3': request.getAttribute3() ?? null,
             'attribute4': request.getAttribute4() ?? null,
             'attribute5': request.getAttribute5() ?? null,
+            'metadata': request.getMetadata() ?? null,
             'joinPolicy': request.getJoinPolicy() ?? null,
             'customRoles': request.getCustomRoles()?.map((item) => item.toDict()) ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -980,6 +985,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attribute3': request.getAttribute3() ?? null,
             'attribute4': request.getAttribute4() ?? null,
             'attribute5': request.getAttribute5() ?? null,
+            'metadata': request.getMetadata() ?? null,
             'joinPolicy': request.getJoinPolicy() ?? null,
             'customRoles': request.getCustomRoles()?.map((item) => item.toDict()) ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -1212,6 +1218,85 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.BatchUpdateMemberRoleByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateMemberMetadata(request: Request.UpdateMemberMetadataRequest): Promise<Result.UpdateMemberMetadataResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/me/metadata')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateMemberMetadataResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateMemberMetadataByUserId(request: Request.UpdateMemberMetadataByUserIdRequest): Promise<Result.UpdateMemberMetadataByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/{userId}/metadata')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateMemberMetadataByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -2671,6 +2756,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
         };
         return axios.put(
             url,
@@ -2710,6 +2796,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
         };
         return axios.put(
             url,

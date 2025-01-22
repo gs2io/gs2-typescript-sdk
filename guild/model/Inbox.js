@@ -15,12 +15,15 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Guild = tslib_1.__importStar(require("../../guild/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:guild:{guildModelName}:{guildName}:inbox";
 var Inbox = /** @class */ (function () {
     function Inbox() {
         this.inboxId = null;
         this.guildName = null;
         this.fromUserIds = null;
+        this.receiveMemberRequests = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -133,15 +136,29 @@ var Inbox = /** @class */ (function () {
         this.guildName = guildName;
         return this;
     };
+    /** @deprecated */
     Inbox.prototype.getFromUserIds = function () {
         return this.fromUserIds;
     };
+    /** @deprecated */
     Inbox.prototype.setFromUserIds = function (fromUserIds) {
         this.fromUserIds = fromUserIds;
         return this;
     };
+    /** @deprecated */
     Inbox.prototype.withFromUserIds = function (fromUserIds) {
         this.fromUserIds = fromUserIds;
+        return this;
+    };
+    Inbox.prototype.getReceiveMemberRequests = function () {
+        return this.receiveMemberRequests;
+    };
+    Inbox.prototype.setReceiveMemberRequests = function (receiveMemberRequests) {
+        this.receiveMemberRequests = receiveMemberRequests;
+        return this;
+    };
+    Inbox.prototype.withReceiveMemberRequests = function (receiveMemberRequests) {
+        this.receiveMemberRequests = receiveMemberRequests;
         return this;
     };
     Inbox.prototype.getCreatedAt = function () {
@@ -188,6 +205,10 @@ var Inbox = /** @class */ (function () {
             data.fromUserIds.map(function (item) {
                 return item;
             }) : null)
+            .withReceiveMemberRequests(data.receiveMemberRequests ?
+            data.receiveMemberRequests.map(function (item) {
+                return Gs2Guild.ReceiveMemberRequest.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -199,6 +220,10 @@ var Inbox = /** @class */ (function () {
             "fromUserIds": this.getFromUserIds() ?
                 this.getFromUserIds().map(function (item) {
                     return item;
+                }) : null,
+            "receiveMemberRequests": this.getReceiveMemberRequests() ?
+                this.getReceiveMemberRequests().map(function (item) {
+                    return item.toDict();
                 }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

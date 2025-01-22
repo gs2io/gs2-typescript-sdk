@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 export default class ReceiveMemberRequest implements IModel {
     private userId;
     private targetGuildName;
+    private metadata;
     static isValid(grn: string): boolean;
     static createGrn(): string | null;
     getUserId(): string | null;
@@ -10,6 +11,9 @@ export default class ReceiveMemberRequest implements IModel {
     getTargetGuildName(): string | null;
     setTargetGuildName(targetGuildName: string | null): this;
     withTargetGuildName(targetGuildName: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ReceiveMemberRequest | null;

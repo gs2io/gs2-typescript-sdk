@@ -17,12 +17,14 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Guild from '../../guild/model'
+import ReceiveMemberRequest from './ReceiveMemberRequest';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:guild:{guildModelName}:{guildName}:inbox";
 
 export default class Inbox implements IModel {
     private inboxId: string|null = null;
     private guildName: string|null = null;
     private fromUserIds: string[]|null = null;
+    private receiveMemberRequests: Gs2Guild.ReceiveMemberRequest[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -152,15 +154,29 @@ export default class Inbox implements IModel {
         this.guildName = guildName;
         return this;
     }
+    /** @deprecated */
     public getFromUserIds(): string[]|null {
         return this.fromUserIds;
     }
+    /** @deprecated */
     public setFromUserIds(fromUserIds: string[]|null) {
         this.fromUserIds = fromUserIds;
         return this;
     }
+    /** @deprecated */
     public withFromUserIds(fromUserIds: string[]|null): this {
         this.fromUserIds = fromUserIds;
+        return this;
+    }
+    public getReceiveMemberRequests(): Gs2Guild.ReceiveMemberRequest[]|null {
+        return this.receiveMemberRequests;
+    }
+    public setReceiveMemberRequests(receiveMemberRequests: Gs2Guild.ReceiveMemberRequest[]|null) {
+        this.receiveMemberRequests = receiveMemberRequests;
+        return this;
+    }
+    public withReceiveMemberRequests(receiveMemberRequests: Gs2Guild.ReceiveMemberRequest[]|null): this {
+        this.receiveMemberRequests = receiveMemberRequests;
         return this;
     }
     public getCreatedAt(): number|null {
@@ -209,6 +225,11 @@ export default class Inbox implements IModel {
                     return item;
                 }
             ) : null)
+            .withReceiveMemberRequests(data.receiveMemberRequests ?
+                data.receiveMemberRequests.map((item: {[key: string]: any}) => {
+                    return Gs2Guild.ReceiveMemberRequest.fromDict(item);
+                }
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -221,6 +242,11 @@ export default class Inbox implements IModel {
             "fromUserIds": this.getFromUserIds() ?
                 this.getFromUserIds()!.map((item: string) => {
                     return item;
+                }
+            ) : null,
+            "receiveMemberRequests": this.getReceiveMemberRequests() ?
+                this.getReceiveMemberRequests()!.map((item: Gs2Guild.ReceiveMemberRequest) => {
+                    return item.toDict();
                 }
             ) : null,
             "createdAt": this.getCreatedAt(),

@@ -12,6 +12,8 @@ export default class CreateGuildRequest implements IRequest {
     private attribute3;
     private attribute4;
     private attribute5;
+    private metadata;
+    private memberMetadata;
     private joinPolicy;
     private customRoles;
     private guildMemberDefaultRole;
@@ -49,6 +51,12 @@ export default class CreateGuildRequest implements IRequest {
     getAttribute5(): number | null;
     setAttribute5(attribute5: number | null): this;
     withAttribute5(attribute5: number | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getMemberMetadata(): string | null;
+    setMemberMetadata(memberMetadata: string | null): this;
+    withMemberMetadata(memberMetadata: string | null): this;
     getJoinPolicy(): string | null;
     setJoinPolicy(joinPolicy: string | null): this;
     withJoinPolicy(joinPolicy: string | null): this;

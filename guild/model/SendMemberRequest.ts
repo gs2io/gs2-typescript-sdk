@@ -22,6 +22,7 @@ const grnFormat: string = "";
 export default class SendMemberRequest implements IModel {
     private userId: string|null = null;
     private targetGuildName: string|null = null;
+    private metadata: string|null = null;
 
     public static isValid(grn: string): boolean {
         return true;
@@ -53,6 +54,17 @@ export default class SendMemberRequest implements IModel {
         this.targetGuildName = targetGuildName;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): SendMemberRequest|null {
         if (data == undefined || data == null) {
@@ -60,13 +72,15 @@ export default class SendMemberRequest implements IModel {
         }
         return new SendMemberRequest()
             .withUserId(data["userId"])
-            .withTargetGuildName(data["targetGuildName"]);
+            .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "userId": this.getUserId(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
         };
     }
 }

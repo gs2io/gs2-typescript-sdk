@@ -47,6 +47,8 @@ import UpdateMemberRoleRequest from "./UpdateMemberRoleRequest"
 import UpdateMemberRoleByGuildNameRequest from "./UpdateMemberRoleByGuildNameRequest"
 import BatchUpdateMemberRoleRequest from "./BatchUpdateMemberRoleRequest"
 import BatchUpdateMemberRoleByGuildNameRequest from "./BatchUpdateMemberRoleByGuildNameRequest"
+import UpdateMemberMetadataRequest from "./UpdateMemberMetadataRequest"
+import UpdateMemberMetadataByUserIdRequest from "./UpdateMemberMetadataByUserIdRequest"
 import DeleteGuildRequest from "./DeleteGuildRequest"
 import DeleteGuildByGuildNameRequest from "./DeleteGuildByGuildNameRequest"
 import IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest"
@@ -138,6 +140,8 @@ export {
     UpdateMemberRoleByGuildNameRequest,
     BatchUpdateMemberRoleRequest,
     BatchUpdateMemberRoleByGuildNameRequest,
+    UpdateMemberMetadataRequest,
+    UpdateMemberMetadataByUserIdRequest,
     DeleteGuildRequest,
     DeleteGuildByGuildNameRequest,
     IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest,

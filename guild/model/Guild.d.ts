@@ -10,6 +10,7 @@ export default class Guild implements IModel {
     private attribute3;
     private attribute4;
     private attribute5;
+    private metadata;
     private joinPolicy;
     private customRoles;
     private guildMemberDefaultRole;
@@ -52,6 +53,9 @@ export default class Guild implements IModel {
     getAttribute5(): number | null;
     setAttribute5(attribute5: number | null): this;
     withAttribute5(attribute5: number | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
     getJoinPolicy(): string | null;
     setJoinPolicy(joinPolicy: string | null): this;
     withJoinPolicy(joinPolicy: string | null): this;

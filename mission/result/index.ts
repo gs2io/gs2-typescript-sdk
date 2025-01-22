@@ -64,6 +64,7 @@ import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
 import VerifyCounterValueResult from "./VerifyCounterValueResult"
 import VerifyCounterValueByUserIdResult from "./VerifyCounterValueByUserIdResult"
+import DeleteCounterResult from "./DeleteCounterResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
 import IncreaseByStampSheetResult from "./IncreaseByStampSheetResult"
 import SetByStampSheetResult from "./SetByStampSheetResult"
@@ -137,6 +138,7 @@ export {
     GetCounterByUserIdResult,
     VerifyCounterValueResult,
     VerifyCounterValueByUserIdResult,
+    DeleteCounterResult,
     DeleteCounterByUserIdResult,
     IncreaseByStampSheetResult,
     SetByStampSheetResult,

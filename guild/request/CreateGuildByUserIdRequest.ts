@@ -31,6 +31,8 @@ export default class CreateGuildByUserIdRequest implements IRequest {
     private attribute3: number|null = null;
     private attribute4: number|null = null;
     private attribute5: number|null = null;
+    private metadata: string|null = null;
+    private memberMetadata: string|null = null;
     private joinPolicy: string|null = null;
     private customRoles: Gs2Guild.RoleModel[]|null = null;
     private guildMemberDefaultRole: string|null = null;
@@ -163,6 +165,28 @@ export default class CreateGuildByUserIdRequest implements IRequest {
         this.attribute5 = attribute5;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
+    public getMemberMetadata(): string|null {
+        return this.memberMetadata;
+    }
+    public setMemberMetadata(memberMetadata: string|null) {
+        this.memberMetadata = memberMetadata;
+        return this;
+    }
+    public withMemberMetadata(memberMetadata: string|null): this {
+        this.memberMetadata = memberMetadata;
+        return this;
+    }
     public getJoinPolicy(): string|null {
         return this.joinPolicy;
     }
@@ -233,6 +257,8 @@ export default class CreateGuildByUserIdRequest implements IRequest {
             .withAttribute3(data["attribute3"])
             .withAttribute4(data["attribute4"])
             .withAttribute5(data["attribute5"])
+            .withMetadata(data["metadata"])
+            .withMemberMetadata(data["memberMetadata"])
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
                 data.customRoles.map((item: {[key: string]: any}) => {
@@ -254,6 +280,8 @@ export default class CreateGuildByUserIdRequest implements IRequest {
             "attribute3": this.getAttribute3(),
             "attribute4": this.getAttribute4(),
             "attribute5": this.getAttribute5(),
+            "metadata": this.getMetadata(),
+            "memberMetadata": this.getMemberMetadata(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles()!.map((item: Gs2Guild.RoleModel) => {

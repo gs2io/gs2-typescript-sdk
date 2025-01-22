@@ -6,6 +6,7 @@ export default class SendRequestRequest implements IRequest {
     private accessToken;
     private guildModelName;
     private targetGuildName;
+    private metadata;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class SendRequestRequest implements IRequest {
     getTargetGuildName(): string | null;
     setTargetGuildName(targetGuildName: string | null): this;
     withTargetGuildName(targetGuildName: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

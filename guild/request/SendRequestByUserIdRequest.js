@@ -23,6 +23,7 @@ var SendRequestByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.guildModelName = null;
         this.targetGuildName = null;
+        this.metadata = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -92,6 +93,17 @@ var SendRequestByUserIdRequest = /** @class */ (function () {
         this.targetGuildName = targetGuildName;
         return this;
     };
+    SendRequestByUserIdRequest.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    SendRequestByUserIdRequest.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    SendRequestByUserIdRequest.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     SendRequestByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -120,6 +132,7 @@ var SendRequestByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withGuildModelName(data["guildModelName"])
             .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SendRequestByUserIdRequest.prototype.toDict = function () {
@@ -128,6 +141,7 @@ var SendRequestByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "guildModelName": this.getGuildModelName(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

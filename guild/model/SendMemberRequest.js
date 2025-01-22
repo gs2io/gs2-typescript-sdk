@@ -20,6 +20,7 @@ var SendMemberRequest = /** @class */ (function () {
     function SendMemberRequest() {
         this.userId = null;
         this.targetGuildName = null;
+        this.metadata = null;
     }
     SendMemberRequest.isValid = function (grn) {
         return true;
@@ -49,18 +50,31 @@ var SendMemberRequest = /** @class */ (function () {
         this.targetGuildName = targetGuildName;
         return this;
     };
+    SendMemberRequest.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    SendMemberRequest.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    SendMemberRequest.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     SendMemberRequest.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new SendMemberRequest()
             .withUserId(data["userId"])
-            .withTargetGuildName(data["targetGuildName"]);
+            .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"]);
     };
     SendMemberRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
         };
     };
     return SendMemberRequest;

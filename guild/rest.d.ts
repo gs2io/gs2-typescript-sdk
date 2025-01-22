@@ -38,6 +38,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     updateMemberRoleByGuildName(request: Request.UpdateMemberRoleByGuildNameRequest): Promise<Result.UpdateMemberRoleByGuildNameResult>;
     batchUpdateMemberRole(request: Request.BatchUpdateMemberRoleRequest): Promise<Result.BatchUpdateMemberRoleResult>;
     batchUpdateMemberRoleByGuildName(request: Request.BatchUpdateMemberRoleByGuildNameRequest): Promise<Result.BatchUpdateMemberRoleByGuildNameResult>;
+    updateMemberMetadata(request: Request.UpdateMemberMetadataRequest): Promise<Result.UpdateMemberMetadataResult>;
+    updateMemberMetadataByUserId(request: Request.UpdateMemberMetadataByUserIdRequest): Promise<Result.UpdateMemberMetadataByUserIdResult>;
     deleteGuild(request: Request.DeleteGuildRequest): Promise<Result.DeleteGuildResult>;
     deleteGuildByGuildName(request: Request.DeleteGuildByGuildNameRequest): Promise<Result.DeleteGuildByGuildNameResult>;
     increaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;

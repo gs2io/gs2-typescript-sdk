@@ -23,6 +23,7 @@ var SendRequestRequest = /** @class */ (function () {
         this.accessToken = null;
         this.guildModelName = null;
         this.targetGuildName = null;
+        this.metadata = null;
         this.duplicationAvoider = null;
     }
     SendRequestRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SendRequestRequest = /** @class */ (function () {
         this.targetGuildName = targetGuildName;
         return this;
     };
+    SendRequestRequest.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    SendRequestRequest.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    SendRequestRequest.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     SendRequestRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SendRequestRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withGuildModelName(data["guildModelName"])
-            .withTargetGuildName(data["targetGuildName"]);
+            .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"]);
     };
     SendRequestRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SendRequestRequest = /** @class */ (function () {
             "accessToken": this.getAccessToken(),
             "guildModelName": this.getGuildModelName(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
         };
     };
     return SendRequestRequest;

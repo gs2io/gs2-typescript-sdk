@@ -30,6 +30,7 @@ var UpdateGuildRequest = /** @class */ (function () {
         this.attribute3 = null;
         this.attribute4 = null;
         this.attribute5 = null;
+        this.metadata = null;
         this.joinPolicy = null;
         this.customRoles = null;
         this.guildMemberDefaultRole = null;
@@ -156,6 +157,17 @@ var UpdateGuildRequest = /** @class */ (function () {
         this.attribute5 = attribute5;
         return this;
     };
+    UpdateGuildRequest.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    UpdateGuildRequest.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    UpdateGuildRequest.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     UpdateGuildRequest.prototype.getJoinPolicy = function () {
         return this.joinPolicy;
     };
@@ -211,6 +223,7 @@ var UpdateGuildRequest = /** @class */ (function () {
             .withAttribute3(data["attribute3"])
             .withAttribute4(data["attribute4"])
             .withAttribute5(data["attribute5"])
+            .withMetadata(data["metadata"])
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
@@ -229,6 +242,7 @@ var UpdateGuildRequest = /** @class */ (function () {
             "attribute3": this.getAttribute3(),
             "attribute4": this.getAttribute4(),
             "attribute5": this.getAttribute5(),
+            "metadata": this.getMetadata(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {

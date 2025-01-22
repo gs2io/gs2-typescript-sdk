@@ -26,6 +26,7 @@ export default class SendRequestRequest implements IRequest {
     private accessToken: string|null = null;
     private guildModelName: string|null = null;
     private targetGuildName: string|null = null;
+    private metadata: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class SendRequestRequest implements IRequest {
         this.targetGuildName = targetGuildName;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class SendRequestRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withGuildModelName(data["guildModelName"])
-            .withTargetGuildName(data["targetGuildName"]);
+            .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class SendRequestRequest implements IRequest {
             "accessToken": this.getAccessToken(),
             "guildModelName": this.getGuildModelName(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
         };
     }
 }

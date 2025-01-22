@@ -31,6 +31,7 @@ export default class UpdateGuildByGuildNameRequest implements IRequest {
     private attribute3: number|null = null;
     private attribute4: number|null = null;
     private attribute5: number|null = null;
+    private metadata: string|null = null;
     private joinPolicy: string|null = null;
     private customRoles: Gs2Guild.RoleModel[]|null = null;
     private guildMemberDefaultRole: string|null = null;
@@ -162,6 +163,17 @@ export default class UpdateGuildByGuildNameRequest implements IRequest {
         this.attribute5 = attribute5;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
     public getJoinPolicy(): string|null {
         return this.joinPolicy;
     }
@@ -221,6 +233,7 @@ export default class UpdateGuildByGuildNameRequest implements IRequest {
             .withAttribute3(data["attribute3"])
             .withAttribute4(data["attribute4"])
             .withAttribute5(data["attribute5"])
+            .withMetadata(data["metadata"])
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
                 data.customRoles.map((item: {[key: string]: any}) => {
@@ -241,6 +254,7 @@ export default class UpdateGuildByGuildNameRequest implements IRequest {
             "attribute3": this.getAttribute3(),
             "attribute4": this.getAttribute4(),
             "attribute5": this.getAttribute5(),
+            "metadata": this.getMetadata(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles()!.map((item: Gs2Guild.RoleModel) => {

@@ -19,6 +19,7 @@ var Member = /** @class */ (function () {
     function Member() {
         this.userId = null;
         this.roleName = null;
+        this.metadata = null;
         this.joinedAt = null;
     }
     Member.prototype.getUserId = function () {
@@ -43,6 +44,17 @@ var Member = /** @class */ (function () {
         this.roleName = roleName;
         return this;
     };
+    Member.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    Member.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    Member.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     Member.prototype.getJoinedAt = function () {
         return this.joinedAt;
     };
@@ -61,12 +73,14 @@ var Member = /** @class */ (function () {
         return new Member()
             .withUserId(data["userId"])
             .withRoleName(data["roleName"])
+            .withMetadata(data["metadata"])
             .withJoinedAt(data["joinedAt"]);
     };
     Member.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "roleName": this.getRoleName(),
+            "metadata": this.getMetadata(),
             "joinedAt": this.getJoinedAt(),
         };
     };

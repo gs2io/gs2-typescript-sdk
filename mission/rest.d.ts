@@ -55,6 +55,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
     verifyCounterValue(request: Request.VerifyCounterValueRequest): Promise<Result.VerifyCounterValueResult>;
     verifyCounterValueByUserId(request: Request.VerifyCounterValueByUserIdRequest): Promise<Result.VerifyCounterValueByUserIdResult>;
+    deleteCounter(request: Request.DeleteCounterRequest): Promise<Result.DeleteCounterResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
     increaseByStampSheet(request: Request.IncreaseByStampSheetRequest): Promise<Result.IncreaseByStampSheetResult>;
     setByStampSheet(request: Request.SetByStampSheetRequest): Promise<Result.SetByStampSheetResult>;

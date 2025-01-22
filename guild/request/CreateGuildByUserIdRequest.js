@@ -30,6 +30,8 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
         this.attribute3 = null;
         this.attribute4 = null;
         this.attribute5 = null;
+        this.metadata = null;
+        this.memberMetadata = null;
         this.joinPolicy = null;
         this.customRoles = null;
         this.guildMemberDefaultRole = null;
@@ -157,6 +159,28 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
         this.attribute5 = attribute5;
         return this;
     };
+    CreateGuildByUserIdRequest.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    CreateGuildByUserIdRequest.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    CreateGuildByUserIdRequest.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    CreateGuildByUserIdRequest.prototype.getMemberMetadata = function () {
+        return this.memberMetadata;
+    };
+    CreateGuildByUserIdRequest.prototype.setMemberMetadata = function (memberMetadata) {
+        this.memberMetadata = memberMetadata;
+        return this;
+    };
+    CreateGuildByUserIdRequest.prototype.withMemberMetadata = function (memberMetadata) {
+        this.memberMetadata = memberMetadata;
+        return this;
+    };
     CreateGuildByUserIdRequest.prototype.getJoinPolicy = function () {
         return this.joinPolicy;
     };
@@ -223,6 +247,8 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
             .withAttribute3(data["attribute3"])
             .withAttribute4(data["attribute4"])
             .withAttribute5(data["attribute5"])
+            .withMetadata(data["metadata"])
+            .withMemberMetadata(data["memberMetadata"])
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
@@ -242,6 +268,8 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
             "attribute3": this.getAttribute3(),
             "attribute4": this.getAttribute4(),
             "attribute5": this.getAttribute5(),
+            "metadata": this.getMetadata(),
+            "memberMetadata": this.getMemberMetadata(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {

@@ -1745,6 +1745,39 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public deleteCounter(request: Request.DeleteCounterRequest): Promise<Result.DeleteCounterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null') === "" ? "null" : String(request.getCounterName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteCounterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')

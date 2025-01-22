@@ -29,6 +29,7 @@ var Guild = /** @class */ (function () {
         this.attribute3 = null;
         this.attribute4 = null;
         this.attribute5 = null;
+        this.metadata = null;
         this.joinPolicy = null;
         this.customRoles = null;
         this.guildMemberDefaultRole = null;
@@ -223,6 +224,17 @@ var Guild = /** @class */ (function () {
         this.attribute5 = attribute5;
         return this;
     };
+    Guild.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    Guild.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    Guild.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
     Guild.prototype.getJoinPolicy = function () {
         return this.joinPolicy;
     };
@@ -325,6 +337,7 @@ var Guild = /** @class */ (function () {
             .withAttribute3(data["attribute3"])
             .withAttribute4(data["attribute4"])
             .withAttribute5(data["attribute5"])
+            .withMetadata(data["metadata"])
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
@@ -351,6 +364,7 @@ var Guild = /** @class */ (function () {
             "attribute3": this.getAttribute3(),
             "attribute4": this.getAttribute4(),
             "attribute5": this.getAttribute5(),
+            "metadata": this.getMetadata(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {

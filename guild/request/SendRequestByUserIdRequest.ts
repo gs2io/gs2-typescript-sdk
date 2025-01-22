@@ -26,6 +26,7 @@ export default class SendRequestByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private guildModelName: string|null = null;
     private targetGuildName: string|null = null;
+    private metadata: string|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -100,6 +101,17 @@ export default class SendRequestByUserIdRequest implements IRequest {
         this.targetGuildName = targetGuildName;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -132,6 +144,7 @@ export default class SendRequestByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withGuildModelName(data["guildModelName"])
             .withTargetGuildName(data["targetGuildName"])
+            .withMetadata(data["metadata"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -141,6 +154,7 @@ export default class SendRequestByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "guildModelName": this.getGuildModelName(),
             "targetGuildName": this.getTargetGuildName(),
+            "metadata": this.getMetadata(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

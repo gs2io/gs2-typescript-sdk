@@ -21,6 +21,7 @@ import * as Gs2Guild from '../../guild/model'
 export default class Member implements IModel {
     private userId: string|null = null;
     private roleName: string|null = null;
+    private metadata: string|null = null;
     private joinedAt: number|null = null;
     public getUserId(): string|null {
         return this.userId;
@@ -44,6 +45,17 @@ export default class Member implements IModel {
         this.roleName = roleName;
         return this;
     }
+    public getMetadata(): string|null {
+        return this.metadata;
+    }
+    public setMetadata(metadata: string|null) {
+        this.metadata = metadata;
+        return this;
+    }
+    public withMetadata(metadata: string|null): this {
+        this.metadata = metadata;
+        return this;
+    }
     public getJoinedAt(): number|null {
         return this.joinedAt;
     }
@@ -63,6 +75,7 @@ export default class Member implements IModel {
         return new Member()
             .withUserId(data["userId"])
             .withRoleName(data["roleName"])
+            .withMetadata(data["metadata"])
             .withJoinedAt(data["joinedAt"]);
     }
 
@@ -70,6 +83,7 @@ export default class Member implements IModel {
         return {
             "userId": this.getUserId(),
             "roleName": this.getRoleName(),
+            "metadata": this.getMetadata(),
             "joinedAt": this.getJoinedAt(),
         };
     }

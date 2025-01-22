@@ -6,6 +6,7 @@ export default class SendRequestByUserIdRequest implements IRequest {
     private userId;
     private guildModelName;
     private targetGuildName;
+    private metadata;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -26,6 +27,9 @@ export default class SendRequestByUserIdRequest implements IRequest {
     getTargetGuildName(): string | null;
     setTargetGuildName(targetGuildName: string | null): this;
     withTargetGuildName(targetGuildName: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

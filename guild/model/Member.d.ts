@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 export default class Member implements IModel {
     private userId;
     private roleName;
+    private metadata;
     private joinedAt;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
@@ -9,6 +10,9 @@ export default class Member implements IModel {
     getRoleName(): string | null;
     setRoleName(roleName: string | null): this;
     withRoleName(roleName: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
     getJoinedAt(): number | null;
     setJoinedAt(joinedAt: number | null): this;
     withJoinedAt(joinedAt: number | null): this;
