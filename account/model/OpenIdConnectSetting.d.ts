@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import * as Gs2Account from '../../account/model';
 export default class OpenIdConnectSetting implements IModel {
     private configurationPath;
     private clientId;
@@ -7,6 +8,8 @@ export default class OpenIdConnectSetting implements IModel {
     private appleKeyId;
     private applePrivateKeyPem;
     private doneEndpointUrl;
+    private additionalScopeValues;
+    private additionalReturnValues;
     getConfigurationPath(): string | null;
     setConfigurationPath(configurationPath: string | null): this;
     withConfigurationPath(configurationPath: string | null): this;
@@ -28,6 +31,12 @@ export default class OpenIdConnectSetting implements IModel {
     getDoneEndpointUrl(): string | null;
     setDoneEndpointUrl(doneEndpointUrl: string | null): this;
     withDoneEndpointUrl(doneEndpointUrl: string | null): this;
+    getAdditionalScopeValues(): Gs2Account.ScopeValue[] | null;
+    setAdditionalScopeValues(additionalScopeValues: Gs2Account.ScopeValue[] | null): this;
+    withAdditionalScopeValues(additionalScopeValues: Gs2Account.ScopeValue[] | null): this;
+    getAdditionalReturnValues(): string[] | null;
+    setAdditionalReturnValues(additionalReturnValues: string[] | null): this;
+    withAdditionalReturnValues(additionalReturnValues: string[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): OpenIdConnectSetting | null;

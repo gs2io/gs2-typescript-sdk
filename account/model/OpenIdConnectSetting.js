@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Account = tslib_1.__importStar(require("../../account/model"));
 var OpenIdConnectSetting = /** @class */ (function () {
     function OpenIdConnectSetting() {
         this.configurationPath = null;
@@ -24,6 +26,8 @@ var OpenIdConnectSetting = /** @class */ (function () {
         this.appleKeyId = null;
         this.applePrivateKeyPem = null;
         this.doneEndpointUrl = null;
+        this.additionalScopeValues = null;
+        this.additionalReturnValues = null;
     }
     OpenIdConnectSetting.prototype.getConfigurationPath = function () {
         return this.configurationPath;
@@ -102,6 +106,28 @@ var OpenIdConnectSetting = /** @class */ (function () {
         this.doneEndpointUrl = doneEndpointUrl;
         return this;
     };
+    OpenIdConnectSetting.prototype.getAdditionalScopeValues = function () {
+        return this.additionalScopeValues;
+    };
+    OpenIdConnectSetting.prototype.setAdditionalScopeValues = function (additionalScopeValues) {
+        this.additionalScopeValues = additionalScopeValues;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withAdditionalScopeValues = function (additionalScopeValues) {
+        this.additionalScopeValues = additionalScopeValues;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.getAdditionalReturnValues = function () {
+        return this.additionalReturnValues;
+    };
+    OpenIdConnectSetting.prototype.setAdditionalReturnValues = function (additionalReturnValues) {
+        this.additionalReturnValues = additionalReturnValues;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withAdditionalReturnValues = function (additionalReturnValues) {
+        this.additionalReturnValues = additionalReturnValues;
+        return this;
+    };
     OpenIdConnectSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -113,7 +139,15 @@ var OpenIdConnectSetting = /** @class */ (function () {
             .withAppleTeamId(data["appleTeamId"])
             .withAppleKeyId(data["appleKeyId"])
             .withApplePrivateKeyPem(data["applePrivateKeyPem"])
-            .withDoneEndpointUrl(data["doneEndpointUrl"]);
+            .withDoneEndpointUrl(data["doneEndpointUrl"])
+            .withAdditionalScopeValues(data.additionalScopeValues ?
+            data.additionalScopeValues.map(function (item) {
+                return Gs2Account.ScopeValue.fromDict(item);
+            }) : null)
+            .withAdditionalReturnValues(data.additionalReturnValues ?
+            data.additionalReturnValues.map(function (item) {
+                return item;
+            }) : null);
     };
     OpenIdConnectSetting.prototype.toDict = function () {
         return {
@@ -124,6 +158,14 @@ var OpenIdConnectSetting = /** @class */ (function () {
             "appleKeyId": this.getAppleKeyId(),
             "applePrivateKeyPem": this.getApplePrivateKeyPem(),
             "doneEndpointUrl": this.getDoneEndpointUrl(),
+            "additionalScopeValues": this.getAdditionalScopeValues() ?
+                this.getAdditionalScopeValues().map(function (item) {
+                    return item.toDict();
+                }) : null,
+            "additionalReturnValues": this.getAdditionalReturnValues() ?
+                this.getAdditionalReturnValues().map(function (item) {
+                    return item;
+                }) : null,
         };
     };
     return OpenIdConnectSetting;

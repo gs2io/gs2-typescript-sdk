@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Account from '../../account/model'
+import ScopeValue from './ScopeValue';
 import OpenIdConnectSetting from './OpenIdConnectSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:model:takeOver:{type}";
 

@@ -22,6 +22,7 @@ import TakeOverTypeModel from "./TakeOverTypeModel"
 import TakeOverTypeModelMaster from "./TakeOverTypeModelMaster"
 import CurrentModelMaster from "./CurrentModelMaster"
 import OpenIdConnectSetting from "./OpenIdConnectSetting"
+import ScopeValue from "./ScopeValue"
 import PlatformUser from "./PlatformUser"
 import BanStatus from "./BanStatus"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -38,6 +39,7 @@ export {
     TakeOverTypeModelMaster,
     CurrentModelMaster,
     OpenIdConnectSetting,
+    ScopeValue,
     PlatformUser,
     BanStatus,
     GitHubCheckoutSetting,

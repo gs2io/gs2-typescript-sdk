@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Account from '../../account/model'
+import ScopeValue from './ScopeValue';
 
 export default class OpenIdConnectSetting implements IModel {
     private configurationPath: string|null = null;
@@ -26,6 +27,8 @@ export default class OpenIdConnectSetting implements IModel {
     private appleKeyId: string|null = null;
     private applePrivateKeyPem: string|null = null;
     private doneEndpointUrl: string|null = null;
+    private additionalScopeValues: Gs2Account.ScopeValue[]|null = null;
+    private additionalReturnValues: string[]|null = null;
     public getConfigurationPath(): string|null {
         return this.configurationPath;
     }
@@ -103,6 +106,28 @@ export default class OpenIdConnectSetting implements IModel {
         this.doneEndpointUrl = doneEndpointUrl;
         return this;
     }
+    public getAdditionalScopeValues(): Gs2Account.ScopeValue[]|null {
+        return this.additionalScopeValues;
+    }
+    public setAdditionalScopeValues(additionalScopeValues: Gs2Account.ScopeValue[]|null) {
+        this.additionalScopeValues = additionalScopeValues;
+        return this;
+    }
+    public withAdditionalScopeValues(additionalScopeValues: Gs2Account.ScopeValue[]|null): this {
+        this.additionalScopeValues = additionalScopeValues;
+        return this;
+    }
+    public getAdditionalReturnValues(): string[]|null {
+        return this.additionalReturnValues;
+    }
+    public setAdditionalReturnValues(additionalReturnValues: string[]|null) {
+        this.additionalReturnValues = additionalReturnValues;
+        return this;
+    }
+    public withAdditionalReturnValues(additionalReturnValues: string[]|null): this {
+        this.additionalReturnValues = additionalReturnValues;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): OpenIdConnectSetting|null {
         if (data == undefined || data == null) {
@@ -115,7 +140,17 @@ export default class OpenIdConnectSetting implements IModel {
             .withAppleTeamId(data["appleTeamId"])
             .withAppleKeyId(data["appleKeyId"])
             .withApplePrivateKeyPem(data["applePrivateKeyPem"])
-            .withDoneEndpointUrl(data["doneEndpointUrl"]);
+            .withDoneEndpointUrl(data["doneEndpointUrl"])
+            .withAdditionalScopeValues(data.additionalScopeValues ?
+                data.additionalScopeValues.map((item: {[key: string]: any}) => {
+                    return Gs2Account.ScopeValue.fromDict(item);
+                }
+            ) : null)
+            .withAdditionalReturnValues(data.additionalReturnValues ?
+                data.additionalReturnValues.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +162,16 @@ export default class OpenIdConnectSetting implements IModel {
             "appleKeyId": this.getAppleKeyId(),
             "applePrivateKeyPem": this.getApplePrivateKeyPem(),
             "doneEndpointUrl": this.getDoneEndpointUrl(),
+            "additionalScopeValues": this.getAdditionalScopeValues() ?
+                this.getAdditionalScopeValues()!.map((item: Gs2Account.ScopeValue) => {
+                    return item.toDict();
+                }
+            ) : null,
+            "additionalReturnValues": this.getAdditionalReturnValues() ?
+                this.getAdditionalReturnValues()!.map((item: string) => {
+                    return item;
+                }
+            ) : null,
         };
     }
 }

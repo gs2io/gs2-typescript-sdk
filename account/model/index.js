@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.BanStatus = exports.PlatformUser = exports.OpenIdConnectSetting = exports.CurrentModelMaster = exports.TakeOverTypeModelMaster = exports.TakeOverTypeModel = exports.DataOwner = exports.PlatformId = exports.TakeOver = exports.Account = exports.Namespace = void 0;
+exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.BanStatus = exports.PlatformUser = exports.ScopeValue = exports.OpenIdConnectSetting = exports.CurrentModelMaster = exports.TakeOverTypeModelMaster = exports.TakeOverTypeModel = exports.DataOwner = exports.PlatformId = exports.TakeOver = exports.Account = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ var CurrentModelMaster_1 = tslib_1.__importDefault(require("./CurrentModelMaster
 exports.CurrentModelMaster = CurrentModelMaster_1.default;
 var OpenIdConnectSetting_1 = tslib_1.__importDefault(require("./OpenIdConnectSetting"));
 exports.OpenIdConnectSetting = OpenIdConnectSetting_1.default;
+var ScopeValue_1 = tslib_1.__importDefault(require("./ScopeValue"));
+exports.ScopeValue = ScopeValue_1.default;
 var PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));
 exports.PlatformUser = PlatformUser_1.default;
 var BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
