@@ -10,6 +10,8 @@ export default class MissionGroupModel implements IModel {
     private resetDayOfWeek;
     private resetHour;
     private completeNotificationNamespaceId;
+    private anchorTimestamp;
+    private days;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -43,6 +45,12 @@ export default class MissionGroupModel implements IModel {
     getCompleteNotificationNamespaceId(): string | null;
     setCompleteNotificationNamespaceId(completeNotificationNamespaceId: string | null): this;
     withCompleteNotificationNamespaceId(completeNotificationNamespaceId: string | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getDays(): number | null;
+    setDays(days: number | null): this;
+    withDays(days: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionGroupModel | null;

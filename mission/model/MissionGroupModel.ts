@@ -33,6 +33,8 @@ export default class MissionGroupModel implements IModel {
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
     private completeNotificationNamespaceId: string|null = null;
+    private anchorTimestamp: number|null = null;
+    private days: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -213,6 +215,28 @@ export default class MissionGroupModel implements IModel {
         this.completeNotificationNamespaceId = completeNotificationNamespaceId;
         return this;
     }
+    public getAnchorTimestamp(): number|null {
+        return this.anchorTimestamp;
+    }
+    public setAnchorTimestamp(anchorTimestamp: number|null) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public withAnchorTimestamp(anchorTimestamp: number|null): this {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public getDays(): number|null {
+        return this.days;
+    }
+    public setDays(days: number|null) {
+        this.days = days;
+        return this;
+    }
+    public withDays(days: number|null): this {
+        this.days = days;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): MissionGroupModel|null {
         if (data == undefined || data == null) {
@@ -231,7 +255,9 @@ export default class MissionGroupModel implements IModel {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
-            .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"]);
+            .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -249,6 +275,8 @@ export default class MissionGroupModel implements IModel {
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     }
 }

@@ -30,6 +30,8 @@ export default class UpdateMissionGroupModelMasterRequest implements IRequest {
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
+    private anchorTimestamp: number|null = null;
+    private days: number|null = null;
     private completeNotificationNamespaceId: string|null = null;
 
     public getRequestId(): string|null {
@@ -147,6 +149,28 @@ export default class UpdateMissionGroupModelMasterRequest implements IRequest {
         this.resetHour = resetHour;
         return this;
     }
+    public getAnchorTimestamp(): number|null {
+        return this.anchorTimestamp;
+    }
+    public setAnchorTimestamp(anchorTimestamp: number|null) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public withAnchorTimestamp(anchorTimestamp: number|null): this {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public getDays(): number|null {
+        return this.days;
+    }
+    public setDays(days: number|null) {
+        this.days = days;
+        return this;
+    }
+    public withDays(days: number|null): this {
+        this.days = days;
+        return this;
+    }
     public getCompleteNotificationNamespaceId(): string|null {
         return this.completeNotificationNamespaceId;
     }
@@ -169,6 +193,8 @@ export default class UpdateMissionGroupModelMasterRequest implements IRequest {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"])
             .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"]);
     }
 
@@ -182,6 +208,8 @@ export default class UpdateMissionGroupModelMasterRequest implements IRequest {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
         };
     }

@@ -426,6 +426,81 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public evaluateComplete(request: Request.EvaluateCompleteRequest): Promise<Result.EvaluateCompleteResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/eval')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{missionGroupName}', String(request.getMissionGroupName() ?? 'null') === "" ? "null" : String(request.getMissionGroupName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.EvaluateCompleteResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public evaluateCompleteByUserId(request: Request.EvaluateCompleteByUserIdRequest): Promise<Result.EvaluateCompleteByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/eval')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{missionGroupName}', String(request.getMissionGroupName() ?? 'null') === "" ? "null" : String(request.getMissionGroupName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.EvaluateCompleteByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
@@ -864,6 +939,8 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
             'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
             'resetHour': request.getResetHour() ?? null,
+            'anchorTimestamp': request.getAnchorTimestamp() ?? null,
+            'days': request.getDays() ?? null,
             'completeNotificationNamespaceId': request.getCompleteNotificationNamespaceId() ?? null,
         };
         return axios.post(
@@ -929,6 +1006,8 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
             'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
             'resetHour': request.getResetHour() ?? null,
+            'anchorTimestamp': request.getAnchorTimestamp() ?? null,
+            'days': request.getDays() ?? null,
             'completeNotificationNamespaceId': request.getCompleteNotificationNamespaceId() ?? null,
         };
         return axios.put(

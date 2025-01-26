@@ -27,6 +27,8 @@ var CreateMissionGroupModelMasterRequest = /** @class */ (function () {
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.anchorTimestamp = null;
+        this.days = null;
         this.completeNotificationNamespaceId = null;
     }
     CreateMissionGroupModelMasterRequest.prototype.getRequestId = function () {
@@ -139,6 +141,28 @@ var CreateMissionGroupModelMasterRequest = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    CreateMissionGroupModelMasterRequest.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    CreateMissionGroupModelMasterRequest.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CreateMissionGroupModelMasterRequest.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CreateMissionGroupModelMasterRequest.prototype.getDays = function () {
+        return this.days;
+    };
+    CreateMissionGroupModelMasterRequest.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    CreateMissionGroupModelMasterRequest.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     CreateMissionGroupModelMasterRequest.prototype.getCompleteNotificationNamespaceId = function () {
         return this.completeNotificationNamespaceId;
     };
@@ -160,6 +184,8 @@ var CreateMissionGroupModelMasterRequest = /** @class */ (function () {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"])
             .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"]);
     };
     CreateMissionGroupModelMasterRequest.prototype.toDict = function () {
@@ -172,6 +198,8 @@ var CreateMissionGroupModelMasterRequest = /** @class */ (function () {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
         };
     };

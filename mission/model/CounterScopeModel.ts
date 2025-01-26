@@ -27,6 +27,8 @@ export default class CounterScopeModel implements IModel {
     private resetHour: number|null = null;
     private conditionName: string|null = null;
     private condition: Gs2Mission.VerifyAction|null = null;
+    private anchorTimestamp: number|null = null;
+    private days: number|null = null;
     public getScopeType(): string|null {
         return this.scopeType;
     }
@@ -104,6 +106,28 @@ export default class CounterScopeModel implements IModel {
         this.condition = condition;
         return this;
     }
+    public getAnchorTimestamp(): number|null {
+        return this.anchorTimestamp;
+    }
+    public setAnchorTimestamp(anchorTimestamp: number|null) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public withAnchorTimestamp(anchorTimestamp: number|null): this {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public getDays(): number|null {
+        return this.days;
+    }
+    public setDays(days: number|null) {
+        this.days = days;
+        return this;
+    }
+    public withDays(days: number|null): this {
+        this.days = days;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CounterScopeModel|null {
         if (data == undefined || data == null) {
@@ -116,7 +140,9 @@ export default class CounterScopeModel implements IModel {
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
             .withConditionName(data["conditionName"])
-            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]));
+            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]))
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +154,8 @@ export default class CounterScopeModel implements IModel {
             "resetHour": this.getResetHour(),
             "conditionName": this.getConditionName(),
             "condition": this.getCondition()?.toDict(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     }
 }

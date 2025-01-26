@@ -29,6 +29,8 @@ var MissionGroupModel = /** @class */ (function () {
         this.resetDayOfWeek = null;
         this.resetHour = null;
         this.completeNotificationNamespaceId = null;
+        this.anchorTimestamp = null;
+        this.days = null;
     }
     MissionGroupModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -195,6 +197,28 @@ var MissionGroupModel = /** @class */ (function () {
         this.completeNotificationNamespaceId = completeNotificationNamespaceId;
         return this;
     };
+    MissionGroupModel.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    MissionGroupModel.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    MissionGroupModel.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    MissionGroupModel.prototype.getDays = function () {
+        return this.days;
+    };
+    MissionGroupModel.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    MissionGroupModel.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     MissionGroupModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -211,7 +235,9 @@ var MissionGroupModel = /** @class */ (function () {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
-            .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"]);
+            .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     };
     MissionGroupModel.prototype.toDict = function () {
         return {
@@ -227,6 +253,8 @@ var MissionGroupModel = /** @class */ (function () {
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     };
     return MissionGroupModel;

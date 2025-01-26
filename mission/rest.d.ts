@@ -15,6 +15,8 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     revertReceiveByUserId(request: Request.RevertReceiveByUserIdRequest): Promise<Result.RevertReceiveByUserIdResult>;
     getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult>;
     getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult>;
+    evaluateComplete(request: Request.EvaluateCompleteRequest): Promise<Result.EvaluateCompleteResult>;
+    evaluateCompleteByUserId(request: Request.EvaluateCompleteByUserIdRequest): Promise<Result.EvaluateCompleteByUserIdResult>;
     deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult>;
     verifyComplete(request: Request.VerifyCompleteRequest): Promise<Result.VerifyCompleteResult>;
     verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult>;

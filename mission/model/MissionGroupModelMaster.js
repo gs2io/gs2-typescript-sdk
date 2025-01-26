@@ -26,6 +26,8 @@ var MissionGroupModelMaster = /** @class */ (function () {
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.anchorTimestamp = null;
+        this.days = null;
         this.completeNotificationNamespaceId = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -185,6 +187,28 @@ var MissionGroupModelMaster = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    MissionGroupModelMaster.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    MissionGroupModelMaster.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    MissionGroupModelMaster.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    MissionGroupModelMaster.prototype.getDays = function () {
+        return this.days;
+    };
+    MissionGroupModelMaster.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    MissionGroupModelMaster.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     MissionGroupModelMaster.prototype.getCompleteNotificationNamespaceId = function () {
         return this.completeNotificationNamespaceId;
     };
@@ -242,6 +266,8 @@ var MissionGroupModelMaster = /** @class */ (function () {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"])
             .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -257,6 +283,8 @@ var MissionGroupModelMaster = /** @class */ (function () {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

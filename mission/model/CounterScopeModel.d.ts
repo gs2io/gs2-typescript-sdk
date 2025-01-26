@@ -8,6 +8,8 @@ export default class CounterScopeModel implements IModel {
     private resetHour;
     private conditionName;
     private condition;
+    private anchorTimestamp;
+    private days;
     getScopeType(): string | null;
     setScopeType(scopeType: string | null): this;
     withScopeType(scopeType: string | null): this;
@@ -29,6 +31,12 @@ export default class CounterScopeModel implements IModel {
     getCondition(): Gs2Mission.VerifyAction | null;
     setCondition(condition: Gs2Mission.VerifyAction | null): this;
     withCondition(condition: Gs2Mission.VerifyAction | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getDays(): number | null;
+    setDays(days: number | null): this;
+    withDays(days: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CounterScopeModel | null;

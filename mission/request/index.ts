@@ -24,6 +24,8 @@ import BatchReceiveByUserIdRequest from "./BatchReceiveByUserIdRequest"
 import RevertReceiveByUserIdRequest from "./RevertReceiveByUserIdRequest"
 import GetCompleteRequest from "./GetCompleteRequest"
 import GetCompleteByUserIdRequest from "./GetCompleteByUserIdRequest"
+import EvaluateCompleteRequest from "./EvaluateCompleteRequest"
+import EvaluateCompleteByUserIdRequest from "./EvaluateCompleteByUserIdRequest"
 import DeleteCompleteByUserIdRequest from "./DeleteCompleteByUserIdRequest"
 import VerifyCompleteRequest from "./VerifyCompleteRequest"
 import VerifyCompleteByUserIdRequest from "./VerifyCompleteByUserIdRequest"
@@ -98,6 +100,8 @@ export {
     RevertReceiveByUserIdRequest,
     GetCompleteRequest,
     GetCompleteByUserIdRequest,
+    EvaluateCompleteRequest,
+    EvaluateCompleteByUserIdRequest,
     DeleteCompleteByUserIdRequest,
     VerifyCompleteRequest,
     VerifyCompleteByUserIdRequest,

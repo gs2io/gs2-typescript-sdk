@@ -380,6 +380,73 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2MissionRestClient.prototype.evaluateComplete = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/eval')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{missionGroupName}', String((_c = request.getMissionGroupName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMissionGroupName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.EvaluateCompleteResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2MissionRestClient.prototype.evaluateCompleteByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/eval')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{missionGroupName}', String((_e = request.getMissionGroupName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMissionGroupName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.EvaluateCompleteByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2MissionRestClient.prototype.deleteCompleteByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
@@ -748,7 +815,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.createMissionGroupModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -766,7 +833,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'resetDayOfMonth': (_h = request.getResetDayOfMonth()) !== null && _h !== void 0 ? _h : null,
             'resetDayOfWeek': (_j = request.getResetDayOfWeek()) !== null && _j !== void 0 ? _j : null,
             'resetHour': (_k = request.getResetHour()) !== null && _k !== void 0 ? _k : null,
-            'completeNotificationNamespaceId': (_l = request.getCompleteNotificationNamespaceId()) !== null && _l !== void 0 ? _l : null,
+            'anchorTimestamp': (_l = request.getAnchorTimestamp()) !== null && _l !== void 0 ? _l : null,
+            'days': (_m = request.getDays()) !== null && _m !== void 0 ? _m : null,
+            'completeNotificationNamespaceId': (_o = request.getCompleteNotificationNamespaceId()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -805,7 +874,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.updateMissionGroupModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -823,7 +892,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'resetDayOfMonth': (_j = request.getResetDayOfMonth()) !== null && _j !== void 0 ? _j : null,
             'resetDayOfWeek': (_k = request.getResetDayOfWeek()) !== null && _k !== void 0 ? _k : null,
             'resetHour': (_l = request.getResetHour()) !== null && _l !== void 0 ? _l : null,
-            'completeNotificationNamespaceId': (_m = request.getCompleteNotificationNamespaceId()) !== null && _m !== void 0 ? _m : null,
+            'anchorTimestamp': (_m = request.getAnchorTimestamp()) !== null && _m !== void 0 ? _m : null,
+            'days': (_o = request.getDays()) !== null && _o !== void 0 ? _o : null,
+            'completeNotificationNamespaceId': (_p = request.getCompleteNotificationNamespaceId()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

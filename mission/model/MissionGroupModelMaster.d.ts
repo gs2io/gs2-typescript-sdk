@@ -8,6 +8,8 @@ export default class MissionGroupModelMaster implements IModel {
     private resetDayOfMonth;
     private resetDayOfWeek;
     private resetHour;
+    private anchorTimestamp;
+    private days;
     private completeNotificationNamespaceId;
     private createdAt;
     private updatedAt;
@@ -42,6 +44,12 @@ export default class MissionGroupModelMaster implements IModel {
     getResetHour(): number | null;
     setResetHour(resetHour: number | null): this;
     withResetHour(resetHour: number | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getDays(): number | null;
+    setDays(days: number | null): this;
+    withDays(days: number | null): this;
     getCompleteNotificationNamespaceId(): string | null;
     setCompleteNotificationNamespaceId(completeNotificationNamespaceId: string | null): this;
     withCompleteNotificationNamespaceId(completeNotificationNamespaceId: string | null): this;

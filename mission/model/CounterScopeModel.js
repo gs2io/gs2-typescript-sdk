@@ -26,6 +26,8 @@ var CounterScopeModel = /** @class */ (function () {
         this.resetHour = null;
         this.conditionName = null;
         this.condition = null;
+        this.anchorTimestamp = null;
+        this.days = null;
     }
     CounterScopeModel.prototype.getScopeType = function () {
         return this.scopeType;
@@ -104,6 +106,28 @@ var CounterScopeModel = /** @class */ (function () {
         this.condition = condition;
         return this;
     };
+    CounterScopeModel.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    CounterScopeModel.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CounterScopeModel.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CounterScopeModel.prototype.getDays = function () {
+        return this.days;
+    };
+    CounterScopeModel.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    CounterScopeModel.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     CounterScopeModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -115,7 +139,9 @@ var CounterScopeModel = /** @class */ (function () {
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
             .withConditionName(data["conditionName"])
-            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]));
+            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]))
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     };
     CounterScopeModel.prototype.toDict = function () {
         var _a;
@@ -127,6 +153,8 @@ var CounterScopeModel = /** @class */ (function () {
             "resetHour": this.getResetHour(),
             "conditionName": this.getConditionName(),
             "condition": (_a = this.getCondition()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     };
     return CounterScopeModel;
