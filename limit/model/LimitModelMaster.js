@@ -26,6 +26,8 @@ var LimitModelMaster = /** @class */ (function () {
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.anchorTimestamp = null;
+        this.days = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -184,6 +186,28 @@ var LimitModelMaster = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    LimitModelMaster.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    LimitModelMaster.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    LimitModelMaster.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    LimitModelMaster.prototype.getDays = function () {
+        return this.days;
+    };
+    LimitModelMaster.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    LimitModelMaster.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     LimitModelMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -230,6 +254,8 @@ var LimitModelMaster = /** @class */ (function () {
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -244,6 +270,8 @@ var LimitModelMaster = /** @class */ (function () {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

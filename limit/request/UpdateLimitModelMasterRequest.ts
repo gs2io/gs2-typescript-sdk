@@ -30,6 +30,8 @@ export default class UpdateLimitModelMasterRequest implements IRequest {
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
+    private anchorTimestamp: number|null = null;
+    private days: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -146,6 +148,28 @@ export default class UpdateLimitModelMasterRequest implements IRequest {
         this.resetHour = resetHour;
         return this;
     }
+    public getAnchorTimestamp(): number|null {
+        return this.anchorTimestamp;
+    }
+    public setAnchorTimestamp(anchorTimestamp: number|null) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public withAnchorTimestamp(anchorTimestamp: number|null): this {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public getDays(): number|null {
+        return this.days;
+    }
+    public setDays(days: number|null) {
+        this.days = days;
+        return this;
+    }
+    public withDays(days: number|null): this {
+        this.days = days;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateLimitModelMasterRequest {
         return new UpdateLimitModelMasterRequest()
@@ -156,7 +180,9 @@ export default class UpdateLimitModelMasterRequest implements IRequest {
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
-            .withResetHour(data["resetHour"]);
+            .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -169,6 +195,8 @@ export default class UpdateLimitModelMasterRequest implements IRequest {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     }
 }

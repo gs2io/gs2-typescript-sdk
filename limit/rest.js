@@ -823,7 +823,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.createLimitModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -841,6 +841,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'resetDayOfMonth': (_h = request.getResetDayOfMonth()) !== null && _h !== void 0 ? _h : null,
             'resetDayOfWeek': (_j = request.getResetDayOfWeek()) !== null && _j !== void 0 ? _j : null,
             'resetHour': (_k = request.getResetHour()) !== null && _k !== void 0 ? _k : null,
+            'anchorTimestamp': (_l = request.getAnchorTimestamp()) !== null && _l !== void 0 ? _l : null,
+            'days': (_m = request.getDays()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -879,7 +881,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.updateLimitModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -897,6 +899,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'resetDayOfMonth': (_j = request.getResetDayOfMonth()) !== null && _j !== void 0 ? _j : null,
             'resetDayOfWeek': (_k = request.getResetDayOfWeek()) !== null && _k !== void 0 ? _k : null,
             'resetHour': (_l = request.getResetHour()) !== null && _l !== void 0 ? _l : null,
+            'anchorTimestamp': (_m = request.getAnchorTimestamp()) !== null && _m !== void 0 ? _m : null,
+            'days': (_o = request.getDays()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

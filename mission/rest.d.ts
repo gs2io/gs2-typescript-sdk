@@ -57,11 +57,14 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
     verifyCounterValue(request: Request.VerifyCounterValueRequest): Promise<Result.VerifyCounterValueResult>;
     verifyCounterValueByUserId(request: Request.VerifyCounterValueByUserIdRequest): Promise<Result.VerifyCounterValueByUserIdResult>;
+    resetCounter(request: Request.ResetCounterRequest): Promise<Result.ResetCounterResult>;
+    resetCounterByUserId(request: Request.ResetCounterByUserIdRequest): Promise<Result.ResetCounterByUserIdResult>;
     deleteCounter(request: Request.DeleteCounterRequest): Promise<Result.DeleteCounterResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
     increaseByStampSheet(request: Request.IncreaseByStampSheetRequest): Promise<Result.IncreaseByStampSheetResult>;
     setByStampSheet(request: Request.SetByStampSheetRequest): Promise<Result.SetByStampSheetResult>;
     decreaseByStampTask(request: Request.DecreaseByStampTaskRequest): Promise<Result.DecreaseByStampTaskResult>;
+    resetByStampTask(request: Request.ResetByStampTaskRequest): Promise<Result.ResetByStampTaskResult>;
     verifyCounterValueByStampTask(request: Request.VerifyCounterValueByStampTaskRequest): Promise<Result.VerifyCounterValueByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentMissionMaster(request: Request.GetCurrentMissionMasterRequest): Promise<Result.GetCurrentMissionMasterResult>;

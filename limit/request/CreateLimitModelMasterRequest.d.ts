@@ -10,6 +10,8 @@ export default class CreateLimitModelMasterRequest implements IRequest {
     private resetDayOfMonth;
     private resetDayOfWeek;
     private resetHour;
+    private anchorTimestamp;
+    private days;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -40,6 +42,12 @@ export default class CreateLimitModelMasterRequest implements IRequest {
     getResetHour(): number | null;
     setResetHour(resetHour: number | null): this;
     withResetHour(resetHour: number | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getDays(): number | null;
+    setDays(days: number | null): this;
+    withDays(days: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateLimitModelMasterRequest;

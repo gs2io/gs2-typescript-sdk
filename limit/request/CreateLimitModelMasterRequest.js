@@ -27,6 +27,8 @@ var CreateLimitModelMasterRequest = /** @class */ (function () {
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.anchorTimestamp = null;
+        this.days = null;
     }
     CreateLimitModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -138,6 +140,28 @@ var CreateLimitModelMasterRequest = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    CreateLimitModelMasterRequest.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    CreateLimitModelMasterRequest.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CreateLimitModelMasterRequest.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    CreateLimitModelMasterRequest.prototype.getDays = function () {
+        return this.days;
+    };
+    CreateLimitModelMasterRequest.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    CreateLimitModelMasterRequest.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     CreateLimitModelMasterRequest.fromDict = function (data) {
         return new CreateLimitModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -147,7 +171,9 @@ var CreateLimitModelMasterRequest = /** @class */ (function () {
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
-            .withResetHour(data["resetHour"]);
+            .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     };
     CreateLimitModelMasterRequest.prototype.toDict = function () {
         return {
@@ -159,6 +185,8 @@ var CreateLimitModelMasterRequest = /** @class */ (function () {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     };
     return CreateLimitModelMasterRequest;

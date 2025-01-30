@@ -66,11 +66,14 @@ import GetCounterRequest from "./GetCounterRequest"
 import GetCounterByUserIdRequest from "./GetCounterByUserIdRequest"
 import VerifyCounterValueRequest from "./VerifyCounterValueRequest"
 import VerifyCounterValueByUserIdRequest from "./VerifyCounterValueByUserIdRequest"
+import ResetCounterRequest from "./ResetCounterRequest"
+import ResetCounterByUserIdRequest from "./ResetCounterByUserIdRequest"
 import DeleteCounterRequest from "./DeleteCounterRequest"
 import DeleteCounterByUserIdRequest from "./DeleteCounterByUserIdRequest"
 import IncreaseByStampSheetRequest from "./IncreaseByStampSheetRequest"
 import SetByStampSheetRequest from "./SetByStampSheetRequest"
 import DecreaseByStampTaskRequest from "./DecreaseByStampTaskRequest"
+import ResetByStampTaskRequest from "./ResetByStampTaskRequest"
 import VerifyCounterValueByStampTaskRequest from "./VerifyCounterValueByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentMissionMasterRequest from "./GetCurrentMissionMasterRequest"
@@ -142,11 +145,14 @@ export {
     GetCounterByUserIdRequest,
     VerifyCounterValueRequest,
     VerifyCounterValueByUserIdRequest,
+    ResetCounterRequest,
+    ResetCounterByUserIdRequest,
     DeleteCounterRequest,
     DeleteCounterByUserIdRequest,
     IncreaseByStampSheetRequest,
     SetByStampSheetRequest,
     DecreaseByStampTaskRequest,
+    ResetByStampTaskRequest,
     VerifyCounterValueByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentMissionMasterRequest,

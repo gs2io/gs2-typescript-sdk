@@ -955,6 +955,8 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
             'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
             'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
             'resetHour': request.getResetHour() ?? null,
+            'anchorTimestamp': request.getAnchorTimestamp() ?? null,
+            'days': request.getDays() ?? null,
         };
         return axios.post(
             url,
@@ -1019,6 +1021,8 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
             'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
             'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
             'resetHour': request.getResetHour() ?? null,
+            'anchorTimestamp': request.getAnchorTimestamp() ?? null,
+            'days': request.getDays() ?? null,
         };
         return axios.put(
             url,

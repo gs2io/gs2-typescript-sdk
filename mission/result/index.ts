@@ -66,11 +66,14 @@ import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
 import VerifyCounterValueResult from "./VerifyCounterValueResult"
 import VerifyCounterValueByUserIdResult from "./VerifyCounterValueByUserIdResult"
+import ResetCounterResult from "./ResetCounterResult"
+import ResetCounterByUserIdResult from "./ResetCounterByUserIdResult"
 import DeleteCounterResult from "./DeleteCounterResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
 import IncreaseByStampSheetResult from "./IncreaseByStampSheetResult"
 import SetByStampSheetResult from "./SetByStampSheetResult"
 import DecreaseByStampTaskResult from "./DecreaseByStampTaskResult"
+import ResetByStampTaskResult from "./ResetByStampTaskResult"
 import VerifyCounterValueByStampTaskResult from "./VerifyCounterValueByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMissionMasterResult from "./GetCurrentMissionMasterResult"
@@ -142,11 +145,14 @@ export {
     GetCounterByUserIdResult,
     VerifyCounterValueResult,
     VerifyCounterValueByUserIdResult,
+    ResetCounterResult,
+    ResetCounterByUserIdResult,
     DeleteCounterResult,
     DeleteCounterByUserIdResult,
     IncreaseByStampSheetResult,
     SetByStampSheetResult,
     DecreaseByStampTaskResult,
+    ResetByStampTaskResult,
     VerifyCounterValueByStampTaskResult,
     ExportMasterResult,
     GetCurrentMissionMasterResult,

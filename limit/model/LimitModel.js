@@ -25,6 +25,8 @@ var LimitModel = /** @class */ (function () {
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.anchorTimestamp = null;
+        this.days = null;
     }
     LimitModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +171,28 @@ var LimitModel = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    LimitModel.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    LimitModel.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    LimitModel.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    LimitModel.prototype.getDays = function () {
+        return this.days;
+    };
+    LimitModel.prototype.setDays = function (days) {
+        this.days = days;
+        return this;
+    };
+    LimitModel.prototype.withDays = function (days) {
+        this.days = days;
+        return this;
+    };
     LimitModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -180,7 +204,9 @@ var LimitModel = /** @class */ (function () {
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
-            .withResetHour(data["resetHour"]);
+            .withResetHour(data["resetHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withDays(data["days"]);
     };
     LimitModel.prototype.toDict = function () {
         return {
@@ -191,6 +217,8 @@ var LimitModel = /** @class */ (function () {
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "days": this.getDays(),
         };
     };
     return LimitModel;

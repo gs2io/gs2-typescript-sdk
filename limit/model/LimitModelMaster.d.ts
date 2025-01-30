@@ -8,6 +8,8 @@ export default class LimitModelMaster implements IModel {
     private resetDayOfMonth;
     private resetDayOfWeek;
     private resetHour;
+    private anchorTimestamp;
+    private days;
     private createdAt;
     private updatedAt;
     private revision;
@@ -41,6 +43,12 @@ export default class LimitModelMaster implements IModel {
     getResetHour(): number | null;
     setResetHour(resetHour: number | null): this;
     withResetHour(resetHour: number | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getDays(): number | null;
+    setDays(days: number | null): this;
+    withDays(days: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
