@@ -624,7 +624,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.triggerByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -645,6 +645,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'triggerStrategy': (_k = request.getTriggerStrategy()) !== null && _k !== void 0 ? _k : null,
             'ttl': (_l = request.getTtl()) !== null && _l !== void 0 ? _l : null,
+            'eventId': (_m = request.getEventId()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -24,6 +24,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.triggerStrategy = null;
         this.ttl = null;
+        this.eventId = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -104,6 +105,17 @@ var TriggerByUserIdRequest = /** @class */ (function () {
         this.ttl = ttl;
         return this;
     };
+    TriggerByUserIdRequest.prototype.getEventId = function () {
+        return this.eventId;
+    };
+    TriggerByUserIdRequest.prototype.setEventId = function (eventId) {
+        this.eventId = eventId;
+        return this;
+    };
+    TriggerByUserIdRequest.prototype.withEventId = function (eventId) {
+        this.eventId = eventId;
+        return this;
+    };
     TriggerByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -133,6 +145,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withTriggerStrategy(data["triggerStrategy"])
             .withTtl(data["ttl"])
+            .withEventId(data["eventId"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     TriggerByUserIdRequest.prototype.toDict = function () {
@@ -142,6 +155,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "triggerStrategy": this.getTriggerStrategy(),
             "ttl": this.getTtl(),
+            "eventId": this.getEventId(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

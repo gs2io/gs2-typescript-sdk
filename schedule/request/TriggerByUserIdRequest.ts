@@ -27,6 +27,7 @@ export default class TriggerByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private triggerStrategy: string|null = null;
     private ttl: number|null = null;
+    private eventId: string|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -112,6 +113,17 @@ export default class TriggerByUserIdRequest implements IRequest {
         this.ttl = ttl;
         return this;
     }
+    public getEventId(): string|null {
+        return this.eventId;
+    }
+    public setEventId(eventId: string|null) {
+        this.eventId = eventId;
+        return this;
+    }
+    public withEventId(eventId: string|null): this {
+        this.eventId = eventId;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -145,6 +157,7 @@ export default class TriggerByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withTriggerStrategy(data["triggerStrategy"])
             .withTtl(data["ttl"])
+            .withEventId(data["eventId"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -155,6 +168,7 @@ export default class TriggerByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "triggerStrategy": this.getTriggerStrategy(),
             "ttl": this.getTtl(),
+            "eventId": this.getEventId(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

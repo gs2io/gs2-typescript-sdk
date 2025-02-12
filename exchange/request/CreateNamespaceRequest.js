@@ -28,6 +28,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = null;
         this.exchangeScript = null;
         this.incrementalExchangeScript = null;
+        this.acquireAwaitScript = null;
         this.logSetting = null;
         this.queueNamespaceId = null;
         this.keyId = null;
@@ -131,6 +132,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.incrementalExchangeScript = incrementalExchangeScript;
         return this;
     };
+    CreateNamespaceRequest.prototype.getAcquireAwaitScript = function () {
+        return this.acquireAwaitScript;
+    };
+    CreateNamespaceRequest.prototype.setAcquireAwaitScript = function (acquireAwaitScript) {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withAcquireAwaitScript = function (acquireAwaitScript) {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -179,12 +191,13 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
             .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
+            .withAcquireAwaitScript(Gs2Exchange.ScriptSetting.fromDict(data["acquireAwaitScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -193,7 +206,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "incrementalExchangeScript": (_c = this.getIncrementalExchangeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "acquireAwaitScript": (_d = this.getAcquireAwaitScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

@@ -7,6 +7,7 @@ export default class TriggerByUserIdRequest implements IRequest {
     private userId;
     private triggerStrategy;
     private ttl;
+    private eventId;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -30,6 +31,9 @@ export default class TriggerByUserIdRequest implements IRequest {
     getTtl(): number | null;
     setTtl(ttl: number | null): this;
     withTtl(ttl: number | null): this;
+    getEventId(): string | null;
+    setEventId(eventId: string | null): this;
+    withEventId(eventId: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

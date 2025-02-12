@@ -31,6 +31,7 @@ export default class Namespace implements IModel {
     private transactionSetting: Gs2Exchange.TransactionSetting|null = null;
     private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
     private incrementalExchangeScript: Gs2Exchange.ScriptSetting|null = null;
+    private acquireAwaitScript: Gs2Exchange.ScriptSetting|null = null;
     private logSetting: Gs2Exchange.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -185,6 +186,17 @@ export default class Namespace implements IModel {
         this.incrementalExchangeScript = incrementalExchangeScript;
         return this;
     }
+    public getAcquireAwaitScript(): Gs2Exchange.ScriptSetting|null {
+        return this.acquireAwaitScript;
+    }
+    public setAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting|null) {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    }
+    public withAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting|null): this {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    }
     public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
@@ -271,6 +283,7 @@ export default class Namespace implements IModel {
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
             .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
+            .withAcquireAwaitScript(Gs2Exchange.ScriptSetting.fromDict(data["acquireAwaitScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -289,6 +302,7 @@ export default class Namespace implements IModel {
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "exchangeScript": this.getExchangeScript()?.toDict(),
             "incrementalExchangeScript": this.getIncrementalExchangeScript()?.toDict(),
+            "acquireAwaitScript": this.getAcquireAwaitScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

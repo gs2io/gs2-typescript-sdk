@@ -49,7 +49,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
@@ -66,9 +66,10 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'exchangeScript': (_j = (_h = request.getExchangeScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'incrementalExchangeScript': (_l = (_k = request.getIncrementalExchangeScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'queueNamespaceId': (_p = request.getQueueNamespaceId()) !== null && _p !== void 0 ? _p : null,
-            'keyId': (_q = request.getKeyId()) !== null && _q !== void 0 ? _q : null,
+            'acquireAwaitScript': (_o = (_m = request.getAcquireAwaitScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'queueNamespaceId': (_r = request.getQueueNamespaceId()) !== null && _r !== void 0 ? _r : null,
+            'keyId': (_s = request.getKeyId()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -128,7 +129,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -145,9 +146,10 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_h = (_g = request.getTransactionSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'exchangeScript': (_k = (_j = request.getExchangeScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'incrementalExchangeScript': (_m = (_l = request.getIncrementalExchangeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'queueNamespaceId': (_q = request.getQueueNamespaceId()) !== null && _q !== void 0 ? _q : null,
-            'keyId': (_r = request.getKeyId()) !== null && _r !== void 0 ? _r : null,
+            'acquireAwaitScript': (_p = (_o = request.getAcquireAwaitScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'queueNamespaceId': (_s = request.getQueueNamespaceId()) !== null && _s !== void 0 ? _s : null,
+            'keyId': (_t = request.getKeyId()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

@@ -735,6 +735,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'triggerStrategy': request.getTriggerStrategy() ?? null,
             'ttl': request.getTtl() ?? null,
+            'eventId': request.getEventId() ?? null,
         };
         return axios.post(
             url,

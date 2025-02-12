@@ -10,6 +10,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private transactionSetting;
     private exchangeScript;
     private incrementalExchangeScript;
+    private acquireAwaitScript;
     private logSetting;
     private queueNamespaceId;
     private keyId;
@@ -40,6 +41,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getIncrementalExchangeScript(): Gs2Exchange.ScriptSetting | null;
     setIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting | null): this;
     withIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting | null): this;
+    getAcquireAwaitScript(): Gs2Exchange.ScriptSetting | null;
+    setAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting | null): this;
+    withAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting | null): this;
     getLogSetting(): Gs2Exchange.LogSetting | null;
     setLogSetting(logSetting: Gs2Exchange.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Exchange.LogSetting | null): this;

@@ -29,6 +29,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private transactionSetting: Gs2Exchange.TransactionSetting|null = null;
     private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
     private incrementalExchangeScript: Gs2Exchange.ScriptSetting|null = null;
+    private acquireAwaitScript: Gs2Exchange.ScriptSetting|null = null;
     private logSetting: Gs2Exchange.LogSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
@@ -137,6 +138,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.incrementalExchangeScript = incrementalExchangeScript;
         return this;
     }
+    public getAcquireAwaitScript(): Gs2Exchange.ScriptSetting|null {
+        return this.acquireAwaitScript;
+    }
+    public setAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting|null) {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    }
+    public withAcquireAwaitScript(acquireAwaitScript: Gs2Exchange.ScriptSetting|null): this {
+        this.acquireAwaitScript = acquireAwaitScript;
+        return this;
+    }
     public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
@@ -186,6 +198,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
             .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
+            .withAcquireAwaitScript(Gs2Exchange.ScriptSetting.fromDict(data["acquireAwaitScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
@@ -200,6 +213,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "exchangeScript": this.getExchangeScript()?.toDict(),
             "incrementalExchangeScript": this.getIncrementalExchangeScript()?.toDict(),
+            "acquireAwaitScript": this.getAcquireAwaitScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
