@@ -37,6 +37,8 @@ import OpenMessageRequest from "./OpenMessageRequest"
 import OpenMessageByUserIdRequest from "./OpenMessageByUserIdRequest"
 import ReadMessageRequest from "./ReadMessageRequest"
 import ReadMessageByUserIdRequest from "./ReadMessageByUserIdRequest"
+import BatchReadMessagesRequest from "./BatchReadMessagesRequest"
+import BatchReadMessagesByUserIdRequest from "./BatchReadMessagesByUserIdRequest"
 import DeleteMessageRequest from "./DeleteMessageRequest"
 import DeleteMessageByUserIdRequest from "./DeleteMessageByUserIdRequest"
 import SendByStampSheetRequest from "./SendByStampSheetRequest"
@@ -82,6 +84,8 @@ export {
     OpenMessageByUserIdRequest,
     ReadMessageRequest,
     ReadMessageByUserIdRequest,
+    BatchReadMessagesRequest,
+    BatchReadMessagesByUserIdRequest,
     DeleteMessageRequest,
     DeleteMessageByUserIdRequest,
     SendByStampSheetRequest,

@@ -1,10 +1,13 @@
 import IResult from '../../core/interface/IResult';
 import * as Gs2Script from '../model';
+import * as Gs2Core from '../../core';
 export default class InvokeByStampSheetResult implements IResult {
     private code;
     private result;
     private transaction;
     private randomStatus;
+    private atomicCommit;
+    private transactionResult;
     private executeTime;
     private charged;
     private output;
@@ -20,6 +23,12 @@ export default class InvokeByStampSheetResult implements IResult {
     getRandomStatus(): Gs2Script.RandomStatus | null;
     setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
+    getAtomicCommit(): boolean | null;
+    setAtomicCommit(atomicCommit: boolean | null): this;
+    withAtomicCommit(atomicCommit: boolean | null): this;
+    getTransactionResult(): Gs2Core.TransactionResult | null;
+    setTransactionResult(transactionResult: Gs2Core.TransactionResult | null): this;
+    withTransactionResult(transactionResult: Gs2Core.TransactionResult | null): this;
     getExecuteTime(): number | null;
     setExecuteTime(executeTime: number | null): this;
     withExecuteTime(executeTime: number | null): this;

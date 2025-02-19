@@ -16,12 +16,15 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 import * as Gs2Script from '../model'
+import * as Gs2Core from '../../core'
 
 export default class DebugInvokeResult implements IResult {
     private code: number|null = null;
     private result: string|null = null;
     private transaction: Gs2Script.Transaction|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
+    private atomicCommit: boolean|null = null;
+    private transactionResult: Gs2Core.TransactionResult|null = null;
     private executeTime: number|null = null;
     private charged: number|null = null;
     private output: string[]|null = null;
@@ -82,6 +85,34 @@ export default class DebugInvokeResult implements IResult {
         return this;
     }
 
+    public getAtomicCommit(): boolean|null {
+        return this.atomicCommit;
+    }
+
+    public setAtomicCommit(atomicCommit: boolean|null) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public withAtomicCommit(atomicCommit: boolean|null): this {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public getTransactionResult(): Gs2Core.TransactionResult|null {
+        return this.transactionResult;
+    }
+
+    public setTransactionResult(transactionResult: Gs2Core.TransactionResult|null) {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
+    public withTransactionResult(transactionResult: Gs2Core.TransactionResult|null): this {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
     public getExecuteTime(): number|null {
         return this.executeTime;
     }
@@ -130,6 +161,8 @@ export default class DebugInvokeResult implements IResult {
             .withResult(data["result"])
             .withTransaction(Gs2Script.Transaction.fromDict(data["transaction"]))
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -145,6 +178,8 @@ export default class DebugInvokeResult implements IResult {
             "result": this.getResult(),
             "transaction": this.getTransaction()?.toDict(),
             "randomStatus": this.getRandomStatus()?.toDict(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transactionResult": this.getTransactionResult()?.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?

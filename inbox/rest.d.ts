@@ -28,6 +28,8 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     openMessageByUserId(request: Request.OpenMessageByUserIdRequest): Promise<Result.OpenMessageByUserIdResult>;
     readMessage(request: Request.ReadMessageRequest): Promise<Result.ReadMessageResult>;
     readMessageByUserId(request: Request.ReadMessageByUserIdRequest): Promise<Result.ReadMessageByUserIdResult>;
+    batchReadMessages(request: Request.BatchReadMessagesRequest): Promise<Result.BatchReadMessagesResult>;
+    batchReadMessagesByUserId(request: Request.BatchReadMessagesByUserIdRequest): Promise<Result.BatchReadMessagesByUserIdResult>;
     deleteMessage(request: Request.DeleteMessageRequest): Promise<Result.DeleteMessageResult>;
     deleteMessageByUserId(request: Request.DeleteMessageByUserIdRequest): Promise<Result.DeleteMessageByUserIdResult>;
     sendByStampSheet(request: Request.SendByStampSheetRequest): Promise<Result.SendByStampSheetResult>;

@@ -17,12 +17,15 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Script = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var DebugInvokeResult = /** @class */ (function () {
     function DebugInvokeResult() {
         this.code = null;
         this.result = null;
         this.transaction = null;
         this.randomStatus = null;
+        this.atomicCommit = null;
+        this.transactionResult = null;
         this.executeTime = null;
         this.charged = null;
         this.output = null;
@@ -71,6 +74,28 @@ var DebugInvokeResult = /** @class */ (function () {
         this.randomStatus = randomStatus;
         return this;
     };
+    DebugInvokeResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    DebugInvokeResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    DebugInvokeResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    DebugInvokeResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    DebugInvokeResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    DebugInvokeResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     DebugInvokeResult.prototype.getExecuteTime = function () {
         return this.executeTime;
     };
@@ -110,6 +135,8 @@ var DebugInvokeResult = /** @class */ (function () {
             .withResult(data["result"])
             .withTransaction(Gs2Script.Transaction.fromDict(data["transaction"]))
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -118,12 +145,14 @@ var DebugInvokeResult = /** @class */ (function () {
             }) : null);
     };
     DebugInvokeResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "code": this.getCode(),
             "result": this.getResult(),
             "transaction": (_a = this.getTransaction()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "randomStatus": (_b = this.getRandomStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transactionResult": (_c = this.getTransactionResult()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?
