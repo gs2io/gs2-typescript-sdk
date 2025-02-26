@@ -1534,7 +1534,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1962,7 +1962,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setPropertyForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))

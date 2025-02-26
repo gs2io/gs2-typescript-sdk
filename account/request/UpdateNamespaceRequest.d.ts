@@ -10,6 +10,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private authenticationScript;
     private createTakeOverScript;
     private doTakeOverScript;
+    private banScript;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -38,6 +39,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDoTakeOverScript(): Gs2Account.ScriptSetting | null;
     setDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
     withDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    getBanScript(): Gs2Account.ScriptSetting | null;
+    setBanScript(banScript: Gs2Account.ScriptSetting | null): this;
+    withBanScript(banScript: Gs2Account.ScriptSetting | null): this;
     getLogSetting(): Gs2Account.LogSetting | null;
     setLogSetting(logSetting: Gs2Account.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Account.LogSetting | null): this;

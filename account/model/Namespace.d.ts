@@ -10,6 +10,7 @@ export default class Namespace implements IModel {
     private authenticationScript;
     private createTakeOverScript;
     private doTakeOverScript;
+    private banScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -46,6 +47,9 @@ export default class Namespace implements IModel {
     getDoTakeOverScript(): Gs2Account.ScriptSetting | null;
     setDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
     withDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    getBanScript(): Gs2Account.ScriptSetting | null;
+    setBanScript(banScript: Gs2Account.ScriptSetting | null): this;
+    withBanScript(banScript: Gs2Account.ScriptSetting | null): this;
     getLogSetting(): Gs2Account.LogSetting | null;
     setLogSetting(logSetting: Gs2Account.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Account.LogSetting | null): this;

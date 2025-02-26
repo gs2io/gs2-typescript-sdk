@@ -1759,7 +1759,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setForm(request: Request.SetFormRequest): Promise<Result.SetFormResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2243,7 +2243,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setPropertyForm(request: Request.SetPropertyFormRequest): Promise<Result.SetPropertyFormResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

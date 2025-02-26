@@ -49,7 +49,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region);
@@ -67,7 +67,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'authenticationScript': (_j = (_h = request.getAuthenticationScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'createTakeOverScript': (_l = (_k = request.getCreateTakeOverScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'doTakeOverScript': (_o = (_m = request.getDoTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'banScript': (_q = (_p = request.getBanScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -127,7 +128,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -144,7 +145,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'authenticationScript': (_j = (_h = request.getAuthenticationScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'createTakeOverScript': (_l = (_k = request.getCreateTakeOverScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'doTakeOverScript': (_o = (_m = request.getDoTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'banScript': (_q = (_p = request.getBanScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
