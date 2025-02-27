@@ -37,6 +37,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     freezeMasterDataByUserId(request: Request.FreezeMasterDataByUserIdRequest): Promise<Result.FreezeMasterDataByUserIdResult>;
     signFreezeMasterDataTimestamp(request: Request.SignFreezeMasterDataTimestampRequest): Promise<Result.SignFreezeMasterDataTimestampResult>;
     freezeMasterDataBySignedTimestamp(request: Request.FreezeMasterDataBySignedTimestampRequest): Promise<Result.FreezeMasterDataBySignedTimestampResult>;
+    freezeMasterDataByTimestamp(request: Request.FreezeMasterDataByTimestampRequest): Promise<Result.FreezeMasterDataByTimestampResult>;
     batchExecuteApi(request: Request.BatchExecuteApiRequest): Promise<Result.BatchExecuteApiResult>;
     ifExpressionByUserId(request: Request.IfExpressionByUserIdRequest): Promise<Result.IfExpressionByUserIdResult>;
     andExpressionByUserId(request: Request.AndExpressionByUserIdRequest): Promise<Result.AndExpressionByUserIdResult>;

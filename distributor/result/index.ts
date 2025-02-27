@@ -46,6 +46,7 @@ import FreezeMasterDataResult from "./FreezeMasterDataResult"
 import FreezeMasterDataByUserIdResult from "./FreezeMasterDataByUserIdResult"
 import SignFreezeMasterDataTimestampResult from "./SignFreezeMasterDataTimestampResult"
 import FreezeMasterDataBySignedTimestampResult from "./FreezeMasterDataBySignedTimestampResult"
+import FreezeMasterDataByTimestampResult from "./FreezeMasterDataByTimestampResult"
 import BatchExecuteApiResult from "./BatchExecuteApiResult"
 import IfExpressionByUserIdResult from "./IfExpressionByUserIdResult"
 import AndExpressionByUserIdResult from "./AndExpressionByUserIdResult"
@@ -93,6 +94,7 @@ export {
     FreezeMasterDataByUserIdResult,
     SignFreezeMasterDataTimestampResult,
     FreezeMasterDataBySignedTimestampResult,
+    FreezeMasterDataByTimestampResult,
     BatchExecuteApiResult,
     IfExpressionByUserIdResult,
     AndExpressionByUserIdResult,
