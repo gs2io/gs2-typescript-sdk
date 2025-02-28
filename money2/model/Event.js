@@ -27,6 +27,7 @@ var Event = /** @class */ (function () {
         this.verifyReceiptEvent = null;
         this.depositEvent = null;
         this.withdrawEvent = null;
+        this.refundEvent = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -173,6 +174,17 @@ var Event = /** @class */ (function () {
         this.withdrawEvent = withdrawEvent;
         return this;
     };
+    Event.prototype.getRefundEvent = function () {
+        return this.refundEvent;
+    };
+    Event.prototype.setRefundEvent = function (refundEvent) {
+        this.refundEvent = refundEvent;
+        return this;
+    };
+    Event.prototype.withRefundEvent = function (refundEvent) {
+        this.refundEvent = refundEvent;
+        return this;
+    };
     Event.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -207,11 +219,12 @@ var Event = /** @class */ (function () {
             .withVerifyReceiptEvent(Gs2Money2.VerifyReceiptEvent.fromDict(data["verifyReceiptEvent"]))
             .withDepositEvent(Gs2Money2.DepositEvent.fromDict(data["depositEvent"]))
             .withWithdrawEvent(Gs2Money2.WithdrawEvent.fromDict(data["withdrawEvent"]))
+            .withRefundEvent(Gs2Money2.RefundEvent.fromDict(data["refundEvent"]))
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
     Event.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "eventId": this.getEventId(),
             "transactionId": this.getTransactionId(),
@@ -220,6 +233,7 @@ var Event = /** @class */ (function () {
             "verifyReceiptEvent": (_a = this.getVerifyReceiptEvent()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "depositEvent": (_b = this.getDepositEvent()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "withdrawEvent": (_c = this.getWithdrawEvent()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "refundEvent": (_d = this.getRefundEvent()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

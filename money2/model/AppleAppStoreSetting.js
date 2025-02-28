@@ -18,6 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var AppleAppStoreSetting = /** @class */ (function () {
     function AppleAppStoreSetting() {
         this.bundleId = null;
+        this.teamId = null;
+        this.keyId = null;
+        this.privateKeyPem = null;
     }
     AppleAppStoreSetting.prototype.getBundleId = function () {
         return this.bundleId;
@@ -30,16 +33,55 @@ var AppleAppStoreSetting = /** @class */ (function () {
         this.bundleId = bundleId;
         return this;
     };
+    AppleAppStoreSetting.prototype.getTeamId = function () {
+        return this.teamId;
+    };
+    AppleAppStoreSetting.prototype.setTeamId = function (teamId) {
+        this.teamId = teamId;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.withTeamId = function (teamId) {
+        this.teamId = teamId;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    AppleAppStoreSetting.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.getPrivateKeyPem = function () {
+        return this.privateKeyPem;
+    };
+    AppleAppStoreSetting.prototype.setPrivateKeyPem = function (privateKeyPem) {
+        this.privateKeyPem = privateKeyPem;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.withPrivateKeyPem = function (privateKeyPem) {
+        this.privateKeyPem = privateKeyPem;
+        return this;
+    };
     AppleAppStoreSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new AppleAppStoreSetting()
-            .withBundleId(data["bundleId"]);
+            .withBundleId(data["bundleId"])
+            .withTeamId(data["teamId"])
+            .withKeyId(data["keyId"])
+            .withPrivateKeyPem(data["privateKeyPem"]);
     };
     AppleAppStoreSetting.prototype.toDict = function () {
         return {
             "bundleId": this.getBundleId(),
+            "teamId": this.getTeamId(),
+            "keyId": this.getKeyId(),
+            "privateKeyPem": this.getPrivateKeyPem(),
         };
     };
     return AppleAppStoreSetting;

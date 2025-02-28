@@ -8,6 +8,7 @@ export default class Event implements IModel {
     private verifyReceiptEvent;
     private depositEvent;
     private withdrawEvent;
+    private refundEvent;
     private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -37,6 +38,9 @@ export default class Event implements IModel {
     getWithdrawEvent(): Gs2Money2.WithdrawEvent | null;
     setWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent | null): this;
     withWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent | null): this;
+    getRefundEvent(): Gs2Money2.RefundEvent | null;
+    setRefundEvent(refundEvent: Gs2Money2.RefundEvent | null): this;
+    withRefundEvent(refundEvent: Gs2Money2.RefundEvent | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

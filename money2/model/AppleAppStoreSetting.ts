@@ -20,6 +20,9 @@ import * as Gs2Money2 from '../../money2/model'
 
 export default class AppleAppStoreSetting implements IModel {
     private bundleId: string|null = null;
+    private teamId: string|null = null;
+    private keyId: string|null = null;
+    private privateKeyPem: string|null = null;
     public getBundleId(): string|null {
         return this.bundleId;
     }
@@ -31,18 +34,57 @@ export default class AppleAppStoreSetting implements IModel {
         this.bundleId = bundleId;
         return this;
     }
+    public getTeamId(): string|null {
+        return this.teamId;
+    }
+    public setTeamId(teamId: string|null) {
+        this.teamId = teamId;
+        return this;
+    }
+    public withTeamId(teamId: string|null): this {
+        this.teamId = teamId;
+        return this;
+    }
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+    public getPrivateKeyPem(): string|null {
+        return this.privateKeyPem;
+    }
+    public setPrivateKeyPem(privateKeyPem: string|null) {
+        this.privateKeyPem = privateKeyPem;
+        return this;
+    }
+    public withPrivateKeyPem(privateKeyPem: string|null): this {
+        this.privateKeyPem = privateKeyPem;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): AppleAppStoreSetting|null {
         if (data == undefined || data == null) {
             return null;
         }
         return new AppleAppStoreSetting()
-            .withBundleId(data["bundleId"]);
+            .withBundleId(data["bundleId"])
+            .withTeamId(data["teamId"])
+            .withKeyId(data["keyId"])
+            .withPrivateKeyPem(data["privateKeyPem"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "bundleId": this.getBundleId(),
+            "teamId": this.getTeamId(),
+            "keyId": this.getKeyId(),
+            "privateKeyPem": this.getPrivateKeyPem(),
         };
     }
 }

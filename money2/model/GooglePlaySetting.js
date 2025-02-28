@@ -19,6 +19,7 @@ var GooglePlaySetting = /** @class */ (function () {
     function GooglePlaySetting() {
         this.packageName = null;
         this.publicKey = null;
+        this.credentialsJSON = null;
     }
     GooglePlaySetting.prototype.getPackageName = function () {
         return this.packageName;
@@ -42,18 +43,31 @@ var GooglePlaySetting = /** @class */ (function () {
         this.publicKey = publicKey;
         return this;
     };
+    GooglePlaySetting.prototype.getCredentialsJSON = function () {
+        return this.credentialsJSON;
+    };
+    GooglePlaySetting.prototype.setCredentialsJSON = function (credentialsJSON) {
+        this.credentialsJSON = credentialsJSON;
+        return this;
+    };
+    GooglePlaySetting.prototype.withCredentialsJSON = function (credentialsJSON) {
+        this.credentialsJSON = credentialsJSON;
+        return this;
+    };
     GooglePlaySetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new GooglePlaySetting()
             .withPackageName(data["packageName"])
-            .withPublicKey(data["publicKey"]);
+            .withPublicKey(data["publicKey"])
+            .withCredentialsJSON(data["credentialsJSON"]);
     };
     GooglePlaySetting.prototype.toDict = function () {
         return {
             "packageName": this.getPackageName(),
             "publicKey": this.getPublicKey(),
+            "credentialsJSON": this.getCredentialsJSON(),
         };
     };
     return GooglePlaySetting;

@@ -17,26 +17,18 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Money2 from '../../money2/model'
-import AppleAppStoreVerifyReceiptEvent from './AppleAppStoreVerifyReceiptEvent';
-import GooglePlayVerifyReceiptEvent from './GooglePlayVerifyReceiptEvent';
-import VerifyReceiptEvent from './VerifyReceiptEvent';
-import DepositTransaction from './DepositTransaction';
-import WalletSummary from './WalletSummary';
-import DepositEvent from './DepositEvent';
-import WithdrawEvent from './WithdrawEvent';
-import RefundEvent from './RefundEvent';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:event:{transactionId}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:subscriptionTransaction:{transactionId}";
 
-export default class Event implements IModel {
-    private eventId: string|null = null;
+export default class SubscribeTransaction implements IModel {
+    private subscribeTransactionId: string|null = null;
     private transactionId: string|null = null;
+    private store: string|null = null;
     private userId: string|null = null;
-    private eventType: string|null = null;
-    private verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null = null;
-    private depositEvent: Gs2Money2.DepositEvent|null = null;
-    private withdrawEvent: Gs2Money2.WithdrawEvent|null = null;
-    private refundEvent: Gs2Money2.RefundEvent|null = null;
+    private status: string|null = null;
+    private statusDetail: string|null = null;
+    private expiresAt: number|null = null;
     private createdAt: number|null = null;
+    private updatedAt: number|null = null;
     private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -119,15 +111,15 @@ export default class Event implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{transactionId}', transactionId ?? '');
     }
-    public getEventId(): string|null {
-        return this.eventId;
+    public getSubscribeTransactionId(): string|null {
+        return this.subscribeTransactionId;
     }
-    public setEventId(eventId: string|null) {
-        this.eventId = eventId;
+    public setSubscribeTransactionId(subscribeTransactionId: string|null) {
+        this.subscribeTransactionId = subscribeTransactionId;
         return this;
     }
-    public withEventId(eventId: string|null): this {
-        this.eventId = eventId;
+    public withSubscribeTransactionId(subscribeTransactionId: string|null): this {
+        this.subscribeTransactionId = subscribeTransactionId;
         return this;
     }
     public getTransactionId(): string|null {
@@ -141,6 +133,17 @@ export default class Event implements IModel {
         this.transactionId = transactionId;
         return this;
     }
+    public getStore(): string|null {
+        return this.store;
+    }
+    public setStore(store: string|null) {
+        this.store = store;
+        return this;
+    }
+    public withStore(store: string|null): this {
+        this.store = store;
+        return this;
+    }
     public getUserId(): string|null {
         return this.userId;
     }
@@ -152,59 +155,37 @@ export default class Event implements IModel {
         this.userId = userId;
         return this;
     }
-    public getEventType(): string|null {
-        return this.eventType;
+    public getStatus(): string|null {
+        return this.status;
     }
-    public setEventType(eventType: string|null) {
-        this.eventType = eventType;
+    public setStatus(status: string|null) {
+        this.status = status;
         return this;
     }
-    public withEventType(eventType: string|null): this {
-        this.eventType = eventType;
+    public withStatus(status: string|null): this {
+        this.status = status;
         return this;
     }
-    public getVerifyReceiptEvent(): Gs2Money2.VerifyReceiptEvent|null {
-        return this.verifyReceiptEvent;
+    public getStatusDetail(): string|null {
+        return this.statusDetail;
     }
-    public setVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null) {
-        this.verifyReceiptEvent = verifyReceiptEvent;
+    public setStatusDetail(statusDetail: string|null) {
+        this.statusDetail = statusDetail;
         return this;
     }
-    public withVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null): this {
-        this.verifyReceiptEvent = verifyReceiptEvent;
+    public withStatusDetail(statusDetail: string|null): this {
+        this.statusDetail = statusDetail;
         return this;
     }
-    public getDepositEvent(): Gs2Money2.DepositEvent|null {
-        return this.depositEvent;
+    public getExpiresAt(): number|null {
+        return this.expiresAt;
     }
-    public setDepositEvent(depositEvent: Gs2Money2.DepositEvent|null) {
-        this.depositEvent = depositEvent;
+    public setExpiresAt(expiresAt: number|null) {
+        this.expiresAt = expiresAt;
         return this;
     }
-    public withDepositEvent(depositEvent: Gs2Money2.DepositEvent|null): this {
-        this.depositEvent = depositEvent;
-        return this;
-    }
-    public getWithdrawEvent(): Gs2Money2.WithdrawEvent|null {
-        return this.withdrawEvent;
-    }
-    public setWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent|null) {
-        this.withdrawEvent = withdrawEvent;
-        return this;
-    }
-    public withWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent|null): this {
-        this.withdrawEvent = withdrawEvent;
-        return this;
-    }
-    public getRefundEvent(): Gs2Money2.RefundEvent|null {
-        return this.refundEvent;
-    }
-    public setRefundEvent(refundEvent: Gs2Money2.RefundEvent|null) {
-        this.refundEvent = refundEvent;
-        return this;
-    }
-    public withRefundEvent(refundEvent: Gs2Money2.RefundEvent|null): this {
-        this.refundEvent = refundEvent;
+    public withExpiresAt(expiresAt: number|null): this {
+        this.expiresAt = expiresAt;
         return this;
     }
     public getCreatedAt(): number|null {
@@ -216,6 +197,17 @@ export default class Event implements IModel {
     }
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
+        return this;
+    }
+    public getUpdatedAt(): number|null {
+        return this.updatedAt;
+    }
+    public setUpdatedAt(updatedAt: number|null) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+    public withUpdatedAt(updatedAt: number|null): this {
+        this.updatedAt = updatedAt;
         return this;
     }
     public getRevision(): number|null {
@@ -230,34 +222,34 @@ export default class Event implements IModel {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): Event|null {
+    public static fromDict(data: {[key: string]: any}): SubscribeTransaction|null {
         if (data == undefined || data == null) {
             return null;
         }
-        return new Event()
-            .withEventId(data["eventId"])
+        return new SubscribeTransaction()
+            .withSubscribeTransactionId(data["subscribeTransactionId"])
             .withTransactionId(data["transactionId"])
+            .withStore(data["store"])
             .withUserId(data["userId"])
-            .withEventType(data["eventType"])
-            .withVerifyReceiptEvent(Gs2Money2.VerifyReceiptEvent.fromDict(data["verifyReceiptEvent"]))
-            .withDepositEvent(Gs2Money2.DepositEvent.fromDict(data["depositEvent"]))
-            .withWithdrawEvent(Gs2Money2.WithdrawEvent.fromDict(data["withdrawEvent"]))
-            .withRefundEvent(Gs2Money2.RefundEvent.fromDict(data["refundEvent"]))
+            .withStatus(data["status"])
+            .withStatusDetail(data["statusDetail"])
+            .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
+            .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "eventId": this.getEventId(),
+            "subscribeTransactionId": this.getSubscribeTransactionId(),
             "transactionId": this.getTransactionId(),
+            "store": this.getStore(),
             "userId": this.getUserId(),
-            "eventType": this.getEventType(),
-            "verifyReceiptEvent": this.getVerifyReceiptEvent()?.toDict(),
-            "depositEvent": this.getDepositEvent()?.toDict(),
-            "withdrawEvent": this.getWithdrawEvent()?.toDict(),
-            "refundEvent": this.getRefundEvent()?.toDict(),
+            "status": this.getStatus(),
+            "statusDetail": this.getStatusDetail(),
+            "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),
+            "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
         };
     }

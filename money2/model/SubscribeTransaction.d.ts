@@ -1,0 +1,55 @@
+import IModel from '../../core/interface/IModel';
+export default class SubscribeTransaction implements IModel {
+    private subscribeTransactionId;
+    private transactionId;
+    private store;
+    private userId;
+    private status;
+    private statusDetail;
+    private expiresAt;
+    private createdAt;
+    private updatedAt;
+    private revision;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getTransactionId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, transactionId: string | null): string | null;
+    getSubscribeTransactionId(): string | null;
+    setSubscribeTransactionId(subscribeTransactionId: string | null): this;
+    withSubscribeTransactionId(subscribeTransactionId: string | null): this;
+    getTransactionId(): string | null;
+    setTransactionId(transactionId: string | null): this;
+    withTransactionId(transactionId: string | null): this;
+    getStore(): string | null;
+    setStore(store: string | null): this;
+    withStore(store: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getStatus(): string | null;
+    setStatus(status: string | null): this;
+    withStatus(status: string | null): this;
+    getStatusDetail(): string | null;
+    setStatusDetail(statusDetail: string | null): this;
+    withStatusDetail(statusDetail: string | null): this;
+    getExpiresAt(): number | null;
+    setExpiresAt(expiresAt: number | null): this;
+    withExpiresAt(expiresAt: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): SubscribeTransaction | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}
