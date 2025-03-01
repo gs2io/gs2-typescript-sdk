@@ -18,7 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var AppleAppStoreSetting = /** @class */ (function () {
     function AppleAppStoreSetting() {
         this.bundleId = null;
-        this.teamId = null;
+        this.issuerId = null;
         this.keyId = null;
         this.privateKeyPem = null;
     }
@@ -33,15 +33,15 @@ var AppleAppStoreSetting = /** @class */ (function () {
         this.bundleId = bundleId;
         return this;
     };
-    AppleAppStoreSetting.prototype.getTeamId = function () {
-        return this.teamId;
+    AppleAppStoreSetting.prototype.getIssuerId = function () {
+        return this.issuerId;
     };
-    AppleAppStoreSetting.prototype.setTeamId = function (teamId) {
-        this.teamId = teamId;
+    AppleAppStoreSetting.prototype.setIssuerId = function (issuerId) {
+        this.issuerId = issuerId;
         return this;
     };
-    AppleAppStoreSetting.prototype.withTeamId = function (teamId) {
-        this.teamId = teamId;
+    AppleAppStoreSetting.prototype.withIssuerId = function (issuerId) {
+        this.issuerId = issuerId;
         return this;
     };
     AppleAppStoreSetting.prototype.getKeyId = function () {
@@ -72,14 +72,14 @@ var AppleAppStoreSetting = /** @class */ (function () {
         }
         return new AppleAppStoreSetting()
             .withBundleId(data["bundleId"])
-            .withTeamId(data["teamId"])
+            .withIssuerId(data["issuerId"])
             .withKeyId(data["keyId"])
             .withPrivateKeyPem(data["privateKeyPem"]);
     };
     AppleAppStoreSetting.prototype.toDict = function () {
         return {
             "bundleId": this.getBundleId(),
-            "teamId": this.getTeamId(),
+            "issuerId": this.getIssuerId(),
             "keyId": this.getKeyId(),
             "privateKeyPem": this.getPrivateKeyPem(),
         };

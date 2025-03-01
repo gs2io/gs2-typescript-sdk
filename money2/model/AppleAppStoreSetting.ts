@@ -20,7 +20,7 @@ import * as Gs2Money2 from '../../money2/model'
 
 export default class AppleAppStoreSetting implements IModel {
     private bundleId: string|null = null;
-    private teamId: string|null = null;
+    private issuerId: string|null = null;
     private keyId: string|null = null;
     private privateKeyPem: string|null = null;
     public getBundleId(): string|null {
@@ -34,15 +34,15 @@ export default class AppleAppStoreSetting implements IModel {
         this.bundleId = bundleId;
         return this;
     }
-    public getTeamId(): string|null {
-        return this.teamId;
+    public getIssuerId(): string|null {
+        return this.issuerId;
     }
-    public setTeamId(teamId: string|null) {
-        this.teamId = teamId;
+    public setIssuerId(issuerId: string|null) {
+        this.issuerId = issuerId;
         return this;
     }
-    public withTeamId(teamId: string|null): this {
-        this.teamId = teamId;
+    public withIssuerId(issuerId: string|null): this {
+        this.issuerId = issuerId;
         return this;
     }
     public getKeyId(): string|null {
@@ -74,7 +74,7 @@ export default class AppleAppStoreSetting implements IModel {
         }
         return new AppleAppStoreSetting()
             .withBundleId(data["bundleId"])
-            .withTeamId(data["teamId"])
+            .withIssuerId(data["issuerId"])
             .withKeyId(data["keyId"])
             .withPrivateKeyPem(data["privateKeyPem"]);
     }
@@ -82,7 +82,7 @@ export default class AppleAppStoreSetting implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "bundleId": this.getBundleId(),
-            "teamId": this.getTeamId(),
+            "issuerId": this.getIssuerId(),
             "keyId": this.getKeyId(),
             "privateKeyPem": this.getPrivateKeyPem(),
         };
