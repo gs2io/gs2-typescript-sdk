@@ -25,6 +25,7 @@ var StoreSubscriptionContentModel = /** @class */ (function () {
         this.metadata = null;
         this.scheduleNamespaceId = null;
         this.triggerName = null;
+        this.reallocateSpanDays = null;
         this.appleAppStore = null;
         this.googlePlay = null;
     }
@@ -149,6 +150,17 @@ var StoreSubscriptionContentModel = /** @class */ (function () {
         this.triggerName = triggerName;
         return this;
     };
+    StoreSubscriptionContentModel.prototype.getReallocateSpanDays = function () {
+        return this.reallocateSpanDays;
+    };
+    StoreSubscriptionContentModel.prototype.setReallocateSpanDays = function (reallocateSpanDays) {
+        this.reallocateSpanDays = reallocateSpanDays;
+        return this;
+    };
+    StoreSubscriptionContentModel.prototype.withReallocateSpanDays = function (reallocateSpanDays) {
+        this.reallocateSpanDays = reallocateSpanDays;
+        return this;
+    };
     StoreSubscriptionContentModel.prototype.getAppleAppStore = function () {
         return this.appleAppStore;
     };
@@ -181,6 +193,7 @@ var StoreSubscriptionContentModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withScheduleNamespaceId(data["scheduleNamespaceId"])
             .withTriggerName(data["triggerName"])
+            .withReallocateSpanDays(data["reallocateSpanDays"])
             .withAppleAppStore(Gs2Money2.AppleAppStoreSubscriptionContent.fromDict(data["appleAppStore"]))
             .withGooglePlay(Gs2Money2.GooglePlaySubscriptionContent.fromDict(data["googlePlay"]));
     };
@@ -192,6 +205,7 @@ var StoreSubscriptionContentModel = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "scheduleNamespaceId": this.getScheduleNamespaceId(),
             "triggerName": this.getTriggerName(),
+            "reallocateSpanDays": this.getReallocateSpanDays(),
             "appleAppStore": (_a = this.getAppleAppStore()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "googlePlay": (_b = this.getGooglePlay()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };

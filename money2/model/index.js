@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreSubscriptionContentModelMaster = exports.StoreSubscriptionContentModel = exports.StoreContentModelMaster = exports.StoreContentModel = exports.SubscriptionStatus = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
+exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreSubscriptionContentModelMaster = exports.StoreSubscriptionContentModel = exports.StoreContentModelMaster = exports.StoreContentModel = exports.SubscriptionStatus = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -77,6 +77,8 @@ var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutS
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
+var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
+exports.NotificationSetting = NotificationSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 var DailyTransactionHistory_1 = tslib_1.__importDefault(require("./DailyTransactionHistory"));

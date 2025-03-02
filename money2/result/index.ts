@@ -44,6 +44,10 @@ import DescribeSubscriptionStatusesResult from "./DescribeSubscriptionStatusesRe
 import DescribeSubscriptionStatusesByUserIdResult from "./DescribeSubscriptionStatusesByUserIdResult"
 import GetSubscriptionStatusResult from "./GetSubscriptionStatusResult"
 import GetSubscriptionStatusByUserIdResult from "./GetSubscriptionStatusByUserIdResult"
+import AllocateSubscriptionStatusResult from "./AllocateSubscriptionStatusResult"
+import AllocateSubscriptionStatusByUserIdResult from "./AllocateSubscriptionStatusByUserIdResult"
+import TakeoverSubscriptionStatusResult from "./TakeoverSubscriptionStatusResult"
+import TakeoverSubscriptionStatusByUserIdResult from "./TakeoverSubscriptionStatusByUserIdResult"
 import DescribeStoreContentModelsResult from "./DescribeStoreContentModelsResult"
 import GetStoreContentModelResult from "./GetStoreContentModelResult"
 import DescribeStoreContentModelMastersResult from "./DescribeStoreContentModelMastersResult"
@@ -100,6 +104,10 @@ export {
     DescribeSubscriptionStatusesByUserIdResult,
     GetSubscriptionStatusResult,
     GetSubscriptionStatusByUserIdResult,
+    AllocateSubscriptionStatusResult,
+    AllocateSubscriptionStatusByUserIdResult,
+    TakeoverSubscriptionStatusResult,
+    TakeoverSubscriptionStatusByUserIdResult,
     DescribeStoreContentModelsResult,
     GetStoreContentModelResult,
     DescribeStoreContentModelMastersResult,

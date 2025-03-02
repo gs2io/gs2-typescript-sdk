@@ -43,6 +43,7 @@ import GooglePlaySubscriptionContent from "./GooglePlaySubscriptionContent"
 import GooglePlayRealtimeNotificationMessage from "./GooglePlayRealtimeNotificationMessage"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
+import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
 import DailyTransactionHistory from "./DailyTransactionHistory"
 import UnusedBalance from "./UnusedBalance"
@@ -78,6 +79,7 @@ export {
     GooglePlayRealtimeNotificationMessage,
     GitHubCheckoutSetting,
     ScriptSetting,
+    NotificationSetting,
     LogSetting,
     DailyTransactionHistory,
     UnusedBalance,

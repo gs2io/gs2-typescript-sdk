@@ -72,6 +72,11 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'platformSetting': request.getPlatformSetting()?.toDict() ?? null,
             'depositBalanceScript': request.getDepositBalanceScript()?.toDict() ?? null,
             'withdrawBalanceScript': request.getWithdrawBalanceScript()?.toDict() ?? null,
+            'subscribeScript': request.getSubscribeScript() ?? null,
+            'renewScript': request.getRenewScript() ?? null,
+            'unsubscribeScript': request.getUnsubscribeScript() ?? null,
+            'takeOverScript': request.getTakeOverScript()?.toDict() ?? null,
+            'changeSubscriptionStatusNotification': request.getChangeSubscriptionStatusNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -160,6 +165,11 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'platformSetting': request.getPlatformSetting()?.toDict() ?? null,
             'depositBalanceScript': request.getDepositBalanceScript()?.toDict() ?? null,
             'withdrawBalanceScript': request.getWithdrawBalanceScript()?.toDict() ?? null,
+            'subscribeScript': request.getSubscribeScript() ?? null,
+            'renewScript': request.getRenewScript() ?? null,
+            'unsubscribeScript': request.getUnsubscribeScript() ?? null,
+            'takeOverScript': request.getTakeOverScript()?.toDict() ?? null,
+            'changeSubscriptionStatusNotification': request.getChangeSubscriptionStatusNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
@@ -1019,6 +1029,156 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         });
     }
 
+    public allocateSubscriptionStatus(request: Request.AllocateSubscriptionStatusRequest): Promise<Result.AllocateSubscriptionStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/allocate/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'receipt': request.getReceipt()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AllocateSubscriptionStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public allocateSubscriptionStatusByUserId(request: Request.AllocateSubscriptionStatusByUserIdRequest): Promise<Result.AllocateSubscriptionStatusByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/allocate/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'receipt': request.getReceipt()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AllocateSubscriptionStatusByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public takeoverSubscriptionStatus(request: Request.TakeoverSubscriptionStatusRequest): Promise<Result.TakeoverSubscriptionStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/takeover/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'receipt': request.getReceipt()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.TakeoverSubscriptionStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public takeoverSubscriptionStatusByUserId(request: Request.TakeoverSubscriptionStatusByUserIdRequest): Promise<Result.TakeoverSubscriptionStatusByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/takeover/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'receipt': request.getReceipt()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.TakeoverSubscriptionStatusByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describeStoreContentModels(request: Request.DescribeStoreContentModelsRequest): Promise<Result.DescribeStoreContentModelsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
             .replace('{service}', 'money2')
@@ -1322,6 +1482,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'scheduleNamespaceId': request.getScheduleNamespaceId() ?? null,
             'triggerName': request.getTriggerName() ?? null,
+            'reallocateSpanDays': request.getReallocateSpanDays() ?? null,
             'appleAppStore': request.getAppleAppStore()?.toDict() ?? null,
             'googlePlay': request.getGooglePlay()?.toDict() ?? null,
         };
@@ -1386,6 +1547,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'scheduleNamespaceId': request.getScheduleNamespaceId() ?? null,
             'triggerName': request.getTriggerName() ?? null,
+            'reallocateSpanDays': request.getReallocateSpanDays() ?? null,
             'appleAppStore': request.getAppleAppStore()?.toDict() ?? null,
             'googlePlay': request.getGooglePlay()?.toDict() ?? null,
         };

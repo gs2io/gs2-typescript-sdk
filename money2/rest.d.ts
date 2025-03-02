@@ -35,6 +35,10 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     describeSubscriptionStatusesByUserId(request: Request.DescribeSubscriptionStatusesByUserIdRequest): Promise<Result.DescribeSubscriptionStatusesByUserIdResult>;
     getSubscriptionStatus(request: Request.GetSubscriptionStatusRequest): Promise<Result.GetSubscriptionStatusResult>;
     getSubscriptionStatusByUserId(request: Request.GetSubscriptionStatusByUserIdRequest): Promise<Result.GetSubscriptionStatusByUserIdResult>;
+    allocateSubscriptionStatus(request: Request.AllocateSubscriptionStatusRequest): Promise<Result.AllocateSubscriptionStatusResult>;
+    allocateSubscriptionStatusByUserId(request: Request.AllocateSubscriptionStatusByUserIdRequest): Promise<Result.AllocateSubscriptionStatusByUserIdResult>;
+    takeoverSubscriptionStatus(request: Request.TakeoverSubscriptionStatusRequest): Promise<Result.TakeoverSubscriptionStatusResult>;
+    takeoverSubscriptionStatusByUserId(request: Request.TakeoverSubscriptionStatusByUserIdRequest): Promise<Result.TakeoverSubscriptionStatusByUserIdResult>;
     describeStoreContentModels(request: Request.DescribeStoreContentModelsRequest): Promise<Result.DescribeStoreContentModelsResult>;
     getStoreContentModel(request: Request.GetStoreContentModelRequest): Promise<Result.GetStoreContentModelResult>;
     describeStoreContentModelMasters(request: Request.DescribeStoreContentModelMastersRequest): Promise<Result.DescribeStoreContentModelMastersResult>;

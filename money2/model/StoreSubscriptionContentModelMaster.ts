@@ -28,6 +28,7 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
     private metadata: string|null = null;
     private scheduleNamespaceId: string|null = null;
     private triggerName: string|null = null;
+    private reallocateSpanDays: number|null = null;
     private appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent|null = null;
     private googlePlay: Gs2Money2.GooglePlaySubscriptionContent|null = null;
     private createdAt: number|null = null;
@@ -180,6 +181,17 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
         this.triggerName = triggerName;
         return this;
     }
+    public getReallocateSpanDays(): number|null {
+        return this.reallocateSpanDays;
+    }
+    public setReallocateSpanDays(reallocateSpanDays: number|null) {
+        this.reallocateSpanDays = reallocateSpanDays;
+        return this;
+    }
+    public withReallocateSpanDays(reallocateSpanDays: number|null): this {
+        this.reallocateSpanDays = reallocateSpanDays;
+        return this;
+    }
     public getAppleAppStore(): Gs2Money2.AppleAppStoreSubscriptionContent|null {
         return this.appleAppStore;
     }
@@ -247,6 +259,7 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withScheduleNamespaceId(data["scheduleNamespaceId"])
             .withTriggerName(data["triggerName"])
+            .withReallocateSpanDays(data["reallocateSpanDays"])
             .withAppleAppStore(Gs2Money2.AppleAppStoreSubscriptionContent.fromDict(data["appleAppStore"]))
             .withGooglePlay(Gs2Money2.GooglePlaySubscriptionContent.fromDict(data["googlePlay"]))
             .withCreatedAt(data["createdAt"])
@@ -262,6 +275,7 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
             "metadata": this.getMetadata(),
             "scheduleNamespaceId": this.getScheduleNamespaceId(),
             "triggerName": this.getTriggerName(),
+            "reallocateSpanDays": this.getReallocateSpanDays(),
             "appleAppStore": this.getAppleAppStore()?.toDict(),
             "googlePlay": this.getGooglePlay()?.toDict(),
             "createdAt": this.getCreatedAt(),

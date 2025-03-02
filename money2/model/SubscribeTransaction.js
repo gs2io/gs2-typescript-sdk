@@ -25,6 +25,7 @@ var SubscribeTransaction = /** @class */ (function () {
         this.userId = null;
         this.statusDetail = null;
         this.expiresAt = null;
+        this.lastAllocatedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -192,6 +193,17 @@ var SubscribeTransaction = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    SubscribeTransaction.prototype.getLastAllocatedAt = function () {
+        return this.lastAllocatedAt;
+    };
+    SubscribeTransaction.prototype.setLastAllocatedAt = function (lastAllocatedAt) {
+        this.lastAllocatedAt = lastAllocatedAt;
+        return this;
+    };
+    SubscribeTransaction.prototype.withLastAllocatedAt = function (lastAllocatedAt) {
+        this.lastAllocatedAt = lastAllocatedAt;
+        return this;
+    };
     SubscribeTransaction.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -237,6 +249,7 @@ var SubscribeTransaction = /** @class */ (function () {
             .withUserId(data["userId"])
             .withStatusDetail(data["statusDetail"])
             .withExpiresAt(data["expiresAt"])
+            .withLastAllocatedAt(data["lastAllocatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -250,6 +263,7 @@ var SubscribeTransaction = /** @class */ (function () {
             "userId": this.getUserId(),
             "statusDetail": this.getStatusDetail(),
             "expiresAt": this.getExpiresAt(),
+            "lastAllocatedAt": this.getLastAllocatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

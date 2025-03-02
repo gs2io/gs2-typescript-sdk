@@ -6,6 +6,7 @@ export default class StoreSubscriptionContentModel implements IModel {
     private metadata;
     private scheduleNamespaceId;
     private triggerName;
+    private reallocateSpanDays;
     private appleAppStore;
     private googlePlay;
     static getRegion(grn: string): string | null;
@@ -29,6 +30,9 @@ export default class StoreSubscriptionContentModel implements IModel {
     getTriggerName(): string | null;
     setTriggerName(triggerName: string | null): this;
     withTriggerName(triggerName: string | null): this;
+    getReallocateSpanDays(): number | null;
+    setReallocateSpanDays(reallocateSpanDays: number | null): this;
+    withReallocateSpanDays(reallocateSpanDays: number | null): this;
     getAppleAppStore(): Gs2Money2.AppleAppStoreSubscriptionContent | null;
     setAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent | null): this;
     withAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent | null): this;

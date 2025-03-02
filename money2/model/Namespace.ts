@@ -22,6 +22,7 @@ import GooglePlaySetting from './GooglePlaySetting';
 import FakeSetting from './FakeSetting';
 import PlatformSetting from './PlatformSetting';
 import ScriptSetting from './ScriptSetting';
+import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}";
 
@@ -34,6 +35,11 @@ export default class Namespace implements IModel {
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
     private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
     private withdrawBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private subscribeScript: string|null = null;
+    private renewScript: string|null = null;
+    private unsubscribeScript: string|null = null;
+    private takeOverScript: Gs2Money2.ScriptSetting|null = null;
+    private changeSubscriptionStatusNotification: Gs2Money2.NotificationSetting|null = null;
     private logSetting: Gs2Money2.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -186,6 +192,61 @@ export default class Namespace implements IModel {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
+    public getSubscribeScript(): string|null {
+        return this.subscribeScript;
+    }
+    public setSubscribeScript(subscribeScript: string|null) {
+        this.subscribeScript = subscribeScript;
+        return this;
+    }
+    public withSubscribeScript(subscribeScript: string|null): this {
+        this.subscribeScript = subscribeScript;
+        return this;
+    }
+    public getRenewScript(): string|null {
+        return this.renewScript;
+    }
+    public setRenewScript(renewScript: string|null) {
+        this.renewScript = renewScript;
+        return this;
+    }
+    public withRenewScript(renewScript: string|null): this {
+        this.renewScript = renewScript;
+        return this;
+    }
+    public getUnsubscribeScript(): string|null {
+        return this.unsubscribeScript;
+    }
+    public setUnsubscribeScript(unsubscribeScript: string|null) {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    }
+    public withUnsubscribeScript(unsubscribeScript: string|null): this {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    }
+    public getTakeOverScript(): Gs2Money2.ScriptSetting|null {
+        return this.takeOverScript;
+    }
+    public setTakeOverScript(takeOverScript: Gs2Money2.ScriptSetting|null) {
+        this.takeOverScript = takeOverScript;
+        return this;
+    }
+    public withTakeOverScript(takeOverScript: Gs2Money2.ScriptSetting|null): this {
+        this.takeOverScript = takeOverScript;
+        return this;
+    }
+    public getChangeSubscriptionStatusNotification(): Gs2Money2.NotificationSetting|null {
+        return this.changeSubscriptionStatusNotification;
+    }
+    public setChangeSubscriptionStatusNotification(changeSubscriptionStatusNotification: Gs2Money2.NotificationSetting|null) {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    }
+    public withChangeSubscriptionStatusNotification(changeSubscriptionStatusNotification: Gs2Money2.NotificationSetting|null): this {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    }
     public getLogSetting(): Gs2Money2.LogSetting|null {
         return this.logSetting;
     }
@@ -244,6 +305,11 @@ export default class Namespace implements IModel {
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withSubscribeScript(data["subscribeScript"])
+            .withRenewScript(data["renewScript"])
+            .withUnsubscribeScript(data["unsubscribeScript"])
+            .withTakeOverScript(Gs2Money2.ScriptSetting.fromDict(data["takeOverScript"]))
+            .withChangeSubscriptionStatusNotification(Gs2Money2.NotificationSetting.fromDict(data["changeSubscriptionStatusNotification"]))
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -260,6 +326,11 @@ export default class Namespace implements IModel {
             "platformSetting": this.getPlatformSetting()?.toDict(),
             "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),
             "withdrawBalanceScript": this.getWithdrawBalanceScript()?.toDict(),
+            "subscribeScript": this.getSubscribeScript(),
+            "renewScript": this.getRenewScript(),
+            "unsubscribeScript": this.getUnsubscribeScript(),
+            "takeOverScript": this.getTakeOverScript()?.toDict(),
+            "changeSubscriptionStatusNotification": this.getChangeSubscriptionStatusNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

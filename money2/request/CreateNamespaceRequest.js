@@ -28,6 +28,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.platformSetting = null;
         this.depositBalanceScript = null;
         this.withdrawBalanceScript = null;
+        this.subscribeScript = null;
+        this.renewScript = null;
+        this.unsubscribeScript = null;
+        this.takeOverScript = null;
+        this.changeSubscriptionStatusNotification = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -129,6 +134,61 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     };
+    CreateNamespaceRequest.prototype.getSubscribeScript = function () {
+        return this.subscribeScript;
+    };
+    CreateNamespaceRequest.prototype.setSubscribeScript = function (subscribeScript) {
+        this.subscribeScript = subscribeScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withSubscribeScript = function (subscribeScript) {
+        this.subscribeScript = subscribeScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getRenewScript = function () {
+        return this.renewScript;
+    };
+    CreateNamespaceRequest.prototype.setRenewScript = function (renewScript) {
+        this.renewScript = renewScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withRenewScript = function (renewScript) {
+        this.renewScript = renewScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getUnsubscribeScript = function () {
+        return this.unsubscribeScript;
+    };
+    CreateNamespaceRequest.prototype.setUnsubscribeScript = function (unsubscribeScript) {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withUnsubscribeScript = function (unsubscribeScript) {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTakeOverScript = function () {
+        return this.takeOverScript;
+    };
+    CreateNamespaceRequest.prototype.setTakeOverScript = function (takeOverScript) {
+        this.takeOverScript = takeOverScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTakeOverScript = function (takeOverScript) {
+        this.takeOverScript = takeOverScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getChangeSubscriptionStatusNotification = function () {
+        return this.changeSubscriptionStatusNotification;
+    };
+    CreateNamespaceRequest.prototype.setChangeSubscriptionStatusNotification = function (changeSubscriptionStatusNotification) {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withChangeSubscriptionStatusNotification = function (changeSubscriptionStatusNotification) {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -149,10 +209,15 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withSubscribeScript(data["subscribeScript"])
+            .withRenewScript(data["renewScript"])
+            .withUnsubscribeScript(data["unsubscribeScript"])
+            .withTakeOverScript(Gs2Money2.ScriptSetting.fromDict(data["takeOverScript"]))
+            .withChangeSubscriptionStatusNotification(Gs2Money2.NotificationSetting.fromDict(data["changeSubscriptionStatusNotification"]))
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
@@ -161,7 +226,12 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "subscribeScript": this.getSubscribeScript(),
+            "renewScript": this.getRenewScript(),
+            "unsubscribeScript": this.getUnsubscribeScript(),
+            "takeOverScript": (_d = this.getTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changeSubscriptionStatusNotification": (_e = this.getChangeSubscriptionStatusNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return CreateNamespaceRequest;

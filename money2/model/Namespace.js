@@ -28,6 +28,11 @@ var Namespace = /** @class */ (function () {
         this.platformSetting = null;
         this.depositBalanceScript = null;
         this.withdrawBalanceScript = null;
+        this.subscribeScript = null;
+        this.renewScript = null;
+        this.unsubscribeScript = null;
+        this.takeOverScript = null;
+        this.changeSubscriptionStatusNotification = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -169,6 +174,61 @@ var Namespace = /** @class */ (function () {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     };
+    Namespace.prototype.getSubscribeScript = function () {
+        return this.subscribeScript;
+    };
+    Namespace.prototype.setSubscribeScript = function (subscribeScript) {
+        this.subscribeScript = subscribeScript;
+        return this;
+    };
+    Namespace.prototype.withSubscribeScript = function (subscribeScript) {
+        this.subscribeScript = subscribeScript;
+        return this;
+    };
+    Namespace.prototype.getRenewScript = function () {
+        return this.renewScript;
+    };
+    Namespace.prototype.setRenewScript = function (renewScript) {
+        this.renewScript = renewScript;
+        return this;
+    };
+    Namespace.prototype.withRenewScript = function (renewScript) {
+        this.renewScript = renewScript;
+        return this;
+    };
+    Namespace.prototype.getUnsubscribeScript = function () {
+        return this.unsubscribeScript;
+    };
+    Namespace.prototype.setUnsubscribeScript = function (unsubscribeScript) {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    };
+    Namespace.prototype.withUnsubscribeScript = function (unsubscribeScript) {
+        this.unsubscribeScript = unsubscribeScript;
+        return this;
+    };
+    Namespace.prototype.getTakeOverScript = function () {
+        return this.takeOverScript;
+    };
+    Namespace.prototype.setTakeOverScript = function (takeOverScript) {
+        this.takeOverScript = takeOverScript;
+        return this;
+    };
+    Namespace.prototype.withTakeOverScript = function (takeOverScript) {
+        this.takeOverScript = takeOverScript;
+        return this;
+    };
+    Namespace.prototype.getChangeSubscriptionStatusNotification = function () {
+        return this.changeSubscriptionStatusNotification;
+    };
+    Namespace.prototype.setChangeSubscriptionStatusNotification = function (changeSubscriptionStatusNotification) {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    };
+    Namespace.prototype.withChangeSubscriptionStatusNotification = function (changeSubscriptionStatusNotification) {
+        this.changeSubscriptionStatusNotification = changeSubscriptionStatusNotification;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -226,13 +286,18 @@ var Namespace = /** @class */ (function () {
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withSubscribeScript(data["subscribeScript"])
+            .withRenewScript(data["renewScript"])
+            .withUnsubscribeScript(data["unsubscribeScript"])
+            .withTakeOverScript(Gs2Money2.ScriptSetting.fromDict(data["takeOverScript"]))
+            .withChangeSubscriptionStatusNotification(Gs2Money2.NotificationSetting.fromDict(data["changeSubscriptionStatusNotification"]))
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -242,7 +307,12 @@ var Namespace = /** @class */ (function () {
             "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "subscribeScript": this.getSubscribeScript(),
+            "renewScript": this.getRenewScript(),
+            "unsubscribeScript": this.getUnsubscribeScript(),
+            "takeOverScript": (_d = this.getTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changeSubscriptionStatusNotification": (_e = this.getChangeSubscriptionStatusNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
