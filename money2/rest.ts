@@ -899,6 +899,126 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         });
     }
 
+    public describeSubscriptionStatuses(request: Request.DescribeSubscriptionStatusesRequest): Promise<Result.DescribeSubscriptionStatusesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSubscriptionStatusesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSubscriptionStatusesByUserId(request: Request.DescribeSubscriptionStatusesByUserIdRequest): Promise<Result.DescribeSubscriptionStatusesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSubscriptionStatusesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getSubscriptionStatus(request: Request.GetSubscriptionStatusRequest): Promise<Result.GetSubscriptionStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSubscriptionStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getSubscriptionStatusByUserId(request: Request.GetSubscriptionStatusByUserIdRequest): Promise<Result.GetSubscriptionStatusByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSubscriptionStatusByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public describeStoreContentModels(request: Request.DescribeStoreContentModelsRequest): Promise<Result.DescribeStoreContentModelsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
             .replace('{service}', 'money2')
@@ -1099,6 +1219,215 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DeleteStoreContentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeStoreSubscriptionContentModels(request: Request.DescribeStoreSubscriptionContentModelsRequest): Promise<Result.DescribeStoreSubscriptionContentModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeStoreSubscriptionContentModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getStoreSubscriptionContentModel(request: Request.GetStoreSubscriptionContentModelRequest): Promise<Result.GetStoreSubscriptionContentModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStoreSubscriptionContentModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeStoreSubscriptionContentModelMasters(request: Request.DescribeStoreSubscriptionContentModelMastersRequest): Promise<Result.DescribeStoreSubscriptionContentModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeStoreSubscriptionContentModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createStoreSubscriptionContentModelMaster(request: Request.CreateStoreSubscriptionContentModelMasterRequest): Promise<Result.CreateStoreSubscriptionContentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'scheduleNamespaceId': request.getScheduleNamespaceId() ?? null,
+            'triggerName': request.getTriggerName() ?? null,
+            'appleAppStore': request.getAppleAppStore()?.toDict() ?? null,
+            'googlePlay': request.getGooglePlay()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getStoreSubscriptionContentModelMaster(request: Request.GetStoreSubscriptionContentModelMasterRequest): Promise<Result.GetStoreSubscriptionContentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateStoreSubscriptionContentModelMaster(request: Request.UpdateStoreSubscriptionContentModelMasterRequest): Promise<Result.UpdateStoreSubscriptionContentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'scheduleNamespaceId': request.getScheduleNamespaceId() ?? null,
+            'triggerName': request.getTriggerName() ?? null,
+            'appleAppStore': request.getAppleAppStore()?.toDict() ?? null,
+            'googlePlay': request.getGooglePlay()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteStoreSubscriptionContentModelMaster(request: Request.DeleteStoreSubscriptionContentModelMasterRequest): Promise<Result.DeleteStoreSubscriptionContentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{contentName}', String(request.getContentName() ?? 'null') === "" ? "null" : String(request.getContentName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteStoreSubscriptionContentModelMasterResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });

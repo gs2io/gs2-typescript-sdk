@@ -1,10 +1,10 @@
 import IModel from '../../core/interface/IModel';
 export default class SubscribeTransaction implements IModel {
     private subscribeTransactionId;
+    private contentName;
     private transactionId;
     private store;
     private userId;
-    private status;
     private statusDetail;
     private expiresAt;
     private createdAt;
@@ -13,12 +13,16 @@ export default class SubscribeTransaction implements IModel {
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
+    static getContentName(grn: string): string | null;
     static getTransactionId(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, transactionId: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, contentName: string | null, transactionId: string | null): string | null;
     getSubscribeTransactionId(): string | null;
     setSubscribeTransactionId(subscribeTransactionId: string | null): this;
     withSubscribeTransactionId(subscribeTransactionId: string | null): this;
+    getContentName(): string | null;
+    setContentName(contentName: string | null): this;
+    withContentName(contentName: string | null): this;
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
@@ -28,9 +32,6 @@ export default class SubscribeTransaction implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getStatus(): string | null;
-    setStatus(status: string | null): this;
-    withStatus(status: string | null): this;
     getStatusDetail(): string | null;
     setStatusDetail(statusDetail: string | null): this;
     withStatusDetail(statusDetail: string | null): this;

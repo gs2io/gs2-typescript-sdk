@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUnusedBalanceResult = exports.DescribeUnusedBalancesResult = exports.GetDailyTransactionHistoryResult = exports.DescribeDailyTransactionHistoriesResult = exports.DescribeDailyTransactionHistoriesByCurrencyResult = exports.UpdateCurrentModelMasterFromGitHubResult = exports.UpdateCurrentModelMasterResult = exports.GetCurrentModelMasterResult = exports.ExportMasterResult = exports.DeleteStoreContentModelMasterResult = exports.UpdateStoreContentModelMasterResult = exports.GetStoreContentModelMasterResult = exports.CreateStoreContentModelMasterResult = exports.DescribeStoreContentModelMastersResult = exports.GetStoreContentModelResult = exports.DescribeStoreContentModelsResult = exports.VerifyReceiptByStampTaskResult = exports.VerifyReceiptByUserIdResult = exports.VerifyReceiptResult = exports.GetEventByTransactionIdResult = exports.DescribeEventsByUserIdResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DescribeDailyTransactionHistoriesByCurrencyResult = exports.UpdateCurrentModelMasterFromGitHubResult = exports.UpdateCurrentModelMasterResult = exports.GetCurrentModelMasterResult = exports.ExportMasterResult = exports.DeleteStoreSubscriptionContentModelMasterResult = exports.UpdateStoreSubscriptionContentModelMasterResult = exports.GetStoreSubscriptionContentModelMasterResult = exports.CreateStoreSubscriptionContentModelMasterResult = exports.DescribeStoreSubscriptionContentModelMastersResult = exports.GetStoreSubscriptionContentModelResult = exports.DescribeStoreSubscriptionContentModelsResult = exports.DeleteStoreContentModelMasterResult = exports.UpdateStoreContentModelMasterResult = exports.GetStoreContentModelMasterResult = exports.CreateStoreContentModelMasterResult = exports.DescribeStoreContentModelMastersResult = exports.GetStoreContentModelResult = exports.DescribeStoreContentModelsResult = exports.GetSubscriptionStatusByUserIdResult = exports.GetSubscriptionStatusResult = exports.DescribeSubscriptionStatusesByUserIdResult = exports.DescribeSubscriptionStatusesResult = exports.VerifyReceiptByStampTaskResult = exports.VerifyReceiptByUserIdResult = exports.VerifyReceiptResult = exports.GetEventByTransactionIdResult = exports.DescribeEventsByUserIdResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetUnusedBalanceResult = exports.DescribeUnusedBalancesResult = exports.GetDailyTransactionHistoryResult = exports.DescribeDailyTransactionHistoriesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -71,6 +72,14 @@ var VerifyReceiptByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyRec
 exports.VerifyReceiptByUserIdResult = VerifyReceiptByUserIdResult_1.default;
 var VerifyReceiptByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyReceiptByStampTaskResult"));
 exports.VerifyReceiptByStampTaskResult = VerifyReceiptByStampTaskResult_1.default;
+var DescribeSubscriptionStatusesResult_1 = tslib_1.__importDefault(require("./DescribeSubscriptionStatusesResult"));
+exports.DescribeSubscriptionStatusesResult = DescribeSubscriptionStatusesResult_1.default;
+var DescribeSubscriptionStatusesByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeSubscriptionStatusesByUserIdResult"));
+exports.DescribeSubscriptionStatusesByUserIdResult = DescribeSubscriptionStatusesByUserIdResult_1.default;
+var GetSubscriptionStatusResult_1 = tslib_1.__importDefault(require("./GetSubscriptionStatusResult"));
+exports.GetSubscriptionStatusResult = GetSubscriptionStatusResult_1.default;
+var GetSubscriptionStatusByUserIdResult_1 = tslib_1.__importDefault(require("./GetSubscriptionStatusByUserIdResult"));
+exports.GetSubscriptionStatusByUserIdResult = GetSubscriptionStatusByUserIdResult_1.default;
 var DescribeStoreContentModelsResult_1 = tslib_1.__importDefault(require("./DescribeStoreContentModelsResult"));
 exports.DescribeStoreContentModelsResult = DescribeStoreContentModelsResult_1.default;
 var GetStoreContentModelResult_1 = tslib_1.__importDefault(require("./GetStoreContentModelResult"));
@@ -85,6 +94,20 @@ var UpdateStoreContentModelMasterResult_1 = tslib_1.__importDefault(require("./U
 exports.UpdateStoreContentModelMasterResult = UpdateStoreContentModelMasterResult_1.default;
 var DeleteStoreContentModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteStoreContentModelMasterResult"));
 exports.DeleteStoreContentModelMasterResult = DeleteStoreContentModelMasterResult_1.default;
+var DescribeStoreSubscriptionContentModelsResult_1 = tslib_1.__importDefault(require("./DescribeStoreSubscriptionContentModelsResult"));
+exports.DescribeStoreSubscriptionContentModelsResult = DescribeStoreSubscriptionContentModelsResult_1.default;
+var GetStoreSubscriptionContentModelResult_1 = tslib_1.__importDefault(require("./GetStoreSubscriptionContentModelResult"));
+exports.GetStoreSubscriptionContentModelResult = GetStoreSubscriptionContentModelResult_1.default;
+var DescribeStoreSubscriptionContentModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeStoreSubscriptionContentModelMastersResult"));
+exports.DescribeStoreSubscriptionContentModelMastersResult = DescribeStoreSubscriptionContentModelMastersResult_1.default;
+var CreateStoreSubscriptionContentModelMasterResult_1 = tslib_1.__importDefault(require("./CreateStoreSubscriptionContentModelMasterResult"));
+exports.CreateStoreSubscriptionContentModelMasterResult = CreateStoreSubscriptionContentModelMasterResult_1.default;
+var GetStoreSubscriptionContentModelMasterResult_1 = tslib_1.__importDefault(require("./GetStoreSubscriptionContentModelMasterResult"));
+exports.GetStoreSubscriptionContentModelMasterResult = GetStoreSubscriptionContentModelMasterResult_1.default;
+var UpdateStoreSubscriptionContentModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateStoreSubscriptionContentModelMasterResult"));
+exports.UpdateStoreSubscriptionContentModelMasterResult = UpdateStoreSubscriptionContentModelMasterResult_1.default;
+var DeleteStoreSubscriptionContentModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteStoreSubscriptionContentModelMasterResult"));
+exports.DeleteStoreSubscriptionContentModelMasterResult = DeleteStoreSubscriptionContentModelMasterResult_1.default;
 var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentModelMasterResult"));

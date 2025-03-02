@@ -15,14 +15,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:subscriptionTransaction:{transactionId}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:subscriptionTransaction:{contentName}:{transactionId}";
 var SubscribeTransaction = /** @class */ (function () {
     function SubscribeTransaction() {
         this.subscribeTransactionId = null;
+        this.contentName = null;
         this.transactionId = null;
         this.store = null;
         this.userId = null;
-        this.status = null;
         this.statusDetail = null;
         this.expiresAt = null;
         this.createdAt = null;
@@ -34,6 +34,7 @@ var SubscribeTransaction = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '.*'));
         if (match) {
             return match[1];
@@ -45,6 +46,7 @@ var SubscribeTransaction = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '.*'));
         if (match) {
             return match[1];
@@ -56,6 +58,19 @@ var SubscribeTransaction = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
+            .replace('{contentName}', '.*')
+            .replace('{transactionId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SubscribeTransaction.getContentName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '(.*)')
             .replace('{transactionId}', '.*'));
         if (match) {
             return match[1];
@@ -67,6 +82,7 @@ var SubscribeTransaction = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '(.*)'));
         if (match) {
             return match[1];
@@ -83,16 +99,20 @@ var SubscribeTransaction = /** @class */ (function () {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
+        if (this.getContentName(grn) == null || this.getContentName(grn) === '') {
+            return false;
+        }
         if (this.getTransactionId(grn) == null || this.getTransactionId(grn) === '') {
             return false;
         }
         return true;
     };
-    SubscribeTransaction.createGrn = function (region, ownerId, namespaceName, transactionId) {
+    SubscribeTransaction.createGrn = function (region, ownerId, namespaceName, contentName, transactionId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{contentName}', contentName !== null && contentName !== void 0 ? contentName : '')
             .replace('{transactionId}', transactionId !== null && transactionId !== void 0 ? transactionId : '');
     };
     SubscribeTransaction.prototype.getSubscribeTransactionId = function () {
@@ -104,6 +124,17 @@ var SubscribeTransaction = /** @class */ (function () {
     };
     SubscribeTransaction.prototype.withSubscribeTransactionId = function (subscribeTransactionId) {
         this.subscribeTransactionId = subscribeTransactionId;
+        return this;
+    };
+    SubscribeTransaction.prototype.getContentName = function () {
+        return this.contentName;
+    };
+    SubscribeTransaction.prototype.setContentName = function (contentName) {
+        this.contentName = contentName;
+        return this;
+    };
+    SubscribeTransaction.prototype.withContentName = function (contentName) {
+        this.contentName = contentName;
         return this;
     };
     SubscribeTransaction.prototype.getTransactionId = function () {
@@ -137,17 +168,6 @@ var SubscribeTransaction = /** @class */ (function () {
     };
     SubscribeTransaction.prototype.withUserId = function (userId) {
         this.userId = userId;
-        return this;
-    };
-    SubscribeTransaction.prototype.getStatus = function () {
-        return this.status;
-    };
-    SubscribeTransaction.prototype.setStatus = function (status) {
-        this.status = status;
-        return this;
-    };
-    SubscribeTransaction.prototype.withStatus = function (status) {
-        this.status = status;
         return this;
     };
     SubscribeTransaction.prototype.getStatusDetail = function () {
@@ -211,10 +231,10 @@ var SubscribeTransaction = /** @class */ (function () {
         }
         return new SubscribeTransaction()
             .withSubscribeTransactionId(data["subscribeTransactionId"])
+            .withContentName(data["contentName"])
             .withTransactionId(data["transactionId"])
             .withStore(data["store"])
             .withUserId(data["userId"])
-            .withStatus(data["status"])
             .withStatusDetail(data["statusDetail"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -224,10 +244,10 @@ var SubscribeTransaction = /** @class */ (function () {
     SubscribeTransaction.prototype.toDict = function () {
         return {
             "subscribeTransactionId": this.getSubscribeTransactionId(),
+            "contentName": this.getContentName(),
             "transactionId": this.getTransactionId(),
             "store": this.getStore(),
             "userId": this.getUserId(),
-            "status": this.getStatus(),
             "statusDetail": this.getStatusDetail(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

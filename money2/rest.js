@@ -789,6 +789,110 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2Money2RestClient.prototype.describeSubscriptionStatuses = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeSubscriptionStatusesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.describeSubscriptionStatusesByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeSubscriptionStatusesByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.getSubscriptionStatus = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{contentName}', String((_c = request.getContentName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getContentName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetSubscriptionStatusResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.getSubscriptionStatusByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{contentName}', String((_e = request.getContentName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getContentName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        var params = {
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetSubscriptionStatusByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     Gs2Money2RestClient.prototype.describeStoreContentModels = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
@@ -962,6 +1066,187 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DeleteStoreContentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModels = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeStoreSubscriptionContentModelsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.getStoreSubscriptionContentModel = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{contentName}', String((_c = request.getContentName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getContentName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetStoreSubscriptionContentModelResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModelMasters = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeStoreSubscriptionContentModelMastersResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.createStoreSubscriptionContentModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'scheduleNamespaceId': (_g = request.getScheduleNamespaceId()) !== null && _g !== void 0 ? _g : null,
+            'triggerName': (_h = request.getTriggerName()) !== null && _h !== void 0 ? _h : null,
+            'appleAppStore': (_k = (_j = request.getAppleAppStore()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'googlePlay': (_m = (_l = request.getGooglePlay()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Money2RestClient.prototype.getStoreSubscriptionContentModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{contentName}', String((_c = request.getContentName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getContentName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.updateStoreSubscriptionContentModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{contentName}', String((_c = request.getContentName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getContentName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'scheduleNamespaceId': (_h = request.getScheduleNamespaceId()) !== null && _h !== void 0 ? _h : null,
+            'triggerName': (_j = request.getTriggerName()) !== null && _j !== void 0 ? _j : null,
+            'appleAppStore': (_l = (_k = request.getAppleAppStore()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'googlePlay': (_o = (_m = request.getGooglePlay()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Money2RestClient.prototype.deleteStoreSubscriptionContentModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{contentName}', String((_c = request.getContentName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getContentName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DeleteStoreSubscriptionContentModelMasterResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });

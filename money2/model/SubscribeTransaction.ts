@@ -17,14 +17,14 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Money2 from '../../money2/model'
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:subscriptionTransaction:{transactionId}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:subscriptionTransaction:{contentName}:{transactionId}";
 
 export default class SubscribeTransaction implements IModel {
     private subscribeTransactionId: string|null = null;
+    private contentName: string|null = null;
     private transactionId: string|null = null;
     private store: string|null = null;
     private userId: string|null = null;
-    private status: string|null = null;
     private statusDetail: string|null = null;
     private expiresAt: number|null = null;
     private createdAt: number|null = null;
@@ -36,6 +36,7 @@ export default class SubscribeTransaction implements IModel {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '.*')
         );
         if (match) {
@@ -49,6 +50,7 @@ export default class SubscribeTransaction implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '.*')
         );
         if (match) {
@@ -62,6 +64,21 @@ export default class SubscribeTransaction implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
+            .replace('{contentName}', '.*')
+            .replace('{transactionId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getContentName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '(.*)')
             .replace('{transactionId}', '.*')
         );
         if (match) {
@@ -75,6 +92,7 @@ export default class SubscribeTransaction implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{contentName}', '.*')
             .replace('{transactionId}', '(.*)')
         );
         if (match) {
@@ -93,6 +111,9 @@ export default class SubscribeTransaction implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
+        if (this.getContentName(grn) == null || this.getContentName(grn) === '') {
+            return false;
+        }
         if (this.getTransactionId(grn) == null || this.getTransactionId(grn) === '') {
             return false;
         }
@@ -103,12 +124,14 @@ export default class SubscribeTransaction implements IModel {
         region: string|null,
         ownerId: string|null,
         namespaceName: string|null,
+        contentName: string|null,
         transactionId: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{contentName}', contentName ?? '')
             .replace('{transactionId}', transactionId ?? '');
     }
     public getSubscribeTransactionId(): string|null {
@@ -120,6 +143,17 @@ export default class SubscribeTransaction implements IModel {
     }
     public withSubscribeTransactionId(subscribeTransactionId: string|null): this {
         this.subscribeTransactionId = subscribeTransactionId;
+        return this;
+    }
+    public getContentName(): string|null {
+        return this.contentName;
+    }
+    public setContentName(contentName: string|null) {
+        this.contentName = contentName;
+        return this;
+    }
+    public withContentName(contentName: string|null): this {
+        this.contentName = contentName;
         return this;
     }
     public getTransactionId(): string|null {
@@ -153,17 +187,6 @@ export default class SubscribeTransaction implements IModel {
     }
     public withUserId(userId: string|null): this {
         this.userId = userId;
-        return this;
-    }
-    public getStatus(): string|null {
-        return this.status;
-    }
-    public setStatus(status: string|null) {
-        this.status = status;
-        return this;
-    }
-    public withStatus(status: string|null): this {
-        this.status = status;
         return this;
     }
     public getStatusDetail(): string|null {
@@ -228,10 +251,10 @@ export default class SubscribeTransaction implements IModel {
         }
         return new SubscribeTransaction()
             .withSubscribeTransactionId(data["subscribeTransactionId"])
+            .withContentName(data["contentName"])
             .withTransactionId(data["transactionId"])
             .withStore(data["store"])
             .withUserId(data["userId"])
-            .withStatus(data["status"])
             .withStatusDetail(data["statusDetail"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -242,10 +265,10 @@ export default class SubscribeTransaction implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "subscribeTransactionId": this.getSubscribeTransactionId(),
+            "contentName": this.getContentName(),
             "transactionId": this.getTransactionId(),
             "store": this.getStore(),
             "userId": this.getUserId(),
-            "status": this.getStatus(),
             "statusDetail": this.getStatusDetail(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

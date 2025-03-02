@@ -40,6 +40,10 @@ import GetEventByTransactionIdResult from "./GetEventByTransactionIdResult"
 import VerifyReceiptResult from "./VerifyReceiptResult"
 import VerifyReceiptByUserIdResult from "./VerifyReceiptByUserIdResult"
 import VerifyReceiptByStampTaskResult from "./VerifyReceiptByStampTaskResult"
+import DescribeSubscriptionStatusesResult from "./DescribeSubscriptionStatusesResult"
+import DescribeSubscriptionStatusesByUserIdResult from "./DescribeSubscriptionStatusesByUserIdResult"
+import GetSubscriptionStatusResult from "./GetSubscriptionStatusResult"
+import GetSubscriptionStatusByUserIdResult from "./GetSubscriptionStatusByUserIdResult"
 import DescribeStoreContentModelsResult from "./DescribeStoreContentModelsResult"
 import GetStoreContentModelResult from "./GetStoreContentModelResult"
 import DescribeStoreContentModelMastersResult from "./DescribeStoreContentModelMastersResult"
@@ -47,6 +51,13 @@ import CreateStoreContentModelMasterResult from "./CreateStoreContentModelMaster
 import GetStoreContentModelMasterResult from "./GetStoreContentModelMasterResult"
 import UpdateStoreContentModelMasterResult from "./UpdateStoreContentModelMasterResult"
 import DeleteStoreContentModelMasterResult from "./DeleteStoreContentModelMasterResult"
+import DescribeStoreSubscriptionContentModelsResult from "./DescribeStoreSubscriptionContentModelsResult"
+import GetStoreSubscriptionContentModelResult from "./GetStoreSubscriptionContentModelResult"
+import DescribeStoreSubscriptionContentModelMastersResult from "./DescribeStoreSubscriptionContentModelMastersResult"
+import CreateStoreSubscriptionContentModelMasterResult from "./CreateStoreSubscriptionContentModelMasterResult"
+import GetStoreSubscriptionContentModelMasterResult from "./GetStoreSubscriptionContentModelMasterResult"
+import UpdateStoreSubscriptionContentModelMasterResult from "./UpdateStoreSubscriptionContentModelMasterResult"
+import DeleteStoreSubscriptionContentModelMasterResult from "./DeleteStoreSubscriptionContentModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentModelMasterResult from "./GetCurrentModelMasterResult"
 import UpdateCurrentModelMasterResult from "./UpdateCurrentModelMasterResult"
@@ -85,6 +96,10 @@ export {
     VerifyReceiptResult,
     VerifyReceiptByUserIdResult,
     VerifyReceiptByStampTaskResult,
+    DescribeSubscriptionStatusesResult,
+    DescribeSubscriptionStatusesByUserIdResult,
+    GetSubscriptionStatusResult,
+    GetSubscriptionStatusByUserIdResult,
     DescribeStoreContentModelsResult,
     GetStoreContentModelResult,
     DescribeStoreContentModelMastersResult,
@@ -92,6 +107,13 @@ export {
     GetStoreContentModelMasterResult,
     UpdateStoreContentModelMasterResult,
     DeleteStoreContentModelMasterResult,
+    DescribeStoreSubscriptionContentModelsResult,
+    GetStoreSubscriptionContentModelResult,
+    DescribeStoreSubscriptionContentModelMastersResult,
+    CreateStoreSubscriptionContentModelMasterResult,
+    GetStoreSubscriptionContentModelMasterResult,
+    UpdateStoreSubscriptionContentModelMasterResult,
+    DeleteStoreSubscriptionContentModelMasterResult,
     ExportMasterResult,
     GetCurrentModelMasterResult,
     UpdateCurrentModelMasterResult,

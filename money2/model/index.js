@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreContentModelMaster = exports.StoreContentModel = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
+exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreSubscriptionContentModelMaster = exports.StoreSubscriptionContentModel = exports.StoreContentModelMaster = exports.StoreContentModel = exports.SubscriptionStatus = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,10 +25,16 @@ var Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
 var SubscribeTransaction_1 = tslib_1.__importDefault(require("./SubscribeTransaction"));
 exports.SubscribeTransaction = SubscribeTransaction_1.default;
+var SubscriptionStatus_1 = tslib_1.__importDefault(require("./SubscriptionStatus"));
+exports.SubscriptionStatus = SubscriptionStatus_1.default;
 var StoreContentModel_1 = tslib_1.__importDefault(require("./StoreContentModel"));
 exports.StoreContentModel = StoreContentModel_1.default;
 var StoreContentModelMaster_1 = tslib_1.__importDefault(require("./StoreContentModelMaster"));
 exports.StoreContentModelMaster = StoreContentModelMaster_1.default;
+var StoreSubscriptionContentModel_1 = tslib_1.__importDefault(require("./StoreSubscriptionContentModel"));
+exports.StoreSubscriptionContentModel = StoreSubscriptionContentModel_1.default;
+var StoreSubscriptionContentModelMaster_1 = tslib_1.__importDefault(require("./StoreSubscriptionContentModelMaster"));
+exports.StoreSubscriptionContentModelMaster = StoreSubscriptionContentModelMaster_1.default;
 var CurrentModelMaster_1 = tslib_1.__importDefault(require("./CurrentModelMaster"));
 exports.CurrentModelMaster = CurrentModelMaster_1.default;
 var Receipt_1 = tslib_1.__importDefault(require("./Receipt"));
@@ -61,6 +67,10 @@ var AppleAppStoreContent_1 = tslib_1.__importDefault(require("./AppleAppStoreCon
 exports.AppleAppStoreContent = AppleAppStoreContent_1.default;
 var GooglePlayContent_1 = tslib_1.__importDefault(require("./GooglePlayContent"));
 exports.GooglePlayContent = GooglePlayContent_1.default;
+var AppleAppStoreSubscriptionContent_1 = tslib_1.__importDefault(require("./AppleAppStoreSubscriptionContent"));
+exports.AppleAppStoreSubscriptionContent = AppleAppStoreSubscriptionContent_1.default;
+var GooglePlaySubscriptionContent_1 = tslib_1.__importDefault(require("./GooglePlaySubscriptionContent"));
+exports.GooglePlaySubscriptionContent = GooglePlaySubscriptionContent_1.default;
 var GooglePlayRealtimeNotificationMessage_1 = tslib_1.__importDefault(require("./GooglePlayRealtimeNotificationMessage"));
 exports.GooglePlayRealtimeNotificationMessage = GooglePlayRealtimeNotificationMessage_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

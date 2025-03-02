@@ -17,8 +17,11 @@ import Namespace from "./Namespace"
 import Wallet from "./Wallet"
 import Event from "./Event"
 import SubscribeTransaction from "./SubscribeTransaction"
+import SubscriptionStatus from "./SubscriptionStatus"
 import StoreContentModel from "./StoreContentModel"
 import StoreContentModelMaster from "./StoreContentModelMaster"
+import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel"
+import StoreSubscriptionContentModelMaster from "./StoreSubscriptionContentModelMaster"
 import CurrentModelMaster from "./CurrentModelMaster"
 import Receipt from "./Receipt"
 import PlatformSetting from "./PlatformSetting"
@@ -35,6 +38,8 @@ import AppleAppStoreVerifyReceiptEvent from "./AppleAppStoreVerifyReceiptEvent"
 import GooglePlayVerifyReceiptEvent from "./GooglePlayVerifyReceiptEvent"
 import AppleAppStoreContent from "./AppleAppStoreContent"
 import GooglePlayContent from "./GooglePlayContent"
+import AppleAppStoreSubscriptionContent from "./AppleAppStoreSubscriptionContent"
+import GooglePlaySubscriptionContent from "./GooglePlaySubscriptionContent"
 import GooglePlayRealtimeNotificationMessage from "./GooglePlayRealtimeNotificationMessage"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -47,8 +52,11 @@ export {
     Wallet,
     Event,
     SubscribeTransaction,
+    SubscriptionStatus,
     StoreContentModel,
     StoreContentModelMaster,
+    StoreSubscriptionContentModel,
+    StoreSubscriptionContentModelMaster,
     CurrentModelMaster,
     Receipt,
     PlatformSetting,
@@ -65,6 +73,8 @@ export {
     GooglePlayVerifyReceiptEvent,
     AppleAppStoreContent,
     GooglePlayContent,
+    AppleAppStoreSubscriptionContent,
+    GooglePlaySubscriptionContent,
     GooglePlayRealtimeNotificationMessage,
     GitHubCheckoutSetting,
     ScriptSetting,

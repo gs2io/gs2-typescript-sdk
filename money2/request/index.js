@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUnusedBalanceRequest = exports.DescribeUnusedBalancesRequest = exports.GetDailyTransactionHistoryRequest = exports.DescribeDailyTransactionHistoriesRequest = exports.DescribeDailyTransactionHistoriesByCurrencyRequest = exports.UpdateCurrentModelMasterFromGitHubRequest = exports.UpdateCurrentModelMasterRequest = exports.GetCurrentModelMasterRequest = exports.ExportMasterRequest = exports.DeleteStoreContentModelMasterRequest = exports.UpdateStoreContentModelMasterRequest = exports.GetStoreContentModelMasterRequest = exports.CreateStoreContentModelMasterRequest = exports.DescribeStoreContentModelMastersRequest = exports.GetStoreContentModelRequest = exports.DescribeStoreContentModelsRequest = exports.VerifyReceiptByStampTaskRequest = exports.VerifyReceiptByUserIdRequest = exports.VerifyReceiptRequest = exports.GetEventByTransactionIdRequest = exports.DescribeEventsByUserIdRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DescribeDailyTransactionHistoriesByCurrencyRequest = exports.UpdateCurrentModelMasterFromGitHubRequest = exports.UpdateCurrentModelMasterRequest = exports.GetCurrentModelMasterRequest = exports.ExportMasterRequest = exports.DeleteStoreSubscriptionContentModelMasterRequest = exports.UpdateStoreSubscriptionContentModelMasterRequest = exports.GetStoreSubscriptionContentModelMasterRequest = exports.CreateStoreSubscriptionContentModelMasterRequest = exports.DescribeStoreSubscriptionContentModelMastersRequest = exports.GetStoreSubscriptionContentModelRequest = exports.DescribeStoreSubscriptionContentModelsRequest = exports.DeleteStoreContentModelMasterRequest = exports.UpdateStoreContentModelMasterRequest = exports.GetStoreContentModelMasterRequest = exports.CreateStoreContentModelMasterRequest = exports.DescribeStoreContentModelMastersRequest = exports.GetStoreContentModelRequest = exports.DescribeStoreContentModelsRequest = exports.GetSubscriptionStatusByUserIdRequest = exports.GetSubscriptionStatusRequest = exports.DescribeSubscriptionStatusesByUserIdRequest = exports.DescribeSubscriptionStatusesRequest = exports.VerifyReceiptByStampTaskRequest = exports.VerifyReceiptByUserIdRequest = exports.VerifyReceiptRequest = exports.GetEventByTransactionIdRequest = exports.DescribeEventsByUserIdRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.GetUnusedBalanceRequest = exports.DescribeUnusedBalancesRequest = exports.GetDailyTransactionHistoryRequest = exports.DescribeDailyTransactionHistoriesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -71,6 +72,14 @@ var VerifyReceiptByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyRe
 exports.VerifyReceiptByUserIdRequest = VerifyReceiptByUserIdRequest_1.default;
 var VerifyReceiptByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyReceiptByStampTaskRequest"));
 exports.VerifyReceiptByStampTaskRequest = VerifyReceiptByStampTaskRequest_1.default;
+var DescribeSubscriptionStatusesRequest_1 = tslib_1.__importDefault(require("./DescribeSubscriptionStatusesRequest"));
+exports.DescribeSubscriptionStatusesRequest = DescribeSubscriptionStatusesRequest_1.default;
+var DescribeSubscriptionStatusesByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeSubscriptionStatusesByUserIdRequest"));
+exports.DescribeSubscriptionStatusesByUserIdRequest = DescribeSubscriptionStatusesByUserIdRequest_1.default;
+var GetSubscriptionStatusRequest_1 = tslib_1.__importDefault(require("./GetSubscriptionStatusRequest"));
+exports.GetSubscriptionStatusRequest = GetSubscriptionStatusRequest_1.default;
+var GetSubscriptionStatusByUserIdRequest_1 = tslib_1.__importDefault(require("./GetSubscriptionStatusByUserIdRequest"));
+exports.GetSubscriptionStatusByUserIdRequest = GetSubscriptionStatusByUserIdRequest_1.default;
 var DescribeStoreContentModelsRequest_1 = tslib_1.__importDefault(require("./DescribeStoreContentModelsRequest"));
 exports.DescribeStoreContentModelsRequest = DescribeStoreContentModelsRequest_1.default;
 var GetStoreContentModelRequest_1 = tslib_1.__importDefault(require("./GetStoreContentModelRequest"));
@@ -85,6 +94,20 @@ var UpdateStoreContentModelMasterRequest_1 = tslib_1.__importDefault(require("./
 exports.UpdateStoreContentModelMasterRequest = UpdateStoreContentModelMasterRequest_1.default;
 var DeleteStoreContentModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteStoreContentModelMasterRequest"));
 exports.DeleteStoreContentModelMasterRequest = DeleteStoreContentModelMasterRequest_1.default;
+var DescribeStoreSubscriptionContentModelsRequest_1 = tslib_1.__importDefault(require("./DescribeStoreSubscriptionContentModelsRequest"));
+exports.DescribeStoreSubscriptionContentModelsRequest = DescribeStoreSubscriptionContentModelsRequest_1.default;
+var GetStoreSubscriptionContentModelRequest_1 = tslib_1.__importDefault(require("./GetStoreSubscriptionContentModelRequest"));
+exports.GetStoreSubscriptionContentModelRequest = GetStoreSubscriptionContentModelRequest_1.default;
+var DescribeStoreSubscriptionContentModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeStoreSubscriptionContentModelMastersRequest"));
+exports.DescribeStoreSubscriptionContentModelMastersRequest = DescribeStoreSubscriptionContentModelMastersRequest_1.default;
+var CreateStoreSubscriptionContentModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateStoreSubscriptionContentModelMasterRequest"));
+exports.CreateStoreSubscriptionContentModelMasterRequest = CreateStoreSubscriptionContentModelMasterRequest_1.default;
+var GetStoreSubscriptionContentModelMasterRequest_1 = tslib_1.__importDefault(require("./GetStoreSubscriptionContentModelMasterRequest"));
+exports.GetStoreSubscriptionContentModelMasterRequest = GetStoreSubscriptionContentModelMasterRequest_1.default;
+var UpdateStoreSubscriptionContentModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateStoreSubscriptionContentModelMasterRequest"));
+exports.UpdateStoreSubscriptionContentModelMasterRequest = UpdateStoreSubscriptionContentModelMasterRequest_1.default;
+var DeleteStoreSubscriptionContentModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteStoreSubscriptionContentModelMasterRequest"));
+exports.DeleteStoreSubscriptionContentModelMasterRequest = DeleteStoreSubscriptionContentModelMasterRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentModelMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentModelMasterRequest"));

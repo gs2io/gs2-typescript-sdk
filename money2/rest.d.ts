@@ -31,6 +31,10 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     verifyReceipt(request: Request.VerifyReceiptRequest): Promise<Result.VerifyReceiptResult>;
     verifyReceiptByUserId(request: Request.VerifyReceiptByUserIdRequest): Promise<Result.VerifyReceiptByUserIdResult>;
     verifyReceiptByStampTask(request: Request.VerifyReceiptByStampTaskRequest): Promise<Result.VerifyReceiptByStampTaskResult>;
+    describeSubscriptionStatuses(request: Request.DescribeSubscriptionStatusesRequest): Promise<Result.DescribeSubscriptionStatusesResult>;
+    describeSubscriptionStatusesByUserId(request: Request.DescribeSubscriptionStatusesByUserIdRequest): Promise<Result.DescribeSubscriptionStatusesByUserIdResult>;
+    getSubscriptionStatus(request: Request.GetSubscriptionStatusRequest): Promise<Result.GetSubscriptionStatusResult>;
+    getSubscriptionStatusByUserId(request: Request.GetSubscriptionStatusByUserIdRequest): Promise<Result.GetSubscriptionStatusByUserIdResult>;
     describeStoreContentModels(request: Request.DescribeStoreContentModelsRequest): Promise<Result.DescribeStoreContentModelsResult>;
     getStoreContentModel(request: Request.GetStoreContentModelRequest): Promise<Result.GetStoreContentModelResult>;
     describeStoreContentModelMasters(request: Request.DescribeStoreContentModelMastersRequest): Promise<Result.DescribeStoreContentModelMastersResult>;
@@ -38,6 +42,13 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     getStoreContentModelMaster(request: Request.GetStoreContentModelMasterRequest): Promise<Result.GetStoreContentModelMasterResult>;
     updateStoreContentModelMaster(request: Request.UpdateStoreContentModelMasterRequest): Promise<Result.UpdateStoreContentModelMasterResult>;
     deleteStoreContentModelMaster(request: Request.DeleteStoreContentModelMasterRequest): Promise<Result.DeleteStoreContentModelMasterResult>;
+    describeStoreSubscriptionContentModels(request: Request.DescribeStoreSubscriptionContentModelsRequest): Promise<Result.DescribeStoreSubscriptionContentModelsResult>;
+    getStoreSubscriptionContentModel(request: Request.GetStoreSubscriptionContentModelRequest): Promise<Result.GetStoreSubscriptionContentModelResult>;
+    describeStoreSubscriptionContentModelMasters(request: Request.DescribeStoreSubscriptionContentModelMastersRequest): Promise<Result.DescribeStoreSubscriptionContentModelMastersResult>;
+    createStoreSubscriptionContentModelMaster(request: Request.CreateStoreSubscriptionContentModelMasterRequest): Promise<Result.CreateStoreSubscriptionContentModelMasterResult>;
+    getStoreSubscriptionContentModelMaster(request: Request.GetStoreSubscriptionContentModelMasterRequest): Promise<Result.GetStoreSubscriptionContentModelMasterResult>;
+    updateStoreSubscriptionContentModelMaster(request: Request.UpdateStoreSubscriptionContentModelMasterRequest): Promise<Result.UpdateStoreSubscriptionContentModelMasterResult>;
+    deleteStoreSubscriptionContentModelMaster(request: Request.DeleteStoreSubscriptionContentModelMasterRequest): Promise<Result.DeleteStoreSubscriptionContentModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult>;
     updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult>;
