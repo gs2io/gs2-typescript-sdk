@@ -24,7 +24,7 @@ export default class TakeoverSubscriptionStatusRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private receipt: Gs2Money2.Receipt|null = null;
+    private receipt: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -76,14 +76,14 @@ export default class TakeoverSubscriptionStatusRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getReceipt(): Gs2Money2.Receipt|null {
+    public getReceipt(): string|null {
         return this.receipt;
     }
-    public setReceipt(receipt: Gs2Money2.Receipt|null) {
+    public setReceipt(receipt: string|null) {
         this.receipt = receipt;
         return this;
     }
-    public withReceipt(receipt: Gs2Money2.Receipt|null): this {
+    public withReceipt(receipt: string|null): this {
         this.receipt = receipt;
         return this;
     }
@@ -106,14 +106,14 @@ export default class TakeoverSubscriptionStatusRequest implements IRequest {
         return new TakeoverSubscriptionStatusRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withReceipt(Gs2Money2.Receipt.fromDict(data["receipt"]));
+            .withReceipt(data["receipt"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "receipt": this.getReceipt()?.toDict(),
+            "receipt": this.getReceipt(),
         };
     }
 }

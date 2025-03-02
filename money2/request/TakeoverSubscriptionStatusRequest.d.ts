@@ -1,5 +1,4 @@
 import IRequest from '../../core/interface/IRequest';
-import * as Gs2Money2 from '../model';
 export default class TakeoverSubscriptionStatusRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -19,9 +18,9 @@ export default class TakeoverSubscriptionStatusRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getReceipt(): Gs2Money2.Receipt | null;
-    setReceipt(receipt: Gs2Money2.Receipt | null): this;
-    withReceipt(receipt: Gs2Money2.Receipt | null): this;
+    getReceipt(): string | null;
+    setReceipt(receipt: string | null): this;
+    withReceipt(receipt: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

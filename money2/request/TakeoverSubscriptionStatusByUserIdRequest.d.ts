@@ -1,5 +1,4 @@
 import IRequest from '../../core/interface/IRequest';
-import * as Gs2Money2 from '../model';
 export default class TakeoverSubscriptionStatusByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -20,9 +19,9 @@ export default class TakeoverSubscriptionStatusByUserIdRequest implements IReque
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getReceipt(): Gs2Money2.Receipt | null;
-    setReceipt(receipt: Gs2Money2.Receipt | null): this;
-    withReceipt(receipt: Gs2Money2.Receipt | null): this;
+    getReceipt(): string | null;
+    setReceipt(receipt: string | null): this;
+    withReceipt(receipt: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

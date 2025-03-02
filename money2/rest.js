@@ -904,7 +904,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -921,7 +921,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'receipt': (_g = (_f = request.getReceipt()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'receipt': (_f = request.getReceipt()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -937,7 +937,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -955,7 +955,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'receipt': (_j = (_h = request.getReceipt()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'receipt': (_h = request.getReceipt()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -971,7 +971,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -988,7 +988,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'receipt': (_g = (_f = request.getReceipt()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'receipt': (_f = request.getReceipt()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1004,7 +1004,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -1022,7 +1022,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'receipt': (_j = (_h = request.getReceipt()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'receipt': (_h = request.getReceipt()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

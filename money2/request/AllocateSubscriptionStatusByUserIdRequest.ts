@@ -24,7 +24,7 @@ export default class AllocateSubscriptionStatusByUserIdRequest implements IReque
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private receipt: Gs2Money2.Receipt|null = null;
+    private receipt: string|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -77,14 +77,14 @@ export default class AllocateSubscriptionStatusByUserIdRequest implements IReque
         this.userId = userId;
         return this;
     }
-    public getReceipt(): Gs2Money2.Receipt|null {
+    public getReceipt(): string|null {
         return this.receipt;
     }
-    public setReceipt(receipt: Gs2Money2.Receipt|null) {
+    public setReceipt(receipt: string|null) {
         this.receipt = receipt;
         return this;
     }
-    public withReceipt(receipt: Gs2Money2.Receipt|null): this {
+    public withReceipt(receipt: string|null): this {
         this.receipt = receipt;
         return this;
     }
@@ -118,7 +118,7 @@ export default class AllocateSubscriptionStatusByUserIdRequest implements IReque
         return new AllocateSubscriptionStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withReceipt(Gs2Money2.Receipt.fromDict(data["receipt"]))
+            .withReceipt(data["receipt"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -126,7 +126,7 @@ export default class AllocateSubscriptionStatusByUserIdRequest implements IReque
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "receipt": this.getReceipt()?.toDict(),
+            "receipt": this.getReceipt(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

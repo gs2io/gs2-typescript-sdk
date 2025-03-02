@@ -15,8 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var Gs2Money2 = tslib_1.__importStar(require("../model"));
 var AllocateSubscriptionStatusByUserIdRequest = /** @class */ (function () {
     function AllocateSubscriptionStatusByUserIdRequest() {
         this.requestId = null;
@@ -108,15 +106,14 @@ var AllocateSubscriptionStatusByUserIdRequest = /** @class */ (function () {
         return new AllocateSubscriptionStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withReceipt(Gs2Money2.Receipt.fromDict(data["receipt"]))
+            .withReceipt(data["receipt"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AllocateSubscriptionStatusByUserIdRequest.prototype.toDict = function () {
-        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "receipt": (_a = this.getReceipt()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "receipt": this.getReceipt(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

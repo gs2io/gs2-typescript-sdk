@@ -1047,7 +1047,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'receipt': request.getReceipt()?.toDict() ?? null,
+            'receipt': request.getReceipt() ?? null,
         };
         return axios.post(
             url,
@@ -1085,7 +1085,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'receipt': request.getReceipt()?.toDict() ?? null,
+            'receipt': request.getReceipt() ?? null,
         };
         return axios.post(
             url,
@@ -1122,7 +1122,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'receipt': request.getReceipt()?.toDict() ?? null,
+            'receipt': request.getReceipt() ?? null,
         };
         return axios.post(
             url,
@@ -1160,7 +1160,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'receipt': request.getReceipt()?.toDict() ?? null,
+            'receipt': request.getReceipt() ?? null,
         };
         return axios.post(
             url,
