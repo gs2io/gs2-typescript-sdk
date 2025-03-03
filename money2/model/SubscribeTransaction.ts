@@ -28,6 +28,7 @@ export default class SubscribeTransaction implements IModel {
     private statusDetail: string|null = null;
     private expiresAt: number|null = null;
     private lastAllocatedAt: number|null = null;
+    private lastTakeOverAt: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -223,6 +224,17 @@ export default class SubscribeTransaction implements IModel {
         this.lastAllocatedAt = lastAllocatedAt;
         return this;
     }
+    public getLastTakeOverAt(): number|null {
+        return this.lastTakeOverAt;
+    }
+    public setLastTakeOverAt(lastTakeOverAt: number|null) {
+        this.lastTakeOverAt = lastTakeOverAt;
+        return this;
+    }
+    public withLastTakeOverAt(lastTakeOverAt: number|null): this {
+        this.lastTakeOverAt = lastTakeOverAt;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -270,6 +282,7 @@ export default class SubscribeTransaction implements IModel {
             .withStatusDetail(data["statusDetail"])
             .withExpiresAt(data["expiresAt"])
             .withLastAllocatedAt(data["lastAllocatedAt"])
+            .withLastTakeOverAt(data["lastTakeOverAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -285,6 +298,7 @@ export default class SubscribeTransaction implements IModel {
             "statusDetail": this.getStatusDetail(),
             "expiresAt": this.getExpiresAt(),
             "lastAllocatedAt": this.getLastAllocatedAt(),
+            "lastTakeOverAt": this.getLastTakeOverAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

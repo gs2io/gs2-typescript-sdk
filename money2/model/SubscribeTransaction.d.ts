@@ -8,6 +8,7 @@ export default class SubscribeTransaction implements IModel {
     private statusDetail;
     private expiresAt;
     private lastAllocatedAt;
+    private lastTakeOverAt;
     private createdAt;
     private updatedAt;
     private revision;
@@ -42,6 +43,9 @@ export default class SubscribeTransaction implements IModel {
     getLastAllocatedAt(): number | null;
     setLastAllocatedAt(lastAllocatedAt: number | null): this;
     withLastAllocatedAt(lastAllocatedAt: number | null): this;
+    getLastTakeOverAt(): number | null;
+    setLastTakeOverAt(lastTakeOverAt: number | null): this;
+    withLastTakeOverAt(lastTakeOverAt: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

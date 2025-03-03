@@ -26,6 +26,7 @@ var SubscribeTransaction = /** @class */ (function () {
         this.statusDetail = null;
         this.expiresAt = null;
         this.lastAllocatedAt = null;
+        this.lastTakeOverAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -204,6 +205,17 @@ var SubscribeTransaction = /** @class */ (function () {
         this.lastAllocatedAt = lastAllocatedAt;
         return this;
     };
+    SubscribeTransaction.prototype.getLastTakeOverAt = function () {
+        return this.lastTakeOverAt;
+    };
+    SubscribeTransaction.prototype.setLastTakeOverAt = function (lastTakeOverAt) {
+        this.lastTakeOverAt = lastTakeOverAt;
+        return this;
+    };
+    SubscribeTransaction.prototype.withLastTakeOverAt = function (lastTakeOverAt) {
+        this.lastTakeOverAt = lastTakeOverAt;
+        return this;
+    };
     SubscribeTransaction.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -250,6 +262,7 @@ var SubscribeTransaction = /** @class */ (function () {
             .withStatusDetail(data["statusDetail"])
             .withExpiresAt(data["expiresAt"])
             .withLastAllocatedAt(data["lastAllocatedAt"])
+            .withLastTakeOverAt(data["lastTakeOverAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -264,6 +277,7 @@ var SubscribeTransaction = /** @class */ (function () {
             "statusDetail": this.getStatusDetail(),
             "expiresAt": this.getExpiresAt(),
             "lastAllocatedAt": this.getLastAllocatedAt(),
+            "lastTakeOverAt": this.getLastTakeOverAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
