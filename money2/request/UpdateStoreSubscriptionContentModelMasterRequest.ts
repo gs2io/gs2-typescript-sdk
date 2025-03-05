@@ -28,6 +28,8 @@ export default class UpdateStoreSubscriptionContentModelMasterRequest implements
     private metadata: string|null = null;
     private scheduleNamespaceId: string|null = null;
     private triggerName: string|null = null;
+    private triggerExtendMode: string|null = null;
+    private rollupHour: number|null = null;
     private reallocateSpanDays: number|null = null;
     private appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent|null = null;
     private googlePlay: Gs2Money2.GooglePlaySubscriptionContent|null = null;
@@ -125,6 +127,28 @@ export default class UpdateStoreSubscriptionContentModelMasterRequest implements
         this.triggerName = triggerName;
         return this;
     }
+    public getTriggerExtendMode(): string|null {
+        return this.triggerExtendMode;
+    }
+    public setTriggerExtendMode(triggerExtendMode: string|null) {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    }
+    public withTriggerExtendMode(triggerExtendMode: string|null): this {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    }
+    public getRollupHour(): number|null {
+        return this.rollupHour;
+    }
+    public setRollupHour(rollupHour: number|null) {
+        this.rollupHour = rollupHour;
+        return this;
+    }
+    public withRollupHour(rollupHour: number|null): this {
+        this.rollupHour = rollupHour;
+        return this;
+    }
     public getReallocateSpanDays(): number|null {
         return this.reallocateSpanDays;
     }
@@ -167,6 +191,8 @@ export default class UpdateStoreSubscriptionContentModelMasterRequest implements
             .withMetadata(data["metadata"])
             .withScheduleNamespaceId(data["scheduleNamespaceId"])
             .withTriggerName(data["triggerName"])
+            .withTriggerExtendMode(data["triggerExtendMode"])
+            .withRollupHour(data["rollupHour"])
             .withReallocateSpanDays(data["reallocateSpanDays"])
             .withAppleAppStore(Gs2Money2.AppleAppStoreSubscriptionContent.fromDict(data["appleAppStore"]))
             .withGooglePlay(Gs2Money2.GooglePlaySubscriptionContent.fromDict(data["googlePlay"]));
@@ -180,6 +206,8 @@ export default class UpdateStoreSubscriptionContentModelMasterRequest implements
             "metadata": this.getMetadata(),
             "scheduleNamespaceId": this.getScheduleNamespaceId(),
             "triggerName": this.getTriggerName(),
+            "triggerExtendMode": this.getTriggerExtendMode(),
+            "rollupHour": this.getRollupHour(),
             "reallocateSpanDays": this.getReallocateSpanDays(),
             "appleAppStore": this.getAppleAppStore()?.toDict(),
             "googlePlay": this.getGooglePlay()?.toDict(),

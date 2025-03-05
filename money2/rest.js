@@ -1284,7 +1284,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.createStoreSubscriptionContentModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -1300,9 +1300,11 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'scheduleNamespaceId': (_g = request.getScheduleNamespaceId()) !== null && _g !== void 0 ? _g : null,
             'triggerName': (_h = request.getTriggerName()) !== null && _h !== void 0 ? _h : null,
-            'reallocateSpanDays': (_j = request.getReallocateSpanDays()) !== null && _j !== void 0 ? _j : null,
-            'appleAppStore': (_l = (_k = request.getAppleAppStore()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'googlePlay': (_o = (_m = request.getGooglePlay()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'triggerExtendMode': (_j = request.getTriggerExtendMode()) !== null && _j !== void 0 ? _j : null,
+            'rollupHour': (_k = request.getRollupHour()) !== null && _k !== void 0 ? _k : null,
+            'reallocateSpanDays': (_l = request.getReallocateSpanDays()) !== null && _l !== void 0 ? _l : null,
+            'appleAppStore': (_o = (_m = request.getAppleAppStore()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'googlePlay': (_q = (_p = request.getGooglePlay()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1341,7 +1343,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.updateStoreSubscriptionContentModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -1357,9 +1359,11 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'scheduleNamespaceId': (_h = request.getScheduleNamespaceId()) !== null && _h !== void 0 ? _h : null,
             'triggerName': (_j = request.getTriggerName()) !== null && _j !== void 0 ? _j : null,
-            'reallocateSpanDays': (_k = request.getReallocateSpanDays()) !== null && _k !== void 0 ? _k : null,
-            'appleAppStore': (_m = (_l = request.getAppleAppStore()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'googlePlay': (_p = (_o = request.getGooglePlay()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'triggerExtendMode': (_k = request.getTriggerExtendMode()) !== null && _k !== void 0 ? _k : null,
+            'rollupHour': (_l = request.getRollupHour()) !== null && _l !== void 0 ? _l : null,
+            'reallocateSpanDays': (_m = request.getReallocateSpanDays()) !== null && _m !== void 0 ? _m : null,
+            'appleAppStore': (_p = (_o = request.getAppleAppStore()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'googlePlay': (_r = (_q = request.getGooglePlay()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

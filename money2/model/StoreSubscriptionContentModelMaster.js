@@ -27,6 +27,8 @@ var StoreSubscriptionContentModelMaster = /** @class */ (function () {
         this.scheduleNamespaceId = null;
         this.triggerName = null;
         this.reallocateSpanDays = null;
+        this.triggerExtendMode = null;
+        this.rollupHour = null;
         this.appleAppStore = null;
         this.googlePlay = null;
         this.createdAt = null;
@@ -176,6 +178,28 @@ var StoreSubscriptionContentModelMaster = /** @class */ (function () {
         this.reallocateSpanDays = reallocateSpanDays;
         return this;
     };
+    StoreSubscriptionContentModelMaster.prototype.getTriggerExtendMode = function () {
+        return this.triggerExtendMode;
+    };
+    StoreSubscriptionContentModelMaster.prototype.setTriggerExtendMode = function (triggerExtendMode) {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    };
+    StoreSubscriptionContentModelMaster.prototype.withTriggerExtendMode = function (triggerExtendMode) {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    };
+    StoreSubscriptionContentModelMaster.prototype.getRollupHour = function () {
+        return this.rollupHour;
+    };
+    StoreSubscriptionContentModelMaster.prototype.setRollupHour = function (rollupHour) {
+        this.rollupHour = rollupHour;
+        return this;
+    };
+    StoreSubscriptionContentModelMaster.prototype.withRollupHour = function (rollupHour) {
+        this.rollupHour = rollupHour;
+        return this;
+    };
     StoreSubscriptionContentModelMaster.prototype.getAppleAppStore = function () {
         return this.appleAppStore;
     };
@@ -243,6 +267,8 @@ var StoreSubscriptionContentModelMaster = /** @class */ (function () {
             .withScheduleNamespaceId(data["scheduleNamespaceId"])
             .withTriggerName(data["triggerName"])
             .withReallocateSpanDays(data["reallocateSpanDays"])
+            .withTriggerExtendMode(data["triggerExtendMode"])
+            .withRollupHour(data["rollupHour"])
             .withAppleAppStore(Gs2Money2.AppleAppStoreSubscriptionContent.fromDict(data["appleAppStore"]))
             .withGooglePlay(Gs2Money2.GooglePlaySubscriptionContent.fromDict(data["googlePlay"]))
             .withCreatedAt(data["createdAt"])
@@ -259,6 +285,8 @@ var StoreSubscriptionContentModelMaster = /** @class */ (function () {
             "scheduleNamespaceId": this.getScheduleNamespaceId(),
             "triggerName": this.getTriggerName(),
             "reallocateSpanDays": this.getReallocateSpanDays(),
+            "triggerExtendMode": this.getTriggerExtendMode(),
+            "rollupHour": this.getRollupHour(),
             "appleAppStore": (_a = this.getAppleAppStore()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "googlePlay": (_b = this.getGooglePlay()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createdAt": this.getCreatedAt(),

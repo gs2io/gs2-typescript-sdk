@@ -26,6 +26,7 @@ export default class InvokeScriptRequest implements IRequest {
     private userId: string|null = null;
     private args: string|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
+    private forceUseDistributor: boolean|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -100,6 +101,17 @@ export default class InvokeScriptRequest implements IRequest {
         this.randomStatus = randomStatus;
         return this;
     }
+    public getForceUseDistributor(): boolean|null {
+        return this.forceUseDistributor;
+    }
+    public setForceUseDistributor(forceUseDistributor: boolean|null) {
+        this.forceUseDistributor = forceUseDistributor;
+        return this;
+    }
+    public withForceUseDistributor(forceUseDistributor: boolean|null): this {
+        this.forceUseDistributor = forceUseDistributor;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -132,6 +144,7 @@ export default class InvokeScriptRequest implements IRequest {
             .withUserId(data["userId"])
             .withArgs(data["args"])
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withForceUseDistributor(data["forceUseDistributor"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -141,6 +154,7 @@ export default class InvokeScriptRequest implements IRequest {
             "userId": this.getUserId(),
             "args": this.getArgs(),
             "randomStatus": this.getRandomStatus()?.toDict(),
+            "forceUseDistributor": this.getForceUseDistributor(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

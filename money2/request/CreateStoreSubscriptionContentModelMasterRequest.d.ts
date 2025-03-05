@@ -9,6 +9,8 @@ export default class CreateStoreSubscriptionContentModelMasterRequest implements
     private metadata;
     private scheduleNamespaceId;
     private triggerName;
+    private triggerExtendMode;
+    private rollupHour;
     private reallocateSpanDays;
     private appleAppStore;
     private googlePlay;
@@ -36,6 +38,12 @@ export default class CreateStoreSubscriptionContentModelMasterRequest implements
     getTriggerName(): string | null;
     setTriggerName(triggerName: string | null): this;
     withTriggerName(triggerName: string | null): this;
+    getTriggerExtendMode(): string | null;
+    setTriggerExtendMode(triggerExtendMode: string | null): this;
+    withTriggerExtendMode(triggerExtendMode: string | null): this;
+    getRollupHour(): number | null;
+    setRollupHour(rollupHour: number | null): this;
+    withRollupHour(rollupHour: number | null): this;
     getReallocateSpanDays(): number | null;
     setReallocateSpanDays(reallocateSpanDays: number | null): this;
     withReallocateSpanDays(reallocateSpanDays: number | null): this;

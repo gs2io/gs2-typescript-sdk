@@ -21,7 +21,6 @@ import * as Gs2Money2 from '../../money2/model'
 export default class GooglePlaySetting implements IModel {
     private packageName: string|null = null;
     private publicKey: string|null = null;
-    private credentialsJSON: string|null = null;
     public getPackageName(): string|null {
         return this.packageName;
     }
@@ -44,17 +43,6 @@ export default class GooglePlaySetting implements IModel {
         this.publicKey = publicKey;
         return this;
     }
-    public getCredentialsJSON(): string|null {
-        return this.credentialsJSON;
-    }
-    public setCredentialsJSON(credentialsJSON: string|null) {
-        this.credentialsJSON = credentialsJSON;
-        return this;
-    }
-    public withCredentialsJSON(credentialsJSON: string|null): this {
-        this.credentialsJSON = credentialsJSON;
-        return this;
-    }
 
     public static fromDict(data: {[key: string]: any}): GooglePlaySetting|null {
         if (data == undefined || data == null) {
@@ -62,15 +50,13 @@ export default class GooglePlaySetting implements IModel {
         }
         return new GooglePlaySetting()
             .withPackageName(data["packageName"])
-            .withPublicKey(data["publicKey"])
-            .withCredentialsJSON(data["credentialsJSON"]);
+            .withPublicKey(data["publicKey"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "packageName": this.getPackageName(),
             "publicKey": this.getPublicKey(),
-            "credentialsJSON": this.getCredentialsJSON(),
         };
     }
 }

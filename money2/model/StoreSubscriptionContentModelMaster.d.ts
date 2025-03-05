@@ -8,6 +8,8 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
     private scheduleNamespaceId;
     private triggerName;
     private reallocateSpanDays;
+    private triggerExtendMode;
+    private rollupHour;
     private appleAppStore;
     private googlePlay;
     private createdAt;
@@ -40,6 +42,12 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
     getReallocateSpanDays(): number | null;
     setReallocateSpanDays(reallocateSpanDays: number | null): this;
     withReallocateSpanDays(reallocateSpanDays: number | null): this;
+    getTriggerExtendMode(): string | null;
+    setTriggerExtendMode(triggerExtendMode: string | null): this;
+    withTriggerExtendMode(triggerExtendMode: string | null): this;
+    getRollupHour(): number | null;
+    setRollupHour(rollupHour: number | null): this;
+    withRollupHour(rollupHour: number | null): this;
     getAppleAppStore(): Gs2Money2.AppleAppStoreSubscriptionContent | null;
     setAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent | null): this;
     withAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent | null): this;

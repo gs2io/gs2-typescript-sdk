@@ -29,6 +29,8 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
     private scheduleNamespaceId: string|null = null;
     private triggerName: string|null = null;
     private reallocateSpanDays: number|null = null;
+    private triggerExtendMode: string|null = null;
+    private rollupHour: number|null = null;
     private appleAppStore: Gs2Money2.AppleAppStoreSubscriptionContent|null = null;
     private googlePlay: Gs2Money2.GooglePlaySubscriptionContent|null = null;
     private createdAt: number|null = null;
@@ -192,6 +194,28 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
         this.reallocateSpanDays = reallocateSpanDays;
         return this;
     }
+    public getTriggerExtendMode(): string|null {
+        return this.triggerExtendMode;
+    }
+    public setTriggerExtendMode(triggerExtendMode: string|null) {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    }
+    public withTriggerExtendMode(triggerExtendMode: string|null): this {
+        this.triggerExtendMode = triggerExtendMode;
+        return this;
+    }
+    public getRollupHour(): number|null {
+        return this.rollupHour;
+    }
+    public setRollupHour(rollupHour: number|null) {
+        this.rollupHour = rollupHour;
+        return this;
+    }
+    public withRollupHour(rollupHour: number|null): this {
+        this.rollupHour = rollupHour;
+        return this;
+    }
     public getAppleAppStore(): Gs2Money2.AppleAppStoreSubscriptionContent|null {
         return this.appleAppStore;
     }
@@ -260,6 +284,8 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
             .withScheduleNamespaceId(data["scheduleNamespaceId"])
             .withTriggerName(data["triggerName"])
             .withReallocateSpanDays(data["reallocateSpanDays"])
+            .withTriggerExtendMode(data["triggerExtendMode"])
+            .withRollupHour(data["rollupHour"])
             .withAppleAppStore(Gs2Money2.AppleAppStoreSubscriptionContent.fromDict(data["appleAppStore"]))
             .withGooglePlay(Gs2Money2.GooglePlaySubscriptionContent.fromDict(data["googlePlay"]))
             .withCreatedAt(data["createdAt"])
@@ -276,6 +302,8 @@ export default class StoreSubscriptionContentModelMaster implements IModel {
             "scheduleNamespaceId": this.getScheduleNamespaceId(),
             "triggerName": this.getTriggerName(),
             "reallocateSpanDays": this.getReallocateSpanDays(),
+            "triggerExtendMode": this.getTriggerExtendMode(),
+            "rollupHour": this.getRollupHour(),
             "appleAppStore": this.getAppleAppStore()?.toDict(),
             "googlePlay": this.getGooglePlay()?.toDict(),
             "createdAt": this.getCreatedAt(),

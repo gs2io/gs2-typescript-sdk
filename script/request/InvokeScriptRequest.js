@@ -25,6 +25,7 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.userId = null;
         this.args = null;
         this.randomStatus = null;
+        this.forceUseDistributor = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -94,6 +95,17 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.randomStatus = randomStatus;
         return this;
     };
+    InvokeScriptRequest.prototype.getForceUseDistributor = function () {
+        return this.forceUseDistributor;
+    };
+    InvokeScriptRequest.prototype.setForceUseDistributor = function (forceUseDistributor) {
+        this.forceUseDistributor = forceUseDistributor;
+        return this;
+    };
+    InvokeScriptRequest.prototype.withForceUseDistributor = function (forceUseDistributor) {
+        this.forceUseDistributor = forceUseDistributor;
+        return this;
+    };
     InvokeScriptRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -122,6 +134,7 @@ var InvokeScriptRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withArgs(data["args"])
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withForceUseDistributor(data["forceUseDistributor"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     InvokeScriptRequest.prototype.toDict = function () {
@@ -131,6 +144,7 @@ var InvokeScriptRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "args": this.getArgs(),
             "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "forceUseDistributor": this.getForceUseDistributor(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
