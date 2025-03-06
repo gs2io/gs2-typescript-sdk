@@ -20,6 +20,7 @@ import * as Gs2Money2 from '../../money2/model'
 
 export default class AppleAppStoreSetting implements IModel {
     private bundleId: string|null = null;
+    private sharedSecretKey: string|null = null;
     private issuerId: string|null = null;
     private keyId: string|null = null;
     private privateKeyPem: string|null = null;
@@ -32,6 +33,17 @@ export default class AppleAppStoreSetting implements IModel {
     }
     public withBundleId(bundleId: string|null): this {
         this.bundleId = bundleId;
+        return this;
+    }
+    public getSharedSecretKey(): string|null {
+        return this.sharedSecretKey;
+    }
+    public setSharedSecretKey(sharedSecretKey: string|null) {
+        this.sharedSecretKey = sharedSecretKey;
+        return this;
+    }
+    public withSharedSecretKey(sharedSecretKey: string|null): this {
+        this.sharedSecretKey = sharedSecretKey;
         return this;
     }
     public getIssuerId(): string|null {
@@ -74,6 +86,7 @@ export default class AppleAppStoreSetting implements IModel {
         }
         return new AppleAppStoreSetting()
             .withBundleId(data["bundleId"])
+            .withSharedSecretKey(data["sharedSecretKey"])
             .withIssuerId(data["issuerId"])
             .withKeyId(data["keyId"])
             .withPrivateKeyPem(data["privateKeyPem"]);
@@ -82,6 +95,7 @@ export default class AppleAppStoreSetting implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "bundleId": this.getBundleId(),
+            "sharedSecretKey": this.getSharedSecretKey(),
             "issuerId": this.getIssuerId(),
             "keyId": this.getKeyId(),
             "privateKeyPem": this.getPrivateKeyPem(),

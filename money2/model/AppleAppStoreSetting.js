@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var AppleAppStoreSetting = /** @class */ (function () {
     function AppleAppStoreSetting() {
         this.bundleId = null;
+        this.sharedSecretKey = null;
         this.issuerId = null;
         this.keyId = null;
         this.privateKeyPem = null;
@@ -31,6 +32,17 @@ var AppleAppStoreSetting = /** @class */ (function () {
     };
     AppleAppStoreSetting.prototype.withBundleId = function (bundleId) {
         this.bundleId = bundleId;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.getSharedSecretKey = function () {
+        return this.sharedSecretKey;
+    };
+    AppleAppStoreSetting.prototype.setSharedSecretKey = function (sharedSecretKey) {
+        this.sharedSecretKey = sharedSecretKey;
+        return this;
+    };
+    AppleAppStoreSetting.prototype.withSharedSecretKey = function (sharedSecretKey) {
+        this.sharedSecretKey = sharedSecretKey;
         return this;
     };
     AppleAppStoreSetting.prototype.getIssuerId = function () {
@@ -72,6 +84,7 @@ var AppleAppStoreSetting = /** @class */ (function () {
         }
         return new AppleAppStoreSetting()
             .withBundleId(data["bundleId"])
+            .withSharedSecretKey(data["sharedSecretKey"])
             .withIssuerId(data["issuerId"])
             .withKeyId(data["keyId"])
             .withPrivateKeyPem(data["privateKeyPem"]);
@@ -79,6 +92,7 @@ var AppleAppStoreSetting = /** @class */ (function () {
     AppleAppStoreSetting.prototype.toDict = function () {
         return {
             "bundleId": this.getBundleId(),
+            "sharedSecretKey": this.getSharedSecretKey(),
             "issuerId": this.getIssuerId(),
             "keyId": this.getKeyId(),
             "privateKeyPem": this.getPrivateKeyPem(),
