@@ -16,25 +16,28 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-import * as Gs2Schedule from '../../schedule/model'
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:user:{userId}:trigger:{triggerName}";
+import * as Gs2Money2 from '../../money2/model'
+import AppleAppStoreVerifyReceiptEvent from './AppleAppStoreVerifyReceiptEvent';
+import GooglePlayVerifyReceiptEvent from './GooglePlayVerifyReceiptEvent';
+import RefundEvent from './RefundEvent';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:refundHistory:{transactionId}";
 
-export default class Trigger implements IModel {
-    private triggerId: string|null = null;
-    private name: string|null = null;
+export default class RefundHistory implements IModel {
+    private refundHistoryId: string|null = null;
+    private transactionId: string|null = null;
+    private year: number|null = null;
+    private month: number|null = null;
+    private day: number|null = null;
     private userId: string|null = null;
-    private triggeredAt: number|null = null;
-    private expiresAt: number|null = null;
+    private detail: Gs2Money2.RefundEvent|null = null;
     private createdAt: number|null = null;
-    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{triggerName}', '.*')
+            .replace('{transactionId}', '.*')
         );
         if (match) {
             return match[1];
@@ -47,8 +50,7 @@ export default class Trigger implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{triggerName}', '.*')
+            .replace('{transactionId}', '.*')
         );
         if (match) {
             return match[1];
@@ -61,8 +63,7 @@ export default class Trigger implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{userId}', '.*')
-            .replace('{triggerName}', '.*')
+            .replace('{transactionId}', '.*')
         );
         if (match) {
             return match[1];
@@ -70,27 +71,12 @@ export default class Trigger implements IModel {
         return null;
     }
 
-    public static getUserId(grn: string): string|null {
+    public static getTransactionId(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '(.*)')
-            .replace('{triggerName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getTriggerName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{triggerName}', '(.*)')
+            .replace('{transactionId}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -108,10 +94,7 @@ export default class Trigger implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
-            return false;
-        }
-        if (this.getTriggerName(grn) == null || this.getTriggerName(grn) === '') {
+        if (this.getTransactionId(grn) == null || this.getTransactionId(grn) === '') {
             return false;
         }
         return true;
@@ -121,36 +104,67 @@ export default class Trigger implements IModel {
         region: string|null,
         ownerId: string|null,
         namespaceName: string|null,
-        userId: string|null,
-        triggerName: string|null,
+        transactionId: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{userId}', userId ?? '')
-            .replace('{triggerName}', triggerName ?? '');
+            .replace('{transactionId}', transactionId ?? '');
     }
-    public getTriggerId(): string|null {
-        return this.triggerId;
+    public getRefundHistoryId(): string|null {
+        return this.refundHistoryId;
     }
-    public setTriggerId(triggerId: string|null) {
-        this.triggerId = triggerId;
+    public setRefundHistoryId(refundHistoryId: string|null) {
+        this.refundHistoryId = refundHistoryId;
         return this;
     }
-    public withTriggerId(triggerId: string|null): this {
-        this.triggerId = triggerId;
+    public withRefundHistoryId(refundHistoryId: string|null): this {
+        this.refundHistoryId = refundHistoryId;
         return this;
     }
-    public getName(): string|null {
-        return this.name;
+    public getTransactionId(): string|null {
+        return this.transactionId;
     }
-    public setName(name: string|null) {
-        this.name = name;
+    public setTransactionId(transactionId: string|null) {
+        this.transactionId = transactionId;
         return this;
     }
-    public withName(name: string|null): this {
-        this.name = name;
+    public withTransactionId(transactionId: string|null): this {
+        this.transactionId = transactionId;
+        return this;
+    }
+    public getYear(): number|null {
+        return this.year;
+    }
+    public setYear(year: number|null) {
+        this.year = year;
+        return this;
+    }
+    public withYear(year: number|null): this {
+        this.year = year;
+        return this;
+    }
+    public getMonth(): number|null {
+        return this.month;
+    }
+    public setMonth(month: number|null) {
+        this.month = month;
+        return this;
+    }
+    public withMonth(month: number|null): this {
+        this.month = month;
+        return this;
+    }
+    public getDay(): number|null {
+        return this.day;
+    }
+    public setDay(day: number|null) {
+        this.day = day;
+        return this;
+    }
+    public withDay(day: number|null): this {
+        this.day = day;
         return this;
     }
     public getUserId(): string|null {
@@ -164,26 +178,15 @@ export default class Trigger implements IModel {
         this.userId = userId;
         return this;
     }
-    public getTriggeredAt(): number|null {
-        return this.triggeredAt;
+    public getDetail(): Gs2Money2.RefundEvent|null {
+        return this.detail;
     }
-    public setTriggeredAt(triggeredAt: number|null) {
-        this.triggeredAt = triggeredAt;
+    public setDetail(detail: Gs2Money2.RefundEvent|null) {
+        this.detail = detail;
         return this;
     }
-    public withTriggeredAt(triggeredAt: number|null): this {
-        this.triggeredAt = triggeredAt;
-        return this;
-    }
-    public getExpiresAt(): number|null {
-        return this.expiresAt;
-    }
-    public setExpiresAt(expiresAt: number|null) {
-        this.expiresAt = expiresAt;
-        return this;
-    }
-    public withExpiresAt(expiresAt: number|null): this {
-        this.expiresAt = expiresAt;
+    public withDetail(detail: Gs2Money2.RefundEvent|null): this {
+        this.detail = detail;
         return this;
     }
     public getCreatedAt(): number|null {
@@ -197,41 +200,32 @@ export default class Trigger implements IModel {
         this.createdAt = createdAt;
         return this;
     }
-    public getRevision(): number|null {
-        return this.revision;
-    }
-    public setRevision(revision: number|null) {
-        this.revision = revision;
-        return this;
-    }
-    public withRevision(revision: number|null): this {
-        this.revision = revision;
-        return this;
-    }
 
-    public static fromDict(data: {[key: string]: any}): Trigger|null {
+    public static fromDict(data: {[key: string]: any}): RefundHistory|null {
         if (data == undefined || data == null) {
             return null;
         }
-        return new Trigger()
-            .withTriggerId(data["triggerId"])
-            .withName(data["name"])
+        return new RefundHistory()
+            .withRefundHistoryId(data["refundHistoryId"])
+            .withTransactionId(data["transactionId"])
+            .withYear(data["year"])
+            .withMonth(data["month"])
+            .withDay(data["day"])
             .withUserId(data["userId"])
-            .withTriggeredAt(data["triggeredAt"])
-            .withExpiresAt(data["expiresAt"])
-            .withCreatedAt(data["createdAt"])
-            .withRevision(data["revision"]);
+            .withDetail(Gs2Money2.RefundEvent.fromDict(data["detail"]))
+            .withCreatedAt(data["createdAt"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "triggerId": this.getTriggerId(),
-            "name": this.getName(),
+            "refundHistoryId": this.getRefundHistoryId(),
+            "transactionId": this.getTransactionId(),
+            "year": this.getYear(),
+            "month": this.getMonth(),
+            "day": this.getDay(),
             "userId": this.getUserId(),
-            "triggeredAt": this.getTriggeredAt(),
-            "expiresAt": this.getExpiresAt(),
+            "detail": this.getDetail()?.toDict(),
             "createdAt": this.getCreatedAt(),
-            "revision": this.getRevision(),
         };
     }
 }

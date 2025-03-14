@@ -21,8 +21,9 @@ var Trigger = /** @class */ (function () {
         this.triggerId = null;
         this.name = null;
         this.userId = null;
-        this.createdAt = null;
+        this.triggeredAt = null;
         this.expiresAt = null;
+        this.createdAt = null;
         this.revision = null;
     }
     Trigger.getRegion = function (grn) {
@@ -144,15 +145,15 @@ var Trigger = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    Trigger.prototype.getCreatedAt = function () {
-        return this.createdAt;
+    Trigger.prototype.getTriggeredAt = function () {
+        return this.triggeredAt;
     };
-    Trigger.prototype.setCreatedAt = function (createdAt) {
-        this.createdAt = createdAt;
+    Trigger.prototype.setTriggeredAt = function (triggeredAt) {
+        this.triggeredAt = triggeredAt;
         return this;
     };
-    Trigger.prototype.withCreatedAt = function (createdAt) {
-        this.createdAt = createdAt;
+    Trigger.prototype.withTriggeredAt = function (triggeredAt) {
+        this.triggeredAt = triggeredAt;
         return this;
     };
     Trigger.prototype.getExpiresAt = function () {
@@ -164,6 +165,17 @@ var Trigger = /** @class */ (function () {
     };
     Trigger.prototype.withExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
+        return this;
+    };
+    Trigger.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    Trigger.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    Trigger.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
         return this;
     };
     Trigger.prototype.getRevision = function () {
@@ -185,8 +197,9 @@ var Trigger = /** @class */ (function () {
             .withTriggerId(data["triggerId"])
             .withName(data["name"])
             .withUserId(data["userId"])
-            .withCreatedAt(data["createdAt"])
+            .withTriggeredAt(data["triggeredAt"])
             .withExpiresAt(data["expiresAt"])
+            .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
     Trigger.prototype.toDict = function () {
@@ -194,8 +207,9 @@ var Trigger = /** @class */ (function () {
             "triggerId": this.getTriggerId(),
             "name": this.getName(),
             "userId": this.getUserId(),
-            "createdAt": this.getCreatedAt(),
+            "triggeredAt": this.getTriggeredAt(),
             "expiresAt": this.getExpiresAt(),
+            "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
     };

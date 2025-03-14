@@ -48,6 +48,9 @@ import AllocateSubscriptionStatusResult from "./AllocateSubscriptionStatusResult
 import AllocateSubscriptionStatusByUserIdResult from "./AllocateSubscriptionStatusByUserIdResult"
 import TakeoverSubscriptionStatusResult from "./TakeoverSubscriptionStatusResult"
 import TakeoverSubscriptionStatusByUserIdResult from "./TakeoverSubscriptionStatusByUserIdResult"
+import DescribeRefundHistoriesByUserIdResult from "./DescribeRefundHistoriesByUserIdResult"
+import DescribeRefundHistoriesByDateResult from "./DescribeRefundHistoriesByDateResult"
+import GetRefundHistoryResult from "./GetRefundHistoryResult"
 import DescribeStoreContentModelsResult from "./DescribeStoreContentModelsResult"
 import GetStoreContentModelResult from "./GetStoreContentModelResult"
 import DescribeStoreContentModelMastersResult from "./DescribeStoreContentModelMastersResult"
@@ -108,6 +111,9 @@ export {
     AllocateSubscriptionStatusByUserIdResult,
     TakeoverSubscriptionStatusResult,
     TakeoverSubscriptionStatusByUserIdResult,
+    DescribeRefundHistoriesByUserIdResult,
+    DescribeRefundHistoriesByDateResult,
+    GetRefundHistoryResult,
     DescribeStoreContentModelsResult,
     GetStoreContentModelResult,
     DescribeStoreContentModelMastersResult,

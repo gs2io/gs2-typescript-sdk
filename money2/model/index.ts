@@ -18,6 +18,7 @@ import Wallet from "./Wallet"
 import Event from "./Event"
 import SubscribeTransaction from "./SubscribeTransaction"
 import SubscriptionStatus from "./SubscriptionStatus"
+import RefundHistory from "./RefundHistory"
 import StoreContentModel from "./StoreContentModel"
 import StoreContentModelMaster from "./StoreContentModelMaster"
 import StoreSubscriptionContentModel from "./StoreSubscriptionContentModel"
@@ -54,6 +55,7 @@ export {
     Event,
     SubscribeTransaction,
     SubscriptionStatus,
+    RefundHistory,
     StoreContentModel,
     StoreContentModelMaster,
     StoreSubscriptionContentModel,
