@@ -30,6 +30,7 @@ export default class Await implements IModel {
     private config: Gs2Exchange.Config[]|null = null;
     private acquirableAt: number|null = null;
     private exchangedAt: number|null = null;
+    private createdAt: number|null = null;
     private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -234,6 +235,17 @@ export default class Await implements IModel {
         this.exchangedAt = exchangedAt;
         return this;
     }
+    public getCreatedAt(): number|null {
+        return this.createdAt;
+    }
+    public setCreatedAt(createdAt: number|null) {
+        this.createdAt = createdAt;
+        return this;
+    }
+    public withCreatedAt(createdAt: number|null): this {
+        this.createdAt = createdAt;
+        return this;
+    }
     public getRevision(): number|null {
         return this.revision;
     }
@@ -264,6 +276,7 @@ export default class Await implements IModel {
             ) : null)
             .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
+            .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
 
@@ -282,6 +295,7 @@ export default class Await implements IModel {
             ) : null,
             "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
+            "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
     }

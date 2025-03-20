@@ -24,6 +24,7 @@ export default class GetAccountRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private includeLastAuthenticatedAt: boolean|null = null;
     private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class GetAccountRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getIncludeLastAuthenticatedAt(): boolean|null {
+        return this.includeLastAuthenticatedAt;
+    }
+    public setIncludeLastAuthenticatedAt(includeLastAuthenticatedAt: boolean|null) {
+        this.includeLastAuthenticatedAt = includeLastAuthenticatedAt;
+        return this;
+    }
+    public withIncludeLastAuthenticatedAt(includeLastAuthenticatedAt: boolean|null): this {
+        this.includeLastAuthenticatedAt = includeLastAuthenticatedAt;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -91,6 +103,7 @@ export default class GetAccountRequest implements IRequest {
         return new GetAccountRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withIncludeLastAuthenticatedAt(data["includeLastAuthenticatedAt"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -98,6 +111,7 @@ export default class GetAccountRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "includeLastAuthenticatedAt": this.getIncludeLastAuthenticatedAt(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

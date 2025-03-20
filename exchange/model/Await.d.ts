@@ -10,6 +10,7 @@ export default class Await implements IModel {
     private config;
     private acquirableAt;
     private exchangedAt;
+    private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -45,6 +46,9 @@ export default class Await implements IModel {
     getExchangedAt(): number | null;
     setExchangedAt(exchangedAt: number | null): this;
     withExchangedAt(exchangedAt: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
     getRevision(): number | null;
     setRevision(revision: number | null): this;
     withRevision(revision: number | null): this;

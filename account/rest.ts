@@ -652,6 +652,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'includeLastAuthenticatedAt': String(request.getIncludeLastAuthenticatedAt() ?? null),
         };
         return axios.get(
             url,

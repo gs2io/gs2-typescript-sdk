@@ -21,6 +21,7 @@ var GetAccountRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.includeLastAuthenticatedAt = null;
         this.timeOffsetToken = null;
     }
     GetAccountRequest.prototype.getRequestId = function () {
@@ -67,6 +68,17 @@ var GetAccountRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetAccountRequest.prototype.getIncludeLastAuthenticatedAt = function () {
+        return this.includeLastAuthenticatedAt;
+    };
+    GetAccountRequest.prototype.setIncludeLastAuthenticatedAt = function (includeLastAuthenticatedAt) {
+        this.includeLastAuthenticatedAt = includeLastAuthenticatedAt;
+        return this;
+    };
+    GetAccountRequest.prototype.withIncludeLastAuthenticatedAt = function (includeLastAuthenticatedAt) {
+        this.includeLastAuthenticatedAt = includeLastAuthenticatedAt;
+        return this;
+    };
     GetAccountRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -82,12 +94,14 @@ var GetAccountRequest = /** @class */ (function () {
         return new GetAccountRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withIncludeLastAuthenticatedAt(data["includeLastAuthenticatedAt"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetAccountRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "includeLastAuthenticatedAt": this.getIncludeLastAuthenticatedAt(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

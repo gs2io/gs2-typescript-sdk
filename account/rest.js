@@ -559,7 +559,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.getAccount = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -574,6 +574,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'includeLastAuthenticatedAt': String((_g = request.getIncludeLastAuthenticatedAt()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,

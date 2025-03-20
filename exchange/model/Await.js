@@ -29,6 +29,7 @@ var Await = /** @class */ (function () {
         this.config = null;
         this.acquirableAt = null;
         this.exchangedAt = null;
+        this.createdAt = null;
         this.revision = null;
     }
     Await.getRegion = function (grn) {
@@ -216,6 +217,17 @@ var Await = /** @class */ (function () {
         this.exchangedAt = exchangedAt;
         return this;
     };
+    Await.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    Await.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    Await.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
     Await.prototype.getRevision = function () {
         return this.revision;
     };
@@ -244,6 +256,7 @@ var Await = /** @class */ (function () {
             }) : null)
             .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
+            .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
     Await.prototype.toDict = function () {
@@ -260,6 +273,7 @@ var Await = /** @class */ (function () {
                 }) : null,
             "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
+            "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
     };

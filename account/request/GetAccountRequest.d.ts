@@ -4,6 +4,7 @@ export default class GetAccountRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private includeLastAuthenticatedAt;
     private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -17,6 +18,9 @@ export default class GetAccountRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getIncludeLastAuthenticatedAt(): boolean | null;
+    setIncludeLastAuthenticatedAt(includeLastAuthenticatedAt: boolean | null): this;
+    withIncludeLastAuthenticatedAt(includeLastAuthenticatedAt: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
