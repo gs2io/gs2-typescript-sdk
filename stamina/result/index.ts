@@ -72,6 +72,16 @@ import SetMaxValueByStatusResult from "./SetMaxValueByStatusResult"
 import SetRecoverIntervalByStatusResult from "./SetRecoverIntervalByStatusResult"
 import SetRecoverValueByStatusResult from "./SetRecoverValueByStatusResult"
 import DeleteStaminaByUserIdResult from "./DeleteStaminaByUserIdResult"
+import VerifyStaminaValueResult from "./VerifyStaminaValueResult"
+import VerifyStaminaValueByUserIdResult from "./VerifyStaminaValueByUserIdResult"
+import VerifyStaminaMaxValueResult from "./VerifyStaminaMaxValueResult"
+import VerifyStaminaMaxValueByUserIdResult from "./VerifyStaminaMaxValueByUserIdResult"
+import VerifyStaminaRecoverIntervalMinutesResult from "./VerifyStaminaRecoverIntervalMinutesResult"
+import VerifyStaminaRecoverIntervalMinutesByUserIdResult from "./VerifyStaminaRecoverIntervalMinutesByUserIdResult"
+import VerifyStaminaRecoverValueResult from "./VerifyStaminaRecoverValueResult"
+import VerifyStaminaRecoverValueByUserIdResult from "./VerifyStaminaRecoverValueByUserIdResult"
+import VerifyStaminaOverflowValueResult from "./VerifyStaminaOverflowValueResult"
+import VerifyStaminaOverflowValueByUserIdResult from "./VerifyStaminaOverflowValueByUserIdResult"
 import RecoverStaminaByStampSheetResult from "./RecoverStaminaByStampSheetResult"
 import RaiseMaxValueByStampSheetResult from "./RaiseMaxValueByStampSheetResult"
 import DecreaseMaxValueByStampTaskResult from "./DecreaseMaxValueByStampTaskResult"
@@ -79,6 +89,11 @@ import SetMaxValueByStampSheetResult from "./SetMaxValueByStampSheetResult"
 import SetRecoverIntervalByStampSheetResult from "./SetRecoverIntervalByStampSheetResult"
 import SetRecoverValueByStampSheetResult from "./SetRecoverValueByStampSheetResult"
 import ConsumeStaminaByStampTaskResult from "./ConsumeStaminaByStampTaskResult"
+import VerifyStaminaValueByStampTaskResult from "./VerifyStaminaValueByStampTaskResult"
+import VerifyStaminaMaxValueByStampTaskResult from "./VerifyStaminaMaxValueByStampTaskResult"
+import VerifyStaminaRecoverIntervalMinutesByStampTaskResult from "./VerifyStaminaRecoverIntervalMinutesByStampTaskResult"
+import VerifyStaminaRecoverValueByStampTaskResult from "./VerifyStaminaRecoverValueByStampTaskResult"
+import VerifyStaminaOverflowValueByStampTaskResult from "./VerifyStaminaOverflowValueByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -140,6 +155,16 @@ export {
     SetRecoverIntervalByStatusResult,
     SetRecoverValueByStatusResult,
     DeleteStaminaByUserIdResult,
+    VerifyStaminaValueResult,
+    VerifyStaminaValueByUserIdResult,
+    VerifyStaminaMaxValueResult,
+    VerifyStaminaMaxValueByUserIdResult,
+    VerifyStaminaRecoverIntervalMinutesResult,
+    VerifyStaminaRecoverIntervalMinutesByUserIdResult,
+    VerifyStaminaRecoverValueResult,
+    VerifyStaminaRecoverValueByUserIdResult,
+    VerifyStaminaOverflowValueResult,
+    VerifyStaminaOverflowValueByUserIdResult,
     RecoverStaminaByStampSheetResult,
     RaiseMaxValueByStampSheetResult,
     DecreaseMaxValueByStampTaskResult,
@@ -147,4 +172,9 @@ export {
     SetRecoverIntervalByStampSheetResult,
     SetRecoverValueByStampSheetResult,
     ConsumeStaminaByStampTaskResult,
+    VerifyStaminaValueByStampTaskResult,
+    VerifyStaminaMaxValueByStampTaskResult,
+    VerifyStaminaRecoverIntervalMinutesByStampTaskResult,
+    VerifyStaminaRecoverValueByStampTaskResult,
+    VerifyStaminaOverflowValueByStampTaskResult,
 };

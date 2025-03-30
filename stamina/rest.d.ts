@@ -63,6 +63,16 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     setRecoverIntervalByStatus(request: Request.SetRecoverIntervalByStatusRequest): Promise<Result.SetRecoverIntervalByStatusResult>;
     setRecoverValueByStatus(request: Request.SetRecoverValueByStatusRequest): Promise<Result.SetRecoverValueByStatusResult>;
     deleteStaminaByUserId(request: Request.DeleteStaminaByUserIdRequest): Promise<Result.DeleteStaminaByUserIdResult>;
+    verifyStaminaValue(request: Request.VerifyStaminaValueRequest): Promise<Result.VerifyStaminaValueResult>;
+    verifyStaminaValueByUserId(request: Request.VerifyStaminaValueByUserIdRequest): Promise<Result.VerifyStaminaValueByUserIdResult>;
+    verifyStaminaMaxValue(request: Request.VerifyStaminaMaxValueRequest): Promise<Result.VerifyStaminaMaxValueResult>;
+    verifyStaminaMaxValueByUserId(request: Request.VerifyStaminaMaxValueByUserIdRequest): Promise<Result.VerifyStaminaMaxValueByUserIdResult>;
+    verifyStaminaRecoverIntervalMinutes(request: Request.VerifyStaminaRecoverIntervalMinutesRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesResult>;
+    verifyStaminaRecoverIntervalMinutesByUserId(request: Request.VerifyStaminaRecoverIntervalMinutesByUserIdRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesByUserIdResult>;
+    verifyStaminaRecoverValue(request: Request.VerifyStaminaRecoverValueRequest): Promise<Result.VerifyStaminaRecoverValueResult>;
+    verifyStaminaRecoverValueByUserId(request: Request.VerifyStaminaRecoverValueByUserIdRequest): Promise<Result.VerifyStaminaRecoverValueByUserIdResult>;
+    verifyStaminaOverflowValue(request: Request.VerifyStaminaOverflowValueRequest): Promise<Result.VerifyStaminaOverflowValueResult>;
+    verifyStaminaOverflowValueByUserId(request: Request.VerifyStaminaOverflowValueByUserIdRequest): Promise<Result.VerifyStaminaOverflowValueByUserIdResult>;
     recoverStaminaByStampSheet(request: Request.RecoverStaminaByStampSheetRequest): Promise<Result.RecoverStaminaByStampSheetResult>;
     raiseMaxValueByStampSheet(request: Request.RaiseMaxValueByStampSheetRequest): Promise<Result.RaiseMaxValueByStampSheetResult>;
     decreaseMaxValueByStampTask(request: Request.DecreaseMaxValueByStampTaskRequest): Promise<Result.DecreaseMaxValueByStampTaskResult>;
@@ -70,4 +80,9 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     setRecoverIntervalByStampSheet(request: Request.SetRecoverIntervalByStampSheetRequest): Promise<Result.SetRecoverIntervalByStampSheetResult>;
     setRecoverValueByStampSheet(request: Request.SetRecoverValueByStampSheetRequest): Promise<Result.SetRecoverValueByStampSheetResult>;
     consumeStaminaByStampTask(request: Request.ConsumeStaminaByStampTaskRequest): Promise<Result.ConsumeStaminaByStampTaskResult>;
+    verifyStaminaValueByStampTask(request: Request.VerifyStaminaValueByStampTaskRequest): Promise<Result.VerifyStaminaValueByStampTaskResult>;
+    verifyStaminaMaxValueByStampTask(request: Request.VerifyStaminaMaxValueByStampTaskRequest): Promise<Result.VerifyStaminaMaxValueByStampTaskResult>;
+    verifyStaminaRecoverIntervalMinutesByStampTask(request: Request.VerifyStaminaRecoverIntervalMinutesByStampTaskRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesByStampTaskResult>;
+    verifyStaminaRecoverValueByStampTask(request: Request.VerifyStaminaRecoverValueByStampTaskRequest): Promise<Result.VerifyStaminaRecoverValueByStampTaskResult>;
+    verifyStaminaOverflowValueByStampTask(request: Request.VerifyStaminaOverflowValueByStampTaskRequest): Promise<Result.VerifyStaminaOverflowValueByStampTaskResult>;
 }

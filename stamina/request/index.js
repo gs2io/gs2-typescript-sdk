@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RaiseMaxValueByUserIdRequest = exports.RecoverStaminaByUserIdRequest = exports.ApplyStaminaByUserIdRequest = exports.ApplyStaminaRequest = exports.ConsumeStaminaByUserIdRequest = exports.ConsumeStaminaRequest = exports.UpdateStaminaByUserIdRequest = exports.GetStaminaByUserIdRequest = exports.GetStaminaRequest = exports.DescribeStaminasByUserIdRequest = exports.DescribeStaminasRequest = exports.GetStaminaModelRequest = exports.DescribeStaminaModelsRequest = exports.UpdateCurrentStaminaMasterFromGitHubRequest = exports.UpdateCurrentStaminaMasterRequest = exports.GetCurrentStaminaMasterRequest = exports.ExportMasterRequest = exports.DeleteRecoverValueTableMasterRequest = exports.UpdateRecoverValueTableMasterRequest = exports.GetRecoverValueTableMasterRequest = exports.CreateRecoverValueTableMasterRequest = exports.DescribeRecoverValueTableMastersRequest = exports.DeleteRecoverIntervalTableMasterRequest = exports.UpdateRecoverIntervalTableMasterRequest = exports.GetRecoverIntervalTableMasterRequest = exports.CreateRecoverIntervalTableMasterRequest = exports.DescribeRecoverIntervalTableMastersRequest = exports.DeleteMaxStaminaTableMasterRequest = exports.UpdateMaxStaminaTableMasterRequest = exports.GetMaxStaminaTableMasterRequest = exports.CreateMaxStaminaTableMasterRequest = exports.DescribeMaxStaminaTableMastersRequest = exports.DeleteStaminaModelMasterRequest = exports.UpdateStaminaModelMasterRequest = exports.GetStaminaModelMasterRequest = exports.CreateStaminaModelMasterRequest = exports.DescribeStaminaModelMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
-exports.ConsumeStaminaByStampTaskRequest = exports.SetRecoverValueByStampSheetRequest = exports.SetRecoverIntervalByStampSheetRequest = exports.SetMaxValueByStampSheetRequest = exports.DecreaseMaxValueByStampTaskRequest = exports.RaiseMaxValueByStampSheetRequest = exports.RecoverStaminaByStampSheetRequest = exports.DeleteStaminaByUserIdRequest = exports.SetRecoverValueByStatusRequest = exports.SetRecoverIntervalByStatusRequest = exports.SetMaxValueByStatusRequest = exports.SetRecoverValueByUserIdRequest = exports.SetRecoverIntervalByUserIdRequest = exports.SetMaxValueByUserIdRequest = exports.DecreaseMaxValueByUserIdRequest = exports.DecreaseMaxValueRequest = void 0;
+exports.VerifyStaminaOverflowValueByStampTaskRequest = exports.VerifyStaminaRecoverValueByStampTaskRequest = exports.VerifyStaminaRecoverIntervalMinutesByStampTaskRequest = exports.VerifyStaminaMaxValueByStampTaskRequest = exports.VerifyStaminaValueByStampTaskRequest = exports.ConsumeStaminaByStampTaskRequest = exports.SetRecoverValueByStampSheetRequest = exports.SetRecoverIntervalByStampSheetRequest = exports.SetMaxValueByStampSheetRequest = exports.DecreaseMaxValueByStampTaskRequest = exports.RaiseMaxValueByStampSheetRequest = exports.RecoverStaminaByStampSheetRequest = exports.VerifyStaminaOverflowValueByUserIdRequest = exports.VerifyStaminaOverflowValueRequest = exports.VerifyStaminaRecoverValueByUserIdRequest = exports.VerifyStaminaRecoverValueRequest = exports.VerifyStaminaRecoverIntervalMinutesByUserIdRequest = exports.VerifyStaminaRecoverIntervalMinutesRequest = exports.VerifyStaminaMaxValueByUserIdRequest = exports.VerifyStaminaMaxValueRequest = exports.VerifyStaminaValueByUserIdRequest = exports.VerifyStaminaValueRequest = exports.DeleteStaminaByUserIdRequest = exports.SetRecoverValueByStatusRequest = exports.SetRecoverIntervalByStatusRequest = exports.SetMaxValueByStatusRequest = exports.SetRecoverValueByUserIdRequest = exports.SetRecoverIntervalByUserIdRequest = exports.SetMaxValueByUserIdRequest = exports.DecreaseMaxValueByUserIdRequest = exports.DecreaseMaxValueRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -136,6 +136,26 @@ var SetRecoverValueByStatusRequest_1 = tslib_1.__importDefault(require("./SetRec
 exports.SetRecoverValueByStatusRequest = SetRecoverValueByStatusRequest_1.default;
 var DeleteStaminaByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteStaminaByUserIdRequest"));
 exports.DeleteStaminaByUserIdRequest = DeleteStaminaByUserIdRequest_1.default;
+var VerifyStaminaValueRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaValueRequest"));
+exports.VerifyStaminaValueRequest = VerifyStaminaValueRequest_1.default;
+var VerifyStaminaValueByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaValueByUserIdRequest"));
+exports.VerifyStaminaValueByUserIdRequest = VerifyStaminaValueByUserIdRequest_1.default;
+var VerifyStaminaMaxValueRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaMaxValueRequest"));
+exports.VerifyStaminaMaxValueRequest = VerifyStaminaMaxValueRequest_1.default;
+var VerifyStaminaMaxValueByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaMaxValueByUserIdRequest"));
+exports.VerifyStaminaMaxValueByUserIdRequest = VerifyStaminaMaxValueByUserIdRequest_1.default;
+var VerifyStaminaRecoverIntervalMinutesRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverIntervalMinutesRequest"));
+exports.VerifyStaminaRecoverIntervalMinutesRequest = VerifyStaminaRecoverIntervalMinutesRequest_1.default;
+var VerifyStaminaRecoverIntervalMinutesByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverIntervalMinutesByUserIdRequest"));
+exports.VerifyStaminaRecoverIntervalMinutesByUserIdRequest = VerifyStaminaRecoverIntervalMinutesByUserIdRequest_1.default;
+var VerifyStaminaRecoverValueRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverValueRequest"));
+exports.VerifyStaminaRecoverValueRequest = VerifyStaminaRecoverValueRequest_1.default;
+var VerifyStaminaRecoverValueByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverValueByUserIdRequest"));
+exports.VerifyStaminaRecoverValueByUserIdRequest = VerifyStaminaRecoverValueByUserIdRequest_1.default;
+var VerifyStaminaOverflowValueRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaOverflowValueRequest"));
+exports.VerifyStaminaOverflowValueRequest = VerifyStaminaOverflowValueRequest_1.default;
+var VerifyStaminaOverflowValueByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaOverflowValueByUserIdRequest"));
+exports.VerifyStaminaOverflowValueByUserIdRequest = VerifyStaminaOverflowValueByUserIdRequest_1.default;
 var RecoverStaminaByStampSheetRequest_1 = tslib_1.__importDefault(require("./RecoverStaminaByStampSheetRequest"));
 exports.RecoverStaminaByStampSheetRequest = RecoverStaminaByStampSheetRequest_1.default;
 var RaiseMaxValueByStampSheetRequest_1 = tslib_1.__importDefault(require("./RaiseMaxValueByStampSheetRequest"));
@@ -150,4 +170,14 @@ var SetRecoverValueByStampSheetRequest_1 = tslib_1.__importDefault(require("./Se
 exports.SetRecoverValueByStampSheetRequest = SetRecoverValueByStampSheetRequest_1.default;
 var ConsumeStaminaByStampTaskRequest_1 = tslib_1.__importDefault(require("./ConsumeStaminaByStampTaskRequest"));
 exports.ConsumeStaminaByStampTaskRequest = ConsumeStaminaByStampTaskRequest_1.default;
+var VerifyStaminaValueByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaValueByStampTaskRequest"));
+exports.VerifyStaminaValueByStampTaskRequest = VerifyStaminaValueByStampTaskRequest_1.default;
+var VerifyStaminaMaxValueByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaMaxValueByStampTaskRequest"));
+exports.VerifyStaminaMaxValueByStampTaskRequest = VerifyStaminaMaxValueByStampTaskRequest_1.default;
+var VerifyStaminaRecoverIntervalMinutesByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverIntervalMinutesByStampTaskRequest"));
+exports.VerifyStaminaRecoverIntervalMinutesByStampTaskRequest = VerifyStaminaRecoverIntervalMinutesByStampTaskRequest_1.default;
+var VerifyStaminaRecoverValueByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaRecoverValueByStampTaskRequest"));
+exports.VerifyStaminaRecoverValueByStampTaskRequest = VerifyStaminaRecoverValueByStampTaskRequest_1.default;
+var VerifyStaminaOverflowValueByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStaminaOverflowValueByStampTaskRequest"));
+exports.VerifyStaminaOverflowValueByStampTaskRequest = VerifyStaminaOverflowValueByStampTaskRequest_1.default;
 //# sourceMappingURL=index.js.map
