@@ -27,6 +27,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.rewardIntervalMinutes = null;
         this.defaultMaximumIdleMinutes = null;
+        this.rewardResetMode = null;
         this.acquireActions = null;
         this.idlePeriodScheduleId = null;
         this.receivePeriodScheduleId = null;
@@ -119,6 +120,17 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
         return this;
     };
+    UpdateCategoryModelMasterRequest.prototype.getRewardResetMode = function () {
+        return this.rewardResetMode;
+    };
+    UpdateCategoryModelMasterRequest.prototype.setRewardResetMode = function (rewardResetMode) {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    };
+    UpdateCategoryModelMasterRequest.prototype.withRewardResetMode = function (rewardResetMode) {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    };
     UpdateCategoryModelMasterRequest.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -160,6 +172,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withRewardIntervalMinutes(data["rewardIntervalMinutes"])
             .withDefaultMaximumIdleMinutes(data["defaultMaximumIdleMinutes"])
+            .withRewardResetMode(data["rewardResetMode"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Idle.AcquireActionList.fromDict(item);
@@ -175,6 +188,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "rewardIntervalMinutes": this.getRewardIntervalMinutes(),
             "defaultMaximumIdleMinutes": this.getDefaultMaximumIdleMinutes(),
+            "rewardResetMode": this.getRewardResetMode(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

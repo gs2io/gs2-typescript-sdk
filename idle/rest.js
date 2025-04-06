@@ -394,7 +394,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.createCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -410,9 +410,10 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'rewardIntervalMinutes': (_g = request.getRewardIntervalMinutes()) !== null && _g !== void 0 ? _g : null,
             'defaultMaximumIdleMinutes': (_h = request.getDefaultMaximumIdleMinutes()) !== null && _h !== void 0 ? _h : null,
-            'acquireActions': (_k = (_j = request.getAcquireActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
-            'idlePeriodScheduleId': (_l = request.getIdlePeriodScheduleId()) !== null && _l !== void 0 ? _l : null,
-            'receivePeriodScheduleId': (_m = request.getReceivePeriodScheduleId()) !== null && _m !== void 0 ? _m : null,
+            'rewardResetMode': (_j = request.getRewardResetMode()) !== null && _j !== void 0 ? _j : null,
+            'acquireActions': (_l = (_k = request.getAcquireActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'idlePeriodScheduleId': (_m = request.getIdlePeriodScheduleId()) !== null && _m !== void 0 ? _m : null,
+            'receivePeriodScheduleId': (_o = request.getReceivePeriodScheduleId()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -451,7 +452,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.updateCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{categoryName}')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -467,9 +468,10 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'rewardIntervalMinutes': (_h = request.getRewardIntervalMinutes()) !== null && _h !== void 0 ? _h : null,
             'defaultMaximumIdleMinutes': (_j = request.getDefaultMaximumIdleMinutes()) !== null && _j !== void 0 ? _j : null,
-            'acquireActions': (_l = (_k = request.getAcquireActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
-            'idlePeriodScheduleId': (_m = request.getIdlePeriodScheduleId()) !== null && _m !== void 0 ? _m : null,
-            'receivePeriodScheduleId': (_o = request.getReceivePeriodScheduleId()) !== null && _o !== void 0 ? _o : null,
+            'rewardResetMode': (_k = request.getRewardResetMode()) !== null && _k !== void 0 ? _k : null,
+            'acquireActions': (_m = (_l = request.getAcquireActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'idlePeriodScheduleId': (_o = request.getIdlePeriodScheduleId()) !== null && _o !== void 0 ? _o : null,
+            'receivePeriodScheduleId': (_p = request.getReceivePeriodScheduleId()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

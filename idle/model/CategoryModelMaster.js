@@ -26,6 +26,7 @@ var CategoryModelMaster = /** @class */ (function () {
         this.metadata = null;
         this.rewardIntervalMinutes = null;
         this.defaultMaximumIdleMinutes = null;
+        this.rewardResetMode = null;
         this.acquireActions = null;
         this.idlePeriodScheduleId = null;
         this.receivePeriodScheduleId = null;
@@ -165,6 +166,17 @@ var CategoryModelMaster = /** @class */ (function () {
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
         return this;
     };
+    CategoryModelMaster.prototype.getRewardResetMode = function () {
+        return this.rewardResetMode;
+    };
+    CategoryModelMaster.prototype.setRewardResetMode = function (rewardResetMode) {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    };
+    CategoryModelMaster.prototype.withRewardResetMode = function (rewardResetMode) {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    };
     CategoryModelMaster.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -242,6 +254,7 @@ var CategoryModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withRewardIntervalMinutes(data["rewardIntervalMinutes"])
             .withDefaultMaximumIdleMinutes(data["defaultMaximumIdleMinutes"])
+            .withRewardResetMode(data["rewardResetMode"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Idle.AcquireActionList.fromDict(item);
@@ -260,6 +273,7 @@ var CategoryModelMaster = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "rewardIntervalMinutes": this.getRewardIntervalMinutes(),
             "defaultMaximumIdleMinutes": this.getDefaultMaximumIdleMinutes(),
+            "rewardResetMode": this.getRewardResetMode(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

@@ -47,8 +47,6 @@ import UpdateMemberRoleResult from "./UpdateMemberRoleResult"
 import UpdateMemberRoleByGuildNameResult from "./UpdateMemberRoleByGuildNameResult"
 import BatchUpdateMemberRoleResult from "./BatchUpdateMemberRoleResult"
 import BatchUpdateMemberRoleByGuildNameResult from "./BatchUpdateMemberRoleByGuildNameResult"
-import UpdateMemberMetadataResult from "./UpdateMemberMetadataResult"
-import UpdateMemberMetadataByUserIdResult from "./UpdateMemberMetadataByUserIdResult"
 import DeleteGuildResult from "./DeleteGuildResult"
 import DeleteGuildByGuildNameResult from "./DeleteGuildByGuildNameResult"
 import IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
@@ -70,6 +68,8 @@ import DescribeJoinedGuildsResult from "./DescribeJoinedGuildsResult"
 import DescribeJoinedGuildsByUserIdResult from "./DescribeJoinedGuildsByUserIdResult"
 import GetJoinedGuildResult from "./GetJoinedGuildResult"
 import GetJoinedGuildByUserIdResult from "./GetJoinedGuildByUserIdResult"
+import UpdateMemberMetadataResult from "./UpdateMemberMetadataResult"
+import UpdateMemberMetadataByUserIdResult from "./UpdateMemberMetadataByUserIdResult"
 import WithdrawalResult from "./WithdrawalResult"
 import WithdrawalByUserIdResult from "./WithdrawalByUserIdResult"
 import GetLastGuildMasterActivityResult from "./GetLastGuildMasterActivityResult"
@@ -140,8 +140,6 @@ export {
     UpdateMemberRoleByGuildNameResult,
     BatchUpdateMemberRoleResult,
     BatchUpdateMemberRoleByGuildNameResult,
-    UpdateMemberMetadataResult,
-    UpdateMemberMetadataByUserIdResult,
     DeleteGuildResult,
     DeleteGuildByGuildNameResult,
     IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult,
@@ -163,6 +161,8 @@ export {
     DescribeJoinedGuildsByUserIdResult,
     GetJoinedGuildResult,
     GetJoinedGuildByUserIdResult,
+    UpdateMemberMetadataResult,
+    UpdateMemberMetadataByUserIdResult,
     WithdrawalResult,
     WithdrawalByUserIdResult,
     GetLastGuildMasterActivityResult,

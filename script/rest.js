@@ -363,7 +363,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.invokeScript = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -383,7 +383,6 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'userId': (_e = request.getUserId()) !== null && _e !== void 0 ? _e : null,
             'args': (_f = request.getArgs()) !== null && _f !== void 0 ? _f : null,
             'randomStatus': (_h = (_g = request.getRandomStatus()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'forceUseDistributor': (_j = request.getForceUseDistributor()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

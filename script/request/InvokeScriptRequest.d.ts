@@ -7,7 +7,6 @@ export default class InvokeScriptRequest implements IRequest {
     private userId;
     private args;
     private randomStatus;
-    private forceUseDistributor;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -28,9 +27,6 @@ export default class InvokeScriptRequest implements IRequest {
     getRandomStatus(): Gs2Script.RandomStatus | null;
     setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
-    getForceUseDistributor(): boolean | null;
-    setForceUseDistributor(forceUseDistributor: boolean | null): this;
-    withForceUseDistributor(forceUseDistributor: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

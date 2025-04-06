@@ -437,7 +437,6 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'userId': request.getUserId() ?? null,
             'args': request.getArgs() ?? null,
             'randomStatus': request.getRandomStatus()?.toDict() ?? null,
-            'forceUseDistributor': request.getForceUseDistributor() ?? null,
         };
         return axios.post(
             url,

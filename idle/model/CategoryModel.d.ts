@@ -6,6 +6,7 @@ export default class CategoryModel implements IModel {
     private metadata;
     private rewardIntervalMinutes;
     private defaultMaximumIdleMinutes;
+    private rewardResetMode;
     private acquireActions;
     private idlePeriodScheduleId;
     private receivePeriodScheduleId;
@@ -30,6 +31,9 @@ export default class CategoryModel implements IModel {
     getDefaultMaximumIdleMinutes(): number | null;
     setDefaultMaximumIdleMinutes(defaultMaximumIdleMinutes: number | null): this;
     withDefaultMaximumIdleMinutes(defaultMaximumIdleMinutes: number | null): this;
+    getRewardResetMode(): string | null;
+    setRewardResetMode(rewardResetMode: string | null): this;
+    withRewardResetMode(rewardResetMode: string | null): this;
     getAcquireActions(): Gs2Idle.AcquireActionList[] | null;
     setAcquireActions(acquireActions: Gs2Idle.AcquireActionList[] | null): this;
     withAcquireActions(acquireActions: Gs2Idle.AcquireActionList[] | null): this;

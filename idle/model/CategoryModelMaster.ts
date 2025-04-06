@@ -28,6 +28,7 @@ export default class CategoryModelMaster implements IModel {
     private metadata: string|null = null;
     private rewardIntervalMinutes: number|null = null;
     private defaultMaximumIdleMinutes: number|null = null;
+    private rewardResetMode: string|null = null;
     private acquireActions: Gs2Idle.AcquireActionList[]|null = null;
     private idlePeriodScheduleId: string|null = null;
     private receivePeriodScheduleId: string|null = null;
@@ -181,6 +182,17 @@ export default class CategoryModelMaster implements IModel {
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
         return this;
     }
+    public getRewardResetMode(): string|null {
+        return this.rewardResetMode;
+    }
+    public setRewardResetMode(rewardResetMode: string|null) {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    }
+    public withRewardResetMode(rewardResetMode: string|null): this {
+        this.rewardResetMode = rewardResetMode;
+        return this;
+    }
     public getAcquireActions(): Gs2Idle.AcquireActionList[]|null {
         return this.acquireActions;
     }
@@ -259,6 +271,7 @@ export default class CategoryModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withRewardIntervalMinutes(data["rewardIntervalMinutes"])
             .withDefaultMaximumIdleMinutes(data["defaultMaximumIdleMinutes"])
+            .withRewardResetMode(data["rewardResetMode"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Idle.AcquireActionList.fromDict(item);
@@ -279,6 +292,7 @@ export default class CategoryModelMaster implements IModel {
             "metadata": this.getMetadata(),
             "rewardIntervalMinutes": this.getRewardIntervalMinutes(),
             "defaultMaximumIdleMinutes": this.getDefaultMaximumIdleMinutes(),
+            "rewardResetMode": this.getRewardResetMode(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: Gs2Idle.AcquireActionList) => {
                     return item.toDict();

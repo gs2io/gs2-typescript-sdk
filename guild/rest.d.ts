@@ -38,8 +38,6 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     updateMemberRoleByGuildName(request: Request.UpdateMemberRoleByGuildNameRequest): Promise<Result.UpdateMemberRoleByGuildNameResult>;
     batchUpdateMemberRole(request: Request.BatchUpdateMemberRoleRequest): Promise<Result.BatchUpdateMemberRoleResult>;
     batchUpdateMemberRoleByGuildName(request: Request.BatchUpdateMemberRoleByGuildNameRequest): Promise<Result.BatchUpdateMemberRoleByGuildNameResult>;
-    updateMemberMetadata(request: Request.UpdateMemberMetadataRequest): Promise<Result.UpdateMemberMetadataResult>;
-    updateMemberMetadataByUserId(request: Request.UpdateMemberMetadataByUserIdRequest): Promise<Result.UpdateMemberMetadataByUserIdResult>;
     deleteGuild(request: Request.DeleteGuildRequest): Promise<Result.DeleteGuildResult>;
     deleteGuildByGuildName(request: Request.DeleteGuildByGuildNameRequest): Promise<Result.DeleteGuildByGuildNameResult>;
     increaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;
@@ -61,6 +59,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     describeJoinedGuildsByUserId(request: Request.DescribeJoinedGuildsByUserIdRequest): Promise<Result.DescribeJoinedGuildsByUserIdResult>;
     getJoinedGuild(request: Request.GetJoinedGuildRequest): Promise<Result.GetJoinedGuildResult>;
     getJoinedGuildByUserId(request: Request.GetJoinedGuildByUserIdRequest): Promise<Result.GetJoinedGuildByUserIdResult>;
+    updateMemberMetadata(request: Request.UpdateMemberMetadataRequest): Promise<Result.UpdateMemberMetadataResult>;
+    updateMemberMetadataByUserId(request: Request.UpdateMemberMetadataByUserIdRequest): Promise<Result.UpdateMemberMetadataByUserIdResult>;
     withdrawal(request: Request.WithdrawalRequest): Promise<Result.WithdrawalResult>;
     withdrawalByUserId(request: Request.WithdrawalByUserIdRequest): Promise<Result.WithdrawalByUserIdResult>;
     getLastGuildMasterActivity(request: Request.GetLastGuildMasterActivityRequest): Promise<Result.GetLastGuildMasterActivityResult>;
