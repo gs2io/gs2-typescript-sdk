@@ -24,8 +24,11 @@ export default class DebugInvokeRequest implements IRequest {
     private contextStack: string|null = null;
     private script: string|null = null;
     private args: string|null = null;
+    private userId: string|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
     private disableStringNumberToNumber: boolean|null = null;
+    private timeOffsetToken: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -76,6 +79,17 @@ export default class DebugInvokeRequest implements IRequest {
         this.args = args;
         return this;
     }
+    public getUserId(): string|null {
+        return this.userId;
+    }
+    public setUserId(userId: string|null) {
+        this.userId = userId;
+        return this;
+    }
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
+        return this;
+    }
     public getRandomStatus(): Gs2Script.RandomStatus|null {
         return this.randomStatus;
     }
@@ -98,21 +112,50 @@ export default class DebugInvokeRequest implements IRequest {
         this.disableStringNumberToNumber = disableStringNumberToNumber;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DebugInvokeRequest {
         return new DebugInvokeRequest()
             .withScript(data["script"])
             .withArgs(data["args"])
+            .withUserId(data["userId"])
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
-            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "script": this.getScript(),
             "args": this.getArgs(),
+            "userId": this.getUserId(),
             "randomStatus": this.getRandomStatus()?.toDict(),
             "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

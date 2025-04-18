@@ -464,10 +464,17 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'script': request.getScript() ?? null,
             'args': request.getArgs() ?? null,
+            'userId': request.getUserId() ?? null,
             'randomStatus': request.getRandomStatus()?.toDict() ?? null,
             'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };

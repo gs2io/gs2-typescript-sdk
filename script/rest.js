@@ -398,7 +398,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.debugInvoke = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/debug/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -406,12 +406,19 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_a = request.getDuplicationAvoider()) !== null && _a !== void 0 ? _a : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_b = request.getTimeOffsetToken()) !== null && _b !== void 0 ? _b : null;
+        }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'script': (_b = request.getScript()) !== null && _b !== void 0 ? _b : null,
-            'args': (_c = request.getArgs()) !== null && _c !== void 0 ? _c : null,
-            'randomStatus': (_e = (_d = request.getRandomStatus()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'disableStringNumberToNumber': (_f = request.getDisableStringNumberToNumber()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'script': (_d = request.getScript()) !== null && _d !== void 0 ? _d : null,
+            'args': (_e = request.getArgs()) !== null && _e !== void 0 ? _e : null,
+            'userId': (_f = request.getUserId()) !== null && _f !== void 0 ? _f : null,
+            'randomStatus': (_h = (_g = request.getRandomStatus()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'disableStringNumberToNumber': (_j = request.getDisableStringNumberToNumber()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

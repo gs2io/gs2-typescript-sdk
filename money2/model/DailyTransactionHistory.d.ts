@@ -7,6 +7,8 @@ export default class DailyTransactionHistory implements IModel {
     private currency;
     private depositAmount;
     private withdrawAmount;
+    private issueCount;
+    private consumeCount;
     private updatedAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -39,6 +41,12 @@ export default class DailyTransactionHistory implements IModel {
     getWithdrawAmount(): number | null;
     setWithdrawAmount(withdrawAmount: number | null): this;
     withWithdrawAmount(withdrawAmount: number | null): this;
+    getIssueCount(): number | null;
+    setIssueCount(issueCount: number | null): this;
+    withIssueCount(issueCount: number | null): this;
+    getConsumeCount(): number | null;
+    setConsumeCount(consumeCount: number | null): this;
+    withConsumeCount(consumeCount: number | null): this;
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;

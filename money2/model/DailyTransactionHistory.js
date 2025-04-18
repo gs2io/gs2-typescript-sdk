@@ -25,6 +25,8 @@ var DailyTransactionHistory = /** @class */ (function () {
         this.currency = null;
         this.depositAmount = null;
         this.withdrawAmount = null;
+        this.issueCount = null;
+        this.consumeCount = null;
         this.updatedAt = null;
         this.revision = null;
     }
@@ -237,6 +239,28 @@ var DailyTransactionHistory = /** @class */ (function () {
         this.withdrawAmount = withdrawAmount;
         return this;
     };
+    DailyTransactionHistory.prototype.getIssueCount = function () {
+        return this.issueCount;
+    };
+    DailyTransactionHistory.prototype.setIssueCount = function (issueCount) {
+        this.issueCount = issueCount;
+        return this;
+    };
+    DailyTransactionHistory.prototype.withIssueCount = function (issueCount) {
+        this.issueCount = issueCount;
+        return this;
+    };
+    DailyTransactionHistory.prototype.getConsumeCount = function () {
+        return this.consumeCount;
+    };
+    DailyTransactionHistory.prototype.setConsumeCount = function (consumeCount) {
+        this.consumeCount = consumeCount;
+        return this;
+    };
+    DailyTransactionHistory.prototype.withConsumeCount = function (consumeCount) {
+        this.consumeCount = consumeCount;
+        return this;
+    };
     DailyTransactionHistory.prototype.getUpdatedAt = function () {
         return this.updatedAt;
     };
@@ -271,6 +295,8 @@ var DailyTransactionHistory = /** @class */ (function () {
             .withCurrency(data["currency"])
             .withDepositAmount(data["depositAmount"])
             .withWithdrawAmount(data["withdrawAmount"])
+            .withIssueCount(data["issueCount"])
+            .withConsumeCount(data["consumeCount"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
@@ -283,6 +309,8 @@ var DailyTransactionHistory = /** @class */ (function () {
             "currency": this.getCurrency(),
             "depositAmount": this.getDepositAmount(),
             "withdrawAmount": this.getWithdrawAmount(),
+            "issueCount": this.getIssueCount(),
+            "consumeCount": this.getConsumeCount(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
         };

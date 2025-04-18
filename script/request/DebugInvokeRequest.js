@@ -23,8 +23,11 @@ var DebugInvokeRequest = /** @class */ (function () {
         this.contextStack = null;
         this.script = null;
         this.args = null;
+        this.userId = null;
         this.randomStatus = null;
         this.disableStringNumberToNumber = null;
+        this.timeOffsetToken = null;
+        this.duplicationAvoider = null;
     }
     DebugInvokeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -70,6 +73,17 @@ var DebugInvokeRequest = /** @class */ (function () {
         this.args = args;
         return this;
     };
+    DebugInvokeRequest.prototype.getUserId = function () {
+        return this.userId;
+    };
+    DebugInvokeRequest.prototype.setUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    DebugInvokeRequest.prototype.withUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
     DebugInvokeRequest.prototype.getRandomStatus = function () {
         return this.randomStatus;
     };
@@ -92,20 +106,46 @@ var DebugInvokeRequest = /** @class */ (function () {
         this.disableStringNumberToNumber = disableStringNumberToNumber;
         return this;
     };
+    DebugInvokeRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DebugInvokeRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DebugInvokeRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DebugInvokeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DebugInvokeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DebugInvokeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
     DebugInvokeRequest.fromDict = function (data) {
         return new DebugInvokeRequest()
             .withScript(data["script"])
             .withArgs(data["args"])
+            .withUserId(data["userId"])
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
-            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DebugInvokeRequest.prototype.toDict = function () {
         var _a;
         return {
             "script": this.getScript(),
             "args": this.getArgs(),
+            "userId": this.getUserId(),
             "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DebugInvokeRequest;

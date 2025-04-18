@@ -27,6 +27,8 @@ export default class DailyTransactionHistory implements IModel {
     private currency: string|null = null;
     private depositAmount: number|null = null;
     private withdrawAmount: number|null = null;
+    private issueCount: number|null = null;
+    private consumeCount: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
 
@@ -262,6 +264,28 @@ export default class DailyTransactionHistory implements IModel {
         this.withdrawAmount = withdrawAmount;
         return this;
     }
+    public getIssueCount(): number|null {
+        return this.issueCount;
+    }
+    public setIssueCount(issueCount: number|null) {
+        this.issueCount = issueCount;
+        return this;
+    }
+    public withIssueCount(issueCount: number|null): this {
+        this.issueCount = issueCount;
+        return this;
+    }
+    public getConsumeCount(): number|null {
+        return this.consumeCount;
+    }
+    public setConsumeCount(consumeCount: number|null) {
+        this.consumeCount = consumeCount;
+        return this;
+    }
+    public withConsumeCount(consumeCount: number|null): this {
+        this.consumeCount = consumeCount;
+        return this;
+    }
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
@@ -297,6 +321,8 @@ export default class DailyTransactionHistory implements IModel {
             .withCurrency(data["currency"])
             .withDepositAmount(data["depositAmount"])
             .withWithdrawAmount(data["withdrawAmount"])
+            .withIssueCount(data["issueCount"])
+            .withConsumeCount(data["consumeCount"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     }
@@ -310,6 +336,8 @@ export default class DailyTransactionHistory implements IModel {
             "currency": this.getCurrency(),
             "depositAmount": this.getDepositAmount(),
             "withdrawAmount": this.getWithdrawAmount(),
+            "issueCount": this.getIssueCount(),
+            "consumeCount": this.getConsumeCount(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
         };
