@@ -35,6 +35,7 @@ import ReceiveGlobalMessageRequest from "./ReceiveGlobalMessageRequest"
 import ReceiveGlobalMessageByUserIdRequest from "./ReceiveGlobalMessageByUserIdRequest"
 import OpenMessageRequest from "./OpenMessageRequest"
 import OpenMessageByUserIdRequest from "./OpenMessageByUserIdRequest"
+import CloseMessageByUserIdRequest from "./CloseMessageByUserIdRequest"
 import ReadMessageRequest from "./ReadMessageRequest"
 import ReadMessageByUserIdRequest from "./ReadMessageByUserIdRequest"
 import BatchReadMessagesRequest from "./BatchReadMessagesRequest"
@@ -82,6 +83,7 @@ export {
     ReceiveGlobalMessageByUserIdRequest,
     OpenMessageRequest,
     OpenMessageByUserIdRequest,
+    CloseMessageByUserIdRequest,
     ReadMessageRequest,
     ReadMessageByUserIdRequest,
     BatchReadMessagesRequest,

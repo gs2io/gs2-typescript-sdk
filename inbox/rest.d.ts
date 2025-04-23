@@ -26,6 +26,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     receiveGlobalMessageByUserId(request: Request.ReceiveGlobalMessageByUserIdRequest): Promise<Result.ReceiveGlobalMessageByUserIdResult>;
     openMessage(request: Request.OpenMessageRequest): Promise<Result.OpenMessageResult>;
     openMessageByUserId(request: Request.OpenMessageByUserIdRequest): Promise<Result.OpenMessageByUserIdResult>;
+    closeMessageByUserId(request: Request.CloseMessageByUserIdRequest): Promise<Result.CloseMessageByUserIdResult>;
     readMessage(request: Request.ReadMessageRequest): Promise<Result.ReadMessageResult>;
     readMessageByUserId(request: Request.ReadMessageByUserIdRequest): Promise<Result.ReadMessageByUserIdResult>;
     batchReadMessages(request: Request.BatchReadMessagesRequest): Promise<Result.BatchReadMessagesResult>;
