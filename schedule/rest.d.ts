@@ -45,6 +45,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
     verifyEventByStampTask(request: Request.VerifyEventByStampTaskRequest): Promise<Result.VerifyEventByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentEventMaster(request: Request.GetCurrentEventMasterRequest): Promise<Result.GetCurrentEventMasterResult>;
+    preUpdateCurrentEventMaster(request: Request.PreUpdateCurrentEventMasterRequest): Promise<Result.PreUpdateCurrentEventMasterResult>;
     updateCurrentEventMaster(request: Request.UpdateCurrentEventMasterRequest): Promise<Result.UpdateCurrentEventMasterResult>;
     updateCurrentEventMasterFromGitHub(request: Request.UpdateCurrentEventMasterFromGitHubRequest): Promise<Result.UpdateCurrentEventMasterFromGitHubResult>;
 }

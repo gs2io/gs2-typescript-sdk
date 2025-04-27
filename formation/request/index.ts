@@ -48,6 +48,7 @@ import UpdatePropertyFormModelMasterRequest from "./UpdatePropertyFormModelMaste
 import DeletePropertyFormModelMasterRequest from "./DeletePropertyFormModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentFormMasterRequest from "./GetCurrentFormMasterRequest"
+import PreUpdateCurrentFormMasterRequest from "./PreUpdateCurrentFormMasterRequest"
 import UpdateCurrentFormMasterRequest from "./UpdateCurrentFormMasterRequest"
 import UpdateCurrentFormMasterFromGitHubRequest from "./UpdateCurrentFormMasterFromGitHubRequest"
 import DescribeMoldsRequest from "./DescribeMoldsRequest"
@@ -127,6 +128,7 @@ export {
     DeletePropertyFormModelMasterRequest,
     ExportMasterRequest,
     GetCurrentFormMasterRequest,
+    PreUpdateCurrentFormMasterRequest,
     UpdateCurrentFormMasterRequest,
     UpdateCurrentFormMasterFromGitHubRequest,
     DescribeMoldsRequest,

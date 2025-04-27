@@ -42,6 +42,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
     receiveByStampSheet(request: Request.ReceiveByStampSheetRequest): Promise<Result.ReceiveByStampSheetResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentCategoryMaster(request: Request.GetCurrentCategoryMasterRequest): Promise<Result.GetCurrentCategoryMasterResult>;
+    preUpdateCurrentCategoryMaster(request: Request.PreUpdateCurrentCategoryMasterRequest): Promise<Result.PreUpdateCurrentCategoryMasterResult>;
     updateCurrentCategoryMaster(request: Request.UpdateCurrentCategoryMasterRequest): Promise<Result.UpdateCurrentCategoryMasterResult>;
     updateCurrentCategoryMasterFromGitHub(request: Request.UpdateCurrentCategoryMasterFromGitHubRequest): Promise<Result.UpdateCurrentCategoryMasterFromGitHubResult>;
 }

@@ -40,6 +40,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
     calcRanking(request: Request.CalcRankingRequest): Promise<Result.CalcRankingResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentRankingMaster(request: Request.GetCurrentRankingMasterRequest): Promise<Result.GetCurrentRankingMasterResult>;
+    preUpdateCurrentRankingMaster(request: Request.PreUpdateCurrentRankingMasterRequest): Promise<Result.PreUpdateCurrentRankingMasterResult>;
     updateCurrentRankingMaster(request: Request.UpdateCurrentRankingMasterRequest): Promise<Result.UpdateCurrentRankingMasterResult>;
     updateCurrentRankingMasterFromGitHub(request: Request.UpdateCurrentRankingMasterFromGitHubRequest): Promise<Result.UpdateCurrentRankingMasterFromGitHubResult>;
     getSubscribe(request: Request.GetSubscribeRequest): Promise<Result.GetSubscribeResult>;

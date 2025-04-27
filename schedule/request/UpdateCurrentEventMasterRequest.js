@@ -20,7 +20,9 @@ var UpdateCurrentEventMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.mode = null;
         this.settings = null;
+        this.uploadToken = null;
     }
     UpdateCurrentEventMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var UpdateCurrentEventMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    UpdateCurrentEventMasterRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateCurrentEventMasterRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateCurrentEventMasterRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateCurrentEventMasterRequest.prototype.getSettings = function () {
         return this.settings;
     };
@@ -66,15 +79,30 @@ var UpdateCurrentEventMasterRequest = /** @class */ (function () {
         this.settings = settings;
         return this;
     };
+    UpdateCurrentEventMasterRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateCurrentEventMasterRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateCurrentEventMasterRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateCurrentEventMasterRequest.fromDict = function (data) {
         return new UpdateCurrentEventMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateCurrentEventMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateCurrentEventMasterRequest;

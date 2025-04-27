@@ -43,6 +43,7 @@ import UpdateShowcaseMasterRequest from "./UpdateShowcaseMasterRequest"
 import DeleteShowcaseMasterRequest from "./DeleteShowcaseMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentShowcaseMasterRequest from "./GetCurrentShowcaseMasterRequest"
+import PreUpdateCurrentShowcaseMasterRequest from "./PreUpdateCurrentShowcaseMasterRequest"
 import UpdateCurrentShowcaseMasterRequest from "./UpdateCurrentShowcaseMasterRequest"
 import UpdateCurrentShowcaseMasterFromGitHubRequest from "./UpdateCurrentShowcaseMasterFromGitHubRequest"
 import DescribeShowcasesRequest from "./DescribeShowcasesRequest"
@@ -101,6 +102,7 @@ export {
     DeleteShowcaseMasterRequest,
     ExportMasterRequest,
     GetCurrentShowcaseMasterRequest,
+    PreUpdateCurrentShowcaseMasterRequest,
     UpdateCurrentShowcaseMasterRequest,
     UpdateCurrentShowcaseMasterFromGitHubRequest,
     DescribeShowcasesRequest,

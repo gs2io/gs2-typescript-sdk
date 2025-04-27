@@ -70,6 +70,7 @@ import DescribeBigItemModelsResult from "./DescribeBigItemModelsResult"
 import GetBigItemModelResult from "./GetBigItemModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentItemModelMasterResult from "./GetCurrentItemModelMasterResult"
+import PreUpdateCurrentItemModelMasterResult from "./PreUpdateCurrentItemModelMasterResult"
 import UpdateCurrentItemModelMasterResult from "./UpdateCurrentItemModelMasterResult"
 import UpdateCurrentItemModelMasterFromGitHubResult from "./UpdateCurrentItemModelMasterFromGitHubResult"
 import DescribeInventoriesResult from "./DescribeInventoriesResult"
@@ -205,6 +206,7 @@ export {
     GetBigItemModelResult,
     ExportMasterResult,
     GetCurrentItemModelMasterResult,
+    PreUpdateCurrentItemModelMasterResult,
     UpdateCurrentItemModelMasterResult,
     UpdateCurrentItemModelMasterFromGitHubResult,
     DescribeInventoriesResult,

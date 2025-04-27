@@ -59,6 +59,7 @@ import CreateProgressByStampSheetRequest from "./CreateProgressByStampSheetReque
 import DeleteProgressByStampTaskRequest from "./DeleteProgressByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentRateMasterRequest from "./GetCurrentRateMasterRequest"
+import PreUpdateCurrentRateMasterRequest from "./PreUpdateCurrentRateMasterRequest"
 import UpdateCurrentRateMasterRequest from "./UpdateCurrentRateMasterRequest"
 import UpdateCurrentRateMasterFromGitHubRequest from "./UpdateCurrentRateMasterFromGitHubRequest"
 
@@ -109,6 +110,7 @@ export {
     DeleteProgressByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentRateMasterRequest,
+    PreUpdateCurrentRateMasterRequest,
     UpdateCurrentRateMasterRequest,
     UpdateCurrentRateMasterFromGitHubRequest,
 };

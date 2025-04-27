@@ -14,12 +14,16 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 import DescribeStacksRequest from "./DescribeStacksRequest"
+import PreCreateStackRequest from "./PreCreateStackRequest"
 import CreateStackRequest from "./CreateStackRequest"
 import CreateStackFromGitHubRequest from "./CreateStackFromGitHubRequest"
+import PreValidateRequest from "./PreValidateRequest"
 import ValidateRequest from "./ValidateRequest"
 import GetStackStatusRequest from "./GetStackStatusRequest"
 import GetStackRequest from "./GetStackRequest"
+import PreUpdateStackRequest from "./PreUpdateStackRequest"
 import UpdateStackRequest from "./UpdateStackRequest"
+import PreChangeSetRequest from "./PreChangeSetRequest"
 import ChangeSetRequest from "./ChangeSetRequest"
 import UpdateStackFromGitHubRequest from "./UpdateStackFromGitHubRequest"
 import DeleteStackRequest from "./DeleteStackRequest"
@@ -35,12 +39,16 @@ import GetOutputRequest from "./GetOutputRequest"
 
 export {
     DescribeStacksRequest,
+    PreCreateStackRequest,
     CreateStackRequest,
     CreateStackFromGitHubRequest,
+    PreValidateRequest,
     ValidateRequest,
     GetStackStatusRequest,
     GetStackRequest,
+    PreUpdateStackRequest,
     UpdateStackRequest,
+    PreChangeSetRequest,
     ChangeSetRequest,
     UpdateStackFromGitHubRequest,
     DeleteStackRequest,

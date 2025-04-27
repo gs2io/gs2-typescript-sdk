@@ -47,6 +47,7 @@ import UpdateLimitModelMasterResult from "./UpdateLimitModelMasterResult"
 import DeleteLimitModelMasterResult from "./DeleteLimitModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentLimitMasterResult from "./GetCurrentLimitMasterResult"
+import PreUpdateCurrentLimitMasterResult from "./PreUpdateCurrentLimitMasterResult"
 import UpdateCurrentLimitMasterResult from "./UpdateCurrentLimitMasterResult"
 import UpdateCurrentLimitMasterFromGitHubResult from "./UpdateCurrentLimitMasterFromGitHubResult"
 import DescribeLimitModelsResult from "./DescribeLimitModelsResult"
@@ -87,6 +88,7 @@ export {
     DeleteLimitModelMasterResult,
     ExportMasterResult,
     GetCurrentLimitMasterResult,
+    PreUpdateCurrentLimitMasterResult,
     UpdateCurrentLimitMasterResult,
     UpdateCurrentLimitMasterFromGitHubResult,
     DescribeLimitModelsResult,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActionByUserIdResult = exports.ActionResult = exports.NearUserIdsFromSystemResult = exports.NearUserIdsResult = exports.FetchPositionFromSystemResult = exports.FetchPositionResult = exports.PutPositionByUserIdResult = exports.PutPositionResult = exports.UpdateCurrentFieldMasterFromGitHubResult = exports.UpdateCurrentFieldMasterResult = exports.GetCurrentFieldMasterResult = exports.ExportMasterResult = exports.DeleteLayerModelMasterResult = exports.UpdateLayerModelMasterResult = exports.GetLayerModelMasterResult = exports.CreateLayerModelMasterResult = exports.DescribeLayerModelMastersResult = exports.GetLayerModelResult = exports.DescribeLayerModelsResult = exports.DeleteAreaModelMasterResult = exports.UpdateAreaModelMasterResult = exports.GetAreaModelMasterResult = exports.CreateAreaModelMasterResult = exports.DescribeAreaModelMastersResult = exports.GetAreaModelResult = exports.DescribeAreaModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.ActionByUserIdResult = exports.ActionResult = exports.NearUserIdsFromSystemResult = exports.NearUserIdsResult = exports.FetchPositionFromSystemResult = exports.FetchPositionResult = exports.PutPositionByUserIdResult = exports.PutPositionResult = exports.UpdateCurrentFieldMasterFromGitHubResult = exports.UpdateCurrentFieldMasterResult = exports.PreUpdateCurrentFieldMasterResult = exports.GetCurrentFieldMasterResult = exports.ExportMasterResult = exports.DeleteLayerModelMasterResult = exports.UpdateLayerModelMasterResult = exports.GetLayerModelMasterResult = exports.CreateLayerModelMasterResult = exports.DescribeLayerModelMastersResult = exports.GetLayerModelResult = exports.DescribeLayerModelsResult = exports.DeleteAreaModelMasterResult = exports.UpdateAreaModelMasterResult = exports.GetAreaModelMasterResult = exports.CreateAreaModelMasterResult = exports.DescribeAreaModelMastersResult = exports.GetAreaModelResult = exports.DescribeAreaModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -61,6 +61,8 @@ var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentFieldMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentFieldMasterResult"));
 exports.GetCurrentFieldMasterResult = GetCurrentFieldMasterResult_1.default;
+var PreUpdateCurrentFieldMasterResult_1 = tslib_1.__importDefault(require("./PreUpdateCurrentFieldMasterResult"));
+exports.PreUpdateCurrentFieldMasterResult = PreUpdateCurrentFieldMasterResult_1.default;
 var UpdateCurrentFieldMasterResult_1 = tslib_1.__importDefault(require("./UpdateCurrentFieldMasterResult"));
 exports.UpdateCurrentFieldMasterResult = UpdateCurrentFieldMasterResult_1.default;
 var UpdateCurrentFieldMasterFromGitHubResult_1 = tslib_1.__importDefault(require("./UpdateCurrentFieldMasterFromGitHubResult"));

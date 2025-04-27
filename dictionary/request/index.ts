@@ -60,6 +60,7 @@ import DeleteLikesRequest from "./DeleteLikesRequest"
 import DeleteLikesByUserIdRequest from "./DeleteLikesByUserIdRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentEntryMasterRequest from "./GetCurrentEntryMasterRequest"
+import PreUpdateCurrentEntryMasterRequest from "./PreUpdateCurrentEntryMasterRequest"
 import UpdateCurrentEntryMasterRequest from "./UpdateCurrentEntryMasterRequest"
 import UpdateCurrentEntryMasterFromGitHubRequest from "./UpdateCurrentEntryMasterFromGitHubRequest"
 
@@ -111,6 +112,7 @@ export {
     DeleteLikesByUserIdRequest,
     ExportMasterRequest,
     GetCurrentEntryMasterRequest,
+    PreUpdateCurrentEntryMasterRequest,
     UpdateCurrentEntryMasterRequest,
     UpdateCurrentEntryMasterFromGitHubRequest,
 };

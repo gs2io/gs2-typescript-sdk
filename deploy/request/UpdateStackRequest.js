@@ -21,7 +21,9 @@ var UpdateStackRequest = /** @class */ (function () {
         this.contextStack = null;
         this.stackName = null;
         this.description = null;
+        this.mode = null;
         this.template = null;
+        this.uploadToken = null;
     }
     UpdateStackRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -67,6 +69,17 @@ var UpdateStackRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateStackRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateStackRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateStackRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateStackRequest.prototype.getTemplate = function () {
         return this.template;
     };
@@ -78,17 +91,32 @@ var UpdateStackRequest = /** @class */ (function () {
         this.template = template;
         return this;
     };
+    UpdateStackRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateStackRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateStackRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateStackRequest.fromDict = function (data) {
         return new UpdateStackRequest()
             .withStackName(data["stackName"])
             .withDescription(data["description"])
-            .withTemplate(data["template"]);
+            .withMode(data["mode"])
+            .withTemplate(data["template"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateStackRequest.prototype.toDict = function () {
         return {
             "stackName": this.getStackName(),
             "description": this.getDescription(),
+            "mode": this.getMode(),
             "template": this.getTemplate(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateStackRequest;

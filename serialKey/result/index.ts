@@ -51,6 +51,7 @@ import UpdateCampaignModelMasterResult from "./UpdateCampaignModelMasterResult"
 import DeleteCampaignModelMasterResult from "./DeleteCampaignModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentCampaignMasterResult from "./GetCurrentCampaignMasterResult"
+import PreUpdateCurrentCampaignMasterResult from "./PreUpdateCurrentCampaignMasterResult"
 import UpdateCurrentCampaignMasterResult from "./UpdateCurrentCampaignMasterResult"
 import UpdateCurrentCampaignMasterFromGitHubResult from "./UpdateCurrentCampaignMasterFromGitHubResult"
 
@@ -93,6 +94,7 @@ export {
     DeleteCampaignModelMasterResult,
     ExportMasterResult,
     GetCurrentCampaignMasterResult,
+    PreUpdateCurrentCampaignMasterResult,
     UpdateCurrentCampaignMasterResult,
     UpdateCurrentCampaignMasterFromGitHubResult,
 };

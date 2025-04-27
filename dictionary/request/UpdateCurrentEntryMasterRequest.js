@@ -20,7 +20,9 @@ var UpdateCurrentEntryMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.mode = null;
         this.settings = null;
+        this.uploadToken = null;
     }
     UpdateCurrentEntryMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var UpdateCurrentEntryMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    UpdateCurrentEntryMasterRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateCurrentEntryMasterRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateCurrentEntryMasterRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateCurrentEntryMasterRequest.prototype.getSettings = function () {
         return this.settings;
     };
@@ -66,15 +79,30 @@ var UpdateCurrentEntryMasterRequest = /** @class */ (function () {
         this.settings = settings;
         return this;
     };
+    UpdateCurrentEntryMasterRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateCurrentEntryMasterRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateCurrentEntryMasterRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateCurrentEntryMasterRequest.fromDict = function (data) {
         return new UpdateCurrentEntryMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateCurrentEntryMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateCurrentEntryMasterRequest;

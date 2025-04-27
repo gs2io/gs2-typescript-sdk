@@ -14,12 +14,16 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 import DescribeStacksResult from "./DescribeStacksResult"
+import PreCreateStackResult from "./PreCreateStackResult"
 import CreateStackResult from "./CreateStackResult"
 import CreateStackFromGitHubResult from "./CreateStackFromGitHubResult"
+import PreValidateResult from "./PreValidateResult"
 import ValidateResult from "./ValidateResult"
 import GetStackStatusResult from "./GetStackStatusResult"
 import GetStackResult from "./GetStackResult"
+import PreUpdateStackResult from "./PreUpdateStackResult"
 import UpdateStackResult from "./UpdateStackResult"
+import PreChangeSetResult from "./PreChangeSetResult"
 import ChangeSetResult from "./ChangeSetResult"
 import UpdateStackFromGitHubResult from "./UpdateStackFromGitHubResult"
 import DeleteStackResult from "./DeleteStackResult"
@@ -35,12 +39,16 @@ import GetOutputResult from "./GetOutputResult"
 
 export {
     DescribeStacksResult,
+    PreCreateStackResult,
     CreateStackResult,
     CreateStackFromGitHubResult,
+    PreValidateResult,
     ValidateResult,
     GetStackStatusResult,
     GetStackResult,
+    PreUpdateStackResult,
     UpdateStackResult,
+    PreChangeSetResult,
     ChangeSetResult,
     UpdateStackFromGitHubResult,
     DeleteStackResult,

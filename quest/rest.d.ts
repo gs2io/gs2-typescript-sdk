@@ -29,6 +29,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     deleteQuestModelMaster(request: Request.DeleteQuestModelMasterRequest): Promise<Result.DeleteQuestModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentQuestMaster(request: Request.GetCurrentQuestMasterRequest): Promise<Result.GetCurrentQuestMasterResult>;
+    preUpdateCurrentQuestMaster(request: Request.PreUpdateCurrentQuestMasterRequest): Promise<Result.PreUpdateCurrentQuestMasterResult>;
     updateCurrentQuestMaster(request: Request.UpdateCurrentQuestMasterRequest): Promise<Result.UpdateCurrentQuestMasterResult>;
     updateCurrentQuestMasterFromGitHub(request: Request.UpdateCurrentQuestMasterFromGitHubRequest): Promise<Result.UpdateCurrentQuestMasterFromGitHubResult>;
     describeProgressesByUserId(request: Request.DescribeProgressesByUserIdRequest): Promise<Result.DescribeProgressesByUserIdResult>;

@@ -20,7 +20,9 @@ var UpdateCurrentMissionMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.mode = null;
         this.settings = null;
+        this.uploadToken = null;
     }
     UpdateCurrentMissionMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var UpdateCurrentMissionMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    UpdateCurrentMissionMasterRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateCurrentMissionMasterRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateCurrentMissionMasterRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateCurrentMissionMasterRequest.prototype.getSettings = function () {
         return this.settings;
     };
@@ -66,15 +79,30 @@ var UpdateCurrentMissionMasterRequest = /** @class */ (function () {
         this.settings = settings;
         return this;
     };
+    UpdateCurrentMissionMasterRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateCurrentMissionMasterRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateCurrentMissionMasterRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateCurrentMissionMasterRequest.fromDict = function (data) {
         return new UpdateCurrentMissionMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateCurrentMissionMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateCurrentMissionMasterRequest;

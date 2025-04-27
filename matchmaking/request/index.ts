@@ -51,6 +51,7 @@ import DescribeRatingModelsRequest from "./DescribeRatingModelsRequest"
 import GetRatingModelRequest from "./GetRatingModelRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import PreUpdateCurrentModelMasterRequest from "./PreUpdateCurrentModelMasterRequest"
 import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
 import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
 import DescribeSeasonModelsRequest from "./DescribeSeasonModelsRequest"
@@ -124,6 +125,7 @@ export {
     GetRatingModelRequest,
     ExportMasterRequest,
     GetCurrentModelMasterRequest,
+    PreUpdateCurrentModelMasterRequest,
     UpdateCurrentModelMasterRequest,
     UpdateCurrentModelMasterFromGitHubRequest,
     DescribeSeasonModelsRequest,

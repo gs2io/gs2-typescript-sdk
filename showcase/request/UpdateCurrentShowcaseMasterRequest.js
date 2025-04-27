@@ -20,7 +20,9 @@ var UpdateCurrentShowcaseMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.mode = null;
         this.settings = null;
+        this.uploadToken = null;
     }
     UpdateCurrentShowcaseMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var UpdateCurrentShowcaseMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    UpdateCurrentShowcaseMasterRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateCurrentShowcaseMasterRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateCurrentShowcaseMasterRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateCurrentShowcaseMasterRequest.prototype.getSettings = function () {
         return this.settings;
     };
@@ -66,15 +79,30 @@ var UpdateCurrentShowcaseMasterRequest = /** @class */ (function () {
         this.settings = settings;
         return this;
     };
+    UpdateCurrentShowcaseMasterRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateCurrentShowcaseMasterRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateCurrentShowcaseMasterRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateCurrentShowcaseMasterRequest.fromDict = function (data) {
         return new UpdateCurrentShowcaseMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateCurrentShowcaseMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateCurrentShowcaseMasterRequest;

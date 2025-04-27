@@ -1195,6 +1195,36 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preUpdateCurrentCampaignMaster(request: Request.PreUpdateCurrentCampaignMasterRequest): Promise<Result.PreUpdateCurrentCampaignMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreUpdateCurrentCampaignMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateCurrentCampaignMaster(request: Request.UpdateCurrentCampaignMasterRequest): Promise<Result.UpdateCurrentCampaignMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'serial-key')
@@ -1207,7 +1237,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'settings': request.getSettings() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.put(
             url,

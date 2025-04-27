@@ -19,6 +19,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     getDistributorModel(request: Request.GetDistributorModelRequest): Promise<Result.GetDistributorModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentDistributorMaster(request: Request.GetCurrentDistributorMasterRequest): Promise<Result.GetCurrentDistributorMasterResult>;
+    preUpdateCurrentDistributorMaster(request: Request.PreUpdateCurrentDistributorMasterRequest): Promise<Result.PreUpdateCurrentDistributorMasterResult>;
     updateCurrentDistributorMaster(request: Request.UpdateCurrentDistributorMasterRequest): Promise<Result.UpdateCurrentDistributorMasterResult>;
     updateCurrentDistributorMasterFromGitHub(request: Request.UpdateCurrentDistributorMasterFromGitHubRequest): Promise<Result.UpdateCurrentDistributorMasterFromGitHubResult>;
     distribute(request: Request.DistributeRequest): Promise<Result.DistributeResult>;

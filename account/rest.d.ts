@@ -64,6 +64,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deleteTakeOverTypeModelMaster(request: Request.DeleteTakeOverTypeModelMasterRequest): Promise<Result.DeleteTakeOverTypeModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult>;
+    preUpdateCurrentModelMaster(request: Request.PreUpdateCurrentModelMasterRequest): Promise<Result.PreUpdateCurrentModelMasterResult>;
     updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult>;
     updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult>;
 }

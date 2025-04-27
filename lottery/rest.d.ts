@@ -40,6 +40,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     describeProbabilitiesByUserId(request: Request.DescribeProbabilitiesByUserIdRequest): Promise<Result.DescribeProbabilitiesByUserIdResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentLotteryMaster(request: Request.GetCurrentLotteryMasterRequest): Promise<Result.GetCurrentLotteryMasterResult>;
+    preUpdateCurrentLotteryMaster(request: Request.PreUpdateCurrentLotteryMasterRequest): Promise<Result.PreUpdateCurrentLotteryMasterResult>;
     updateCurrentLotteryMaster(request: Request.UpdateCurrentLotteryMasterRequest): Promise<Result.UpdateCurrentLotteryMasterResult>;
     updateCurrentLotteryMasterFromGitHub(request: Request.UpdateCurrentLotteryMasterFromGitHubRequest): Promise<Result.UpdateCurrentLotteryMasterFromGitHubResult>;
     describePrizeLimits(request: Request.DescribePrizeLimitsRequest): Promise<Result.DescribePrizeLimitsResult>;

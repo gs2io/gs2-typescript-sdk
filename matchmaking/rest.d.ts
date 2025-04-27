@@ -42,6 +42,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     getRatingModel(request: Request.GetRatingModelRequest): Promise<Result.GetRatingModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult>;
+    preUpdateCurrentModelMaster(request: Request.PreUpdateCurrentModelMasterRequest): Promise<Result.PreUpdateCurrentModelMasterResult>;
     updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult>;
     updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult>;
     describeSeasonModels(request: Request.DescribeSeasonModelsRequest): Promise<Result.DescribeSeasonModelsResult>;

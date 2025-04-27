@@ -39,6 +39,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     calculateSignature(request: Request.CalculateSignatureRequest): Promise<Result.CalculateSignatureResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentVersionMaster(request: Request.GetCurrentVersionMasterRequest): Promise<Result.GetCurrentVersionMasterResult>;
+    preUpdateCurrentVersionMaster(request: Request.PreUpdateCurrentVersionMasterRequest): Promise<Result.PreUpdateCurrentVersionMasterResult>;
     updateCurrentVersionMaster(request: Request.UpdateCurrentVersionMasterRequest): Promise<Result.UpdateCurrentVersionMasterResult>;
     updateCurrentVersionMasterFromGitHub(request: Request.UpdateCurrentVersionMasterFromGitHubRequest): Promise<Result.UpdateCurrentVersionMasterFromGitHubResult>;
 }

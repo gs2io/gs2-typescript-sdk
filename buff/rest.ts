@@ -757,6 +757,36 @@ export default class Gs2BuffRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preUpdateCurrentBuffMaster(request: Request.PreUpdateCurrentBuffMasterRequest): Promise<Result.PreUpdateCurrentBuffMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'buff')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreUpdateCurrentBuffMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateCurrentBuffMaster(request: Request.UpdateCurrentBuffMasterRequest): Promise<Result.UpdateCurrentBuffMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'buff')
@@ -769,7 +799,9 @@ export default class Gs2BuffRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'settings': request.getSettings() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.put(
             url,

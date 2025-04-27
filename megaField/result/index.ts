@@ -35,6 +35,7 @@ import UpdateLayerModelMasterResult from "./UpdateLayerModelMasterResult"
 import DeleteLayerModelMasterResult from "./DeleteLayerModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentFieldMasterResult from "./GetCurrentFieldMasterResult"
+import PreUpdateCurrentFieldMasterResult from "./PreUpdateCurrentFieldMasterResult"
 import UpdateCurrentFieldMasterResult from "./UpdateCurrentFieldMasterResult"
 import UpdateCurrentFieldMasterFromGitHubResult from "./UpdateCurrentFieldMasterFromGitHubResult"
 import PutPositionResult from "./PutPositionResult"
@@ -69,6 +70,7 @@ export {
     DeleteLayerModelMasterResult,
     ExportMasterResult,
     GetCurrentFieldMasterResult,
+    PreUpdateCurrentFieldMasterResult,
     UpdateCurrentFieldMasterResult,
     UpdateCurrentFieldMasterFromGitHubResult,
     PutPositionResult,

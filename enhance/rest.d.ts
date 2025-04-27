@@ -50,6 +50,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     deleteProgressByStampTask(request: Request.DeleteProgressByStampTaskRequest): Promise<Result.DeleteProgressByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentRateMaster(request: Request.GetCurrentRateMasterRequest): Promise<Result.GetCurrentRateMasterResult>;
+    preUpdateCurrentRateMaster(request: Request.PreUpdateCurrentRateMasterRequest): Promise<Result.PreUpdateCurrentRateMasterResult>;
     updateCurrentRateMaster(request: Request.UpdateCurrentRateMasterRequest): Promise<Result.UpdateCurrentRateMasterResult>;
     updateCurrentRateMasterFromGitHub(request: Request.UpdateCurrentRateMasterFromGitHubRequest): Promise<Result.UpdateCurrentRateMasterFromGitHubResult>;
 }

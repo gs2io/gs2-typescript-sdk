@@ -115,6 +115,7 @@ import GetSubscribeRankingRequest from "./GetSubscribeRankingRequest"
 import GetSubscribeRankingByUserIdRequest from "./GetSubscribeRankingByUserIdRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentRankingMasterRequest from "./GetCurrentRankingMasterRequest"
+import PreUpdateCurrentRankingMasterRequest from "./PreUpdateCurrentRankingMasterRequest"
 import UpdateCurrentRankingMasterRequest from "./UpdateCurrentRankingMasterRequest"
 import UpdateCurrentRankingMasterFromGitHubRequest from "./UpdateCurrentRankingMasterFromGitHubRequest"
 import GetSubscribeRequest from "./GetSubscribeRequest"
@@ -225,6 +226,7 @@ export {
     GetSubscribeRankingByUserIdRequest,
     ExportMasterRequest,
     GetCurrentRankingMasterRequest,
+    PreUpdateCurrentRankingMasterRequest,
     UpdateCurrentRankingMasterRequest,
     UpdateCurrentRankingMasterFromGitHubRequest,
     GetSubscribeRequest,

@@ -51,6 +51,7 @@ import UpdateCampaignModelMasterRequest from "./UpdateCampaignModelMasterRequest
 import DeleteCampaignModelMasterRequest from "./DeleteCampaignModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentCampaignMasterRequest from "./GetCurrentCampaignMasterRequest"
+import PreUpdateCurrentCampaignMasterRequest from "./PreUpdateCurrentCampaignMasterRequest"
 import UpdateCurrentCampaignMasterRequest from "./UpdateCurrentCampaignMasterRequest"
 import UpdateCurrentCampaignMasterFromGitHubRequest from "./UpdateCurrentCampaignMasterFromGitHubRequest"
 
@@ -93,6 +94,7 @@ export {
     DeleteCampaignModelMasterRequest,
     ExportMasterRequest,
     GetCurrentCampaignMasterRequest,
+    PreUpdateCurrentCampaignMasterRequest,
     UpdateCurrentCampaignMasterRequest,
     UpdateCurrentCampaignMasterFromGitHubRequest,
 };

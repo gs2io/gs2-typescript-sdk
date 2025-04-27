@@ -34,6 +34,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     deleteShowcaseMaster(request: Request.DeleteShowcaseMasterRequest): Promise<Result.DeleteShowcaseMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentShowcaseMaster(request: Request.GetCurrentShowcaseMasterRequest): Promise<Result.GetCurrentShowcaseMasterResult>;
+    preUpdateCurrentShowcaseMaster(request: Request.PreUpdateCurrentShowcaseMasterRequest): Promise<Result.PreUpdateCurrentShowcaseMasterResult>;
     updateCurrentShowcaseMaster(request: Request.UpdateCurrentShowcaseMasterRequest): Promise<Result.UpdateCurrentShowcaseMasterResult>;
     updateCurrentShowcaseMasterFromGitHub(request: Request.UpdateCurrentShowcaseMasterFromGitHubRequest): Promise<Result.UpdateCurrentShowcaseMasterFromGitHubResult>;
     describeShowcases(request: Request.DescribeShowcasesRequest): Promise<Result.DescribeShowcasesResult>;

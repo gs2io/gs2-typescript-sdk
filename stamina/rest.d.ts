@@ -39,6 +39,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     deleteRecoverValueTableMaster(request: Request.DeleteRecoverValueTableMasterRequest): Promise<Result.DeleteRecoverValueTableMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentStaminaMaster(request: Request.GetCurrentStaminaMasterRequest): Promise<Result.GetCurrentStaminaMasterResult>;
+    preUpdateCurrentStaminaMaster(request: Request.PreUpdateCurrentStaminaMasterRequest): Promise<Result.PreUpdateCurrentStaminaMasterResult>;
     updateCurrentStaminaMaster(request: Request.UpdateCurrentStaminaMasterRequest): Promise<Result.UpdateCurrentStaminaMasterResult>;
     updateCurrentStaminaMasterFromGitHub(request: Request.UpdateCurrentStaminaMasterFromGitHubRequest): Promise<Result.UpdateCurrentStaminaMasterFromGitHubResult>;
     describeStaminaModels(request: Request.DescribeStaminaModelsRequest): Promise<Result.DescribeStaminaModelsResult>;

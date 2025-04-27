@@ -39,6 +39,7 @@ import DescribeSeasonModelsResult from "./DescribeSeasonModelsResult"
 import GetSeasonModelResult from "./GetSeasonModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentSeasonModelMasterResult from "./GetCurrentSeasonModelMasterResult"
+import PreUpdateCurrentSeasonModelMasterResult from "./PreUpdateCurrentSeasonModelMasterResult"
 import UpdateCurrentSeasonModelMasterResult from "./UpdateCurrentSeasonModelMasterResult"
 import UpdateCurrentSeasonModelMasterFromGitHubResult from "./UpdateCurrentSeasonModelMasterFromGitHubResult"
 import GetBallotResult from "./GetBallotResult"
@@ -74,6 +75,7 @@ export {
     GetSeasonModelResult,
     ExportMasterResult,
     GetCurrentSeasonModelMasterResult,
+    PreUpdateCurrentSeasonModelMasterResult,
     UpdateCurrentSeasonModelMasterResult,
     UpdateCurrentSeasonModelMasterFromGitHubResult,
     GetBallotResult,

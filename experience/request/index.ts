@@ -40,6 +40,7 @@ import UpdateThresholdMasterRequest from "./UpdateThresholdMasterRequest"
 import DeleteThresholdMasterRequest from "./DeleteThresholdMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentExperienceMasterRequest from "./GetCurrentExperienceMasterRequest"
+import PreUpdateCurrentExperienceMasterRequest from "./PreUpdateCurrentExperienceMasterRequest"
 import UpdateCurrentExperienceMasterRequest from "./UpdateCurrentExperienceMasterRequest"
 import UpdateCurrentExperienceMasterFromGitHubRequest from "./UpdateCurrentExperienceMasterFromGitHubRequest"
 import DescribeStatusesRequest from "./DescribeStatusesRequest"
@@ -100,6 +101,7 @@ export {
     DeleteThresholdMasterRequest,
     ExportMasterRequest,
     GetCurrentExperienceMasterRequest,
+    PreUpdateCurrentExperienceMasterRequest,
     UpdateCurrentExperienceMasterRequest,
     UpdateCurrentExperienceMasterFromGitHubRequest,
     DescribeStatusesRequest,

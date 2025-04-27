@@ -28,6 +28,7 @@ import DescribeDistributorModelsResult from "./DescribeDistributorModelsResult"
 import GetDistributorModelResult from "./GetDistributorModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentDistributorMasterResult from "./GetCurrentDistributorMasterResult"
+import PreUpdateCurrentDistributorMasterResult from "./PreUpdateCurrentDistributorMasterResult"
 import UpdateCurrentDistributorMasterResult from "./UpdateCurrentDistributorMasterResult"
 import UpdateCurrentDistributorMasterFromGitHubResult from "./UpdateCurrentDistributorMasterFromGitHubResult"
 import DistributeResult from "./DistributeResult"
@@ -76,6 +77,7 @@ export {
     GetDistributorModelResult,
     ExportMasterResult,
     GetCurrentDistributorMasterResult,
+    PreUpdateCurrentDistributorMasterResult,
     UpdateCurrentDistributorMasterResult,
     UpdateCurrentDistributorMasterFromGitHubResult,
     DistributeResult,

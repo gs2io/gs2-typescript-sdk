@@ -41,6 +41,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     markRestrainByStampTask(request: Request.MarkRestrainByStampTaskRequest): Promise<Result.MarkRestrainByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentTreeMaster(request: Request.GetCurrentTreeMasterRequest): Promise<Result.GetCurrentTreeMasterResult>;
+    preUpdateCurrentTreeMaster(request: Request.PreUpdateCurrentTreeMasterRequest): Promise<Result.PreUpdateCurrentTreeMasterResult>;
     updateCurrentTreeMaster(request: Request.UpdateCurrentTreeMasterRequest): Promise<Result.UpdateCurrentTreeMasterResult>;
     updateCurrentTreeMasterFromGitHub(request: Request.UpdateCurrentTreeMasterFromGitHubRequest): Promise<Result.UpdateCurrentTreeMasterFromGitHubResult>;
 }

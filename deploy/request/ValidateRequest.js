@@ -19,7 +19,9 @@ var ValidateRequest = /** @class */ (function () {
     function ValidateRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.mode = null;
         this.template = null;
+        this.uploadToken = null;
     }
     ValidateRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -43,6 +45,17 @@ var ValidateRequest = /** @class */ (function () {
         this.contextStack = contextStack;
         return this;
     };
+    ValidateRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    ValidateRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    ValidateRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     ValidateRequest.prototype.getTemplate = function () {
         return this.template;
     };
@@ -54,13 +67,28 @@ var ValidateRequest = /** @class */ (function () {
         this.template = template;
         return this;
     };
+    ValidateRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    ValidateRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    ValidateRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     ValidateRequest.fromDict = function (data) {
         return new ValidateRequest()
-            .withTemplate(data["template"]);
+            .withMode(data["mode"])
+            .withTemplate(data["template"])
+            .withUploadToken(data["uploadToken"]);
     };
     ValidateRequest.prototype.toDict = function () {
         return {
+            "mode": this.getMode(),
             "template": this.getTemplate(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return ValidateRequest;

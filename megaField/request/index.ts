@@ -35,6 +35,7 @@ import UpdateLayerModelMasterRequest from "./UpdateLayerModelMasterRequest"
 import DeleteLayerModelMasterRequest from "./DeleteLayerModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentFieldMasterRequest from "./GetCurrentFieldMasterRequest"
+import PreUpdateCurrentFieldMasterRequest from "./PreUpdateCurrentFieldMasterRequest"
 import UpdateCurrentFieldMasterRequest from "./UpdateCurrentFieldMasterRequest"
 import UpdateCurrentFieldMasterFromGitHubRequest from "./UpdateCurrentFieldMasterFromGitHubRequest"
 import PutPositionRequest from "./PutPositionRequest"
@@ -69,6 +70,7 @@ export {
     DeleteLayerModelMasterRequest,
     ExportMasterRequest,
     GetCurrentFieldMasterRequest,
+    PreUpdateCurrentFieldMasterRequest,
     UpdateCurrentFieldMasterRequest,
     UpdateCurrentFieldMasterFromGitHubRequest,
     PutPositionRequest,

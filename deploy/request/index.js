@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.ChangeSetRequest = exports.UpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.DescribeStacksRequest = void 0;
+exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.ChangeSetRequest = exports.PreChangeSetRequest = exports.UpdateStackRequest = exports.PreUpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.PreValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.PreCreateStackRequest = exports.DescribeStacksRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -19,18 +19,26 @@ permissions and limitations under the License.
  */
 var DescribeStacksRequest_1 = tslib_1.__importDefault(require("./DescribeStacksRequest"));
 exports.DescribeStacksRequest = DescribeStacksRequest_1.default;
+var PreCreateStackRequest_1 = tslib_1.__importDefault(require("./PreCreateStackRequest"));
+exports.PreCreateStackRequest = PreCreateStackRequest_1.default;
 var CreateStackRequest_1 = tslib_1.__importDefault(require("./CreateStackRequest"));
 exports.CreateStackRequest = CreateStackRequest_1.default;
 var CreateStackFromGitHubRequest_1 = tslib_1.__importDefault(require("./CreateStackFromGitHubRequest"));
 exports.CreateStackFromGitHubRequest = CreateStackFromGitHubRequest_1.default;
+var PreValidateRequest_1 = tslib_1.__importDefault(require("./PreValidateRequest"));
+exports.PreValidateRequest = PreValidateRequest_1.default;
 var ValidateRequest_1 = tslib_1.__importDefault(require("./ValidateRequest"));
 exports.ValidateRequest = ValidateRequest_1.default;
 var GetStackStatusRequest_1 = tslib_1.__importDefault(require("./GetStackStatusRequest"));
 exports.GetStackStatusRequest = GetStackStatusRequest_1.default;
 var GetStackRequest_1 = tslib_1.__importDefault(require("./GetStackRequest"));
 exports.GetStackRequest = GetStackRequest_1.default;
+var PreUpdateStackRequest_1 = tslib_1.__importDefault(require("./PreUpdateStackRequest"));
+exports.PreUpdateStackRequest = PreUpdateStackRequest_1.default;
 var UpdateStackRequest_1 = tslib_1.__importDefault(require("./UpdateStackRequest"));
 exports.UpdateStackRequest = UpdateStackRequest_1.default;
+var PreChangeSetRequest_1 = tslib_1.__importDefault(require("./PreChangeSetRequest"));
+exports.PreChangeSetRequest = PreChangeSetRequest_1.default;
 var ChangeSetRequest_1 = tslib_1.__importDefault(require("./ChangeSetRequest"));
 exports.ChangeSetRequest = ChangeSetRequest_1.default;
 var UpdateStackFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateStackFromGitHubRequest"));

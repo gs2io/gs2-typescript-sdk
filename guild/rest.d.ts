@@ -69,6 +69,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     promoteSeniorMemberByGuildName(request: Request.PromoteSeniorMemberByGuildNameRequest): Promise<Result.PromoteSeniorMemberByGuildNameResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentGuildMaster(request: Request.GetCurrentGuildMasterRequest): Promise<Result.GetCurrentGuildMasterResult>;
+    preUpdateCurrentGuildMaster(request: Request.PreUpdateCurrentGuildMasterRequest): Promise<Result.PreUpdateCurrentGuildMasterResult>;
     updateCurrentGuildMaster(request: Request.UpdateCurrentGuildMasterRequest): Promise<Result.UpdateCurrentGuildMasterResult>;
     updateCurrentGuildMasterFromGitHub(request: Request.UpdateCurrentGuildMasterFromGitHubRequest): Promise<Result.UpdateCurrentGuildMasterFromGitHubResult>;
     describeReceiveRequests(request: Request.DescribeReceiveRequestsRequest): Promise<Result.DescribeReceiveRequestsResult>;

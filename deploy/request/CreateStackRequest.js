@@ -21,7 +21,9 @@ var CreateStackRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.mode = null;
         this.template = null;
+        this.uploadToken = null;
     }
     CreateStackRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -67,6 +69,17 @@ var CreateStackRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    CreateStackRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    CreateStackRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    CreateStackRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     CreateStackRequest.prototype.getTemplate = function () {
         return this.template;
     };
@@ -78,17 +91,32 @@ var CreateStackRequest = /** @class */ (function () {
         this.template = template;
         return this;
     };
+    CreateStackRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    CreateStackRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    CreateStackRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     CreateStackRequest.fromDict = function (data) {
         return new CreateStackRequest()
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTemplate(data["template"]);
+            .withMode(data["mode"])
+            .withTemplate(data["template"])
+            .withUploadToken(data["uploadToken"]);
     };
     CreateStackRequest.prototype.toDict = function () {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "mode": this.getMode(),
             "template": this.getTemplate(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return CreateStackRequest;

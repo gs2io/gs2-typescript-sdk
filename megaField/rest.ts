@@ -657,6 +657,36 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preUpdateCurrentFieldMaster(request: Request.PreUpdateCurrentFieldMasterRequest): Promise<Result.PreUpdateCurrentFieldMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'mega-field')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreUpdateCurrentFieldMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateCurrentFieldMaster(request: Request.UpdateCurrentFieldMasterRequest): Promise<Result.UpdateCurrentFieldMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mega-field')
@@ -669,7 +699,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'settings': request.getSettings() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.put(
             url,

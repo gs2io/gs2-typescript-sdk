@@ -20,7 +20,9 @@ var UpdateCurrentBuffMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.mode = null;
         this.settings = null;
+        this.uploadToken = null;
     }
     UpdateCurrentBuffMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var UpdateCurrentBuffMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    UpdateCurrentBuffMasterRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    UpdateCurrentBuffMasterRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    UpdateCurrentBuffMasterRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     UpdateCurrentBuffMasterRequest.prototype.getSettings = function () {
         return this.settings;
     };
@@ -66,15 +79,30 @@ var UpdateCurrentBuffMasterRequest = /** @class */ (function () {
         this.settings = settings;
         return this;
     };
+    UpdateCurrentBuffMasterRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    UpdateCurrentBuffMasterRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    UpdateCurrentBuffMasterRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     UpdateCurrentBuffMasterRequest.fromDict = function (data) {
         return new UpdateCurrentBuffMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     };
     UpdateCurrentBuffMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return UpdateCurrentBuffMasterRequest;

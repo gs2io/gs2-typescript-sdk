@@ -22,7 +22,9 @@ export default class ValidateRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
+    private mode: string|null = null;
     private template: string|null = null;
+    private uploadToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -51,6 +53,17 @@ export default class ValidateRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
+    public getMode(): string|null {
+        return this.mode;
+    }
+    public setMode(mode: string|null) {
+        this.mode = mode;
+        return this;
+    }
+    public withMode(mode: string|null): this {
+        this.mode = mode;
+        return this;
+    }
     public getTemplate(): string|null {
         return this.template;
     }
@@ -62,15 +75,30 @@ export default class ValidateRequest implements IRequest {
         this.template = template;
         return this;
     }
+    public getUploadToken(): string|null {
+        return this.uploadToken;
+    }
+    public setUploadToken(uploadToken: string|null) {
+        this.uploadToken = uploadToken;
+        return this;
+    }
+    public withUploadToken(uploadToken: string|null): this {
+        this.uploadToken = uploadToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): ValidateRequest {
         return new ValidateRequest()
-            .withTemplate(data["template"]);
+            .withMode(data["mode"])
+            .withTemplate(data["template"])
+            .withUploadToken(data["uploadToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "mode": this.getMode(),
             "template": this.getTemplate(),
+            "uploadToken": this.getUploadToken(),
         };
     }
 }

@@ -60,6 +60,7 @@ import DeleteLikesResult from "./DeleteLikesResult"
 import DeleteLikesByUserIdResult from "./DeleteLikesByUserIdResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentEntryMasterResult from "./GetCurrentEntryMasterResult"
+import PreUpdateCurrentEntryMasterResult from "./PreUpdateCurrentEntryMasterResult"
 import UpdateCurrentEntryMasterResult from "./UpdateCurrentEntryMasterResult"
 import UpdateCurrentEntryMasterFromGitHubResult from "./UpdateCurrentEntryMasterFromGitHubResult"
 
@@ -111,6 +112,7 @@ export {
     DeleteLikesByUserIdResult,
     ExportMasterResult,
     GetCurrentEntryMasterResult,
+    PreUpdateCurrentEntryMasterResult,
     UpdateCurrentEntryMasterResult,
     UpdateCurrentEntryMasterFromGitHubResult,
 };

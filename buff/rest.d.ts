@@ -28,6 +28,7 @@ export default class Gs2BuffRestClient extends AbstractGs2RestClient {
     applyBuffByUserId(request: Request.ApplyBuffByUserIdRequest): Promise<Result.ApplyBuffByUserIdResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentBuffMaster(request: Request.GetCurrentBuffMasterRequest): Promise<Result.GetCurrentBuffMasterResult>;
+    preUpdateCurrentBuffMaster(request: Request.PreUpdateCurrentBuffMasterRequest): Promise<Result.PreUpdateCurrentBuffMasterResult>;
     updateCurrentBuffMaster(request: Request.UpdateCurrentBuffMasterRequest): Promise<Result.UpdateCurrentBuffMasterResult>;
     updateCurrentBuffMasterFromGitHub(request: Request.UpdateCurrentBuffMasterFromGitHubRequest): Promise<Result.UpdateCurrentBuffMasterFromGitHubResult>;
 }

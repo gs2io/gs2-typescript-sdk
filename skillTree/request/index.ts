@@ -50,6 +50,7 @@ import MarkReleaseByStampSheetRequest from "./MarkReleaseByStampSheetRequest"
 import MarkRestrainByStampTaskRequest from "./MarkRestrainByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentTreeMasterRequest from "./GetCurrentTreeMasterRequest"
+import PreUpdateCurrentTreeMasterRequest from "./PreUpdateCurrentTreeMasterRequest"
 import UpdateCurrentTreeMasterRequest from "./UpdateCurrentTreeMasterRequest"
 import UpdateCurrentTreeMasterFromGitHubRequest from "./UpdateCurrentTreeMasterFromGitHubRequest"
 
@@ -91,6 +92,7 @@ export {
     MarkRestrainByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentTreeMasterRequest,
+    PreUpdateCurrentTreeMasterRequest,
     UpdateCurrentTreeMasterRequest,
     UpdateCurrentTreeMasterFromGitHubRequest,
 };

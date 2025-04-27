@@ -43,6 +43,7 @@ import UpdateShowcaseMasterResult from "./UpdateShowcaseMasterResult"
 import DeleteShowcaseMasterResult from "./DeleteShowcaseMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentShowcaseMasterResult from "./GetCurrentShowcaseMasterResult"
+import PreUpdateCurrentShowcaseMasterResult from "./PreUpdateCurrentShowcaseMasterResult"
 import UpdateCurrentShowcaseMasterResult from "./UpdateCurrentShowcaseMasterResult"
 import UpdateCurrentShowcaseMasterFromGitHubResult from "./UpdateCurrentShowcaseMasterFromGitHubResult"
 import DescribeShowcasesResult from "./DescribeShowcasesResult"
@@ -101,6 +102,7 @@ export {
     DeleteShowcaseMasterResult,
     ExportMasterResult,
     GetCurrentShowcaseMasterResult,
+    PreUpdateCurrentShowcaseMasterResult,
     UpdateCurrentShowcaseMasterResult,
     UpdateCurrentShowcaseMasterFromGitHubResult,
     DescribeShowcasesResult,

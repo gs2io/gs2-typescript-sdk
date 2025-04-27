@@ -48,6 +48,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     verifyGradeUpMaterialByStampTask(request: Request.VerifyGradeUpMaterialByStampTaskRequest): Promise<Result.VerifyGradeUpMaterialByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentGradeMaster(request: Request.GetCurrentGradeMasterRequest): Promise<Result.GetCurrentGradeMasterResult>;
+    preUpdateCurrentGradeMaster(request: Request.PreUpdateCurrentGradeMasterRequest): Promise<Result.PreUpdateCurrentGradeMasterResult>;
     updateCurrentGradeMaster(request: Request.UpdateCurrentGradeMasterRequest): Promise<Result.UpdateCurrentGradeMasterResult>;
     updateCurrentGradeMasterFromGitHub(request: Request.UpdateCurrentGradeMasterFromGitHubRequest): Promise<Result.UpdateCurrentGradeMasterFromGitHubResult>;
 }

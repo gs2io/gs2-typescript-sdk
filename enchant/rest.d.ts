@@ -33,6 +33,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     deleteRarityParameterModelMaster(request: Request.DeleteRarityParameterModelMasterRequest): Promise<Result.DeleteRarityParameterModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentParameterMaster(request: Request.GetCurrentParameterMasterRequest): Promise<Result.GetCurrentParameterMasterResult>;
+    preUpdateCurrentParameterMaster(request: Request.PreUpdateCurrentParameterMasterRequest): Promise<Result.PreUpdateCurrentParameterMasterResult>;
     updateCurrentParameterMaster(request: Request.UpdateCurrentParameterMasterRequest): Promise<Result.UpdateCurrentParameterMasterResult>;
     updateCurrentParameterMasterFromGitHub(request: Request.UpdateCurrentParameterMasterFromGitHubRequest): Promise<Result.UpdateCurrentParameterMasterFromGitHubResult>;
     describeBalanceParameterStatuses(request: Request.DescribeBalanceParameterStatusesRequest): Promise<Result.DescribeBalanceParameterStatusesResult>;

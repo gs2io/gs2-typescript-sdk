@@ -37,6 +37,7 @@ import ApplyBuffRequest from "./ApplyBuffRequest"
 import ApplyBuffByUserIdRequest from "./ApplyBuffByUserIdRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentBuffMasterRequest from "./GetCurrentBuffMasterRequest"
+import PreUpdateCurrentBuffMasterRequest from "./PreUpdateCurrentBuffMasterRequest"
 import UpdateCurrentBuffMasterRequest from "./UpdateCurrentBuffMasterRequest"
 import UpdateCurrentBuffMasterFromGitHubRequest from "./UpdateCurrentBuffMasterFromGitHubRequest"
 
@@ -65,6 +66,7 @@ export {
     ApplyBuffByUserIdRequest,
     ExportMasterRequest,
     GetCurrentBuffMasterRequest,
+    PreUpdateCurrentBuffMasterRequest,
     UpdateCurrentBuffMasterRequest,
     UpdateCurrentBuffMasterFromGitHubRequest,
 };

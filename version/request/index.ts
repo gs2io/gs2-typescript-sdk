@@ -48,6 +48,7 @@ import CheckVersionByUserIdRequest from "./CheckVersionByUserIdRequest"
 import CalculateSignatureRequest from "./CalculateSignatureRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentVersionMasterRequest from "./GetCurrentVersionMasterRequest"
+import PreUpdateCurrentVersionMasterRequest from "./PreUpdateCurrentVersionMasterRequest"
 import UpdateCurrentVersionMasterRequest from "./UpdateCurrentVersionMasterRequest"
 import UpdateCurrentVersionMasterFromGitHubRequest from "./UpdateCurrentVersionMasterFromGitHubRequest"
 
@@ -87,6 +88,7 @@ export {
     CalculateSignatureRequest,
     ExportMasterRequest,
     GetCurrentVersionMasterRequest,
+    PreUpdateCurrentVersionMasterRequest,
     UpdateCurrentVersionMasterRequest,
     UpdateCurrentVersionMasterFromGitHubRequest,
 };

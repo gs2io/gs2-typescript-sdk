@@ -31,6 +31,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
     deleteThresholdMaster(request: Request.DeleteThresholdMasterRequest): Promise<Result.DeleteThresholdMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentExperienceMaster(request: Request.GetCurrentExperienceMasterRequest): Promise<Result.GetCurrentExperienceMasterResult>;
+    preUpdateCurrentExperienceMaster(request: Request.PreUpdateCurrentExperienceMasterRequest): Promise<Result.PreUpdateCurrentExperienceMasterResult>;
     updateCurrentExperienceMaster(request: Request.UpdateCurrentExperienceMasterRequest): Promise<Result.UpdateCurrentExperienceMasterResult>;
     updateCurrentExperienceMasterFromGitHub(request: Request.UpdateCurrentExperienceMasterFromGitHubRequest): Promise<Result.UpdateCurrentExperienceMasterFromGitHubResult>;
     describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult>;

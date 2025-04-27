@@ -51,6 +51,7 @@ import SetMaximumIdleMinutesByStampSheetResult from "./SetMaximumIdleMinutesBySt
 import ReceiveByStampSheetResult from "./ReceiveByStampSheetResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentCategoryMasterResult from "./GetCurrentCategoryMasterResult"
+import PreUpdateCurrentCategoryMasterResult from "./PreUpdateCurrentCategoryMasterResult"
 import UpdateCurrentCategoryMasterResult from "./UpdateCurrentCategoryMasterResult"
 import UpdateCurrentCategoryMasterFromGitHubResult from "./UpdateCurrentCategoryMasterFromGitHubResult"
 
@@ -93,6 +94,7 @@ export {
     ReceiveByStampSheetResult,
     ExportMasterResult,
     GetCurrentCategoryMasterResult,
+    PreUpdateCurrentCategoryMasterResult,
     UpdateCurrentCategoryMasterResult,
     UpdateCurrentCategoryMasterFromGitHubResult,
 };

@@ -1143,6 +1143,36 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preUpdateCurrentLotteryMaster(request: Request.PreUpdateCurrentLotteryMasterRequest): Promise<Result.PreUpdateCurrentLotteryMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreUpdateCurrentLotteryMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateCurrentLotteryMaster(request: Request.UpdateCurrentLotteryMasterRequest): Promise<Result.UpdateCurrentLotteryMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
@@ -1155,7 +1185,9 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'settings': request.getSettings() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.put(
             url,

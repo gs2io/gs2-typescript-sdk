@@ -48,6 +48,7 @@ import UpdateRecoverValueTableMasterResult from "./UpdateRecoverValueTableMaster
 import DeleteRecoverValueTableMasterResult from "./DeleteRecoverValueTableMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentStaminaMasterResult from "./GetCurrentStaminaMasterResult"
+import PreUpdateCurrentStaminaMasterResult from "./PreUpdateCurrentStaminaMasterResult"
 import UpdateCurrentStaminaMasterResult from "./UpdateCurrentStaminaMasterResult"
 import UpdateCurrentStaminaMasterFromGitHubResult from "./UpdateCurrentStaminaMasterFromGitHubResult"
 import DescribeStaminaModelsResult from "./DescribeStaminaModelsResult"
@@ -131,6 +132,7 @@ export {
     DeleteRecoverValueTableMasterResult,
     ExportMasterResult,
     GetCurrentStaminaMasterResult,
+    PreUpdateCurrentStaminaMasterResult,
     UpdateCurrentStaminaMasterResult,
     UpdateCurrentStaminaMasterFromGitHubResult,
     DescribeStaminaModelsResult,

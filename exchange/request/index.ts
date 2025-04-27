@@ -48,6 +48,7 @@ import IncrementalExchangeByUserIdRequest from "./IncrementalExchangeByUserIdReq
 import IncrementalExchangeByStampSheetRequest from "./IncrementalExchangeByStampSheetRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentRateMasterRequest from "./GetCurrentRateMasterRequest"
+import PreUpdateCurrentRateMasterRequest from "./PreUpdateCurrentRateMasterRequest"
 import UpdateCurrentRateMasterRequest from "./UpdateCurrentRateMasterRequest"
 import UpdateCurrentRateMasterFromGitHubRequest from "./UpdateCurrentRateMasterFromGitHubRequest"
 import CreateAwaitByUserIdRequest from "./CreateAwaitByUserIdRequest"
@@ -102,6 +103,7 @@ export {
     IncrementalExchangeByStampSheetRequest,
     ExportMasterRequest,
     GetCurrentRateMasterRequest,
+    PreUpdateCurrentRateMasterRequest,
     UpdateCurrentRateMasterRequest,
     UpdateCurrentRateMasterFromGitHubRequest,
     CreateAwaitByUserIdRequest,

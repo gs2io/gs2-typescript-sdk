@@ -77,6 +77,7 @@ import ResetByStampTaskResult from "./ResetByStampTaskResult"
 import VerifyCounterValueByStampTaskResult from "./VerifyCounterValueByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMissionMasterResult from "./GetCurrentMissionMasterResult"
+import PreUpdateCurrentMissionMasterResult from "./PreUpdateCurrentMissionMasterResult"
 import UpdateCurrentMissionMasterResult from "./UpdateCurrentMissionMasterResult"
 import UpdateCurrentMissionMasterFromGitHubResult from "./UpdateCurrentMissionMasterFromGitHubResult"
 import DescribeCounterModelsResult from "./DescribeCounterModelsResult"
@@ -156,6 +157,7 @@ export {
     VerifyCounterValueByStampTaskResult,
     ExportMasterResult,
     GetCurrentMissionMasterResult,
+    PreUpdateCurrentMissionMasterResult,
     UpdateCurrentMissionMasterResult,
     UpdateCurrentMissionMasterFromGitHubResult,
     DescribeCounterModelsResult,

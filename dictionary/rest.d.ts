@@ -51,6 +51,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     deleteLikesByUserId(request: Request.DeleteLikesByUserIdRequest): Promise<Result.DeleteLikesByUserIdResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentEntryMaster(request: Request.GetCurrentEntryMasterRequest): Promise<Result.GetCurrentEntryMasterResult>;
+    preUpdateCurrentEntryMaster(request: Request.PreUpdateCurrentEntryMasterRequest): Promise<Result.PreUpdateCurrentEntryMasterResult>;
     updateCurrentEntryMaster(request: Request.UpdateCurrentEntryMasterRequest): Promise<Result.UpdateCurrentEntryMasterResult>;
     updateCurrentEntryMasterFromGitHub(request: Request.UpdateCurrentEntryMasterFromGitHubRequest): Promise<Result.UpdateCurrentEntryMasterFromGitHubResult>;
 }

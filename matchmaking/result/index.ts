@@ -51,6 +51,7 @@ import DescribeRatingModelsResult from "./DescribeRatingModelsResult"
 import GetRatingModelResult from "./GetRatingModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentModelMasterResult from "./GetCurrentModelMasterResult"
+import PreUpdateCurrentModelMasterResult from "./PreUpdateCurrentModelMasterResult"
 import UpdateCurrentModelMasterResult from "./UpdateCurrentModelMasterResult"
 import UpdateCurrentModelMasterFromGitHubResult from "./UpdateCurrentModelMasterFromGitHubResult"
 import DescribeSeasonModelsResult from "./DescribeSeasonModelsResult"
@@ -124,6 +125,7 @@ export {
     GetRatingModelResult,
     ExportMasterResult,
     GetCurrentModelMasterResult,
+    PreUpdateCurrentModelMasterResult,
     UpdateCurrentModelMasterResult,
     UpdateCurrentModelMasterFromGitHubResult,
     DescribeSeasonModelsResult,

@@ -77,6 +77,7 @@ import ResetByStampTaskRequest from "./ResetByStampTaskRequest"
 import VerifyCounterValueByStampTaskRequest from "./VerifyCounterValueByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentMissionMasterRequest from "./GetCurrentMissionMasterRequest"
+import PreUpdateCurrentMissionMasterRequest from "./PreUpdateCurrentMissionMasterRequest"
 import UpdateCurrentMissionMasterRequest from "./UpdateCurrentMissionMasterRequest"
 import UpdateCurrentMissionMasterFromGitHubRequest from "./UpdateCurrentMissionMasterFromGitHubRequest"
 import DescribeCounterModelsRequest from "./DescribeCounterModelsRequest"
@@ -156,6 +157,7 @@ export {
     VerifyCounterValueByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentMissionMasterRequest,
+    PreUpdateCurrentMissionMasterRequest,
     UpdateCurrentMissionMasterRequest,
     UpdateCurrentMissionMasterFromGitHubRequest,
     DescribeCounterModelsRequest,

@@ -26,6 +26,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
     deleteLayerModelMaster(request: Request.DeleteLayerModelMasterRequest): Promise<Result.DeleteLayerModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentFieldMaster(request: Request.GetCurrentFieldMasterRequest): Promise<Result.GetCurrentFieldMasterResult>;
+    preUpdateCurrentFieldMaster(request: Request.PreUpdateCurrentFieldMasterRequest): Promise<Result.PreUpdateCurrentFieldMasterResult>;
     updateCurrentFieldMaster(request: Request.UpdateCurrentFieldMasterRequest): Promise<Result.UpdateCurrentFieldMasterResult>;
     updateCurrentFieldMasterFromGitHub(request: Request.UpdateCurrentFieldMasterFromGitHubRequest): Promise<Result.UpdateCurrentFieldMasterFromGitHubResult>;
     putPosition(request: Request.PutPositionRequest): Promise<Result.PutPositionResult>;

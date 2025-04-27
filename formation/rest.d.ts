@@ -39,6 +39,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     deletePropertyFormModelMaster(request: Request.DeletePropertyFormModelMasterRequest): Promise<Result.DeletePropertyFormModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentFormMaster(request: Request.GetCurrentFormMasterRequest): Promise<Result.GetCurrentFormMasterResult>;
+    preUpdateCurrentFormMaster(request: Request.PreUpdateCurrentFormMasterRequest): Promise<Result.PreUpdateCurrentFormMasterResult>;
     updateCurrentFormMaster(request: Request.UpdateCurrentFormMasterRequest): Promise<Result.UpdateCurrentFormMasterResult>;
     updateCurrentFormMasterFromGitHub(request: Request.UpdateCurrentFormMasterFromGitHubRequest): Promise<Result.UpdateCurrentFormMasterFromGitHubResult>;
     describeMolds(request: Request.DescribeMoldsRequest): Promise<Result.DescribeMoldsResult>;

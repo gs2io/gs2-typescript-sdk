@@ -67,6 +67,7 @@ import UpdateStoreSubscriptionContentModelMasterRequest from "./UpdateStoreSubsc
 import DeleteStoreSubscriptionContentModelMasterRequest from "./DeleteStoreSubscriptionContentModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import PreUpdateCurrentModelMasterRequest from "./PreUpdateCurrentModelMasterRequest"
 import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
 import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
 import DescribeDailyTransactionHistoriesByCurrencyRequest from "./DescribeDailyTransactionHistoriesByCurrencyRequest"
@@ -130,6 +131,7 @@ export {
     DeleteStoreSubscriptionContentModelMasterRequest,
     ExportMasterRequest,
     GetCurrentModelMasterRequest,
+    PreUpdateCurrentModelMasterRequest,
     UpdateCurrentModelMasterRequest,
     UpdateCurrentModelMasterFromGitHubRequest,
     DescribeDailyTransactionHistoriesByCurrencyRequest,

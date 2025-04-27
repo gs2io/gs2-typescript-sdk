@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentBuffMasterFromGitHubResult = exports.UpdateCurrentBuffMasterResult = exports.GetCurrentBuffMasterResult = exports.ExportMasterResult = exports.ApplyBuffByUserIdResult = exports.ApplyBuffResult = exports.DeleteBuffEntryModelMasterResult = exports.UpdateBuffEntryModelMasterResult = exports.GetBuffEntryModelMasterResult = exports.CreateBuffEntryModelMasterResult = exports.DescribeBuffEntryModelMastersResult = exports.GetBuffEntryModelResult = exports.DescribeBuffEntryModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentBuffMasterFromGitHubResult = exports.UpdateCurrentBuffMasterResult = exports.PreUpdateCurrentBuffMasterResult = exports.GetCurrentBuffMasterResult = exports.ExportMasterResult = exports.ApplyBuffByUserIdResult = exports.ApplyBuffResult = exports.DeleteBuffEntryModelMasterResult = exports.UpdateBuffEntryModelMasterResult = exports.GetBuffEntryModelMasterResult = exports.CreateBuffEntryModelMasterResult = exports.DescribeBuffEntryModelMastersResult = exports.GetBuffEntryModelResult = exports.DescribeBuffEntryModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -65,6 +65,8 @@ var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentBuffMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentBuffMasterResult"));
 exports.GetCurrentBuffMasterResult = GetCurrentBuffMasterResult_1.default;
+var PreUpdateCurrentBuffMasterResult_1 = tslib_1.__importDefault(require("./PreUpdateCurrentBuffMasterResult"));
+exports.PreUpdateCurrentBuffMasterResult = PreUpdateCurrentBuffMasterResult_1.default;
 var UpdateCurrentBuffMasterResult_1 = tslib_1.__importDefault(require("./UpdateCurrentBuffMasterResult"));
 exports.UpdateCurrentBuffMasterResult = UpdateCurrentBuffMasterResult_1.default;
 var UpdateCurrentBuffMasterFromGitHubResult_1 = tslib_1.__importDefault(require("./UpdateCurrentBuffMasterFromGitHubResult"));

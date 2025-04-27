@@ -49,6 +49,7 @@ import DescribeProbabilitiesRequest from "./DescribeProbabilitiesRequest"
 import DescribeProbabilitiesByUserIdRequest from "./DescribeProbabilitiesByUserIdRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentLotteryMasterRequest from "./GetCurrentLotteryMasterRequest"
+import PreUpdateCurrentLotteryMasterRequest from "./PreUpdateCurrentLotteryMasterRequest"
 import UpdateCurrentLotteryMasterRequest from "./UpdateCurrentLotteryMasterRequest"
 import UpdateCurrentLotteryMasterFromGitHubRequest from "./UpdateCurrentLotteryMasterFromGitHubRequest"
 import DescribePrizeLimitsRequest from "./DescribePrizeLimitsRequest"
@@ -99,6 +100,7 @@ export {
     DescribeProbabilitiesByUserIdRequest,
     ExportMasterRequest,
     GetCurrentLotteryMasterRequest,
+    PreUpdateCurrentLotteryMasterRequest,
     UpdateCurrentLotteryMasterRequest,
     UpdateCurrentLotteryMasterFromGitHubRequest,
     DescribePrizeLimitsRequest,

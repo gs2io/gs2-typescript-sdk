@@ -30,6 +30,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     getSeasonModel(request: Request.GetSeasonModelRequest): Promise<Result.GetSeasonModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentSeasonModelMaster(request: Request.GetCurrentSeasonModelMasterRequest): Promise<Result.GetCurrentSeasonModelMasterResult>;
+    preUpdateCurrentSeasonModelMaster(request: Request.PreUpdateCurrentSeasonModelMasterRequest): Promise<Result.PreUpdateCurrentSeasonModelMasterResult>;
     updateCurrentSeasonModelMaster(request: Request.UpdateCurrentSeasonModelMasterRequest): Promise<Result.UpdateCurrentSeasonModelMasterResult>;
     updateCurrentSeasonModelMasterFromGitHub(request: Request.UpdateCurrentSeasonModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentSeasonModelMasterFromGitHubResult>;
     getBallot(request: Request.GetBallotRequest): Promise<Result.GetBallotResult>;

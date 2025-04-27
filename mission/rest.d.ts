@@ -68,6 +68,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     verifyCounterValueByStampTask(request: Request.VerifyCounterValueByStampTaskRequest): Promise<Result.VerifyCounterValueByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentMissionMaster(request: Request.GetCurrentMissionMasterRequest): Promise<Result.GetCurrentMissionMasterResult>;
+    preUpdateCurrentMissionMaster(request: Request.PreUpdateCurrentMissionMasterRequest): Promise<Result.PreUpdateCurrentMissionMasterResult>;
     updateCurrentMissionMaster(request: Request.UpdateCurrentMissionMasterRequest): Promise<Result.UpdateCurrentMissionMasterResult>;
     updateCurrentMissionMasterFromGitHub(request: Request.UpdateCurrentMissionMasterFromGitHubRequest): Promise<Result.UpdateCurrentMissionMasterFromGitHubResult>;
     describeCounterModels(request: Request.DescribeCounterModelsRequest): Promise<Result.DescribeCounterModelsResult>;

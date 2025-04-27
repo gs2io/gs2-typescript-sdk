@@ -47,6 +47,7 @@ import OpenByStampTaskResult from "./OpenByStampTaskResult"
 import DeleteMessageByStampTaskResult from "./DeleteMessageByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMessageMasterResult from "./GetCurrentMessageMasterResult"
+import PreUpdateCurrentMessageMasterResult from "./PreUpdateCurrentMessageMasterResult"
 import UpdateCurrentMessageMasterResult from "./UpdateCurrentMessageMasterResult"
 import UpdateCurrentMessageMasterFromGitHubResult from "./UpdateCurrentMessageMasterFromGitHubResult"
 import DescribeGlobalMessageMastersResult from "./DescribeGlobalMessageMastersResult"
@@ -95,6 +96,7 @@ export {
     DeleteMessageByStampTaskResult,
     ExportMasterResult,
     GetCurrentMessageMasterResult,
+    PreUpdateCurrentMessageMasterResult,
     UpdateCurrentMessageMasterResult,
     UpdateCurrentMessageMasterFromGitHubResult,
     DescribeGlobalMessageMastersResult,

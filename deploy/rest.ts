@@ -54,6 +54,35 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preCreateStack(request: Request.PreCreateStackRequest): Promise<Result.PreCreateStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/pre')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreCreateStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public createStack(request: Request.CreateStackRequest): Promise<Result.CreateStackResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack')
             .replace('{service}', 'deploy')
@@ -67,7 +96,9 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'mode': request.getMode() ?? null,
             'template': request.getTemplate() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.post(
             url,
@@ -118,6 +149,35 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preValidate(request: Request.PreValidateRequest): Promise<Result.PreValidateResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/validate/pre')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreValidateResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public validate(request: Request.ValidateRequest): Promise<Result.ValidateResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/validate')
             .replace('{service}', 'deploy')
@@ -129,7 +189,9 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'template': request.getTemplate() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.post(
             url,
@@ -200,6 +262,36 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public preUpdateStack(request: Request.PreUpdateStackRequest): Promise<Result.PreUpdateStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreUpdateStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateStack(request: Request.UpdateStackRequest): Promise<Result.UpdateStackResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
@@ -213,7 +305,9 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'mode': request.getMode() ?? null,
             'template': request.getTemplate() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.put(
             url,
@@ -223,6 +317,36 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.UpdateStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public preChangeSet(request: Request.PreChangeSetRequest): Promise<Result.PreChangeSetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PreChangeSetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -244,7 +368,9 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'mode': request.getMode() ?? null,
             'template': request.getTemplate() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
         };
         return axios.post(
             url,

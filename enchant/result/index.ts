@@ -42,6 +42,7 @@ import UpdateRarityParameterModelMasterResult from "./UpdateRarityParameterModel
 import DeleteRarityParameterModelMasterResult from "./DeleteRarityParameterModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentParameterMasterResult from "./GetCurrentParameterMasterResult"
+import PreUpdateCurrentParameterMasterResult from "./PreUpdateCurrentParameterMasterResult"
 import UpdateCurrentParameterMasterResult from "./UpdateCurrentParameterMasterResult"
 import UpdateCurrentParameterMasterFromGitHubResult from "./UpdateCurrentParameterMasterFromGitHubResult"
 import DescribeBalanceParameterStatusesResult from "./DescribeBalanceParameterStatusesResult"
@@ -98,6 +99,7 @@ export {
     DeleteRarityParameterModelMasterResult,
     ExportMasterResult,
     GetCurrentParameterMasterResult,
+    PreUpdateCurrentParameterMasterResult,
     UpdateCurrentParameterMasterResult,
     UpdateCurrentParameterMasterFromGitHubResult,
     DescribeBalanceParameterStatusesResult,

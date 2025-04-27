@@ -49,6 +49,7 @@ import PutScoreByUserIdResult from "./PutScoreByUserIdResult"
 import CalcRankingResult from "./CalcRankingResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentRankingMasterResult from "./GetCurrentRankingMasterResult"
+import PreUpdateCurrentRankingMasterResult from "./PreUpdateCurrentRankingMasterResult"
 import UpdateCurrentRankingMasterResult from "./UpdateCurrentRankingMasterResult"
 import UpdateCurrentRankingMasterFromGitHubResult from "./UpdateCurrentRankingMasterFromGitHubResult"
 import GetSubscribeResult from "./GetSubscribeResult"
@@ -95,6 +96,7 @@ export {
     CalcRankingResult,
     ExportMasterResult,
     GetCurrentRankingMasterResult,
+    PreUpdateCurrentRankingMasterResult,
     UpdateCurrentRankingMasterResult,
     UpdateCurrentRankingMasterFromGitHubResult,
     GetSubscribeResult,

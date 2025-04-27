@@ -50,6 +50,7 @@ import MarkReleaseByStampSheetResult from "./MarkReleaseByStampSheetResult"
 import MarkRestrainByStampTaskResult from "./MarkRestrainByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentTreeMasterResult from "./GetCurrentTreeMasterResult"
+import PreUpdateCurrentTreeMasterResult from "./PreUpdateCurrentTreeMasterResult"
 import UpdateCurrentTreeMasterResult from "./UpdateCurrentTreeMasterResult"
 import UpdateCurrentTreeMasterFromGitHubResult from "./UpdateCurrentTreeMasterFromGitHubResult"
 
@@ -91,6 +92,7 @@ export {
     MarkRestrainByStampTaskResult,
     ExportMasterResult,
     GetCurrentTreeMasterResult,
+    PreUpdateCurrentTreeMasterResult,
     UpdateCurrentTreeMasterResult,
     UpdateCurrentTreeMasterFromGitHubResult,
 };

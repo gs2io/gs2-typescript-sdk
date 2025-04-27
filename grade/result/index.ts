@@ -57,6 +57,7 @@ import VerifyGradeByStampTaskResult from "./VerifyGradeByStampTaskResult"
 import VerifyGradeUpMaterialByStampTaskResult from "./VerifyGradeUpMaterialByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentGradeMasterResult from "./GetCurrentGradeMasterResult"
+import PreUpdateCurrentGradeMasterResult from "./PreUpdateCurrentGradeMasterResult"
 import UpdateCurrentGradeMasterResult from "./UpdateCurrentGradeMasterResult"
 import UpdateCurrentGradeMasterFromGitHubResult from "./UpdateCurrentGradeMasterFromGitHubResult"
 
@@ -105,6 +106,7 @@ export {
     VerifyGradeUpMaterialByStampTaskResult,
     ExportMasterResult,
     GetCurrentGradeMasterResult,
+    PreUpdateCurrentGradeMasterResult,
     UpdateCurrentGradeMasterResult,
     UpdateCurrentGradeMasterFromGitHubResult,
 };

@@ -20,7 +20,9 @@ var ChangeSetRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.stackName = null;
+        this.mode = null;
         this.template = null;
+        this.uploadToken = null;
     }
     ChangeSetRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,6 +57,17 @@ var ChangeSetRequest = /** @class */ (function () {
         this.stackName = stackName;
         return this;
     };
+    ChangeSetRequest.prototype.getMode = function () {
+        return this.mode;
+    };
+    ChangeSetRequest.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    ChangeSetRequest.prototype.withMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
     ChangeSetRequest.prototype.getTemplate = function () {
         return this.template;
     };
@@ -66,15 +79,30 @@ var ChangeSetRequest = /** @class */ (function () {
         this.template = template;
         return this;
     };
+    ChangeSetRequest.prototype.getUploadToken = function () {
+        return this.uploadToken;
+    };
+    ChangeSetRequest.prototype.setUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
+    ChangeSetRequest.prototype.withUploadToken = function (uploadToken) {
+        this.uploadToken = uploadToken;
+        return this;
+    };
     ChangeSetRequest.fromDict = function (data) {
         return new ChangeSetRequest()
             .withStackName(data["stackName"])
-            .withTemplate(data["template"]);
+            .withMode(data["mode"])
+            .withTemplate(data["template"])
+            .withUploadToken(data["uploadToken"]);
     };
     ChangeSetRequest.prototype.toDict = function () {
         return {
             "stackName": this.getStackName(),
+            "mode": this.getMode(),
             "template": this.getTemplate(),
+            "uploadToken": this.getUploadToken(),
         };
     };
     return ChangeSetRequest;

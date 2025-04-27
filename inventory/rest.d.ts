@@ -61,6 +61,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     getBigItemModel(request: Request.GetBigItemModelRequest): Promise<Result.GetBigItemModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentItemModelMaster(request: Request.GetCurrentItemModelMasterRequest): Promise<Result.GetCurrentItemModelMasterResult>;
+    preUpdateCurrentItemModelMaster(request: Request.PreUpdateCurrentItemModelMasterRequest): Promise<Result.PreUpdateCurrentItemModelMasterResult>;
     updateCurrentItemModelMaster(request: Request.UpdateCurrentItemModelMasterRequest): Promise<Result.UpdateCurrentItemModelMasterResult>;
     updateCurrentItemModelMasterFromGitHub(request: Request.UpdateCurrentItemModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentItemModelMasterFromGitHubResult>;
     describeInventories(request: Request.DescribeInventoriesRequest): Promise<Result.DescribeInventoriesResult>;

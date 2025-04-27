@@ -38,6 +38,7 @@ import UpdateQuestModelMasterResult from "./UpdateQuestModelMasterResult"
 import DeleteQuestModelMasterResult from "./DeleteQuestModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentQuestMasterResult from "./GetCurrentQuestMasterResult"
+import PreUpdateCurrentQuestMasterResult from "./PreUpdateCurrentQuestMasterResult"
 import UpdateCurrentQuestMasterResult from "./UpdateCurrentQuestMasterResult"
 import UpdateCurrentQuestMasterFromGitHubResult from "./UpdateCurrentQuestMasterFromGitHubResult"
 import DescribeProgressesByUserIdResult from "./DescribeProgressesByUserIdResult"
@@ -88,6 +89,7 @@ export {
     DeleteQuestModelMasterResult,
     ExportMasterResult,
     GetCurrentQuestMasterResult,
+    PreUpdateCurrentQuestMasterResult,
     UpdateCurrentQuestMasterResult,
     UpdateCurrentQuestMasterFromGitHubResult,
     DescribeProgressesByUserIdResult,

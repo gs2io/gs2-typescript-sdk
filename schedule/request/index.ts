@@ -54,6 +54,7 @@ import VerifyEventByUserIdRequest from "./VerifyEventByUserIdRequest"
 import VerifyEventByStampTaskRequest from "./VerifyEventByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentEventMasterRequest from "./GetCurrentEventMasterRequest"
+import PreUpdateCurrentEventMasterRequest from "./PreUpdateCurrentEventMasterRequest"
 import UpdateCurrentEventMasterRequest from "./UpdateCurrentEventMasterRequest"
 import UpdateCurrentEventMasterFromGitHubRequest from "./UpdateCurrentEventMasterFromGitHubRequest"
 
@@ -99,6 +100,7 @@ export {
     VerifyEventByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentEventMasterRequest,
+    PreUpdateCurrentEventMasterRequest,
     UpdateCurrentEventMasterRequest,
     UpdateCurrentEventMasterFromGitHubRequest,
 };

@@ -42,6 +42,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     deleteCampaignModelMaster(request: Request.DeleteCampaignModelMasterRequest): Promise<Result.DeleteCampaignModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentCampaignMaster(request: Request.GetCurrentCampaignMasterRequest): Promise<Result.GetCurrentCampaignMasterResult>;
+    preUpdateCurrentCampaignMaster(request: Request.PreUpdateCurrentCampaignMasterRequest): Promise<Result.PreUpdateCurrentCampaignMasterResult>;
     updateCurrentCampaignMaster(request: Request.UpdateCurrentCampaignMasterRequest): Promise<Result.UpdateCurrentCampaignMasterResult>;
     updateCurrentCampaignMasterFromGitHub(request: Request.UpdateCurrentCampaignMasterFromGitHubRequest): Promise<Result.UpdateCurrentCampaignMasterFromGitHubResult>;
 }

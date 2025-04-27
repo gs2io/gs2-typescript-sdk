@@ -33,6 +33,7 @@ import UpdateBonusModelMasterRequest from "./UpdateBonusModelMasterRequest"
 import DeleteBonusModelMasterRequest from "./DeleteBonusModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentBonusMasterRequest from "./GetCurrentBonusMasterRequest"
+import PreUpdateCurrentBonusMasterRequest from "./PreUpdateCurrentBonusMasterRequest"
 import UpdateCurrentBonusMasterRequest from "./UpdateCurrentBonusMasterRequest"
 import UpdateCurrentBonusMasterFromGitHubRequest from "./UpdateCurrentBonusMasterFromGitHubRequest"
 import DescribeBonusModelsRequest from "./DescribeBonusModelsRequest"
@@ -74,6 +75,7 @@ export {
     DeleteBonusModelMasterRequest,
     ExportMasterRequest,
     GetCurrentBonusMasterRequest,
+    PreUpdateCurrentBonusMasterRequest,
     UpdateCurrentBonusMasterRequest,
     UpdateCurrentBonusMasterFromGitHubRequest,
     DescribeBonusModelsRequest,

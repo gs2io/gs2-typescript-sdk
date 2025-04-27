@@ -38,6 +38,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     deleteLimitModelMaster(request: Request.DeleteLimitModelMasterRequest): Promise<Result.DeleteLimitModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentLimitMaster(request: Request.GetCurrentLimitMasterRequest): Promise<Result.GetCurrentLimitMasterResult>;
+    preUpdateCurrentLimitMaster(request: Request.PreUpdateCurrentLimitMasterRequest): Promise<Result.PreUpdateCurrentLimitMasterResult>;
     updateCurrentLimitMaster(request: Request.UpdateCurrentLimitMasterRequest): Promise<Result.UpdateCurrentLimitMasterResult>;
     updateCurrentLimitMasterFromGitHub(request: Request.UpdateCurrentLimitMasterFromGitHubRequest): Promise<Result.UpdateCurrentLimitMasterFromGitHubResult>;
     describeLimitModels(request: Request.DescribeLimitModelsRequest): Promise<Result.DescribeLimitModelsResult>;

@@ -24,6 +24,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     deleteBonusModelMaster(request: Request.DeleteBonusModelMasterRequest): Promise<Result.DeleteBonusModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentBonusMaster(request: Request.GetCurrentBonusMasterRequest): Promise<Result.GetCurrentBonusMasterResult>;
+    preUpdateCurrentBonusMaster(request: Request.PreUpdateCurrentBonusMasterRequest): Promise<Result.PreUpdateCurrentBonusMasterResult>;
     updateCurrentBonusMaster(request: Request.UpdateCurrentBonusMasterRequest): Promise<Result.UpdateCurrentBonusMasterResult>;
     updateCurrentBonusMasterFromGitHub(request: Request.UpdateCurrentBonusMasterFromGitHubRequest): Promise<Result.UpdateCurrentBonusMasterFromGitHubResult>;
     describeBonusModels(request: Request.DescribeBonusModelsRequest): Promise<Result.DescribeBonusModelsResult>;

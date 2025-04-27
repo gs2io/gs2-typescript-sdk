@@ -73,6 +73,7 @@ import UpdateTakeOverTypeModelMasterResult from "./UpdateTakeOverTypeModelMaster
 import DeleteTakeOverTypeModelMasterResult from "./DeleteTakeOverTypeModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentModelMasterResult from "./GetCurrentModelMasterResult"
+import PreUpdateCurrentModelMasterResult from "./PreUpdateCurrentModelMasterResult"
 import UpdateCurrentModelMasterResult from "./UpdateCurrentModelMasterResult"
 import UpdateCurrentModelMasterFromGitHubResult from "./UpdateCurrentModelMasterFromGitHubResult"
 
@@ -137,6 +138,7 @@ export {
     DeleteTakeOverTypeModelMasterResult,
     ExportMasterResult,
     GetCurrentModelMasterResult,
+    PreUpdateCurrentModelMasterResult,
     UpdateCurrentModelMasterResult,
     UpdateCurrentModelMasterFromGitHubResult,
 };

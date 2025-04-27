@@ -78,6 +78,7 @@ import PromoteSeniorMemberResult from "./PromoteSeniorMemberResult"
 import PromoteSeniorMemberByGuildNameResult from "./PromoteSeniorMemberByGuildNameResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentGuildMasterResult from "./GetCurrentGuildMasterResult"
+import PreUpdateCurrentGuildMasterResult from "./PreUpdateCurrentGuildMasterResult"
 import UpdateCurrentGuildMasterResult from "./UpdateCurrentGuildMasterResult"
 import UpdateCurrentGuildMasterFromGitHubResult from "./UpdateCurrentGuildMasterFromGitHubResult"
 import DescribeReceiveRequestsResult from "./DescribeReceiveRequestsResult"
@@ -171,6 +172,7 @@ export {
     PromoteSeniorMemberByGuildNameResult,
     ExportMasterResult,
     GetCurrentGuildMasterResult,
+    PreUpdateCurrentGuildMasterResult,
     UpdateCurrentGuildMasterResult,
     UpdateCurrentGuildMasterFromGitHubResult,
     DescribeReceiveRequestsResult,

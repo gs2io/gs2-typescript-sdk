@@ -23,7 +23,9 @@ export default class UpdateCurrentMessageMasterRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private mode: string|null = null;
     private settings: string|null = null;
+    private uploadToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -63,6 +65,17 @@ export default class UpdateCurrentMessageMasterRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
+    public getMode(): string|null {
+        return this.mode;
+    }
+    public setMode(mode: string|null) {
+        this.mode = mode;
+        return this;
+    }
+    public withMode(mode: string|null): this {
+        this.mode = mode;
+        return this;
+    }
     public getSettings(): string|null {
         return this.settings;
     }
@@ -74,17 +87,32 @@ export default class UpdateCurrentMessageMasterRequest implements IRequest {
         this.settings = settings;
         return this;
     }
+    public getUploadToken(): string|null {
+        return this.uploadToken;
+    }
+    public setUploadToken(uploadToken: string|null) {
+        this.uploadToken = uploadToken;
+        return this;
+    }
+    public withUploadToken(uploadToken: string|null): this {
+        this.uploadToken = uploadToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateCurrentMessageMasterRequest {
         return new UpdateCurrentMessageMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withSettings(data["settings"]);
+            .withMode(data["mode"])
+            .withSettings(data["settings"])
+            .withUploadToken(data["uploadToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "mode": this.getMode(),
             "settings": this.getSettings(),
+            "uploadToken": this.getUploadToken(),
         };
     }
 }
