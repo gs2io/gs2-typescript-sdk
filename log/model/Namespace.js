@@ -29,6 +29,7 @@ var Namespace = /** @class */ (function () {
         this.awsAccessKeyId = null;
         this.awsSecretAccessKey = null;
         this.firehoseStreamName = null;
+        this.firehoseCompressData = null;
         this.status = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -203,6 +204,17 @@ var Namespace = /** @class */ (function () {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     };
+    Namespace.prototype.getFirehoseCompressData = function () {
+        return this.firehoseCompressData;
+    };
+    Namespace.prototype.setFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
+    Namespace.prototype.withFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
     Namespace.prototype.getStatus = function () {
         return this.status;
     };
@@ -263,6 +275,7 @@ var Namespace = /** @class */ (function () {
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
             .withFirehoseStreamName(data["firehoseStreamName"])
+            .withFirehoseCompressData(data["firehoseCompressData"])
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -281,6 +294,7 @@ var Namespace = /** @class */ (function () {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "firehoseCompressData": this.getFirehoseCompressData(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

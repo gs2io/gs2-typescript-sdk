@@ -29,6 +29,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.awsAccessKeyId = null;
         this.awsSecretAccessKey = null;
         this.firehoseStreamName = null;
+        this.firehoseCompressData = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -162,6 +163,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getFirehoseCompressData = function () {
+        return this.firehoseCompressData;
+    };
+    UpdateNamespaceRequest.prototype.setFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
@@ -173,7 +185,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withAwsRegion(data["awsRegion"])
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
-            .withFirehoseStreamName(data["firehoseStreamName"]);
+            .withFirehoseStreamName(data["firehoseStreamName"])
+            .withFirehoseCompressData(data["firehoseCompressData"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
         return {
@@ -187,6 +200,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "firehoseCompressData": this.getFirehoseCompressData(),
         };
     };
     return UpdateNamespaceRequest;

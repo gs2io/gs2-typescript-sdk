@@ -49,7 +49,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
@@ -69,6 +69,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'awsAccessKeyId': (_j = request.getAwsAccessKeyId()) !== null && _j !== void 0 ? _j : null,
             'awsSecretAccessKey': (_k = request.getAwsSecretAccessKey()) !== null && _k !== void 0 ? _k : null,
             'firehoseStreamName': (_l = request.getFirehoseStreamName()) !== null && _l !== void 0 ? _l : null,
+            'firehoseCompressData': (_m = request.getFirehoseCompressData()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -128,7 +129,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
@@ -148,6 +149,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'awsAccessKeyId': (_k = request.getAwsAccessKeyId()) !== null && _k !== void 0 ? _k : null,
             'awsSecretAccessKey': (_l = request.getAwsSecretAccessKey()) !== null && _l !== void 0 ? _l : null,
             'firehoseStreamName': (_m = request.getFirehoseStreamName()) !== null && _m !== void 0 ? _m : null,
+            'firehoseCompressData': (_o = request.getFirehoseCompressData()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

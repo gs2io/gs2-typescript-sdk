@@ -31,6 +31,7 @@ export default class Namespace implements IModel {
     private awsAccessKeyId: string|null = null;
     private awsSecretAccessKey: string|null = null;
     private firehoseStreamName: string|null = null;
+    private firehoseCompressData: string|null = null;
     private status: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -216,6 +217,17 @@ export default class Namespace implements IModel {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     }
+    public getFirehoseCompressData(): string|null {
+        return this.firehoseCompressData;
+    }
+    public setFirehoseCompressData(firehoseCompressData: string|null) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    }
+    public withFirehoseCompressData(firehoseCompressData: string|null): this {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    }
     public getStatus(): string|null {
         return this.status;
     }
@@ -277,6 +289,7 @@ export default class Namespace implements IModel {
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
             .withFirehoseStreamName(data["firehoseStreamName"])
+            .withFirehoseCompressData(data["firehoseCompressData"])
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -296,6 +309,7 @@ export default class Namespace implements IModel {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "firehoseCompressData": this.getFirehoseCompressData(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

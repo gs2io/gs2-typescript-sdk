@@ -75,6 +75,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
             'awsAccessKeyId': request.getAwsAccessKeyId() ?? null,
             'awsSecretAccessKey': request.getAwsSecretAccessKey() ?? null,
             'firehoseStreamName': request.getFirehoseStreamName() ?? null,
+            'firehoseCompressData': request.getFirehoseCompressData() ?? null,
         };
         return axios.post(
             url,
@@ -166,6 +167,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
             'awsAccessKeyId': request.getAwsAccessKeyId() ?? null,
             'awsSecretAccessKey': request.getAwsSecretAccessKey() ?? null,
             'firehoseStreamName': request.getFirehoseStreamName() ?? null,
+            'firehoseCompressData': request.getFirehoseCompressData() ?? null,
         };
         return axios.put(
             url,

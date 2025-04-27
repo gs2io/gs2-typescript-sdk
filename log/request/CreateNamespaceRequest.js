@@ -29,6 +29,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.awsAccessKeyId = null;
         this.awsSecretAccessKey = null;
         this.firehoseStreamName = null;
+        this.firehoseCompressData = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -162,6 +163,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     };
+    CreateNamespaceRequest.prototype.getFirehoseCompressData = function () {
+        return this.firehoseCompressData;
+    };
+    CreateNamespaceRequest.prototype.setFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withFirehoseCompressData = function (firehoseCompressData) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    };
     CreateNamespaceRequest.fromDict = function (data) {
         return new CreateNamespaceRequest()
             .withName(data["name"])
@@ -173,7 +185,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withAwsRegion(data["awsRegion"])
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
-            .withFirehoseStreamName(data["firehoseStreamName"]);
+            .withFirehoseStreamName(data["firehoseStreamName"])
+            .withFirehoseCompressData(data["firehoseCompressData"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
         return {
@@ -187,6 +200,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "firehoseCompressData": this.getFirehoseCompressData(),
         };
     };
     return CreateNamespaceRequest;

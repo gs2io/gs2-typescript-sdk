@@ -11,6 +11,7 @@ export default class Namespace implements IModel {
     private awsAccessKeyId;
     private awsSecretAccessKey;
     private firehoseStreamName;
+    private firehoseCompressData;
     private status;
     private createdAt;
     private updatedAt;
@@ -53,6 +54,9 @@ export default class Namespace implements IModel {
     getFirehoseStreamName(): string | null;
     setFirehoseStreamName(firehoseStreamName: string | null): this;
     withFirehoseStreamName(firehoseStreamName: string | null): this;
+    getFirehoseCompressData(): string | null;
+    setFirehoseCompressData(firehoseCompressData: string | null): this;
+    withFirehoseCompressData(firehoseCompressData: string | null): this;
     getStatus(): string | null;
     setStatus(status: string | null): this;
     withStatus(status: string | null): this;

@@ -12,6 +12,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private awsAccessKeyId;
     private awsSecretAccessKey;
     private firehoseStreamName;
+    private firehoseCompressData;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -48,6 +49,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getFirehoseStreamName(): string | null;
     setFirehoseStreamName(firehoseStreamName: string | null): this;
     withFirehoseStreamName(firehoseStreamName: string | null): this;
+    getFirehoseCompressData(): string | null;
+    setFirehoseCompressData(firehoseCompressData: string | null): this;
+    withFirehoseCompressData(firehoseCompressData: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateNamespaceRequest;

@@ -32,6 +32,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private awsAccessKeyId: string|null = null;
     private awsSecretAccessKey: string|null = null;
     private firehoseStreamName: string|null = null;
+    private firehoseCompressData: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -170,6 +171,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     }
+    public getFirehoseCompressData(): string|null {
+        return this.firehoseCompressData;
+    }
+    public setFirehoseCompressData(firehoseCompressData: string|null) {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    }
+    public withFirehoseCompressData(firehoseCompressData: string|null): this {
+        this.firehoseCompressData = firehoseCompressData;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateNamespaceRequest {
         return new UpdateNamespaceRequest()
@@ -182,7 +194,8 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withAwsRegion(data["awsRegion"])
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
-            .withFirehoseStreamName(data["firehoseStreamName"]);
+            .withFirehoseStreamName(data["firehoseStreamName"])
+            .withFirehoseCompressData(data["firehoseCompressData"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -197,6 +210,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "firehoseCompressData": this.getFirehoseCompressData(),
         };
     }
 }
