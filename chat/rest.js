@@ -632,7 +632,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.describeMessages = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -648,8 +648,9 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'password': String((_g = request.getPassword()) !== null && _g !== void 0 ? _g : null),
-            'startAt': String((_h = request.getStartAt()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'category': String((_h = request.getCategory()) !== null && _h !== void 0 ? _h : null),
+            'startAt': String((_j = request.getStartAt()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -661,7 +662,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.describeMessagesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -677,9 +678,10 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'password': String((_g = request.getPassword()) !== null && _g !== void 0 ? _g : null),
-            'userId': String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : null),
-            'startAt': String((_j = request.getStartAt()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'category': String((_h = request.getCategory()) !== null && _h !== void 0 ? _h : null),
+            'userId': String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : null),
+            'startAt': String((_k = request.getStartAt()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -691,7 +693,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.describeLatestMessages = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -707,7 +709,8 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'password': String((_g = request.getPassword()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'category': String((_h = request.getCategory()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -719,7 +722,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.describeLatestMessagesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -735,8 +738,9 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'password': String((_g = request.getPassword()) !== null && _g !== void 0 ? _g : null),
-            'userId': String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'category': String((_h = request.getCategory()) !== null && _h !== void 0 ? _h : null),
+            'userId': String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,

@@ -734,6 +734,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
+            'category': String(request.getCategory() ?? null),
             'startAt': String(request.getStartAt() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -767,6 +768,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
+            'category': String(request.getCategory() ?? null),
             'userId': String(request.getUserId() ?? null),
             'startAt': String(request.getStartAt() ?? null),
             'limit': String(request.getLimit() ?? null),
@@ -801,6 +803,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
+            'category': String(request.getCategory() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
@@ -833,6 +836,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
+            'category': String(request.getCategory() ?? null),
             'userId': String(request.getUserId() ?? null),
             'limit': String(request.getLimit() ?? null),
         };

@@ -22,6 +22,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.password = null;
+        this.category = null;
         this.accessToken = null;
         this.limit = null;
     }
@@ -80,6 +81,17 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    DescribeLatestMessagesRequest.prototype.getCategory = function () {
+        return this.category;
+    };
+    DescribeLatestMessagesRequest.prototype.setCategory = function (category) {
+        this.category = category;
+        return this;
+    };
+    DescribeLatestMessagesRequest.prototype.withCategory = function (category) {
+        this.category = category;
+        return this;
+    };
     DescribeLatestMessagesRequest.prototype.getAccessToken = function () {
         return this.accessToken;
     };
@@ -107,6 +119,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withPassword(data["password"])
+            .withCategory(data["category"])
             .withAccessToken(data["accessToken"])
             .withLimit(data["limit"]);
     };
@@ -115,6 +128,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "password": this.getPassword(),
+            "category": this.getCategory(),
             "accessToken": this.getAccessToken(),
             "limit": this.getLimit(),
         };

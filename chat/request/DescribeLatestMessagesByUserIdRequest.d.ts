@@ -5,6 +5,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     private namespaceName;
     private roomName;
     private password;
+    private category;
     private userId;
     private limit;
     private timeOffsetToken;
@@ -23,6 +24,9 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     getPassword(): string | null;
     setPassword(password: string | null): this;
     withPassword(password: string | null): this;
+    getCategory(): number | null;
+    setCategory(category: number | null): this;
+    withCategory(category: number | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

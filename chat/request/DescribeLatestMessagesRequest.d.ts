@@ -5,6 +5,7 @@ export default class DescribeLatestMessagesRequest implements IRequest {
     private namespaceName;
     private roomName;
     private password;
+    private category;
     private accessToken;
     private limit;
     getRequestId(): string | null;
@@ -22,6 +23,9 @@ export default class DescribeLatestMessagesRequest implements IRequest {
     getPassword(): string | null;
     setPassword(password: string | null): this;
     withPassword(password: string | null): this;
+    getCategory(): number | null;
+    setCategory(category: number | null): this;
+    withCategory(category: number | null): this;
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;

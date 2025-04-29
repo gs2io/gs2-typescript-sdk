@@ -22,6 +22,7 @@ var DescribeMessagesRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.password = null;
+        this.category = null;
         this.accessToken = null;
         this.startAt = null;
         this.limit = null;
@@ -81,6 +82,17 @@ var DescribeMessagesRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    DescribeMessagesRequest.prototype.getCategory = function () {
+        return this.category;
+    };
+    DescribeMessagesRequest.prototype.setCategory = function (category) {
+        this.category = category;
+        return this;
+    };
+    DescribeMessagesRequest.prototype.withCategory = function (category) {
+        this.category = category;
+        return this;
+    };
     DescribeMessagesRequest.prototype.getAccessToken = function () {
         return this.accessToken;
     };
@@ -119,6 +131,7 @@ var DescribeMessagesRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withPassword(data["password"])
+            .withCategory(data["category"])
             .withAccessToken(data["accessToken"])
             .withStartAt(data["startAt"])
             .withLimit(data["limit"]);
@@ -128,6 +141,7 @@ var DescribeMessagesRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "password": this.getPassword(),
+            "category": this.getCategory(),
             "accessToken": this.getAccessToken(),
             "startAt": this.getStartAt(),
             "limit": this.getLimit(),

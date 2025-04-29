@@ -25,6 +25,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private roomName: string|null = null;
     private password: string|null = null;
+    private category: number|null = null;
     private userId: string|null = null;
     private limit: number|null = null;
     private timeOffsetToken: string|null = null;
@@ -89,6 +90,17 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
         this.password = password;
         return this;
     }
+    public getCategory(): number|null {
+        return this.category;
+    }
+    public setCategory(category: number|null) {
+        this.category = category;
+        return this;
+    }
+    public withCategory(category: number|null): this {
+        this.category = category;
+        return this;
+    }
     public getUserId(): string|null {
         return this.userId;
     }
@@ -128,6 +140,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withPassword(data["password"])
+            .withCategory(data["category"])
             .withUserId(data["userId"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -138,6 +151,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "password": this.getPassword(),
+            "category": this.getCategory(),
             "userId": this.getUserId(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),

@@ -22,6 +22,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.password = null;
+        this.category = null;
         this.userId = null;
         this.startAt = null;
         this.limit = null;
@@ -82,6 +83,17 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    DescribeMessagesByUserIdRequest.prototype.getCategory = function () {
+        return this.category;
+    };
+    DescribeMessagesByUserIdRequest.prototype.setCategory = function (category) {
+        this.category = category;
+        return this;
+    };
+    DescribeMessagesByUserIdRequest.prototype.withCategory = function (category) {
+        this.category = category;
+        return this;
+    };
     DescribeMessagesByUserIdRequest.prototype.getUserId = function () {
         return this.userId;
     };
@@ -131,6 +143,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withPassword(data["password"])
+            .withCategory(data["category"])
             .withUserId(data["userId"])
             .withStartAt(data["startAt"])
             .withLimit(data["limit"])
@@ -141,6 +154,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "password": this.getPassword(),
+            "category": this.getCategory(),
             "userId": this.getUserId(),
             "startAt": this.getStartAt(),
             "limit": this.getLimit(),
