@@ -63,6 +63,7 @@ import DeletePlatformIdResult from "./DeletePlatformIdResult"
 import DeletePlatformIdByUserIdentifierResult from "./DeletePlatformIdByUserIdentifierResult"
 import DeletePlatformIdByUserIdResult from "./DeletePlatformIdByUserIdResult"
 import GetDataOwnerByUserIdResult from "./GetDataOwnerByUserIdResult"
+import UpdateDataOwnerByUserIdResult from "./UpdateDataOwnerByUserIdResult"
 import DeleteDataOwnerByUserIdResult from "./DeleteDataOwnerByUserIdResult"
 import DescribeTakeOverTypeModelsResult from "./DescribeTakeOverTypeModelsResult"
 import GetTakeOverTypeModelResult from "./GetTakeOverTypeModelResult"
@@ -128,6 +129,7 @@ export {
     DeletePlatformIdByUserIdentifierResult,
     DeletePlatformIdByUserIdResult,
     GetDataOwnerByUserIdResult,
+    UpdateDataOwnerByUserIdResult,
     DeleteDataOwnerByUserIdResult,
     DescribeTakeOverTypeModelsResult,
     GetTakeOverTypeModelResult,
