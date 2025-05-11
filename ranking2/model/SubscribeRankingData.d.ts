@@ -9,7 +9,7 @@ export default class SubscribeRankingData implements IModel {
     private scorerUserId;
     private score;
     private metadata;
-    private invertCreatedAt;
+    private invertUpdatedAt;
     private createdAt;
     private updatedAt;
     private revision;
@@ -49,9 +49,9 @@ export default class SubscribeRankingData implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getInvertCreatedAt(): number | null;
-    setInvertCreatedAt(invertCreatedAt: number | null): this;
-    withInvertCreatedAt(invertCreatedAt: number | null): this;
+    getInvertUpdatedAt(): number | null;
+    setInvertUpdatedAt(invertUpdatedAt: number | null): this;
+    withInvertUpdatedAt(invertUpdatedAt: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

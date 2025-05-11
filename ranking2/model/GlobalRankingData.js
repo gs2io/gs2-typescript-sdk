@@ -26,7 +26,7 @@ var GlobalRankingData = /** @class */ (function () {
         this.rank = null;
         this.score = null;
         this.metadata = null;
-        this.invertCreatedAt = null;
+        this.invertUpdatedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -227,15 +227,15 @@ var GlobalRankingData = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
-    GlobalRankingData.prototype.getInvertCreatedAt = function () {
-        return this.invertCreatedAt;
+    GlobalRankingData.prototype.getInvertUpdatedAt = function () {
+        return this.invertUpdatedAt;
     };
-    GlobalRankingData.prototype.setInvertCreatedAt = function (invertCreatedAt) {
-        this.invertCreatedAt = invertCreatedAt;
+    GlobalRankingData.prototype.setInvertUpdatedAt = function (invertUpdatedAt) {
+        this.invertUpdatedAt = invertUpdatedAt;
         return this;
     };
-    GlobalRankingData.prototype.withInvertCreatedAt = function (invertCreatedAt) {
-        this.invertCreatedAt = invertCreatedAt;
+    GlobalRankingData.prototype.withInvertUpdatedAt = function (invertUpdatedAt) {
+        this.invertUpdatedAt = invertUpdatedAt;
         return this;
     };
     GlobalRankingData.prototype.getCreatedAt = function () {
@@ -284,7 +284,7 @@ var GlobalRankingData = /** @class */ (function () {
             .withRank(data["rank"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
-            .withInvertCreatedAt(data["invertCreatedAt"])
+            .withInvertUpdatedAt(data["invertUpdatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -299,7 +299,7 @@ var GlobalRankingData = /** @class */ (function () {
             "rank": this.getRank(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
-            "invertCreatedAt": this.getInvertCreatedAt(),
+            "invertUpdatedAt": this.getInvertUpdatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

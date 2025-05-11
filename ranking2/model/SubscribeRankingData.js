@@ -27,7 +27,7 @@ var SubscribeRankingData = /** @class */ (function () {
         this.scorerUserId = null;
         this.score = null;
         this.metadata = null;
-        this.invertCreatedAt = null;
+        this.invertUpdatedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -263,15 +263,15 @@ var SubscribeRankingData = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
-    SubscribeRankingData.prototype.getInvertCreatedAt = function () {
-        return this.invertCreatedAt;
+    SubscribeRankingData.prototype.getInvertUpdatedAt = function () {
+        return this.invertUpdatedAt;
     };
-    SubscribeRankingData.prototype.setInvertCreatedAt = function (invertCreatedAt) {
-        this.invertCreatedAt = invertCreatedAt;
+    SubscribeRankingData.prototype.setInvertUpdatedAt = function (invertUpdatedAt) {
+        this.invertUpdatedAt = invertUpdatedAt;
         return this;
     };
-    SubscribeRankingData.prototype.withInvertCreatedAt = function (invertCreatedAt) {
-        this.invertCreatedAt = invertCreatedAt;
+    SubscribeRankingData.prototype.withInvertUpdatedAt = function (invertUpdatedAt) {
+        this.invertUpdatedAt = invertUpdatedAt;
         return this;
     };
     SubscribeRankingData.prototype.getCreatedAt = function () {
@@ -321,7 +321,7 @@ var SubscribeRankingData = /** @class */ (function () {
             .withScorerUserId(data["scorerUserId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
-            .withInvertCreatedAt(data["invertCreatedAt"])
+            .withInvertUpdatedAt(data["invertUpdatedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -337,7 +337,7 @@ var SubscribeRankingData = /** @class */ (function () {
             "scorerUserId": this.getScorerUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
-            "invertCreatedAt": this.getInvertCreatedAt(),
+            "invertUpdatedAt": this.getInvertUpdatedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
