@@ -29,6 +29,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.createTakeOverScript = null;
         this.doTakeOverScript = null;
         this.banScript = null;
+        this.unBanScript = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -141,6 +142,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.banScript = banScript;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getUnBanScript = function () {
+        return this.unBanScript;
+    };
+    UpdateNamespaceRequest.prototype.setUnBanScript = function (unBanScript) {
+        this.unBanScript = unBanScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withUnBanScript = function (unBanScript) {
+        this.unBanScript = unBanScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -162,10 +174,11 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
             .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
             .withBanScript(Gs2Account.ScriptSetting.fromDict(data["banScript"]))
+            .withUnBanScript(Gs2Account.ScriptSetting.fromDict(data["unBanScript"]))
             .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
@@ -175,7 +188,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "doTakeOverScript": (_d = this.getDoTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "banScript": (_e = this.getBanScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "unBanScript": (_f = this.getUnBanScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
         };
     };
     return UpdateNamespaceRequest;

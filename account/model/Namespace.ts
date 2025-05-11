@@ -32,6 +32,7 @@ export default class Namespace implements IModel {
     private createTakeOverScript: Gs2Account.ScriptSetting|null = null;
     private doTakeOverScript: Gs2Account.ScriptSetting|null = null;
     private banScript: Gs2Account.ScriptSetting|null = null;
+    private unBanScript: Gs2Account.ScriptSetting|null = null;
     private logSetting: Gs2Account.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -206,6 +207,17 @@ export default class Namespace implements IModel {
         this.banScript = banScript;
         return this;
     }
+    public getUnBanScript(): Gs2Account.ScriptSetting|null {
+        return this.unBanScript;
+    }
+    public setUnBanScript(unBanScript: Gs2Account.ScriptSetting|null) {
+        this.unBanScript = unBanScript;
+        return this;
+    }
+    public withUnBanScript(unBanScript: Gs2Account.ScriptSetting|null): this {
+        this.unBanScript = unBanScript;
+        return this;
+    }
     public getLogSetting(): Gs2Account.LogSetting|null {
         return this.logSetting;
     }
@@ -266,6 +278,7 @@ export default class Namespace implements IModel {
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
             .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
             .withBanScript(Gs2Account.ScriptSetting.fromDict(data["banScript"]))
+            .withUnBanScript(Gs2Account.ScriptSetting.fromDict(data["unBanScript"]))
             .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -284,6 +297,7 @@ export default class Namespace implements IModel {
             "createTakeOverScript": this.getCreateTakeOverScript()?.toDict(),
             "doTakeOverScript": this.getDoTakeOverScript()?.toDict(),
             "banScript": this.getBanScript()?.toDict(),
+            "unBanScript": this.getUnBanScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

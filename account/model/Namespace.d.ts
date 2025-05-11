@@ -11,6 +11,7 @@ export default class Namespace implements IModel {
     private createTakeOverScript;
     private doTakeOverScript;
     private banScript;
+    private unBanScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -50,6 +51,9 @@ export default class Namespace implements IModel {
     getBanScript(): Gs2Account.ScriptSetting | null;
     setBanScript(banScript: Gs2Account.ScriptSetting | null): this;
     withBanScript(banScript: Gs2Account.ScriptSetting | null): this;
+    getUnBanScript(): Gs2Account.ScriptSetting | null;
+    setUnBanScript(unBanScript: Gs2Account.ScriptSetting | null): this;
+    withUnBanScript(unBanScript: Gs2Account.ScriptSetting | null): this;
     getLogSetting(): Gs2Account.LogSetting | null;
     setLogSetting(logSetting: Gs2Account.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Account.LogSetting | null): this;

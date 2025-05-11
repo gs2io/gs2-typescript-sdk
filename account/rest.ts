@@ -74,6 +74,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             'createTakeOverScript': request.getCreateTakeOverScript()?.toDict() ?? null,
             'doTakeOverScript': request.getDoTakeOverScript()?.toDict() ?? null,
             'banScript': request.getBanScript()?.toDict() ?? null,
+            'unBanScript': request.getUnBanScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -164,6 +165,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             'createTakeOverScript': request.getCreateTakeOverScript()?.toDict() ?? null,
             'doTakeOverScript': request.getDoTakeOverScript()?.toDict() ?? null,
             'banScript': request.getBanScript()?.toDict() ?? null,
+            'unBanScript': request.getUnBanScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

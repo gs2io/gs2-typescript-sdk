@@ -30,6 +30,7 @@ var Namespace = /** @class */ (function () {
         this.createTakeOverScript = null;
         this.doTakeOverScript = null;
         this.banScript = null;
+        this.unBanScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -193,6 +194,17 @@ var Namespace = /** @class */ (function () {
         this.banScript = banScript;
         return this;
     };
+    Namespace.prototype.getUnBanScript = function () {
+        return this.unBanScript;
+    };
+    Namespace.prototype.setUnBanScript = function (unBanScript) {
+        this.unBanScript = unBanScript;
+        return this;
+    };
+    Namespace.prototype.withUnBanScript = function (unBanScript) {
+        this.unBanScript = unBanScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -252,13 +264,14 @@ var Namespace = /** @class */ (function () {
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
             .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
             .withBanScript(Gs2Account.ScriptSetting.fromDict(data["banScript"]))
+            .withUnBanScript(Gs2Account.ScriptSetting.fromDict(data["unBanScript"]))
             .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -270,7 +283,8 @@ var Namespace = /** @class */ (function () {
             "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "doTakeOverScript": (_d = this.getDoTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "banScript": (_e = this.getBanScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "unBanScript": (_f = this.getUnBanScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
