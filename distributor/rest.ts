@@ -202,6 +202,31 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetServiceVersionResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public describeDistributorModelMasters(request: Request.DescribeDistributorModelMastersRequest): Promise<Result.DescribeDistributorModelMastersResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')

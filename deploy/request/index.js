@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.ChangeSetRequest = exports.PreChangeSetRequest = exports.UpdateStackRequest = exports.PreUpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.PreValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.PreCreateStackRequest = exports.DescribeStacksRequest = void 0;
+exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.GetServiceVersionRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.ChangeSetRequest = exports.PreChangeSetRequest = exports.UpdateStackRequest = exports.PreUpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.PreValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.PreCreateStackRequest = exports.DescribeStacksRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -51,6 +51,8 @@ var DeleteStackResourcesRequest_1 = tslib_1.__importDefault(require("./DeleteSta
 exports.DeleteStackResourcesRequest = DeleteStackResourcesRequest_1.default;
 var DeleteStackEntityRequest_1 = tslib_1.__importDefault(require("./DeleteStackEntityRequest"));
 exports.DeleteStackEntityRequest = DeleteStackEntityRequest_1.default;
+var GetServiceVersionRequest_1 = tslib_1.__importDefault(require("./GetServiceVersionRequest"));
+exports.GetServiceVersionRequest = GetServiceVersionRequest_1.default;
 var DescribeResourcesRequest_1 = tslib_1.__importDefault(require("./DescribeResourcesRequest"));
 exports.DescribeResourcesRequest = DescribeResourcesRequest_1.default;
 var GetResourceRequest_1 = tslib_1.__importDefault(require("./GetResourceRequest"));

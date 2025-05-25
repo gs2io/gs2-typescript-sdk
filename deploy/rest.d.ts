@@ -21,6 +21,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     forceDeleteStack(request: Request.ForceDeleteStackRequest): Promise<Result.ForceDeleteStackResult>;
     deleteStackResources(request: Request.DeleteStackResourcesRequest): Promise<Result.DeleteStackResourcesResult>;
     deleteStackEntity(request: Request.DeleteStackEntityRequest): Promise<Result.DeleteStackEntityResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeResources(request: Request.DescribeResourcesRequest): Promise<Result.DescribeResourcesResult>;
     getResource(request: Request.GetResourceRequest): Promise<Result.GetResourceResult>;
     describeEvents(request: Request.DescribeEventsRequest): Promise<Result.DescribeEventsResult>;

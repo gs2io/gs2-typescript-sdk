@@ -10,6 +10,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     queryAccessLog(request: Request.QueryAccessLogRequest): Promise<Result.QueryAccessLogResult>;
     countAccessLog(request: Request.CountAccessLogRequest): Promise<Result.CountAccessLogResult>;
     queryIssueStampSheetLog(request: Request.QueryIssueStampSheetLogRequest): Promise<Result.QueryIssueStampSheetLogResult>;

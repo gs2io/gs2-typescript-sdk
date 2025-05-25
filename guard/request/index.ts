@@ -19,6 +19,7 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import GetServiceVersionRequest from "./GetServiceVersionRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -27,4 +28,5 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    GetServiceVersionRequest,
 };

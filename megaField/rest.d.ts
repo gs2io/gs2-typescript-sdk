@@ -10,6 +10,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeAreaModels(request: Request.DescribeAreaModelsRequest): Promise<Result.DescribeAreaModelsResult>;
     getAreaModel(request: Request.GetAreaModelRequest): Promise<Result.GetAreaModelResult>;
     describeAreaModelMasters(request: Request.DescribeAreaModelMastersRequest): Promise<Result.DescribeAreaModelMastersResult>;

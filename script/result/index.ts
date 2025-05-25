@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DescribeScriptsResult from "./DescribeScriptsResult"
 import CreateScriptResult from "./CreateScriptResult"
 import CreateScriptFromGitHubResult from "./CreateScriptFromGitHubResult"
@@ -37,6 +38,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     DescribeScriptsResult,
     CreateScriptResult,
     CreateScriptFromGitHubResult,

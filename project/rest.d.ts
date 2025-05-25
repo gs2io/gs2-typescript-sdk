@@ -14,6 +14,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult>;
     disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult>;
     deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeProjects(request: Request.DescribeProjectsRequest): Promise<Result.DescribeProjectsResult>;
     createProject(request: Request.CreateProjectRequest): Promise<Result.CreateProjectResult>;
     getProject(request: Request.GetProjectRequest): Promise<Result.GetProjectResult>;

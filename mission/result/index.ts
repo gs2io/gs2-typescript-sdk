@@ -49,6 +49,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
 import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
 import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
@@ -129,6 +130,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     DumpUserDataByUserIdResult,
     CheckDumpUserDataByUserIdResult,
     CleanUserDataByUserIdResult,

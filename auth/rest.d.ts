@@ -8,4 +8,5 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
     loginBySignature(request: Request.LoginBySignatureRequest): Promise<Result.LoginBySignatureResult>;
     federation(request: Request.FederationRequest): Promise<Result.FederationResult>;
     issueTimeOffsetTokenByUserId(request: Request.IssueTimeOffsetTokenByUserIdRequest): Promise<Result.IssueTimeOffsetTokenByUserIdResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
 }

@@ -66,6 +66,31 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetServiceVersionResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public getDistribution(request: Request.GetDistributionRequest): Promise<Result.GetDistributionResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
             .replace('{service}', 'watch')

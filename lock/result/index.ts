@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import LockResult from "./LockResult"
 import LockByUserIdResult from "./LockByUserIdResult"
 import UnlockResult from "./UnlockResult"
@@ -34,6 +35,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     LockResult,
     LockByUserIdResult,
     UnlockResult,

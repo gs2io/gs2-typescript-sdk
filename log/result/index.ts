@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import QueryAccessLogResult from "./QueryAccessLogResult"
 import CountAccessLogResult from "./CountAccessLogResult"
 import QueryIssueStampSheetLogResult from "./QueryIssueStampSheetLogResult"
@@ -43,6 +44,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     QueryAccessLogResult,
     CountAccessLogResult,
     QueryIssueStampSheetLogResult,

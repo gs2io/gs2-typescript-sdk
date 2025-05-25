@@ -19,6 +19,7 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import GetServiceVersionRequest from "./GetServiceVersionRequest"
 import DescribeDistributorModelMastersRequest from "./DescribeDistributorModelMastersRequest"
 import CreateDistributorModelMasterRequest from "./CreateDistributorModelMasterRequest"
 import GetDistributorModelMasterRequest from "./GetDistributorModelMasterRequest"
@@ -68,6 +69,7 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    GetServiceVersionRequest,
     DescribeDistributorModelMastersRequest,
     CreateDistributorModelMasterRequest,
     GetDistributorModelMasterRequest,

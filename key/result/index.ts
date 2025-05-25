@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DescribeKeysResult from "./DescribeKeysResult"
 import CreateKeyResult from "./CreateKeyResult"
 import UpdateKeyResult from "./UpdateKeyResult"
@@ -39,6 +40,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     DescribeKeysResult,
     CreateKeyResult,
     UpdateKeyResult,

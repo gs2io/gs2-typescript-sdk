@@ -30,6 +30,7 @@ import DeleteStackRequest from "./DeleteStackRequest"
 import ForceDeleteStackRequest from "./ForceDeleteStackRequest"
 import DeleteStackResourcesRequest from "./DeleteStackResourcesRequest"
 import DeleteStackEntityRequest from "./DeleteStackEntityRequest"
+import GetServiceVersionRequest from "./GetServiceVersionRequest"
 import DescribeResourcesRequest from "./DescribeResourcesRequest"
 import GetResourceRequest from "./GetResourceRequest"
 import DescribeEventsRequest from "./DescribeEventsRequest"
@@ -55,6 +56,7 @@ export {
     ForceDeleteStackRequest,
     DeleteStackResourcesRequest,
     DeleteStackEntityRequest,
+    GetServiceVersionRequest,
     DescribeResourcesRequest,
     GetResourceRequest,
     DescribeEventsRequest,

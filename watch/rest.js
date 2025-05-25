@@ -60,6 +60,27 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2WatchRestClient.prototype.getServiceVersion = function (request) {
+        var _a;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetServiceVersionResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     Gs2WatchRestClient.prototype.getDistribution = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')

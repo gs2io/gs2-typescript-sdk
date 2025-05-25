@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DescribeAreaModelsResult from "./DescribeAreaModelsResult"
 import GetAreaModelResult from "./GetAreaModelResult"
 import DescribeAreaModelMastersResult from "./DescribeAreaModelMastersResult"
@@ -54,6 +55,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    GetServiceVersionResult,
     DescribeAreaModelsResult,
     GetAreaModelResult,
     DescribeAreaModelMastersResult,

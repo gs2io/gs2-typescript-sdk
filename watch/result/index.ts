@@ -14,6 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 import GetChartResult from "./GetChartResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import GetDistributionResult from "./GetDistributionResult"
 import GetCumulativeResult from "./GetCumulativeResult"
 import DescribeBillingActivitiesResult from "./DescribeBillingActivitiesResult"
@@ -93,6 +94,7 @@ import GetStaminaNamespaceMetricsResult from "./GetStaminaNamespaceMetricsResult
 
 export {
     GetChartResult,
+    GetServiceVersionResult,
     GetDistributionResult,
     GetCumulativeResult,
     DescribeBillingActivitiesResult,

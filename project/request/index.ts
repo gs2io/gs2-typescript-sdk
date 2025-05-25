@@ -23,6 +23,7 @@ import EnableMfaRequest from "./EnableMfaRequest"
 import ChallengeMfaRequest from "./ChallengeMfaRequest"
 import DisableMfaRequest from "./DisableMfaRequest"
 import DeleteAccountRequest from "./DeleteAccountRequest"
+import GetServiceVersionRequest from "./GetServiceVersionRequest"
 import DescribeProjectsRequest from "./DescribeProjectsRequest"
 import CreateProjectRequest from "./CreateProjectRequest"
 import GetProjectRequest from "./GetProjectRequest"
@@ -68,6 +69,7 @@ export {
     ChallengeMfaRequest,
     DisableMfaRequest,
     DeleteAccountRequest,
+    GetServiceVersionRequest,
     DescribeProjectsRequest,
     CreateProjectRequest,
     GetProjectRequest,

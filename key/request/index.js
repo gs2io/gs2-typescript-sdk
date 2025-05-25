@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteGitHubApiKeyRequest = exports.GetGitHubApiKeyRequest = exports.UpdateGitHubApiKeyRequest = exports.CreateGitHubApiKeyRequest = exports.DescribeGitHubApiKeysRequest = exports.DecryptRequest = exports.EncryptRequest = exports.DeleteKeyRequest = exports.GetKeyRequest = exports.UpdateKeyRequest = exports.CreateKeyRequest = exports.DescribeKeysRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteGitHubApiKeyRequest = exports.GetGitHubApiKeyRequest = exports.UpdateGitHubApiKeyRequest = exports.CreateGitHubApiKeyRequest = exports.DescribeGitHubApiKeysRequest = exports.DecryptRequest = exports.EncryptRequest = exports.DeleteKeyRequest = exports.GetKeyRequest = exports.UpdateKeyRequest = exports.CreateKeyRequest = exports.DescribeKeysRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var GetServiceVersionRequest_1 = tslib_1.__importDefault(require("./GetServiceVersionRequest"));
+exports.GetServiceVersionRequest = GetServiceVersionRequest_1.default;
 var DescribeKeysRequest_1 = tslib_1.__importDefault(require("./DescribeKeysRequest"));
 exports.DescribeKeysRequest = DescribeKeysRequest_1.default;
 var CreateKeyRequest_1 = tslib_1.__importDefault(require("./CreateKeyRequest"));

@@ -10,6 +10,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeKeys(request: Request.DescribeKeysRequest): Promise<Result.DescribeKeysResult>;
     createKey(request: Request.CreateKeyRequest): Promise<Result.CreateKeyResult>;
     updateKey(request: Request.UpdateKeyRequest): Promise<Result.UpdateKeyResult>;

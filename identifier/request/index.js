@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginByUserRequest = exports.LoginRequest = exports.DetachSecurityPolicyRequest = exports.AttachSecurityPolicyRequest = exports.GetHasSecurityPolicyRequest = exports.DeletePasswordRequest = exports.DisableMfaRequest = exports.ChallengeMfaRequest = exports.EnableMfaRequest = exports.GetPasswordRequest = exports.CreatePasswordRequest = exports.DetachGuardRequest = exports.AttachGuardRequest = exports.DescribeAttachedGuardsRequest = exports.DeleteIdentifierRequest = exports.GetIdentifierRequest = exports.CreateIdentifierRequest = exports.DescribeIdentifiersRequest = exports.DeleteSecurityPolicyRequest = exports.GetSecurityPolicyRequest = exports.UpdateSecurityPolicyRequest = exports.CreateSecurityPolicyRequest = exports.DescribeCommonSecurityPoliciesRequest = exports.DescribeSecurityPoliciesRequest = exports.DeleteUserRequest = exports.GetUserRequest = exports.UpdateUserRequest = exports.CreateUserRequest = exports.DescribeUsersRequest = void 0;
+exports.LoginByUserRequest = exports.LoginRequest = exports.DetachSecurityPolicyRequest = exports.AttachSecurityPolicyRequest = exports.GetHasSecurityPolicyRequest = exports.DeletePasswordRequest = exports.DisableMfaRequest = exports.ChallengeMfaRequest = exports.EnableMfaRequest = exports.GetPasswordRequest = exports.CreatePasswordRequest = exports.GetServiceVersionRequest = exports.DetachGuardRequest = exports.AttachGuardRequest = exports.DescribeAttachedGuardsRequest = exports.DeleteIdentifierRequest = exports.GetIdentifierRequest = exports.CreateIdentifierRequest = exports.DescribeIdentifiersRequest = exports.DeleteSecurityPolicyRequest = exports.GetSecurityPolicyRequest = exports.UpdateSecurityPolicyRequest = exports.CreateSecurityPolicyRequest = exports.DescribeCommonSecurityPoliciesRequest = exports.DescribeSecurityPoliciesRequest = exports.DeleteUserRequest = exports.GetUserRequest = exports.UpdateUserRequest = exports.CreateUserRequest = exports.DescribeUsersRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,8 @@ var AttachGuardRequest_1 = tslib_1.__importDefault(require("./AttachGuardRequest
 exports.AttachGuardRequest = AttachGuardRequest_1.default;
 var DetachGuardRequest_1 = tslib_1.__importDefault(require("./DetachGuardRequest"));
 exports.DetachGuardRequest = DetachGuardRequest_1.default;
+var GetServiceVersionRequest_1 = tslib_1.__importDefault(require("./GetServiceVersionRequest"));
+exports.GetServiceVersionRequest = GetServiceVersionRequest_1.default;
 var CreatePasswordRequest_1 = tslib_1.__importDefault(require("./CreatePasswordRequest"));
 exports.CreatePasswordRequest = CreatePasswordRequest_1.default;
 var GetPasswordRequest_1 = tslib_1.__importDefault(require("./GetPasswordRequest"));

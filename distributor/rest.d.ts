@@ -10,6 +10,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeDistributorModelMasters(request: Request.DescribeDistributorModelMastersRequest): Promise<Result.DescribeDistributorModelMastersResult>;
     createDistributorModelMaster(request: Request.CreateDistributorModelMasterRequest): Promise<Result.CreateDistributorModelMasterResult>;
     getDistributorModelMaster(request: Request.GetDistributorModelMasterRequest): Promise<Result.GetDistributorModelMasterResult>;

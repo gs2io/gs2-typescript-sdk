@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteMutexByUserIdRequest = exports.GetMutexByUserIdRequest = exports.GetMutexRequest = exports.UnlockByUserIdRequest = exports.UnlockRequest = exports.LockByUserIdRequest = exports.LockRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteMutexByUserIdRequest = exports.GetMutexByUserIdRequest = exports.GetMutexRequest = exports.UnlockByUserIdRequest = exports.UnlockRequest = exports.LockByUserIdRequest = exports.LockRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var GetServiceVersionRequest_1 = tslib_1.__importDefault(require("./GetServiceVersionRequest"));
+exports.GetServiceVersionRequest = GetServiceVersionRequest_1.default;
 var LockRequest_1 = tslib_1.__importDefault(require("./LockRequest"));
 exports.LockRequest = LockRequest_1.default;
 var LockByUserIdRequest_1 = tslib_1.__importDefault(require("./LockByUserIdRequest"));

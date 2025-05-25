@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InvokeByStampSheetRequest = exports.DebugInvokeRequest = exports.InvokeScriptRequest = exports.DeleteScriptRequest = exports.UpdateScriptFromGitHubRequest = exports.UpdateScriptRequest = exports.GetScriptRequest = exports.CreateScriptFromGitHubRequest = exports.CreateScriptRequest = exports.DescribeScriptsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.InvokeByStampSheetRequest = exports.DebugInvokeRequest = exports.InvokeScriptRequest = exports.DeleteScriptRequest = exports.UpdateScriptFromGitHubRequest = exports.UpdateScriptRequest = exports.GetScriptRequest = exports.CreateScriptFromGitHubRequest = exports.CreateScriptRequest = exports.DescribeScriptsRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var GetServiceVersionRequest_1 = tslib_1.__importDefault(require("./GetServiceVersionRequest"));
+exports.GetServiceVersionRequest = GetServiceVersionRequest_1.default;
 var DescribeScriptsRequest_1 = tslib_1.__importDefault(require("./DescribeScriptsRequest"));
 exports.DescribeScriptsRequest = DescribeScriptsRequest_1.default;
 var CreateScriptRequest_1 = tslib_1.__importDefault(require("./CreateScriptRequest"));

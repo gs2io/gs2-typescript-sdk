@@ -23,6 +23,7 @@ import EnableMfaResult from "./EnableMfaResult"
 import ChallengeMfaResult from "./ChallengeMfaResult"
 import DisableMfaResult from "./DisableMfaResult"
 import DeleteAccountResult from "./DeleteAccountResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DescribeProjectsResult from "./DescribeProjectsResult"
 import CreateProjectResult from "./CreateProjectResult"
 import GetProjectResult from "./GetProjectResult"
@@ -68,6 +69,7 @@ export {
     ChallengeMfaResult,
     DisableMfaResult,
     DeleteAccountResult,
+    GetServiceVersionResult,
     DescribeProjectsResult,
     CreateProjectResult,
     GetProjectResult,

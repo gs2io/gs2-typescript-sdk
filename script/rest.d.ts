@@ -10,6 +10,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
     describeScripts(request: Request.DescribeScriptsRequest): Promise<Result.DescribeScriptsResult>;
     createScript(request: Request.CreateScriptRequest): Promise<Result.CreateScriptResult>;
     createScriptFromGitHub(request: Request.CreateScriptFromGitHubRequest): Promise<Result.CreateScriptFromGitHubResult>;

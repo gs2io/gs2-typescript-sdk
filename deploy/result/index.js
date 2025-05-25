@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOutputResult = exports.DescribeOutputsResult = exports.GetEventResult = exports.DescribeEventsResult = exports.GetResourceResult = exports.DescribeResourcesResult = exports.DeleteStackEntityResult = exports.DeleteStackResourcesResult = exports.ForceDeleteStackResult = exports.DeleteStackResult = exports.UpdateStackFromGitHubResult = exports.ChangeSetResult = exports.PreChangeSetResult = exports.UpdateStackResult = exports.PreUpdateStackResult = exports.GetStackResult = exports.GetStackStatusResult = exports.ValidateResult = exports.PreValidateResult = exports.CreateStackFromGitHubResult = exports.CreateStackResult = exports.PreCreateStackResult = exports.DescribeStacksResult = void 0;
+exports.GetOutputResult = exports.DescribeOutputsResult = exports.GetEventResult = exports.DescribeEventsResult = exports.GetResourceResult = exports.DescribeResourcesResult = exports.GetServiceVersionResult = exports.DeleteStackEntityResult = exports.DeleteStackResourcesResult = exports.ForceDeleteStackResult = exports.DeleteStackResult = exports.UpdateStackFromGitHubResult = exports.ChangeSetResult = exports.PreChangeSetResult = exports.UpdateStackResult = exports.PreUpdateStackResult = exports.GetStackResult = exports.GetStackStatusResult = exports.ValidateResult = exports.PreValidateResult = exports.CreateStackFromGitHubResult = exports.CreateStackResult = exports.PreCreateStackResult = exports.DescribeStacksResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -51,6 +51,8 @@ var DeleteStackResourcesResult_1 = tslib_1.__importDefault(require("./DeleteStac
 exports.DeleteStackResourcesResult = DeleteStackResourcesResult_1.default;
 var DeleteStackEntityResult_1 = tslib_1.__importDefault(require("./DeleteStackEntityResult"));
 exports.DeleteStackEntityResult = DeleteStackEntityResult_1.default;
+var GetServiceVersionResult_1 = tslib_1.__importDefault(require("./GetServiceVersionResult"));
+exports.GetServiceVersionResult = GetServiceVersionResult_1.default;
 var DescribeResourcesResult_1 = tslib_1.__importDefault(require("./DescribeResourcesResult"));
 exports.DescribeResourcesResult = DescribeResourcesResult_1.default;
 var GetResourceResult_1 = tslib_1.__importDefault(require("./GetResourceResult"));

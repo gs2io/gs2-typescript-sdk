@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetServiceVersionResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,4 +29,6 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
+var GetServiceVersionResult_1 = tslib_1.__importDefault(require("./GetServiceVersionResult"));
+exports.GetServiceVersionResult = GetServiceVersionResult_1.default;
 //# sourceMappingURL=index.js.map

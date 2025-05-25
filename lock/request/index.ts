@@ -19,6 +19,7 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import GetServiceVersionRequest from "./GetServiceVersionRequest"
 import LockRequest from "./LockRequest"
 import LockByUserIdRequest from "./LockByUserIdRequest"
 import UnlockRequest from "./UnlockRequest"
@@ -34,6 +35,7 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    GetServiceVersionRequest,
     LockRequest,
     LockByUserIdRequest,
     UnlockRequest,

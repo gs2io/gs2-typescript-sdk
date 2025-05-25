@@ -30,6 +30,7 @@ import DeleteStackResult from "./DeleteStackResult"
 import ForceDeleteStackResult from "./ForceDeleteStackResult"
 import DeleteStackResourcesResult from "./DeleteStackResourcesResult"
 import DeleteStackEntityResult from "./DeleteStackEntityResult"
+import GetServiceVersionResult from "./GetServiceVersionResult"
 import DescribeResourcesResult from "./DescribeResourcesResult"
 import GetResourceResult from "./GetResourceResult"
 import DescribeEventsResult from "./DescribeEventsResult"
@@ -55,6 +56,7 @@ export {
     ForceDeleteStackResult,
     DeleteStackResourcesResult,
     DeleteStackEntityResult,
+    GetServiceVersionResult,
     DescribeResourcesResult,
     GetResourceResult,
     DescribeEventsResult,
