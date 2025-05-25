@@ -29,6 +29,7 @@ import * as enhance from './enhance';
 import * as exchange from './exchange';
 import * as experience from './experience';
 import * as formation from './formation';
+import * as freeze from './freeze';
 import * as friend from './friend';
 import * as gateway from './gateway';
 import * as grade from './grade';
@@ -83,6 +84,7 @@ export {
   exchange,
   experience,
   formation,
+  freeze,
   friend,
   gateway,
   grade,

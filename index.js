@@ -15,8 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking2 = exports.ranking = exports.quest = exports.project = exports.news = exports.money2 = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.guard = exports.grade = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
-exports.watch = exports.version = void 0;
+exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking2 = exports.ranking = exports.quest = exports.project = exports.news = exports.money2 = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.guard = exports.grade = exports.gateway = exports.friend = exports.freeze = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
+exports.watch = exports.version = exports.stamina = void 0;
 var tslib_1 = require("tslib");
 var account = tslib_1.__importStar(require("./account"));
 exports.account = account;
@@ -49,6 +49,8 @@ var experience = tslib_1.__importStar(require("./experience"));
 exports.experience = experience;
 var formation = tslib_1.__importStar(require("./formation"));
 exports.formation = formation;
+var freeze = tslib_1.__importStar(require("./freeze"));
+exports.freeze = freeze;
 var friend = tslib_1.__importStar(require("./friend"));
 exports.friend = friend;
 var gateway = tslib_1.__importStar(require("./gateway"));
