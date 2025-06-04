@@ -42,6 +42,8 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     unfollowByUserId(request: Request.UnfollowByUserIdRequest): Promise<Result.UnfollowByUserIdResult>;
     getFriend(request: Request.GetFriendRequest): Promise<Result.GetFriendResult>;
     getFriendByUserId(request: Request.GetFriendByUserIdRequest): Promise<Result.GetFriendByUserIdResult>;
+    addFriend(request: Request.AddFriendRequest): Promise<Result.AddFriendResult>;
+    addFriendByUserId(request: Request.AddFriendByUserIdRequest): Promise<Result.AddFriendByUserIdResult>;
     deleteFriend(request: Request.DeleteFriendRequest): Promise<Result.DeleteFriendResult>;
     deleteFriendByUserId(request: Request.DeleteFriendByUserIdRequest): Promise<Result.DeleteFriendByUserIdResult>;
     describeSendRequests(request: Request.DescribeSendRequestsRequest): Promise<Result.DescribeSendRequestsResult>;

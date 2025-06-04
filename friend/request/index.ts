@@ -51,6 +51,8 @@ import UnfollowRequest from "./UnfollowRequest"
 import UnfollowByUserIdRequest from "./UnfollowByUserIdRequest"
 import GetFriendRequest from "./GetFriendRequest"
 import GetFriendByUserIdRequest from "./GetFriendByUserIdRequest"
+import AddFriendRequest from "./AddFriendRequest"
+import AddFriendByUserIdRequest from "./AddFriendByUserIdRequest"
 import DeleteFriendRequest from "./DeleteFriendRequest"
 import DeleteFriendByUserIdRequest from "./DeleteFriendByUserIdRequest"
 import DescribeSendRequestsRequest from "./DescribeSendRequestsRequest"
@@ -110,6 +112,8 @@ export {
     UnfollowByUserIdRequest,
     GetFriendRequest,
     GetFriendByUserIdRequest,
+    AddFriendRequest,
+    AddFriendByUserIdRequest,
     DeleteFriendRequest,
     DeleteFriendByUserIdRequest,
     DescribeSendRequestsRequest,
