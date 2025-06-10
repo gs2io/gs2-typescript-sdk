@@ -15,6 +15,7 @@ export default class Namespace implements IModel {
     private joinGuildScript;
     private leaveGuildScript;
     private changeRoleScript;
+    private deleteGuildScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -66,6 +67,9 @@ export default class Namespace implements IModel {
     getChangeRoleScript(): Gs2Guild.ScriptSetting | null;
     setChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting | null): this;
     withChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting | null): this;
+    getDeleteGuildScript(): Gs2Guild.ScriptSetting | null;
+    setDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting | null): this;
+    withDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting | null): this;
     getLogSetting(): Gs2Guild.LogSetting | null;
     setLogSetting(logSetting: Gs2Guild.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Guild.LogSetting | null): this;

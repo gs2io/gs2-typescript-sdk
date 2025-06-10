@@ -16,6 +16,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private joinGuildScript;
     private leaveGuildScript;
     private changeRoleScript;
+    private deleteGuildScript;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -62,6 +63,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getChangeRoleScript(): Gs2Guild.ScriptSetting | null;
     setChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting | null): this;
     withChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting | null): this;
+    getDeleteGuildScript(): Gs2Guild.ScriptSetting | null;
+    setDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting | null): this;
+    withDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting | null): this;
     getLogSetting(): Gs2Guild.LogSetting | null;
     setLogSetting(logSetting: Gs2Guild.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Guild.LogSetting | null): this;

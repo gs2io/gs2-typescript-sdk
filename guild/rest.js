@@ -49,7 +49,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
@@ -72,7 +72,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'joinGuildScript': (_w = (_v = request.getJoinGuildScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
             'leaveGuildScript': (_y = (_x = request.getLeaveGuildScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
             'changeRoleScript': (_0 = (_z = request.getChangeRoleScript()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
-            'logSetting': (_2 = (_1 = request.getLogSetting()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
+            'deleteGuildScript': (_2 = (_1 = request.getDeleteGuildScript()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
+            'logSetting': (_4 = (_3 = request.getLogSetting()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -132,7 +133,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -155,7 +156,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'joinGuildScript': (_x = (_w = request.getJoinGuildScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
             'leaveGuildScript': (_z = (_y = request.getLeaveGuildScript()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
             'changeRoleScript': (_1 = (_0 = request.getChangeRoleScript()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
-            'logSetting': (_3 = (_2 = request.getLogSetting()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
+            'deleteGuildScript': (_3 = (_2 = request.getDeleteGuildScript()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
+            'logSetting': (_5 = (_4 = request.getLogSetting()) === null || _4 === void 0 ? void 0 : _4.toDict()) !== null && _5 !== void 0 ? _5 : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

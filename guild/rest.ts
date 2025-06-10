@@ -78,6 +78,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'joinGuildScript': request.getJoinGuildScript()?.toDict() ?? null,
             'leaveGuildScript': request.getLeaveGuildScript()?.toDict() ?? null,
             'changeRoleScript': request.getChangeRoleScript()?.toDict() ?? null,
+            'deleteGuildScript': request.getDeleteGuildScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -173,6 +174,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'joinGuildScript': request.getJoinGuildScript()?.toDict() ?? null,
             'leaveGuildScript': request.getLeaveGuildScript()?.toDict() ?? null,
             'changeRoleScript': request.getChangeRoleScript()?.toDict() ?? null,
+            'deleteGuildScript': request.getDeleteGuildScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

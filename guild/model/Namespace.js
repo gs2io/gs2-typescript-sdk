@@ -34,6 +34,7 @@ var Namespace = /** @class */ (function () {
         this.joinGuildScript = null;
         this.leaveGuildScript = null;
         this.changeRoleScript = null;
+        this.deleteGuildScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -241,6 +242,17 @@ var Namespace = /** @class */ (function () {
         this.changeRoleScript = changeRoleScript;
         return this;
     };
+    Namespace.prototype.getDeleteGuildScript = function () {
+        return this.deleteGuildScript;
+    };
+    Namespace.prototype.setDeleteGuildScript = function (deleteGuildScript) {
+        this.deleteGuildScript = deleteGuildScript;
+        return this;
+    };
+    Namespace.prototype.withDeleteGuildScript = function (deleteGuildScript) {
+        this.deleteGuildScript = deleteGuildScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -304,13 +316,14 @@ var Namespace = /** @class */ (function () {
             .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
             .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
+            .withDeleteGuildScript(Gs2Guild.ScriptSetting.fromDict(data["deleteGuildScript"]))
             .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -326,7 +339,8 @@ var Namespace = /** @class */ (function () {
             "joinGuildScript": (_j = this.getJoinGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "leaveGuildScript": (_k = this.getLeaveGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
             "changeRoleScript": (_l = this.getChangeRoleScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "logSetting": (_m = this.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "deleteGuildScript": (_m = this.getDeleteGuildScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "logSetting": (_o = this.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -37,6 +37,7 @@ export default class Namespace implements IModel {
     private joinGuildScript: Gs2Guild.ScriptSetting|null = null;
     private leaveGuildScript: Gs2Guild.ScriptSetting|null = null;
     private changeRoleScript: Gs2Guild.ScriptSetting|null = null;
+    private deleteGuildScript: Gs2Guild.ScriptSetting|null = null;
     private logSetting: Gs2Guild.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -255,6 +256,17 @@ export default class Namespace implements IModel {
         this.changeRoleScript = changeRoleScript;
         return this;
     }
+    public getDeleteGuildScript(): Gs2Guild.ScriptSetting|null {
+        return this.deleteGuildScript;
+    }
+    public setDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting|null) {
+        this.deleteGuildScript = deleteGuildScript;
+        return this;
+    }
+    public withDeleteGuildScript(deleteGuildScript: Gs2Guild.ScriptSetting|null): this {
+        this.deleteGuildScript = deleteGuildScript;
+        return this;
+    }
     public getLogSetting(): Gs2Guild.LogSetting|null {
         return this.logSetting;
     }
@@ -319,6 +331,7 @@ export default class Namespace implements IModel {
             .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
             .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
+            .withDeleteGuildScript(Gs2Guild.ScriptSetting.fromDict(data["deleteGuildScript"]))
             .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -341,6 +354,7 @@ export default class Namespace implements IModel {
             "joinGuildScript": this.getJoinGuildScript()?.toDict(),
             "leaveGuildScript": this.getLeaveGuildScript()?.toDict(),
             "changeRoleScript": this.getChangeRoleScript()?.toDict(),
+            "deleteGuildScript": this.getDeleteGuildScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
