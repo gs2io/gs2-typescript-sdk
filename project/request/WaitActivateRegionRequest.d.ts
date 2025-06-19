@@ -2,6 +2,7 @@ import IRequest from '../../core/interface/IRequest';
 export default class WaitActivateRegionRequest implements IRequest {
     private requestId;
     private contextStack;
+    private ownerId;
     private projectName;
     private regionName;
     getRequestId(): string | null;
@@ -10,6 +11,9 @@ export default class WaitActivateRegionRequest implements IRequest {
     getContextStack(): string | null;
     setContextStack(contextStack: string | null): this;
     withContextStack(contextStack: string | null): this;
+    getOwnerId(): string | null;
+    setOwnerId(ownerId: string | null): this;
+    withOwnerId(ownerId: string | null): this;
     getProjectName(): string | null;
     setProjectName(projectName: string | null): this;
     withProjectName(projectName: string | null): this;

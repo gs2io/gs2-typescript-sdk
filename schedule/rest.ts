@@ -779,6 +779,45 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public extendTriggerByUserId(request: Request.ExtendTriggerByUserIdRequest): Promise<Result.ExtendTriggerByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}/extend')
+            .replace('{service}', 'schedule')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{triggerName}', String(request.getTriggerName() ?? 'null') === "" ? "null" : String(request.getTriggerName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'extendSeconds': request.getExtendSeconds() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ExtendTriggerByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public triggerByStampSheet(request: Request.TriggerByStampSheetRequest): Promise<Result.TriggerByStampSheetResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/trigger')
             .replace('{service}', 'schedule')
@@ -801,6 +840,37 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.TriggerByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public extendTriggerByStampSheet(request: Request.ExtendTriggerByStampSheetRequest): Promise<Result.ExtendTriggerByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/trigger/extend')
+            .replace('{service}', 'schedule')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ExtendTriggerByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

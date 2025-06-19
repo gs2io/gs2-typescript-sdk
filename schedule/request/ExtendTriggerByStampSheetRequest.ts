@@ -16,15 +16,14 @@ permissions and limitations under the License.
 
 import IRequest from '../../core/interface/IRequest';
 
-import * as Gs2Project from '../model'
+import * as Gs2Schedule from '../model'
 
-export default class WaitActivateRegionRequest implements IRequest {
+export default class ExtendTriggerByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
-    private ownerId: string|null = null;
-    private projectName: string|null = null;
-    private regionName: string|null = null;
+    private stampSheet: string|null = null;
+    private keyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -53,52 +52,39 @@ export default class WaitActivateRegionRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-    public getOwnerId(): string|null {
-        return this.ownerId;
+    public getStampSheet(): string|null {
+        return this.stampSheet;
     }
-    public setOwnerId(ownerId: string|null) {
-        this.ownerId = ownerId;
+    public setStampSheet(stampSheet: string|null) {
+        this.stampSheet = stampSheet;
         return this;
     }
-    public withOwnerId(ownerId: string|null): this {
-        this.ownerId = ownerId;
+    public withStampSheet(stampSheet: string|null): this {
+        this.stampSheet = stampSheet;
         return this;
     }
-    public getProjectName(): string|null {
-        return this.projectName;
+    public getKeyId(): string|null {
+        return this.keyId;
     }
-    public setProjectName(projectName: string|null) {
-        this.projectName = projectName;
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
         return this;
     }
-    public withProjectName(projectName: string|null): this {
-        this.projectName = projectName;
-        return this;
-    }
-    public getRegionName(): string|null {
-        return this.regionName;
-    }
-    public setRegionName(regionName: string|null) {
-        this.regionName = regionName;
-        return this;
-    }
-    public withRegionName(regionName: string|null): this {
-        this.regionName = regionName;
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): WaitActivateRegionRequest {
-        return new WaitActivateRegionRequest()
-            .withOwnerId(data["ownerId"])
-            .withProjectName(data["projectName"])
-            .withRegionName(data["regionName"]);
+    public static fromDict(data: {[key: string]: any}): ExtendTriggerByStampSheetRequest {
+        return new ExtendTriggerByStampSheetRequest()
+            .withStampSheet(data["stampSheet"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "ownerId": this.getOwnerId(),
-            "projectName": this.getProjectName(),
-            "regionName": this.getRegionName(),
+            "stampSheet": this.getStampSheet(),
+            "keyId": this.getKeyId(),
         };
     }
 }

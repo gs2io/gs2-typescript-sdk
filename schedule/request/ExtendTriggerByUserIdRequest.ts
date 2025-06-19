@@ -16,16 +16,16 @@ permissions and limitations under the License.
 
 import IRequest from '../../core/interface/IRequest';
 
-import * as Gs2Project from '../model'
+import * as Gs2Schedule from '../model'
 
-export default class WaitCleanUserDataRequest implements IRequest {
+export default class ExtendTriggerByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
-    private ownerId: string|null = null;
-    private transactionId: string|null = null;
+    private namespaceName: string|null = null;
+    private triggerName: string|null = null;
     private userId: string|null = null;
-    private microserviceName: string|null = null;
+    private extendSeconds: number|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -56,26 +56,26 @@ export default class WaitCleanUserDataRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-    public getOwnerId(): string|null {
-        return this.ownerId;
+    public getNamespaceName(): string|null {
+        return this.namespaceName;
     }
-    public setOwnerId(ownerId: string|null) {
-        this.ownerId = ownerId;
+    public setNamespaceName(namespaceName: string|null) {
+        this.namespaceName = namespaceName;
         return this;
     }
-    public withOwnerId(ownerId: string|null): this {
-        this.ownerId = ownerId;
+    public withNamespaceName(namespaceName: string|null): this {
+        this.namespaceName = namespaceName;
         return this;
     }
-    public getTransactionId(): string|null {
-        return this.transactionId;
+    public getTriggerName(): string|null {
+        return this.triggerName;
     }
-    public setTransactionId(transactionId: string|null) {
-        this.transactionId = transactionId;
+    public setTriggerName(triggerName: string|null) {
+        this.triggerName = triggerName;
         return this;
     }
-    public withTransactionId(transactionId: string|null): this {
-        this.transactionId = transactionId;
+    public withTriggerName(triggerName: string|null): this {
+        this.triggerName = triggerName;
         return this;
     }
     public getUserId(): string|null {
@@ -89,15 +89,15 @@ export default class WaitCleanUserDataRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getMicroserviceName(): string|null {
-        return this.microserviceName;
+    public getExtendSeconds(): number|null {
+        return this.extendSeconds;
     }
-    public setMicroserviceName(microserviceName: string|null) {
-        this.microserviceName = microserviceName;
+    public setExtendSeconds(extendSeconds: number|null) {
+        this.extendSeconds = extendSeconds;
         return this;
     }
-    public withMicroserviceName(microserviceName: string|null): this {
-        this.microserviceName = microserviceName;
+    public withExtendSeconds(extendSeconds: number|null): this {
+        this.extendSeconds = extendSeconds;
         return this;
     }
     public getTimeOffsetToken(): string|null {
@@ -126,21 +126,21 @@ export default class WaitCleanUserDataRequest implements IRequest {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): WaitCleanUserDataRequest {
-        return new WaitCleanUserDataRequest()
-            .withOwnerId(data["ownerId"])
-            .withTransactionId(data["transactionId"])
+    public static fromDict(data: {[key: string]: any}): ExtendTriggerByUserIdRequest {
+        return new ExtendTriggerByUserIdRequest()
+            .withNamespaceName(data["namespaceName"])
+            .withTriggerName(data["triggerName"])
             .withUserId(data["userId"])
-            .withMicroserviceName(data["microserviceName"])
+            .withExtendSeconds(data["extendSeconds"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "ownerId": this.getOwnerId(),
-            "transactionId": this.getTransactionId(),
+            "namespaceName": this.getNamespaceName(),
+            "triggerName": this.getTriggerName(),
             "userId": this.getUserId(),
-            "microserviceName": this.getMicroserviceName(),
+            "extendSeconds": this.getExtendSeconds(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

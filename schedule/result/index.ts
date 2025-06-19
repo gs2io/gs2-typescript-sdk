@@ -37,7 +37,9 @@ import DescribeTriggersByUserIdResult from "./DescribeTriggersByUserIdResult"
 import GetTriggerResult from "./GetTriggerResult"
 import GetTriggerByUserIdResult from "./GetTriggerByUserIdResult"
 import TriggerByUserIdResult from "./TriggerByUserIdResult"
+import ExtendTriggerByUserIdResult from "./ExtendTriggerByUserIdResult"
 import TriggerByStampSheetResult from "./TriggerByStampSheetResult"
+import ExtendTriggerByStampSheetResult from "./ExtendTriggerByStampSheetResult"
 import DeleteTriggerResult from "./DeleteTriggerResult"
 import DeleteTriggerByUserIdResult from "./DeleteTriggerByUserIdResult"
 import VerifyTriggerResult from "./VerifyTriggerResult"
@@ -84,7 +86,9 @@ export {
     GetTriggerResult,
     GetTriggerByUserIdResult,
     TriggerByUserIdResult,
+    ExtendTriggerByUserIdResult,
     TriggerByStampSheetResult,
+    ExtendTriggerByStampSheetResult,
     DeleteTriggerResult,
     DeleteTriggerByUserIdResult,
     VerifyTriggerResult,

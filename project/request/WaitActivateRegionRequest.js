@@ -19,6 +19,7 @@ var WaitActivateRegionRequest = /** @class */ (function () {
     function WaitActivateRegionRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.ownerId = null;
         this.projectName = null;
         this.regionName = null;
     }
@@ -42,6 +43,17 @@ var WaitActivateRegionRequest = /** @class */ (function () {
     };
     WaitActivateRegionRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
+        return this;
+    };
+    WaitActivateRegionRequest.prototype.getOwnerId = function () {
+        return this.ownerId;
+    };
+    WaitActivateRegionRequest.prototype.setOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
+        return this;
+    };
+    WaitActivateRegionRequest.prototype.withOwnerId = function (ownerId) {
+        this.ownerId = ownerId;
         return this;
     };
     WaitActivateRegionRequest.prototype.getProjectName = function () {
@@ -68,11 +80,13 @@ var WaitActivateRegionRequest = /** @class */ (function () {
     };
     WaitActivateRegionRequest.fromDict = function (data) {
         return new WaitActivateRegionRequest()
+            .withOwnerId(data["ownerId"])
             .withProjectName(data["projectName"])
             .withRegionName(data["regionName"]);
     };
     WaitActivateRegionRequest.prototype.toDict = function () {
         return {
+            "ownerId": this.getOwnerId(),
             "projectName": this.getProjectName(),
             "regionName": this.getRegionName(),
         };

@@ -1,11 +1,11 @@
 import IRequest from '../../core/interface/IRequest';
-export default class WaitImportUserDataRequest implements IRequest {
+export default class ExtendTriggerByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
-    private ownerId;
-    private transactionId;
+    private namespaceName;
+    private triggerName;
     private userId;
-    private microserviceName;
+    private extendSeconds;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -14,18 +14,18 @@ export default class WaitImportUserDataRequest implements IRequest {
     getContextStack(): string | null;
     setContextStack(contextStack: string | null): this;
     withContextStack(contextStack: string | null): this;
-    getOwnerId(): string | null;
-    setOwnerId(ownerId: string | null): this;
-    withOwnerId(ownerId: string | null): this;
-    getTransactionId(): string | null;
-    setTransactionId(transactionId: string | null): this;
-    withTransactionId(transactionId: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getTriggerName(): string | null;
+    setTriggerName(triggerName: string | null): this;
+    withTriggerName(triggerName: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getMicroserviceName(): string | null;
-    setMicroserviceName(microserviceName: string | null): this;
-    withMicroserviceName(microserviceName: string | null): this;
+    getExtendSeconds(): number | null;
+    setExtendSeconds(extendSeconds: number | null): this;
+    withExtendSeconds(extendSeconds: number | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
@@ -34,7 +34,7 @@ export default class WaitImportUserDataRequest implements IRequest {
     withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): WaitImportUserDataRequest;
+    }): ExtendTriggerByUserIdRequest;
     toDict(): {
         [key: string]: any;
     };

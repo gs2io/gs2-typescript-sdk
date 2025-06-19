@@ -28,7 +28,9 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
     getTrigger(request: Request.GetTriggerRequest): Promise<Result.GetTriggerResult>;
     getTriggerByUserId(request: Request.GetTriggerByUserIdRequest): Promise<Result.GetTriggerByUserIdResult>;
     triggerByUserId(request: Request.TriggerByUserIdRequest): Promise<Result.TriggerByUserIdResult>;
+    extendTriggerByUserId(request: Request.ExtendTriggerByUserIdRequest): Promise<Result.ExtendTriggerByUserIdResult>;
     triggerByStampSheet(request: Request.TriggerByStampSheetRequest): Promise<Result.TriggerByStampSheetResult>;
+    extendTriggerByStampSheet(request: Request.ExtendTriggerByStampSheetRequest): Promise<Result.ExtendTriggerByStampSheetResult>;
     deleteTrigger(request: Request.DeleteTriggerRequest): Promise<Result.DeleteTriggerResult>;
     deleteTriggerByUserId(request: Request.DeleteTriggerByUserIdRequest): Promise<Result.DeleteTriggerByUserIdResult>;
     verifyTrigger(request: Request.VerifyTriggerRequest): Promise<Result.VerifyTriggerResult>;

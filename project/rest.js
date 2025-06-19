@@ -511,18 +511,19 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.waitActivateRegion = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate/wait')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/region/{regionName}/activate/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{regionName}', String((_c = request.getRegionName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRegionName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{ownerId}', String((_a = request.getOwnerId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{projectName}', String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getProjectName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{regionName}', String((_e = request.getRegionName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getRegionName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -946,25 +947,26 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.waitCleanUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress/{transactionId}/wait')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{ownerId}', String((_a = request.getOwnerId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{transactionId}', String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTransactionId()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'userId': (_f = request.getUserId()) !== null && _f !== void 0 ? _f : null,
-            'microserviceName': (_g = request.getMicroserviceName()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'userId': (_h = request.getUserId()) !== null && _h !== void 0 ? _h : null,
+            'microserviceName': (_j = request.getMicroserviceName()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1057,25 +1059,26 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.waitImportUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/wait')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{ownerId}', String((_a = request.getOwnerId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{transactionId}', String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTransactionId()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'userId': (_f = request.getUserId()) !== null && _f !== void 0 ? _f : null,
-            'microserviceName': (_g = request.getMicroserviceName()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'userId': (_h = request.getUserId()) !== null && _h !== void 0 ? _h : null,
+            'microserviceName': (_j = request.getMicroserviceName()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

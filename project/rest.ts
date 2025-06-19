@@ -585,9 +585,10 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitActivateRegion(request: Request.WaitActivateRegionRequest): Promise<Result.WaitActivateRegionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate/wait')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/region/{regionName}/activate/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
+            .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
             .replace('{regionName}', String(request.getRegionName() ?? 'null') === "" ? "null" : String(request.getRegionName() ?? 'null'));
     
@@ -1088,9 +1089,10 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitCleanUserData(request: Request.WaitCleanUserDataRequest): Promise<Result.WaitCleanUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress/{transactionId}/wait')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
+            .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -1215,9 +1217,10 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitImportUserData(request: Request.WaitImportUserDataRequest): Promise<Result.WaitImportUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/wait')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
+            .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
