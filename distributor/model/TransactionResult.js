@@ -26,6 +26,7 @@ var TransactionResult = /** @class */ (function () {
         this.verifyResults = null;
         this.consumeResults = null;
         this.acquireResults = null;
+        this.hasError = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -181,6 +182,17 @@ var TransactionResult = /** @class */ (function () {
         this.acquireResults = acquireResults;
         return this;
     };
+    TransactionResult.prototype.getHasError = function () {
+        return this.hasError;
+    };
+    TransactionResult.prototype.setHasError = function (hasError) {
+        this.hasError = hasError;
+        return this;
+    };
+    TransactionResult.prototype.withHasError = function (hasError) {
+        this.hasError = hasError;
+        return this;
+    };
     TransactionResult.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -223,6 +235,7 @@ var TransactionResult = /** @class */ (function () {
             data.acquireResults.map(function (item) {
                 return Gs2Distributor.AcquireActionResult.fromDict(item);
             }) : null)
+            .withHasError(data["hasError"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -243,6 +256,7 @@ var TransactionResult = /** @class */ (function () {
                 this.getAcquireResults().map(function (item) {
                     return item.toDict();
                 }) : null,
+            "hasError": this.getHasError(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

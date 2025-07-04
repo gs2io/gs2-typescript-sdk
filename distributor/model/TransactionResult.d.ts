@@ -7,6 +7,7 @@ export default class TransactionResult implements IModel {
     private verifyResults;
     private consumeResults;
     private acquireResults;
+    private hasError;
     private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -34,6 +35,9 @@ export default class TransactionResult implements IModel {
     getAcquireResults(): Gs2Distributor.AcquireActionResult[] | null;
     setAcquireResults(acquireResults: Gs2Distributor.AcquireActionResult[] | null): this;
     withAcquireResults(acquireResults: Gs2Distributor.AcquireActionResult[] | null): this;
+    getHasError(): boolean | null;
+    setHasError(hasError: boolean | null): this;
+    withHasError(hasError: boolean | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

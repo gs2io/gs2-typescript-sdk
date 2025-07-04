@@ -29,6 +29,7 @@ export default class TransactionResult implements IModel {
     private verifyResults: Gs2Distributor.VerifyActionResult[]|null = null;
     private consumeResults: Gs2Distributor.ConsumeActionResult[]|null = null;
     private acquireResults: Gs2Distributor.AcquireActionResult[]|null = null;
+    private hasError: boolean|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
 
@@ -201,6 +202,17 @@ export default class TransactionResult implements IModel {
         this.acquireResults = acquireResults;
         return this;
     }
+    public getHasError(): boolean|null {
+        return this.hasError;
+    }
+    public setHasError(hasError: boolean|null) {
+        this.hasError = hasError;
+        return this;
+    }
+    public withHasError(hasError: boolean|null): this {
+        this.hasError = hasError;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -247,6 +259,7 @@ export default class TransactionResult implements IModel {
                     return Gs2Distributor.AcquireActionResult.fromDict(item);
                 }
             ) : null)
+            .withHasError(data["hasError"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -271,6 +284,7 @@ export default class TransactionResult implements IModel {
                     return item.toDict();
                 }
             ) : null,
+            "hasError": this.getHasError(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
