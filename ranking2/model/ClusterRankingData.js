@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:cluster:{rankingName}:ranking:cluster:{clusterName}:{season}:user:{userId}:score";
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:cluster:{rankingName}:ranking:cluster:{clusterName}:{season}:user:{scorerUserId}:score";
 var ClusterRankingData = /** @class */ (function () {
     function ClusterRankingData() {
         this.clusterRankingDataId = null;
@@ -40,7 +40,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -54,7 +54,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -68,7 +68,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -82,7 +82,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '(.*)')
             .replace('{clusterName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -96,7 +96,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '(.*)')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -110,13 +110,13 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '.*')
             .replace('{season}', '(.*)')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    ClusterRankingData.getUserId = function (grn) {
+    ClusterRankingData.getScorerUserId = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
@@ -124,7 +124,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', '.*')
             .replace('{clusterName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '(.*)'));
+            .replace('{scorerUserId}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -149,12 +149,12 @@ var ClusterRankingData = /** @class */ (function () {
         if (this.getSeason(grn) == null || this.getSeason(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+        if (this.getScorerUserId(grn) == null || this.getScorerUserId(grn) === '') {
             return false;
         }
         return true;
     };
-    ClusterRankingData.createGrn = function (region, ownerId, namespaceName, rankingName, clusterName, season, userId) {
+    ClusterRankingData.createGrn = function (region, ownerId, namespaceName, rankingName, clusterName, season, scorerUserId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
@@ -162,7 +162,7 @@ var ClusterRankingData = /** @class */ (function () {
             .replace('{rankingName}', rankingName !== null && rankingName !== void 0 ? rankingName : '')
             .replace('{clusterName}', clusterName !== null && clusterName !== void 0 ? clusterName : '')
             .replace('{season}', season !== null && season !== void 0 ? season : '')
-            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '');
+            .replace('{scorerUserId}', scorerUserId !== null && scorerUserId !== void 0 ? scorerUserId : '');
     };
     ClusterRankingData.prototype.getClusterRankingDataId = function () {
         return this.clusterRankingDataId;

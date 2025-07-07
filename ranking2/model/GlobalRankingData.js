@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}:ranking:global:{season}:user:{userId}:score";
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}:ranking:global:{season}:user:{scorerUserId}:score";
 var GlobalRankingData = /** @class */ (function () {
     function GlobalRankingData() {
         this.globalRankingDataId = null;
@@ -38,7 +38,7 @@ var GlobalRankingData = /** @class */ (function () {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -51,7 +51,7 @@ var GlobalRankingData = /** @class */ (function () {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -64,7 +64,7 @@ var GlobalRankingData = /** @class */ (function () {
             .replace('{namespaceName}', '(.*)')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -77,7 +77,7 @@ var GlobalRankingData = /** @class */ (function () {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '(.*)')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -90,20 +90,20 @@ var GlobalRankingData = /** @class */ (function () {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '(.*)')
-            .replace('{userId}', '.*'));
+            .replace('{scorerUserId}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    GlobalRankingData.getUserId = function (grn) {
+    GlobalRankingData.getScorerUserId = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '(.*)'));
+            .replace('{scorerUserId}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -125,19 +125,19 @@ var GlobalRankingData = /** @class */ (function () {
         if (this.getSeason(grn) == null || this.getSeason(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+        if (this.getScorerUserId(grn) == null || this.getScorerUserId(grn) === '') {
             return false;
         }
         return true;
     };
-    GlobalRankingData.createGrn = function (region, ownerId, namespaceName, rankingName, season, userId) {
+    GlobalRankingData.createGrn = function (region, ownerId, namespaceName, rankingName, season, scorerUserId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{rankingName}', rankingName !== null && rankingName !== void 0 ? rankingName : '')
             .replace('{season}', season !== null && season !== void 0 ? season : '')
-            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '');
+            .replace('{scorerUserId}', scorerUserId !== null && scorerUserId !== void 0 ? scorerUserId : '');
     };
     GlobalRankingData.prototype.getGlobalRankingDataId = function () {
         return this.globalRankingDataId;

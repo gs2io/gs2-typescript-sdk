@@ -19,9 +19,9 @@ export default class ClusterRankingData implements IModel {
     static getRankingName(grn: string): string | null;
     static getClusterName(grn: string): string | null;
     static getSeason(grn: string): string | null;
-    static getUserId(grn: string): string | null;
+    static getScorerUserId(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rankingName: string | null, clusterName: string | null, season: string | null, userId: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rankingName: string | null, clusterName: string | null, season: string | null, scorerUserId: string | null): string | null;
     getClusterRankingDataId(): string | null;
     setClusterRankingDataId(clusterRankingDataId: string | null): this;
     withClusterRankingDataId(clusterRankingDataId: string | null): this;

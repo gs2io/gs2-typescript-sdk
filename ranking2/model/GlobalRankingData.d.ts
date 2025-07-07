@@ -17,9 +17,9 @@ export default class GlobalRankingData implements IModel {
     static getNamespaceName(grn: string): string | null;
     static getRankingName(grn: string): string | null;
     static getSeason(grn: string): string | null;
-    static getUserId(grn: string): string | null;
+    static getScorerUserId(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rankingName: string | null, season: string | null, userId: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rankingName: string | null, season: string | null, scorerUserId: string | null): string | null;
     getGlobalRankingDataId(): string | null;
     setGlobalRankingDataId(globalRankingDataId: string | null): this;
     withGlobalRankingDataId(globalRankingDataId: string | null): this;

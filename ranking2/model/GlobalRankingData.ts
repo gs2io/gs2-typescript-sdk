@@ -17,7 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Ranking2 from '../../ranking2/model'
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}:ranking:global:{season}:user:{userId}:score";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}:ranking:global:{season}:user:{scorerUserId}:score";
 
 export default class GlobalRankingData implements IModel {
     private globalRankingDataId: string|null = null;
@@ -40,7 +40,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*')
+            .replace('{scorerUserId}', '.*')
         );
         if (match) {
             return match[1];
@@ -55,7 +55,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*')
+            .replace('{scorerUserId}', '.*')
         );
         if (match) {
             return match[1];
@@ -70,7 +70,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', '(.*)')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*')
+            .replace('{scorerUserId}', '.*')
         );
         if (match) {
             return match[1];
@@ -85,7 +85,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '(.*)')
             .replace('{season}', '.*')
-            .replace('{userId}', '.*')
+            .replace('{scorerUserId}', '.*')
         );
         if (match) {
             return match[1];
@@ -100,7 +100,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '(.*)')
-            .replace('{userId}', '.*')
+            .replace('{scorerUserId}', '.*')
         );
         if (match) {
             return match[1];
@@ -108,14 +108,14 @@ export default class GlobalRankingData implements IModel {
         return null;
     }
 
-    public static getUserId(grn: string): string|null {
+    public static getScorerUserId(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{rankingName}', '.*')
             .replace('{season}', '.*')
-            .replace('{userId}', '(.*)')
+            .replace('{scorerUserId}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -139,7 +139,7 @@ export default class GlobalRankingData implements IModel {
         if (this.getSeason(grn) == null || this.getSeason(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+        if (this.getScorerUserId(grn) == null || this.getScorerUserId(grn) === '') {
             return false;
         }
         return true;
@@ -151,7 +151,7 @@ export default class GlobalRankingData implements IModel {
         namespaceName: string|null,
         rankingName: string|null,
         season: string|null,
-        userId: string|null,
+        scorerUserId: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
@@ -159,7 +159,7 @@ export default class GlobalRankingData implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{rankingName}', rankingName ?? '')
             .replace('{season}', season ?? '')
-            .replace('{userId}', userId ?? '');
+            .replace('{scorerUserId}', scorerUserId ?? '');
     }
     public getGlobalRankingDataId(): string|null {
         return this.globalRankingDataId;
