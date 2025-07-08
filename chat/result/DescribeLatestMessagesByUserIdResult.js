@@ -20,6 +20,7 @@ var Gs2Chat = tslib_1.__importStar(require("../model"));
 var DescribeLatestMessagesByUserIdResult = /** @class */ (function () {
     function DescribeLatestMessagesByUserIdResult() {
         this.items = null;
+        this.nextPageToken = null;
     }
     DescribeLatestMessagesByUserIdResult.prototype.getItems = function () {
         return this.items;
@@ -32,12 +33,24 @@ var DescribeLatestMessagesByUserIdResult = /** @class */ (function () {
         this.items = items;
         return this;
     };
+    DescribeLatestMessagesByUserIdResult.prototype.getNextPageToken = function () {
+        return this.nextPageToken;
+    };
+    DescribeLatestMessagesByUserIdResult.prototype.setNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    };
+    DescribeLatestMessagesByUserIdResult.prototype.withNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    };
     DescribeLatestMessagesByUserIdResult.fromDict = function (data) {
         return new DescribeLatestMessagesByUserIdResult()
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Chat.Message.fromDict(item);
-            }) : null);
+            }) : null)
+            .withNextPageToken(data["nextPageToken"]);
     };
     DescribeLatestMessagesByUserIdResult.prototype.toDict = function () {
         return {
@@ -45,6 +58,7 @@ var DescribeLatestMessagesByUserIdResult = /** @class */ (function () {
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : null,
+            "nextPageToken": this.getNextPageToken(),
         };
     };
     return DescribeLatestMessagesByUserIdResult;

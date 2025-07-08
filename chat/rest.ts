@@ -829,6 +829,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
             'category': String(request.getCategory() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
@@ -863,6 +864,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             'password': String(request.getPassword() ?? null),
             'category': String(request.getCategory() ?? null),
             'userId': String(request.getUserId() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
         return axios.get(

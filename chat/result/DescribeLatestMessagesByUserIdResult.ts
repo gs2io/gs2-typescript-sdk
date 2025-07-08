@@ -19,6 +19,7 @@ import * as Gs2Chat from '../model'
 
 export default class DescribeLatestMessagesByUserIdResult implements IResult {
     private items: Gs2Chat.Message[]|null = null;
+    private nextPageToken: string|null = null;
 
     public getItems(): Gs2Chat.Message[]|null {
         return this.items;
@@ -34,13 +35,28 @@ export default class DescribeLatestMessagesByUserIdResult implements IResult {
         return this;
     }
 
+    public getNextPageToken(): string|null {
+        return this.nextPageToken;
+    }
+
+    public setNextPageToken(nextPageToken: string|null) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    public withNextPageToken(nextPageToken: string|null): this {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): DescribeLatestMessagesByUserIdResult {
         return new DescribeLatestMessagesByUserIdResult()
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Chat.Message.fromDict(item);
                 }
-            ) : null);
+            ) : null)
+            .withNextPageToken(data["nextPageToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -50,6 +66,7 @@ export default class DescribeLatestMessagesByUserIdResult implements IResult {
                     return item.toDict();
                 }
             ) : null,
+            "nextPageToken": this.getNextPageToken(),
         };
     }
 }

@@ -24,6 +24,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
         this.password = null;
         this.category = null;
         this.accessToken = null;
+        this.pageToken = null;
         this.limit = null;
     }
     DescribeLatestMessagesRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    DescribeLatestMessagesRequest.prototype.getPageToken = function () {
+        return this.pageToken;
+    };
+    DescribeLatestMessagesRequest.prototype.setPageToken = function (pageToken) {
+        this.pageToken = pageToken;
+        return this;
+    };
+    DescribeLatestMessagesRequest.prototype.withPageToken = function (pageToken) {
+        this.pageToken = pageToken;
+        return this;
+    };
     DescribeLatestMessagesRequest.prototype.getLimit = function () {
         return this.limit;
     };
@@ -121,6 +133,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
             .withPassword(data["password"])
             .withCategory(data["category"])
             .withAccessToken(data["accessToken"])
+            .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
     DescribeLatestMessagesRequest.prototype.toDict = function () {
@@ -130,6 +143,7 @@ var DescribeLatestMessagesRequest = /** @class */ (function () {
             "password": this.getPassword(),
             "category": this.getCategory(),
             "accessToken": this.getAccessToken(),
+            "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };
     };

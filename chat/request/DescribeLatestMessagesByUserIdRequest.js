@@ -24,6 +24,7 @@ var DescribeLatestMessagesByUserIdRequest = /** @class */ (function () {
         this.password = null;
         this.category = null;
         this.userId = null;
+        this.pageToken = null;
         this.limit = null;
         this.timeOffsetToken = null;
     }
@@ -104,6 +105,17 @@ var DescribeLatestMessagesByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DescribeLatestMessagesByUserIdRequest.prototype.getPageToken = function () {
+        return this.pageToken;
+    };
+    DescribeLatestMessagesByUserIdRequest.prototype.setPageToken = function (pageToken) {
+        this.pageToken = pageToken;
+        return this;
+    };
+    DescribeLatestMessagesByUserIdRequest.prototype.withPageToken = function (pageToken) {
+        this.pageToken = pageToken;
+        return this;
+    };
     DescribeLatestMessagesByUserIdRequest.prototype.getLimit = function () {
         return this.limit;
     };
@@ -133,6 +145,7 @@ var DescribeLatestMessagesByUserIdRequest = /** @class */ (function () {
             .withPassword(data["password"])
             .withCategory(data["category"])
             .withUserId(data["userId"])
+            .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -143,6 +156,7 @@ var DescribeLatestMessagesByUserIdRequest = /** @class */ (function () {
             "password": this.getPassword(),
             "category": this.getCategory(),
             "userId": this.getUserId(),
+            "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

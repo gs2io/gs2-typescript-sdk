@@ -7,6 +7,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     private password;
     private category;
     private userId;
+    private pageToken;
     private limit;
     private timeOffsetToken;
     getRequestId(): string | null;
@@ -30,6 +31,9 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPageToken(): string | null;
+    setPageToken(pageToken: string | null): this;
+    withPageToken(pageToken: string | null): this;
     getLimit(): number | null;
     setLimit(limit: number | null): this;
     withLimit(limit: number | null): this;

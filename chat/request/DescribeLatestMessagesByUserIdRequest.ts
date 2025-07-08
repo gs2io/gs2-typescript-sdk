@@ -27,6 +27,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
     private password: string|null = null;
     private category: number|null = null;
     private userId: string|null = null;
+    private pageToken: string|null = null;
     private limit: number|null = null;
     private timeOffsetToken: string|null = null;
 
@@ -112,6 +113,17 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getPageToken(): string|null {
+        return this.pageToken;
+    }
+    public setPageToken(pageToken: string|null) {
+        this.pageToken = pageToken;
+        return this;
+    }
+    public withPageToken(pageToken: string|null): this {
+        this.pageToken = pageToken;
+        return this;
+    }
     public getLimit(): number|null {
         return this.limit;
     }
@@ -142,6 +154,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
             .withPassword(data["password"])
             .withCategory(data["category"])
             .withUserId(data["userId"])
+            .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -153,6 +166,7 @@ export default class DescribeLatestMessagesByUserIdRequest implements IRequest {
             "password": this.getPassword(),
             "category": this.getCategory(),
             "userId": this.getUserId(),
+            "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -20,6 +20,7 @@ var Gs2Chat = tslib_1.__importStar(require("../model"));
 var DescribeLatestMessagesResult = /** @class */ (function () {
     function DescribeLatestMessagesResult() {
         this.items = null;
+        this.nextPageToken = null;
     }
     DescribeLatestMessagesResult.prototype.getItems = function () {
         return this.items;
@@ -32,12 +33,24 @@ var DescribeLatestMessagesResult = /** @class */ (function () {
         this.items = items;
         return this;
     };
+    DescribeLatestMessagesResult.prototype.getNextPageToken = function () {
+        return this.nextPageToken;
+    };
+    DescribeLatestMessagesResult.prototype.setNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    };
+    DescribeLatestMessagesResult.prototype.withNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    };
     DescribeLatestMessagesResult.fromDict = function (data) {
         return new DescribeLatestMessagesResult()
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Chat.Message.fromDict(item);
-            }) : null);
+            }) : null)
+            .withNextPageToken(data["nextPageToken"]);
     };
     DescribeLatestMessagesResult.prototype.toDict = function () {
         return {
@@ -45,6 +58,7 @@ var DescribeLatestMessagesResult = /** @class */ (function () {
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : null,
+            "nextPageToken": this.getNextPageToken(),
         };
     };
     return DescribeLatestMessagesResult;
