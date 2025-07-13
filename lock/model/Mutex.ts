@@ -25,6 +25,7 @@ export default class Mutex implements IModel {
     private propertyId: string|null = null;
     private transactionId: string|null = null;
     private createdAt: number|null = null;
+    private ttlAt: number|null = null;
     private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -185,6 +186,17 @@ export default class Mutex implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getTtlAt(): number|null {
+        return this.ttlAt;
+    }
+    public setTtlAt(ttlAt: number|null) {
+        this.ttlAt = ttlAt;
+        return this;
+    }
+    public withTtlAt(ttlAt: number|null): this {
+        this.ttlAt = ttlAt;
+        return this;
+    }
     public getRevision(): number|null {
         return this.revision;
     }
@@ -207,6 +219,7 @@ export default class Mutex implements IModel {
             .withPropertyId(data["propertyId"])
             .withTransactionId(data["transactionId"])
             .withCreatedAt(data["createdAt"])
+            .withTtlAt(data["ttlAt"])
             .withRevision(data["revision"]);
     }
 
@@ -217,6 +230,7 @@ export default class Mutex implements IModel {
             "propertyId": this.getPropertyId(),
             "transactionId": this.getTransactionId(),
             "createdAt": this.getCreatedAt(),
+            "ttlAt": this.getTtlAt(),
             "revision": this.getRevision(),
         };
     }

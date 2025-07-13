@@ -5,6 +5,7 @@ export default class Mutex implements IModel {
     private propertyId;
     private transactionId;
     private createdAt;
+    private ttlAt;
     private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -28,6 +29,9 @@ export default class Mutex implements IModel {
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
+    getTtlAt(): number | null;
+    setTtlAt(ttlAt: number | null): this;
+    withTtlAt(ttlAt: number | null): this;
     getRevision(): number | null;
     setRevision(revision: number | null): this;
     withRevision(revision: number | null): this;

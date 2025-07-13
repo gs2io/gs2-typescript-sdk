@@ -23,6 +23,7 @@ var Mutex = /** @class */ (function () {
         this.propertyId = null;
         this.transactionId = null;
         this.createdAt = null;
+        this.ttlAt = null;
         this.revision = null;
     }
     Mutex.getRegion = function (grn) {
@@ -166,6 +167,17 @@ var Mutex = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Mutex.prototype.getTtlAt = function () {
+        return this.ttlAt;
+    };
+    Mutex.prototype.setTtlAt = function (ttlAt) {
+        this.ttlAt = ttlAt;
+        return this;
+    };
+    Mutex.prototype.withTtlAt = function (ttlAt) {
+        this.ttlAt = ttlAt;
+        return this;
+    };
     Mutex.prototype.getRevision = function () {
         return this.revision;
     };
@@ -187,6 +199,7 @@ var Mutex = /** @class */ (function () {
             .withPropertyId(data["propertyId"])
             .withTransactionId(data["transactionId"])
             .withCreatedAt(data["createdAt"])
+            .withTtlAt(data["ttlAt"])
             .withRevision(data["revision"]);
     };
     Mutex.prototype.toDict = function () {
@@ -196,6 +209,7 @@ var Mutex = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "transactionId": this.getTransactionId(),
             "createdAt": this.getCreatedAt(),
+            "ttlAt": this.getTtlAt(),
             "revision": this.getRevision(),
         };
     };
