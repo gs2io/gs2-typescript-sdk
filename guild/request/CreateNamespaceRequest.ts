@@ -33,6 +33,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private createGuildScript: Gs2Guild.ScriptSetting|null = null;
     private updateGuildScript: Gs2Guild.ScriptSetting|null = null;
     private joinGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private receiveJoinRequestScript: Gs2Guild.ScriptSetting|null = null;
     private leaveGuildScript: Gs2Guild.ScriptSetting|null = null;
     private changeRoleScript: Gs2Guild.ScriptSetting|null = null;
     private deleteGuildScript: Gs2Guild.ScriptSetting|null = null;
@@ -186,6 +187,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.joinGuildScript = joinGuildScript;
         return this;
     }
+    public getReceiveJoinRequestScript(): Gs2Guild.ScriptSetting|null {
+        return this.receiveJoinRequestScript;
+    }
+    public setReceiveJoinRequestScript(receiveJoinRequestScript: Gs2Guild.ScriptSetting|null) {
+        this.receiveJoinRequestScript = receiveJoinRequestScript;
+        return this;
+    }
+    public withReceiveJoinRequestScript(receiveJoinRequestScript: Gs2Guild.ScriptSetting|null): this {
+        this.receiveJoinRequestScript = receiveJoinRequestScript;
+        return this;
+    }
     public getLeaveGuildScript(): Gs2Guild.ScriptSetting|null {
         return this.leaveGuildScript;
     }
@@ -244,6 +256,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
             .withUpdateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["updateGuildScript"]))
             .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withReceiveJoinRequestScript(Gs2Guild.ScriptSetting.fromDict(data["receiveJoinRequestScript"]))
             .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
             .withDeleteGuildScript(Gs2Guild.ScriptSetting.fromDict(data["deleteGuildScript"]))
@@ -263,6 +276,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "createGuildScript": this.getCreateGuildScript()?.toDict(),
             "updateGuildScript": this.getUpdateGuildScript()?.toDict(),
             "joinGuildScript": this.getJoinGuildScript()?.toDict(),
+            "receiveJoinRequestScript": this.getReceiveJoinRequestScript()?.toDict(),
             "leaveGuildScript": this.getLeaveGuildScript()?.toDict(),
             "changeRoleScript": this.getChangeRoleScript()?.toDict(),
             "deleteGuildScript": this.getDeleteGuildScript()?.toDict(),

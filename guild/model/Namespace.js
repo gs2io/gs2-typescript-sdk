@@ -32,6 +32,7 @@ var Namespace = /** @class */ (function () {
         this.createGuildScript = null;
         this.updateGuildScript = null;
         this.joinGuildScript = null;
+        this.receiveJoinRequestScript = null;
         this.leaveGuildScript = null;
         this.changeRoleScript = null;
         this.deleteGuildScript = null;
@@ -220,6 +221,17 @@ var Namespace = /** @class */ (function () {
         this.joinGuildScript = joinGuildScript;
         return this;
     };
+    Namespace.prototype.getReceiveJoinRequestScript = function () {
+        return this.receiveJoinRequestScript;
+    };
+    Namespace.prototype.setReceiveJoinRequestScript = function (receiveJoinRequestScript) {
+        this.receiveJoinRequestScript = receiveJoinRequestScript;
+        return this;
+    };
+    Namespace.prototype.withReceiveJoinRequestScript = function (receiveJoinRequestScript) {
+        this.receiveJoinRequestScript = receiveJoinRequestScript;
+        return this;
+    };
     Namespace.prototype.getLeaveGuildScript = function () {
         return this.leaveGuildScript;
     };
@@ -314,6 +326,7 @@ var Namespace = /** @class */ (function () {
             .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
             .withUpdateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["updateGuildScript"]))
             .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withReceiveJoinRequestScript(Gs2Guild.ScriptSetting.fromDict(data["receiveJoinRequestScript"]))
             .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
             .withDeleteGuildScript(Gs2Guild.ScriptSetting.fromDict(data["deleteGuildScript"]))
@@ -323,7 +336,7 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -337,10 +350,11 @@ var Namespace = /** @class */ (function () {
             "createGuildScript": (_g = this.getCreateGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "updateGuildScript": (_h = this.getUpdateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
             "joinGuildScript": (_j = this.getJoinGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
-            "leaveGuildScript": (_k = this.getLeaveGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "changeRoleScript": (_l = this.getChangeRoleScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "deleteGuildScript": (_m = this.getDeleteGuildScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
-            "logSetting": (_o = this.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "receiveJoinRequestScript": (_k = this.getReceiveJoinRequestScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "leaveGuildScript": (_l = this.getLeaveGuildScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "changeRoleScript": (_m = this.getChangeRoleScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "deleteGuildScript": (_o = this.getDeleteGuildScript()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "logSetting": (_p = this.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

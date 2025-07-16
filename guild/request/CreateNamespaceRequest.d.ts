@@ -14,6 +14,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private createGuildScript;
     private updateGuildScript;
     private joinGuildScript;
+    private receiveJoinRequestScript;
     private leaveGuildScript;
     private changeRoleScript;
     private deleteGuildScript;
@@ -57,6 +58,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getJoinGuildScript(): Gs2Guild.ScriptSetting | null;
     setJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting | null): this;
     withJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting | null): this;
+    getReceiveJoinRequestScript(): Gs2Guild.ScriptSetting | null;
+    setReceiveJoinRequestScript(receiveJoinRequestScript: Gs2Guild.ScriptSetting | null): this;
+    withReceiveJoinRequestScript(receiveJoinRequestScript: Gs2Guild.ScriptSetting | null): this;
     getLeaveGuildScript(): Gs2Guild.ScriptSetting | null;
     setLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting | null): this;
     withLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting | null): this;
