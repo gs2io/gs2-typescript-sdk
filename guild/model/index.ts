@@ -16,8 +16,6 @@ permissions and limitations under the License.
 import Namespace from "./Namespace"
 import GuildModelMaster from "./GuildModelMaster"
 import GuildModel from "./GuildModel"
-import Inbox from "./Inbox"
-import SendBox from "./SendBox"
 import Guild from "./Guild"
 import JoinedGuild from "./JoinedGuild"
 import LastGuildMasterActivity from "./LastGuildMasterActivity"
@@ -37,8 +35,6 @@ export {
     Namespace,
     GuildModelMaster,
     GuildModel,
-    Inbox,
-    SendBox,
     Guild,
     JoinedGuild,
     LastGuildMasterActivity,

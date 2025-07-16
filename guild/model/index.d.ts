@@ -1,8 +1,6 @@
 import Namespace from "./Namespace";
 import GuildModelMaster from "./GuildModelMaster";
 import GuildModel from "./GuildModel";
-import Inbox from "./Inbox";
-import SendBox from "./SendBox";
 import Guild from "./Guild";
 import JoinedGuild from "./JoinedGuild";
 import LastGuildMasterActivity from "./LastGuildMasterActivity";
@@ -17,4 +15,4 @@ import NotificationSetting from "./NotificationSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-export { Namespace, GuildModelMaster, GuildModel, Inbox, SendBox, Guild, JoinedGuild, LastGuildMasterActivity, CurrentGuildMaster, RoleModel, Member, ReceiveMemberRequest, SendMemberRequest, IgnoreUser, TransactionSetting, NotificationSetting, ScriptSetting, LogSetting, GitHubCheckoutSetting, };
+export { Namespace, GuildModelMaster, GuildModel, Guild, JoinedGuild, LastGuildMasterActivity, CurrentGuildMaster, RoleModel, Member, ReceiveMemberRequest, SendMemberRequest, IgnoreUser, TransactionSetting, NotificationSetting, ScriptSetting, LogSetting, GitHubCheckoutSetting, };

@@ -3,6 +3,7 @@ export default class SendMemberRequest implements IModel {
     private userId;
     private targetGuildName;
     private metadata;
+    private createdAt;
     static isValid(grn: string): boolean;
     static createGrn(): string | null;
     getUserId(): string | null;
@@ -14,6 +15,9 @@ export default class SendMemberRequest implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SendMemberRequest | null;

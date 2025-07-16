@@ -21,6 +21,7 @@ var ReceiveMemberRequest = /** @class */ (function () {
         this.userId = null;
         this.targetGuildName = null;
         this.metadata = null;
+        this.createdAt = null;
     }
     ReceiveMemberRequest.isValid = function (grn) {
         return true;
@@ -61,6 +62,17 @@ var ReceiveMemberRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    ReceiveMemberRequest.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    ReceiveMemberRequest.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    ReceiveMemberRequest.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
     ReceiveMemberRequest.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -68,13 +80,15 @@ var ReceiveMemberRequest = /** @class */ (function () {
         return new ReceiveMemberRequest()
             .withUserId(data["userId"])
             .withTargetGuildName(data["targetGuildName"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withCreatedAt(data["createdAt"]);
     };
     ReceiveMemberRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "targetGuildName": this.getTargetGuildName(),
             "metadata": this.getMetadata(),
+            "createdAt": this.getCreatedAt(),
         };
     };
     return ReceiveMemberRequest;

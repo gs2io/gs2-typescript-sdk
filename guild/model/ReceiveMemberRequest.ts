@@ -23,6 +23,7 @@ export default class ReceiveMemberRequest implements IModel {
     private userId: string|null = null;
     private targetGuildName: string|null = null;
     private metadata: string|null = null;
+    private createdAt: number|null = null;
 
     public static isValid(grn: string): boolean {
         return true;
@@ -65,6 +66,17 @@ export default class ReceiveMemberRequest implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getCreatedAt(): number|null {
+        return this.createdAt;
+    }
+    public setCreatedAt(createdAt: number|null) {
+        this.createdAt = createdAt;
+        return this;
+    }
+    public withCreatedAt(createdAt: number|null): this {
+        this.createdAt = createdAt;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): ReceiveMemberRequest|null {
         if (data == undefined || data == null) {
@@ -73,7 +85,8 @@ export default class ReceiveMemberRequest implements IModel {
         return new ReceiveMemberRequest()
             .withUserId(data["userId"])
             .withTargetGuildName(data["targetGuildName"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withCreatedAt(data["createdAt"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -81,6 +94,7 @@ export default class ReceiveMemberRequest implements IModel {
             "userId": this.getUserId(),
             "targetGuildName": this.getTargetGuildName(),
             "metadata": this.getMetadata(),
+            "createdAt": this.getCreatedAt(),
         };
     }
 }

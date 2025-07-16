@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.IgnoreUser = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.LastGuildMasterActivity = exports.JoinedGuild = exports.Guild = exports.SendBox = exports.Inbox = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
+exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.IgnoreUser = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.LastGuildMasterActivity = exports.JoinedGuild = exports.Guild = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,10 +23,6 @@ var GuildModelMaster_1 = tslib_1.__importDefault(require("./GuildModelMaster"));
 exports.GuildModelMaster = GuildModelMaster_1.default;
 var GuildModel_1 = tslib_1.__importDefault(require("./GuildModel"));
 exports.GuildModel = GuildModel_1.default;
-var Inbox_1 = tslib_1.__importDefault(require("./Inbox"));
-exports.Inbox = Inbox_1.default;
-var SendBox_1 = tslib_1.__importDefault(require("./SendBox"));
-exports.SendBox = SendBox_1.default;
 var Guild_1 = tslib_1.__importDefault(require("./Guild"));
 exports.Guild = Guild_1.default;
 var JoinedGuild_1 = tslib_1.__importDefault(require("./JoinedGuild"));
