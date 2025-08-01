@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.UpdateNotificationTypeByUserIdResult = exports.UpdateNotificationTypeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DescribeSubscribesByRoomNameResult = exports.DescribeSubscribesByUserIdResult = exports.DescribeSubscribesResult = exports.DeleteMessageResult = exports.GetMessageByUserIdResult = exports.GetMessageResult = exports.PostByUserIdResult = exports.PostResult = exports.DescribeLatestMessagesByUserIdResult = exports.DescribeLatestMessagesResult = exports.DescribeMessagesByUserIdResult = exports.DescribeMessagesResult = exports.DeleteRoomFromBackendResult = exports.DeleteRoomResult = exports.UpdateRoomFromBackendResult = exports.UpdateRoomResult = exports.GetRoomResult = exports.CreateRoomFromBackendResult = exports.CreateRoomResult = exports.DescribeRoomsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.GetServiceVersionResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.ExportMasterResult = exports.DeleteCategoryModelMasterResult = exports.UpdateCategoryModelMasterResult = exports.GetCategoryModelMasterResult = exports.CreateCategoryModelMasterResult = exports.DescribeCategoryModelMastersResult = exports.GetCategoryModelResult = exports.DescribeCategoryModelsResult = exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.UpdateNotificationTypeByUserIdResult = exports.UpdateNotificationTypeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DescribeSubscribesByRoomNameResult = exports.DescribeSubscribesByUserIdResult = exports.DescribeSubscribesResult = exports.DeleteMessageResult = exports.GetMessageByUserIdResult = exports.GetMessageResult = exports.PostByUserIdResult = exports.PostResult = exports.DescribeLatestMessagesByUserIdResult = exports.DescribeLatestMessagesResult = exports.DescribeMessagesByUserIdResult = exports.DescribeMessagesResult = exports.DeleteRoomFromBackendResult = exports.DeleteRoomResult = exports.UpdateRoomFromBackendResult = exports.UpdateRoomResult = exports.GetRoomResult = exports.CreateRoomFromBackendResult = exports.CreateRoomResult = exports.DescribeRoomsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.GetServiceVersionResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentModelMasterFromGitHubResult = exports.UpdateCurrentModelMasterResult = exports.PreUpdateCurrentModelMasterResult = exports.GetCurrentModelMasterResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -101,4 +102,28 @@ var UnsubscribeResult_1 = tslib_1.__importDefault(require("./UnsubscribeResult")
 exports.UnsubscribeResult = UnsubscribeResult_1.default;
 var UnsubscribeByUserIdResult_1 = tslib_1.__importDefault(require("./UnsubscribeByUserIdResult"));
 exports.UnsubscribeByUserIdResult = UnsubscribeByUserIdResult_1.default;
+var DescribeCategoryModelsResult_1 = tslib_1.__importDefault(require("./DescribeCategoryModelsResult"));
+exports.DescribeCategoryModelsResult = DescribeCategoryModelsResult_1.default;
+var GetCategoryModelResult_1 = tslib_1.__importDefault(require("./GetCategoryModelResult"));
+exports.GetCategoryModelResult = GetCategoryModelResult_1.default;
+var DescribeCategoryModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeCategoryModelMastersResult"));
+exports.DescribeCategoryModelMastersResult = DescribeCategoryModelMastersResult_1.default;
+var CreateCategoryModelMasterResult_1 = tslib_1.__importDefault(require("./CreateCategoryModelMasterResult"));
+exports.CreateCategoryModelMasterResult = CreateCategoryModelMasterResult_1.default;
+var GetCategoryModelMasterResult_1 = tslib_1.__importDefault(require("./GetCategoryModelMasterResult"));
+exports.GetCategoryModelMasterResult = GetCategoryModelMasterResult_1.default;
+var UpdateCategoryModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateCategoryModelMasterResult"));
+exports.UpdateCategoryModelMasterResult = UpdateCategoryModelMasterResult_1.default;
+var DeleteCategoryModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteCategoryModelMasterResult"));
+exports.DeleteCategoryModelMasterResult = DeleteCategoryModelMasterResult_1.default;
+var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
+exports.ExportMasterResult = ExportMasterResult_1.default;
+var GetCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentModelMasterResult"));
+exports.GetCurrentModelMasterResult = GetCurrentModelMasterResult_1.default;
+var PreUpdateCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./PreUpdateCurrentModelMasterResult"));
+exports.PreUpdateCurrentModelMasterResult = PreUpdateCurrentModelMasterResult_1.default;
+var UpdateCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterResult"));
+exports.UpdateCurrentModelMasterResult = UpdateCurrentModelMasterResult_1.default;
+var UpdateCurrentModelMasterFromGitHubResult_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterFromGitHubResult"));
+exports.UpdateCurrentModelMasterFromGitHubResult = UpdateCurrentModelMasterFromGitHubResult_1.default;
 //# sourceMappingURL=index.js.map

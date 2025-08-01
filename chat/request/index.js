@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnsubscribeByUserIdRequest = exports.UnsubscribeRequest = exports.UpdateNotificationTypeByUserIdRequest = exports.UpdateNotificationTypeRequest = exports.GetSubscribeByUserIdRequest = exports.GetSubscribeRequest = exports.SubscribeByUserIdRequest = exports.SubscribeRequest = exports.DescribeSubscribesByRoomNameRequest = exports.DescribeSubscribesByUserIdRequest = exports.DescribeSubscribesRequest = exports.DeleteMessageRequest = exports.GetMessageByUserIdRequest = exports.GetMessageRequest = exports.PostByUserIdRequest = exports.PostRequest = exports.DescribeLatestMessagesByUserIdRequest = exports.DescribeLatestMessagesRequest = exports.DescribeMessagesByUserIdRequest = exports.DescribeMessagesRequest = exports.DeleteRoomFromBackendRequest = exports.DeleteRoomRequest = exports.UpdateRoomFromBackendRequest = exports.UpdateRoomRequest = exports.GetRoomRequest = exports.CreateRoomFromBackendRequest = exports.CreateRoomRequest = exports.DescribeRoomsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.ExportMasterRequest = exports.DeleteCategoryModelMasterRequest = exports.UpdateCategoryModelMasterRequest = exports.GetCategoryModelMasterRequest = exports.CreateCategoryModelMasterRequest = exports.DescribeCategoryModelMastersRequest = exports.GetCategoryModelRequest = exports.DescribeCategoryModelsRequest = exports.UnsubscribeByUserIdRequest = exports.UnsubscribeRequest = exports.UpdateNotificationTypeByUserIdRequest = exports.UpdateNotificationTypeRequest = exports.GetSubscribeByUserIdRequest = exports.GetSubscribeRequest = exports.SubscribeByUserIdRequest = exports.SubscribeRequest = exports.DescribeSubscribesByRoomNameRequest = exports.DescribeSubscribesByUserIdRequest = exports.DescribeSubscribesRequest = exports.DeleteMessageRequest = exports.GetMessageByUserIdRequest = exports.GetMessageRequest = exports.PostByUserIdRequest = exports.PostRequest = exports.DescribeLatestMessagesByUserIdRequest = exports.DescribeLatestMessagesRequest = exports.DescribeMessagesByUserIdRequest = exports.DescribeMessagesRequest = exports.DeleteRoomFromBackendRequest = exports.DeleteRoomRequest = exports.UpdateRoomFromBackendRequest = exports.UpdateRoomRequest = exports.GetRoomRequest = exports.CreateRoomFromBackendRequest = exports.CreateRoomRequest = exports.DescribeRoomsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentModelMasterFromGitHubRequest = exports.UpdateCurrentModelMasterRequest = exports.PreUpdateCurrentModelMasterRequest = exports.GetCurrentModelMasterRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -101,4 +102,28 @@ var UnsubscribeRequest_1 = tslib_1.__importDefault(require("./UnsubscribeRequest
 exports.UnsubscribeRequest = UnsubscribeRequest_1.default;
 var UnsubscribeByUserIdRequest_1 = tslib_1.__importDefault(require("./UnsubscribeByUserIdRequest"));
 exports.UnsubscribeByUserIdRequest = UnsubscribeByUserIdRequest_1.default;
+var DescribeCategoryModelsRequest_1 = tslib_1.__importDefault(require("./DescribeCategoryModelsRequest"));
+exports.DescribeCategoryModelsRequest = DescribeCategoryModelsRequest_1.default;
+var GetCategoryModelRequest_1 = tslib_1.__importDefault(require("./GetCategoryModelRequest"));
+exports.GetCategoryModelRequest = GetCategoryModelRequest_1.default;
+var DescribeCategoryModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeCategoryModelMastersRequest"));
+exports.DescribeCategoryModelMastersRequest = DescribeCategoryModelMastersRequest_1.default;
+var CreateCategoryModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateCategoryModelMasterRequest"));
+exports.CreateCategoryModelMasterRequest = CreateCategoryModelMasterRequest_1.default;
+var GetCategoryModelMasterRequest_1 = tslib_1.__importDefault(require("./GetCategoryModelMasterRequest"));
+exports.GetCategoryModelMasterRequest = GetCategoryModelMasterRequest_1.default;
+var UpdateCategoryModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCategoryModelMasterRequest"));
+exports.UpdateCategoryModelMasterRequest = UpdateCategoryModelMasterRequest_1.default;
+var DeleteCategoryModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteCategoryModelMasterRequest"));
+exports.DeleteCategoryModelMasterRequest = DeleteCategoryModelMasterRequest_1.default;
+var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
+exports.ExportMasterRequest = ExportMasterRequest_1.default;
+var GetCurrentModelMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentModelMasterRequest"));
+exports.GetCurrentModelMasterRequest = GetCurrentModelMasterRequest_1.default;
+var PreUpdateCurrentModelMasterRequest_1 = tslib_1.__importDefault(require("./PreUpdateCurrentModelMasterRequest"));
+exports.PreUpdateCurrentModelMasterRequest = PreUpdateCurrentModelMasterRequest_1.default;
+var UpdateCurrentModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterRequest"));
+exports.UpdateCurrentModelMasterRequest = UpdateCurrentModelMasterRequest_1.default;
+var UpdateCurrentModelMasterFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterFromGitHubRequest"));
+exports.UpdateCurrentModelMasterFromGitHubRequest = UpdateCurrentModelMasterFromGitHubRequest_1.default;
 //# sourceMappingURL=index.js.map

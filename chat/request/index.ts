@@ -55,6 +55,18 @@ import UpdateNotificationTypeRequest from "./UpdateNotificationTypeRequest"
 import UpdateNotificationTypeByUserIdRequest from "./UpdateNotificationTypeByUserIdRequest"
 import UnsubscribeRequest from "./UnsubscribeRequest"
 import UnsubscribeByUserIdRequest from "./UnsubscribeByUserIdRequest"
+import DescribeCategoryModelsRequest from "./DescribeCategoryModelsRequest"
+import GetCategoryModelRequest from "./GetCategoryModelRequest"
+import DescribeCategoryModelMastersRequest from "./DescribeCategoryModelMastersRequest"
+import CreateCategoryModelMasterRequest from "./CreateCategoryModelMasterRequest"
+import GetCategoryModelMasterRequest from "./GetCategoryModelMasterRequest"
+import UpdateCategoryModelMasterRequest from "./UpdateCategoryModelMasterRequest"
+import DeleteCategoryModelMasterRequest from "./DeleteCategoryModelMasterRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import PreUpdateCurrentModelMasterRequest from "./PreUpdateCurrentModelMasterRequest"
+import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
+import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -99,4 +111,16 @@ export {
     UpdateNotificationTypeByUserIdRequest,
     UnsubscribeRequest,
     UnsubscribeByUserIdRequest,
+    DescribeCategoryModelsRequest,
+    GetCategoryModelRequest,
+    DescribeCategoryModelMastersRequest,
+    CreateCategoryModelMasterRequest,
+    GetCategoryModelMasterRequest,
+    UpdateCategoryModelMasterRequest,
+    DeleteCategoryModelMasterRequest,
+    ExportMasterRequest,
+    GetCurrentModelMasterRequest,
+    PreUpdateCurrentModelMasterRequest,
+    UpdateCurrentModelMasterRequest,
+    UpdateCurrentModelMasterFromGitHubRequest,
 };
