@@ -28,7 +28,6 @@ var ClusterRankingModelMaster = /** @class */ (function () {
         this.minimumValue = null;
         this.maximumValue = null;
         this.sum = null;
-        this.scoreTtlDays = null;
         this.orderDirection = null;
         this.entryPeriodEventId = null;
         this.rankingRewards = null;
@@ -192,17 +191,6 @@ var ClusterRankingModelMaster = /** @class */ (function () {
         this.sum = sum;
         return this;
     };
-    ClusterRankingModelMaster.prototype.getScoreTtlDays = function () {
-        return this.scoreTtlDays;
-    };
-    ClusterRankingModelMaster.prototype.setScoreTtlDays = function (scoreTtlDays) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    };
-    ClusterRankingModelMaster.prototype.withScoreTtlDays = function (scoreTtlDays) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    };
     ClusterRankingModelMaster.prototype.getOrderDirection = function () {
         return this.orderDirection;
     };
@@ -304,7 +292,6 @@ var ClusterRankingModelMaster = /** @class */ (function () {
             .withMinimumValue(data["minimumValue"])
             .withMaximumValue(data["maximumValue"])
             .withSum(data["sum"])
-            .withScoreTtlDays(data["scoreTtlDays"])
             .withOrderDirection(data["orderDirection"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withRankingRewards(data.rankingRewards ?
@@ -327,7 +314,6 @@ var ClusterRankingModelMaster = /** @class */ (function () {
             "minimumValue": this.getMinimumValue(),
             "maximumValue": this.getMaximumValue(),
             "sum": this.getSum(),
-            "scoreTtlDays": this.getScoreTtlDays(),
             "orderDirection": this.getOrderDirection(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "rankingRewards": this.getRankingRewards() ?

@@ -26,7 +26,6 @@ var UpdateSubscribeRankingModelMasterRequest = /** @class */ (function () {
         this.minimumValue = null;
         this.maximumValue = null;
         this.sum = null;
-        this.scoreTtlDays = null;
         this.orderDirection = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
@@ -130,17 +129,6 @@ var UpdateSubscribeRankingModelMasterRequest = /** @class */ (function () {
         this.sum = sum;
         return this;
     };
-    UpdateSubscribeRankingModelMasterRequest.prototype.getScoreTtlDays = function () {
-        return this.scoreTtlDays;
-    };
-    UpdateSubscribeRankingModelMasterRequest.prototype.setScoreTtlDays = function (scoreTtlDays) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    };
-    UpdateSubscribeRankingModelMasterRequest.prototype.withScoreTtlDays = function (scoreTtlDays) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    };
     UpdateSubscribeRankingModelMasterRequest.prototype.getOrderDirection = function () {
         return this.orderDirection;
     };
@@ -183,7 +171,6 @@ var UpdateSubscribeRankingModelMasterRequest = /** @class */ (function () {
             .withMinimumValue(data["minimumValue"])
             .withMaximumValue(data["maximumValue"])
             .withSum(data["sum"])
-            .withScoreTtlDays(data["scoreTtlDays"])
             .withOrderDirection(data["orderDirection"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
@@ -197,7 +184,6 @@ var UpdateSubscribeRankingModelMasterRequest = /** @class */ (function () {
             "minimumValue": this.getMinimumValue(),
             "maximumValue": this.getMaximumValue(),
             "sum": this.getSum(),
-            "scoreTtlDays": this.getScoreTtlDays(),
             "orderDirection": this.getOrderDirection(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),

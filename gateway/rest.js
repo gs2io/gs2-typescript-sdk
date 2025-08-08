@@ -442,7 +442,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.setUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -460,6 +460,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'allowConcurrentAccess': (_f = request.getAllowConcurrentAccess()) !== null && _f !== void 0 ? _f : null,
+            'force': (_g = request.getForce()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -475,7 +476,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.setUserIdByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -494,6 +495,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'allowConcurrentAccess': (_h = request.getAllowConcurrentAccess()) !== null && _h !== void 0 ? _h : null,
+            'force': (_j = request.getForce()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

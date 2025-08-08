@@ -27,7 +27,6 @@ export default class SubscribeRankingModelMaster implements IModel {
     private minimumValue: number|null = null;
     private maximumValue: number|null = null;
     private sum: boolean|null = null;
-    private scoreTtlDays: number|null = null;
     private orderDirection: string|null = null;
     private entryPeriodEventId: string|null = null;
     private accessPeriodEventId: string|null = null;
@@ -192,17 +191,6 @@ export default class SubscribeRankingModelMaster implements IModel {
         this.sum = sum;
         return this;
     }
-    public getScoreTtlDays(): number|null {
-        return this.scoreTtlDays;
-    }
-    public setScoreTtlDays(scoreTtlDays: number|null) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    }
-    public withScoreTtlDays(scoreTtlDays: number|null): this {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    }
     public getOrderDirection(): string|null {
         return this.orderDirection;
     }
@@ -282,7 +270,6 @@ export default class SubscribeRankingModelMaster implements IModel {
             .withMinimumValue(data["minimumValue"])
             .withMaximumValue(data["maximumValue"])
             .withSum(data["sum"])
-            .withScoreTtlDays(data["scoreTtlDays"])
             .withOrderDirection(data["orderDirection"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
@@ -300,7 +287,6 @@ export default class SubscribeRankingModelMaster implements IModel {
             "minimumValue": this.getMinimumValue(),
             "maximumValue": this.getMaximumValue(),
             "sum": this.getSum(),
-            "scoreTtlDays": this.getScoreTtlDays(),
             "orderDirection": this.getOrderDirection(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),

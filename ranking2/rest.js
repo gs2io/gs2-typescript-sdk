@@ -1387,7 +1387,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -1405,12 +1405,11 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             'minimumValue': (_h = request.getMinimumValue()) !== null && _h !== void 0 ? _h : null,
             'maximumValue': (_j = request.getMaximumValue()) !== null && _j !== void 0 ? _j : null,
             'sum': (_k = request.getSum()) !== null && _k !== void 0 ? _k : null,
-            'scoreTtlDays': (_l = request.getScoreTtlDays()) !== null && _l !== void 0 ? _l : null,
-            'orderDirection': (_m = request.getOrderDirection()) !== null && _m !== void 0 ? _m : null,
-            'rankingRewards': (_p = (_o = request.getRankingRewards()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
-            'rewardCalculationIndex': (_q = request.getRewardCalculationIndex()) !== null && _q !== void 0 ? _q : null,
-            'entryPeriodEventId': (_r = request.getEntryPeriodEventId()) !== null && _r !== void 0 ? _r : null,
-            'accessPeriodEventId': (_s = request.getAccessPeriodEventId()) !== null && _s !== void 0 ? _s : null,
+            'orderDirection': (_l = request.getOrderDirection()) !== null && _l !== void 0 ? _l : null,
+            'rankingRewards': (_o = (_m = request.getRankingRewards()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'rewardCalculationIndex': (_p = request.getRewardCalculationIndex()) !== null && _p !== void 0 ? _p : null,
+            'entryPeriodEventId': (_q = request.getEntryPeriodEventId()) !== null && _q !== void 0 ? _q : null,
+            'accessPeriodEventId': (_r = request.getAccessPeriodEventId()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1449,7 +1448,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.updateClusterRankingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -1467,12 +1466,11 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             'minimumValue': (_j = request.getMinimumValue()) !== null && _j !== void 0 ? _j : null,
             'maximumValue': (_k = request.getMaximumValue()) !== null && _k !== void 0 ? _k : null,
             'sum': (_l = request.getSum()) !== null && _l !== void 0 ? _l : null,
-            'scoreTtlDays': (_m = request.getScoreTtlDays()) !== null && _m !== void 0 ? _m : null,
-            'orderDirection': (_o = request.getOrderDirection()) !== null && _o !== void 0 ? _o : null,
-            'rankingRewards': (_q = (_p = request.getRankingRewards()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
-            'rewardCalculationIndex': (_r = request.getRewardCalculationIndex()) !== null && _r !== void 0 ? _r : null,
-            'entryPeriodEventId': (_s = request.getEntryPeriodEventId()) !== null && _s !== void 0 ? _s : null,
-            'accessPeriodEventId': (_t = request.getAccessPeriodEventId()) !== null && _t !== void 0 ? _t : null,
+            'orderDirection': (_m = request.getOrderDirection()) !== null && _m !== void 0 ? _m : null,
+            'rankingRewards': (_p = (_o = request.getRankingRewards()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'rewardCalculationIndex': (_q = request.getRewardCalculationIndex()) !== null && _q !== void 0 ? _q : null,
+            'entryPeriodEventId': (_r = request.getEntryPeriodEventId()) !== null && _r !== void 0 ? _r : null,
+            'accessPeriodEventId': (_s = request.getAccessPeriodEventId()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2346,7 +2344,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createSubscribeRankingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -2363,10 +2361,9 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             'minimumValue': (_g = request.getMinimumValue()) !== null && _g !== void 0 ? _g : null,
             'maximumValue': (_h = request.getMaximumValue()) !== null && _h !== void 0 ? _h : null,
             'sum': (_j = request.getSum()) !== null && _j !== void 0 ? _j : null,
-            'scoreTtlDays': (_k = request.getScoreTtlDays()) !== null && _k !== void 0 ? _k : null,
-            'orderDirection': (_l = request.getOrderDirection()) !== null && _l !== void 0 ? _l : null,
-            'entryPeriodEventId': (_m = request.getEntryPeriodEventId()) !== null && _m !== void 0 ? _m : null,
-            'accessPeriodEventId': (_o = request.getAccessPeriodEventId()) !== null && _o !== void 0 ? _o : null,
+            'orderDirection': (_k = request.getOrderDirection()) !== null && _k !== void 0 ? _k : null,
+            'entryPeriodEventId': (_l = request.getEntryPeriodEventId()) !== null && _l !== void 0 ? _l : null,
+            'accessPeriodEventId': (_m = request.getAccessPeriodEventId()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2405,7 +2402,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.updateSubscribeRankingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -2422,10 +2419,9 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             'minimumValue': (_h = request.getMinimumValue()) !== null && _h !== void 0 ? _h : null,
             'maximumValue': (_j = request.getMaximumValue()) !== null && _j !== void 0 ? _j : null,
             'sum': (_k = request.getSum()) !== null && _k !== void 0 ? _k : null,
-            'scoreTtlDays': (_l = request.getScoreTtlDays()) !== null && _l !== void 0 ? _l : null,
-            'orderDirection': (_m = request.getOrderDirection()) !== null && _m !== void 0 ? _m : null,
-            'entryPeriodEventId': (_o = request.getEntryPeriodEventId()) !== null && _o !== void 0 ? _o : null,
-            'accessPeriodEventId': (_p = request.getAccessPeriodEventId()) !== null && _p !== void 0 ? _p : null,
+            'orderDirection': (_l = request.getOrderDirection()) !== null && _l !== void 0 ? _l : null,
+            'entryPeriodEventId': (_m = request.getEntryPeriodEventId()) !== null && _m !== void 0 ? _m : null,
+            'accessPeriodEventId': (_o = request.getAccessPeriodEventId()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

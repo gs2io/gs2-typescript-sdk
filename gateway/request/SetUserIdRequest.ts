@@ -25,6 +25,7 @@ export default class SetUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private allowConcurrentAccess: boolean|null = null;
+    private force: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class SetUserIdRequest implements IRequest {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     }
+    public getForce(): boolean|null {
+        return this.force;
+    }
+    public setForce(force: boolean|null) {
+        this.force = force;
+        return this;
+    }
+    public withForce(force: boolean|null): this {
+        this.force = force;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -106,7 +118,8 @@ export default class SetUserIdRequest implements IRequest {
         return new SetUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withAllowConcurrentAccess(data["allowConcurrentAccess"]);
+            .withAllowConcurrentAccess(data["allowConcurrentAccess"])
+            .withForce(data["force"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -114,6 +127,7 @@ export default class SetUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "allowConcurrentAccess": this.getAllowConcurrentAccess(),
+            "force": this.getForce(),
         };
     }
 }

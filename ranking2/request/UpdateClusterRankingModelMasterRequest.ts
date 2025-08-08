@@ -30,7 +30,6 @@ export default class UpdateClusterRankingModelMasterRequest implements IRequest 
     private minimumValue: number|null = null;
     private maximumValue: number|null = null;
     private sum: boolean|null = null;
-    private scoreTtlDays: number|null = null;
     private orderDirection: string|null = null;
     private rankingRewards: Gs2Ranking2.RankingReward[]|null = null;
     private rewardCalculationIndex: string|null = null;
@@ -152,17 +151,6 @@ export default class UpdateClusterRankingModelMasterRequest implements IRequest 
         this.sum = sum;
         return this;
     }
-    public getScoreTtlDays(): number|null {
-        return this.scoreTtlDays;
-    }
-    public setScoreTtlDays(scoreTtlDays: number|null) {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    }
-    public withScoreTtlDays(scoreTtlDays: number|null): this {
-        this.scoreTtlDays = scoreTtlDays;
-        return this;
-    }
     public getOrderDirection(): string|null {
         return this.orderDirection;
     }
@@ -229,7 +217,6 @@ export default class UpdateClusterRankingModelMasterRequest implements IRequest 
             .withMinimumValue(data["minimumValue"])
             .withMaximumValue(data["maximumValue"])
             .withSum(data["sum"])
-            .withScoreTtlDays(data["scoreTtlDays"])
             .withOrderDirection(data["orderDirection"])
             .withRankingRewards(data.rankingRewards ?
                 data.rankingRewards.map((item: {[key: string]: any}) => {
@@ -251,7 +238,6 @@ export default class UpdateClusterRankingModelMasterRequest implements IRequest 
             "minimumValue": this.getMinimumValue(),
             "maximumValue": this.getMaximumValue(),
             "sum": this.getSum(),
-            "scoreTtlDays": this.getScoreTtlDays(),
             "orderDirection": this.getOrderDirection(),
             "rankingRewards": this.getRankingRewards() ?
                 this.getRankingRewards()!.map((item: Gs2Ranking2.RankingReward) => {

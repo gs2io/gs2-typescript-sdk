@@ -526,6 +526,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'allowConcurrentAccess': request.getAllowConcurrentAccess() ?? null,
+            'force': request.getForce() ?? null,
         };
         return axios.post(
             url,
@@ -564,6 +565,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'allowConcurrentAccess': request.getAllowConcurrentAccess() ?? null,
+            'force': request.getForce() ?? null,
         };
         return axios.post(
             url,

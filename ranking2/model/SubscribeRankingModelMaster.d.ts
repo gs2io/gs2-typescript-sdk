@@ -7,7 +7,6 @@ export default class SubscribeRankingModelMaster implements IModel {
     private minimumValue;
     private maximumValue;
     private sum;
-    private scoreTtlDays;
     private orderDirection;
     private entryPeriodEventId;
     private accessPeriodEventId;
@@ -41,9 +40,6 @@ export default class SubscribeRankingModelMaster implements IModel {
     getSum(): boolean | null;
     setSum(sum: boolean | null): this;
     withSum(sum: boolean | null): this;
-    getScoreTtlDays(): number | null;
-    setScoreTtlDays(scoreTtlDays: number | null): this;
-    withScoreTtlDays(scoreTtlDays: number | null): this;
     getOrderDirection(): string | null;
     setOrderDirection(orderDirection: string | null): this;
     withOrderDirection(orderDirection: string | null): this;
