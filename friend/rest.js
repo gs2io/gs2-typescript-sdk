@@ -1248,7 +1248,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeSendRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1262,8 +1262,9 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1275,7 +1276,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeSendRequestsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1290,8 +1291,9 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1303,7 +1305,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getSendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1318,6 +1320,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1329,7 +1332,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getSendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1345,6 +1348,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1482,7 +1486,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeReceiveRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1496,8 +1500,9 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1509,7 +1514,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeReceiveRequestsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1524,8 +1529,9 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1537,7 +1543,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getReceiveRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1552,6 +1558,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1563,7 +1570,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getReceiveRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1579,6 +1586,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,

@@ -5,6 +5,7 @@ export default class GetReceiveRequestRequest implements IRequest {
     private namespaceName;
     private accessToken;
     private fromUserId;
+    private withProfile;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetReceiveRequestRequest implements IRequest {
     getFromUserId(): string | null;
     setFromUserId(fromUserId: string | null): this;
     withFromUserId(fromUserId: string | null): this;
+    getWithProfile(): boolean | null;
+    setWithProfile(withProfile: boolean | null): this;
+    withWithProfile(withProfile: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetReceiveRequestRequest;

@@ -4,6 +4,7 @@ export default class DescribeReceiveRequestsRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
+    private withProfile;
     private pageToken;
     private limit;
     getRequestId(): string | null;
@@ -18,6 +19,9 @@ export default class DescribeReceiveRequestsRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
+    getWithProfile(): boolean | null;
+    setWithProfile(withProfile: boolean | null): this;
+    withWithProfile(withProfile: boolean | null): this;
     getPageToken(): string | null;
     setPageToken(pageToken: string | null): this;
     withPageToken(pageToken: string | null): this;

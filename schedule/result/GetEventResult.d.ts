@@ -6,6 +6,7 @@ export default class GetEventResult implements IResult {
     private scheduleStartAt;
     private scheduleEndAt;
     private repeatSchedule;
+    private isGlobalSchedule;
     getItem(): Gs2Schedule.Event | null;
     setItem(item: Gs2Schedule.Event | null): this;
     withItem(item: Gs2Schedule.Event | null): this;
@@ -21,6 +22,9 @@ export default class GetEventResult implements IResult {
     getRepeatSchedule(): Gs2Schedule.RepeatSchedule | null;
     setRepeatSchedule(repeatSchedule: Gs2Schedule.RepeatSchedule | null): this;
     withRepeatSchedule(repeatSchedule: Gs2Schedule.RepeatSchedule | null): this;
+    getIsGlobalSchedule(): boolean | null;
+    setIsGlobalSchedule(isGlobalSchedule: boolean | null): this;
+    withIsGlobalSchedule(isGlobalSchedule: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetEventResult;

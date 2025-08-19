@@ -24,6 +24,7 @@ export default class DescribeSendRequestsRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
+    private withProfile: boolean|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
 
@@ -76,6 +77,17 @@ export default class DescribeSendRequestsRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getWithProfile(): boolean|null {
+        return this.withProfile;
+    }
+    public setWithProfile(withProfile: boolean|null) {
+        this.withProfile = withProfile;
+        return this;
+    }
+    public withWithProfile(withProfile: boolean|null): this {
+        this.withProfile = withProfile;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -103,6 +115,7 @@ export default class DescribeSendRequestsRequest implements IRequest {
         return new DescribeSendRequestsRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withWithProfile(data["withProfile"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
@@ -111,6 +124,7 @@ export default class DescribeSendRequestsRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "withProfile": this.getWithProfile(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

@@ -22,6 +22,7 @@ const grnFormat: string = "";
 export default class SendFriendRequest implements IModel {
     private userId: string|null = null;
     private targetUserId: string|null = null;
+    private publicProfile: string|null = null;
 
     public static isValid(grn: string): boolean {
         return true;
@@ -53,6 +54,17 @@ export default class SendFriendRequest implements IModel {
         this.targetUserId = targetUserId;
         return this;
     }
+    public getPublicProfile(): string|null {
+        return this.publicProfile;
+    }
+    public setPublicProfile(publicProfile: string|null) {
+        this.publicProfile = publicProfile;
+        return this;
+    }
+    public withPublicProfile(publicProfile: string|null): this {
+        this.publicProfile = publicProfile;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): SendFriendRequest|null {
         if (data == undefined || data == null) {
@@ -60,13 +72,15 @@ export default class SendFriendRequest implements IModel {
         }
         return new SendFriendRequest()
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withPublicProfile(data["publicProfile"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "publicProfile": this.getPublicProfile(),
         };
     }
 }

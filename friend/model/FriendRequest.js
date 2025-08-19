@@ -20,6 +20,7 @@ var FriendRequest = /** @class */ (function () {
     function FriendRequest() {
         this.userId = null;
         this.targetUserId = null;
+        this.publicProfile = null;
     }
     FriendRequest.isValid = function (grn) {
         return true;
@@ -49,18 +50,31 @@ var FriendRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    FriendRequest.prototype.getPublicProfile = function () {
+        return this.publicProfile;
+    };
+    FriendRequest.prototype.setPublicProfile = function (publicProfile) {
+        this.publicProfile = publicProfile;
+        return this;
+    };
+    FriendRequest.prototype.withPublicProfile = function (publicProfile) {
+        this.publicProfile = publicProfile;
+        return this;
+    };
     FriendRequest.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new FriendRequest()
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withPublicProfile(data["publicProfile"]);
     };
     FriendRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "publicProfile": this.getPublicProfile(),
         };
     };
     return FriendRequest;

@@ -24,6 +24,7 @@ var GetEventByUserIdResult = /** @class */ (function () {
         this.scheduleStartAt = null;
         this.scheduleEndAt = null;
         this.repeatSchedule = null;
+        this.isGlobalSchedule = null;
     }
     GetEventByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -80,13 +81,25 @@ var GetEventByUserIdResult = /** @class */ (function () {
         this.repeatSchedule = repeatSchedule;
         return this;
     };
+    GetEventByUserIdResult.prototype.getIsGlobalSchedule = function () {
+        return this.isGlobalSchedule;
+    };
+    GetEventByUserIdResult.prototype.setIsGlobalSchedule = function (isGlobalSchedule) {
+        this.isGlobalSchedule = isGlobalSchedule;
+        return this;
+    };
+    GetEventByUserIdResult.prototype.withIsGlobalSchedule = function (isGlobalSchedule) {
+        this.isGlobalSchedule = isGlobalSchedule;
+        return this;
+    };
     GetEventByUserIdResult.fromDict = function (data) {
         return new GetEventByUserIdResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
             .withInSchedule(data["inSchedule"])
             .withScheduleStartAt(data["scheduleStartAt"])
             .withScheduleEndAt(data["scheduleEndAt"])
-            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
+            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]))
+            .withIsGlobalSchedule(data["isGlobalSchedule"]);
     };
     GetEventByUserIdResult.prototype.toDict = function () {
         var _a, _b;
@@ -96,6 +109,7 @@ var GetEventByUserIdResult = /** @class */ (function () {
             "scheduleStartAt": this.getScheduleStartAt(),
             "scheduleEndAt": this.getScheduleEndAt(),
             "repeatSchedule": (_b = this.getRepeatSchedule()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "isGlobalSchedule": this.getIsGlobalSchedule(),
         };
     };
     return GetEventByUserIdResult;

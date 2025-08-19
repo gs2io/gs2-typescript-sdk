@@ -25,6 +25,7 @@ export default class GetSendRequestRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private targetUserId: string|null = null;
+    private withProfile: boolean|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetSendRequestRequest implements IRequest {
         this.targetUserId = targetUserId;
         return this;
     }
+    public getWithProfile(): boolean|null {
+        return this.withProfile;
+    }
+    public setWithProfile(withProfile: boolean|null) {
+        this.withProfile = withProfile;
+        return this;
+    }
+    public withWithProfile(withProfile: boolean|null): this {
+        this.withProfile = withProfile;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetSendRequestRequest {
         return new GetSendRequestRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withWithProfile(data["withProfile"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetSendRequestRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "targetUserId": this.getTargetUserId(),
+            "withProfile": this.getWithProfile(),
         };
     }
 }

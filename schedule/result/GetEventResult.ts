@@ -23,6 +23,7 @@ export default class GetEventResult implements IResult {
     private scheduleStartAt: number|null = null;
     private scheduleEndAt: number|null = null;
     private repeatSchedule: Gs2Schedule.RepeatSchedule|null = null;
+    private isGlobalSchedule: boolean|null = null;
 
     public getItem(): Gs2Schedule.Event|null {
         return this.item;
@@ -94,13 +95,28 @@ export default class GetEventResult implements IResult {
         return this;
     }
 
+    public getIsGlobalSchedule(): boolean|null {
+        return this.isGlobalSchedule;
+    }
+
+    public setIsGlobalSchedule(isGlobalSchedule: boolean|null) {
+        this.isGlobalSchedule = isGlobalSchedule;
+        return this;
+    }
+
+    public withIsGlobalSchedule(isGlobalSchedule: boolean|null): this {
+        this.isGlobalSchedule = isGlobalSchedule;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): GetEventResult {
         return new GetEventResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
             .withInSchedule(data["inSchedule"])
             .withScheduleStartAt(data["scheduleStartAt"])
             .withScheduleEndAt(data["scheduleEndAt"])
-            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
+            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]))
+            .withIsGlobalSchedule(data["isGlobalSchedule"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -110,6 +126,7 @@ export default class GetEventResult implements IResult {
             "scheduleStartAt": this.getScheduleStartAt(),
             "scheduleEndAt": this.getScheduleEndAt(),
             "repeatSchedule": this.getRepeatSchedule()?.toDict(),
+            "isGlobalSchedule": this.getIsGlobalSchedule(),
         };
     }
 }

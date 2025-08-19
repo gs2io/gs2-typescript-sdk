@@ -22,6 +22,7 @@ var GetReceiveRequestByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.fromUserId = null;
+        this.withProfile = null;
         this.timeOffsetToken = null;
     }
     GetReceiveRequestByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var GetReceiveRequestByUserIdRequest = /** @class */ (function () {
         this.fromUserId = fromUserId;
         return this;
     };
+    GetReceiveRequestByUserIdRequest.prototype.getWithProfile = function () {
+        return this.withProfile;
+    };
+    GetReceiveRequestByUserIdRequest.prototype.setWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
+    GetReceiveRequestByUserIdRequest.prototype.withWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
     GetReceiveRequestByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -95,6 +107,7 @@ var GetReceiveRequestByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withFromUserId(data["fromUserId"])
+            .withWithProfile(data["withProfile"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetReceiveRequestByUserIdRequest.prototype.toDict = function () {
@@ -102,6 +115,7 @@ var GetReceiveRequestByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "fromUserId": this.getFromUserId(),
+            "withProfile": this.getWithProfile(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

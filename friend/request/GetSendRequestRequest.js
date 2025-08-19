@@ -22,6 +22,7 @@ var GetSendRequestRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.withProfile = null;
     }
     GetSendRequestRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetSendRequestRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    GetSendRequestRequest.prototype.getWithProfile = function () {
+        return this.withProfile;
+    };
+    GetSendRequestRequest.prototype.setWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
+    GetSendRequestRequest.prototype.withWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
     GetSendRequestRequest.fromDict = function (data) {
         return new GetSendRequestRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withWithProfile(data["withProfile"]);
     };
     GetSendRequestRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "targetUserId": this.getTargetUserId(),
+            "withProfile": this.getWithProfile(),
         };
     };
     return GetSendRequestRequest;

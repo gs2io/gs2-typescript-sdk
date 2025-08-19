@@ -4,6 +4,7 @@ export default class DescribeReceiveRequestsByUserIdRequest implements IRequest 
     private contextStack;
     private namespaceName;
     private userId;
+    private withProfile;
     private pageToken;
     private limit;
     private timeOffsetToken;
@@ -19,6 +20,9 @@ export default class DescribeReceiveRequestsByUserIdRequest implements IRequest 
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getWithProfile(): boolean | null;
+    setWithProfile(withProfile: boolean | null): this;
+    withWithProfile(withProfile: boolean | null): this;
     getPageToken(): string | null;
     setPageToken(pageToken: string | null): this;
     withPageToken(pageToken: string | null): this;

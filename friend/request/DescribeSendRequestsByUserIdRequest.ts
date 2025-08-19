@@ -24,6 +24,7 @@ export default class DescribeSendRequestsByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private withProfile: boolean|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
     private timeOffsetToken: string|null = null;
@@ -77,6 +78,17 @@ export default class DescribeSendRequestsByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getWithProfile(): boolean|null {
+        return this.withProfile;
+    }
+    public setWithProfile(withProfile: boolean|null) {
+        this.withProfile = withProfile;
+        return this;
+    }
+    public withWithProfile(withProfile: boolean|null): this {
+        this.withProfile = withProfile;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -115,6 +127,7 @@ export default class DescribeSendRequestsByUserIdRequest implements IRequest {
         return new DescribeSendRequestsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withWithProfile(data["withProfile"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -124,6 +137,7 @@ export default class DescribeSendRequestsByUserIdRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "withProfile": this.getWithProfile(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),

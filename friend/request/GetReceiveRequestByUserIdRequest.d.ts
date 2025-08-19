@@ -5,6 +5,7 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private fromUserId;
+    private withProfile;
     private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
     getFromUserId(): string | null;
     setFromUserId(fromUserId: string | null): this;
     withFromUserId(fromUserId: string | null): this;
+    getWithProfile(): boolean | null;
+    setWithProfile(withProfile: boolean | null): this;
+    withWithProfile(withProfile: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

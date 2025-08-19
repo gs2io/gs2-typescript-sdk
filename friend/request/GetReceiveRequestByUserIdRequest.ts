@@ -25,6 +25,7 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private fromUserId: string|null = null;
+    private withProfile: boolean|null = null;
     private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
         this.fromUserId = fromUserId;
         return this;
     }
+    public getWithProfile(): boolean|null {
+        return this.withProfile;
+    }
+    public setWithProfile(withProfile: boolean|null) {
+        this.withProfile = withProfile;
+        return this;
+    }
+    public withWithProfile(withProfile: boolean|null): this {
+        this.withProfile = withProfile;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -104,6 +116,7 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withFromUserId(data["fromUserId"])
+            .withWithProfile(data["withProfile"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -112,6 +125,7 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "fromUserId": this.getFromUserId(),
+            "withProfile": this.getWithProfile(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

@@ -21,6 +21,7 @@ var DescribeReceiveRequestsByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.withProfile = null;
         this.pageToken = null;
         this.limit = null;
         this.timeOffsetToken = null;
@@ -69,6 +70,17 @@ var DescribeReceiveRequestsByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DescribeReceiveRequestsByUserIdRequest.prototype.getWithProfile = function () {
+        return this.withProfile;
+    };
+    DescribeReceiveRequestsByUserIdRequest.prototype.setWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
+    DescribeReceiveRequestsByUserIdRequest.prototype.withWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
     DescribeReceiveRequestsByUserIdRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -106,6 +118,7 @@ var DescribeReceiveRequestsByUserIdRequest = /** @class */ (function () {
         return new DescribeReceiveRequestsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withWithProfile(data["withProfile"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -114,6 +127,7 @@ var DescribeReceiveRequestsByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "withProfile": this.getWithProfile(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),

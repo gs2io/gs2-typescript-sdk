@@ -21,6 +21,7 @@ var DescribeReceiveRequestsRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.withProfile = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -68,6 +69,17 @@ var DescribeReceiveRequestsRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    DescribeReceiveRequestsRequest.prototype.getWithProfile = function () {
+        return this.withProfile;
+    };
+    DescribeReceiveRequestsRequest.prototype.setWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
+    DescribeReceiveRequestsRequest.prototype.withWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
     DescribeReceiveRequestsRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -94,6 +106,7 @@ var DescribeReceiveRequestsRequest = /** @class */ (function () {
         return new DescribeReceiveRequestsRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withWithProfile(data["withProfile"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -101,6 +114,7 @@ var DescribeReceiveRequestsRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "withProfile": this.getWithProfile(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };
