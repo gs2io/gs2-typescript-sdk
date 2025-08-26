@@ -28,6 +28,7 @@ var Namespace = /** @class */ (function () {
         this.platformSetting = null;
         this.depositBalanceScript = null;
         this.withdrawBalanceScript = null;
+        this.verifyReceiptScript = null;
         this.subscribeScript = null;
         this.renewScript = null;
         this.unsubscribeScript = null;
@@ -174,6 +175,17 @@ var Namespace = /** @class */ (function () {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     };
+    Namespace.prototype.getVerifyReceiptScript = function () {
+        return this.verifyReceiptScript;
+    };
+    Namespace.prototype.setVerifyReceiptScript = function (verifyReceiptScript) {
+        this.verifyReceiptScript = verifyReceiptScript;
+        return this;
+    };
+    Namespace.prototype.withVerifyReceiptScript = function (verifyReceiptScript) {
+        this.verifyReceiptScript = verifyReceiptScript;
+        return this;
+    };
     Namespace.prototype.getSubscribeScript = function () {
         return this.subscribeScript;
     };
@@ -286,6 +298,7 @@ var Namespace = /** @class */ (function () {
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withVerifyReceiptScript(Gs2Money2.ScriptSetting.fromDict(data["verifyReceiptScript"]))
             .withSubscribeScript(data["subscribeScript"])
             .withRenewScript(data["renewScript"])
             .withUnsubscribeScript(data["unsubscribeScript"])
@@ -297,7 +310,7 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -307,12 +320,13 @@ var Namespace = /** @class */ (function () {
             "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "verifyReceiptScript": (_d = this.getVerifyReceiptScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "subscribeScript": this.getSubscribeScript(),
             "renewScript": this.getRenewScript(),
             "unsubscribeScript": this.getUnsubscribeScript(),
-            "takeOverScript": (_d = this.getTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "changeSubscriptionStatusNotification": (_e = this.getChangeSubscriptionStatusNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "takeOverScript": (_e = this.getTakeOverScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeSubscriptionStatusNotification": (_f = this.getChangeSubscriptionStatusNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

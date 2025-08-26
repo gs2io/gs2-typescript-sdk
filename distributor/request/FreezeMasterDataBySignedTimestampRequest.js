@@ -24,7 +24,6 @@ var FreezeMasterDataBySignedTimestampRequest = /** @class */ (function () {
         this.body = null;
         this.signature = null;
         this.keyId = null;
-        this.duplicationAvoider = null;
     }
     FreezeMasterDataBySignedTimestampRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -101,17 +100,6 @@ var FreezeMasterDataBySignedTimestampRequest = /** @class */ (function () {
     };
     FreezeMasterDataBySignedTimestampRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
-        return this;
-    };
-    FreezeMasterDataBySignedTimestampRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    FreezeMasterDataBySignedTimestampRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    FreezeMasterDataBySignedTimestampRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FreezeMasterDataBySignedTimestampRequest.fromDict = function (data) {

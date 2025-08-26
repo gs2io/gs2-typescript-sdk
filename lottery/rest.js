@@ -49,7 +49,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LotteryRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
@@ -63,10 +63,9 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
             'lotteryTriggerScriptId': (_f = request.getLotteryTriggerScriptId()) !== null && _f !== void 0 ? _f : null,
-            'choicePrizeTableScriptId': (_g = request.getChoicePrizeTableScriptId()) !== null && _g !== void 0 ? _g : null,
-            'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'queueNamespaceId': (_k = request.getQueueNamespaceId()) !== null && _k !== void 0 ? _k : null,
-            'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
+            'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'queueNamespaceId': (_j = request.getQueueNamespaceId()) !== null && _j !== void 0 ? _j : null,
+            'keyId': (_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -126,7 +125,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LotteryRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
@@ -140,10 +139,9 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'lotteryTriggerScriptId': (_g = request.getLotteryTriggerScriptId()) !== null && _g !== void 0 ? _g : null,
-            'choicePrizeTableScriptId': (_h = request.getChoicePrizeTableScriptId()) !== null && _h !== void 0 ? _h : null,
-            'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'queueNamespaceId': (_l = request.getQueueNamespaceId()) !== null && _l !== void 0 ? _l : null,
-            'keyId': (_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null,
+            'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'queueNamespaceId': (_k = request.getQueueNamespaceId()) !== null && _k !== void 0 ? _k : null,
+            'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

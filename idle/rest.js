@@ -684,7 +684,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.prediction = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{categoryName}/prediction')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -697,11 +697,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
-        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -717,7 +714,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.predictionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{categoryName}/prediction')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -728,14 +725,11 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
-        }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

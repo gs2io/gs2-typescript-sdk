@@ -23,7 +23,6 @@ var FindPlatformIdRequest = /** @class */ (function () {
         this.accessToken = null;
         this.type = null;
         this.userIdentifier = null;
-        this.duplicationAvoider = null;
     }
     FindPlatformIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -89,17 +88,6 @@ var FindPlatformIdRequest = /** @class */ (function () {
     };
     FindPlatformIdRequest.prototype.withUserIdentifier = function (userIdentifier) {
         this.userIdentifier = userIdentifier;
-        return this;
-    };
-    FindPlatformIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    FindPlatformIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    FindPlatformIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FindPlatformIdRequest.fromDict = function (data) {

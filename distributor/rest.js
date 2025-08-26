@@ -854,7 +854,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.freezeMasterData = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -866,11 +866,8 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
-        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -886,7 +883,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -896,14 +893,11 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
-        }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -947,7 +941,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataBySignedTimestamp = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -959,14 +953,11 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
-        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'body': (_f = request.getBody()) !== null && _f !== void 0 ? _f : null,
-            'signature': (_g = request.getSignature()) !== null && _g !== void 0 ? _g : null,
-            'keyId': (_h = request.getKeyId()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'body': (_e = request.getBody()) !== null && _e !== void 0 ? _e : null,
+            'signature': (_f = request.getSignature()) !== null && _f !== void 0 ? _f : null,
+            'keyId': (_g = request.getKeyId()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -982,7 +973,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataByTimestamp = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp/raw')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -994,12 +985,9 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
-        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'timestamp': (_f = request.getTimestamp()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'timestamp': (_e = request.getTimestamp()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -21,7 +21,6 @@ var ApplyBuffRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.duplicationAvoider = null;
     }
     ApplyBuffRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -65,17 +64,6 @@ var ApplyBuffRequest = /** @class */ (function () {
     };
     ApplyBuffRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
-        return this;
-    };
-    ApplyBuffRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    ApplyBuffRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    ApplyBuffRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ApplyBuffRequest.fromDict = function (data) {

@@ -22,7 +22,6 @@ var PredictionRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.categoryName = null;
-        this.duplicationAvoider = null;
     }
     PredictionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -77,17 +76,6 @@ var PredictionRequest = /** @class */ (function () {
     };
     PredictionRequest.prototype.withCategoryName = function (categoryName) {
         this.categoryName = categoryName;
-        return this;
-    };
-    PredictionRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    PredictionRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    PredictionRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PredictionRequest.fromDict = function (data) {

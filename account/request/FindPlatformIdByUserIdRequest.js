@@ -24,7 +24,6 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
         this.type = null;
         this.userIdentifier = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     FindPlatformIdByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -101,17 +100,6 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
     };
     FindPlatformIdByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    FindPlatformIdByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    FindPlatformIdByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    FindPlatformIdByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FindPlatformIdByUserIdRequest.fromDict = function (data) {

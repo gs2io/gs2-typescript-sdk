@@ -49,7 +49,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
@@ -66,12 +66,13 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'platformSetting': (_g = (_f = request.getPlatformSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'depositBalanceScript': (_j = (_h = request.getDepositBalanceScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'withdrawBalanceScript': (_l = (_k = request.getWithdrawBalanceScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'subscribeScript': (_m = request.getSubscribeScript()) !== null && _m !== void 0 ? _m : null,
-            'renewScript': (_o = request.getRenewScript()) !== null && _o !== void 0 ? _o : null,
-            'unsubscribeScript': (_p = request.getUnsubscribeScript()) !== null && _p !== void 0 ? _p : null,
-            'takeOverScript': (_r = (_q = request.getTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'changeSubscriptionStatusNotification': (_t = (_s = request.getChangeSubscriptionStatusNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'verifyReceiptScript': (_o = (_m = request.getVerifyReceiptScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'subscribeScript': (_p = request.getSubscribeScript()) !== null && _p !== void 0 ? _p : null,
+            'renewScript': (_q = request.getRenewScript()) !== null && _q !== void 0 ? _q : null,
+            'unsubscribeScript': (_r = request.getUnsubscribeScript()) !== null && _r !== void 0 ? _r : null,
+            'takeOverScript': (_t = (_s = request.getTakeOverScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'changeSubscriptionStatusNotification': (_v = (_u = request.getChangeSubscriptionStatusNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -131,7 +132,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -147,12 +148,13 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'platformSetting': (_g = (_f = request.getPlatformSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'depositBalanceScript': (_j = (_h = request.getDepositBalanceScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'withdrawBalanceScript': (_l = (_k = request.getWithdrawBalanceScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'subscribeScript': (_m = request.getSubscribeScript()) !== null && _m !== void 0 ? _m : null,
-            'renewScript': (_o = request.getRenewScript()) !== null && _o !== void 0 ? _o : null,
-            'unsubscribeScript': (_p = request.getUnsubscribeScript()) !== null && _p !== void 0 ? _p : null,
-            'takeOverScript': (_r = (_q = request.getTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'changeSubscriptionStatusNotification': (_t = (_s = request.getChangeSubscriptionStatusNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'verifyReceiptScript': (_o = (_m = request.getVerifyReceiptScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'subscribeScript': (_p = request.getSubscribeScript()) !== null && _p !== void 0 ? _p : null,
+            'renewScript': (_q = request.getRenewScript()) !== null && _q !== void 0 ? _q : null,
+            'unsubscribeScript': (_r = request.getUnsubscribeScript()) !== null && _r !== void 0 ? _r : null,
+            'takeOverScript': (_t = (_s = request.getTakeOverScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'changeSubscriptionStatusNotification': (_v = (_u = request.getChangeSubscriptionStatusNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

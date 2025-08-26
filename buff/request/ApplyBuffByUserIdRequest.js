@@ -22,7 +22,6 @@ var ApplyBuffByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     ApplyBuffByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -77,17 +76,6 @@ var ApplyBuffByUserIdRequest = /** @class */ (function () {
     };
     ApplyBuffByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    ApplyBuffByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    ApplyBuffByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    ApplyBuffByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ApplyBuffByUserIdRequest.fromDict = function (data) {

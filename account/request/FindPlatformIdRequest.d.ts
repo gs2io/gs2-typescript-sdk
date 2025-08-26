@@ -6,7 +6,6 @@ export default class FindPlatformIdRequest implements IRequest {
     private accessToken;
     private type;
     private userIdentifier;
-    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -25,9 +24,6 @@ export default class FindPlatformIdRequest implements IRequest {
     getUserIdentifier(): string | null;
     setUserIdentifier(userIdentifier: string | null): this;
     withUserIdentifier(userIdentifier: string | null): this;
-    getDuplicationAvoider(): string | null;
-    setDuplicationAvoider(duplicationAvoider: string | null): this;
-    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): FindPlatformIdRequest;

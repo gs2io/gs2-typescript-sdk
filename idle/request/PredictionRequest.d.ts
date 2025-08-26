@@ -5,7 +5,6 @@ export default class PredictionRequest implements IRequest {
     private namespaceName;
     private accessToken;
     private categoryName;
-    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -21,9 +20,6 @@ export default class PredictionRequest implements IRequest {
     getCategoryName(): string | null;
     setCategoryName(categoryName: string | null): this;
     withCategoryName(categoryName: string | null): this;
-    getDuplicationAvoider(): string | null;
-    setDuplicationAvoider(duplicationAvoider: string | null): this;
-    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): PredictionRequest;

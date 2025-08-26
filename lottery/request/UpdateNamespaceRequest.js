@@ -25,7 +25,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = null;
         this.transactionSetting = null;
         this.lotteryTriggerScriptId = null;
-        this.choicePrizeTableScriptId = null;
         this.logSetting = null;
         this.queueNamespaceId = null;
         this.keyId = null;
@@ -96,17 +95,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.lotteryTriggerScriptId = lotteryTriggerScriptId;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getChoicePrizeTableScriptId = function () {
-        return this.choicePrizeTableScriptId;
-    };
-    UpdateNamespaceRequest.prototype.setChoicePrizeTableScriptId = function (choicePrizeTableScriptId) {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withChoicePrizeTableScriptId = function (choicePrizeTableScriptId) {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -152,7 +140,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
-            .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
             .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
@@ -164,7 +151,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "lotteryTriggerScriptId": this.getLotteryTriggerScriptId(),
-            "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
             "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),

@@ -27,7 +27,6 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private transactionSetting: Gs2Lottery.TransactionSetting|null = null;
     private lotteryTriggerScriptId: string|null = null;
-    private choicePrizeTableScriptId: string|null = null;
     private logSetting: Gs2Lottery.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -149,17 +148,6 @@ export default class Namespace implements IModel {
         this.lotteryTriggerScriptId = lotteryTriggerScriptId;
         return this;
     }
-    public getChoicePrizeTableScriptId(): string|null {
-        return this.choicePrizeTableScriptId;
-    }
-    public setChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null) {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    }
-    public withChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null): this {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    }
     public getLogSetting(): Gs2Lottery.LogSetting|null {
         return this.logSetting;
     }
@@ -243,7 +231,6 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
-            .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
             .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -259,7 +246,6 @@ export default class Namespace implements IModel {
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "lotteryTriggerScriptId": this.getLotteryTriggerScriptId(),
-            "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

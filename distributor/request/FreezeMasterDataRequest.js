@@ -21,7 +21,6 @@ var FreezeMasterDataRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.duplicationAvoider = null;
     }
     FreezeMasterDataRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -65,17 +64,6 @@ var FreezeMasterDataRequest = /** @class */ (function () {
     };
     FreezeMasterDataRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
-        return this;
-    };
-    FreezeMasterDataRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    FreezeMasterDataRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    FreezeMasterDataRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FreezeMasterDataRequest.fromDict = function (data) {

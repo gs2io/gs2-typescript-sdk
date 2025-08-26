@@ -9,6 +9,7 @@ export default class Namespace implements IModel {
     private platformSetting;
     private depositBalanceScript;
     private withdrawBalanceScript;
+    private verifyReceiptScript;
     private subscribeScript;
     private renewScript;
     private unsubscribeScript;
@@ -47,6 +48,9 @@ export default class Namespace implements IModel {
     getWithdrawBalanceScript(): Gs2Money2.ScriptSetting | null;
     setWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting | null): this;
     withWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting | null): this;
+    getVerifyReceiptScript(): Gs2Money2.ScriptSetting | null;
+    setVerifyReceiptScript(verifyReceiptScript: Gs2Money2.ScriptSetting | null): this;
+    withVerifyReceiptScript(verifyReceiptScript: Gs2Money2.ScriptSetting | null): this;
     getSubscribeScript(): string | null;
     setSubscribeScript(subscribeScript: string | null): this;
     withSubscribeScript(subscribeScript: string | null): this;

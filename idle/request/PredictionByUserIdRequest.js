@@ -23,7 +23,6 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.categoryName = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     PredictionByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -89,17 +88,6 @@ var PredictionByUserIdRequest = /** @class */ (function () {
     };
     PredictionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    PredictionByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    PredictionByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    PredictionByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PredictionByUserIdRequest.fromDict = function (data) {

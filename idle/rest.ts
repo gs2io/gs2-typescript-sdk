@@ -799,9 +799,6 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
-        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -833,9 +830,6 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         if (request.getTimeOffsetToken()) {
             headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;

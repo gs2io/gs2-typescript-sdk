@@ -22,7 +22,6 @@ var FreezeMasterDataByTimestampRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.timestamp = null;
-        this.duplicationAvoider = null;
     }
     FreezeMasterDataByTimestampRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -77,17 +76,6 @@ var FreezeMasterDataByTimestampRequest = /** @class */ (function () {
     };
     FreezeMasterDataByTimestampRequest.prototype.withTimestamp = function (timestamp) {
         this.timestamp = timestamp;
-        return this;
-    };
-    FreezeMasterDataByTimestampRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    FreezeMasterDataByTimestampRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    FreezeMasterDataByTimestampRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FreezeMasterDataByTimestampRequest.fromDict = function (data) {

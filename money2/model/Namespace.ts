@@ -35,6 +35,7 @@ export default class Namespace implements IModel {
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
     private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
     private withdrawBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private verifyReceiptScript: Gs2Money2.ScriptSetting|null = null;
     private subscribeScript: string|null = null;
     private renewScript: string|null = null;
     private unsubscribeScript: string|null = null;
@@ -192,6 +193,17 @@ export default class Namespace implements IModel {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
+    public getVerifyReceiptScript(): Gs2Money2.ScriptSetting|null {
+        return this.verifyReceiptScript;
+    }
+    public setVerifyReceiptScript(verifyReceiptScript: Gs2Money2.ScriptSetting|null) {
+        this.verifyReceiptScript = verifyReceiptScript;
+        return this;
+    }
+    public withVerifyReceiptScript(verifyReceiptScript: Gs2Money2.ScriptSetting|null): this {
+        this.verifyReceiptScript = verifyReceiptScript;
+        return this;
+    }
     public getSubscribeScript(): string|null {
         return this.subscribeScript;
     }
@@ -305,6 +317,7 @@ export default class Namespace implements IModel {
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withVerifyReceiptScript(Gs2Money2.ScriptSetting.fromDict(data["verifyReceiptScript"]))
             .withSubscribeScript(data["subscribeScript"])
             .withRenewScript(data["renewScript"])
             .withUnsubscribeScript(data["unsubscribeScript"])
@@ -326,6 +339,7 @@ export default class Namespace implements IModel {
             "platformSetting": this.getPlatformSetting()?.toDict(),
             "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),
             "withdrawBalanceScript": this.getWithdrawBalanceScript()?.toDict(),
+            "verifyReceiptScript": this.getVerifyReceiptScript()?.toDict(),
             "subscribeScript": this.getSubscribeScript(),
             "renewScript": this.getRenewScript(),
             "unsubscribeScript": this.getUnsubscribeScript(),

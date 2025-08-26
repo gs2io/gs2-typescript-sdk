@@ -6,7 +6,6 @@ export default class Namespace implements IModel {
     private description;
     private transactionSetting;
     private lotteryTriggerScriptId;
-    private choicePrizeTableScriptId;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -33,9 +32,6 @@ export default class Namespace implements IModel {
     getLotteryTriggerScriptId(): string | null;
     setLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
     withLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
-    getChoicePrizeTableScriptId(): string | null;
-    setChoicePrizeTableScriptId(choicePrizeTableScriptId: string | null): this;
-    withChoicePrizeTableScriptId(choicePrizeTableScriptId: string | null): this;
     getLogSetting(): Gs2Lottery.LogSetting | null;
     setLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;

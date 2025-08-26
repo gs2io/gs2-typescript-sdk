@@ -25,7 +25,6 @@ var Namespace = /** @class */ (function () {
         this.description = null;
         this.transactionSetting = null;
         this.lotteryTriggerScriptId = null;
-        this.choicePrizeTableScriptId = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -136,17 +135,6 @@ var Namespace = /** @class */ (function () {
         this.lotteryTriggerScriptId = lotteryTriggerScriptId;
         return this;
     };
-    Namespace.prototype.getChoicePrizeTableScriptId = function () {
-        return this.choicePrizeTableScriptId;
-    };
-    Namespace.prototype.setChoicePrizeTableScriptId = function (choicePrizeTableScriptId) {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    };
-    Namespace.prototype.withChoicePrizeTableScriptId = function (choicePrizeTableScriptId) {
-        this.choicePrizeTableScriptId = choicePrizeTableScriptId;
-        return this;
-    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -229,7 +217,6 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
-            .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
             .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -245,7 +232,6 @@ var Namespace = /** @class */ (function () {
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "lotteryTriggerScriptId": this.getLotteryTriggerScriptId(),
-            "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
             "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

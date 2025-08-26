@@ -1338,7 +1338,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.findPlatformId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/platformId/type/{type}/userIdentifier/{userIdentifier}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1352,11 +1352,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
-        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1368,7 +1365,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.findPlatformIdByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/platformId/type/{type}/userIdentifier/{userIdentifier}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1380,14 +1377,11 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
-        }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.get(url, {
             params: params,
