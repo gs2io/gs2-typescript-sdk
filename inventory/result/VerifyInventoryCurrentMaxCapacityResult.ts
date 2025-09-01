@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Inventory from '../model'
 
 export default class VerifyInventoryCurrentMaxCapacityResult implements IResult {
+    private item: Gs2Inventory.Inventory|null = null;
+
+    public getItem(): Gs2Inventory.Inventory|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inventory.Inventory|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inventory.Inventory|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyInventoryCurrentMaxCapacityResult {
-        return new VerifyInventoryCurrentMaxCapacityResult();
+        return new VerifyInventoryCurrentMaxCapacityResult()
+            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

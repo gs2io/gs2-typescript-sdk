@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Guild from '../model'
 
 export default class VerifyCurrentMaximumMemberCountResult implements IResult {
+    private item: Gs2Guild.Guild|null = null;
+
+    public getItem(): Gs2Guild.Guild|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Guild.Guild|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Guild.Guild|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyCurrentMaximumMemberCountResult {
-        return new VerifyCurrentMaximumMemberCountResult();
+        return new VerifyCurrentMaximumMemberCountResult()
+            .withItem(Gs2Guild.Guild.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

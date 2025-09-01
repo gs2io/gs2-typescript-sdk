@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Matchmaking from '../model'
 
 export default class VerifyIncludeParticipantByStampTaskResult implements IResult {
+    private item: Gs2Matchmaking.SeasonGathering|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Matchmaking.SeasonGathering|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Matchmaking.SeasonGathering|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Matchmaking.SeasonGathering|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyIncludeParticipantByStampTaskResult implements IResul
 
     public static fromDict(data: {[key: string]: any}): VerifyIncludeParticipantByStampTaskResult {
         return new VerifyIncludeParticipantByStampTaskResult()
+            .withItem(Gs2Matchmaking.SeasonGathering.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

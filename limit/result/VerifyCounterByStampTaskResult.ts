@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Limit from '../model'
 
 export default class VerifyCounterByStampTaskResult implements IResult {
+    private item: Gs2Limit.Counter|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Limit.Counter|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Limit.Counter|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Limit.Counter|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyCounterByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyCounterByStampTaskResult {
         return new VerifyCounterByStampTaskResult()
+            .withItem(Gs2Limit.Counter.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

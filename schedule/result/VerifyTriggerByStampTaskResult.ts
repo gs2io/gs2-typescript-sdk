@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Schedule from '../model'
 
 export default class VerifyTriggerByStampTaskResult implements IResult {
+    private item: Gs2Schedule.Trigger|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Schedule.Trigger|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Schedule.Trigger|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Schedule.Trigger|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyTriggerByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyTriggerByStampTaskResult {
         return new VerifyTriggerByStampTaskResult()
+            .withItem(Gs2Schedule.Trigger.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

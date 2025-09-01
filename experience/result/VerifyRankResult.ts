@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Experience from '../model'
 
 export default class VerifyRankResult implements IResult {
+    private item: Gs2Experience.Status|null = null;
+
+    public getItem(): Gs2Experience.Status|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Experience.Status|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Experience.Status|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyRankResult {
-        return new VerifyRankResult();
+        return new VerifyRankResult()
+            .withItem(Gs2Experience.Status.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

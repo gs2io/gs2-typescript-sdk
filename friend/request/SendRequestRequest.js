@@ -22,6 +22,7 @@ var SendRequestRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.withProfile = null;
         this.duplicationAvoider = null;
     }
     SendRequestRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var SendRequestRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    SendRequestRequest.prototype.getWithProfile = function () {
+        return this.withProfile;
+    };
+    SendRequestRequest.prototype.setWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
+    SendRequestRequest.prototype.withWithProfile = function (withProfile) {
+        this.withProfile = withProfile;
+        return this;
+    };
     SendRequestRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var SendRequestRequest = /** @class */ (function () {
         return new SendRequestRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withWithProfile(data["withProfile"]);
     };
     SendRequestRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "targetUserId": this.getTargetUserId(),
+            "withProfile": this.getWithProfile(),
         };
     };
     return SendRequestRequest;

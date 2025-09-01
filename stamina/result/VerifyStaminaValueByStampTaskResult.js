@@ -15,10 +15,24 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Stamina = tslib_1.__importStar(require("../model"));
 var VerifyStaminaValueByStampTaskResult = /** @class */ (function () {
     function VerifyStaminaValueByStampTaskResult() {
+        this.item = null;
         this.newContextStack = null;
     }
+    VerifyStaminaValueByStampTaskResult.prototype.getItem = function () {
+        return this.item;
+    };
+    VerifyStaminaValueByStampTaskResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    VerifyStaminaValueByStampTaskResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
     VerifyStaminaValueByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
@@ -32,10 +46,13 @@ var VerifyStaminaValueByStampTaskResult = /** @class */ (function () {
     };
     VerifyStaminaValueByStampTaskResult.fromDict = function (data) {
         return new VerifyStaminaValueByStampTaskResult()
+            .withItem(Gs2Stamina.Stamina.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     };
     VerifyStaminaValueByStampTaskResult.prototype.toDict = function () {
+        var _a;
         return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     };

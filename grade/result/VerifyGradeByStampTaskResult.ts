@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Grade from '../model'
 
 export default class VerifyGradeByStampTaskResult implements IResult {
+    private item: Gs2Grade.Status|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Grade.Status|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Grade.Status|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Grade.Status|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyGradeByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyGradeByStampTaskResult {
         return new VerifyGradeByStampTaskResult()
+            .withItem(Gs2Grade.Status.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

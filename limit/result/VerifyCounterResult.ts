@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Limit from '../model'
 
 export default class VerifyCounterResult implements IResult {
+    private item: Gs2Limit.Counter|null = null;
+
+    public getItem(): Gs2Limit.Counter|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Limit.Counter|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Limit.Counter|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyCounterResult {
-        return new VerifyCounterResult();
+        return new VerifyCounterResult()
+            .withItem(Gs2Limit.Counter.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

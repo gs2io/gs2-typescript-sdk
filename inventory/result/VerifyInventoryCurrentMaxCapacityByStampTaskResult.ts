@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Inventory from '../model'
 
 export default class VerifyInventoryCurrentMaxCapacityByStampTaskResult implements IResult {
+    private item: Gs2Inventory.Inventory|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Inventory.Inventory|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inventory.Inventory|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inventory.Inventory|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyInventoryCurrentMaxCapacityByStampTaskResult implemen
 
     public static fromDict(data: {[key: string]: any}): VerifyInventoryCurrentMaxCapacityByStampTaskResult {
         return new VerifyInventoryCurrentMaxCapacityByStampTaskResult()
+            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

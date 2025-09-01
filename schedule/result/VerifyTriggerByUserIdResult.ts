@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Schedule from '../model'
 
 export default class VerifyTriggerByUserIdResult implements IResult {
+    private item: Gs2Schedule.Trigger|null = null;
+
+    public getItem(): Gs2Schedule.Trigger|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Schedule.Trigger|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Schedule.Trigger|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyTriggerByUserIdResult {
-        return new VerifyTriggerByUserIdResult();
+        return new VerifyTriggerByUserIdResult()
+            .withItem(Gs2Schedule.Trigger.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Experience from '../model'
 
 export default class VerifyRankCapByStampTaskResult implements IResult {
+    private item: Gs2Experience.Status|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Experience.Status|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Experience.Status|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Experience.Status|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyRankCapByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyRankCapByStampTaskResult {
         return new VerifyRankCapByStampTaskResult()
+            .withItem(Gs2Experience.Status.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

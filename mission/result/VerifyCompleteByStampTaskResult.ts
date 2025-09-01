@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Mission from '../model'
 
 export default class VerifyCompleteByStampTaskResult implements IResult {
+    private item: Gs2Mission.Complete|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Mission.Complete|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Mission.Complete|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Mission.Complete|null): this {
+        this.item = item;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,13 @@ export default class VerifyCompleteByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyCompleteByStampTaskResult {
         return new VerifyCompleteByStampTaskResult()
+            .withItem(Gs2Mission.Complete.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Grade from '../model'
 
 export default class VerifyGradeResult implements IResult {
+    private item: Gs2Grade.Status|null = null;
+
+    public getItem(): Gs2Grade.Status|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Grade.Status|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Grade.Status|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyGradeResult {
-        return new VerifyGradeResult();
+        return new VerifyGradeResult()
+            .withItem(Gs2Grade.Status.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

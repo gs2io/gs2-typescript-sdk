@@ -15,10 +15,24 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Inventory = tslib_1.__importStar(require("../model"));
 var VerifyItemSetByStampTaskResult = /** @class */ (function () {
     function VerifyItemSetByStampTaskResult() {
+        this.items = null;
         this.newContextStack = null;
     }
+    VerifyItemSetByStampTaskResult.prototype.getItems = function () {
+        return this.items;
+    };
+    VerifyItemSetByStampTaskResult.prototype.setItems = function (items) {
+        this.items = items;
+        return this;
+    };
+    VerifyItemSetByStampTaskResult.prototype.withItems = function (items) {
+        this.items = items;
+        return this;
+    };
     VerifyItemSetByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
@@ -32,10 +46,18 @@ var VerifyItemSetByStampTaskResult = /** @class */ (function () {
     };
     VerifyItemSetByStampTaskResult.fromDict = function (data) {
         return new VerifyItemSetByStampTaskResult()
+            .withItems(data.items ?
+            data.items.map(function (item) {
+                return Gs2Inventory.ItemSet.fromDict(item);
+            }) : null)
             .withNewContextStack(data["newContextStack"]);
     };
     VerifyItemSetByStampTaskResult.prototype.toDict = function () {
         return {
+            "items": this.getItems() ?
+                this.getItems().map(function (item) {
+                    return item.toDict();
+                }) : null,
             "newContextStack": this.getNewContextStack(),
         };
     };

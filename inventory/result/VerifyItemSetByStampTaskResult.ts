@@ -15,9 +15,25 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Inventory from '../model'
 
 export default class VerifyItemSetByStampTaskResult implements IResult {
+    private items: Gs2Inventory.ItemSet[]|null = null;
     private newContextStack: string|null = null;
+
+    public getItems(): Gs2Inventory.ItemSet[]|null {
+        return this.items;
+    }
+
+    public setItems(items: Gs2Inventory.ItemSet[]|null) {
+        this.items = items;
+        return this;
+    }
+
+    public withItems(items: Gs2Inventory.ItemSet[]|null): this {
+        this.items = items;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +51,21 @@ export default class VerifyItemSetByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyItemSetByStampTaskResult {
         return new VerifyItemSetByStampTaskResult()
+            .withItems(data.items ?
+                data.items.map((item: {[key: string]: any}) => {
+                    return Gs2Inventory.ItemSet.fromDict(item);
+                }
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "items": this.getItems() ?
+                this.getItems()!.map((item: Gs2Inventory.ItemSet) => {
+                    return item.toDict();
+                }
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

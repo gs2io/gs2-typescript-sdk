@@ -1602,8 +1602,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
-            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
-            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'));
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1611,6 +1610,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'tier': String(request.getTier() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };

@@ -15,10 +15,24 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Mission = tslib_1.__importStar(require("../model"));
 var VerifyCompleteByStampTaskResult = /** @class */ (function () {
     function VerifyCompleteByStampTaskResult() {
+        this.item = null;
         this.newContextStack = null;
     }
+    VerifyCompleteByStampTaskResult.prototype.getItem = function () {
+        return this.item;
+    };
+    VerifyCompleteByStampTaskResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    VerifyCompleteByStampTaskResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
     VerifyCompleteByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
@@ -32,10 +46,13 @@ var VerifyCompleteByStampTaskResult = /** @class */ (function () {
     };
     VerifyCompleteByStampTaskResult.fromDict = function (data) {
         return new VerifyCompleteByStampTaskResult()
+            .withItem(Gs2Mission.Complete.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     };
     VerifyCompleteByStampTaskResult.prototype.toDict = function () {
+        var _a;
         return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     };

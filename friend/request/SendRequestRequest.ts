@@ -25,6 +25,7 @@ export default class SendRequestRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private targetUserId: string|null = null;
+    private withProfile: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class SendRequestRequest implements IRequest {
         this.targetUserId = targetUserId;
         return this;
     }
+    public getWithProfile(): boolean|null {
+        return this.withProfile;
+    }
+    public setWithProfile(withProfile: boolean|null) {
+        this.withProfile = withProfile;
+        return this;
+    }
+    public withWithProfile(withProfile: boolean|null): this {
+        this.withProfile = withProfile;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -106,7 +118,8 @@ export default class SendRequestRequest implements IRequest {
         return new SendRequestRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withWithProfile(data["withProfile"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -114,6 +127,7 @@ export default class SendRequestRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "targetUserId": this.getTargetUserId(),
+            "withProfile": this.getWithProfile(),
         };
     }
 }

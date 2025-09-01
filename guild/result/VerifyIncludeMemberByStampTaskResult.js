@@ -15,10 +15,24 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Guild = tslib_1.__importStar(require("../model"));
 var VerifyIncludeMemberByStampTaskResult = /** @class */ (function () {
     function VerifyIncludeMemberByStampTaskResult() {
+        this.item = null;
         this.newContextStack = null;
     }
+    VerifyIncludeMemberByStampTaskResult.prototype.getItem = function () {
+        return this.item;
+    };
+    VerifyIncludeMemberByStampTaskResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    VerifyIncludeMemberByStampTaskResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
     VerifyIncludeMemberByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
@@ -32,10 +46,13 @@ var VerifyIncludeMemberByStampTaskResult = /** @class */ (function () {
     };
     VerifyIncludeMemberByStampTaskResult.fromDict = function (data) {
         return new VerifyIncludeMemberByStampTaskResult()
+            .withItem(Gs2Guild.Guild.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"]);
     };
     VerifyIncludeMemberByStampTaskResult.prototype.toDict = function () {
+        var _a;
         return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     };

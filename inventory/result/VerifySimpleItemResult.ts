@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Inventory from '../model'
 
 export default class VerifySimpleItemResult implements IResult {
+    private item: Gs2Inventory.SimpleItem|null = null;
+
+    public getItem(): Gs2Inventory.SimpleItem|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inventory.SimpleItem|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inventory.SimpleItem|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifySimpleItemResult {
-        return new VerifySimpleItemResult();
+        return new VerifySimpleItemResult()
+            .withItem(Gs2Inventory.SimpleItem.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

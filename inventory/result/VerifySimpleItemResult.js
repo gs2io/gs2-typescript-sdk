@@ -15,14 +15,32 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Inventory = tslib_1.__importStar(require("../model"));
 var VerifySimpleItemResult = /** @class */ (function () {
     function VerifySimpleItemResult() {
+        this.item = null;
     }
+    VerifySimpleItemResult.prototype.getItem = function () {
+        return this.item;
+    };
+    VerifySimpleItemResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    VerifySimpleItemResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
     VerifySimpleItemResult.fromDict = function (data) {
-        return new VerifySimpleItemResult();
+        return new VerifySimpleItemResult()
+            .withItem(Gs2Inventory.SimpleItem.fromDict(data["item"]));
     };
     VerifySimpleItemResult.prototype.toDict = function () {
-        return {};
+        var _a;
+        return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+        };
     };
     return VerifySimpleItemResult;
 }());

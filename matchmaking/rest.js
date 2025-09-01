@@ -1399,22 +1399,22 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.describeSeasonGatherings = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{seasonName}', String((_c = request.getSeasonName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getSeasonName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{season}', String((_e = request.getSeason()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getSeason()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{tier}', String((_g = request.getTier()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTier()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{season}', String((_e = request.getSeason()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getSeason()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
-            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'tier': String((_h = request.getTier()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,

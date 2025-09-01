@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Mission from '../model'
 
 export default class VerifyCompleteByUserIdResult implements IResult {
+    private item: Gs2Mission.Complete|null = null;
+
+    public getItem(): Gs2Mission.Complete|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Mission.Complete|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Mission.Complete|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): VerifyCompleteByUserIdResult {
-        return new VerifyCompleteByUserIdResult();
+        return new VerifyCompleteByUserIdResult()
+            .withItem(Gs2Mission.Complete.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

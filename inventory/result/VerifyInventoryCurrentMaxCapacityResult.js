@@ -15,14 +15,32 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Inventory = tslib_1.__importStar(require("../model"));
 var VerifyInventoryCurrentMaxCapacityResult = /** @class */ (function () {
     function VerifyInventoryCurrentMaxCapacityResult() {
+        this.item = null;
     }
+    VerifyInventoryCurrentMaxCapacityResult.prototype.getItem = function () {
+        return this.item;
+    };
+    VerifyInventoryCurrentMaxCapacityResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    VerifyInventoryCurrentMaxCapacityResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
     VerifyInventoryCurrentMaxCapacityResult.fromDict = function (data) {
-        return new VerifyInventoryCurrentMaxCapacityResult();
+        return new VerifyInventoryCurrentMaxCapacityResult()
+            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]));
     };
     VerifyInventoryCurrentMaxCapacityResult.prototype.toDict = function () {
-        return {};
+        var _a;
+        return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+        };
     };
     return VerifyInventoryCurrentMaxCapacityResult;
 }());

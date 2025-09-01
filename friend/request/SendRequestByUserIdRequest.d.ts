@@ -5,6 +5,7 @@ export default class SendRequestByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private targetUserId;
+    private withProfile;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -22,6 +23,9 @@ export default class SendRequestByUserIdRequest implements IRequest {
     getTargetUserId(): string | null;
     setTargetUserId(targetUserId: string | null): this;
     withTargetUserId(targetUserId: string | null): this;
+    getWithProfile(): boolean | null;
+    setWithProfile(withProfile: boolean | null): this;
+    withWithProfile(withProfile: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
