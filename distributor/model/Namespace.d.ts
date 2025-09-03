@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private assumeUserId;
     private autoRunStampSheetNotification;
     private autoRunTransactionNotification;
@@ -25,6 +26,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Distributor.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting | null): this;
     getAssumeUserId(): string | null;
     setAssumeUserId(assumeUserId: string | null): this;
     withAssumeUserId(assumeUserId: string | null): this;

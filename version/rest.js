@@ -49,7 +49,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region);
@@ -61,10 +61,11 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'assumeUserId': (_d = request.getAssumeUserId()) !== null && _d !== void 0 ? _d : null,
-            'acceptVersionScript': (_f = (_e = request.getAcceptVersionScript()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'checkVersionTriggerScriptId': (_g = request.getCheckVersionTriggerScriptId()) !== null && _g !== void 0 ? _g : null,
-            'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'assumeUserId': (_f = request.getAssumeUserId()) !== null && _f !== void 0 ? _f : null,
+            'acceptVersionScript': (_h = (_g = request.getAcceptVersionScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'checkVersionTriggerScriptId': (_j = request.getCheckVersionTriggerScriptId()) !== null && _j !== void 0 ? _j : null,
+            'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -124,7 +125,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -136,10 +137,11 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'assumeUserId': (_e = request.getAssumeUserId()) !== null && _e !== void 0 ? _e : null,
-            'acceptVersionScript': (_g = (_f = request.getAcceptVersionScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'checkVersionTriggerScriptId': (_h = request.getCheckVersionTriggerScriptId()) !== null && _h !== void 0 ? _h : null,
-            'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'assumeUserId': (_g = request.getAssumeUserId()) !== null && _g !== void 0 ? _g : null,
+            'acceptVersionScript': (_j = (_h = request.getAcceptVersionScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'checkVersionTriggerScriptId': (_k = request.getCheckVersionTriggerScriptId()) !== null && _k !== void 0 ? _k : null,
+            'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

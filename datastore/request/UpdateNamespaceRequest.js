@@ -23,6 +23,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.transactionSetting = null;
         this.logSetting = null;
         this.doneUploadScript = null;
     }
@@ -70,6 +71,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -96,16 +108,18 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Datastore.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLogSetting(Gs2Datastore.LogSetting.fromDict(data["logSetting"]))
             .withDoneUploadScript(Gs2Datastore.ScriptSetting.fromDict(data["doneUploadScript"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "doneUploadScript": (_b = this.getDoneUploadScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "doneUploadScript": (_c = this.getDoneUploadScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return UpdateNamespaceRequest;

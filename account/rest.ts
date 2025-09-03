@@ -67,6 +67,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'changePasswordIfTakeOver': request.getChangePasswordIfTakeOver() ?? null,
             'differentUserIdForLoginAndDataRetention': request.getDifferentUserIdForLoginAndDataRetention() ?? null,
             'createAccountScript': request.getCreateAccountScript()?.toDict() ?? null,
@@ -159,6 +160,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'changePasswordIfTakeOver': request.getChangePasswordIfTakeOver() ?? null,
             'createAccountScript': request.getCreateAccountScript()?.toDict() ?? null,
             'authenticationScript': request.getAuthenticationScript()?.toDict() ?? null,

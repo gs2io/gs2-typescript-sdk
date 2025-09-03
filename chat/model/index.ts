@@ -24,6 +24,7 @@ import NotificationType from "./NotificationType"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 
 export {
@@ -38,5 +39,6 @@ export {
     ScriptSetting,
     NotificationSetting,
     LogSetting,
+    TransactionSetting,
     GitHubCheckoutSetting,
 };

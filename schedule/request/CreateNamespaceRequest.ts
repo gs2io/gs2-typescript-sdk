@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Schedule.TransactionSetting|null = null;
     private logSetting: Gs2Schedule.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Schedule.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Schedule.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Schedule.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getLogSetting(): Gs2Schedule.LogSetting|null {
         return this.logSetting;
     }
@@ -91,6 +103,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Schedule.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLogSetting(Gs2Schedule.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -98,6 +111,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

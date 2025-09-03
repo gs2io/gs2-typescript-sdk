@@ -49,7 +49,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
@@ -61,15 +61,16 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'allowCreateRoom': (_d = request.getAllowCreateRoom()) !== null && _d !== void 0 ? _d : null,
-            'messageLifeTimeDays': (_e = request.getMessageLifeTimeDays()) !== null && _e !== void 0 ? _e : null,
-            'postMessageScript': (_g = (_f = request.getPostMessageScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'createRoomScript': (_j = (_h = request.getCreateRoomScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'deleteRoomScript': (_l = (_k = request.getDeleteRoomScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'subscribeRoomScript': (_o = (_m = request.getSubscribeRoomScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'unsubscribeRoomScript': (_q = (_p = request.getUnsubscribeRoomScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'postNotification': (_s = (_r = request.getPostNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'allowCreateRoom': (_f = request.getAllowCreateRoom()) !== null && _f !== void 0 ? _f : null,
+            'messageLifeTimeDays': (_g = request.getMessageLifeTimeDays()) !== null && _g !== void 0 ? _g : null,
+            'postMessageScript': (_j = (_h = request.getPostMessageScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'createRoomScript': (_l = (_k = request.getCreateRoomScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'deleteRoomScript': (_o = (_m = request.getDeleteRoomScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'subscribeRoomScript': (_q = (_p = request.getSubscribeRoomScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'unsubscribeRoomScript': (_s = (_r = request.getUnsubscribeRoomScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'postNotification': (_u = (_t = request.getPostNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -129,7 +130,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -141,15 +142,16 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'allowCreateRoom': (_e = request.getAllowCreateRoom()) !== null && _e !== void 0 ? _e : null,
-            'messageLifeTimeDays': (_f = request.getMessageLifeTimeDays()) !== null && _f !== void 0 ? _f : null,
-            'postMessageScript': (_h = (_g = request.getPostMessageScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'createRoomScript': (_k = (_j = request.getCreateRoomScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'deleteRoomScript': (_m = (_l = request.getDeleteRoomScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'subscribeRoomScript': (_p = (_o = request.getSubscribeRoomScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'unsubscribeRoomScript': (_r = (_q = request.getUnsubscribeRoomScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'postNotification': (_t = (_s = request.getPostNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'allowCreateRoom': (_g = request.getAllowCreateRoom()) !== null && _g !== void 0 ? _g : null,
+            'messageLifeTimeDays': (_h = request.getMessageLifeTimeDays()) !== null && _h !== void 0 ? _h : null,
+            'postMessageScript': (_k = (_j = request.getPostMessageScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'createRoomScript': (_m = (_l = request.getCreateRoomScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'deleteRoomScript': (_p = (_o = request.getDeleteRoomScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'subscribeRoomScript': (_r = (_q = request.getSubscribeRoomScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'unsubscribeRoomScript': (_t = (_s = request.getUnsubscribeRoomScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'postNotification': (_v = (_u = request.getPostNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

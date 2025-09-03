@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Friend from '../../friend/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -26,6 +27,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Friend.TransactionSetting|null = null;
     private followScript: Gs2Friend.ScriptSetting|null = null;
     private unfollowScript: Gs2Friend.ScriptSetting|null = null;
     private sendRequestScript: Gs2Friend.ScriptSetting|null = null;
@@ -135,6 +137,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Friend.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Friend.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Friend.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getFollowScript(): Gs2Friend.ScriptSetting|null {
@@ -344,6 +357,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Friend.TransactionSetting.fromDict(data["transactionSetting"]))
             .withFollowScript(Gs2Friend.ScriptSetting.fromDict(data["followScript"]))
             .withUnfollowScript(Gs2Friend.ScriptSetting.fromDict(data["unfollowScript"]))
             .withSendRequestScript(Gs2Friend.ScriptSetting.fromDict(data["sendRequestScript"]))
@@ -369,6 +383,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "followScript": this.getFollowScript()?.toDict(),
             "unfollowScript": this.getUnfollowScript()?.toDict(),
             "sendRequestScript": this.getSendRequestScript()?.toDict(),

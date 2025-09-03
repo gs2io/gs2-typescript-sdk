@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private doneUploadScript;
     private logSetting;
     private createdAt;
@@ -23,6 +24,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Datastore.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Datastore.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Datastore.TransactionSetting | null): this;
     getDoneUploadScript(): Gs2Datastore.ScriptSetting | null;
     setDoneUploadScript(doneUploadScript: Gs2Datastore.ScriptSetting | null): this;
     withDoneUploadScript(doneUploadScript: Gs2Datastore.ScriptSetting | null): this;

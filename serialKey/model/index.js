@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = exports.LogSetting = exports.CurrentCampaignMaster = exports.CampaignModelMaster = exports.CampaignModel = exports.SerialKey = exports.IssueJob = exports.Namespace = void 0;
+exports.GitHubCheckoutSetting = exports.TransactionSetting = exports.LogSetting = exports.CurrentCampaignMaster = exports.CampaignModelMaster = exports.CampaignModel = exports.SerialKey = exports.IssueJob = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var CurrentCampaignMaster_1 = tslib_1.__importDefault(require("./CurrentCampaign
 exports.CurrentCampaignMaster = CurrentCampaignMaster_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 //# sourceMappingURL=index.js.map

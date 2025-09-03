@@ -18,6 +18,7 @@ import Job from "./Job"
 import JobResult from "./JobResult"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 import JobEntry from "./JobEntry"
 import JobResultBody from "./JobResultBody"
 
@@ -27,6 +28,7 @@ export {
     JobResult,
     NotificationSetting,
     LogSetting,
+    TransactionSetting,
     JobEntry,
     JobResultBody,
 };

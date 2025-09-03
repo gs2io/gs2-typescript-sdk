@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Money2 from '../../money2/model'
+import TransactionSetting from './TransactionSetting';
 import AppleAppStoreSetting from './AppleAppStoreSetting';
 import GooglePlaySetting from './GooglePlaySetting';
 import FakeSetting from './FakeSetting';
@@ -30,6 +31,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Money2.TransactionSetting|null = null;
     private currencyUsagePriority: string|null = null;
     private sharedFreeCurrency: boolean|null = null;
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
@@ -136,6 +138,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Money2.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getCurrencyUsagePriority(): string|null {
@@ -312,6 +325,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
@@ -334,6 +348,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "platformSetting": this.getPlatformSetting()?.toDict(),

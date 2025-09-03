@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private firebaseSecret;
     private logSetting;
     getRequestId(): string | null;
@@ -19,6 +20,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Gateway.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting | null): this;
     getFirebaseSecret(): string | null;
     setFirebaseSecret(firebaseSecret: string | null): this;
     withFirebaseSecret(firebaseSecret: string | null): this;

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Version from '../../version/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:version:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Version.TransactionSetting|null = null;
     private assumeUserId: string|null = null;
     private acceptVersionScript: Gs2Version.ScriptSetting|null = null;
     private checkVersionTriggerScriptId: string|null = null;
@@ -125,6 +127,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Version.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Version.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Version.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
@@ -211,6 +224,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Version.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAssumeUserId(data["assumeUserId"])
             .withAcceptVersionScript(Gs2Version.ScriptSetting.fromDict(data["acceptVersionScript"]))
             .withCheckVersionTriggerScriptId(data["checkVersionTriggerScriptId"])
@@ -225,6 +239,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "assumeUserId": this.getAssumeUserId(),
             "acceptVersionScript": this.getAcceptVersionScript()?.toDict(),
             "checkVersionTriggerScriptId": this.getCheckVersionTriggerScriptId(),

@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Guild.TransactionSetting|null = null;
     private changeNotification: Gs2Guild.NotificationSetting|null = null;
     private joinNotification: Gs2Guild.NotificationSetting|null = null;
     private leaveNotification: Gs2Guild.NotificationSetting|null = null;
@@ -86,6 +87,17 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Guild.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getChangeNotification(): Gs2Guild.NotificationSetting|null {
@@ -247,6 +259,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Guild.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -267,6 +280,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "changeNotification": this.getChangeNotification()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),

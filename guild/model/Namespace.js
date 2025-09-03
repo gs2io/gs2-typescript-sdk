@@ -23,6 +23,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.changeNotification = null;
         this.joinNotification = null;
         this.leaveNotification = null;
@@ -120,6 +121,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getChangeNotification = function () {
@@ -317,6 +329,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Guild.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -336,25 +349,26 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "changeNotification": (_a = this.getChangeNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "changeMemberNotification": (_d = this.getChangeMemberNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "receiveRequestNotification": (_e = this.getReceiveRequestNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "removeRequestNotification": (_f = this.getRemoveRequestNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "createGuildScript": (_g = this.getCreateGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "updateGuildScript": (_h = this.getUpdateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "joinGuildScript": (_j = this.getJoinGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
-            "receiveJoinRequestScript": (_k = this.getReceiveJoinRequestScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "leaveGuildScript": (_l = this.getLeaveGuildScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "changeRoleScript": (_m = this.getChangeRoleScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
-            "deleteGuildScript": (_o = this.getDeleteGuildScript()) === null || _o === void 0 ? void 0 : _o.toDict(),
-            "logSetting": (_p = this.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "changeNotification": (_b = this.getChangeNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "joinNotification": (_c = this.getJoinNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "leaveNotification": (_d = this.getLeaveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changeMemberNotification": (_e = this.getChangeMemberNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "receiveRequestNotification": (_f = this.getReceiveRequestNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "removeRequestNotification": (_g = this.getRemoveRequestNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "createGuildScript": (_h = this.getCreateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "updateGuildScript": (_j = this.getUpdateGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "joinGuildScript": (_k = this.getJoinGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "receiveJoinRequestScript": (_l = this.getReceiveJoinRequestScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "leaveGuildScript": (_m = this.getLeaveGuildScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "changeRoleScript": (_o = this.getChangeRoleScript()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "deleteGuildScript": (_p = this.getDeleteGuildScript()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "logSetting": (_q = this.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

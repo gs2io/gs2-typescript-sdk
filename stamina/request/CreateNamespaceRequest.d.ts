@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private overflowTriggerScript;
     private logSetting;
     getRequestId(): string | null;
@@ -19,6 +20,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Stamina.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting | null): this;
     getOverflowTriggerScript(): string | null;
     setOverflowTriggerScript(overflowTriggerScript: string | null): this;
     withOverflowTriggerScript(overflowTriggerScript: string | null): this;

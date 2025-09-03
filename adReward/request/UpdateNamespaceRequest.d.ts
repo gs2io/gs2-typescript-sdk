@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private admob;
     private unityAd;
     private appLovinMaxes;
@@ -24,6 +25,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2AdReward.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting | null): this;
     getAdmob(): Gs2AdReward.AdMob | null;
     setAdmob(admob: Gs2AdReward.AdMob | null): this;
     withAdmob(admob: Gs2AdReward.AdMob | null): this;

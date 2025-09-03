@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.BatchResultPayload = exports.BatchRequestPayload = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.NotificationSetting = exports.TransactionSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.BatchResultPayload = exports.BatchRequestPayload = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,8 @@ var DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource
 exports.DistributeResource = DistributeResource_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
 //# sourceMappingURL=index.js.map

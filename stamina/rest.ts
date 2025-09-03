@@ -67,6 +67,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'overflowTriggerScript': request.getOverflowTriggerScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
@@ -152,6 +153,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'overflowTriggerScript': request.getOverflowTriggerScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };

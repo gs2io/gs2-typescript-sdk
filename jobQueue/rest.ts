@@ -67,6 +67,7 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enableAutoRun': request.getEnableAutoRun() ?? null,
             'pushNotification': request.getPushNotification()?.toDict() ?? null,
             'runNotification': request.getRunNotification()?.toDict() ?? null,
@@ -154,6 +155,7 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enableAutoRun': request.getEnableAutoRun() ?? null,
             'pushNotification': request.getPushNotification()?.toDict() ?? null,
             'runNotification': request.getRunNotification()?.toDict() ?? null,

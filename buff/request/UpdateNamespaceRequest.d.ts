@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private applyBuffScript;
     private logSetting;
     getRequestId(): string | null;
@@ -19,6 +20,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Buff.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Buff.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Buff.TransactionSetting | null): this;
     getApplyBuffScript(): Gs2Buff.ScriptSetting | null;
     setApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting | null): this;
     withApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting | null): this;

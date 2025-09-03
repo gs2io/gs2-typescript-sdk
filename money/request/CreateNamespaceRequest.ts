@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Money.TransactionSetting|null = null;
     private priority: string|null = null;
     private shareFree: boolean|null = null;
     private currency: string|null = null;
@@ -82,6 +83,17 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Money.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Money.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Money.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getPriority(): string|null {
@@ -199,6 +211,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money.TransactionSetting.fromDict(data["transactionSetting"]))
             .withPriority(data["priority"])
             .withShareFree(data["shareFree"])
             .withCurrency(data["currency"])
@@ -215,6 +228,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "priority": this.getPriority(),
             "shareFree": this.getShareFree(),
             "currency": this.getCurrency(),

@@ -27,6 +27,7 @@ import Stamina from "./Stamina"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
 import ScriptSetting from "./ScriptSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -43,4 +44,5 @@ export {
     GitHubCheckoutSetting,
     LogSetting,
     ScriptSetting,
+    TransactionSetting,
 };

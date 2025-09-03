@@ -25,6 +25,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private currencyUsagePriority: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Money2.TransactionSetting|null = null;
     private sharedFreeCurrency: boolean|null = null;
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
     private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
@@ -95,6 +96,17 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Money2.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getSharedFreeCurrency(): boolean|null {
@@ -224,6 +236,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withName(data["name"])
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
@@ -242,6 +255,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "platformSetting": this.getPlatformSetting()?.toDict(),
             "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),

@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Chat.TransactionSetting|null = null;
     private allowCreateRoom: boolean|null = null;
     private messageLifeTimeDays: number|null = null;
     private postMessageScript: Gs2Chat.ScriptSetting|null = null;
@@ -81,6 +82,17 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Chat.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getAllowCreateRoom(): boolean|null {
@@ -187,6 +199,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Chat.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAllowCreateRoom(data["allowCreateRoom"])
             .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
@@ -202,6 +215,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "allowCreateRoom": this.getAllowCreateRoom(),
             "messageLifeTimeDays": this.getMessageLifeTimeDays(),
             "postMessageScript": this.getPostMessageScript()?.toDict(),

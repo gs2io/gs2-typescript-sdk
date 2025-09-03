@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2JobQueue from '../../jobQueue/model'
+import TransactionSetting from './TransactionSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2JobQueue.TransactionSetting|null = null;
     private enableAutoRun: boolean|null = null;
     private runNotification: Gs2JobQueue.NotificationSetting|null = null;
     private pushNotification: Gs2JobQueue.NotificationSetting|null = null;
@@ -125,6 +127,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2JobQueue.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2JobQueue.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2JobQueue.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getEnableAutoRun(): boolean|null {
         return this.enableAutoRun;
     }
@@ -211,6 +224,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
@@ -225,6 +239,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
             "runNotification": this.getRunNotification()?.toDict(),
             "pushNotification": this.getPushNotification()?.toDict(),

@@ -18,6 +18,7 @@ import ScriptSetting from "./ScriptSetting"
 import DataObject from "./DataObject"
 import DataObjectHistory from "./DataObjectHistory"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -25,4 +26,5 @@ export {
     DataObject,
     DataObjectHistory,
     LogSetting,
+    TransactionSetting,
 };

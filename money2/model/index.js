@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreSubscriptionContentModelMaster = exports.StoreSubscriptionContentModel = exports.StoreContentModelMaster = exports.StoreContentModel = exports.RefundHistory = exports.SubscriptionStatus = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
+exports.UnusedBalance = exports.DailyTransactionHistory = exports.TransactionSetting = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayRealtimeNotificationMessage = exports.GooglePlaySubscriptionContent = exports.AppleAppStoreSubscriptionContent = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.RefundEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreSubscriptionContentModelMaster = exports.StoreSubscriptionContentModel = exports.StoreContentModelMaster = exports.StoreContentModel = exports.RefundHistory = exports.SubscriptionStatus = exports.SubscribeTransaction = exports.Event = exports.Wallet = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -83,6 +83,8 @@ var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetti
 exports.NotificationSetting = NotificationSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 var DailyTransactionHistory_1 = tslib_1.__importDefault(require("./DailyTransactionHistory"));
 exports.DailyTransactionHistory = DailyTransactionHistory_1.default;
 var UnusedBalance_1 = tslib_1.__importDefault(require("./UnusedBalance"));

@@ -67,6 +67,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'acquireScript': request.getAcquireScript()?.toDict() ?? null,
             'overflowScript': request.getOverflowScript()?.toDict() ?? null,
             'consumeScript': request.getConsumeScript()?.toDict() ?? null,
@@ -158,6 +159,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'acquireScript': request.getAcquireScript()?.toDict() ?? null,
             'overflowScript': request.getOverflowScript()?.toDict() ?? null,
             'consumeScript': request.getConsumeScript()?.toDict() ?? null,

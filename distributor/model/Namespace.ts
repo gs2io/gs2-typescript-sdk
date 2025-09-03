@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Distributor from '../../distributor/model'
+import TransactionSetting from './TransactionSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Distributor.TransactionSetting|null = null;
     private assumeUserId: string|null = null;
     private autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null = null;
     private autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null = null;
@@ -125,6 +127,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Distributor.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
@@ -211,6 +224,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Distributor.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAssumeUserId(data["assumeUserId"])
             .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
             .withAutoRunTransactionNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunTransactionNotification"]))
@@ -225,6 +239,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "assumeUserId": this.getAssumeUserId(),
             "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
             "autoRunTransactionNotification": this.getAutoRunTransactionNotification()?.toDict(),

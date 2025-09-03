@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Inventory from '../../inventory/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Inventory.TransactionSetting|null = null;
     private acquireScript: Gs2Inventory.ScriptSetting|null = null;
     private overflowScript: Gs2Inventory.ScriptSetting|null = null;
     private consumeScript: Gs2Inventory.ScriptSetting|null = null;
@@ -127,6 +129,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Inventory.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Inventory.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Inventory.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getAcquireScript(): Gs2Inventory.ScriptSetting|null {
@@ -259,6 +272,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Inventory.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["acquireScript"]))
             .withOverflowScript(Gs2Inventory.ScriptSetting.fromDict(data["overflowScript"]))
             .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
@@ -277,6 +291,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "acquireScript": this.getAcquireScript()?.toDict(),
             "overflowScript": this.getOverflowScript()?.toDict(),
             "consumeScript": this.getConsumeScript()?.toDict(),

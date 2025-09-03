@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private overflowTriggerScript;
     private logSetting;
     private createdAt;
@@ -23,6 +24,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Stamina.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting | null): this;
     getOverflowTriggerScript(): string | null;
     setOverflowTriggerScript(overflowTriggerScript: string | null): this;
     withOverflowTriggerScript(overflowTriggerScript: string | null): this;

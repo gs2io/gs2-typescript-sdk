@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private followScript;
     private unfollowScript;
     private sendRequestScript;
@@ -32,6 +33,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Friend.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Friend.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Friend.TransactionSetting | null): this;
     getFollowScript(): Gs2Friend.ScriptSetting | null;
     setFollowScript(followScript: Gs2Friend.ScriptSetting | null): this;
     withFollowScript(followScript: Gs2Friend.ScriptSetting | null): this;

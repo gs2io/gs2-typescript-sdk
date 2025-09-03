@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.DataObjectHistory = exports.DataObject = exports.ScriptSetting = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.DataObjectHistory = exports.DataObject = exports.ScriptSetting = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,4 +27,6 @@ var DataObjectHistory_1 = tslib_1.__importDefault(require("./DataObjectHistory")
 exports.DataObjectHistory = DataObjectHistory_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

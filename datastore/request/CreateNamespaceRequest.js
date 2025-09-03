@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.logSetting = null;
         this.doneUploadScript = null;
     }
@@ -70,6 +71,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -96,16 +108,18 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Datastore.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLogSetting(Gs2Datastore.LogSetting.fromDict(data["logSetting"]))
             .withDoneUploadScript(Gs2Datastore.ScriptSetting.fromDict(data["doneUploadScript"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "doneUploadScript": (_b = this.getDoneUploadScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "doneUploadScript": (_c = this.getDoneUploadScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return CreateNamespaceRequest;

@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private changePasswordIfTakeOver;
     private differentUserIdForLoginAndDataRetention;
     private createAccountScript;
@@ -26,6 +27,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Account.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
     getChangePasswordIfTakeOver(): boolean | null;
     setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
     withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;

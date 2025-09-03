@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -18,6 +19,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Limit.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting | null): this;
     getLogSetting(): Gs2Limit.LogSetting | null;
     setLogSetting(logSetting: Gs2Limit.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Limit.LogSetting | null): this;

@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private changePasswordIfTakeOver;
     private differentUserIdForLoginAndDataRetention;
     private createAccountScript;
@@ -30,6 +31,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Account.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
     getChangePasswordIfTakeOver(): boolean | null;
     setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
     withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;

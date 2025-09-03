@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private changeNotification;
     private joinNotification;
     private leaveNotification;
@@ -35,6 +36,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Guild.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting | null): this;
     getChangeNotification(): Gs2Guild.NotificationSetting | null;
     setChangeNotification(changeNotification: Gs2Guild.NotificationSetting | null): this;
     withChangeNotification(changeNotification: Gs2Guild.NotificationSetting | null): this;

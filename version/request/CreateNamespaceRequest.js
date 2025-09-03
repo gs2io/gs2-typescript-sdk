@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.assumeUserId = null;
         this.acceptVersionScript = null;
         this.checkVersionTriggerScriptId = null;
@@ -70,6 +71,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getAssumeUserId = function () {
@@ -120,20 +132,22 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Version.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAssumeUserId(data["assumeUserId"])
             .withAcceptVersionScript(Gs2Version.ScriptSetting.fromDict(data["acceptVersionScript"]))
             .withCheckVersionTriggerScriptId(data["checkVersionTriggerScriptId"])
             .withLogSetting(Gs2Version.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "assumeUserId": this.getAssumeUserId(),
-            "acceptVersionScript": (_a = this.getAcceptVersionScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "acceptVersionScript": (_b = this.getAcceptVersionScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "checkVersionTriggerScriptId": this.getCheckVersionTriggerScriptId(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return CreateNamespaceRequest;

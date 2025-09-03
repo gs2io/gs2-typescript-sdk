@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private serverType;
     private serverSpec;
     private createNotification;
@@ -21,6 +22,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Realtime.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting | null): this;
     getServerType(): string | null;
     setServerType(serverType: string | null): this;
     withServerType(serverType: string | null): this;

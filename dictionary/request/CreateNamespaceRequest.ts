@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Dictionary.TransactionSetting|null = null;
     private entryScript: Gs2Dictionary.ScriptSetting|null = null;
     private duplicateEntryScript: string|null = null;
     private logSetting: Gs2Dictionary.LogSetting|null = null;
@@ -77,6 +78,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Dictionary.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Dictionary.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Dictionary.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getEntryScript(): Gs2Dictionary.ScriptSetting|null {
         return this.entryScript;
     }
@@ -115,6 +127,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Dictionary.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
             .withDuplicateEntryScript(data["duplicateEntryScript"])
             .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]));
@@ -124,6 +137,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "entryScript": this.getEntryScript()?.toDict(),
             "duplicateEntryScript": this.getDuplicateEntryScript(),
             "logSetting": this.getLogSetting()?.toDict(),

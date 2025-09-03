@@ -23,6 +23,7 @@ import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -35,4 +36,5 @@ export {
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
+    TransactionSetting,
 };

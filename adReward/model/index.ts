@@ -21,6 +21,7 @@ import AppLovinMax from "./AppLovinMax"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -31,4 +32,5 @@ export {
     ScriptSetting,
     NotificationSetting,
     LogSetting,
+    TransactionSetting,
 };

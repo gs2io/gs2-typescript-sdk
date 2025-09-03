@@ -67,6 +67,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'changeNotification': request.getChangeNotification()?.toDict() ?? null,
             'joinNotification': request.getJoinNotification()?.toDict() ?? null,
             'leaveNotification': request.getLeaveNotification()?.toDict() ?? null,
@@ -164,6 +165,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'changeNotification': request.getChangeNotification()?.toDict() ?? null,
             'joinNotification': request.getJoinNotification()?.toDict() ?? null,
             'leaveNotification': request.getLeaveNotification()?.toDict() ?? null,

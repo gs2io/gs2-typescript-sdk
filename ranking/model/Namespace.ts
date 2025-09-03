@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Ranking from '../../ranking/model'
+import TransactionSetting from './TransactionSetting';
 import CalculatedAt from './CalculatedAt';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Ranking.TransactionSetting|null = null;
     private lastCalculatedAts: Gs2Ranking.CalculatedAt[]|null = null;
     private logSetting: Gs2Ranking.LogSetting|null = null;
     private createdAt: number|null = null;
@@ -123,6 +125,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Ranking.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Ranking.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Ranking.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getLastCalculatedAts(): Gs2Ranking.CalculatedAt[]|null {
         return this.lastCalculatedAts;
     }
@@ -187,6 +200,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Ranking.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLastCalculatedAts(data.lastCalculatedAts ?
                 data.lastCalculatedAts.map((item: {[key: string]: any}) => {
                     return Gs2Ranking.CalculatedAt.fromDict(item);
@@ -203,6 +217,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "lastCalculatedAts": this.getLastCalculatedAts() ?
                 this.getLastCalculatedAts()!.map((item: Gs2Ranking.CalculatedAt) => {
                     return item.toDict();

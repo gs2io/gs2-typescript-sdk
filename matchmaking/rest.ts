@@ -67,6 +67,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enableRating': request.getEnableRating() ?? null,
             'enableDisconnectDetection': request.getEnableDisconnectDetection() ?? null,
             'disconnectDetectionTimeoutSeconds': request.getDisconnectDetectionTimeoutSeconds() ?? null,
@@ -168,6 +169,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enableRating': request.getEnableRating() ?? null,
             'enableDisconnectDetection': request.getEnableDisconnectDetection() ?? null,
             'disconnectDetectionTimeoutSeconds': request.getDisconnectDetectionTimeoutSeconds() ?? null,

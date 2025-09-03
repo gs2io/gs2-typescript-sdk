@@ -13,4 +13,5 @@ import BanStatus from "./BanStatus";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
-export { Namespace, Account, TakeOver, PlatformId, DataOwner, TakeOverTypeModel, TakeOverTypeModelMaster, CurrentModelMaster, OpenIdConnectSetting, ScopeValue, PlatformUser, BanStatus, GitHubCheckoutSetting, ScriptSetting, LogSetting, };
+import TransactionSetting from "./TransactionSetting";
+export { Namespace, Account, TakeOver, PlatformId, DataOwner, TakeOverTypeModel, TakeOverTypeModelMaster, CurrentModelMaster, OpenIdConnectSetting, ScopeValue, PlatformUser, BanStatus, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };

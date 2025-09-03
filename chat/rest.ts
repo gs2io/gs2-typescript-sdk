@@ -67,6 +67,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'allowCreateRoom': request.getAllowCreateRoom() ?? null,
             'messageLifeTimeDays': request.getMessageLifeTimeDays() ?? null,
             'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,
@@ -159,6 +160,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'allowCreateRoom': request.getAllowCreateRoom() ?? null,
             'messageLifeTimeDays': request.getMessageLifeTimeDays() ?? null,
             'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,

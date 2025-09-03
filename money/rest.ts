@@ -67,6 +67,7 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'priority': request.getPriority() ?? null,
             'shareFree': request.getShareFree() ?? null,
             'currency': request.getCurrency() ?? null,
@@ -160,6 +161,7 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'priority': request.getPriority() ?? null,
             'appleKey': request.getAppleKey() ?? null,
             'googleKey': request.getGoogleKey() ?? null,

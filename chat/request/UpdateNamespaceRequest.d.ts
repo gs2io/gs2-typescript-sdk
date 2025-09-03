@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private allowCreateRoom;
     private messageLifeTimeDays;
     private postMessageScript;
@@ -26,6 +27,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Chat.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting | null): this;
     getAllowCreateRoom(): boolean | null;
     setAllowCreateRoom(allowCreateRoom: boolean | null): this;
     withAllowCreateRoom(allowCreateRoom: boolean | null): this;

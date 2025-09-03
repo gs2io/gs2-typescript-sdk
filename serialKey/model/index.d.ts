@@ -5,5 +5,6 @@ import CampaignModel from "./CampaignModel";
 import CampaignModelMaster from "./CampaignModelMaster";
 import CurrentCampaignMaster from "./CurrentCampaignMaster";
 import LogSetting from "./LogSetting";
+import TransactionSetting from "./TransactionSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-export { Namespace, IssueJob, SerialKey, CampaignModel, CampaignModelMaster, CurrentCampaignMaster, LogSetting, GitHubCheckoutSetting, };
+export { Namespace, IssueJob, SerialKey, CampaignModel, CampaignModelMaster, CurrentCampaignMaster, LogSetting, TransactionSetting, GitHubCheckoutSetting, };

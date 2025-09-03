@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private firebaseSecret;
     private logSetting;
     private createdAt;
@@ -23,6 +24,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Gateway.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting | null): this;
     getFirebaseSecret(): string | null;
     setFirebaseSecret(firebaseSecret: string | null): this;
     withFirebaseSecret(firebaseSecret: string | null): this;

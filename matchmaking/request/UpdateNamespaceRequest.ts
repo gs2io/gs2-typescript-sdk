@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Matchmaking.TransactionSetting|null = null;
     private enableRating: boolean|null = null;
     private enableDisconnectDetection: string|null = null;
     private disconnectDetectionTimeoutSeconds: number|null = null;
@@ -90,6 +91,17 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Matchmaking.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getEnableRating(): boolean|null {
@@ -295,6 +307,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Matchmaking.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableRating(data["enableRating"])
             .withEnableDisconnectDetection(data["enableDisconnectDetection"])
             .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
@@ -319,6 +332,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enableRating": this.getEnableRating(),
             "enableDisconnectDetection": this.getEnableDisconnectDetection(),
             "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),

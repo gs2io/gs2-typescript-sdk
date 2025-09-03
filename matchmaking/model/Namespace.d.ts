@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private enableRating;
     private enableDisconnectDetection;
     private disconnectDetectionTimeoutSeconds;
@@ -39,6 +40,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Matchmaking.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting | null): this;
     getEnableRating(): boolean | null;
     setEnableRating(enableRating: boolean | null): this;
     withEnableRating(enableRating: boolean | null): this;

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Gateway from '../../gateway/model'
+import TransactionSetting from './TransactionSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:gateway:{namespaceName}";
 
@@ -24,6 +25,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Gateway.TransactionSetting|null = null;
     private firebaseSecret: string|null = null;
     private logSetting: Gs2Gateway.LogSetting|null = null;
     private createdAt: number|null = null;
@@ -122,6 +124,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Gateway.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getFirebaseSecret(): string|null {
         return this.firebaseSecret;
     }
@@ -186,6 +199,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Gateway.TransactionSetting.fromDict(data["transactionSetting"]))
             .withFirebaseSecret(data["firebaseSecret"])
             .withLogSetting(Gs2Gateway.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -198,6 +212,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "firebaseSecret": this.getFirebaseSecret(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),

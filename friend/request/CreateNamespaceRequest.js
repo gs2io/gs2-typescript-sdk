@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.followScript = null;
         this.unfollowScript = null;
         this.sendRequestScript = null;
@@ -81,6 +82,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getFollowScript = function () {
@@ -252,6 +264,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Friend.TransactionSetting.fromDict(data["transactionSetting"]))
             .withFollowScript(Gs2Friend.ScriptSetting.fromDict(data["followScript"]))
             .withUnfollowScript(Gs2Friend.ScriptSetting.fromDict(data["unfollowScript"]))
             .withSendRequestScript(Gs2Friend.ScriptSetting.fromDict(data["sendRequestScript"]))
@@ -269,25 +282,26 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Friend.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "followScript": (_a = this.getFollowScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "unfollowScript": (_b = this.getUnfollowScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "sendRequestScript": (_c = this.getSendRequestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "cancelRequestScript": (_d = this.getCancelRequestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "acceptRequestScript": (_e = this.getAcceptRequestScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "rejectRequestScript": (_f = this.getRejectRequestScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "deleteFriendScript": (_g = this.getDeleteFriendScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "updateProfileScript": (_h = this.getUpdateProfileScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "followNotification": (_j = this.getFollowNotification()) === null || _j === void 0 ? void 0 : _j.toDict(),
-            "receiveRequestNotification": (_k = this.getReceiveRequestNotification()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "cancelRequestNotification": (_l = this.getCancelRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "acceptRequestNotification": (_m = this.getAcceptRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict(),
-            "rejectRequestNotification": (_o = this.getRejectRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict(),
-            "deleteFriendNotification": (_p = this.getDeleteFriendNotification()) === null || _p === void 0 ? void 0 : _p.toDict(),
-            "logSetting": (_q = this.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "followScript": (_b = this.getFollowScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "unfollowScript": (_c = this.getUnfollowScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "sendRequestScript": (_d = this.getSendRequestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "cancelRequestScript": (_e = this.getCancelRequestScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "acceptRequestScript": (_f = this.getAcceptRequestScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "rejectRequestScript": (_g = this.getRejectRequestScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "deleteFriendScript": (_h = this.getDeleteFriendScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "updateProfileScript": (_j = this.getUpdateProfileScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "followNotification": (_k = this.getFollowNotification()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "receiveRequestNotification": (_l = this.getReceiveRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "cancelRequestNotification": (_m = this.getCancelRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "acceptRequestNotification": (_o = this.getAcceptRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "rejectRequestNotification": (_p = this.getRejectRequestNotification()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "deleteFriendNotification": (_q = this.getDeleteFriendNotification()) === null || _q === void 0 ? void 0 : _q.toDict(),
+            "logSetting": (_r = this.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict(),
         };
     };
     return CreateNamespaceRequest;

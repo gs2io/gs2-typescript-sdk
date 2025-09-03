@@ -23,6 +23,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.entryScript = null;
         this.duplicateEntryScript = null;
         this.logSetting = null;
@@ -111,6 +112,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     Namespace.prototype.getEntryScript = function () {
         return this.entryScript;
     };
@@ -185,6 +197,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Dictionary.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
             .withDuplicateEntryScript(data["duplicateEntryScript"])
             .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]))
@@ -193,14 +206,15 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "entryScript": (_a = this.getEntryScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "entryScript": (_b = this.getEntryScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "duplicateEntryScript": this.getDuplicateEntryScript(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

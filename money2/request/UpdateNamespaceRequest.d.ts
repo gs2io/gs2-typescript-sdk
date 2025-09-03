@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private currencyUsagePriority;
     private description;
+    private transactionSetting;
     private platformSetting;
     private depositBalanceScript;
     private withdrawBalanceScript;
@@ -31,6 +32,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Money2.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
     getPlatformSetting(): Gs2Money2.PlatformSetting | null;
     setPlatformSetting(platformSetting: Gs2Money2.PlatformSetting | null): this;
     withPlatformSetting(platformSetting: Gs2Money2.PlatformSetting | null): this;

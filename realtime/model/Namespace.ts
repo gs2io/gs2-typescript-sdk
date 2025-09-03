@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Realtime from '../../realtime/model'
+import TransactionSetting from './TransactionSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:realtime:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Realtime.TransactionSetting|null = null;
     private serverType: string|null = null;
     private serverSpec: string|null = null;
     private createNotification: Gs2Realtime.NotificationSetting|null = null;
@@ -125,6 +127,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Realtime.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getServerType(): string|null {
         return this.serverType;
     }
@@ -211,6 +224,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Realtime.TransactionSetting.fromDict(data["transactionSetting"]))
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
@@ -225,6 +239,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "serverType": this.getServerType(),
             "serverSpec": this.getServerSpec(),
             "createNotification": this.getCreateNotification()?.toDict(),

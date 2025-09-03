@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Guild from '../../guild/model'
+import TransactionSetting from './TransactionSetting';
 import NotificationSetting from './NotificationSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -26,6 +27,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Guild.TransactionSetting|null = null;
     private changeNotification: Gs2Guild.NotificationSetting|null = null;
     private joinNotification: Gs2Guild.NotificationSetting|null = null;
     private leaveNotification: Gs2Guild.NotificationSetting|null = null;
@@ -134,6 +136,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Guild.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Guild.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getChangeNotification(): Gs2Guild.NotificationSetting|null {
@@ -332,6 +345,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Guild.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -356,6 +370,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "changeNotification": this.getChangeNotification()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),

@@ -23,10 +23,11 @@ export default class CreateNamespaceRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private name: string|null = null;
+    private description: string|null = null;
+    private transactionSetting: Gs2AdReward.TransactionSetting|null = null;
     private admob: Gs2AdReward.AdMob|null = null;
     private unityAd: Gs2AdReward.UnityAd|null = null;
     private appLovinMaxes: Gs2AdReward.AppLovinMax[]|null = null;
-    private description: string|null = null;
     private acquirePointScript: Gs2AdReward.ScriptSetting|null = null;
     private consumePointScript: Gs2AdReward.ScriptSetting|null = null;
     private changePointNotification: Gs2AdReward.NotificationSetting|null = null;
@@ -70,6 +71,28 @@ export default class CreateNamespaceRequest implements IRequest {
         this.name = name;
         return this;
     }
+    public getDescription(): string|null {
+        return this.description;
+    }
+    public setDescription(description: string|null) {
+        this.description = description;
+        return this;
+    }
+    public withDescription(description: string|null): this {
+        this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2AdReward.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getAdmob(): Gs2AdReward.AdMob|null {
         return this.admob;
     }
@@ -101,17 +124,6 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[]|null): this {
         this.appLovinMaxes = appLovinMaxes;
-        return this;
-    }
-    public getDescription(): string|null {
-        return this.description;
-    }
-    public setDescription(description: string|null) {
-        this.description = description;
-        return this;
-    }
-    public withDescription(description: string|null): this {
-        this.description = description;
         return this;
     }
     public getAcquirePointScript(): Gs2AdReward.ScriptSetting|null {
@@ -162,6 +174,8 @@ export default class CreateNamespaceRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): CreateNamespaceRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
+            .withDescription(data["description"])
+            .withTransactionSetting(Gs2AdReward.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
             .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
             .withAppLovinMaxes(data.appLovinMaxes ?
@@ -169,7 +183,6 @@ export default class CreateNamespaceRequest implements IRequest {
                     return Gs2AdReward.AppLovinMax.fromDict(item);
                 }
             ) : null)
-            .withDescription(data["description"])
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
@@ -179,6 +192,8 @@ export default class CreateNamespaceRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "name": this.getName(),
+            "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "admob": this.getAdmob()?.toDict(),
             "unityAd": this.getUnityAd()?.toDict(),
             "appLovinMaxes": this.getAppLovinMaxes() ?
@@ -186,7 +201,6 @@ export default class CreateNamespaceRequest implements IRequest {
                     return item.toDict();
                 }
             ) : null,
-            "description": this.getDescription(),
             "acquirePointScript": this.getAcquirePointScript()?.toDict(),
             "consumePointScript": this.getConsumePointScript()?.toDict(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),

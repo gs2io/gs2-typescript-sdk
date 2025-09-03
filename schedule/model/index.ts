@@ -22,6 +22,7 @@ import RepeatSchedule from "./RepeatSchedule"
 import CurrentEventMaster from "./CurrentEventMaster"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -33,4 +34,5 @@ export {
     CurrentEventMaster,
     GitHubCheckoutSetting,
     LogSetting,
+    TransactionSetting,
 };

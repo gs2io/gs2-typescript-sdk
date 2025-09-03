@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Distributor.TransactionSetting|null = null;
     private assumeUserId: string|null = null;
     private autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null = null;
     private autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null = null;
@@ -78,6 +79,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Distributor.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Distributor.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
@@ -127,6 +139,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Distributor.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAssumeUserId(data["assumeUserId"])
             .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
             .withAutoRunTransactionNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunTransactionNotification"]))
@@ -137,6 +150,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "assumeUserId": this.getAssumeUserId(),
             "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
             "autoRunTransactionNotification": this.getAutoRunTransactionNotification()?.toDict(),

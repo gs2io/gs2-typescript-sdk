@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.enableAutoRun = null;
         this.pushNotification = null;
         this.runNotification = null;
@@ -70,6 +71,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getEnableAutoRun = function () {
@@ -120,20 +132,22 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
-            "pushNotification": (_a = this.getPushNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "runNotification": (_b = this.getRunNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "pushNotification": (_b = this.getPushNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "runNotification": (_c = this.getRunNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
         };
     };
     return CreateNamespaceRequest;

@@ -31,6 +31,7 @@ import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import DistributeResource from "./DistributeResource"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 import NotificationSetting from "./NotificationSetting"
 
 export {
@@ -52,5 +53,6 @@ export {
     GitHubCheckoutSetting,
     DistributeResource,
     LogSetting,
+    TransactionSetting,
     NotificationSetting,
 };

@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Gateway.TransactionSetting|null = null;
     private firebaseSecret: string|null = null;
     private logSetting: Gs2Gateway.LogSetting|null = null;
 
@@ -76,6 +77,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Gateway.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Gateway.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getFirebaseSecret(): string|null {
         return this.firebaseSecret;
     }
@@ -103,6 +115,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Gateway.TransactionSetting.fromDict(data["transactionSetting"]))
             .withFirebaseSecret(data["firebaseSecret"])
             .withLogSetting(Gs2Gateway.LogSetting.fromDict(data["logSetting"]));
     }
@@ -111,6 +124,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "firebaseSecret": this.getFirebaseSecret(),
             "logSetting": this.getLogSetting()?.toDict(),
         };

@@ -8,4 +8,5 @@ import Config from "./Config";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
-export { Namespace, EntryModel, EntryModelMaster, Entry, Like, CurrentEntryMaster, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, };
+import TransactionSetting from "./TransactionSetting";
+export { Namespace, EntryModel, EntryModelMaster, Entry, Like, CurrentEntryMaster, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };

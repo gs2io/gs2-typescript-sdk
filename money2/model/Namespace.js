@@ -23,6 +23,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.currencyUsagePriority = null;
         this.sharedFreeCurrency = null;
         this.platformSetting = null;
@@ -118,6 +119,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getCurrencyUsagePriority = function () {
@@ -293,6 +305,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
@@ -310,23 +323,24 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
-            "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "verifyReceiptScript": (_d = this.getVerifyReceiptScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "platformSetting": (_b = this.getPlatformSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "depositBalanceScript": (_c = this.getDepositBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "withdrawBalanceScript": (_d = this.getWithdrawBalanceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "verifyReceiptScript": (_e = this.getVerifyReceiptScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "subscribeScript": this.getSubscribeScript(),
             "renewScript": this.getRenewScript(),
             "unsubscribeScript": this.getUnsubscribeScript(),
-            "takeOverScript": (_e = this.getTakeOverScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "changeSubscriptionStatusNotification": (_f = this.getChangeSubscriptionStatusNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "takeOverScript": (_f = this.getTakeOverScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "changeSubscriptionStatusNotification": (_g = this.getChangeSubscriptionStatusNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

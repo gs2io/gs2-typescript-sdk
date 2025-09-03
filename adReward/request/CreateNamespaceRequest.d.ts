@@ -4,10 +4,11 @@ export default class CreateNamespaceRequest implements IRequest {
     private requestId;
     private contextStack;
     private name;
+    private description;
+    private transactionSetting;
     private admob;
     private unityAd;
     private appLovinMaxes;
-    private description;
     private acquirePointScript;
     private consumePointScript;
     private changePointNotification;
@@ -21,6 +22,12 @@ export default class CreateNamespaceRequest implements IRequest {
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2AdReward.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2AdReward.TransactionSetting | null): this;
     getAdmob(): Gs2AdReward.AdMob | null;
     setAdmob(admob: Gs2AdReward.AdMob | null): this;
     withAdmob(admob: Gs2AdReward.AdMob | null): this;
@@ -30,9 +37,6 @@ export default class CreateNamespaceRequest implements IRequest {
     getAppLovinMaxes(): Gs2AdReward.AppLovinMax[] | null;
     setAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
     withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
-    getDescription(): string | null;
-    setDescription(description: string | null): this;
-    withDescription(description: string | null): this;
     getAcquirePointScript(): Gs2AdReward.ScriptSetting | null;
     setAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting | null): this;
     withAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting | null): this;

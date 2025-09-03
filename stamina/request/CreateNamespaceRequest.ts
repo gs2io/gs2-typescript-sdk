@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Stamina.TransactionSetting|null = null;
     private overflowTriggerScript: string|null = null;
     private logSetting: Gs2Stamina.LogSetting|null = null;
 
@@ -76,6 +77,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Stamina.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getOverflowTriggerScript(): string|null {
         return this.overflowTriggerScript;
     }
@@ -103,6 +115,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Stamina.TransactionSetting.fromDict(data["transactionSetting"]))
             .withOverflowTriggerScript(data["overflowTriggerScript"])
             .withLogSetting(Gs2Stamina.LogSetting.fromDict(data["logSetting"]));
     }
@@ -111,6 +124,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "overflowTriggerScript": this.getOverflowTriggerScript(),
             "logSetting": this.getLogSetting()?.toDict(),
         };

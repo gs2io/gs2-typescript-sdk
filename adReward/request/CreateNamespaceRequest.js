@@ -22,10 +22,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.name = null;
+        this.description = null;
+        this.transactionSetting = null;
         this.admob = null;
         this.unityAd = null;
         this.appLovinMaxes = null;
-        this.description = null;
         this.acquirePointScript = null;
         this.consumePointScript = null;
         this.changePointNotification = null;
@@ -64,6 +65,28 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = name;
         return this;
     };
+    CreateNamespaceRequest.prototype.getDescription = function () {
+        return this.description;
+    };
+    CreateNamespaceRequest.prototype.setDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getAdmob = function () {
         return this.admob;
     };
@@ -95,17 +118,6 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withAppLovinMaxes = function (appLovinMaxes) {
         this.appLovinMaxes = appLovinMaxes;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.getDescription = function () {
-        return this.description;
-    };
-    CreateNamespaceRequest.prototype.setDescription = function (description) {
-        this.description = description;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.withDescription = function (description) {
-        this.description = description;
         return this;
     };
     CreateNamespaceRequest.prototype.getAcquirePointScript = function () {
@@ -155,33 +167,35 @@ var CreateNamespaceRequest = /** @class */ (function () {
     CreateNamespaceRequest.fromDict = function (data) {
         return new CreateNamespaceRequest()
             .withName(data["name"])
+            .withDescription(data["description"])
+            .withTransactionSetting(Gs2AdReward.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
             .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
             .withAppLovinMaxes(data.appLovinMaxes ?
             data.appLovinMaxes.map(function (item) {
                 return Gs2AdReward.AppLovinMax.fromDict(item);
             }) : null)
-            .withDescription(data["description"])
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "name": this.getName(),
-            "admob": (_a = this.getAdmob()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "unityAd": (_b = this.getUnityAd()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "admob": (_b = this.getAdmob()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "unityAd": (_c = this.getUnityAd()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "appLovinMaxes": this.getAppLovinMaxes() ?
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
                 }) : null,
-            "description": this.getDescription(),
-            "acquirePointScript": (_c = this.getAcquirePointScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "consumePointScript": (_d = this.getConsumePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "changePointNotification": (_e = this.getChangePointNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "acquirePointScript": (_d = this.getAcquirePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "consumePointScript": (_e = this.getConsumePointScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changePointNotification": (_f = this.getChangePointNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
         };
     };
     return CreateNamespaceRequest;

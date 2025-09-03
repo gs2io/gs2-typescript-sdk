@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Account from '../../account/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Account.TransactionSetting|null = null;
     private changePasswordIfTakeOver: boolean|null = null;
     private differentUserIdForLoginAndDataRetention: boolean|null = null;
     private createAccountScript: Gs2Account.ScriptSetting|null = null;
@@ -128,6 +130,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Account.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Account.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Account.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getChangePasswordIfTakeOver(): boolean|null {
@@ -271,6 +284,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Account.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
@@ -290,6 +304,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
             "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
             "createAccountScript": this.getCreateAccountScript()?.toDict(),

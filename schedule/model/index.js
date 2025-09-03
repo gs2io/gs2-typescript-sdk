@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentEventMaster = exports.RepeatSchedule = exports.RepeatSetting = exports.Event = exports.Trigger = exports.EventMaster = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentEventMaster = exports.RepeatSchedule = exports.RepeatSetting = exports.Event = exports.Trigger = exports.EventMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,4 +35,6 @@ var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutS
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

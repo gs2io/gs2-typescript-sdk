@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private serverType;
     private serverSpec;
     private createNotification;
@@ -25,6 +26,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Realtime.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting | null): this;
     getServerType(): string | null;
     setServerType(serverType: string | null): this;
     withServerType(serverType: string | null): this;

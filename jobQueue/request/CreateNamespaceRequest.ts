@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2JobQueue.TransactionSetting|null = null;
     private enableAutoRun: boolean|null = null;
     private pushNotification: Gs2JobQueue.NotificationSetting|null = null;
     private runNotification: Gs2JobQueue.NotificationSetting|null = null;
@@ -78,6 +79,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2JobQueue.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2JobQueue.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2JobQueue.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getEnableAutoRun(): boolean|null {
         return this.enableAutoRun;
     }
@@ -127,6 +139,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
@@ -137,6 +150,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
             "pushNotification": this.getPushNotification()?.toDict(),
             "runNotification": this.getRunNotification()?.toDict(),

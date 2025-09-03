@@ -23,6 +23,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.transactionSetting = null;
         this.changePasswordIfTakeOver = null;
         this.createAccountScript = null;
         this.authenticationScript = null;
@@ -74,6 +75,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     UpdateNamespaceRequest.prototype.getChangePasswordIfTakeOver = function () {
@@ -168,6 +180,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Account.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
@@ -178,18 +191,19 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
-            "createAccountScript": (_a = this.getCreateAccountScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "authenticationScript": (_b = this.getAuthenticationScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "doTakeOverScript": (_d = this.getDoTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "banScript": (_e = this.getBanScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "unBanScript": (_f = this.getUnBanScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "createAccountScript": (_b = this.getCreateAccountScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "authenticationScript": (_c = this.getAuthenticationScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "createTakeOverScript": (_d = this.getCreateTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "doTakeOverScript": (_e = this.getDoTakeOverScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "banScript": (_f = this.getBanScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "unBanScript": (_g = this.getUnBanScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
         };
     };
     return UpdateNamespaceRequest;

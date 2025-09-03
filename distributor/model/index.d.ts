@@ -16,5 +16,6 @@ import Config from "./Config";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import DistributeResource from "./DistributeResource";
 import LogSetting from "./LogSetting";
+import TransactionSetting from "./TransactionSetting";
 import NotificationSetting from "./NotificationSetting";
-export { Namespace, DistributorModelMaster, DistributorModel, CurrentDistributorMaster, StampSheetResult, BatchRequestPayload, BatchResultPayload, AcquireAction, ConsumeAction, VerifyAction, TransactionResult, AcquireActionResult, ConsumeActionResult, VerifyActionResult, Config, GitHubCheckoutSetting, DistributeResource, LogSetting, NotificationSetting, };
+export { Namespace, DistributorModelMaster, DistributorModel, CurrentDistributorMaster, StampSheetResult, BatchRequestPayload, BatchResultPayload, AcquireAction, ConsumeAction, VerifyAction, TransactionResult, AcquireActionResult, ConsumeActionResult, VerifyActionResult, Config, GitHubCheckoutSetting, DistributeResource, LogSetting, TransactionSetting, NotificationSetting, };

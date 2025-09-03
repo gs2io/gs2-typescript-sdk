@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Realtime.TransactionSetting|null = null;
     private serverType: string|null = null;
     private serverSpec: string|null = null;
     private createNotification: Gs2Realtime.NotificationSetting|null = null;
@@ -78,6 +79,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Realtime.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Realtime.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getServerType(): string|null {
         return this.serverType;
     }
@@ -127,6 +139,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Realtime.TransactionSetting.fromDict(data["transactionSetting"]))
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
@@ -137,6 +150,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "serverType": this.getServerType(),
             "serverSpec": this.getServerSpec(),
             "createNotification": this.getCreateNotification()?.toDict(),

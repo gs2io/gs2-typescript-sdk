@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Matchmaking from '../../matchmaking/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -26,6 +27,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Matchmaking.TransactionSetting|null = null;
     private enableRating: boolean|null = null;
     private enableDisconnectDetection: string|null = null;
     private disconnectDetectionTimeoutSeconds: number|null = null;
@@ -138,6 +140,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Matchmaking.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Matchmaking.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getEnableRating(): boolean|null {
@@ -380,6 +393,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Matchmaking.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableRating(data["enableRating"])
             .withEnableDisconnectDetection(data["enableDisconnectDetection"])
             .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
@@ -408,6 +422,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enableRating": this.getEnableRating(),
             "enableDisconnectDetection": this.getEnableDisconnectDetection(),
             "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),

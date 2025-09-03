@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Buff.TransactionSetting|null = null;
     private applyBuffScript: Gs2Buff.ScriptSetting|null = null;
     private logSetting: Gs2Buff.LogSetting|null = null;
 
@@ -76,6 +77,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Buff.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Buff.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Buff.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getApplyBuffScript(): Gs2Buff.ScriptSetting|null {
         return this.applyBuffScript;
     }
@@ -103,6 +115,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Buff.TransactionSetting.fromDict(data["transactionSetting"]))
             .withApplyBuffScript(Gs2Buff.ScriptSetting.fromDict(data["applyBuffScript"]))
             .withLogSetting(Gs2Buff.LogSetting.fromDict(data["logSetting"]));
     }
@@ -111,6 +124,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "applyBuffScript": this.getApplyBuffScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };

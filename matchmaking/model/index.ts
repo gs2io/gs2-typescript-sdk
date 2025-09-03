@@ -25,6 +25,7 @@ import JoinedSeasonGathering from "./JoinedSeasonGathering"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import AttributeRange from "./AttributeRange"
 import CapacityOfRole from "./CapacityOfRole"
@@ -51,6 +52,7 @@ export {
     ScriptSetting,
     NotificationSetting,
     LogSetting,
+    TransactionSetting,
     GitHubCheckoutSetting,
     AttributeRange,
     CapacityOfRole,

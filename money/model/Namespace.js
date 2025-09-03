@@ -23,6 +23,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.priority = null;
         this.shareFree = null;
         this.currency = null;
@@ -117,6 +118,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getPriority = function () {
@@ -281,6 +293,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money.TransactionSetting.fromDict(data["transactionSetting"]))
             .withPriority(data["priority"])
             .withShareFree(data["shareFree"])
             .withCurrency(data["currency"])
@@ -297,22 +310,23 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "priority": this.getPriority(),
             "shareFree": this.getShareFree(),
             "currency": this.getCurrency(),
             "appleKey": this.getAppleKey(),
             "googleKey": this.getGoogleKey(),
             "enableFakeReceipt": this.getEnableFakeReceipt(),
-            "createWalletScript": (_a = this.getCreateWalletScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "depositScript": (_b = this.getDepositScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "withdrawScript": (_c = this.getWithdrawScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "createWalletScript": (_b = this.getCreateWalletScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "depositScript": (_c = this.getDepositScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "withdrawScript": (_d = this.getWithdrawScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "balance": this.getBalance(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

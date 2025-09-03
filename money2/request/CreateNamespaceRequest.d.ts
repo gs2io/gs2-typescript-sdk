@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private currencyUsagePriority;
     private description;
+    private transactionSetting;
     private sharedFreeCurrency;
     private platformSetting;
     private depositBalanceScript;
@@ -32,6 +33,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Money2.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
     getSharedFreeCurrency(): boolean | null;
     setSharedFreeCurrency(sharedFreeCurrency: boolean | null): this;
     withSharedFreeCurrency(sharedFreeCurrency: boolean | null): this;

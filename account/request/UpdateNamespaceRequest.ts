@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Account.TransactionSetting|null = null;
     private changePasswordIfTakeOver: boolean|null = null;
     private createAccountScript: Gs2Account.ScriptSetting|null = null;
     private authenticationScript: Gs2Account.ScriptSetting|null = null;
@@ -80,6 +81,17 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Account.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Account.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Account.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getChangePasswordIfTakeOver(): boolean|null {
@@ -175,6 +187,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Account.TransactionSetting.fromDict(data["transactionSetting"]))
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
@@ -189,6 +202,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
             "createAccountScript": this.getCreateAccountScript()?.toDict(),
             "authenticationScript": this.getAuthenticationScript()?.toDict(),

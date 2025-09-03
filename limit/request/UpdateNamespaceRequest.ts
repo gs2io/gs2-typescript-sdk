@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Limit.TransactionSetting|null = null;
     private logSetting: Gs2Limit.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Limit.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getLogSetting(): Gs2Limit.LogSetting|null {
         return this.logSetting;
     }
@@ -91,6 +103,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Limit.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLogSetting(Gs2Limit.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -98,6 +111,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

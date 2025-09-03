@@ -12,4 +12,5 @@ import Stamina from "./Stamina";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import ScriptSetting from "./ScriptSetting";
-export { Namespace, StaminaModelMaster, MaxStaminaTableMaster, RecoverIntervalTableMaster, RecoverValueTableMaster, CurrentStaminaMaster, StaminaModel, MaxStaminaTable, RecoverIntervalTable, RecoverValueTable, Stamina, GitHubCheckoutSetting, LogSetting, ScriptSetting, };
+import TransactionSetting from "./TransactionSetting";
+export { Namespace, StaminaModelMaster, MaxStaminaTableMaster, RecoverIntervalTableMaster, RecoverValueTableMaster, CurrentStaminaMaster, StaminaModel, MaxStaminaTable, RecoverIntervalTable, RecoverValueTable, Stamina, GitHubCheckoutSetting, LogSetting, ScriptSetting, TransactionSetting, };

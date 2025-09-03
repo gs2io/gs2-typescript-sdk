@@ -23,6 +23,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.transactionSetting = null;
         this.enableRating = null;
         this.enableDisconnectDetection = null;
         this.disconnectDetectionTimeoutSeconds = null;
@@ -84,6 +85,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     UpdateNamespaceRequest.prototype.getEnableRating = function () {
@@ -288,6 +300,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Matchmaking.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableRating(data["enableRating"])
             .withEnableDisconnectDetection(data["enableDisconnectDetection"])
             .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
@@ -308,10 +321,11 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "enableRating": this.getEnableRating(),
             "enableDisconnectDetection": this.getEnableDisconnectDetection(),
             "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),
@@ -324,12 +338,12 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "enableCollaborateSeasonRating": this.getEnableCollaborateSeasonRating(),
             "collaborateSeasonRatingNamespaceId": this.getCollaborateSeasonRatingNamespaceId(),
             "collaborateSeasonRatingTtl": this.getCollaborateSeasonRatingTtl(),
-            "changeRatingScript": (_a = this.getChangeRatingScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "changeRatingNotification": (_e = this.getChangeRatingNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "changeRatingScript": (_b = this.getChangeRatingScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "joinNotification": (_c = this.getJoinNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "leaveNotification": (_d = this.getLeaveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "completeNotification": (_e = this.getCompleteNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeRatingNotification": (_f = this.getChangeRatingNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
         };
     };
     return UpdateNamespaceRequest;

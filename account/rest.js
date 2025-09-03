@@ -49,7 +49,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region);
@@ -61,15 +61,16 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'changePasswordIfTakeOver': (_d = request.getChangePasswordIfTakeOver()) !== null && _d !== void 0 ? _d : null,
-            'differentUserIdForLoginAndDataRetention': (_e = request.getDifferentUserIdForLoginAndDataRetention()) !== null && _e !== void 0 ? _e : null,
-            'createAccountScript': (_g = (_f = request.getCreateAccountScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'authenticationScript': (_j = (_h = request.getAuthenticationScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'createTakeOverScript': (_l = (_k = request.getCreateTakeOverScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'doTakeOverScript': (_o = (_m = request.getDoTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'banScript': (_q = (_p = request.getBanScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'unBanScript': (_s = (_r = request.getUnBanScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'changePasswordIfTakeOver': (_f = request.getChangePasswordIfTakeOver()) !== null && _f !== void 0 ? _f : null,
+            'differentUserIdForLoginAndDataRetention': (_g = request.getDifferentUserIdForLoginAndDataRetention()) !== null && _g !== void 0 ? _g : null,
+            'createAccountScript': (_j = (_h = request.getCreateAccountScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'authenticationScript': (_l = (_k = request.getAuthenticationScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'createTakeOverScript': (_o = (_m = request.getCreateTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'doTakeOverScript': (_q = (_p = request.getDoTakeOverScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'banScript': (_s = (_r = request.getBanScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'unBanScript': (_u = (_t = request.getUnBanScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -129,7 +130,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -141,14 +142,15 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'changePasswordIfTakeOver': (_e = request.getChangePasswordIfTakeOver()) !== null && _e !== void 0 ? _e : null,
-            'createAccountScript': (_g = (_f = request.getCreateAccountScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'authenticationScript': (_j = (_h = request.getAuthenticationScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'createTakeOverScript': (_l = (_k = request.getCreateTakeOverScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'doTakeOverScript': (_o = (_m = request.getDoTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'banScript': (_q = (_p = request.getBanScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'unBanScript': (_s = (_r = request.getUnBanScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'changePasswordIfTakeOver': (_g = request.getChangePasswordIfTakeOver()) !== null && _g !== void 0 ? _g : null,
+            'createAccountScript': (_j = (_h = request.getCreateAccountScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'authenticationScript': (_l = (_k = request.getAuthenticationScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'createTakeOverScript': (_o = (_m = request.getCreateTakeOverScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'doTakeOverScript': (_q = (_p = request.getDoTakeOverScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'banScript': (_s = (_r = request.getBanScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'unBanScript': (_u = (_t = request.getUnBanScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

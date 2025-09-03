@@ -46,6 +46,7 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 import DailyTransactionHistory from "./DailyTransactionHistory"
 import UnusedBalance from "./UnusedBalance"
 
@@ -83,6 +84,7 @@ export {
     ScriptSetting,
     NotificationSetting,
     LogSetting,
+    TransactionSetting,
     DailyTransactionHistory,
     UnusedBalance,
 };

@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private lastCalculatedAts;
     private logSetting;
     private createdAt;
@@ -23,6 +24,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Ranking.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Ranking.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Ranking.TransactionSetting | null): this;
     getLastCalculatedAts(): Gs2Ranking.CalculatedAt[] | null;
     setLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[] | null): this;
     withLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[] | null): this;

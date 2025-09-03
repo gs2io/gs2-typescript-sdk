@@ -9,5 +9,6 @@ import NotificationType from "./NotificationType";
 import ScriptSetting from "./ScriptSetting";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
+import TransactionSetting from "./TransactionSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-export { Namespace, Room, Message, Subscribe, CategoryModel, CategoryModelMaster, CurrentModelMaster, NotificationType, ScriptSetting, NotificationSetting, LogSetting, GitHubCheckoutSetting, };
+export { Namespace, Room, Message, Subscribe, CategoryModel, CategoryModelMaster, CurrentModelMaster, NotificationType, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, GitHubCheckoutSetting, };

@@ -24,6 +24,7 @@ import OverrideBuffRate from "./OverrideBuffRate"
 import ScriptSetting from "./ScriptSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -37,4 +38,5 @@ export {
     ScriptSetting,
     GitHubCheckoutSetting,
     LogSetting,
+    TransactionSetting,
 };

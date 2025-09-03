@@ -27,6 +27,7 @@ import CalculatedAt from "./CalculatedAt"
 import SubscribeUser from "./SubscribeUser"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -43,4 +44,5 @@ export {
     SubscribeUser,
     GitHubCheckoutSetting,
     LogSetting,
+    TransactionSetting,
 };

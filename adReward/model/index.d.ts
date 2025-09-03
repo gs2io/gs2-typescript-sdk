@@ -6,4 +6,5 @@ import AppLovinMax from "./AppLovinMax";
 import ScriptSetting from "./ScriptSetting";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
-export { Namespace, Point, AdMob, UnityAd, AppLovinMax, ScriptSetting, NotificationSetting, LogSetting, };
+import TransactionSetting from "./TransactionSetting";
+export { Namespace, Point, AdMob, UnityAd, AppLovinMax, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Stamina from '../../stamina/model'
+import TransactionSetting from './TransactionSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}";
 
@@ -24,6 +25,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Stamina.TransactionSetting|null = null;
     private overflowTriggerScript: string|null = null;
     private logSetting: Gs2Stamina.LogSetting|null = null;
     private createdAt: number|null = null;
@@ -122,6 +124,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): Gs2Stamina.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Stamina.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getOverflowTriggerScript(): string|null {
         return this.overflowTriggerScript;
     }
@@ -186,6 +199,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Stamina.TransactionSetting.fromDict(data["transactionSetting"]))
             .withOverflowTriggerScript(data["overflowTriggerScript"])
             .withLogSetting(Gs2Stamina.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -198,6 +212,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "overflowTriggerScript": this.getOverflowTriggerScript(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),

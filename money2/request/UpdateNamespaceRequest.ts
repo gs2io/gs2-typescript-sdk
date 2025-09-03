@@ -25,6 +25,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName: string|null = null;
     private currencyUsagePriority: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Money2.TransactionSetting|null = null;
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
     private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
     private withdrawBalanceScript: Gs2Money2.ScriptSetting|null = null;
@@ -94,6 +95,17 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Money2.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getPlatformSetting(): Gs2Money2.PlatformSetting|null {
@@ -212,6 +224,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
@@ -229,6 +242,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "platformSetting": this.getPlatformSetting()?.toDict(),
             "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),
             "withdrawBalanceScript": this.getWithdrawBalanceScript()?.toDict(),

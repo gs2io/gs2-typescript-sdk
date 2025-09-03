@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.allowCreateRoom = null;
         this.messageLifeTimeDays = null;
         this.postMessageScript = null;
@@ -75,6 +76,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getAllowCreateRoom = function () {
@@ -180,6 +192,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Chat.TransactionSetting.fromDict(data["transactionSetting"]))
             .withAllowCreateRoom(data["allowCreateRoom"])
             .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
@@ -191,19 +204,20 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Chat.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "allowCreateRoom": this.getAllowCreateRoom(),
             "messageLifeTimeDays": this.getMessageLifeTimeDays(),
-            "postMessageScript": (_a = this.getPostMessageScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "createRoomScript": (_b = this.getCreateRoomScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "deleteRoomScript": (_c = this.getDeleteRoomScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "subscribeRoomScript": (_d = this.getSubscribeRoomScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "unsubscribeRoomScript": (_e = this.getUnsubscribeRoomScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "postNotification": (_f = this.getPostNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "postMessageScript": (_b = this.getPostMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "createRoomScript": (_c = this.getCreateRoomScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "deleteRoomScript": (_d = this.getDeleteRoomScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "subscribeRoomScript": (_e = this.getSubscribeRoomScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "unsubscribeRoomScript": (_f = this.getUnsubscribeRoomScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "postNotification": (_g = this.getPostNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
         };
     };
     return CreateNamespaceRequest;

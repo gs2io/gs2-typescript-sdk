@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 import * as Gs2Money from '../../money/model'
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money:{namespaceName}";
@@ -25,6 +26,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Money.TransactionSetting|null = null;
     private priority: string|null = null;
     private shareFree: boolean|null = null;
     private currency: string|null = null;
@@ -130,6 +132,17 @@ export default class Namespace implements IModel {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Money.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Money.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Money.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getPriority(): string|null {
@@ -295,6 +308,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Money.TransactionSetting.fromDict(data["transactionSetting"]))
             .withPriority(data["priority"])
             .withShareFree(data["shareFree"])
             .withCurrency(data["currency"])
@@ -316,6 +330,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "priority": this.getPriority(),
             "shareFree": this.getShareFree(),
             "currency": this.getCurrency(),

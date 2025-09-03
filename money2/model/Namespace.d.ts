@@ -4,6 +4,7 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private currencyUsagePriority;
     private sharedFreeCurrency;
     private platformSetting;
@@ -33,6 +34,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Money2.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Money2.TransactionSetting | null): this;
     getCurrencyUsagePriority(): string | null;
     setCurrencyUsagePriority(currencyUsagePriority: string | null): this;
     withCurrencyUsagePriority(currencyUsagePriority: string | null): this;

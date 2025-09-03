@@ -23,6 +23,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.enableAutoRun = null;
         this.runNotification = null;
         this.pushNotification = null;
@@ -112,6 +113,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     Namespace.prototype.getEnableAutoRun = function () {
         return this.enableAutoRun;
     };
@@ -197,6 +209,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
@@ -206,15 +219,16 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
-            "runNotification": (_a = this.getRunNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "pushNotification": (_b = this.getPushNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "runNotification": (_b = this.getRunNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "pushNotification": (_c = this.getPushNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

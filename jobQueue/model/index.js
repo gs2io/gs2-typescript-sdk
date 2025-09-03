@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JobResultBody = exports.JobEntry = exports.LogSetting = exports.NotificationSetting = exports.JobResult = exports.Job = exports.Namespace = void 0;
+exports.JobResultBody = exports.JobEntry = exports.TransactionSetting = exports.LogSetting = exports.NotificationSetting = exports.JobResult = exports.Job = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetti
 exports.NotificationSetting = NotificationSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 var JobEntry_1 = tslib_1.__importDefault(require("./JobEntry"));
 exports.JobEntry = JobEntry_1.default;
 var JobResultBody_1 = tslib_1.__importDefault(require("./JobResultBody"));
