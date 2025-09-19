@@ -3,7 +3,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private namePrefix;
+    private roomNamePrefix;
     private userId;
     private pageToken;
     private limit;
@@ -17,9 +17,9 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getNamePrefix(): string | null;
-    setNamePrefix(namePrefix: string | null): this;
-    withNamePrefix(namePrefix: string | null): this;
+    getRoomNamePrefix(): string | null;
+    setRoomNamePrefix(roomNamePrefix: string | null): this;
+    withRoomNamePrefix(roomNamePrefix: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

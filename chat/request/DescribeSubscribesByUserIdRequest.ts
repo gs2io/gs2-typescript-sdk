@@ -23,7 +23,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private namePrefix: string|null = null;
+    private roomNamePrefix: string|null = null;
     private userId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -67,15 +67,15 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getNamePrefix(): string|null {
-        return this.namePrefix;
+    public getRoomNamePrefix(): string|null {
+        return this.roomNamePrefix;
     }
-    public setNamePrefix(namePrefix: string|null) {
-        this.namePrefix = namePrefix;
+    public setRoomNamePrefix(roomNamePrefix: string|null) {
+        this.roomNamePrefix = roomNamePrefix;
         return this;
     }
-    public withNamePrefix(namePrefix: string|null): this {
-        this.namePrefix = namePrefix;
+    public withRoomNamePrefix(roomNamePrefix: string|null): this {
+        this.roomNamePrefix = roomNamePrefix;
         return this;
     }
     public getUserId(): string|null {
@@ -126,7 +126,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DescribeSubscribesByUserIdRequest {
         return new DescribeSubscribesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withNamePrefix(data["namePrefix"])
+            .withRoomNamePrefix(data["roomNamePrefix"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
@@ -136,7 +136,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "namePrefix": this.getNamePrefix(),
+            "roomNamePrefix": this.getRoomNamePrefix(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

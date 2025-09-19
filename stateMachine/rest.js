@@ -398,7 +398,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StateMachineRestClient.prototype.describeStateMachineMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/stateMachine')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region)
@@ -409,9 +409,8 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,

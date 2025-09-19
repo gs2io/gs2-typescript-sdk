@@ -3,7 +3,6 @@ export default class DescribeStateMachineMastersRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private namePrefix;
     private pageToken;
     private limit;
     getRequestId(): string | null;
@@ -15,9 +14,6 @@ export default class DescribeStateMachineMastersRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getNamePrefix(): string | null;
-    setNamePrefix(namePrefix: string | null): this;
-    withNamePrefix(namePrefix: string | null): this;
     getPageToken(): string | null;
     setPageToken(pageToken: string | null): this;
     withPageToken(pageToken: string | null): this;

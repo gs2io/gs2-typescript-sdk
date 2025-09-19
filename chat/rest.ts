@@ -1080,7 +1080,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'namePrefix': String(request.getNamePrefix() ?? null),
+            'roomNamePrefix': String(request.getRoomNamePrefix() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -1113,7 +1113,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'namePrefix': String(request.getNamePrefix() ?? null),
+            'roomNamePrefix': String(request.getRoomNamePrefix() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };

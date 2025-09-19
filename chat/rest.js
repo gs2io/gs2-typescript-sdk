@@ -954,7 +954,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'roomNamePrefix': String((_e = request.getRoomNamePrefix()) !== null && _e !== void 0 ? _e : null),
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
@@ -983,7 +983,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'namePrefix': String((_g = request.getNamePrefix()) !== null && _g !== void 0 ? _g : null),
+            'roomNamePrefix': String((_g = request.getRoomNamePrefix()) !== null && _g !== void 0 ? _g : null),
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };

@@ -20,7 +20,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.namePrefix = null;
+        this.roomNamePrefix = null;
         this.accessToken = null;
         this.pageToken = null;
         this.limit = null;
@@ -58,15 +58,15 @@ var DescribeSubscribesRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    DescribeSubscribesRequest.prototype.getNamePrefix = function () {
-        return this.namePrefix;
+    DescribeSubscribesRequest.prototype.getRoomNamePrefix = function () {
+        return this.roomNamePrefix;
     };
-    DescribeSubscribesRequest.prototype.setNamePrefix = function (namePrefix) {
-        this.namePrefix = namePrefix;
+    DescribeSubscribesRequest.prototype.setRoomNamePrefix = function (roomNamePrefix) {
+        this.roomNamePrefix = roomNamePrefix;
         return this;
     };
-    DescribeSubscribesRequest.prototype.withNamePrefix = function (namePrefix) {
-        this.namePrefix = namePrefix;
+    DescribeSubscribesRequest.prototype.withRoomNamePrefix = function (roomNamePrefix) {
+        this.roomNamePrefix = roomNamePrefix;
         return this;
     };
     DescribeSubscribesRequest.prototype.getAccessToken = function () {
@@ -105,7 +105,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
     DescribeSubscribesRequest.fromDict = function (data) {
         return new DescribeSubscribesRequest()
             .withNamespaceName(data["namespaceName"])
-            .withNamePrefix(data["namePrefix"])
+            .withRoomNamePrefix(data["roomNamePrefix"])
             .withAccessToken(data["accessToken"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -113,7 +113,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
     DescribeSubscribesRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "namePrefix": this.getNamePrefix(),
+            "roomNamePrefix": this.getRoomNamePrefix(),
             "accessToken": this.getAccessToken(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
