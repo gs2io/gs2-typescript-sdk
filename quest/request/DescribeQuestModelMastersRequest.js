@@ -21,6 +21,7 @@ var DescribeQuestModelMastersRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.questGroupName = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -68,6 +69,17 @@ var DescribeQuestModelMastersRequest = /** @class */ (function () {
         this.questGroupName = questGroupName;
         return this;
     };
+    DescribeQuestModelMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeQuestModelMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeQuestModelMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
     DescribeQuestModelMastersRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -94,6 +106,7 @@ var DescribeQuestModelMastersRequest = /** @class */ (function () {
         return new DescribeQuestModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
             .withQuestGroupName(data["questGroupName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -101,6 +114,7 @@ var DescribeQuestModelMastersRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "questGroupName": this.getQuestGroupName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

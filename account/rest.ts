@@ -38,6 +38,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'namePrefix': String(request.getNamePrefix() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -1300,9 +1301,6 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

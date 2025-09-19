@@ -19,6 +19,7 @@ var DescribeStacksRequest = /** @class */ (function () {
     function DescribeStacksRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -42,6 +43,17 @@ var DescribeStacksRequest = /** @class */ (function () {
     };
     DescribeStacksRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
+        return this;
+    };
+    DescribeStacksRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeStacksRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeStacksRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
         return this;
     };
     DescribeStacksRequest.prototype.getPageToken = function () {
@@ -68,11 +80,13 @@ var DescribeStacksRequest = /** @class */ (function () {
     };
     DescribeStacksRequest.fromDict = function (data) {
         return new DescribeStacksRequest()
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
     DescribeStacksRequest.prototype.toDict = function () {
         return {
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

@@ -20,6 +20,7 @@ var DescribeBonusModelMastersRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -56,6 +57,17 @@ var DescribeBonusModelMastersRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    DescribeBonusModelMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeBonusModelMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeBonusModelMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
     DescribeBonusModelMastersRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -81,12 +93,14 @@ var DescribeBonusModelMastersRequest = /** @class */ (function () {
     DescribeBonusModelMastersRequest.fromDict = function (data) {
         return new DescribeBonusModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
     DescribeBonusModelMastersRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

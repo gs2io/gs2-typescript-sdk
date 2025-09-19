@@ -659,7 +659,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.describeCounterModelMasters = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -670,8 +670,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -791,7 +792,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.describeMissionGroupModelMasters = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -802,8 +803,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -933,7 +935,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
@@ -943,8 +945,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
-            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
+            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
+            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2158,7 +2161,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.describeMissionTaskModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -2170,8 +2173,9 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'namePrefix': String((_f = request.getNamePrefix()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,

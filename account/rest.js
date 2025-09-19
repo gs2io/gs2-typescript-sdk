@@ -26,7 +26,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2AccountRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region);
@@ -36,8 +36,9 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
-            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
+            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
+            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1137,7 +1138,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.getAuthorizationUrl = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/type/{type}/authorization/url')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1147,11 +1148,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
-        }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,

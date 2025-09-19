@@ -23,7 +23,6 @@ export default class GetAuthorizationUrlRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private accessToken: string|null = null;
     private type: number|null = null;
 
     public getRequestId(): string|null {
@@ -64,17 +63,6 @@ export default class GetAuthorizationUrlRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getAccessToken(): string|null {
-        return this.accessToken;
-    }
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
-        return this;
-    }
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
-        return this;
-    }
     public getType(): number|null {
         return this.type;
     }
@@ -90,14 +78,12 @@ export default class GetAuthorizationUrlRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): GetAuthorizationUrlRequest {
         return new GetAuthorizationUrlRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
             .withType(data["type"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "accessToken": this.getAccessToken(),
             "type": this.getType(),
         };
     }

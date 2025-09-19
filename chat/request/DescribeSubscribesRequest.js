@@ -20,6 +20,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.accessToken = null;
         this.pageToken = null;
         this.limit = null;
@@ -55,6 +56,17 @@ var DescribeSubscribesRequest = /** @class */ (function () {
     };
     DescribeSubscribesRequest.prototype.withNamespaceName = function (namespaceName) {
         this.namespaceName = namespaceName;
+        return this;
+    };
+    DescribeSubscribesRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeSubscribesRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeSubscribesRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
         return this;
     };
     DescribeSubscribesRequest.prototype.getAccessToken = function () {
@@ -93,6 +105,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
     DescribeSubscribesRequest.fromDict = function (data) {
         return new DescribeSubscribesRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withAccessToken(data["accessToken"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -100,6 +113,7 @@ var DescribeSubscribesRequest = /** @class */ (function () {
     DescribeSubscribesRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "accessToken": this.getAccessToken(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

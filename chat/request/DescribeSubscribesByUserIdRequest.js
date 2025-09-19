@@ -20,6 +20,7 @@ var DescribeSubscribesByUserIdRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
@@ -56,6 +57,17 @@ var DescribeSubscribesByUserIdRequest = /** @class */ (function () {
     };
     DescribeSubscribesByUserIdRequest.prototype.withNamespaceName = function (namespaceName) {
         this.namespaceName = namespaceName;
+        return this;
+    };
+    DescribeSubscribesByUserIdRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeSubscribesByUserIdRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeSubscribesByUserIdRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
         return this;
     };
     DescribeSubscribesByUserIdRequest.prototype.getUserId = function () {
@@ -105,6 +117,7 @@ var DescribeSubscribesByUserIdRequest = /** @class */ (function () {
     DescribeSubscribesByUserIdRequest.fromDict = function (data) {
         return new DescribeSubscribesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
@@ -113,6 +126,7 @@ var DescribeSubscribesByUserIdRequest = /** @class */ (function () {
     DescribeSubscribesByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

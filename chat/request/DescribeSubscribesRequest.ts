@@ -23,6 +23,7 @@ export default class DescribeSubscribesRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private namePrefix: string|null = null;
     private accessToken: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -65,6 +66,17 @@ export default class DescribeSubscribesRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
+        return this;
+    }
     public getAccessToken(): string|null {
         return this.accessToken;
     }
@@ -102,6 +114,7 @@ export default class DescribeSubscribesRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DescribeSubscribesRequest {
         return new DescribeSubscribesRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withAccessToken(data["accessToken"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -110,6 +123,7 @@ export default class DescribeSubscribesRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "accessToken": this.getAccessToken(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

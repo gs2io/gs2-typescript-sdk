@@ -20,6 +20,7 @@ var DescribeClusterRankingModelMastersRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -56,6 +57,17 @@ var DescribeClusterRankingModelMastersRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    DescribeClusterRankingModelMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeClusterRankingModelMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeClusterRankingModelMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
     DescribeClusterRankingModelMastersRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -81,12 +93,14 @@ var DescribeClusterRankingModelMastersRequest = /** @class */ (function () {
     DescribeClusterRankingModelMastersRequest.fromDict = function (data) {
         return new DescribeClusterRankingModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
     DescribeClusterRankingModelMastersRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

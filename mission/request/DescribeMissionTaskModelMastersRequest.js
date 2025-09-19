@@ -20,6 +20,7 @@ var DescribeMissionTaskModelMastersRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.missionGroupName = null;
         this.pageToken = null;
         this.limit = null;
@@ -55,6 +56,17 @@ var DescribeMissionTaskModelMastersRequest = /** @class */ (function () {
     };
     DescribeMissionTaskModelMastersRequest.prototype.withNamespaceName = function (namespaceName) {
         this.namespaceName = namespaceName;
+        return this;
+    };
+    DescribeMissionTaskModelMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeMissionTaskModelMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeMissionTaskModelMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
         return this;
     };
     DescribeMissionTaskModelMastersRequest.prototype.getMissionGroupName = function () {
@@ -93,6 +105,7 @@ var DescribeMissionTaskModelMastersRequest = /** @class */ (function () {
     DescribeMissionTaskModelMastersRequest.fromDict = function (data) {
         return new DescribeMissionTaskModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withMissionGroupName(data["missionGroupName"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -100,6 +113,7 @@ var DescribeMissionTaskModelMastersRequest = /** @class */ (function () {
     DescribeMissionTaskModelMastersRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "missionGroupName": this.getMissionGroupName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

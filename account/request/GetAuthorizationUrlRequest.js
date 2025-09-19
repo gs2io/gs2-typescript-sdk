@@ -20,7 +20,6 @@ var GetAuthorizationUrlRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.accessToken = null;
         this.type = null;
     }
     GetAuthorizationUrlRequest.prototype.getRequestId = function () {
@@ -56,17 +55,6 @@ var GetAuthorizationUrlRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    GetAuthorizationUrlRequest.prototype.getAccessToken = function () {
-        return this.accessToken;
-    };
-    GetAuthorizationUrlRequest.prototype.setAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
-    GetAuthorizationUrlRequest.prototype.withAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
     GetAuthorizationUrlRequest.prototype.getType = function () {
         return this.type;
     };
@@ -81,13 +69,11 @@ var GetAuthorizationUrlRequest = /** @class */ (function () {
     GetAuthorizationUrlRequest.fromDict = function (data) {
         return new GetAuthorizationUrlRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
             .withType(data["type"]);
     };
     GetAuthorizationUrlRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "accessToken": this.getAccessToken(),
             "type": this.getType(),
         };
     };

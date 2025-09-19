@@ -20,6 +20,7 @@ var DescribeRecoverIntervalTableMastersRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -56,6 +57,17 @@ var DescribeRecoverIntervalTableMastersRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    DescribeRecoverIntervalTableMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeRecoverIntervalTableMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeRecoverIntervalTableMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
     DescribeRecoverIntervalTableMastersRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -81,12 +93,14 @@ var DescribeRecoverIntervalTableMastersRequest = /** @class */ (function () {
     DescribeRecoverIntervalTableMastersRequest.fromDict = function (data) {
         return new DescribeRecoverIntervalTableMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
     DescribeRecoverIntervalTableMastersRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

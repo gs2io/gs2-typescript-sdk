@@ -3,7 +3,6 @@ export default class GetAuthorizationUrlRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private accessToken;
     private type;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -14,9 +13,6 @@ export default class GetAuthorizationUrlRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getAccessToken(): string | null;
-    setAccessToken(accessToken: string | null): this;
-    withAccessToken(accessToken: string | null): this;
     getType(): number | null;
     setType(type: number | null): this;
     withType(type: number | null): this;

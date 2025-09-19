@@ -21,6 +21,7 @@ var DescribeBigItemModelMastersRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.inventoryName = null;
+        this.namePrefix = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -68,6 +69,17 @@ var DescribeBigItemModelMastersRequest = /** @class */ (function () {
         this.inventoryName = inventoryName;
         return this;
     };
+    DescribeBigItemModelMastersRequest.prototype.getNamePrefix = function () {
+        return this.namePrefix;
+    };
+    DescribeBigItemModelMastersRequest.prototype.setNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
+    DescribeBigItemModelMastersRequest.prototype.withNamePrefix = function (namePrefix) {
+        this.namePrefix = namePrefix;
+        return this;
+    };
     DescribeBigItemModelMastersRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -94,6 +106,7 @@ var DescribeBigItemModelMastersRequest = /** @class */ (function () {
         return new DescribeBigItemModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -101,6 +114,7 @@ var DescribeBigItemModelMastersRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "inventoryName": this.getInventoryName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

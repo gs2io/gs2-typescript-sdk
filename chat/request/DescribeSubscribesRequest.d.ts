@@ -3,6 +3,7 @@ export default class DescribeSubscribesRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
+    private namePrefix;
     private accessToken;
     private pageToken;
     private limit;
@@ -15,6 +16,9 @@ export default class DescribeSubscribesRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
+    getNamePrefix(): string | null;
+    setNamePrefix(namePrefix: string | null): this;
+    withNamePrefix(namePrefix: string | null): this;
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;

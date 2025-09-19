@@ -23,6 +23,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private namePrefix: string|null = null;
     private userId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -64,6 +65,17 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     }
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
+        return this;
+    }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
         return this;
     }
     public getUserId(): string|null {
@@ -114,6 +126,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DescribeSubscribesByUserIdRequest {
         return new DescribeSubscribesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
@@ -123,6 +136,7 @@ export default class DescribeSubscribesByUserIdRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

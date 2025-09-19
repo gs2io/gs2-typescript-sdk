@@ -23,6 +23,7 @@ export default class DescribeSubscribeRankingModelMastersRequest implements IReq
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private namePrefix: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
 
@@ -64,6 +65,17 @@ export default class DescribeSubscribeRankingModelMastersRequest implements IReq
         this.namespaceName = namespaceName;
         return this;
     }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -90,6 +102,7 @@ export default class DescribeSubscribeRankingModelMastersRequest implements IReq
     public static fromDict(data: {[key: string]: any}): DescribeSubscribeRankingModelMastersRequest {
         return new DescribeSubscribeRankingModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
@@ -97,6 +110,7 @@ export default class DescribeSubscribeRankingModelMastersRequest implements IReq
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

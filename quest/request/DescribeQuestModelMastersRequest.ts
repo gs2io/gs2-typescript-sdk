@@ -24,6 +24,7 @@ export default class DescribeQuestModelMastersRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private questGroupName: string|null = null;
+    private namePrefix: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
 
@@ -76,6 +77,17 @@ export default class DescribeQuestModelMastersRequest implements IRequest {
         this.questGroupName = questGroupName;
         return this;
     }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -103,6 +115,7 @@ export default class DescribeQuestModelMastersRequest implements IRequest {
         return new DescribeQuestModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
             .withQuestGroupName(data["questGroupName"])
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
@@ -111,6 +124,7 @@ export default class DescribeQuestModelMastersRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "questGroupName": this.getQuestGroupName(),
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

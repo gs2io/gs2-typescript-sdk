@@ -23,6 +23,7 @@ export default class DescribeMissionTaskModelMastersRequest implements IRequest 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private namePrefix: string|null = null;
     private missionGroupName: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -65,6 +66,17 @@ export default class DescribeMissionTaskModelMastersRequest implements IRequest 
         this.namespaceName = namespaceName;
         return this;
     }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
+        return this;
+    }
     public getMissionGroupName(): string|null {
         return this.missionGroupName;
     }
@@ -102,6 +114,7 @@ export default class DescribeMissionTaskModelMastersRequest implements IRequest 
     public static fromDict(data: {[key: string]: any}): DescribeMissionTaskModelMastersRequest {
         return new DescribeMissionTaskModelMastersRequest()
             .withNamespaceName(data["namespaceName"])
+            .withNamePrefix(data["namePrefix"])
             .withMissionGroupName(data["missionGroupName"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -110,6 +123,7 @@ export default class DescribeMissionTaskModelMastersRequest implements IRequest 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "namePrefix": this.getNamePrefix(),
             "missionGroupName": this.getMissionGroupName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

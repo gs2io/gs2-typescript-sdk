@@ -22,6 +22,7 @@ export default class DescribeNamespacesRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
+    private namePrefix: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
 
@@ -52,6 +53,17 @@ export default class DescribeNamespacesRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
+    public getNamePrefix(): string|null {
+        return this.namePrefix;
+    }
+    public setNamePrefix(namePrefix: string|null) {
+        this.namePrefix = namePrefix;
+        return this;
+    }
+    public withNamePrefix(namePrefix: string|null): this {
+        this.namePrefix = namePrefix;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -77,12 +89,14 @@ export default class DescribeNamespacesRequest implements IRequest {
 
     public static fromDict(data: {[key: string]: any}): DescribeNamespacesRequest {
         return new DescribeNamespacesRequest()
+            .withNamePrefix(data["namePrefix"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "namePrefix": this.getNamePrefix(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };
