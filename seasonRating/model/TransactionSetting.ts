@@ -21,6 +21,7 @@ import * as Gs2SeasonRating from '../../seasonRating/model'
 export default class TransactionSetting implements IModel {
     private enableAtomicCommit: boolean|null = null;
     private transactionUseDistributor: boolean|null = null;
+    private commitScriptResultInUseDistributor: boolean|null = null;
     private acquireActionUseJobQueue: boolean|null = null;
     private distributorNamespaceId: string|null = null;
     private queueNamespaceId: string|null = null;
@@ -44,6 +45,17 @@ export default class TransactionSetting implements IModel {
     }
     public withTransactionUseDistributor(transactionUseDistributor: boolean|null): this {
         this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public getCommitScriptResultInUseDistributor(): boolean|null {
+        return this.commitScriptResultInUseDistributor;
+    }
+    public setCommitScriptResultInUseDistributor(commitScriptResultInUseDistributor: boolean|null) {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
+        return this;
+    }
+    public withCommitScriptResultInUseDistributor(commitScriptResultInUseDistributor: boolean|null): this {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
         return this;
     }
     public getAcquireActionUseJobQueue(): boolean|null {
@@ -87,6 +99,7 @@ export default class TransactionSetting implements IModel {
         return new TransactionSetting()
             .withEnableAtomicCommit(data["enableAtomicCommit"])
             .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withCommitScriptResultInUseDistributor(data["commitScriptResultInUseDistributor"])
             .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
@@ -96,6 +109,7 @@ export default class TransactionSetting implements IModel {
         return {
             "enableAtomicCommit": this.getEnableAtomicCommit(),
             "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "commitScriptResultInUseDistributor": this.getCommitScriptResultInUseDistributor(),
             "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "queueNamespaceId": this.getQueueNamespaceId(),

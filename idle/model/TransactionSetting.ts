@@ -22,6 +22,7 @@ export default class TransactionSetting implements IModel {
     private enableAutoRun: boolean|null = null;
     private enableAtomicCommit: boolean|null = null;
     private transactionUseDistributor: boolean|null = null;
+    private commitScriptResultInUseDistributor: boolean|null = null;
     private acquireActionUseJobQueue: boolean|null = null;
     private distributorNamespaceId: string|null = null;
     private keyId: string|null = null;
@@ -57,6 +58,17 @@ export default class TransactionSetting implements IModel {
     }
     public withTransactionUseDistributor(transactionUseDistributor: boolean|null): this {
         this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public getCommitScriptResultInUseDistributor(): boolean|null {
+        return this.commitScriptResultInUseDistributor;
+    }
+    public setCommitScriptResultInUseDistributor(commitScriptResultInUseDistributor: boolean|null) {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
+        return this;
+    }
+    public withCommitScriptResultInUseDistributor(commitScriptResultInUseDistributor: boolean|null): this {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
         return this;
     }
     public getAcquireActionUseJobQueue(): boolean|null {
@@ -115,6 +127,7 @@ export default class TransactionSetting implements IModel {
             .withEnableAutoRun(data["enableAutoRun"])
             .withEnableAtomicCommit(data["enableAtomicCommit"])
             .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withCommitScriptResultInUseDistributor(data["commitScriptResultInUseDistributor"])
             .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withKeyId(data["keyId"])
@@ -126,6 +139,7 @@ export default class TransactionSetting implements IModel {
             "enableAutoRun": this.getEnableAutoRun(),
             "enableAtomicCommit": this.getEnableAtomicCommit(),
             "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "commitScriptResultInUseDistributor": this.getCommitScriptResultInUseDistributor(),
             "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "keyId": this.getKeyId(),

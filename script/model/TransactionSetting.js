@@ -20,6 +20,7 @@ var TransactionSetting = /** @class */ (function () {
         this.enableAutoRun = null;
         this.enableAtomicCommit = null;
         this.transactionUseDistributor = null;
+        this.commitScriptResultInUseDistributor = null;
         this.acquireActionUseJobQueue = null;
         this.distributorNamespaceId = null;
         this.keyId = null;
@@ -56,6 +57,17 @@ var TransactionSetting = /** @class */ (function () {
     };
     TransactionSetting.prototype.withTransactionUseDistributor = function (transactionUseDistributor) {
         this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.getCommitScriptResultInUseDistributor = function () {
+        return this.commitScriptResultInUseDistributor;
+    };
+    TransactionSetting.prototype.setCommitScriptResultInUseDistributor = function (commitScriptResultInUseDistributor) {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.withCommitScriptResultInUseDistributor = function (commitScriptResultInUseDistributor) {
+        this.commitScriptResultInUseDistributor = commitScriptResultInUseDistributor;
         return this;
     };
     TransactionSetting.prototype.getAcquireActionUseJobQueue = function () {
@@ -113,6 +125,7 @@ var TransactionSetting = /** @class */ (function () {
             .withEnableAutoRun(data["enableAutoRun"])
             .withEnableAtomicCommit(data["enableAtomicCommit"])
             .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withCommitScriptResultInUseDistributor(data["commitScriptResultInUseDistributor"])
             .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withKeyId(data["keyId"])
@@ -123,6 +136,7 @@ var TransactionSetting = /** @class */ (function () {
             "enableAutoRun": this.getEnableAutoRun(),
             "enableAtomicCommit": this.getEnableAtomicCommit(),
             "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "commitScriptResultInUseDistributor": this.getCommitScriptResultInUseDistributor(),
             "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "keyId": this.getKeyId(),
