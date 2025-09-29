@@ -22,6 +22,7 @@ var WebSocketSession = /** @class */ (function () {
         this.connectionId = null;
         this.namespaceName = null;
         this.userId = null;
+        this.sessionId = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -156,6 +157,17 @@ var WebSocketSession = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    WebSocketSession.prototype.getSessionId = function () {
+        return this.sessionId;
+    };
+    WebSocketSession.prototype.setSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
+    WebSocketSession.prototype.withSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
     WebSocketSession.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -198,6 +210,7 @@ var WebSocketSession = /** @class */ (function () {
             .withConnectionId(data["connectionId"])
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withSessionId(data["sessionId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -208,6 +221,7 @@ var WebSocketSession = /** @class */ (function () {
             "connectionId": this.getConnectionId(),
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "sessionId": this.getSessionId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

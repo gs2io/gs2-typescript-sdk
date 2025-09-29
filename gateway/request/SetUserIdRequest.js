@@ -22,6 +22,7 @@ var SetUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.allowConcurrentAccess = null;
+        this.sessionId = null;
         this.force = null;
         this.duplicationAvoider = null;
     }
@@ -80,6 +81,17 @@ var SetUserIdRequest = /** @class */ (function () {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     };
+    SetUserIdRequest.prototype.getSessionId = function () {
+        return this.sessionId;
+    };
+    SetUserIdRequest.prototype.setSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
+    SetUserIdRequest.prototype.withSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
     SetUserIdRequest.prototype.getForce = function () {
         return this.force;
     };
@@ -107,6 +119,7 @@ var SetUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withAllowConcurrentAccess(data["allowConcurrentAccess"])
+            .withSessionId(data["sessionId"])
             .withForce(data["force"]);
     };
     SetUserIdRequest.prototype.toDict = function () {
@@ -114,6 +127,7 @@ var SetUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "allowConcurrentAccess": this.getAllowConcurrentAccess(),
+            "sessionId": this.getSessionId(),
             "force": this.getForce(),
         };
     };

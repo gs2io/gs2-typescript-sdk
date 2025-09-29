@@ -5,6 +5,7 @@ export default class SetUserIdByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private allowConcurrentAccess;
+    private sessionId;
     private force;
     private timeOffsetToken;
     private duplicationAvoider;
@@ -23,6 +24,9 @@ export default class SetUserIdByUserIdRequest implements IRequest {
     getAllowConcurrentAccess(): boolean | null;
     setAllowConcurrentAccess(allowConcurrentAccess: boolean | null): this;
     withAllowConcurrentAccess(allowConcurrentAccess: boolean | null): this;
+    getSessionId(): string | null;
+    setSessionId(sessionId: string | null): this;
+    withSessionId(sessionId: string | null): this;
     getForce(): boolean | null;
     setForce(force: boolean | null): this;
     withForce(force: boolean | null): this;

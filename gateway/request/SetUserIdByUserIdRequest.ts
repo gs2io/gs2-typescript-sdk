@@ -25,6 +25,7 @@ export default class SetUserIdByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private allowConcurrentAccess: boolean|null = null;
+    private sessionId: string|null = null;
     private force: boolean|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
@@ -89,6 +90,17 @@ export default class SetUserIdByUserIdRequest implements IRequest {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     }
+    public getSessionId(): string|null {
+        return this.sessionId;
+    }
+    public setSessionId(sessionId: string|null) {
+        this.sessionId = sessionId;
+        return this;
+    }
+    public withSessionId(sessionId: string|null): this {
+        this.sessionId = sessionId;
+        return this;
+    }
     public getForce(): boolean|null {
         return this.force;
     }
@@ -131,6 +143,7 @@ export default class SetUserIdByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withAllowConcurrentAccess(data["allowConcurrentAccess"])
+            .withSessionId(data["sessionId"])
             .withForce(data["force"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -140,6 +153,7 @@ export default class SetUserIdByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "allowConcurrentAccess": this.getAllowConcurrentAccess(),
+            "sessionId": this.getSessionId(),
             "force": this.getForce(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

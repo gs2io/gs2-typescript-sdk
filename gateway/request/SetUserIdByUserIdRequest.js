@@ -22,6 +22,7 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.allowConcurrentAccess = null;
+        this.sessionId = null;
         this.force = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
@@ -81,6 +82,17 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     };
+    SetUserIdByUserIdRequest.prototype.getSessionId = function () {
+        return this.sessionId;
+    };
+    SetUserIdByUserIdRequest.prototype.setSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
+    SetUserIdByUserIdRequest.prototype.withSessionId = function (sessionId) {
+        this.sessionId = sessionId;
+        return this;
+    };
     SetUserIdByUserIdRequest.prototype.getForce = function () {
         return this.force;
     };
@@ -119,6 +131,7 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withAllowConcurrentAccess(data["allowConcurrentAccess"])
+            .withSessionId(data["sessionId"])
             .withForce(data["force"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -127,6 +140,7 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "allowConcurrentAccess": this.getAllowConcurrentAccess(),
+            "sessionId": this.getSessionId(),
             "force": this.getForce(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -25,6 +25,7 @@ export default class SetUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private allowConcurrentAccess: boolean|null = null;
+    private sessionId: string|null = null;
     private force: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -88,6 +89,17 @@ export default class SetUserIdRequest implements IRequest {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     }
+    public getSessionId(): string|null {
+        return this.sessionId;
+    }
+    public setSessionId(sessionId: string|null) {
+        this.sessionId = sessionId;
+        return this;
+    }
+    public withSessionId(sessionId: string|null): this {
+        this.sessionId = sessionId;
+        return this;
+    }
     public getForce(): boolean|null {
         return this.force;
     }
@@ -119,6 +131,7 @@ export default class SetUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withAllowConcurrentAccess(data["allowConcurrentAccess"])
+            .withSessionId(data["sessionId"])
             .withForce(data["force"]);
     }
 
@@ -127,6 +140,7 @@ export default class SetUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "allowConcurrentAccess": this.getAllowConcurrentAccess(),
+            "sessionId": this.getSessionId(),
             "force": this.getForce(),
         };
     }

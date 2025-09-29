@@ -4,6 +4,7 @@ export default class WebSocketSession implements IModel {
     private connectionId;
     private namespaceName;
     private userId;
+    private sessionId;
     private createdAt;
     private updatedAt;
     private revision;
@@ -26,6 +27,9 @@ export default class WebSocketSession implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getSessionId(): string | null;
+    setSessionId(sessionId: string | null): this;
+    withSessionId(sessionId: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

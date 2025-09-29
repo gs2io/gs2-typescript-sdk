@@ -24,6 +24,7 @@ export default class WebSocketSession implements IModel {
     private connectionId: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private sessionId: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -175,6 +176,17 @@ export default class WebSocketSession implements IModel {
         this.userId = userId;
         return this;
     }
+    public getSessionId(): string|null {
+        return this.sessionId;
+    }
+    public setSessionId(sessionId: string|null) {
+        this.sessionId = sessionId;
+        return this;
+    }
+    public withSessionId(sessionId: string|null): this {
+        this.sessionId = sessionId;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -218,6 +230,7 @@ export default class WebSocketSession implements IModel {
             .withConnectionId(data["connectionId"])
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withSessionId(data["sessionId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -229,6 +242,7 @@ export default class WebSocketSession implements IModel {
             "connectionId": this.getConnectionId(),
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "sessionId": this.getSessionId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
