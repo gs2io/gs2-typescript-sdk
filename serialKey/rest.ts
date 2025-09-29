@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -89,7 +91,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -115,7 +117,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -141,7 +143,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +176,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -225,7 +227,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -258,7 +260,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -320,7 +322,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -349,7 +351,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -382,7 +384,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -446,7 +448,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeIssueJobs(request: Request.DescribeIssueJobsRequest): Promise<Result.DescribeIssueJobsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -475,7 +477,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getIssueJob(request: Request.GetIssueJobRequest): Promise<Result.GetIssueJobResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -503,7 +505,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public issue(request: Request.IssueRequest): Promise<Result.IssueResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -536,7 +538,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeSerialKeys(request: Request.DescribeSerialKeysRequest): Promise<Result.DescribeSerialKeysResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialKey')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -566,7 +568,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public downloadSerialCodes(request: Request.DownloadSerialCodesRequest): Promise<Result.DownloadSerialCodesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode/download')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode/download')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -594,7 +596,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public issueOnce(request: Request.IssueOnceRequest): Promise<Result.IssueOnceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/serialKey')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -626,7 +628,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getSerialKey(request: Request.GetSerialKeyRequest): Promise<Result.GetSerialKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -653,7 +655,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCode(request: Request.VerifyCodeRequest): Promise<Result.VerifyCodeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey/verify')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey/verify')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -692,7 +694,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCodeByUserId(request: Request.VerifyCodeByUserIdRequest): Promise<Result.VerifyCodeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/verify')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/verify')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -732,7 +734,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public use(request: Request.UseRequest): Promise<Result.UseResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -769,7 +771,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public useByUserId(request: Request.UseByUserIdRequest): Promise<Result.UseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -807,7 +809,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public revertUseByUserId(request: Request.RevertUseByUserIdRequest): Promise<Result.RevertUseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/revert')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/revert')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -845,7 +847,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -876,7 +878,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public revertUseByStampSheet(request: Request.RevertUseByStampSheetRequest): Promise<Result.RevertUseByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/revert')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/serialKey/revert')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -907,7 +909,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public verifyByStampTask(request: Request.VerifyByStampTaskRequest): Promise<Result.VerifyByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/verify')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/serialKey/verify')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -938,7 +940,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public issueOnceByStampSheet(request: Request.IssueOnceByStampSheetRequest): Promise<Result.IssueOnceByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/issueOnce')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/serialKey/issueOnce')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     
@@ -969,7 +971,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeCampaignModels(request: Request.DescribeCampaignModelsRequest): Promise<Result.DescribeCampaignModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -995,7 +997,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getCampaignModel(request: Request.GetCampaignModelRequest): Promise<Result.GetCampaignModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1022,7 +1024,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeCampaignModelMasters(request: Request.DescribeCampaignModelMastersRequest): Promise<Result.DescribeCampaignModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1051,7 +1053,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public createCampaignModelMaster(request: Request.CreateCampaignModelMasterRequest): Promise<Result.CreateCampaignModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1085,7 +1087,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getCampaignModelMaster(request: Request.GetCampaignModelMasterRequest): Promise<Result.GetCampaignModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1112,7 +1114,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateCampaignModelMaster(request: Request.UpdateCampaignModelMasterRequest): Promise<Result.UpdateCampaignModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1146,7 +1148,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCampaignModelMaster(request: Request.DeleteCampaignModelMasterRequest): Promise<Result.DeleteCampaignModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/campaign/{campaignModelName}')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1173,7 +1175,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1199,7 +1201,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentCampaignMaster(request: Request.GetCurrentCampaignMasterRequest): Promise<Result.GetCurrentCampaignMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1225,7 +1227,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentCampaignMaster(request: Request.PreUpdateCurrentCampaignMasterRequest): Promise<Result.PreUpdateCurrentCampaignMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1255,7 +1257,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentCampaignMaster(request: Request.UpdateCurrentCampaignMasterRequest): Promise<Result.UpdateCurrentCampaignMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1288,7 +1290,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentCampaignMasterFromGitHub(request: Request.UpdateCurrentCampaignMasterFromGitHubRequest): Promise<Result.UpdateCurrentCampaignMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2SerialKeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

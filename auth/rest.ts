@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2AuthRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public login(request: Request.LoginRequest): Promise<Result.LoginResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/login')
+        const url = (Gs2AuthRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/login')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
     
@@ -62,7 +64,7 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
     }
 
     public loginBySignature(request: Request.LoginBySignatureRequest): Promise<Result.LoginBySignatureResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/login/signed')
+        const url = (Gs2AuthRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/login/signed')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
     
@@ -94,7 +96,7 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
     }
 
     public federation(request: Request.FederationRequest): Promise<Result.FederationResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/federation')
+        const url = (Gs2AuthRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/federation')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
     
@@ -130,7 +132,7 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
     }
 
     public issueTimeOffsetTokenByUserId(request: Request.IssueTimeOffsetTokenByUserIdRequest): Promise<Result.IssueTimeOffsetTokenByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
+        const url = (Gs2AuthRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
     
@@ -164,7 +166,7 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2AuthRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
     

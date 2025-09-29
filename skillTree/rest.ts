@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region);
     
@@ -91,7 +93,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -117,7 +119,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -143,7 +145,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -178,7 +180,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +206,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region);
     
@@ -229,7 +231,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -262,7 +264,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -291,7 +293,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -324,7 +326,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -353,7 +355,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -386,7 +388,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -420,7 +422,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -450,7 +452,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public describeNodeModels(request: Request.DescribeNodeModelsRequest): Promise<Result.DescribeNodeModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -476,7 +478,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getNodeModel(request: Request.GetNodeModelRequest): Promise<Result.GetNodeModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{nodeModelName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{nodeModelName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -503,7 +505,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public describeNodeModelMasters(request: Request.DescribeNodeModelMastersRequest): Promise<Result.DescribeNodeModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -532,7 +534,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public createNodeModelMaster(request: Request.CreateNodeModelMasterRequest): Promise<Result.CreateNodeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -569,7 +571,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getNodeModelMaster(request: Request.GetNodeModelMasterRequest): Promise<Result.GetNodeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -596,7 +598,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public updateNodeModelMaster(request: Request.UpdateNodeModelMasterRequest): Promise<Result.UpdateNodeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -633,7 +635,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNodeModelMaster(request: Request.DeleteNodeModelMasterRequest): Promise<Result.DeleteNodeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -660,7 +662,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markReleaseByUserId(request: Request.MarkReleaseByUserIdRequest): Promise<Result.MarkReleaseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release/mark')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release/mark')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -699,7 +701,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public release(request: Request.ReleaseRequest): Promise<Result.ReleaseResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/release')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/release')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -738,7 +740,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public releaseByUserId(request: Request.ReleaseByUserIdRequest): Promise<Result.ReleaseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -778,7 +780,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markRestrain(request: Request.MarkRestrainRequest): Promise<Result.MarkRestrainResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/restrain/mark')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/restrain/mark')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -816,7 +818,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markRestrainByUserId(request: Request.MarkRestrainByUserIdRequest): Promise<Result.MarkRestrainByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain/mark')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain/mark')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -855,7 +857,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public restrain(request: Request.RestrainRequest): Promise<Result.RestrainResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/restrain')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/restrain')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -894,7 +896,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public restrainByUserId(request: Request.RestrainByUserIdRequest): Promise<Result.RestrainByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -934,7 +936,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -965,7 +967,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -997,7 +999,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1027,7 +1029,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1058,7 +1060,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public reset(request: Request.ResetRequest): Promise<Result.ResetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/reset')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/reset')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1096,7 +1098,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/reset')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/reset')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1130,7 +1132,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markReleaseByStampSheet(request: Request.MarkReleaseByStampSheetRequest): Promise<Result.MarkReleaseByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/status/release')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/status/release')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region);
     
@@ -1161,7 +1163,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markRestrainByStampTask(request: Request.MarkRestrainByStampTaskRequest): Promise<Result.MarkRestrainByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/status/restrain')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/status/restrain')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region);
     
@@ -1192,7 +1194,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1218,7 +1220,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentTreeMaster(request: Request.GetCurrentTreeMasterRequest): Promise<Result.GetCurrentTreeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1244,7 +1246,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentTreeMaster(request: Request.PreUpdateCurrentTreeMasterRequest): Promise<Result.PreUpdateCurrentTreeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1274,7 +1276,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentTreeMaster(request: Request.UpdateCurrentTreeMasterRequest): Promise<Result.UpdateCurrentTreeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1307,7 +1309,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentTreeMasterFromGitHub(request: Request.UpdateCurrentTreeMasterFromGitHubRequest): Promise<Result.UpdateCurrentTreeMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2SkillTreeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2NewsRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region);
     
@@ -88,7 +90,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -114,7 +116,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -140,7 +142,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -172,7 +174,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -198,7 +200,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region);
     
@@ -223,7 +225,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public describeProgresses(request: Request.DescribeProgressesRequest): Promise<Result.DescribeProgressesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -251,7 +253,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -278,7 +280,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public describeOutputs(request: Request.DescribeOutputsRequest): Promise<Result.DescribeOutputsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}/output')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}/output')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -307,7 +309,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public getOutput(request: Request.GetOutputRequest): Promise<Result.GetOutputResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}/output/{outputName}')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress/{uploadToken}/output/{outputName}')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -335,7 +337,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public prepareUpdateCurrentNewsMaster(request: Request.PrepareUpdateCurrentNewsMasterRequest): Promise<Result.PrepareUpdateCurrentNewsMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/prepare')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/prepare')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -365,7 +367,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentNewsMaster(request: Request.UpdateCurrentNewsMasterRequest): Promise<Result.UpdateCurrentNewsMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -396,7 +398,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public prepareUpdateCurrentNewsMasterFromGitHub(request: Request.PrepareUpdateCurrentNewsMasterFromGitHubRequest): Promise<Result.PrepareUpdateCurrentNewsMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -427,7 +429,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public describeNews(request: Request.DescribeNewsRequest): Promise<Result.DescribeNewsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/news')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/news')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -456,7 +458,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public describeNewsByUserId(request: Request.DescribeNewsByUserIdRequest): Promise<Result.DescribeNewsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/news')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/news')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -486,7 +488,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public wantGrant(request: Request.WantGrantRequest): Promise<Result.WantGrantResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/news/grant')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/news/grant')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -515,7 +517,7 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     }
 
     public wantGrantByUserId(request: Request.WantGrantByUserIdRequest): Promise<Result.WantGrantByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/news/grant')
+        const url = (Gs2NewsRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/news/grant')
             .replace('{service}', 'news')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

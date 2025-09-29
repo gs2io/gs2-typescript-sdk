@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
     
@@ -92,7 +94,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +120,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +146,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -180,7 +182,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -206,7 +208,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
     
@@ -231,7 +233,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -264,7 +266,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -293,7 +295,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -326,7 +328,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -355,7 +357,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -388,7 +390,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -422,7 +424,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -452,7 +454,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeLotteryModelMasters(request: Request.DescribeLotteryModelMastersRequest): Promise<Result.DescribeLotteryModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -481,7 +483,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public createLotteryModelMaster(request: Request.CreateLotteryModelMasterRequest): Promise<Result.CreateLotteryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -518,7 +520,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getLotteryModelMaster(request: Request.GetLotteryModelMasterRequest): Promise<Result.GetLotteryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -545,7 +547,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public updateLotteryModelMaster(request: Request.UpdateLotteryModelMasterRequest): Promise<Result.UpdateLotteryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -582,7 +584,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteLotteryModelMaster(request: Request.DeleteLotteryModelMasterRequest): Promise<Result.DeleteLotteryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -609,7 +611,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describePrizeTableMasters(request: Request.DescribePrizeTableMastersRequest): Promise<Result.DescribePrizeTableMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -638,7 +640,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public createPrizeTableMaster(request: Request.CreatePrizeTableMasterRequest): Promise<Result.CreatePrizeTableMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -672,7 +674,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getPrizeTableMaster(request: Request.GetPrizeTableMasterRequest): Promise<Result.GetPrizeTableMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -699,7 +701,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public updatePrizeTableMaster(request: Request.UpdatePrizeTableMasterRequest): Promise<Result.UpdatePrizeTableMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -733,7 +735,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public deletePrizeTableMaster(request: Request.DeletePrizeTableMasterRequest): Promise<Result.DeletePrizeTableMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -760,7 +762,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeLotteryModels(request: Request.DescribeLotteryModelsRequest): Promise<Result.DescribeLotteryModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -786,7 +788,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getLotteryModel(request: Request.GetLotteryModelRequest): Promise<Result.GetLotteryModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery/{lotteryName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -813,7 +815,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describePrizeTables(request: Request.DescribePrizeTablesRequest): Promise<Result.DescribePrizeTablesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -839,7 +841,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getPrizeTable(request: Request.GetPrizeTableRequest): Promise<Result.GetPrizeTableResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -866,7 +868,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public drawByUserId(request: Request.DrawByUserIdRequest): Promise<Result.DrawByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -906,7 +908,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public prediction(request: Request.PredictionRequest): Promise<Result.PredictionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/prediction')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/prediction')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -945,7 +947,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public predictionByUserId(request: Request.PredictionByUserIdRequest): Promise<Result.PredictionByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/prediction')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/prediction')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -985,7 +987,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public drawWithRandomSeedByUserId(request: Request.DrawWithRandomSeedByUserIdRequest): Promise<Result.DrawWithRandomSeedByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw/withSeed')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw/withSeed')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1026,7 +1028,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public drawByStampSheet(request: Request.DrawByStampSheetRequest): Promise<Result.DrawByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/draw')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/draw')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
     
@@ -1057,7 +1059,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeProbabilities(request: Request.DescribeProbabilitiesRequest): Promise<Result.DescribeProbabilitiesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/probability')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/probability')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1087,7 +1089,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeProbabilitiesByUserId(request: Request.DescribeProbabilitiesByUserIdRequest): Promise<Result.DescribeProbabilitiesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/probability')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/probability')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1118,7 +1120,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1144,7 +1146,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentLotteryMaster(request: Request.GetCurrentLotteryMasterRequest): Promise<Result.GetCurrentLotteryMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1170,7 +1172,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentLotteryMaster(request: Request.PreUpdateCurrentLotteryMasterRequest): Promise<Result.PreUpdateCurrentLotteryMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1200,7 +1202,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentLotteryMaster(request: Request.UpdateCurrentLotteryMasterRequest): Promise<Result.UpdateCurrentLotteryMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1233,7 +1235,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentLotteryMasterFromGitHub(request: Request.UpdateCurrentLotteryMasterFromGitHubRequest): Promise<Result.UpdateCurrentLotteryMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1264,7 +1266,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describePrizeLimits(request: Request.DescribePrizeLimitsRequest): Promise<Result.DescribePrizeLimitsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1293,7 +1295,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getPrizeLimit(request: Request.GetPrizeLimitRequest): Promise<Result.GetPrizeLimitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1321,7 +1323,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public resetPrizeLimit(request: Request.ResetPrizeLimitRequest): Promise<Result.ResetPrizeLimitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1349,7 +1351,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeBoxes(request: Request.DescribeBoxesRequest): Promise<Result.DescribeBoxesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1380,7 +1382,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1412,7 +1414,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1442,7 +1444,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1473,7 +1475,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1506,7 +1508,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1540,7 +1542,7 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     }
 
     public resetByStampSheet(request: Request.ResetByStampSheetRequest): Promise<Result.ResetByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/box/reset')
+        const url = (Gs2LotteryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/box/reset')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
     

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -89,7 +91,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -115,7 +117,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -141,7 +143,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +176,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -225,7 +227,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -258,7 +260,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -320,7 +322,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -349,7 +351,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -382,7 +384,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -446,7 +448,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingModels(request: Request.DescribeGlobalRankingModelsRequest): Promise<Result.DescribeGlobalRankingModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -472,7 +474,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingModel(request: Request.GetGlobalRankingModelRequest): Promise<Result.GetGlobalRankingModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -499,7 +501,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingModelMasters(request: Request.DescribeGlobalRankingModelMastersRequest): Promise<Result.DescribeGlobalRankingModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -528,7 +530,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createGlobalRankingModelMaster(request: Request.CreateGlobalRankingModelMasterRequest): Promise<Result.CreateGlobalRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -569,7 +571,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingModelMaster(request: Request.GetGlobalRankingModelMasterRequest): Promise<Result.GetGlobalRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -596,7 +598,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateGlobalRankingModelMaster(request: Request.UpdateGlobalRankingModelMasterRequest): Promise<Result.UpdateGlobalRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -637,7 +639,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteGlobalRankingModelMaster(request: Request.DeleteGlobalRankingModelMasterRequest): Promise<Result.DeleteGlobalRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -664,7 +666,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingScores(request: Request.DescribeGlobalRankingScoresRequest): Promise<Result.DescribeGlobalRankingScoresResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -696,7 +698,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingScoresByUserId(request: Request.DescribeGlobalRankingScoresByUserIdRequest): Promise<Result.DescribeGlobalRankingScoresByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -729,7 +731,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putGlobalRankingScore(request: Request.PutGlobalRankingScoreRequest): Promise<Result.PutGlobalRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -768,7 +770,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putGlobalRankingScoreByUserId(request: Request.PutGlobalRankingScoreByUserIdRequest): Promise<Result.PutGlobalRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -808,7 +810,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingScore(request: Request.GetGlobalRankingScoreRequest): Promise<Result.GetGlobalRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -839,7 +841,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingScoreByUserId(request: Request.GetGlobalRankingScoreByUserIdRequest): Promise<Result.GetGlobalRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -871,7 +873,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteGlobalRankingScoreByUserId(request: Request.DeleteGlobalRankingScoreByUserIdRequest): Promise<Result.DeleteGlobalRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/{season}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -906,7 +908,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyGlobalRankingScore(request: Request.VerifyGlobalRankingScoreRequest): Promise<Result.VerifyGlobalRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -947,7 +949,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyGlobalRankingScoreByUserId(request: Request.VerifyGlobalRankingScoreByUserIdRequest): Promise<Result.VerifyGlobalRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -989,7 +991,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyGlobalRankingScoreByStampTask(request: Request.VerifyGlobalRankingScoreByStampTaskRequest): Promise<Result.VerifyGlobalRankingScoreByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/global/score/verify')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/global/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -1020,7 +1022,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingReceivedRewards(request: Request.DescribeGlobalRankingReceivedRewardsRequest): Promise<Result.DescribeGlobalRankingReceivedRewardsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1053,7 +1055,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingReceivedRewardsByUserId(request: Request.DescribeGlobalRankingReceivedRewardsByUserIdRequest): Promise<Result.DescribeGlobalRankingReceivedRewardsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1087,7 +1089,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createGlobalRankingReceivedReward(request: Request.CreateGlobalRankingReceivedRewardRequest): Promise<Result.CreateGlobalRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1125,7 +1127,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createGlobalRankingReceivedRewardByUserId(request: Request.CreateGlobalRankingReceivedRewardByUserIdRequest): Promise<Result.CreateGlobalRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1164,7 +1166,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public receiveGlobalRankingReceivedReward(request: Request.ReceiveGlobalRankingReceivedRewardRequest): Promise<Result.ReceiveGlobalRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}/{season}/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1203,7 +1205,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public receiveGlobalRankingReceivedRewardByUserId(request: Request.ReceiveGlobalRankingReceivedRewardByUserIdRequest): Promise<Result.ReceiveGlobalRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1243,7 +1245,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingReceivedReward(request: Request.GetGlobalRankingReceivedRewardRequest): Promise<Result.GetGlobalRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1274,7 +1276,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingReceivedRewardByUserId(request: Request.GetGlobalRankingReceivedRewardByUserIdRequest): Promise<Result.GetGlobalRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1306,7 +1308,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteGlobalRankingReceivedRewardByUserId(request: Request.DeleteGlobalRankingReceivedRewardByUserIdRequest): Promise<Result.DeleteGlobalRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1341,7 +1343,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createGlobalRankingReceivedRewardByStampTask(request: Request.CreateGlobalRankingReceivedRewardByStampTaskRequest): Promise<Result.CreateGlobalRankingReceivedRewardByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/global/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/global/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -1372,7 +1374,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankings(request: Request.DescribeGlobalRankingsRequest): Promise<Result.DescribeGlobalRankingsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1405,7 +1407,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalRankingsByUserId(request: Request.DescribeGlobalRankingsByUserIdRequest): Promise<Result.DescribeGlobalRankingsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1439,7 +1441,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRanking(request: Request.GetGlobalRankingRequest): Promise<Result.GetGlobalRankingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1470,7 +1472,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalRankingByUserId(request: Request.GetGlobalRankingByUserIdRequest): Promise<Result.GetGlobalRankingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1502,7 +1504,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingModels(request: Request.DescribeClusterRankingModelsRequest): Promise<Result.DescribeClusterRankingModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1528,7 +1530,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingModel(request: Request.GetClusterRankingModelRequest): Promise<Result.GetClusterRankingModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1555,7 +1557,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingModelMasters(request: Request.DescribeClusterRankingModelMastersRequest): Promise<Result.DescribeClusterRankingModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1584,7 +1586,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createClusterRankingModelMaster(request: Request.CreateClusterRankingModelMasterRequest): Promise<Result.CreateClusterRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1626,7 +1628,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingModelMaster(request: Request.GetClusterRankingModelMasterRequest): Promise<Result.GetClusterRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1653,7 +1655,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateClusterRankingModelMaster(request: Request.UpdateClusterRankingModelMasterRequest): Promise<Result.UpdateClusterRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1695,7 +1697,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteClusterRankingModelMaster(request: Request.DeleteClusterRankingModelMasterRequest): Promise<Result.DeleteClusterRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1722,7 +1724,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingScores(request: Request.DescribeClusterRankingScoresRequest): Promise<Result.DescribeClusterRankingScoresResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1756,7 +1758,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingScoresByUserId(request: Request.DescribeClusterRankingScoresByUserIdRequest): Promise<Result.DescribeClusterRankingScoresByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1791,7 +1793,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putClusterRankingScore(request: Request.PutClusterRankingScoreRequest): Promise<Result.PutClusterRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1831,7 +1833,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putClusterRankingScoreByUserId(request: Request.PutClusterRankingScoreByUserIdRequest): Promise<Result.PutClusterRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1872,7 +1874,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingScore(request: Request.GetClusterRankingScoreRequest): Promise<Result.GetClusterRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1904,7 +1906,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingScoreByUserId(request: Request.GetClusterRankingScoreByUserIdRequest): Promise<Result.GetClusterRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1937,7 +1939,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteClusterRankingScoreByUserId(request: Request.DeleteClusterRankingScoreByUserIdRequest): Promise<Result.DeleteClusterRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/{season}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1973,7 +1975,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyClusterRankingScore(request: Request.VerifyClusterRankingScoreRequest): Promise<Result.VerifyClusterRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2015,7 +2017,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyClusterRankingScoreByUserId(request: Request.VerifyClusterRankingScoreByUserIdRequest): Promise<Result.VerifyClusterRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2058,7 +2060,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyClusterRankingScoreByStampTask(request: Request.VerifyClusterRankingScoreByStampTaskRequest): Promise<Result.VerifyClusterRankingScoreByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/cluster/score/verify')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/cluster/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -2089,7 +2091,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingReceivedRewards(request: Request.DescribeClusterRankingReceivedRewardsRequest): Promise<Result.DescribeClusterRankingReceivedRewardsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2123,7 +2125,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingReceivedRewardsByUserId(request: Request.DescribeClusterRankingReceivedRewardsByUserIdRequest): Promise<Result.DescribeClusterRankingReceivedRewardsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2158,7 +2160,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createClusterRankingReceivedReward(request: Request.CreateClusterRankingReceivedRewardRequest): Promise<Result.CreateClusterRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2197,7 +2199,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createClusterRankingReceivedRewardByUserId(request: Request.CreateClusterRankingReceivedRewardByUserIdRequest): Promise<Result.CreateClusterRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2237,7 +2239,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public receiveClusterRankingReceivedReward(request: Request.ReceiveClusterRankingReceivedRewardRequest): Promise<Result.ReceiveClusterRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2277,7 +2279,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public receiveClusterRankingReceivedRewardByUserId(request: Request.ReceiveClusterRankingReceivedRewardByUserIdRequest): Promise<Result.ReceiveClusterRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2318,7 +2320,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingReceivedReward(request: Request.GetClusterRankingReceivedRewardRequest): Promise<Result.GetClusterRankingReceivedRewardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2350,7 +2352,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingReceivedRewardByUserId(request: Request.GetClusterRankingReceivedRewardByUserIdRequest): Promise<Result.GetClusterRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2383,7 +2385,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteClusterRankingReceivedRewardByUserId(request: Request.DeleteClusterRankingReceivedRewardByUserIdRequest): Promise<Result.DeleteClusterRankingReceivedRewardByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2419,7 +2421,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createClusterRankingReceivedRewardByStampTask(request: Request.CreateClusterRankingReceivedRewardByStampTaskRequest): Promise<Result.CreateClusterRankingReceivedRewardByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/cluster/reward/receive')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/cluster/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -2450,7 +2452,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankings(request: Request.DescribeClusterRankingsRequest): Promise<Result.DescribeClusterRankingsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2484,7 +2486,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeClusterRankingsByUserId(request: Request.DescribeClusterRankingsByUserIdRequest): Promise<Result.DescribeClusterRankingsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2519,7 +2521,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRanking(request: Request.GetClusterRankingRequest): Promise<Result.GetClusterRankingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2551,7 +2553,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getClusterRankingByUserId(request: Request.GetClusterRankingByUserIdRequest): Promise<Result.GetClusterRankingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2584,7 +2586,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankingModels(request: Request.DescribeSubscribeRankingModelsRequest): Promise<Result.DescribeSubscribeRankingModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2610,7 +2612,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRankingModel(request: Request.GetSubscribeRankingModelRequest): Promise<Result.GetSubscribeRankingModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2637,7 +2639,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankingModelMasters(request: Request.DescribeSubscribeRankingModelMastersRequest): Promise<Result.DescribeSubscribeRankingModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2666,7 +2668,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public createSubscribeRankingModelMaster(request: Request.CreateSubscribeRankingModelMasterRequest): Promise<Result.CreateSubscribeRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2705,7 +2707,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRankingModelMaster(request: Request.GetSubscribeRankingModelMasterRequest): Promise<Result.GetSubscribeRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2732,7 +2734,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateSubscribeRankingModelMaster(request: Request.UpdateSubscribeRankingModelMasterRequest): Promise<Result.UpdateSubscribeRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2771,7 +2773,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteSubscribeRankingModelMaster(request: Request.DeleteSubscribeRankingModelMasterRequest): Promise<Result.DeleteSubscribeRankingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2798,7 +2800,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribes(request: Request.DescribeSubscribesRequest): Promise<Result.DescribeSubscribesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/score')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/score')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2830,7 +2832,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribesByUserId(request: Request.DescribeSubscribesByUserIdRequest): Promise<Result.DescribeSubscribesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/score')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/score')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2863,7 +2865,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public addSubscribe(request: Request.AddSubscribeRequest): Promise<Result.AddSubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2901,7 +2903,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public addSubscribeByUserId(request: Request.AddSubscribeByUserIdRequest): Promise<Result.AddSubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2940,7 +2942,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankingScores(request: Request.DescribeSubscribeRankingScoresRequest): Promise<Result.DescribeSubscribeRankingScoresResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2972,7 +2974,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankingScoresByUserId(request: Request.DescribeSubscribeRankingScoresByUserIdRequest): Promise<Result.DescribeSubscribeRankingScoresByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3005,7 +3007,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putSubscribeRankingScore(request: Request.PutSubscribeRankingScoreRequest): Promise<Result.PutSubscribeRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3044,7 +3046,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public putSubscribeRankingScoreByUserId(request: Request.PutSubscribeRankingScoreByUserIdRequest): Promise<Result.PutSubscribeRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3084,7 +3086,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRankingScore(request: Request.GetSubscribeRankingScoreRequest): Promise<Result.GetSubscribeRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3115,7 +3117,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRankingScoreByUserId(request: Request.GetSubscribeRankingScoreByUserIdRequest): Promise<Result.GetSubscribeRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3147,7 +3149,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteSubscribeRankingScoreByUserId(request: Request.DeleteSubscribeRankingScoreByUserIdRequest): Promise<Result.DeleteSubscribeRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/{season}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3182,7 +3184,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifySubscribeRankingScore(request: Request.VerifySubscribeRankingScoreRequest): Promise<Result.VerifySubscribeRankingScoreResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3223,7 +3225,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifySubscribeRankingScoreByUserId(request: Request.VerifySubscribeRankingScoreByUserIdRequest): Promise<Result.VerifySubscribeRankingScoreByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3265,7 +3267,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public verifySubscribeRankingScoreByStampTask(request: Request.VerifySubscribeRankingScoreByStampTaskRequest): Promise<Result.VerifySubscribeRankingScoreByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/subscribe/score/verify')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/subscribe/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
     
@@ -3296,7 +3298,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankings(request: Request.DescribeSubscribeRankingsRequest): Promise<Result.DescribeSubscribeRankingsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3329,7 +3331,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribeRankingsByUserId(request: Request.DescribeSubscribeRankingsByUserIdRequest): Promise<Result.DescribeSubscribeRankingsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3363,7 +3365,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRanking(request: Request.GetSubscribeRankingRequest): Promise<Result.GetSubscribeRankingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3395,7 +3397,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeRankingByUserId(request: Request.GetSubscribeRankingByUserIdRequest): Promise<Result.GetSubscribeRankingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}/rank')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3428,7 +3430,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -3454,7 +3456,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentRankingMaster(request: Request.GetCurrentRankingMasterRequest): Promise<Result.GetCurrentRankingMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -3480,7 +3482,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentRankingMaster(request: Request.PreUpdateCurrentRankingMasterRequest): Promise<Result.PreUpdateCurrentRankingMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -3510,7 +3512,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRankingMaster(request: Request.UpdateCurrentRankingMasterRequest): Promise<Result.UpdateCurrentRankingMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -3543,7 +3545,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRankingMasterFromGitHub(request: Request.UpdateCurrentRankingMasterFromGitHubRequest): Promise<Result.UpdateCurrentRankingMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -3574,7 +3576,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribe(request: Request.GetSubscribeRequest): Promise<Result.GetSubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3605,7 +3607,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeByUserId(request: Request.GetSubscribeByUserIdRequest): Promise<Result.GetSubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3637,7 +3639,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteSubscribe(request: Request.DeleteSubscribeRequest): Promise<Result.DeleteSubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3671,7 +3673,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteSubscribeByUserId(request: Request.DeleteSubscribeByUserIdRequest): Promise<Result.DeleteSubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        const url = (Gs2Ranking2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

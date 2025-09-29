@@ -3,6 +3,7 @@ import { Gs2RestSession } from '../core/model';
 import * as Request from './request';
 import * as Result from './result';
 export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
+    static ENDPOINT_HOST: string | null;
     constructor(session: Gs2RestSession);
     describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
     createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;

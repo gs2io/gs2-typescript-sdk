@@ -26,26 +26,26 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2WatchRestClient.prototype.getChart = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{measure}', String((_a = request.getMeasure()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getMeasure()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{measure}', String((_b = request.getMeasure()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getMeasure()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'grn': (_d = request.getGrn()) !== null && _d !== void 0 ? _d : null,
-            'round': (_e = request.getRound()) !== null && _e !== void 0 ? _e : null,
-            'filters': (_g = (_f = request.getFilters()) === null || _f === void 0 ? void 0 : _f.map(function (item) { return item.toDict(); })) !== null && _g !== void 0 ? _g : null,
-            'groupBys': (_h = request.getGroupBys()) !== null && _h !== void 0 ? _h : null,
-            'countBy': (_j = request.getCountBy()) !== null && _j !== void 0 ? _j : null,
-            'begin': (_k = request.getBegin()) !== null && _k !== void 0 ? _k : null,
-            'end': (_l = request.getEnd()) !== null && _l !== void 0 ? _l : null,
-            'pageToken': (_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null,
-            'limit': (_o = request.getLimit()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'grn': (_e = request.getGrn()) !== null && _e !== void 0 ? _e : null,
+            'round': (_f = request.getRound()) !== null && _f !== void 0 ? _f : null,
+            'filters': (_h = (_g = request.getFilters()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+            'groupBys': (_j = request.getGroupBys()) !== null && _j !== void 0 ? _j : null,
+            'countBy': (_k = request.getCountBy()) !== null && _k !== void 0 ? _k : null,
+            'begin': (_l = request.getBegin()) !== null && _l !== void 0 ? _l : null,
+            'end': (_m = request.getEnd()) !== null && _m !== void 0 ? _m : null,
+            'pageToken': (_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null,
+            'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -61,8 +61,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -70,7 +70,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -82,24 +82,24 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getDistribution = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{measure}', String((_a = request.getMeasure()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getMeasure()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{measure}', String((_b = request.getMeasure()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getMeasure()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'grn': (_d = request.getGrn()) !== null && _d !== void 0 ? _d : null,
-            'filters': (_f = (_e = request.getFilters()) === null || _e === void 0 ? void 0 : _e.map(function (item) { return item.toDict(); })) !== null && _f !== void 0 ? _f : null,
-            'groupBys': (_g = request.getGroupBys()) !== null && _g !== void 0 ? _g : null,
-            'begin': (_h = request.getBegin()) !== null && _h !== void 0 ? _h : null,
-            'end': (_j = request.getEnd()) !== null && _j !== void 0 ? _j : null,
-            'pageToken': (_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null,
-            'limit': (_l = request.getLimit()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'grn': (_e = request.getGrn()) !== null && _e !== void 0 ? _e : null,
+            'filters': (_g = (_f = request.getFilters()) === null || _f === void 0 ? void 0 : _f.map(function (item) { return item.toDict(); })) !== null && _g !== void 0 ? _g : null,
+            'groupBys': (_h = request.getGroupBys()) !== null && _h !== void 0 ? _h : null,
+            'begin': (_j = request.getBegin()) !== null && _j !== void 0 ? _j : null,
+            'end': (_k = request.getEnd()) !== null && _k !== void 0 ? _k : null,
+            'pageToken': (_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null,
+            'limit': (_m = request.getLimit()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -115,18 +115,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getCumulative = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{name}', String((_a = request.getName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{name}', String((_b = request.getName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'resourceGrn': (_d = request.getResourceGrn()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'resourceGrn': (_e = request.getResourceGrn()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -142,21 +142,21 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeBillingActivities = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{year}', String((_a = request.getYear()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{month}', String((_c = request.getMonth()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMonth()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{year}', String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{month}', String((_d = request.getMonth()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMonth()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'service': String((_f = request.getService()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'service': String((_g = request.getService()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -168,20 +168,20 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getBillingActivity = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{year}', String((_a = request.getYear()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{month}', String((_c = request.getMonth()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMonth()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{service}', String((_e = request.getService()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getService()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{activityType}', String((_g = request.getActivityType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getActivityType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{year}', String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{month}', String((_d = request.getMonth()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMonth()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{service}', String((_f = request.getService()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getService()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{activityType}', String((_h = request.getActivityType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getActivityType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -197,8 +197,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getGeneralMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/general')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/general')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -206,7 +206,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -218,8 +218,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeAccountNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -227,7 +227,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -239,17 +239,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getAccountNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -261,8 +261,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeChatNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -270,7 +270,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -282,17 +282,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getChatNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -304,8 +304,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeDatastoreNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -313,7 +313,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -325,17 +325,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getDatastoreNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -347,8 +347,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeDictionaryNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -356,7 +356,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -368,17 +368,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getDictionaryNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -390,17 +390,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeExchangeRateModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -412,18 +412,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getExchangeRateModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel/{rateName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel/{rateName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{rateName}', String((_c = request.getRateName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRateName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{rateName}', String((_d = request.getRateName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getRateName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -435,8 +435,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeExchangeNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -444,7 +444,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -456,17 +456,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getExchangeNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -478,18 +478,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceStatusMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}/status')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}/status')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{experienceName}', String((_c = request.getExperienceName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getExperienceName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{experienceName}', String((_d = request.getExperienceName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getExperienceName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -501,17 +501,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceExperienceModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -523,18 +523,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getExperienceExperienceModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{experienceName}', String((_c = request.getExperienceName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getExperienceName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{experienceName}', String((_d = request.getExperienceName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getExperienceName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -546,8 +546,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -555,7 +555,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -567,17 +567,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getExperienceNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -589,18 +589,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeFormationFormMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{moldModelName}', String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -612,17 +612,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeFormationMoldMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -634,8 +634,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeFormationNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -643,7 +643,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -655,17 +655,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getFormationNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -677,8 +677,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeFriendNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -686,7 +686,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -698,17 +698,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getFriendNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -720,8 +720,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeInboxNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -729,7 +729,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -741,17 +741,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getInboxNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -763,18 +763,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryItemSetMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory/{inventoryName}/itemSet')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory/{inventoryName}/itemSet')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -786,17 +786,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryInventoryMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -808,8 +808,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -817,7 +817,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -829,17 +829,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getInventoryNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -851,8 +851,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeKeyNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -860,7 +860,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -872,17 +872,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getKeyNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -894,18 +894,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeLimitCounterMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}/counter')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}/counter')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{limitName}', String((_c = request.getLimitName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getLimitName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{limitName}', String((_d = request.getLimitName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getLimitName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -917,17 +917,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeLimitLimitModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -939,18 +939,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getLimitLimitModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{limitName}', String((_c = request.getLimitName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getLimitName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{limitName}', String((_d = request.getLimitName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getLimitName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -962,8 +962,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeLimitNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -971,7 +971,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -983,17 +983,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getLimitNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1005,17 +1005,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeLotteryLotteryMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lottery')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lottery')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1027,18 +1027,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getLotteryLotteryMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lotteryModel/{lotteryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lotteryModel/{lotteryName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{lotteryName}', String((_c = request.getLotteryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getLotteryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{lotteryName}', String((_d = request.getLotteryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getLotteryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1050,8 +1050,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeLotteryNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1059,7 +1059,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1071,17 +1071,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getLotteryNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1093,8 +1093,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMatchmakingNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1102,7 +1102,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1114,17 +1114,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getMatchmakingNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1136,17 +1136,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMissionCounterMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/counter')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/counter')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1158,17 +1158,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMissionMissionGroupModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1180,18 +1180,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getMissionMissionGroupModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel/{missionGroupName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel/{missionGroupName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{missionGroupName}', String((_c = request.getMissionGroupName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMissionGroupName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{missionGroupName}', String((_d = request.getMissionGroupName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMissionGroupName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1203,8 +1203,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMissionNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1212,7 +1212,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1224,17 +1224,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getMissionNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1246,17 +1246,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyWalletMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/wallet')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/wallet')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1268,17 +1268,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyReceiptMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/receipt')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/receipt')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1290,8 +1290,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1299,7 +1299,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1311,17 +1311,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getMoneyNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1333,18 +1333,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeQuestQuestModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{questGroupName}', String((_c = request.getQuestGroupName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{questGroupName}', String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getQuestGroupName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1356,19 +1356,19 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getQuestQuestModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel/{questName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel/{questName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{questGroupName}', String((_c = request.getQuestGroupName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{questName}', String((_e = request.getQuestName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getQuestName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{questGroupName}', String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getQuestGroupName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{questName}', String((_f = request.getQuestName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getQuestName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1380,17 +1380,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeQuestQuestGroupModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1402,18 +1402,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getQuestQuestGroupModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{questGroupName}', String((_c = request.getQuestGroupName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{questGroupName}', String((_d = request.getQuestGroupName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getQuestGroupName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1425,8 +1425,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeQuestNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1434,7 +1434,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1446,17 +1446,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getQuestNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1468,17 +1468,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeRankingCategoryModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1490,18 +1490,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getRankingCategoryModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel/{categoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel/{categoryName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{categoryName}', String((_c = request.getCategoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCategoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{categoryName}', String((_d = request.getCategoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getCategoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1513,8 +1513,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeRankingNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1522,7 +1522,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1534,17 +1534,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getRankingNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1556,18 +1556,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseDisplayItemMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{showcaseName}', String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getShowcaseName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1579,19 +1579,19 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseDisplayItemMetrics = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{displayItemId}', String((_e = request.getDisplayItemId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getDisplayItemId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{showcaseName}', String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getShowcaseName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{displayItemId}', String((_f = request.getDisplayItemId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getDisplayItemId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1603,17 +1603,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseShowcaseMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1625,18 +1625,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseShowcaseMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{showcaseName}', String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getShowcaseName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1648,8 +1648,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1657,7 +1657,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1669,17 +1669,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1691,17 +1691,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeStaminaStaminaModelMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1713,18 +1713,18 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getStaminaStaminaModelMetrics = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel/{staminaName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel/{staminaName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{staminaName}', String((_c = request.getStaminaName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getStaminaName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{staminaName}', String((_d = request.getStaminaName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getStaminaName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1736,8 +1736,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.describeStaminaNamespaceMetrics = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace')
+        var _a, _b;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1745,7 +1745,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1757,17 +1757,17 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2WatchRestClient.prototype.getStaminaNamespaceMetrics = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2WatchRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1778,6 +1778,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2WatchRestClient.ENDPOINT_HOST = null;
     return Gs2WatchRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2WatchRestClient;

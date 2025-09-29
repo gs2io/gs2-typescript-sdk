@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -89,7 +91,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -115,7 +117,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -141,7 +143,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +176,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -225,7 +227,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -258,7 +260,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -320,7 +322,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -349,7 +351,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -382,7 +384,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -446,7 +448,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeBalanceParameterModels(request: Request.DescribeBalanceParameterModelsRequest): Promise<Result.DescribeBalanceParameterModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -472,7 +474,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getBalanceParameterModel(request: Request.GetBalanceParameterModelRequest): Promise<Result.GetBalanceParameterModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -499,7 +501,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeBalanceParameterModelMasters(request: Request.DescribeBalanceParameterModelMastersRequest): Promise<Result.DescribeBalanceParameterModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -528,7 +530,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public createBalanceParameterModelMaster(request: Request.CreateBalanceParameterModelMasterRequest): Promise<Result.CreateBalanceParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -564,7 +566,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getBalanceParameterModelMaster(request: Request.GetBalanceParameterModelMasterRequest): Promise<Result.GetBalanceParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -591,7 +593,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public updateBalanceParameterModelMaster(request: Request.UpdateBalanceParameterModelMasterRequest): Promise<Result.UpdateBalanceParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -627,7 +629,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public deleteBalanceParameterModelMaster(request: Request.DeleteBalanceParameterModelMasterRequest): Promise<Result.DeleteBalanceParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -654,7 +656,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeRarityParameterModels(request: Request.DescribeRarityParameterModelsRequest): Promise<Result.DescribeRarityParameterModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -680,7 +682,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getRarityParameterModel(request: Request.GetRarityParameterModelRequest): Promise<Result.GetRarityParameterModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -707,7 +709,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeRarityParameterModelMasters(request: Request.DescribeRarityParameterModelMastersRequest): Promise<Result.DescribeRarityParameterModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -735,7 +737,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public createRarityParameterModelMaster(request: Request.CreateRarityParameterModelMasterRequest): Promise<Result.CreateRarityParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -771,7 +773,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getRarityParameterModelMaster(request: Request.GetRarityParameterModelMasterRequest): Promise<Result.GetRarityParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -798,7 +800,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public updateRarityParameterModelMaster(request: Request.UpdateRarityParameterModelMasterRequest): Promise<Result.UpdateRarityParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -834,7 +836,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRarityParameterModelMaster(request: Request.DeleteRarityParameterModelMasterRequest): Promise<Result.DeleteRarityParameterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -861,7 +863,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -887,7 +889,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentParameterMaster(request: Request.GetCurrentParameterMasterRequest): Promise<Result.GetCurrentParameterMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -913,7 +915,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentParameterMaster(request: Request.PreUpdateCurrentParameterMasterRequest): Promise<Result.PreUpdateCurrentParameterMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -943,7 +945,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentParameterMaster(request: Request.UpdateCurrentParameterMasterRequest): Promise<Result.UpdateCurrentParameterMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -976,7 +978,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentParameterMasterFromGitHub(request: Request.UpdateCurrentParameterMasterFromGitHubRequest): Promise<Result.UpdateCurrentParameterMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1007,7 +1009,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeBalanceParameterStatuses(request: Request.DescribeBalanceParameterStatusesRequest): Promise<Result.DescribeBalanceParameterStatusesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1039,7 +1041,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeBalanceParameterStatusesByUserId(request: Request.DescribeBalanceParameterStatusesByUserIdRequest): Promise<Result.DescribeBalanceParameterStatusesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1072,7 +1074,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getBalanceParameterStatus(request: Request.GetBalanceParameterStatusRequest): Promise<Result.GetBalanceParameterStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1103,7 +1105,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getBalanceParameterStatusByUserId(request: Request.GetBalanceParameterStatusByUserIdRequest): Promise<Result.GetBalanceParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1135,7 +1137,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public deleteBalanceParameterStatusByUserId(request: Request.DeleteBalanceParameterStatusByUserIdRequest): Promise<Result.DeleteBalanceParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1170,7 +1172,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public reDrawBalanceParameterStatusByUserId(request: Request.ReDrawBalanceParameterStatusByUserIdRequest): Promise<Result.ReDrawBalanceParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}/redraw')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1210,7 +1212,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public reDrawBalanceParameterStatusByStampSheet(request: Request.ReDrawBalanceParameterStatusByStampSheetRequest): Promise<Result.ReDrawBalanceParameterStatusByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/balance/redraw')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/balance/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -1241,7 +1243,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public setBalanceParameterStatusByUserId(request: Request.SetBalanceParameterStatusByUserIdRequest): Promise<Result.SetBalanceParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1281,7 +1283,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public setBalanceParameterStatusByStampSheet(request: Request.SetBalanceParameterStatusByStampSheetRequest): Promise<Result.SetBalanceParameterStatusByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -1312,7 +1314,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeRarityParameterStatuses(request: Request.DescribeRarityParameterStatusesRequest): Promise<Result.DescribeRarityParameterStatusesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1344,7 +1346,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public describeRarityParameterStatusesByUserId(request: Request.DescribeRarityParameterStatusesByUserIdRequest): Promise<Result.DescribeRarityParameterStatusesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1377,7 +1379,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getRarityParameterStatus(request: Request.GetRarityParameterStatusRequest): Promise<Result.GetRarityParameterStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1408,7 +1410,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public getRarityParameterStatusByUserId(request: Request.GetRarityParameterStatusByUserIdRequest): Promise<Result.GetRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1440,7 +1442,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRarityParameterStatusByUserId(request: Request.DeleteRarityParameterStatusByUserIdRequest): Promise<Result.DeleteRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1475,7 +1477,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public reDrawRarityParameterStatusByUserId(request: Request.ReDrawRarityParameterStatusByUserIdRequest): Promise<Result.ReDrawRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/redraw')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1515,7 +1517,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public reDrawRarityParameterStatusByStampSheet(request: Request.ReDrawRarityParameterStatusByStampSheetRequest): Promise<Result.ReDrawRarityParameterStatusByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/redraw')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -1546,7 +1548,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public addRarityParameterStatusByUserId(request: Request.AddRarityParameterStatusByUserIdRequest): Promise<Result.AddRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/add')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/add')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1586,7 +1588,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public addRarityParameterStatusByStampSheet(request: Request.AddRarityParameterStatusByStampSheetRequest): Promise<Result.AddRarityParameterStatusByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/add')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/add')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -1617,7 +1619,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public verifyRarityParameterStatus(request: Request.VerifyRarityParameterStatusRequest): Promise<Result.VerifyRarityParameterStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1659,7 +1661,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public verifyRarityParameterStatusByUserId(request: Request.VerifyRarityParameterStatusByUserIdRequest): Promise<Result.VerifyRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1702,7 +1704,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public verifyRarityParameterStatusByStampTask(request: Request.VerifyRarityParameterStatusByStampTaskRequest): Promise<Result.VerifyRarityParameterStatusByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/verify')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/verify')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     
@@ -1733,7 +1735,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public setRarityParameterStatusByUserId(request: Request.SetRarityParameterStatusByUserIdRequest): Promise<Result.SetRarityParameterStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1773,7 +1775,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     }
 
     public setRarityParameterStatusByStampSheet(request: Request.SetRarityParameterStatusByStampSheetRequest): Promise<Result.SetRarityParameterStatusByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
+        const url = (Gs2EnchantRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
     

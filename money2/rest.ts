@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2Money2RestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -100,7 +102,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -126,7 +128,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -152,7 +154,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -195,7 +197,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -221,7 +223,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -246,7 +248,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -279,7 +281,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -308,7 +310,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -341,7 +343,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -370,7 +372,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -403,7 +405,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -437,7 +439,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -467,7 +469,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeWallets(request: Request.DescribeWalletsRequest): Promise<Result.DescribeWalletsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -498,7 +500,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeWalletsByUserId(request: Request.DescribeWalletsByUserIdRequest): Promise<Result.DescribeWalletsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -530,7 +532,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getWallet(request: Request.GetWalletRequest): Promise<Result.GetWalletResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -560,7 +562,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getWalletByUserId(request: Request.GetWalletByUserIdRequest): Promise<Result.GetWalletByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -591,7 +593,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public depositByUserId(request: Request.DepositByUserIdRequest): Promise<Result.DepositByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -630,7 +632,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public withdraw(request: Request.WithdrawRequest): Promise<Result.WithdrawResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -669,7 +671,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public withdrawByUserId(request: Request.WithdrawByUserIdRequest): Promise<Result.WithdrawByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -709,7 +711,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public depositByStampSheet(request: Request.DepositByStampSheetRequest): Promise<Result.DepositByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/deposit')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/deposit')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -740,7 +742,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public withdrawByStampTask(request: Request.WithdrawByStampTaskRequest): Promise<Result.WithdrawByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/withdraw')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -771,7 +773,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeEventsByUserId(request: Request.DescribeEventsByUserIdRequest): Promise<Result.DescribeEventsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -805,7 +807,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getEventByTransactionId(request: Request.GetEventByTransactionIdRequest): Promise<Result.GetEventByTransactionIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{transactionId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{transactionId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -832,7 +834,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyReceipt(request: Request.VerifyReceiptRequest): Promise<Result.VerifyReceiptResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/content/{contentName}/receipt/verify')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/content/{contentName}/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -870,7 +872,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyReceiptByUserId(request: Request.VerifyReceiptByUserIdRequest): Promise<Result.VerifyReceiptByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/content/{contentName}/receipt/verify')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/content/{contentName}/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -909,7 +911,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public verifyReceiptByStampTask(request: Request.VerifyReceiptByStampTaskRequest): Promise<Result.VerifyReceiptByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/verify')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
     
@@ -940,7 +942,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscriptionStatuses(request: Request.DescribeSubscriptionStatusesRequest): Promise<Result.DescribeSubscriptionStatusesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -969,7 +971,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscriptionStatusesByUserId(request: Request.DescribeSubscriptionStatusesByUserIdRequest): Promise<Result.DescribeSubscriptionStatusesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -999,7 +1001,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscriptionStatus(request: Request.GetSubscriptionStatusRequest): Promise<Result.GetSubscriptionStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1029,7 +1031,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getSubscriptionStatusByUserId(request: Request.GetSubscriptionStatusByUserIdRequest): Promise<Result.GetSubscriptionStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1060,7 +1062,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public allocateSubscriptionStatus(request: Request.AllocateSubscriptionStatusRequest): Promise<Result.AllocateSubscriptionStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/allocate/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1097,7 +1099,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public allocateSubscriptionStatusByUserId(request: Request.AllocateSubscriptionStatusByUserIdRequest): Promise<Result.AllocateSubscriptionStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/allocate/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1135,7 +1137,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public takeoverSubscriptionStatus(request: Request.TakeoverSubscriptionStatusRequest): Promise<Result.TakeoverSubscriptionStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/takeover/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1172,7 +1174,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public takeoverSubscriptionStatusByUserId(request: Request.TakeoverSubscriptionStatusByUserIdRequest): Promise<Result.TakeoverSubscriptionStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/takeover/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1210,7 +1212,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeRefundHistoriesByUserId(request: Request.DescribeRefundHistoriesByUserIdRequest): Promise<Result.DescribeRefundHistoriesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/user/{userId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1242,7 +1244,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeRefundHistoriesByDate(request: Request.DescribeRefundHistoriesByDateRequest): Promise<Result.DescribeRefundHistoriesByDateResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/date/{year}/{month}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/date/{year}/{month}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1273,7 +1275,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getRefundHistory(request: Request.GetRefundHistoryRequest): Promise<Result.GetRefundHistoryResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/{transactionId}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/{transactionId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1300,7 +1302,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeStoreContentModels(request: Request.DescribeStoreContentModelsRequest): Promise<Result.DescribeStoreContentModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1326,7 +1328,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getStoreContentModel(request: Request.GetStoreContentModelRequest): Promise<Result.GetStoreContentModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1353,7 +1355,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeStoreContentModelMasters(request: Request.DescribeStoreContentModelMastersRequest): Promise<Result.DescribeStoreContentModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1382,7 +1384,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public createStoreContentModelMaster(request: Request.CreateStoreContentModelMasterRequest): Promise<Result.CreateStoreContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1417,7 +1419,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getStoreContentModelMaster(request: Request.GetStoreContentModelMasterRequest): Promise<Result.GetStoreContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1444,7 +1446,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public updateStoreContentModelMaster(request: Request.UpdateStoreContentModelMasterRequest): Promise<Result.UpdateStoreContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1479,7 +1481,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteStoreContentModelMaster(request: Request.DeleteStoreContentModelMasterRequest): Promise<Result.DeleteStoreContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1506,7 +1508,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeStoreSubscriptionContentModels(request: Request.DescribeStoreSubscriptionContentModelsRequest): Promise<Result.DescribeStoreSubscriptionContentModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1532,7 +1534,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getStoreSubscriptionContentModel(request: Request.GetStoreSubscriptionContentModelRequest): Promise<Result.GetStoreSubscriptionContentModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1559,7 +1561,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeStoreSubscriptionContentModelMasters(request: Request.DescribeStoreSubscriptionContentModelMastersRequest): Promise<Result.DescribeStoreSubscriptionContentModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1588,7 +1590,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public createStoreSubscriptionContentModelMaster(request: Request.CreateStoreSubscriptionContentModelMasterRequest): Promise<Result.CreateStoreSubscriptionContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1628,7 +1630,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getStoreSubscriptionContentModelMaster(request: Request.GetStoreSubscriptionContentModelMasterRequest): Promise<Result.GetStoreSubscriptionContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1655,7 +1657,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public updateStoreSubscriptionContentModelMaster(request: Request.UpdateStoreSubscriptionContentModelMasterRequest): Promise<Result.UpdateStoreSubscriptionContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1695,7 +1697,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public deleteStoreSubscriptionContentModelMaster(request: Request.DeleteStoreSubscriptionContentModelMasterRequest): Promise<Result.DeleteStoreSubscriptionContentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1722,7 +1724,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1748,7 +1750,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1774,7 +1776,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentModelMaster(request: Request.PreUpdateCurrentModelMasterRequest): Promise<Result.PreUpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1804,7 +1806,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1837,7 +1839,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1868,7 +1870,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeDailyTransactionHistoriesByCurrency(request: Request.DescribeDailyTransactionHistoriesByCurrencyRequest): Promise<Result.DescribeDailyTransactionHistoriesByCurrencyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1899,7 +1901,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeDailyTransactionHistories(request: Request.DescribeDailyTransactionHistoriesRequest): Promise<Result.DescribeDailyTransactionHistoriesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1930,7 +1932,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getDailyTransactionHistory(request: Request.GetDailyTransactionHistoryRequest): Promise<Result.GetDailyTransactionHistoryResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1960,7 +1962,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public describeUnusedBalances(request: Request.DescribeUnusedBalancesRequest): Promise<Result.DescribeUnusedBalancesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1988,7 +1990,7 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     }
 
     public getUnusedBalance(request: Request.GetUnusedBalanceRequest): Promise<Result.GetUnusedBalanceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused/{currency}')
+        const url = (Gs2Money2RestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused/{currency}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

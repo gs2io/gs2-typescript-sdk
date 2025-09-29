@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2KeyRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region);
     
@@ -88,7 +90,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -114,7 +116,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -140,7 +142,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -172,7 +174,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -198,7 +200,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region);
     
@@ -223,7 +225,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeKeys(request: Request.DescribeKeysRequest): Promise<Result.DescribeKeysResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -252,7 +254,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public createKey(request: Request.CreateKeyRequest): Promise<Result.CreateKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -284,7 +286,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateKey(request: Request.UpdateKeyRequest): Promise<Result.UpdateKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -316,7 +318,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public getKey(request: Request.GetKeyRequest): Promise<Result.GetKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -343,7 +345,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public deleteKey(request: Request.DeleteKeyRequest): Promise<Result.DeleteKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -370,7 +372,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public encrypt(request: Request.EncryptRequest): Promise<Result.EncryptResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/encrypt')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/encrypt')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -402,7 +404,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public decrypt(request: Request.DecryptRequest): Promise<Result.DecryptResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/decrypt')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/decrypt')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -434,7 +436,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public describeGitHubApiKeys(request: Request.DescribeGitHubApiKeysRequest): Promise<Result.DescribeGitHubApiKeysResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -462,7 +464,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public createGitHubApiKey(request: Request.CreateGitHubApiKeyRequest): Promise<Result.CreateGitHubApiKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -496,7 +498,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public updateGitHubApiKey(request: Request.UpdateGitHubApiKeyRequest): Promise<Result.UpdateGitHubApiKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -530,7 +532,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public getGitHubApiKey(request: Request.GetGitHubApiKeyRequest): Promise<Result.GetGitHubApiKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -557,7 +559,7 @@ export default class Gs2KeyRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGitHubApiKey(request: Request.DeleteGitHubApiKeyRequest): Promise<Result.DeleteGitHubApiKeyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        const url = (Gs2KeyRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

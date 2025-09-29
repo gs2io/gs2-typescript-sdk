@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2GuildRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -102,7 +104,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -128,7 +130,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -154,7 +156,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -226,7 +228,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -251,7 +253,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -284,7 +286,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -313,7 +315,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -346,7 +348,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -375,7 +377,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -408,7 +410,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -442,7 +444,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -472,7 +474,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeGuildModelMasters(request: Request.DescribeGuildModelMastersRequest): Promise<Result.DescribeGuildModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -501,7 +503,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public createGuildModelMaster(request: Request.CreateGuildModelMasterRequest): Promise<Result.CreateGuildModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -543,7 +545,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getGuildModelMaster(request: Request.GetGuildModelMasterRequest): Promise<Result.GetGuildModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -570,7 +572,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateGuildModelMaster(request: Request.UpdateGuildModelMasterRequest): Promise<Result.UpdateGuildModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -612,7 +614,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGuildModelMaster(request: Request.DeleteGuildModelMasterRequest): Promise<Result.DeleteGuildModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -639,7 +641,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeGuildModels(request: Request.DescribeGuildModelsRequest): Promise<Result.DescribeGuildModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -665,7 +667,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getGuildModel(request: Request.GetGuildModelRequest): Promise<Result.GetGuildModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -692,7 +694,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public searchGuilds(request: Request.SearchGuildsRequest): Promise<Result.SearchGuildsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/search')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -740,7 +742,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public searchGuildsByUserId(request: Request.SearchGuildsByUserIdRequest): Promise<Result.SearchGuildsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/search')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -789,7 +791,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public createGuild(request: Request.CreateGuildRequest): Promise<Result.CreateGuildResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -837,7 +839,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public createGuildByUserId(request: Request.CreateGuildByUserIdRequest): Promise<Result.CreateGuildByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -886,7 +888,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getGuild(request: Request.GetGuildRequest): Promise<Result.GetGuildResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -917,7 +919,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getGuildByUserId(request: Request.GetGuildByUserIdRequest): Promise<Result.GetGuildByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -949,7 +951,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateGuild(request: Request.UpdateGuildRequest): Promise<Result.UpdateGuildResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -996,7 +998,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateGuildByGuildName(request: Request.UpdateGuildByGuildNameRequest): Promise<Result.UpdateGuildByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1041,7 +1043,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMember(request: Request.DeleteMemberRequest): Promise<Result.DeleteMemberResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1075,7 +1077,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMemberByGuildName(request: Request.DeleteMemberByGuildNameRequest): Promise<Result.DeleteMemberByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1111,7 +1113,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateMemberRole(request: Request.UpdateMemberRoleRequest): Promise<Result.UpdateMemberRoleResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}/role')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1150,7 +1152,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateMemberRoleByGuildName(request: Request.UpdateMemberRoleByGuildNameRequest): Promise<Result.UpdateMemberRoleByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}/role')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1187,7 +1189,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public batchUpdateMemberRole(request: Request.BatchUpdateMemberRoleRequest): Promise<Result.BatchUpdateMemberRoleResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1225,7 +1227,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public batchUpdateMemberRoleByGuildName(request: Request.BatchUpdateMemberRoleByGuildNameRequest): Promise<Result.BatchUpdateMemberRoleByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1261,7 +1263,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGuild(request: Request.DeleteGuildRequest): Promise<Result.DeleteGuildResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1294,7 +1296,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGuildByGuildName(request: Request.DeleteGuildByGuildNameRequest): Promise<Result.DeleteGuildByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1325,7 +1327,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public increaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/increase')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/increase')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1361,7 +1363,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaximumCurrentMaximumMemberCount(request: Request.DecreaseMaximumCurrentMaximumMemberCountRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/decrease')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/decrease')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1399,7 +1401,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/decrease')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/decrease')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1435,7 +1437,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCurrentMaximumMemberCount(request: Request.VerifyCurrentMaximumMemberCountRequest): Promise<Result.VerifyCurrentMaximumMemberCountResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1475,7 +1477,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCurrentMaximumMemberCountByGuildName(request: Request.VerifyCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.VerifyCurrentMaximumMemberCountByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1513,7 +1515,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeMember(request: Request.VerifyIncludeMemberRequest): Promise<Result.VerifyIncludeMemberResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/me/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/me/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1552,7 +1554,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeMemberByUserId(request: Request.VerifyIncludeMemberByUserIdRequest): Promise<Result.VerifyIncludeMemberByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{userId}/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{userId}/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1592,7 +1594,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public setMaximumCurrentMaximumMemberCountByGuildName(request: Request.SetMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.SetMaximumCurrentMaximumMemberCountByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1628,7 +1630,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public assume(request: Request.AssumeRequest): Promise<Result.AssumeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}/assume')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}/assume')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1666,7 +1668,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public assumeByUserId(request: Request.AssumeByUserIdRequest): Promise<Result.AssumeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}/assume')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}/assume')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1705,7 +1707,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public increaseMaximumCurrentMaximumMemberCountByStampSheet(request: Request.IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/add')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/add')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -1736,7 +1738,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaximumCurrentMaximumMemberCountByStampTask(request: Request.DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/sub')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/sub')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -1767,7 +1769,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public setMaximumCurrentMaximumMemberCountByStampSheet(request: Request.SetMaximumCurrentMaximumMemberCountByStampSheetRequest): Promise<Result.SetMaximumCurrentMaximumMemberCountByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/set')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/set')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -1798,7 +1800,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCurrentMaximumMemberCountByStampTask(request: Request.VerifyCurrentMaximumMemberCountByStampTaskRequest): Promise<Result.VerifyCurrentMaximumMemberCountByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -1829,7 +1831,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeMemberByStampTask(request: Request.VerifyIncludeMemberByStampTaskRequest): Promise<Result.VerifyIncludeMemberByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/guild/member/verify')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/guild/member/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
     
@@ -1860,7 +1862,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeJoinedGuilds(request: Request.DescribeJoinedGuildsRequest): Promise<Result.DescribeJoinedGuildsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1892,7 +1894,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeJoinedGuildsByUserId(request: Request.DescribeJoinedGuildsByUserIdRequest): Promise<Result.DescribeJoinedGuildsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1925,7 +1927,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getJoinedGuild(request: Request.GetJoinedGuildRequest): Promise<Result.GetJoinedGuildResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1956,7 +1958,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getJoinedGuildByUserId(request: Request.GetJoinedGuildByUserIdRequest): Promise<Result.GetJoinedGuildByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1988,7 +1990,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateMemberMetadata(request: Request.UpdateMemberMetadataRequest): Promise<Result.UpdateMemberMetadataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/me/metadata')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/me/metadata')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2027,7 +2029,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateMemberMetadataByUserId(request: Request.UpdateMemberMetadataByUserIdRequest): Promise<Result.UpdateMemberMetadataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/{userId}/metadata')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/{userId}/metadata')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2067,7 +2069,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public withdrawal(request: Request.WithdrawalRequest): Promise<Result.WithdrawalResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2101,7 +2103,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public withdrawalByUserId(request: Request.WithdrawalByUserIdRequest): Promise<Result.WithdrawalByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2136,7 +2138,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getLastGuildMasterActivity(request: Request.GetLastGuildMasterActivityRequest): Promise<Result.GetLastGuildMasterActivityResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/activity/guildMaster/last')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/activity/guildMaster/last')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2166,7 +2168,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getLastGuildMasterActivityByGuildName(request: Request.GetLastGuildMasterActivityByGuildNameRequest): Promise<Result.GetLastGuildMasterActivityByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/activity/guildMaster/last')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/activity/guildMaster/last')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2194,7 +2196,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public promoteSeniorMember(request: Request.PromoteSeniorMemberRequest): Promise<Result.PromoteSeniorMemberResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/promote')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/promote')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2231,7 +2233,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public promoteSeniorMemberByGuildName(request: Request.PromoteSeniorMemberByGuildNameRequest): Promise<Result.PromoteSeniorMemberByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/promote')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/promote')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2266,7 +2268,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2292,7 +2294,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentGuildMaster(request: Request.GetCurrentGuildMasterRequest): Promise<Result.GetCurrentGuildMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2318,7 +2320,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentGuildMaster(request: Request.PreUpdateCurrentGuildMasterRequest): Promise<Result.PreUpdateCurrentGuildMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2348,7 +2350,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentGuildMaster(request: Request.UpdateCurrentGuildMasterRequest): Promise<Result.UpdateCurrentGuildMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2381,7 +2383,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentGuildMasterFromGitHub(request: Request.UpdateCurrentGuildMasterFromGitHubRequest): Promise<Result.UpdateCurrentGuildMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2412,7 +2414,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveRequests(request: Request.DescribeReceiveRequestsRequest): Promise<Result.DescribeReceiveRequestsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2444,7 +2446,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveRequestsByGuildName(request: Request.DescribeReceiveRequestsByGuildNameRequest): Promise<Result.DescribeReceiveRequestsByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2474,7 +2476,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveRequest(request: Request.GetReceiveRequestRequest): Promise<Result.GetReceiveRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2505,7 +2507,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveRequestByGuildName(request: Request.GetReceiveRequestByGuildNameRequest): Promise<Result.GetReceiveRequestByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2534,7 +2536,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public acceptRequest(request: Request.AcceptRequestRequest): Promise<Result.AcceptRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2572,7 +2574,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public acceptRequestByGuildName(request: Request.AcceptRequestByGuildNameRequest): Promise<Result.AcceptRequestByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2608,7 +2610,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public rejectRequest(request: Request.RejectRequestRequest): Promise<Result.RejectRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2642,7 +2644,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public rejectRequestByGuildName(request: Request.RejectRequestByGuildNameRequest): Promise<Result.RejectRequestByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2674,7 +2676,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeSendRequests(request: Request.DescribeSendRequestsRequest): Promise<Result.DescribeSendRequestsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2706,7 +2708,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeSendRequestsByUserId(request: Request.DescribeSendRequestsByUserIdRequest): Promise<Result.DescribeSendRequestsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2739,7 +2741,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getSendRequest(request: Request.GetSendRequestRequest): Promise<Result.GetSendRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2770,7 +2772,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getSendRequestByUserId(request: Request.GetSendRequestByUserIdRequest): Promise<Result.GetSendRequestByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2802,7 +2804,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public sendRequest(request: Request.SendRequestRequest): Promise<Result.SendRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2841,7 +2843,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public sendRequestByUserId(request: Request.SendRequestByUserIdRequest): Promise<Result.SendRequestByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2881,7 +2883,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRequest(request: Request.DeleteRequestRequest): Promise<Result.DeleteRequestResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2915,7 +2917,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRequestByUserId(request: Request.DeleteRequestByUserIdRequest): Promise<Result.DeleteRequestByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2950,7 +2952,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeIgnoreUsers(request: Request.DescribeIgnoreUsersRequest): Promise<Result.DescribeIgnoreUsersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2982,7 +2984,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public describeIgnoreUsersByGuildName(request: Request.DescribeIgnoreUsersByGuildNameRequest): Promise<Result.DescribeIgnoreUsersByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3012,7 +3014,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getIgnoreUser(request: Request.GetIgnoreUserRequest): Promise<Result.GetIgnoreUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3043,7 +3045,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public getIgnoreUserByGuildName(request: Request.GetIgnoreUserByGuildNameRequest): Promise<Result.GetIgnoreUserByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3075,7 +3077,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public addIgnoreUser(request: Request.AddIgnoreUserRequest): Promise<Result.AddIgnoreUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3113,7 +3115,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public addIgnoreUserByGuildName(request: Request.AddIgnoreUserByGuildNameRequest): Promise<Result.AddIgnoreUserByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3152,7 +3154,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteIgnoreUser(request: Request.DeleteIgnoreUserRequest): Promise<Result.DeleteIgnoreUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3186,7 +3188,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     }
 
     public deleteIgnoreUserByGuildName(request: Request.DeleteIgnoreUserByGuildNameRequest): Promise<Result.DeleteIgnoreUserByGuildNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        const url = (Gs2GuildRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

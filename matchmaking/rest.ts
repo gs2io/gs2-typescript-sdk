@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
     
@@ -106,7 +108,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -132,7 +134,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -158,7 +160,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +210,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -234,7 +236,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
     
@@ -259,7 +261,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -292,7 +294,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -321,7 +323,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -354,7 +356,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -383,7 +385,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -450,7 +452,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -480,7 +482,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeGatherings(request: Request.DescribeGatheringsRequest): Promise<Result.DescribeGatheringsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -508,7 +510,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public createGathering(request: Request.CreateGatheringRequest): Promise<Result.CreateGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -550,7 +552,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public createGatheringByUserId(request: Request.CreateGatheringByUserIdRequest): Promise<Result.CreateGatheringByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -593,7 +595,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateGathering(request: Request.UpdateGatheringRequest): Promise<Result.UpdateGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -631,7 +633,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateGatheringByUserId(request: Request.UpdateGatheringByUserIdRequest): Promise<Result.UpdateGatheringByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -670,7 +672,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public doMatchmakingByPlayer(request: Request.DoMatchmakingByPlayerRequest): Promise<Result.DoMatchmakingByPlayerResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/player/do')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/player/do')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -702,7 +704,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public doMatchmaking(request: Request.DoMatchmakingRequest): Promise<Result.DoMatchmakingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/do')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/do')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -740,7 +742,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public doMatchmakingByUserId(request: Request.DoMatchmakingByUserIdRequest): Promise<Result.DoMatchmakingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/gathering/do')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/gathering/do')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -779,7 +781,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public ping(request: Request.PingRequest): Promise<Result.PingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/ping')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/ping')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -816,7 +818,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public pingByUserId(request: Request.PingByUserIdRequest): Promise<Result.PingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/ping')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/ping')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -854,7 +856,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getGathering(request: Request.GetGatheringRequest): Promise<Result.GetGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -881,7 +883,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public cancelMatchmaking(request: Request.CancelMatchmakingRequest): Promise<Result.CancelMatchmakingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/me')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/me')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -914,7 +916,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public cancelMatchmakingByUserId(request: Request.CancelMatchmakingByUserIdRequest): Promise<Result.CancelMatchmakingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -948,7 +950,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public earlyComplete(request: Request.EarlyCompleteRequest): Promise<Result.EarlyCompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/me/early')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/me/early')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -981,7 +983,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public earlyCompleteByUserId(request: Request.EarlyCompleteByUserIdRequest): Promise<Result.EarlyCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/early')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/early')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1015,7 +1017,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGathering(request: Request.DeleteGatheringRequest): Promise<Result.DeleteGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1042,7 +1044,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeRatingModelMasters(request: Request.DescribeRatingModelMastersRequest): Promise<Result.DescribeRatingModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1071,7 +1073,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public createRatingModelMaster(request: Request.CreateRatingModelMasterRequest): Promise<Result.CreateRatingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1106,7 +1108,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getRatingModelMaster(request: Request.GetRatingModelMasterRequest): Promise<Result.GetRatingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1133,7 +1135,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateRatingModelMaster(request: Request.UpdateRatingModelMasterRequest): Promise<Result.UpdateRatingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1168,7 +1170,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRatingModelMaster(request: Request.DeleteRatingModelMasterRequest): Promise<Result.DeleteRatingModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1195,7 +1197,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeRatingModels(request: Request.DescribeRatingModelsRequest): Promise<Result.DescribeRatingModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1221,7 +1223,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getRatingModel(request: Request.GetRatingModelRequest): Promise<Result.GetRatingModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1248,7 +1250,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1274,7 +1276,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1300,7 +1302,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentModelMaster(request: Request.PreUpdateCurrentModelMasterRequest): Promise<Result.PreUpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1330,7 +1332,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1363,7 +1365,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1394,7 +1396,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeSeasonModels(request: Request.DescribeSeasonModelsRequest): Promise<Result.DescribeSeasonModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1420,7 +1422,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getSeasonModel(request: Request.GetSeasonModelRequest): Promise<Result.GetSeasonModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1447,7 +1449,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeSeasonModelMasters(request: Request.DescribeSeasonModelMastersRequest): Promise<Result.DescribeSeasonModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1476,7 +1478,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public createSeasonModelMaster(request: Request.CreateSeasonModelMasterRequest): Promise<Result.CreateSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1512,7 +1514,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getSeasonModelMaster(request: Request.GetSeasonModelMasterRequest): Promise<Result.GetSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1539,7 +1541,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public updateSeasonModelMaster(request: Request.UpdateSeasonModelMasterRequest): Promise<Result.UpdateSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1575,7 +1577,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSeasonModelMaster(request: Request.DeleteSeasonModelMasterRequest): Promise<Result.DeleteSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1602,7 +1604,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeSeasonGatherings(request: Request.DescribeSeasonGatheringsRequest): Promise<Result.DescribeSeasonGatheringsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1633,7 +1635,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeMatchmakingSeasonGatherings(request: Request.DescribeMatchmakingSeasonGatheringsRequest): Promise<Result.DescribeMatchmakingSeasonGatheringsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering/matchmaking')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering/matchmaking')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1664,7 +1666,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public doSeasonMatchmaking(request: Request.DoSeasonMatchmakingRequest): Promise<Result.DoSeasonMatchmakingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/do')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/do')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1702,7 +1704,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public doSeasonMatchmakingByUserId(request: Request.DoSeasonMatchmakingByUserIdRequest): Promise<Result.DoSeasonMatchmakingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/do')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/do')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1741,7 +1743,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getSeasonGathering(request: Request.GetSeasonGatheringRequest): Promise<Result.GetSeasonGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1771,7 +1773,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeParticipant(request: Request.VerifyIncludeParticipantRequest): Promise<Result.VerifyIncludeParticipantResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/me/verify')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/me/verify')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1812,7 +1814,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeParticipantByUserId(request: Request.VerifyIncludeParticipantByUserIdRequest): Promise<Result.VerifyIncludeParticipantByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/{userId}/verify')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/{userId}/verify')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1854,7 +1856,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSeasonGathering(request: Request.DeleteSeasonGatheringRequest): Promise<Result.DeleteSeasonGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1884,7 +1886,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public verifyIncludeParticipantByStampTask(request: Request.VerifyIncludeParticipantByStampTaskRequest): Promise<Result.VerifyIncludeParticipantByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/season/gathering/participant/verify')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/season/gathering/participant/verify')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
     
@@ -1915,7 +1917,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeJoinedSeasonGatherings(request: Request.DescribeJoinedSeasonGatheringsRequest): Promise<Result.DescribeJoinedSeasonGatheringsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1947,7 +1949,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeJoinedSeasonGatheringsByUserId(request: Request.DescribeJoinedSeasonGatheringsByUserIdRequest): Promise<Result.DescribeJoinedSeasonGatheringsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1980,7 +1982,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getJoinedSeasonGathering(request: Request.GetJoinedSeasonGatheringRequest): Promise<Result.GetJoinedSeasonGatheringResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join/{season}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join/{season}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2011,7 +2013,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getJoinedSeasonGatheringByUserId(request: Request.GetJoinedSeasonGatheringByUserIdRequest): Promise<Result.GetJoinedSeasonGatheringByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join/{season}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join/{season}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2043,7 +2045,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeRatings(request: Request.DescribeRatingsRequest): Promise<Result.DescribeRatingsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/rating')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2074,7 +2076,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public describeRatingsByUserId(request: Request.DescribeRatingsByUserIdRequest): Promise<Result.DescribeRatingsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2106,7 +2108,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getRating(request: Request.GetRatingRequest): Promise<Result.GetRatingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2136,7 +2138,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getRatingByUserId(request: Request.GetRatingByUserIdRequest): Promise<Result.GetRatingByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2167,7 +2169,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public putResult(request: Request.PutResultRequest): Promise<Result.PutResultResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{ratingName}/vote')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{ratingName}/vote')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2199,7 +2201,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRating(request: Request.DeleteRatingRequest): Promise<Result.DeleteRatingResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating/{ratingName}')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2233,7 +2235,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getBallot(request: Request.GetBallotRequest): Promise<Result.GetBallotResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/vote/{ratingName}/{gatheringName}/ballot')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/vote/{ratingName}/{gatheringName}/ballot')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2270,7 +2272,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public getBallotByUserId(request: Request.GetBallotByUserIdRequest): Promise<Result.GetBallotByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/vote/{ratingName}/{gatheringName}/ballot')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/vote/{ratingName}/{gatheringName}/ballot')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2308,7 +2310,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public vote(request: Request.VoteRequest): Promise<Result.VoteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2342,7 +2344,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public voteMultiple(request: Request.VoteMultipleRequest): Promise<Result.VoteMultipleResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote/multiple')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote/multiple')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2375,7 +2377,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     }
 
     public commitVote(request: Request.CommitVoteRequest): Promise<Result.CommitVoteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/vote/{ratingName}/{gatheringName}/action/vote/commit')
+        const url = (Gs2MatchmakingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/vote/{ratingName}/{gatheringName}/action/vote/commit')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

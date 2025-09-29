@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2ChatRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
     
@@ -97,7 +99,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -123,7 +125,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -149,7 +151,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -190,7 +192,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -216,7 +218,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
     
@@ -241,7 +243,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -274,7 +276,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -303,7 +305,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -336,7 +338,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -365,7 +367,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -398,7 +400,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -432,7 +434,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -462,7 +464,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeRooms(request: Request.DescribeRoomsRequest): Promise<Result.DescribeRoomsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -491,7 +493,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public createRoom(request: Request.CreateRoomRequest): Promise<Result.CreateRoomResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -531,7 +533,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public createRoomFromBackend(request: Request.CreateRoomFromBackendRequest): Promise<Result.CreateRoomFromBackendResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -572,7 +574,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getRoom(request: Request.GetRoomRequest): Promise<Result.GetRoomResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -599,7 +601,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateRoom(request: Request.UpdateRoomRequest): Promise<Result.UpdateRoomResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -639,7 +641,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateRoomFromBackend(request: Request.UpdateRoomFromBackendRequest): Promise<Result.UpdateRoomFromBackendResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -680,7 +682,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRoom(request: Request.DeleteRoomRequest): Promise<Result.DeleteRoomResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -713,7 +715,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRoomFromBackend(request: Request.DeleteRoomFromBackendRequest): Promise<Result.DeleteRoomFromBackendResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -747,7 +749,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeMessages(request: Request.DescribeMessagesRequest): Promise<Result.DescribeMessagesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -781,7 +783,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeMessagesByUserId(request: Request.DescribeMessagesByUserIdRequest): Promise<Result.DescribeMessagesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -816,7 +818,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeLatestMessages(request: Request.DescribeLatestMessagesRequest): Promise<Result.DescribeLatestMessagesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -850,7 +852,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeLatestMessagesByUserId(request: Request.DescribeLatestMessagesByUserIdRequest): Promise<Result.DescribeLatestMessagesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest/get')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -885,7 +887,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public post(request: Request.PostRequest): Promise<Result.PostResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -925,7 +927,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public postByUserId(request: Request.PostByUserIdRequest): Promise<Result.PostByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -966,7 +968,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getMessage(request: Request.GetMessageRequest): Promise<Result.GetMessageResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -998,7 +1000,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getMessageByUserId(request: Request.GetMessageByUserIdRequest): Promise<Result.GetMessageByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}/get')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1031,7 +1033,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMessage(request: Request.DeleteMessageRequest): Promise<Result.DeleteMessageResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1066,7 +1068,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribes(request: Request.DescribeSubscribesRequest): Promise<Result.DescribeSubscribesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1098,7 +1100,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribesByUserId(request: Request.DescribeSubscribesByUserIdRequest): Promise<Result.DescribeSubscribesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1131,7 +1133,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeSubscribesByRoomName(request: Request.DescribeSubscribesByRoomNameRequest): Promise<Result.DescribeSubscribesByRoomNameResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1160,7 +1162,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public subscribe(request: Request.SubscribeRequest): Promise<Result.SubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1198,7 +1200,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public subscribeByUserId(request: Request.SubscribeByUserIdRequest): Promise<Result.SubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1237,7 +1239,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribe(request: Request.GetSubscribeRequest): Promise<Result.GetSubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1267,7 +1269,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getSubscribeByUserId(request: Request.GetSubscribeByUserIdRequest): Promise<Result.GetSubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1298,7 +1300,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateNotificationType(request: Request.UpdateNotificationTypeRequest): Promise<Result.UpdateNotificationTypeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1336,7 +1338,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateNotificationTypeByUserId(request: Request.UpdateNotificationTypeByUserIdRequest): Promise<Result.UpdateNotificationTypeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1375,7 +1377,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public unsubscribe(request: Request.UnsubscribeRequest): Promise<Result.UnsubscribeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1408,7 +1410,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public unsubscribeByUserId(request: Request.UnsubscribeByUserIdRequest): Promise<Result.UnsubscribeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1442,7 +1444,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeCategoryModels(request: Request.DescribeCategoryModelsRequest): Promise<Result.DescribeCategoryModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1468,7 +1470,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getCategoryModel(request: Request.GetCategoryModelRequest): Promise<Result.GetCategoryModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{category}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{category}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1495,7 +1497,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public describeCategoryModelMasters(request: Request.DescribeCategoryModelMastersRequest): Promise<Result.DescribeCategoryModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1523,7 +1525,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public createCategoryModelMaster(request: Request.CreateCategoryModelMasterRequest): Promise<Result.CreateCategoryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1556,7 +1558,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getCategoryModelMaster(request: Request.GetCategoryModelMasterRequest): Promise<Result.GetCategoryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1583,7 +1585,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateCategoryModelMaster(request: Request.UpdateCategoryModelMasterRequest): Promise<Result.UpdateCategoryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1616,7 +1618,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCategoryModelMaster(request: Request.DeleteCategoryModelMasterRequest): Promise<Result.DeleteCategoryModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{category}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1643,7 +1645,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1669,7 +1671,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1695,7 +1697,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentModelMaster(request: Request.PreUpdateCurrentModelMasterRequest): Promise<Result.PreUpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1725,7 +1727,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1758,7 +1760,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2ChatRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

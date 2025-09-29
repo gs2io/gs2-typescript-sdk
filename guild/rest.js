@@ -26,8 +26,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2GuildRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,10 +35,10 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'namePrefix': String((_c = request.getNamePrefix()) !== null && _c !== void 0 ? _c : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -50,8 +50,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -59,94 +59,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'changeNotification': (_g = (_f = request.getChangeNotification()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'joinNotification': (_j = (_h = request.getJoinNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'leaveNotification': (_l = (_k = request.getLeaveNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'changeMemberNotification': (_o = (_m = request.getChangeMemberNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'receiveRequestNotification': (_q = (_p = request.getReceiveRequestNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'removeRequestNotification': (_s = (_r = request.getRemoveRequestNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'createGuildScript': (_u = (_t = request.getCreateGuildScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'updateGuildScript': (_w = (_v = request.getUpdateGuildScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'joinGuildScript': (_y = (_x = request.getJoinGuildScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'receiveJoinRequestScript': (_0 = (_z = request.getReceiveJoinRequestScript()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
-            'leaveGuildScript': (_2 = (_1 = request.getLeaveGuildScript()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
-            'changeRoleScript': (_4 = (_3 = request.getChangeRoleScript()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
-            'deleteGuildScript': (_6 = (_5 = request.getDeleteGuildScript()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
-            'logSetting': (_8 = (_7 = request.getLogSetting()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
-        };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
-        });
-    };
-    Gs2GuildRestClient.prototype.getNamespaceStatus = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-            .replace('{service}', 'guild')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2GuildRestClient.prototype.getNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-            .replace('{service}', 'guild')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2GuildRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-            .replace('{service}', 'guild')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'changeNotification': (_h = (_g = request.getChangeNotification()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
@@ -164,6 +78,92 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'deleteGuildScript': (_7 = (_6 = request.getDeleteGuildScript()) === null || _6 === void 0 ? void 0 : _6.toDict()) !== null && _7 !== void 0 ? _7 : null,
             'logSetting': (_9 = (_8 = request.getLogSetting()) === null || _8 === void 0 ? void 0 : _8.toDict()) !== null && _9 !== void 0 ? _9 : null,
         };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2GuildRestClient.prototype.getNamespaceStatus = function (request) {
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2GuildRestClient.prototype.getNamespace = function (request) {
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2GuildRestClient.prototype.updateNamespace = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'changeNotification': (_j = (_h = request.getChangeNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'joinNotification': (_l = (_k = request.getJoinNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'leaveNotification': (_o = (_m = request.getLeaveNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'changeMemberNotification': (_q = (_p = request.getChangeMemberNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'receiveRequestNotification': (_s = (_r = request.getReceiveRequestNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'removeRequestNotification': (_u = (_t = request.getRemoveRequestNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'createGuildScript': (_w = (_v = request.getCreateGuildScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'updateGuildScript': (_y = (_x = request.getUpdateGuildScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'joinGuildScript': (_0 = (_z = request.getJoinGuildScript()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'receiveJoinRequestScript': (_2 = (_1 = request.getReceiveJoinRequestScript()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
+            'leaveGuildScript': (_4 = (_3 = request.getLeaveGuildScript()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
+            'changeRoleScript': (_6 = (_5 = request.getChangeRoleScript()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
+            'deleteGuildScript': (_8 = (_7 = request.getDeleteGuildScript()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
+            'logSetting': (_10 = (_9 = request.getLogSetting()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
+        };
         return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
@@ -178,17 +178,17 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -200,8 +200,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -209,7 +209,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -221,20 +221,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -250,20 +250,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -275,20 +275,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -304,20 +304,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -329,20 +329,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -358,21 +358,21 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -388,21 +388,21 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{uploadToken}', String((_c = request.getUploadToken()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{uploadToken}', String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -414,20 +414,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeGuildModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -439,29 +439,29 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'defaultMaximumMemberCount': (_g = request.getDefaultMaximumMemberCount()) !== null && _g !== void 0 ? _g : null,
-            'maximumMemberCount': (_h = request.getMaximumMemberCount()) !== null && _h !== void 0 ? _h : null,
-            'inactivityPeriodDays': (_j = request.getInactivityPeriodDays()) !== null && _j !== void 0 ? _j : null,
-            'roles': (_l = (_k = request.getRoles()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
-            'guildMasterRole': (_m = request.getGuildMasterRole()) !== null && _m !== void 0 ? _m : null,
-            'guildMemberDefaultRole': (_o = request.getGuildMemberDefaultRole()) !== null && _o !== void 0 ? _o : null,
-            'rejoinCoolTimeMinutes': (_p = request.getRejoinCoolTimeMinutes()) !== null && _p !== void 0 ? _p : null,
-            'maxConcurrentJoinGuilds': (_q = request.getMaxConcurrentJoinGuilds()) !== null && _q !== void 0 ? _q : null,
-            'maxConcurrentGuildMasterCount': (_r = request.getMaxConcurrentGuildMasterCount()) !== null && _r !== void 0 ? _r : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'defaultMaximumMemberCount': (_h = request.getDefaultMaximumMemberCount()) !== null && _h !== void 0 ? _h : null,
+            'maximumMemberCount': (_j = request.getMaximumMemberCount()) !== null && _j !== void 0 ? _j : null,
+            'inactivityPeriodDays': (_k = request.getInactivityPeriodDays()) !== null && _k !== void 0 ? _k : null,
+            'roles': (_m = (_l = request.getRoles()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'guildMasterRole': (_o = request.getGuildMasterRole()) !== null && _o !== void 0 ? _o : null,
+            'guildMemberDefaultRole': (_p = request.getGuildMemberDefaultRole()) !== null && _p !== void 0 ? _p : null,
+            'rejoinCoolTimeMinutes': (_q = request.getRejoinCoolTimeMinutes()) !== null && _q !== void 0 ? _q : null,
+            'maxConcurrentJoinGuilds': (_r = request.getMaxConcurrentJoinGuilds()) !== null && _r !== void 0 ? _r : null,
+            'maxConcurrentGuildMasterCount': (_s = request.getMaxConcurrentGuildMasterCount()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -477,18 +477,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -500,29 +500,29 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'defaultMaximumMemberCount': (_h = request.getDefaultMaximumMemberCount()) !== null && _h !== void 0 ? _h : null,
-            'maximumMemberCount': (_j = request.getMaximumMemberCount()) !== null && _j !== void 0 ? _j : null,
-            'inactivityPeriodDays': (_k = request.getInactivityPeriodDays()) !== null && _k !== void 0 ? _k : null,
-            'roles': (_m = (_l = request.getRoles()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
-            'guildMasterRole': (_o = request.getGuildMasterRole()) !== null && _o !== void 0 ? _o : null,
-            'guildMemberDefaultRole': (_p = request.getGuildMemberDefaultRole()) !== null && _p !== void 0 ? _p : null,
-            'rejoinCoolTimeMinutes': (_q = request.getRejoinCoolTimeMinutes()) !== null && _q !== void 0 ? _q : null,
-            'maxConcurrentJoinGuilds': (_r = request.getMaxConcurrentJoinGuilds()) !== null && _r !== void 0 ? _r : null,
-            'maxConcurrentGuildMasterCount': (_s = request.getMaxConcurrentGuildMasterCount()) !== null && _s !== void 0 ? _s : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'defaultMaximumMemberCount': (_j = request.getDefaultMaximumMemberCount()) !== null && _j !== void 0 ? _j : null,
+            'maximumMemberCount': (_k = request.getMaximumMemberCount()) !== null && _k !== void 0 ? _k : null,
+            'inactivityPeriodDays': (_l = request.getInactivityPeriodDays()) !== null && _l !== void 0 ? _l : null,
+            'roles': (_o = (_m = request.getRoles()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'guildMasterRole': (_p = request.getGuildMasterRole()) !== null && _p !== void 0 ? _p : null,
+            'guildMemberDefaultRole': (_q = request.getGuildMemberDefaultRole()) !== null && _q !== void 0 ? _q : null,
+            'rejoinCoolTimeMinutes': (_r = request.getRejoinCoolTimeMinutes()) !== null && _r !== void 0 ? _r : null,
+            'maxConcurrentJoinGuilds': (_s = request.getMaxConcurrentJoinGuilds()) !== null && _s !== void 0 ? _s : null,
+            'maxConcurrentGuildMasterCount': (_t = request.getMaxConcurrentGuildMasterCount()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -538,18 +538,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -561,17 +561,17 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeGuildModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -583,18 +583,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getGuildModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -606,35 +606,35 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.searchGuilds = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/search')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'displayName': (_h = request.getDisplayName()) !== null && _h !== void 0 ? _h : null,
-            'attributes1': (_j = request.getAttributes1()) !== null && _j !== void 0 ? _j : null,
-            'attributes2': (_k = request.getAttributes2()) !== null && _k !== void 0 ? _k : null,
-            'attributes3': (_l = request.getAttributes3()) !== null && _l !== void 0 ? _l : null,
-            'attributes4': (_m = request.getAttributes4()) !== null && _m !== void 0 ? _m : null,
-            'attributes5': (_o = request.getAttributes5()) !== null && _o !== void 0 ? _o : null,
-            'joinPolicies': (_p = request.getJoinPolicies()) !== null && _p !== void 0 ? _p : null,
-            'includeFullMembersGuild': (_q = request.getIncludeFullMembersGuild()) !== null && _q !== void 0 ? _q : null,
-            'orderBy': (_r = request.getOrderBy()) !== null && _r !== void 0 ? _r : null,
-            'pageToken': (_s = request.getPageToken()) !== null && _s !== void 0 ? _s : null,
-            'limit': (_t = request.getLimit()) !== null && _t !== void 0 ? _t : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'displayName': (_j = request.getDisplayName()) !== null && _j !== void 0 ? _j : null,
+            'attributes1': (_k = request.getAttributes1()) !== null && _k !== void 0 ? _k : null,
+            'attributes2': (_l = request.getAttributes2()) !== null && _l !== void 0 ? _l : null,
+            'attributes3': (_m = request.getAttributes3()) !== null && _m !== void 0 ? _m : null,
+            'attributes4': (_o = request.getAttributes4()) !== null && _o !== void 0 ? _o : null,
+            'attributes5': (_p = request.getAttributes5()) !== null && _p !== void 0 ? _p : null,
+            'joinPolicies': (_q = request.getJoinPolicies()) !== null && _q !== void 0 ? _q : null,
+            'includeFullMembersGuild': (_r = request.getIncludeFullMembersGuild()) !== null && _r !== void 0 ? _r : null,
+            'orderBy': (_s = request.getOrderBy()) !== null && _s !== void 0 ? _s : null,
+            'pageToken': (_t = request.getPageToken()) !== null && _t !== void 0 ? _t : null,
+            'limit': (_u = request.getLimit()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -650,36 +650,36 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.searchGuildsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/search')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'displayName': (_k = request.getDisplayName()) !== null && _k !== void 0 ? _k : null,
-            'attributes1': (_l = request.getAttributes1()) !== null && _l !== void 0 ? _l : null,
-            'attributes2': (_m = request.getAttributes2()) !== null && _m !== void 0 ? _m : null,
-            'attributes3': (_o = request.getAttributes3()) !== null && _o !== void 0 ? _o : null,
-            'attributes4': (_p = request.getAttributes4()) !== null && _p !== void 0 ? _p : null,
-            'attributes5': (_q = request.getAttributes5()) !== null && _q !== void 0 ? _q : null,
-            'joinPolicies': (_r = request.getJoinPolicies()) !== null && _r !== void 0 ? _r : null,
-            'includeFullMembersGuild': (_s = request.getIncludeFullMembersGuild()) !== null && _s !== void 0 ? _s : null,
-            'orderBy': (_t = request.getOrderBy()) !== null && _t !== void 0 ? _t : null,
-            'pageToken': (_u = request.getPageToken()) !== null && _u !== void 0 ? _u : null,
-            'limit': (_v = request.getLimit()) !== null && _v !== void 0 ? _v : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'displayName': (_l = request.getDisplayName()) !== null && _l !== void 0 ? _l : null,
+            'attributes1': (_m = request.getAttributes1()) !== null && _m !== void 0 ? _m : null,
+            'attributes2': (_o = request.getAttributes2()) !== null && _o !== void 0 ? _o : null,
+            'attributes3': (_p = request.getAttributes3()) !== null && _p !== void 0 ? _p : null,
+            'attributes4': (_q = request.getAttributes4()) !== null && _q !== void 0 ? _q : null,
+            'attributes5': (_r = request.getAttributes5()) !== null && _r !== void 0 ? _r : null,
+            'joinPolicies': (_s = request.getJoinPolicies()) !== null && _s !== void 0 ? _s : null,
+            'includeFullMembersGuild': (_t = request.getIncludeFullMembersGuild()) !== null && _t !== void 0 ? _t : null,
+            'orderBy': (_u = request.getOrderBy()) !== null && _u !== void 0 ? _u : null,
+            'pageToken': (_v = request.getPageToken()) !== null && _v !== void 0 ? _v : null,
+            'limit': (_w = request.getLimit()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -695,35 +695,35 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createGuild = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'displayName': (_h = request.getDisplayName()) !== null && _h !== void 0 ? _h : null,
-            'attribute1': (_j = request.getAttribute1()) !== null && _j !== void 0 ? _j : null,
-            'attribute2': (_k = request.getAttribute2()) !== null && _k !== void 0 ? _k : null,
-            'attribute3': (_l = request.getAttribute3()) !== null && _l !== void 0 ? _l : null,
-            'attribute4': (_m = request.getAttribute4()) !== null && _m !== void 0 ? _m : null,
-            'attribute5': (_o = request.getAttribute5()) !== null && _o !== void 0 ? _o : null,
-            'metadata': (_p = request.getMetadata()) !== null && _p !== void 0 ? _p : null,
-            'memberMetadata': (_q = request.getMemberMetadata()) !== null && _q !== void 0 ? _q : null,
-            'joinPolicy': (_r = request.getJoinPolicy()) !== null && _r !== void 0 ? _r : null,
-            'customRoles': (_t = (_s = request.getCustomRoles()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
-            'guildMemberDefaultRole': (_u = request.getGuildMemberDefaultRole()) !== null && _u !== void 0 ? _u : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'displayName': (_j = request.getDisplayName()) !== null && _j !== void 0 ? _j : null,
+            'attribute1': (_k = request.getAttribute1()) !== null && _k !== void 0 ? _k : null,
+            'attribute2': (_l = request.getAttribute2()) !== null && _l !== void 0 ? _l : null,
+            'attribute3': (_m = request.getAttribute3()) !== null && _m !== void 0 ? _m : null,
+            'attribute4': (_o = request.getAttribute4()) !== null && _o !== void 0 ? _o : null,
+            'attribute5': (_p = request.getAttribute5()) !== null && _p !== void 0 ? _p : null,
+            'metadata': (_q = request.getMetadata()) !== null && _q !== void 0 ? _q : null,
+            'memberMetadata': (_r = request.getMemberMetadata()) !== null && _r !== void 0 ? _r : null,
+            'joinPolicy': (_s = request.getJoinPolicy()) !== null && _s !== void 0 ? _s : null,
+            'customRoles': (_u = (_t = request.getCustomRoles()) === null || _t === void 0 ? void 0 : _t.map(function (item) { return item.toDict(); })) !== null && _u !== void 0 ? _u : null,
+            'guildMemberDefaultRole': (_v = request.getGuildMemberDefaultRole()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -739,36 +739,36 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createGuildByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'displayName': (_k = request.getDisplayName()) !== null && _k !== void 0 ? _k : null,
-            'attribute1': (_l = request.getAttribute1()) !== null && _l !== void 0 ? _l : null,
-            'attribute2': (_m = request.getAttribute2()) !== null && _m !== void 0 ? _m : null,
-            'attribute3': (_o = request.getAttribute3()) !== null && _o !== void 0 ? _o : null,
-            'attribute4': (_p = request.getAttribute4()) !== null && _p !== void 0 ? _p : null,
-            'attribute5': (_q = request.getAttribute5()) !== null && _q !== void 0 ? _q : null,
-            'metadata': (_r = request.getMetadata()) !== null && _r !== void 0 ? _r : null,
-            'memberMetadata': (_s = request.getMemberMetadata()) !== null && _s !== void 0 ? _s : null,
-            'joinPolicy': (_t = request.getJoinPolicy()) !== null && _t !== void 0 ? _t : null,
-            'customRoles': (_v = (_u = request.getCustomRoles()) === null || _u === void 0 ? void 0 : _u.map(function (item) { return item.toDict(); })) !== null && _v !== void 0 ? _v : null,
-            'guildMemberDefaultRole': (_w = request.getGuildMemberDefaultRole()) !== null && _w !== void 0 ? _w : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'displayName': (_l = request.getDisplayName()) !== null && _l !== void 0 ? _l : null,
+            'attribute1': (_m = request.getAttribute1()) !== null && _m !== void 0 ? _m : null,
+            'attribute2': (_o = request.getAttribute2()) !== null && _o !== void 0 ? _o : null,
+            'attribute3': (_p = request.getAttribute3()) !== null && _p !== void 0 ? _p : null,
+            'attribute4': (_q = request.getAttribute4()) !== null && _q !== void 0 ? _q : null,
+            'attribute5': (_r = request.getAttribute5()) !== null && _r !== void 0 ? _r : null,
+            'metadata': (_s = request.getMetadata()) !== null && _s !== void 0 ? _s : null,
+            'memberMetadata': (_t = request.getMemberMetadata()) !== null && _t !== void 0 ? _t : null,
+            'joinPolicy': (_u = request.getJoinPolicy()) !== null && _u !== void 0 ? _u : null,
+            'customRoles': (_w = (_v = request.getCustomRoles()) === null || _v === void 0 ? void 0 : _v.map(function (item) { return item.toDict(); })) !== null && _w !== void 0 ? _w : null,
+            'guildMemberDefaultRole': (_x = request.getGuildMemberDefaultRole()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -784,22 +784,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getGuild = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -811,23 +811,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getGuildByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{guildName}', String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{guildName}', String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -839,59 +839,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateGuild = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
-        }
-        var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'displayName': (_h = request.getDisplayName()) !== null && _h !== void 0 ? _h : null,
-            'attribute1': (_j = request.getAttribute1()) !== null && _j !== void 0 ? _j : null,
-            'attribute2': (_k = request.getAttribute2()) !== null && _k !== void 0 ? _k : null,
-            'attribute3': (_l = request.getAttribute3()) !== null && _l !== void 0 ? _l : null,
-            'attribute4': (_m = request.getAttribute4()) !== null && _m !== void 0 ? _m : null,
-            'attribute5': (_o = request.getAttribute5()) !== null && _o !== void 0 ? _o : null,
-            'metadata': (_p = request.getMetadata()) !== null && _p !== void 0 ? _p : null,
-            'joinPolicy': (_q = request.getJoinPolicy()) !== null && _q !== void 0 ? _q : null,
-            'customRoles': (_s = (_r = request.getCustomRoles()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
-            'guildMemberDefaultRole': (_t = request.getGuildMemberDefaultRole()) !== null && _t !== void 0 ? _t : null,
-        };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
-        });
-    };
-    Gs2GuildRestClient.prototype.updateGuildByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
-            .replace('{service}', 'guild')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildName}', String((_c = request.getGuildName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
@@ -912,6 +871,47 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
+            return Result.UpdateGuildResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2GuildRestClient.prototype.updateGuildByGuildName = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildName}', String((_d = request.getGuildName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'displayName': (_k = request.getDisplayName()) !== null && _k !== void 0 ? _k : null,
+            'attribute1': (_l = request.getAttribute1()) !== null && _l !== void 0 ? _l : null,
+            'attribute2': (_m = request.getAttribute2()) !== null && _m !== void 0 ? _m : null,
+            'attribute3': (_o = request.getAttribute3()) !== null && _o !== void 0 ? _o : null,
+            'attribute4': (_p = request.getAttribute4()) !== null && _p !== void 0 ? _p : null,
+            'attribute5': (_q = request.getAttribute5()) !== null && _q !== void 0 ? _q : null,
+            'metadata': (_r = request.getMetadata()) !== null && _r !== void 0 ? _r : null,
+            'joinPolicy': (_s = request.getJoinPolicy()) !== null && _s !== void 0 ? _s : null,
+            'customRoles': (_u = (_t = request.getCustomRoles()) === null || _t === void 0 ? void 0 : _t.map(function (item) { return item.toDict(); })) !== null && _u !== void 0 ? _u : null,
+            'guildMemberDefaultRole': (_v = request.getGuildMemberDefaultRole()) !== null && _v !== void 0 ? _v : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
             return Result.UpdateGuildByGuildNameResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
@@ -923,25 +923,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteMember = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -953,23 +953,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteMemberByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{targetUserId}', String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTargetUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{targetUserId}', String((_h = request.getTargetUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getTargetUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -985,26 +985,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateMemberRole = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}/role')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/member/{targetUserId}/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'roleName': (_k = request.getRoleName()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'roleName': (_l = request.getRoleName()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1020,24 +1020,24 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateMemberRoleByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}/role')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{targetUserId}/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{targetUserId}', String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTargetUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{targetUserId}', String((_h = request.getTargetUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getTargetUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'roleName': (_l = request.getRoleName()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'roleName': (_m = request.getRoleName()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1053,25 +1053,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.batchUpdateMemberRole = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'members': (_j = (_h = request.getMembers()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'members': (_k = (_j = request.getMembers()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1087,23 +1087,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.batchUpdateMemberRoleByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'members': (_k = (_j = request.getMembers()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'members': (_l = (_k = request.getMembers()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1119,24 +1119,24 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteGuild = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1148,22 +1148,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteGuildByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1175,23 +1175,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.increaseMaximumCurrentMaximumMemberCountByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/increase')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/increase')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1207,25 +1207,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCount = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/decrease')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/decrease')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'value': (_h = request.getValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1241,23 +1241,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCountByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/decrease')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/decrease')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1273,27 +1273,27 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCount = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/verify')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'verifyType': (_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : null,
-            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
-            'multiplyValueSpecifyingQuantity': (_k = request.getMultiplyValueSpecifyingQuantity()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'verifyType': (_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : null,
+            'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
+            'multiplyValueSpecifyingQuantity': (_l = request.getMultiplyValueSpecifyingQuantity()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1309,25 +1309,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCountByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/verify')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'verifyType': (_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : null,
-            'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
-            'multiplyValueSpecifyingQuantity': (_l = request.getMultiplyValueSpecifyingQuantity()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'verifyType': (_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : null,
+            'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1343,26 +1343,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMember = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/me/verify')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/me/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'verifyType': (_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'verifyType': (_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1378,27 +1378,27 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMemberByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{userId}/verify')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/member/{userId}/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'verifyType': (_m = request.getVerifyType()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'verifyType': (_o = request.getVerifyType()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1414,23 +1414,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.setMaximumCurrentMaximumMemberCountByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/currentMaximumMemberCount')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildName}', String((_c = request.getGuildName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildName}', String((_d = request.getGuildName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1446,25 +1446,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.assume = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}/assume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/{guildName}/assume')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1480,26 +1480,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.assumeByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}/assume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/{guildName}/assume')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{guildName}', String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{guildName}', String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1515,8 +1515,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.increaseMaximumCurrentMaximumMemberCountByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/add')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/add')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1524,9 +1524,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1542,8 +1542,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCountByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/sub')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/sub')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1551,9 +1551,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1569,8 +1569,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.setMaximumCurrentMaximumMemberCountByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/set')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1578,9 +1578,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1596,8 +1596,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCountByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/currentMaximumMemberCount/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1605,9 +1605,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1623,8 +1623,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMemberByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/member/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/guild/member/verify')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1632,9 +1632,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1650,23 +1650,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeJoinedGuilds = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'guildModelName': String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'guildModelName': String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1678,24 +1678,24 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeJoinedGuildsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'guildModelName': String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'guildModelName': String((_h = request.getGuildModelName()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1707,22 +1707,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getJoinedGuild = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1734,23 +1734,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getJoinedGuildByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{guildName}', String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{guildName}', String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1762,26 +1762,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateMemberMetadata = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/me/metadata')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/me/metadata')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'metadata': (_l = request.getMetadata()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1797,27 +1797,27 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateMemberMetadataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/{userId}/metadata')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/guild/{guildName}/member/{userId}/metadata')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'metadata': (_m = request.getMetadata()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'metadata': (_o = request.getMetadata()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1833,25 +1833,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.withdrawal = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1863,26 +1863,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.withdrawalByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/joined/{guildModelName}/{guildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{guildName}', String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{guildName}', String((_h = request.getGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1894,21 +1894,21 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getLastGuildMasterActivity = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/activity/guildMaster/last')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/activity/guildMaster/last')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1920,19 +1920,19 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getLastGuildMasterActivityByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/activity/guildMaster/last')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/activity/guildMaster/last')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1944,24 +1944,24 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.promoteSeniorMember = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/promote')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/promote')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1977,22 +1977,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.promoteSeniorMemberByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/promote')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/promote')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2008,17 +2008,17 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.exportMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2030,17 +2030,17 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getCurrentGuildMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2052,17 +2052,17 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.preUpdateCurrentGuildMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2078,20 +2078,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateCurrentGuildMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'mode': (_d = request.getMode()) !== null && _d !== void 0 ? _d : null,
-            'settings': (_e = request.getSettings()) !== null && _e !== void 0 ? _e : null,
-            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'mode': (_e = request.getMode()) !== null && _e !== void 0 ? _e : null,
+            'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
+            'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2107,18 +2107,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateCurrentGuildMasterFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2134,23 +2134,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeReceiveRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2162,21 +2162,21 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeReceiveRequestsByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2188,22 +2188,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getReceiveRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2215,20 +2215,20 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getReceiveRequestByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{fromUserId}', String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{fromUserId}', String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getFromUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2240,25 +2240,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.acceptRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2274,23 +2274,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.acceptRequestByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{fromUserId}', String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{fromUserId}', String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getFromUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2306,47 +2306,19 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.rejectRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/inbox/{fromUserId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
-        }
-        var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-        };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.RejectRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2GuildRestClient.prototype.rejectRequestByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
-            .replace('{service}', 'guild')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{fromUserId}', String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
@@ -2358,29 +2330,57 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             params: params,
             headers: headers,
         }).then(function (response) {
+            return Result.RejectRequestResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2GuildRestClient.prototype.rejectRequestByGuildName = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/inbox/{fromUserId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{fromUserId}', String((_h = request.getFromUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getFromUserId()) !== null && _j !== void 0 ? _j : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+        }
+        var params = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
             return Result.RejectRequestByGuildNameResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });
     };
     Gs2GuildRestClient.prototype.describeSendRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2392,24 +2392,24 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeSendRequestsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2421,22 +2421,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getSendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetGuildName}', String((_e = request.getTargetGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetGuildName}', String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2448,23 +2448,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getSendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{targetGuildName}', String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{targetGuildName}', String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getTargetGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2476,26 +2476,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.sendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetGuildName}', String((_e = request.getTargetGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetGuildName}', String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'metadata': (_l = request.getMetadata()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2511,27 +2511,27 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.sendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{targetGuildName}', String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{targetGuildName}', String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getTargetGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'metadata': (_m = request.getMetadata()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'metadata': (_o = request.getMetadata()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2547,25 +2547,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetGuildName}', String((_e = request.getTargetGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetGuildName}', String((_f = request.getTargetGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2577,26 +2577,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/guild/{guildModelName}/{targetGuildName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildModelName}', String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{targetGuildName}', String((_g = request.getTargetGuildName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildModelName}', String((_f = request.getGuildModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{targetGuildName}', String((_h = request.getTargetGuildName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getTargetGuildName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2608,23 +2608,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeIgnoreUsers = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2636,21 +2636,21 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.describeIgnoreUsersByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2662,22 +2662,22 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getIgnoreUser = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2689,23 +2689,23 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.getIgnoreUserByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2717,25 +2717,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.addIgnoreUser = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2751,26 +2751,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.addIgnoreUserByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -2786,25 +2786,25 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteIgnoreUser = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2816,26 +2816,26 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.deleteIgnoreUserByGuildName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2GuildRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{guildModelName}', String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getGuildModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guildName}', String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuildName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2846,6 +2846,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2GuildRestClient.ENDPOINT_HOST = null;
     return Gs2GuildRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2GuildRestClient;

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2QuestRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
     
@@ -94,7 +96,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -120,7 +122,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -146,7 +148,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -184,7 +186,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -210,7 +212,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
     
@@ -235,7 +237,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -268,7 +270,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -297,7 +299,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -330,7 +332,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -359,7 +361,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -392,7 +394,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -426,7 +428,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -456,7 +458,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestGroupModelMasters(request: Request.DescribeQuestGroupModelMastersRequest): Promise<Result.DescribeQuestGroupModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -485,7 +487,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public createQuestGroupModelMaster(request: Request.CreateQuestGroupModelMasterRequest): Promise<Result.CreateQuestGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -519,7 +521,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestGroupModelMaster(request: Request.GetQuestGroupModelMasterRequest): Promise<Result.GetQuestGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -546,7 +548,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public updateQuestGroupModelMaster(request: Request.UpdateQuestGroupModelMasterRequest): Promise<Result.UpdateQuestGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -580,7 +582,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteQuestGroupModelMaster(request: Request.DeleteQuestGroupModelMasterRequest): Promise<Result.DeleteQuestGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -607,7 +609,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestModelMasters(request: Request.DescribeQuestModelMastersRequest): Promise<Result.DescribeQuestModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -637,7 +639,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public createQuestModelMaster(request: Request.CreateQuestModelMasterRequest): Promise<Result.CreateQuestModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -678,7 +680,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestModelMaster(request: Request.GetQuestModelMasterRequest): Promise<Result.GetQuestModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -706,7 +708,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public updateQuestModelMaster(request: Request.UpdateQuestModelMasterRequest): Promise<Result.UpdateQuestModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -747,7 +749,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteQuestModelMaster(request: Request.DeleteQuestModelMasterRequest): Promise<Result.DeleteQuestModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -775,7 +777,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -801,7 +803,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentQuestMaster(request: Request.GetCurrentQuestMasterRequest): Promise<Result.GetCurrentQuestMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -827,7 +829,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentQuestMaster(request: Request.PreUpdateCurrentQuestMasterRequest): Promise<Result.PreUpdateCurrentQuestMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -857,7 +859,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentQuestMaster(request: Request.UpdateCurrentQuestMasterRequest): Promise<Result.UpdateCurrentQuestMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -890,7 +892,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentQuestMasterFromGitHub(request: Request.UpdateCurrentQuestMasterFromGitHubRequest): Promise<Result.UpdateCurrentQuestMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -921,7 +923,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeProgressesByUserId(request: Request.DescribeProgressesByUserIdRequest): Promise<Result.DescribeProgressesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -953,7 +955,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public createProgressByUserId(request: Request.CreateProgressByUserIdRequest): Promise<Result.CreateProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -993,7 +995,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1022,7 +1024,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getProgressByUserId(request: Request.GetProgressByUserIdRequest): Promise<Result.GetProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1052,7 +1054,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public start(request: Request.StartRequest): Promise<Result.StartResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/group/{questGroupName}/quest/{questName}/start')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/group/{questGroupName}/quest/{questName}/start')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1092,7 +1094,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public startByUserId(request: Request.StartByUserIdRequest): Promise<Result.StartByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/group/{questGroupName}/quest/{questName}/start')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/group/{questGroupName}/quest/{questName}/start')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1133,7 +1135,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public end(request: Request.EndRequest): Promise<Result.EndResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1172,7 +1174,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public endByUserId(request: Request.EndByUserIdRequest): Promise<Result.EndByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1212,7 +1214,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgress(request: Request.DeleteProgressRequest): Promise<Result.DeleteProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1244,7 +1246,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgressByUserId(request: Request.DeleteProgressByUserIdRequest): Promise<Result.DeleteProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1277,7 +1279,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public createProgressByStampSheet(request: Request.CreateProgressByStampSheetRequest): Promise<Result.CreateProgressByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/progress/create')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/progress/create')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
     
@@ -1308,7 +1310,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgressByStampTask(request: Request.DeleteProgressByStampTaskRequest): Promise<Result.DeleteProgressByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/progress/delete')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/progress/delete')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
     
@@ -1339,7 +1341,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeCompletedQuestLists(request: Request.DescribeCompletedQuestListsRequest): Promise<Result.DescribeCompletedQuestListsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/completed')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/completed')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1370,7 +1372,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeCompletedQuestListsByUserId(request: Request.DescribeCompletedQuestListsByUserIdRequest): Promise<Result.DescribeCompletedQuestListsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1402,7 +1404,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getCompletedQuestList(request: Request.GetCompletedQuestListRequest): Promise<Result.GetCompletedQuestListResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/completed/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/completed/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1432,7 +1434,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getCompletedQuestListByUserId(request: Request.GetCompletedQuestListByUserIdRequest): Promise<Result.GetCompletedQuestListByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1463,7 +1465,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCompletedQuestListByUserId(request: Request.DeleteCompletedQuestListByUserIdRequest): Promise<Result.DeleteCompletedQuestListByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/completed/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1497,7 +1499,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestGroupModels(request: Request.DescribeQuestGroupModelsRequest): Promise<Result.DescribeQuestGroupModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1523,7 +1525,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestGroupModel(request: Request.GetQuestGroupModelRequest): Promise<Result.GetQuestGroupModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1550,7 +1552,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestModels(request: Request.DescribeQuestModelsRequest): Promise<Result.DescribeQuestModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}/quest')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}/quest')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1577,7 +1579,7 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestModel(request: Request.GetQuestModelRequest): Promise<Result.GetQuestModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}/quest/{questName}')
+        const url = (Gs2QuestRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{questGroupName}/quest/{questName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

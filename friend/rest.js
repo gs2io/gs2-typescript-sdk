@@ -26,8 +26,8 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2FriendRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,10 +35,10 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'namePrefix': String((_c = request.getNamePrefix()) !== null && _c !== void 0 ? _c : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -50,8 +50,8 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -59,95 +59,8 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'followScript': (_g = (_f = request.getFollowScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'unfollowScript': (_j = (_h = request.getUnfollowScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'sendRequestScript': (_l = (_k = request.getSendRequestScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'cancelRequestScript': (_o = (_m = request.getCancelRequestScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'acceptRequestScript': (_q = (_p = request.getAcceptRequestScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'rejectRequestScript': (_s = (_r = request.getRejectRequestScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'deleteFriendScript': (_u = (_t = request.getDeleteFriendScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'updateProfileScript': (_w = (_v = request.getUpdateProfileScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'followNotification': (_y = (_x = request.getFollowNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'receiveRequestNotification': (_0 = (_z = request.getReceiveRequestNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
-            'cancelRequestNotification': (_2 = (_1 = request.getCancelRequestNotification()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
-            'acceptRequestNotification': (_4 = (_3 = request.getAcceptRequestNotification()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
-            'rejectRequestNotification': (_6 = (_5 = request.getRejectRequestNotification()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
-            'deleteFriendNotification': (_8 = (_7 = request.getDeleteFriendNotification()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
-            'logSetting': (_10 = (_9 = request.getLogSetting()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
-        };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
-        });
-    };
-    Gs2FriendRestClient.prototype.getNamespaceStatus = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-            .replace('{service}', 'friend')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2FriendRestClient.prototype.getNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-            .replace('{service}', 'friend')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2FriendRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-            .replace('{service}', 'friend')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'followScript': (_h = (_g = request.getFollowScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
@@ -166,6 +79,93 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             'deleteFriendNotification': (_9 = (_8 = request.getDeleteFriendNotification()) === null || _8 === void 0 ? void 0 : _8.toDict()) !== null && _9 !== void 0 ? _9 : null,
             'logSetting': (_11 = (_10 = request.getLogSetting()) === null || _10 === void 0 ? void 0 : _10.toDict()) !== null && _11 !== void 0 ? _11 : null,
         };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2FriendRestClient.prototype.getNamespaceStatus = function (request) {
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'friend')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FriendRestClient.prototype.getNamespace = function (request) {
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'friend')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FriendRestClient.prototype.updateNamespace = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'friend')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'followScript': (_j = (_h = request.getFollowScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'unfollowScript': (_l = (_k = request.getUnfollowScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'sendRequestScript': (_o = (_m = request.getSendRequestScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'cancelRequestScript': (_q = (_p = request.getCancelRequestScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'acceptRequestScript': (_s = (_r = request.getAcceptRequestScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'rejectRequestScript': (_u = (_t = request.getRejectRequestScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'deleteFriendScript': (_w = (_v = request.getDeleteFriendScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'updateProfileScript': (_y = (_x = request.getUpdateProfileScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'followNotification': (_0 = (_z = request.getFollowNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'receiveRequestNotification': (_2 = (_1 = request.getReceiveRequestNotification()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
+            'cancelRequestNotification': (_4 = (_3 = request.getCancelRequestNotification()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
+            'acceptRequestNotification': (_6 = (_5 = request.getAcceptRequestNotification()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
+            'rejectRequestNotification': (_8 = (_7 = request.getRejectRequestNotification()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
+            'deleteFriendNotification': (_10 = (_9 = request.getDeleteFriendNotification()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
+            'logSetting': (_12 = (_11 = request.getLogSetting()) === null || _11 === void 0 ? void 0 : _11.toDict()) !== null && _12 !== void 0 ? _12 : null,
+        };
         return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
@@ -180,17 +180,17 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -202,8 +202,8 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -211,7 +211,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -223,20 +223,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -252,20 +252,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -277,20 +277,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -306,20 +306,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -331,20 +331,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -360,21 +360,21 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -390,21 +390,21 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{uploadToken}', String((_c = request.getUploadToken()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{uploadToken}', String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -416,20 +416,20 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getProfile = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -441,21 +441,21 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getProfileByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -467,26 +467,26 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.updateProfile = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'publicProfile': (_f = request.getPublicProfile()) !== null && _f !== void 0 ? _f : null,
-            'followerProfile': (_g = request.getFollowerProfile()) !== null && _g !== void 0 ? _g : null,
-            'friendProfile': (_h = request.getFriendProfile()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'publicProfile': (_g = request.getPublicProfile()) !== null && _g !== void 0 ? _g : null,
+            'followerProfile': (_h = request.getFollowerProfile()) !== null && _h !== void 0 ? _h : null,
+            'friendProfile': (_j = request.getFriendProfile()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -502,27 +502,27 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.updateProfileByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'publicProfile': (_h = request.getPublicProfile()) !== null && _h !== void 0 ? _h : null,
-            'followerProfile': (_j = request.getFollowerProfile()) !== null && _j !== void 0 ? _j : null,
-            'friendProfile': (_k = request.getFriendProfile()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'publicProfile': (_j = request.getPublicProfile()) !== null && _j !== void 0 ? _j : null,
+            'followerProfile': (_k = request.getFollowerProfile()) !== null && _k !== void 0 ? _k : null,
+            'friendProfile': (_l = request.getFriendProfile()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -538,24 +538,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteProfileByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -567,8 +567,8 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.updateProfileByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/profile/update')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/profile/update')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -576,9 +576,9 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -594,23 +594,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeFriends = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'withProfile': String((_f = request.getWithProfile()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -622,24 +622,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeFriendsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -651,22 +651,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeBlackList = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -678,23 +678,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeBlackListByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -706,24 +706,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.registerBlackList = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -739,25 +739,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.registerBlackListByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -773,24 +773,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.unregisterBlackList = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -802,25 +802,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.unregisterBlackListByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -832,23 +832,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeFollows = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'withProfile': String((_f = request.getWithProfile()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -860,24 +860,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeFollowsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -889,22 +889,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getFollow = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -916,23 +916,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getFollowByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'withProfile': String((_k = request.getWithProfile()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -944,24 +944,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.follow = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -977,25 +977,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.followByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1011,24 +1011,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.unfollow = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1040,25 +1040,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.unfollowByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1070,22 +1070,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getFriend = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1097,23 +1097,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getFriendByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'withProfile': String((_k = request.getWithProfile()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1125,24 +1125,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.addFriend = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1158,25 +1158,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.addFriendByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1192,24 +1192,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteFriend = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1221,25 +1221,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteFriendByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1251,23 +1251,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeSendRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'withProfile': String((_f = request.getWithProfile()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1279,24 +1279,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeSendRequestsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1308,22 +1308,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getSendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1335,23 +1335,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getSendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'withProfile': String((_k = request.getWithProfile()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1363,24 +1363,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.sendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1396,25 +1396,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.sendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1430,24 +1430,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{targetUserId}', String((_c = request.getTargetUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{targetUserId}', String((_d = request.getTargetUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1459,25 +1459,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.deleteRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{targetUserId}', String((_e = request.getTargetUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{targetUserId}', String((_f = request.getTargetUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getTargetUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1489,23 +1489,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeReceiveRequests = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'withProfile': String((_e = request.getWithProfile()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'withProfile': String((_f = request.getWithProfile()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1517,24 +1517,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.describeReceiveRequestsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1546,22 +1546,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getReceiveRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{fromUserId}', String((_c = request.getFromUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{fromUserId}', String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'withProfile': String((_g = request.getWithProfile()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'withProfile': String((_h = request.getWithProfile()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1573,23 +1573,23 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getReceiveRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'withProfile': String((_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'withProfile': String((_k = request.getWithProfile()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1601,24 +1601,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.acceptRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{fromUserId}', String((_c = request.getFromUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{fromUserId}', String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1634,25 +1634,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.acceptRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1668,24 +1668,24 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.rejectRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{fromUserId}', String((_c = request.getFromUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{fromUserId}', String((_d = request.getFromUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1697,25 +1697,25 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.rejectRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{fromUserId}', String((_e = request.getFromUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{fromUserId}', String((_f = request.getFromUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getFromUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1727,21 +1727,21 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.getPublicProfile = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile/public')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile/public')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1752,6 +1752,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2FriendRestClient.ENDPOINT_HOST = null;
     return Gs2FriendRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2FriendRestClient;

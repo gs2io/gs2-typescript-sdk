@@ -26,8 +26,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2EnchantRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,10 +35,10 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'namePrefix': String((_c = request.getNamePrefix()) !== null && _c !== void 0 ? _c : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -50,8 +50,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -59,11 +59,11 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'logSetting': (_g = (_f = request.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -79,17 +79,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getNamespaceStatus = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -101,17 +101,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -123,20 +123,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -152,17 +152,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.deleteNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -174,8 +174,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -183,7 +183,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -195,20 +195,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -224,20 +224,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -249,20 +249,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -278,20 +278,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -303,20 +303,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -332,21 +332,21 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -362,21 +362,21 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{uploadToken}', String((_c = request.getUploadToken()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{uploadToken}', String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -388,17 +388,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeBalanceParameterModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -410,18 +410,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getBalanceParameterModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -433,20 +433,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeBalanceParameterModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -458,23 +458,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.createBalanceParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'totalValue': (_g = request.getTotalValue()) !== null && _g !== void 0 ? _g : null,
-            'initialValueStrategy': (_h = request.getInitialValueStrategy()) !== null && _h !== void 0 ? _h : null,
-            'parameters': (_k = (_j = request.getParameters()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'totalValue': (_h = request.getTotalValue()) !== null && _h !== void 0 ? _h : null,
+            'initialValueStrategy': (_j = request.getInitialValueStrategy()) !== null && _j !== void 0 ? _j : null,
+            'parameters': (_l = (_k = request.getParameters()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -490,18 +490,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getBalanceParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -513,23 +513,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.updateBalanceParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'totalValue': (_h = request.getTotalValue()) !== null && _h !== void 0 ? _h : null,
-            'initialValueStrategy': (_j = request.getInitialValueStrategy()) !== null && _j !== void 0 ? _j : null,
-            'parameters': (_l = (_k = request.getParameters()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'totalValue': (_j = request.getTotalValue()) !== null && _j !== void 0 ? _j : null,
+            'initialValueStrategy': (_k = request.getInitialValueStrategy()) !== null && _k !== void 0 ? _k : null,
+            'parameters': (_m = (_l = request.getParameters()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -545,18 +545,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.deleteBalanceParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/balance/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -568,17 +568,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeRarityParameterModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -590,18 +590,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getRarityParameterModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -613,19 +613,19 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeRarityParameterModelMasters = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -637,23 +637,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.createRarityParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'maximumParameterCount': (_g = request.getMaximumParameterCount()) !== null && _g !== void 0 ? _g : null,
-            'parameterCounts': (_j = (_h = request.getParameterCounts()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
-            'parameters': (_l = (_k = request.getParameters()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'maximumParameterCount': (_h = request.getMaximumParameterCount()) !== null && _h !== void 0 ? _h : null,
+            'parameterCounts': (_k = (_j = request.getParameterCounts()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'parameters': (_m = (_l = request.getParameters()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -669,18 +669,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getRarityParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -692,23 +692,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.updateRarityParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'maximumParameterCount': (_h = request.getMaximumParameterCount()) !== null && _h !== void 0 ? _h : null,
-            'parameterCounts': (_k = (_j = request.getParameterCounts()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
-            'parameters': (_m = (_l = request.getParameters()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'maximumParameterCount': (_j = request.getMaximumParameterCount()) !== null && _j !== void 0 ? _j : null,
+            'parameterCounts': (_l = (_k = request.getParameterCounts()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'parameters': (_o = (_m = request.getParameters()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -724,18 +724,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.deleteRarityParameterModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/rarity/{parameterName}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -747,17 +747,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.exportMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -769,17 +769,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getCurrentParameterMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -791,17 +791,17 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.preUpdateCurrentParameterMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -817,20 +817,20 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.updateCurrentParameterMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'mode': (_d = request.getMode()) !== null && _d !== void 0 ? _d : null,
-            'settings': (_e = request.getSettings()) !== null && _e !== void 0 ? _e : null,
-            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'mode': (_e = request.getMode()) !== null && _e !== void 0 ? _e : null,
+            'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
+            'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -846,18 +846,18 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.updateCurrentParameterMasterFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -873,23 +873,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeBalanceParameterStatuses = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'parameterName': String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'parameterName': String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -901,24 +901,24 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeBalanceParameterStatusesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'parameterName': String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'parameterName': String((_h = request.getParameterName()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -930,22 +930,22 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getBalanceParameterStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{propertyId}', String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -957,23 +957,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getBalanceParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -985,26 +985,26 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.deleteBalanceParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1016,27 +1016,27 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.reDrawBalanceParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}/redraw')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'fixedParameterNames': (_m = request.getFixedParameterNames()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'fixedParameterNames': (_o = request.getFixedParameterNames()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1052,8 +1052,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.reDrawBalanceParameterStatusByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/balance/redraw')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/balance/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1061,9 +1061,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1079,27 +1079,27 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.setBalanceParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'parameterValues': (_o = (_m = request.getParameterValues()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'parameterValues': (_p = (_o = request.getParameterValues()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1115,8 +1115,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.setBalanceParameterStatusByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1124,9 +1124,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1142,23 +1142,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeRarityParameterStatuses = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'parameterName': String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'parameterName': String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : null),
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1170,24 +1170,24 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.describeRarityParameterStatusesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'parameterName': String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'parameterName': String((_h = request.getParameterName()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1199,22 +1199,22 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getRarityParameterStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{propertyId}', String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1226,23 +1226,23 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.getRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1254,26 +1254,26 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.deleteRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1285,27 +1285,27 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.reDrawRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/redraw')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'fixedParameterNames': (_m = request.getFixedParameterNames()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'fixedParameterNames': (_o = request.getFixedParameterNames()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1321,8 +1321,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.reDrawRarityParameterStatusByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/redraw')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/redraw')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1330,9 +1330,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1348,27 +1348,27 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.addRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/add')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/add')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1384,8 +1384,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.addRarityParameterStatusByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/add')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/add')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1393,9 +1393,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1411,29 +1411,29 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.verifyRarityParameterStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{propertyId}', String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'parameterValueName': (_m = request.getParameterValueName()) !== null && _m !== void 0 ? _m : null,
-            'parameterCount': (_o = request.getParameterCount()) !== null && _o !== void 0 ? _o : null,
-            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'parameterValueName': (_o = request.getParameterValueName()) !== null && _o !== void 0 ? _o : null,
+            'parameterCount': (_p = request.getParameterCount()) !== null && _p !== void 0 ? _p : null,
+            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1449,30 +1449,30 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.verifyRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{parameterName}', String((_c = request.getParameterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{verifyType}', String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
         }
         var body = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
-            'parameterValueName': (_p = request.getParameterValueName()) !== null && _p !== void 0 ? _p : null,
-            'parameterCount': (_q = request.getParameterCount()) !== null && _q !== void 0 ? _q : null,
-            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'parameterValueName': (_q = request.getParameterValueName()) !== null && _q !== void 0 ? _q : null,
+            'parameterCount': (_r = request.getParameterCount()) !== null && _r !== void 0 ? _r : null,
+            'multiplyValueSpecifyingQuantity': (_s = request.getMultiplyValueSpecifyingQuantity()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1488,8 +1488,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.verifyRarityParameterStatusByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/verify')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1497,9 +1497,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1515,27 +1515,27 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.setRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'parameterValues': (_o = (_m = request.getParameterValues()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'parameterValues': (_p = (_o = request.getParameterValues()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1551,8 +1551,8 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.setRarityParameterStatusByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1560,9 +1560,9 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1577,6 +1577,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2EnchantRestClient.ENDPOINT_HOST = null;
     return Gs2EnchantRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2EnchantRestClient;

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2MissionRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeCompletes(request: Request.DescribeCompletesRequest): Promise<Result.DescribeCompletesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -59,7 +61,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeCompletesByUserId(request: Request.DescribeCompletesByUserIdRequest): Promise<Result.DescribeCompletesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -91,7 +93,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public complete(request: Request.CompleteRequest): Promise<Result.CompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -130,7 +132,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public completeByUserId(request: Request.CompleteByUserIdRequest): Promise<Result.CompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -170,7 +172,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public batchComplete(request: Request.BatchCompleteRequest): Promise<Result.BatchCompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/any/batch')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/any/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -209,7 +211,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public batchCompleteByUserId(request: Request.BatchCompleteByUserIdRequest): Promise<Result.BatchCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/any/batch')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/any/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -249,7 +251,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/receive')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/receive')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -288,7 +290,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public batchReceiveByUserId(request: Request.BatchReceiveByUserIdRequest): Promise<Result.BatchReceiveByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/any/receive/batch')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/any/receive/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -327,7 +329,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public revertReceiveByUserId(request: Request.RevertReceiveByUserIdRequest): Promise<Result.RevertReceiveByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/revert')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/revert')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -366,7 +368,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -396,7 +398,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -427,7 +429,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public evaluateComplete(request: Request.EvaluateCompleteRequest): Promise<Result.EvaluateCompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/eval')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/eval')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -464,7 +466,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public evaluateCompleteByUserId(request: Request.EvaluateCompleteByUserIdRequest): Promise<Result.EvaluateCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/eval')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/eval')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -502,7 +504,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -536,7 +538,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyComplete(request: Request.VerifyCompleteRequest): Promise<Result.VerifyCompleteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}/verify/{verifyType}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}/verify/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -576,7 +578,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/verify/{verifyType}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/verify/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -617,7 +619,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -648,7 +650,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public batchReceiveByStampTask(request: Request.BatchReceiveByStampTaskRequest): Promise<Result.BatchReceiveByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive/batch')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/receive/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -679,7 +681,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/revert')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/revert')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -710,7 +712,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCompleteByStampTask(request: Request.VerifyCompleteByStampTaskRequest): Promise<Result.VerifyCompleteByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/complete/verify')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/complete/verify')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -741,7 +743,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeCounterModelMasters(request: Request.DescribeCounterModelMastersRequest): Promise<Result.DescribeCounterModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -770,7 +772,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public createCounterModelMaster(request: Request.CreateCounterModelMasterRequest): Promise<Result.CreateCounterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -805,7 +807,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCounterModelMaster(request: Request.GetCounterModelMasterRequest): Promise<Result.GetCounterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -832,7 +834,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateCounterModelMaster(request: Request.UpdateCounterModelMasterRequest): Promise<Result.UpdateCounterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -867,7 +869,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCounterModelMaster(request: Request.DeleteCounterModelMasterRequest): Promise<Result.DeleteCounterModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -894,7 +896,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionGroupModelMasters(request: Request.DescribeMissionGroupModelMastersRequest): Promise<Result.DescribeMissionGroupModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -923,7 +925,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public createMissionGroupModelMaster(request: Request.CreateMissionGroupModelMasterRequest): Promise<Result.CreateMissionGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -963,7 +965,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionGroupModelMaster(request: Request.GetMissionGroupModelMasterRequest): Promise<Result.GetMissionGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -990,7 +992,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateMissionGroupModelMaster(request: Request.UpdateMissionGroupModelMasterRequest): Promise<Result.UpdateMissionGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1030,7 +1032,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMissionGroupModelMaster(request: Request.DeleteMissionGroupModelMasterRequest): Promise<Result.DeleteMissionGroupModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1057,7 +1059,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -1085,7 +1087,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -1124,7 +1126,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1150,7 +1152,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1176,7 +1178,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1215,7 +1217,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1241,7 +1243,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -1266,7 +1268,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1299,7 +1301,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1328,7 +1330,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1361,7 +1363,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1390,7 +1392,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1423,7 +1425,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1457,7 +1459,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -1487,7 +1489,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeCounters(request: Request.DescribeCountersRequest): Promise<Result.DescribeCountersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1518,7 +1520,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1550,7 +1552,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public increaseCounterByUserId(request: Request.IncreaseCounterByUserIdRequest): Promise<Result.IncreaseCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1589,7 +1591,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public setCounterByUserId(request: Request.SetCounterByUserIdRequest): Promise<Result.SetCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1628,7 +1630,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseCounter(request: Request.DecreaseCounterRequest): Promise<Result.DecreaseCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/decrease')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/decrease')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1666,7 +1668,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseCounterByUserId(request: Request.DecreaseCounterByUserIdRequest): Promise<Result.DecreaseCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/decrease')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/decrease')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1705,7 +1707,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1735,7 +1737,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1766,7 +1768,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounterValue(request: Request.VerifyCounterValueRequest): Promise<Result.VerifyCounterValueResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/verify/counter/{verifyType}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/verify/counter/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1809,7 +1811,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounterValueByUserId(request: Request.VerifyCounterValueByUserIdRequest): Promise<Result.VerifyCounterValueByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/verify/counter/{verifyType}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/verify/counter/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1853,7 +1855,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public resetCounter(request: Request.ResetCounterRequest): Promise<Result.ResetCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/reset')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/reset')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1891,7 +1893,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public resetCounterByUserId(request: Request.ResetCounterByUserIdRequest): Promise<Result.ResetCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/reset')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/reset')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1930,7 +1932,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCounter(request: Request.DeleteCounterRequest): Promise<Result.DeleteCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1963,7 +1965,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1997,7 +1999,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public increaseByStampSheet(request: Request.IncreaseByStampSheetRequest): Promise<Result.IncreaseByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/increase')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/increase')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -2028,7 +2030,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public setByStampSheet(request: Request.SetByStampSheetRequest): Promise<Result.SetByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/set')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/set')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -2059,7 +2061,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseByStampTask(request: Request.DecreaseByStampTaskRequest): Promise<Result.DecreaseByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/decrease')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/decrease')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -2090,7 +2092,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public resetByStampTask(request: Request.ResetByStampTaskRequest): Promise<Result.ResetByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/reset')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/reset')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -2121,7 +2123,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounterValueByStampTask(request: Request.VerifyCounterValueByStampTaskRequest): Promise<Result.VerifyCounterValueByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
@@ -2152,7 +2154,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2178,7 +2180,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentMissionMaster(request: Request.GetCurrentMissionMasterRequest): Promise<Result.GetCurrentMissionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2204,7 +2206,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentMissionMaster(request: Request.PreUpdateCurrentMissionMasterRequest): Promise<Result.PreUpdateCurrentMissionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2234,7 +2236,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentMissionMaster(request: Request.UpdateCurrentMissionMasterRequest): Promise<Result.UpdateCurrentMissionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2267,7 +2269,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentMissionMasterFromGitHub(request: Request.UpdateCurrentMissionMasterFromGitHubRequest): Promise<Result.UpdateCurrentMissionMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2298,7 +2300,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeCounterModels(request: Request.DescribeCounterModelsRequest): Promise<Result.DescribeCounterModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2324,7 +2326,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getCounterModel(request: Request.GetCounterModelRequest): Promise<Result.GetCounterModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter/{counterName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2351,7 +2353,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionGroupModels(request: Request.DescribeMissionGroupModelsRequest): Promise<Result.DescribeMissionGroupModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2377,7 +2379,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionGroupModel(request: Request.GetMissionGroupModelRequest): Promise<Result.GetMissionGroupModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2404,7 +2406,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionTaskModels(request: Request.DescribeMissionTaskModelsRequest): Promise<Result.DescribeMissionTaskModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2431,7 +2433,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionTaskModel(request: Request.GetMissionTaskModelRequest): Promise<Result.GetMissionTaskModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2459,7 +2461,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionTaskModelMasters(request: Request.DescribeMissionTaskModelMastersRequest): Promise<Result.DescribeMissionTaskModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2489,7 +2491,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public createMissionTaskModelMaster(request: Request.CreateMissionTaskModelMasterRequest): Promise<Result.CreateMissionTaskModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2532,7 +2534,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionTaskModelMaster(request: Request.GetMissionTaskModelMasterRequest): Promise<Result.GetMissionTaskModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2560,7 +2562,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public updateMissionTaskModelMaster(request: Request.UpdateMissionTaskModelMasterRequest): Promise<Result.UpdateMissionTaskModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2603,7 +2605,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMissionTaskModelMaster(request: Request.DeleteMissionTaskModelMasterRequest): Promise<Result.DeleteMissionTaskModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        const url = (Gs2MissionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

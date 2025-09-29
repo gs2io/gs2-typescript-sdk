@@ -3,6 +3,7 @@ import { Gs2RestSession } from '../core/model';
 import * as Request from './request';
 import * as Result from './result';
 export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
+    static ENDPOINT_HOST: string | null;
     constructor(session: Gs2RestSession);
     describeUsers(request: Request.DescribeUsersRequest): Promise<Result.DescribeUsersResult>;
     createUser(request: Request.CreateUserRequest): Promise<Result.CreateUserResult>;

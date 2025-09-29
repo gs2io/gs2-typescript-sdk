@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeUsers(request: Request.DescribeUsersRequest): Promise<Result.DescribeUsersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -55,7 +57,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public createUser(request: Request.CreateUserRequest): Promise<Result.CreateUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -86,7 +88,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public updateUser(request: Request.UpdateUserRequest): Promise<Result.UpdateUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -117,7 +119,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getUser(request: Request.GetUserRequest): Promise<Result.GetUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -143,7 +145,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public deleteUser(request: Request.DeleteUserRequest): Promise<Result.DeleteUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -169,7 +171,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public describeSecurityPolicies(request: Request.DescribeSecurityPoliciesRequest): Promise<Result.DescribeSecurityPoliciesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -196,7 +198,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public describeCommonSecurityPolicies(request: Request.DescribeCommonSecurityPoliciesRequest): Promise<Result.DescribeCommonSecurityPoliciesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/common')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy/common')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -223,7 +225,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public createSecurityPolicy(request: Request.CreateSecurityPolicyRequest): Promise<Result.CreateSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -255,7 +257,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public updateSecurityPolicy(request: Request.UpdateSecurityPolicyRequest): Promise<Result.UpdateSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getSecurityPolicy(request: Request.GetSecurityPolicyRequest): Promise<Result.GetSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
@@ -313,7 +315,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSecurityPolicy(request: Request.DeleteSecurityPolicyRequest): Promise<Result.DeleteSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
@@ -339,7 +341,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public describeIdentifiers(request: Request.DescribeIdentifiersRequest): Promise<Result.DescribeIdentifiersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -367,7 +369,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public createIdentifier(request: Request.CreateIdentifierRequest): Promise<Result.CreateIdentifierResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -397,7 +399,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getIdentifier(request: Request.GetIdentifierRequest): Promise<Result.GetIdentifierResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
@@ -424,7 +426,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public deleteIdentifier(request: Request.DeleteIdentifierRequest): Promise<Result.DeleteIdentifierResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
@@ -451,7 +453,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public describeAttachedGuards(request: Request.DescribeAttachedGuardsRequest): Promise<Result.DescribeAttachedGuardsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'))
@@ -478,7 +480,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public attachGuard(request: Request.AttachGuardRequest): Promise<Result.AttachGuardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
@@ -510,7 +512,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public detachGuard(request: Request.DetachGuardRequest): Promise<Result.DetachGuardResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
@@ -538,7 +540,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -563,7 +565,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public createPassword(request: Request.CreatePasswordRequest): Promise<Result.CreatePasswordResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -594,7 +596,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getPassword(request: Request.GetPasswordRequest): Promise<Result.GetPasswordResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -620,7 +622,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public enableMfa(request: Request.EnableMfaRequest): Promise<Result.EnableMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -650,7 +652,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -681,7 +683,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -707,7 +709,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public deletePassword(request: Request.DeletePasswordRequest): Promise<Result.DeletePasswordResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -733,7 +735,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public getHasSecurityPolicy(request: Request.GetHasSecurityPolicyRequest): Promise<Result.GetHasSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -759,7 +761,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public attachSecurityPolicy(request: Request.AttachSecurityPolicyRequest): Promise<Result.AttachSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
@@ -790,7 +792,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public detachSecurityPolicy(request: Request.DetachSecurityPolicyRequest): Promise<Result.DetachSecurityPolicyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
@@ -817,7 +819,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public login(request: Request.LoginRequest): Promise<Result.LoginResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/projectToken/login')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/projectToken/login')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     
@@ -848,7 +850,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     }
 
     public loginByUser(request: Request.LoginByUserRequest): Promise<Result.LoginByUserResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/projectToken/login/user')
+        const url = (Gs2IdentifierRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/projectToken/login/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
     

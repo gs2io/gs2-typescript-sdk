@@ -26,8 +26,8 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2FreezeRestClient.prototype.describeStages = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,7 +35,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -47,17 +47,17 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FreezeRestClient.prototype.getStage = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
-            .replace('{stageName}', String((_a = request.getStageName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -69,17 +69,17 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FreezeRestClient.prototype.promoteStage = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/promote')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/promote')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
-            .replace('{stageName}', String((_a = request.getStageName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -95,17 +95,17 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FreezeRestClient.prototype.rollbackStage = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/rollback')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/rollback')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
-            .replace('{stageName}', String((_a = request.getStageName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -121,19 +121,19 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FreezeRestClient.prototype.describeOutputs = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
-            .replace('{stageName}', String((_a = request.getStageName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -145,18 +145,18 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FreezeRestClient.prototype.getOutput = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output/{outputName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output/{outputName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
-            .replace('{stageName}', String((_a = request.getStageName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{outputName}', String((_c = request.getOutputName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getOutputName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{outputName}', String((_d = request.getOutputName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getOutputName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -167,6 +167,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2FreezeRestClient.ENDPOINT_HOST = null;
     return Gs2FreezeRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2FreezeRestClient;

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -93,7 +95,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -119,7 +121,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -145,7 +147,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -182,7 +184,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +210,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -233,7 +235,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -266,7 +268,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -295,7 +297,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -328,7 +330,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -357,7 +359,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -390,7 +392,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -424,7 +426,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -454,7 +456,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public describeRateModels(request: Request.DescribeRateModelsRequest): Promise<Result.DescribeRateModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -480,7 +482,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getRateModel(request: Request.GetRateModelRequest): Promise<Result.GetRateModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -507,7 +509,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public describeRateModelMasters(request: Request.DescribeRateModelMastersRequest): Promise<Result.DescribeRateModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -536,7 +538,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public createRateModelMaster(request: Request.CreateRateModelMasterRequest): Promise<Result.CreateRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -575,7 +577,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getRateModelMaster(request: Request.GetRateModelMasterRequest): Promise<Result.GetRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -602,7 +604,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public updateRateModelMaster(request: Request.UpdateRateModelMasterRequest): Promise<Result.UpdateRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -641,7 +643,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRateModelMaster(request: Request.DeleteRateModelMasterRequest): Promise<Result.DeleteRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -668,7 +670,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public describeUnleashRateModels(request: Request.DescribeUnleashRateModelsRequest): Promise<Result.DescribeUnleashRateModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/unleash/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/unleash/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -694,7 +696,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getUnleashRateModel(request: Request.GetUnleashRateModelRequest): Promise<Result.GetUnleashRateModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/unleash/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/unleash/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -721,7 +723,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public describeUnleashRateModelMasters(request: Request.DescribeUnleashRateModelMastersRequest): Promise<Result.DescribeUnleashRateModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -750,7 +752,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public createUnleashRateModelMaster(request: Request.CreateUnleashRateModelMasterRequest): Promise<Result.CreateUnleashRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -786,7 +788,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getUnleashRateModelMaster(request: Request.GetUnleashRateModelMasterRequest): Promise<Result.GetUnleashRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -813,7 +815,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public updateUnleashRateModelMaster(request: Request.UpdateUnleashRateModelMasterRequest): Promise<Result.UpdateUnleashRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -849,7 +851,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteUnleashRateModelMaster(request: Request.DeleteUnleashRateModelMasterRequest): Promise<Result.DeleteUnleashRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/unleash/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -876,7 +878,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public directEnhance(request: Request.DirectEnhanceRequest): Promise<Result.DirectEnhanceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/enhance/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/enhance/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -916,7 +918,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public directEnhanceByUserId(request: Request.DirectEnhanceByUserIdRequest): Promise<Result.DirectEnhanceByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/enhance/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/enhance/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -957,7 +959,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public directEnhanceByStampSheet(request: Request.DirectEnhanceByStampSheetRequest): Promise<Result.DirectEnhanceByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/enhance/direct')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/enhance/direct')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -988,7 +990,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public unleash(request: Request.UnleashRequest): Promise<Result.UnleashResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/unleash/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/unleash/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1028,7 +1030,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public unleashByUserId(request: Request.UnleashByUserIdRequest): Promise<Result.UnleashByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/unleash/{rateName}')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/unleash/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1069,7 +1071,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public unleashByStampSheet(request: Request.UnleashByStampSheetRequest): Promise<Result.UnleashByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/unleash')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/unleash')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -1100,7 +1102,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public createProgressByUserId(request: Request.CreateProgressByUserIdRequest): Promise<Result.CreateProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1141,7 +1143,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1170,7 +1172,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getProgressByUserId(request: Request.GetProgressByUserIdRequest): Promise<Result.GetProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1200,7 +1202,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public start(request: Request.StartRequest): Promise<Result.StartResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/rate/{rateName}/start')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/rate/{rateName}/start')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1241,7 +1243,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public startByUserId(request: Request.StartByUserIdRequest): Promise<Result.StartByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/rate/{rateName}/start')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/rate/{rateName}/start')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1283,7 +1285,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public end(request: Request.EndRequest): Promise<Result.EndResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1320,7 +1322,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public endByUserId(request: Request.EndByUserIdRequest): Promise<Result.EndByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1358,7 +1360,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgress(request: Request.DeleteProgressRequest): Promise<Result.DeleteProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1390,7 +1392,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgressByUserId(request: Request.DeleteProgressByUserIdRequest): Promise<Result.DeleteProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1423,7 +1425,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public createProgressByStampSheet(request: Request.CreateProgressByStampSheetRequest): Promise<Result.CreateProgressByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/progress/create')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/progress/create')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -1454,7 +1456,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgressByStampTask(request: Request.DeleteProgressByStampTaskRequest): Promise<Result.DeleteProgressByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/progress/delete')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/progress/delete')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region);
     
@@ -1485,7 +1487,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1511,7 +1513,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentRateMaster(request: Request.GetCurrentRateMasterRequest): Promise<Result.GetCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1537,7 +1539,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentRateMaster(request: Request.PreUpdateCurrentRateMasterRequest): Promise<Result.PreUpdateCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1567,7 +1569,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRateMaster(request: Request.UpdateCurrentRateMasterRequest): Promise<Result.UpdateCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1600,7 +1602,7 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRateMasterFromGitHub(request: Request.UpdateCurrentRateMasterFromGitHubRequest): Promise<Result.UpdateCurrentRateMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2EnhanceRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2LimitRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -89,7 +91,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -115,7 +117,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -141,7 +143,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +176,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -225,7 +227,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -258,7 +260,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -320,7 +322,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -349,7 +351,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -382,7 +384,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -446,7 +448,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public describeCounters(request: Request.DescribeCountersRequest): Promise<Result.DescribeCountersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -478,7 +480,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -511,7 +513,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -542,7 +544,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -574,7 +576,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public countUp(request: Request.CountUpRequest): Promise<Result.CountUpResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -614,7 +616,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public countUpByUserId(request: Request.CountUpByUserIdRequest): Promise<Result.CountUpByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -655,7 +657,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public countDownByUserId(request: Request.CountDownByUserIdRequest): Promise<Result.CountDownByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/decrease')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/decrease')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -695,7 +697,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -730,7 +732,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounter(request: Request.VerifyCounterRequest): Promise<Result.VerifyCounterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}/verify/{verifyType}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}/verify/{verifyType}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -771,7 +773,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounterByUserId(request: Request.VerifyCounterByUserIdRequest): Promise<Result.VerifyCounterByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/verify/{verifyType}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/verify/{verifyType}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -813,7 +815,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public countUpByStampTask(request: Request.CountUpByStampTaskRequest): Promise<Result.CountUpByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/increase')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/counter/increase')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -844,7 +846,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public countDownByStampSheet(request: Request.CountDownByStampSheetRequest): Promise<Result.CountDownByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/decrease')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/counter/decrease')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -875,7 +877,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public deleteByStampSheet(request: Request.DeleteByStampSheetRequest): Promise<Result.DeleteByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/delete')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/counter/delete')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -906,7 +908,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public verifyCounterByStampTask(request: Request.VerifyCounterByStampTaskRequest): Promise<Result.VerifyCounterByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region);
     
@@ -937,7 +939,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitModelMasters(request: Request.DescribeLimitModelMastersRequest): Promise<Result.DescribeLimitModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -966,7 +968,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public createLimitModelMaster(request: Request.CreateLimitModelMasterRequest): Promise<Result.CreateLimitModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1005,7 +1007,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getLimitModelMaster(request: Request.GetLimitModelMasterRequest): Promise<Result.GetLimitModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1032,7 +1034,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public updateLimitModelMaster(request: Request.UpdateLimitModelMasterRequest): Promise<Result.UpdateLimitModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1071,7 +1073,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public deleteLimitModelMaster(request: Request.DeleteLimitModelMasterRequest): Promise<Result.DeleteLimitModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1098,7 +1100,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1124,7 +1126,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentLimitMaster(request: Request.GetCurrentLimitMasterRequest): Promise<Result.GetCurrentLimitMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1150,7 +1152,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentLimitMaster(request: Request.PreUpdateCurrentLimitMasterRequest): Promise<Result.PreUpdateCurrentLimitMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1180,7 +1182,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentLimitMaster(request: Request.UpdateCurrentLimitMasterRequest): Promise<Result.UpdateCurrentLimitMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1213,7 +1215,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentLimitMasterFromGitHub(request: Request.UpdateCurrentLimitMasterFromGitHubRequest): Promise<Result.UpdateCurrentLimitMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1244,7 +1246,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitModels(request: Request.DescribeLimitModelsRequest): Promise<Result.DescribeLimitModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1270,7 +1272,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     }
 
     public getLimitModel(request: Request.GetLimitModelRequest): Promise<Result.GetLimitModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit/{limitName}')
+        const url = (Gs2LimitRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit/{limitName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

@@ -26,8 +26,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2InventoryRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,10 +35,10 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'namePrefix': String((_c = request.getNamePrefix()) !== null && _c !== void 0 ? _c : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -50,8 +50,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -59,18 +59,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'acquireScript': (_g = (_f = request.getAcquireScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'overflowScript': (_j = (_h = request.getOverflowScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'consumeScript': (_l = (_k = request.getConsumeScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'simpleItemAcquireScript': (_o = (_m = request.getSimpleItemAcquireScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'simpleItemConsumeScript': (_q = (_p = request.getSimpleItemConsumeScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'bigItemAcquireScript': (_s = (_r = request.getBigItemAcquireScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'bigItemConsumeScript': (_u = (_t = request.getBigItemConsumeScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'acquireScript': (_h = (_g = request.getAcquireScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'overflowScript': (_k = (_j = request.getOverflowScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'consumeScript': (_m = (_l = request.getConsumeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'simpleItemAcquireScript': (_p = (_o = request.getSimpleItemAcquireScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'simpleItemConsumeScript': (_r = (_q = request.getSimpleItemConsumeScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'bigItemAcquireScript': (_t = (_s = request.getBigItemAcquireScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'bigItemConsumeScript': (_v = (_u = request.getBigItemConsumeScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -86,17 +86,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getNamespaceStatus = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -108,17 +108,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -130,27 +130,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'acquireScript': (_h = (_g = request.getAcquireScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'overflowScript': (_k = (_j = request.getOverflowScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'consumeScript': (_m = (_l = request.getConsumeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'simpleItemAcquireScript': (_p = (_o = request.getSimpleItemAcquireScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'simpleItemConsumeScript': (_r = (_q = request.getSimpleItemConsumeScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'bigItemAcquireScript': (_t = (_s = request.getBigItemAcquireScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'bigItemConsumeScript': (_v = (_u = request.getBigItemConsumeScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'acquireScript': (_j = (_h = request.getAcquireScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'overflowScript': (_l = (_k = request.getOverflowScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'consumeScript': (_o = (_m = request.getConsumeScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'simpleItemAcquireScript': (_q = (_p = request.getSimpleItemAcquireScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'simpleItemConsumeScript': (_s = (_r = request.getSimpleItemConsumeScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'bigItemAcquireScript': (_u = (_t = request.getBigItemAcquireScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'bigItemConsumeScript': (_w = (_v = request.getBigItemConsumeScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -166,17 +166,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -188,8 +188,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -197,7 +197,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -209,20 +209,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -238,20 +238,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -263,20 +263,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -292,20 +292,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -317,20 +317,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -346,21 +346,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -376,21 +376,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{uploadToken}', String((_c = request.getUploadToken()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{uploadToken}', String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -402,20 +402,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoryModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -427,23 +427,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'initialCapacity': (_g = request.getInitialCapacity()) !== null && _g !== void 0 ? _g : null,
-            'maxCapacity': (_h = request.getMaxCapacity()) !== null && _h !== void 0 ? _h : null,
-            'protectReferencedItem': (_j = request.getProtectReferencedItem()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'initialCapacity': (_h = request.getInitialCapacity()) !== null && _h !== void 0 ? _h : null,
+            'maxCapacity': (_j = request.getMaxCapacity()) !== null && _j !== void 0 ? _j : null,
+            'protectReferencedItem': (_k = request.getProtectReferencedItem()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -459,18 +459,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -482,23 +482,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'initialCapacity': (_h = request.getInitialCapacity()) !== null && _h !== void 0 ? _h : null,
-            'maxCapacity': (_j = request.getMaxCapacity()) !== null && _j !== void 0 ? _j : null,
-            'protectReferencedItem': (_k = request.getProtectReferencedItem()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'initialCapacity': (_j = request.getInitialCapacity()) !== null && _j !== void 0 ? _j : null,
+            'maxCapacity': (_k = request.getMaxCapacity()) !== null && _k !== void 0 ? _k : null,
+            'protectReferencedItem': (_l = request.getProtectReferencedItem()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -514,18 +514,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -537,17 +537,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoryModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -559,18 +559,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -582,20 +582,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeItemModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -607,24 +607,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
-            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
-            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
-            'stackingLimit': (_j = request.getStackingLimit()) !== null && _j !== void 0 ? _j : null,
-            'allowMultipleStacks': (_k = request.getAllowMultipleStacks()) !== null && _k !== void 0 ? _k : null,
-            'sortValue': (_l = request.getSortValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'name': (_g = request.getName()) !== null && _g !== void 0 ? _g : null,
+            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
+            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
+            'stackingLimit': (_k = request.getStackingLimit()) !== null && _k !== void 0 ? _k : null,
+            'allowMultipleStacks': (_l = request.getAllowMultipleStacks()) !== null && _l !== void 0 ? _l : null,
+            'sortValue': (_m = request.getSortValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -640,19 +640,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -664,24 +664,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
-            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
-            'stackingLimit': (_k = request.getStackingLimit()) !== null && _k !== void 0 ? _k : null,
-            'allowMultipleStacks': (_l = request.getAllowMultipleStacks()) !== null && _l !== void 0 ? _l : null,
-            'sortValue': (_m = request.getSortValue()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
+            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
+            'stackingLimit': (_l = request.getStackingLimit()) !== null && _l !== void 0 ? _l : null,
+            'allowMultipleStacks': (_m = request.getAllowMultipleStacks()) !== null && _m !== void 0 ? _m : null,
+            'sortValue': (_o = request.getSortValue()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -697,19 +697,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -721,18 +721,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeItemModels = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -744,19 +744,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemModel = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -768,20 +768,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -793,20 +793,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createSimpleInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -822,18 +822,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -845,20 +845,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateSimpleInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -874,18 +874,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -897,17 +897,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -919,18 +919,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -942,21 +942,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'namePrefix': String((_f = request.getNamePrefix()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'namePrefix': String((_g = request.getNamePrefix()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -968,21 +968,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createSimpleItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
-            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
-            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'name': (_g = request.getName()) !== null && _g !== void 0 ? _g : null,
+            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
+            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -998,19 +998,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1022,21 +1022,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateSimpleItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
-            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
+            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1052,19 +1052,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1076,18 +1076,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModels = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1099,19 +1099,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModel = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1123,20 +1123,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'namePrefix': String((_d = request.getNamePrefix()) !== null && _d !== void 0 ? _d : null),
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1148,20 +1148,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createBigInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1177,18 +1177,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1200,20 +1200,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateBigInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1229,18 +1229,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigInventoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1252,17 +1252,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1274,18 +1274,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1297,21 +1297,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'namePrefix': String((_f = request.getNamePrefix()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'namePrefix': String((_g = request.getNamePrefix()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1323,21 +1323,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createBigItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
-            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
-            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'name': (_g = request.getName()) !== null && _g !== void 0 ? _g : null,
+            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
+            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1353,19 +1353,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1377,21 +1377,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateBigItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
-            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
+            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1407,19 +1407,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1431,18 +1431,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemModels = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1454,19 +1454,19 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemModel = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1478,17 +1478,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.exportMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1500,17 +1500,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getCurrentItemModelMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1522,17 +1522,17 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.preUpdateCurrentItemModelMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1548,20 +1548,20 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'mode': (_d = request.getMode()) !== null && _d !== void 0 ? _d : null,
-            'settings': (_e = request.getSettings()) !== null && _e !== void 0 ? _e : null,
-            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'mode': (_e = request.getMode()) !== null && _e !== void 0 ? _e : null,
+            'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
+            'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1577,18 +1577,18 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMasterFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1604,22 +1604,22 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeInventories = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_d = request.getAccessToken()) !== null && _d !== void 0 ? _d : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
-            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1631,23 +1631,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoriesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1659,21 +1659,21 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getInventory = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1685,22 +1685,22 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1712,26 +1712,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.addCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'addCapacityValue': (_k = request.getAddCapacityValue()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'addCapacityValue': (_l = request.getAddCapacityValue()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1747,26 +1747,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'newCapacityValue': (_k = request.getNewCapacityValue()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'newCapacityValue': (_l = request.getNewCapacityValue()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1782,25 +1782,25 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteInventoryByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1812,27 +1812,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacity = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{verifyType}', String((_e = request.getVerifyType()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{verifyType}', String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'currentInventoryMaxCapacity': (_k = request.getCurrentInventoryMaxCapacity()) !== null && _k !== void 0 ? _k : null,
-            'multiplyValueSpecifyingQuantity': (_l = request.getMultiplyValueSpecifyingQuantity()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'currentInventoryMaxCapacity': (_l = request.getCurrentInventoryMaxCapacity()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1848,28 +1848,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{inventoryName}', String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{inventoryName}', String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getInventoryName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'currentInventoryMaxCapacity': (_m = request.getCurrentInventoryMaxCapacity()) !== null && _m !== void 0 ? _m : null,
-            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'currentInventoryMaxCapacity': (_o = request.getCurrentInventoryMaxCapacity()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1885,8 +1885,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1894,9 +1894,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1912,8 +1912,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.addCapacityByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1921,9 +1921,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1939,8 +1939,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setCapacityByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1948,9 +1948,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1966,23 +1966,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeItemSets = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -1994,24 +1994,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeItemSetsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2023,23 +2023,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemSet = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'itemSetName': String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2051,24 +2051,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'itemSetName': String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : null),
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'itemSetName': String((_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2080,24 +2080,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemWithSignature = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'itemSetName': String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : null),
-            'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
+            'keyId': String((_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2109,25 +2109,25 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getItemWithSignatureByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'itemSetName': String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : null),
-            'keyId': String((_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null),
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'itemSetName': String((_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null),
+            'keyId': String((_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2139,30 +2139,30 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'acquireCount': (_m = request.getAcquireCount()) !== null && _m !== void 0 ? _m : null,
-            'expiresAt': (_o = request.getExpiresAt()) !== null && _o !== void 0 ? _o : null,
-            'createNewItemSet': (_p = request.getCreateNewItemSet()) !== null && _p !== void 0 ? _p : null,
-            'itemSetName': (_q = request.getItemSetName()) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'acquireCount': (_o = request.getAcquireCount()) !== null && _o !== void 0 ? _o : null,
+            'expiresAt': (_p = request.getExpiresAt()) !== null && _p !== void 0 ? _p : null,
+            'createNewItemSet': (_q = request.getCreateNewItemSet()) !== null && _q !== void 0 ? _q : null,
+            'itemSetName': (_r = request.getItemSetName()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2178,28 +2178,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire/grade')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire/grade')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{userId}', String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'gradeModelId': (_m = request.getGradeModelId()) !== null && _m !== void 0 ? _m : null,
-            'gradeValue': (_o = request.getGradeValue()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'gradeModelId': (_o = request.getGradeModelId()) !== null && _o !== void 0 ? _o : null,
+            'gradeValue': (_p = request.getGradeValue()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2215,27 +2215,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSet = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'consumeCount': (_k = request.getConsumeCount()) !== null && _k !== void 0 ? _k : null,
-            'itemSetName': (_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'consumeCount': (_l = request.getConsumeCount()) !== null && _l !== void 0 ? _l : null,
+            'itemSetName': (_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2251,28 +2251,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'consumeCount': (_m = request.getConsumeCount()) !== null && _m !== void 0 ? _m : null,
-            'itemSetName': (_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'consumeCount': (_o = request.getConsumeCount()) !== null && _o !== void 0 ? _o : null,
+            'itemSetName': (_p = request.getItemSetName()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2288,27 +2288,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'itemSetName': String((_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null),
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'itemSetName': String((_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null),
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2320,29 +2320,29 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSet = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'itemSetName': (_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null,
-            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
-            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'itemSetName': (_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null,
+            'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
+            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2358,30 +2358,30 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{inventoryName}', String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{verifyType}', String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{inventoryName}', String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getInventoryName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
         }
         var body = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
-            'itemSetName': (_p = request.getItemSetName()) !== null && _p !== void 0 ? _p : null,
-            'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
-            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'itemSetName': (_q = request.getItemSetName()) !== null && _q !== void 0 ? _q : null,
+            'count': (_r = request.getCount()) !== null && _r !== void 0 ? _r : null,
+            'multiplyValueSpecifyingQuantity': (_s = request.getMultiplyValueSpecifyingQuantity()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2397,8 +2397,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2406,9 +2406,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2424,8 +2424,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire/grade')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire/grade')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2433,9 +2433,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2451,8 +2451,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2460,9 +2460,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2478,8 +2478,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2487,9 +2487,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2505,23 +2505,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeReferenceOf = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemSetName}', String((_g = request.getItemSetName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemSetName}', String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2533,24 +2533,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeReferenceOfByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{itemSetName}', String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{itemSetName}', String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
         }
         var params = {
-            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2562,24 +2562,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getReferenceOf = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemSetName}', String((_g = request.getItemSetName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{referenceOf}', String((_j = request.getReferenceOf()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemSetName}', String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{referenceOf}', String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_l = request.getAccessToken()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_m = request.getAccessToken()) !== null && _m !== void 0 ? _m : null;
         }
         var params = {
-            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2591,25 +2591,25 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getReferenceOfByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{itemSetName}', String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null'))
-            .replace('{referenceOf}', String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null') === "" ? "null" : String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{itemSetName}', String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : 'null'))
+            .replace('{referenceOf}', String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null') === "" ? "null" : String((_o = request.getReferenceOf()) !== null && _o !== void 0 ? _o : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_p = request.getTimeOffsetToken()) !== null && _p !== void 0 ? _p : null;
         }
         var params = {
-            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_q = request.getContextStack()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2621,28 +2621,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOf = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemSetName}', String((_g = request.getItemSetName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{referenceOf}', String((_j = request.getReferenceOf()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null'))
-            .replace('{verifyType}', String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null') === "" ? "null" : String((_m = request.getVerifyType()) !== null && _m !== void 0 ? _m : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemSetName}', String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{referenceOf}', String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null'))
+            .replace('{verifyType}', String((_m = request.getVerifyType()) !== null && _m !== void 0 ? _m : 'null') === "" ? "null" : String((_o = request.getVerifyType()) !== null && _o !== void 0 ? _o : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_o = request.getAccessToken()) !== null && _o !== void 0 ? _o : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_p = request.getAccessToken()) !== null && _p !== void 0 ? _p : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_p = request.getDuplicationAvoider()) !== null && _p !== void 0 ? _p : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_q = request.getDuplicationAvoider()) !== null && _q !== void 0 ? _q : null;
         }
         var body = {
-            'contextStack': (_q = request.getContextStack()) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_r = request.getContextStack()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2658,29 +2658,29 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{itemSetName}', String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null'))
-            .replace('{referenceOf}', String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null') === "" ? "null" : String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null'))
-            .replace('{verifyType}', String((_o = request.getVerifyType()) !== null && _o !== void 0 ? _o : 'null') === "" ? "null" : String((_p = request.getVerifyType()) !== null && _p !== void 0 ? _p : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{itemSetName}', String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : 'null'))
+            .replace('{referenceOf}', String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null') === "" ? "null" : String((_o = request.getReferenceOf()) !== null && _o !== void 0 ? _o : 'null'))
+            .replace('{verifyType}', String((_p = request.getVerifyType()) !== null && _p !== void 0 ? _p : 'null') === "" ? "null" : String((_q = request.getVerifyType()) !== null && _q !== void 0 ? _q : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_q = request.getDuplicationAvoider()) !== null && _q !== void 0 ? _q : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_r = request.getDuplicationAvoider()) !== null && _r !== void 0 ? _r : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_r = request.getTimeOffsetToken()) !== null && _r !== void 0 ? _r : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_s = request.getTimeOffsetToken()) !== null && _s !== void 0 ? _s : null;
         }
         var body = {
-            'contextStack': (_s = request.getContextStack()) !== null && _s !== void 0 ? _s : null,
+            'contextStack': (_t = request.getContextStack()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2696,27 +2696,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOf = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemSetName}', String((_g = request.getItemSetName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemSetName}', String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'referenceOf': (_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'referenceOf': (_o = request.getReferenceOf()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2732,28 +2732,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOfByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{itemSetName}', String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{itemSetName}', String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
         }
         var body = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
-            'referenceOf': (_p = request.getReferenceOf()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'referenceOf': (_q = request.getReferenceOf()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2769,27 +2769,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOf = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemSetName}', String((_g = request.getItemSetName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{referenceOf}', String((_j = request.getReferenceOf()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemSetName}', String((_h = request.getItemSetName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{referenceOf}', String((_k = request.getReferenceOf()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_l = request.getAccessToken()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_m = request.getAccessToken()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_o = request.getDuplicationAvoider()) !== null && _o !== void 0 ? _o : null;
         }
         var params = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2801,28 +2801,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{itemSetName}', String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null'))
-            .replace('{referenceOf}', String((_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : 'null') === "" ? "null" : String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{itemSetName}', String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : 'null'))
+            .replace('{referenceOf}', String((_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : 'null') === "" ? "null" : String((_o = request.getReferenceOf()) !== null && _o !== void 0 ? _o : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_o = request.getDuplicationAvoider()) !== null && _o !== void 0 ? _o : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_p = request.getDuplicationAvoider()) !== null && _p !== void 0 ? _p : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_p = request.getTimeOffsetToken()) !== null && _p !== void 0 ? _p : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_q = request.getTimeOffsetToken()) !== null && _q !== void 0 ? _q : null;
         }
         var params = {
-            'contextStack': (_q = request.getContextStack()) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_r = request.getContextStack()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -2834,8 +2834,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOfItemSetByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2843,9 +2843,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2861,8 +2861,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfItemSetByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2870,9 +2870,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2888,8 +2888,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2897,9 +2897,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2915,23 +2915,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItems = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2943,24 +2943,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2972,22 +2972,22 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -2999,23 +2999,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3027,23 +3027,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignature = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/signature')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'keyId': String((_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3055,24 +3055,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignatureByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/signature')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'keyId': String((_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null),
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'keyId': String((_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3084,26 +3084,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/acquire')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'acquireCounts': (_l = (_k = request.getAcquireCounts()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'acquireCounts': (_m = (_l = request.getAcquireCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3119,25 +3119,25 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItems = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'consumeCounts': (_j = (_h = request.getConsumeCounts()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'consumeCounts': (_k = (_j = request.getConsumeCounts()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3153,26 +3153,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'consumeCounts': (_l = (_k = request.getConsumeCounts()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'consumeCounts': (_m = (_l = request.getConsumeCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3188,26 +3188,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'counts': (_l = (_k = request.getCounts()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'counts': (_m = (_l = request.getCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -3223,25 +3223,25 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
         }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -3253,28 +3253,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
-            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3290,29 +3290,29 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{inventoryName}', String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{verifyType}', String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{inventoryName}', String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getInventoryName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
         }
         var body = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
-            'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
-            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
+            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3328,8 +3328,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/acquire')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3337,9 +3337,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3355,8 +3355,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/consume')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3364,9 +3364,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3382,8 +3382,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3391,9 +3391,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3409,8 +3409,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3418,9 +3418,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3436,23 +3436,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItems = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
         }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3464,24 +3464,24 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3493,22 +3493,22 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         var params = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3520,23 +3520,23 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
         }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -3548,27 +3548,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/acquire')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'acquireCount': (_m = request.getAcquireCount()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'acquireCount': (_o = request.getAcquireCount()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3584,26 +3584,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'consumeCount': (_k = request.getConsumeCount()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'consumeCount': (_l = request.getConsumeCount()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3619,27 +3619,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/consume')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'consumeCount': (_m = request.getConsumeCount()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'consumeCount': (_o = request.getConsumeCount()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3655,27 +3655,27 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -3691,26 +3691,26 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{userId}', String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var params = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -3722,28 +3722,28 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{inventoryName}', String((_c = request.getInventoryName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{itemName}', String((_e = request.getItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{inventoryName}', String((_d = request.getInventoryName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{itemName}', String((_f = request.getItemName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
-            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3759,29 +3759,29 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{inventoryName}', String((_e = request.getInventoryName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{itemName}', String((_g = request.getItemName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null'))
-            .replace('{verifyType}', String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{inventoryName}', String((_f = request.getInventoryName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getInventoryName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{itemName}', String((_h = request.getItemName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getItemName()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
         }
         var body = {
-            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
-            'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
-            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
+            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3797,8 +3797,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/acquire')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3806,9 +3806,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3824,8 +3824,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/consume')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3833,9 +3833,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3851,8 +3851,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.setBigItemByStampSheet = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/set')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3860,9 +3860,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3878,8 +3878,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByStampTask = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/verify')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3887,9 +3887,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3904,6 +3904,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2InventoryRestClient.ENDPOINT_HOST = null;
     return Gs2InventoryRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2InventoryRestClient;

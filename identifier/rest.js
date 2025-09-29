@@ -26,8 +26,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2IdentifierRestClient.prototype.describeUsers = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,9 +35,9 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
-            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
+            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -49,8 +49,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.createUser = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -58,9 +58,9 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -76,18 +76,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.updateUser = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -103,17 +103,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getUser = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -125,17 +125,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.deleteUser = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -147,8 +147,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.describeSecurityPolicies = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -156,9 +156,9 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
-            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
+            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -170,8 +170,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.describeCommonSecurityPolicies = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/common')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/common')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -179,9 +179,9 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
-            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
+            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -193,8 +193,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.createSecurityPolicy = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -202,10 +202,10 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'policy': (_d = request.getPolicy()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'policy': (_e = request.getPolicy()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -221,19 +221,19 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.updateSecurityPolicy = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String((_a = request.getSecurityPolicyName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'policy': (_e = request.getPolicy()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'policy': (_f = request.getPolicy()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -249,17 +249,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getSecurityPolicy = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String((_a = request.getSecurityPolicyName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -271,17 +271,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.deleteSecurityPolicy = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String((_a = request.getSecurityPolicyName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -293,19 +293,19 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.describeIdentifiers = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -317,17 +317,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.createIdentifier = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -343,18 +343,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getIdentifier = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{clientId}', String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{clientId}', String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getClientId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -366,18 +366,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.deleteIdentifier = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{clientId}', String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{clientId}', String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getClientId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -389,18 +389,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.describeAttachedGuards = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{clientId}', String((_a = request.getClientId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getClientId()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userName}', String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{clientId}', String((_b = request.getClientId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userName}', String((_d = request.getUserName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -412,19 +412,19 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.attachGuard = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{clientId}', String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{clientId}', String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getClientId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'guardNamespaceId': (_f = request.getGuardNamespaceId()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'guardNamespaceId': (_g = request.getGuardNamespaceId()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -440,19 +440,19 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.detachGuard = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{clientId}', String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{guardNamespaceId}', String((_e = request.getGuardNamespaceId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuardNamespaceId()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{clientId}', String((_d = request.getClientId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getClientId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{guardNamespaceId}', String((_f = request.getGuardNamespaceId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getGuardNamespaceId()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -464,8 +464,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -473,7 +473,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -485,18 +485,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.createPassword = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'password': (_d = request.getPassword()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'password': (_e = request.getPassword()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -512,17 +512,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getPassword = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -534,17 +534,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.enableMfa = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -560,18 +560,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.challengeMfa = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'passcode': (_d = request.getPasscode()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'passcode': (_e = request.getPasscode()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -587,17 +587,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.disableMfa = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -609,17 +609,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.deletePassword = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -631,17 +631,17 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.getHasSecurityPolicy = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -653,18 +653,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.attachSecurityPolicy = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'securityPolicyId': (_d = request.getSecurityPolicyId()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'securityPolicyId': (_e = request.getSecurityPolicyId()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -680,18 +680,18 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.detachSecurityPolicy = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{securityPolicyId}', String((_c = request.getSecurityPolicyId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getSecurityPolicyId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{securityPolicyId}', String((_d = request.getSecurityPolicyId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getSecurityPolicyId()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -703,8 +703,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.login = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -712,9 +712,9 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'client_id': (_b = request.getClientId()) !== null && _b !== void 0 ? _b : null,
-            'client_secret': (_c = request.getClientSecret()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'client_id': (_c = request.getClientId()) !== null && _c !== void 0 ? _c : null,
+            'client_secret': (_d = request.getClientSecret()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -730,8 +730,8 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdentifierRestClient.prototype.loginByUser = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login/user')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -739,10 +739,10 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'userName': (_b = request.getUserName()) !== null && _b !== void 0 ? _b : null,
-            'password': (_c = request.getPassword()) !== null && _c !== void 0 ? _c : null,
-            'otp': (_d = request.getOtp()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'userName': (_c = request.getUserName()) !== null && _c !== void 0 ? _c : null,
+            'password': (_d = request.getPassword()) !== null && _d !== void 0 ? _d : null,
+            'otp': (_e = request.getOtp()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -757,6 +757,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2IdentifierRestClient.ENDPOINT_HOST = null;
     return Gs2IdentifierRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2IdentifierRestClient;

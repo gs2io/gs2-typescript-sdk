@@ -26,8 +26,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2MegaFieldRestClient.prototype.describeNamespaces = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -35,10 +35,10 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'namePrefix': String((_b = request.getNamePrefix()) !== null && _b !== void 0 ? _b : null),
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'namePrefix': String((_c = request.getNamePrefix()) !== null && _c !== void 0 ? _c : null),
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -50,8 +50,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -59,10 +59,10 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -78,17 +78,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getNamespaceStatus = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -100,17 +100,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -122,19 +122,19 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'logSetting': (_g = (_f = request.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -150,17 +150,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteNamespace = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -172,8 +172,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getServiceVersion = function (request) {
-        var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var _a, _b;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -181,7 +181,7 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -193,17 +193,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.describeAreaModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -215,18 +215,18 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getAreaModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -238,19 +238,19 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.describeAreaModelMasters = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -262,20 +262,20 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.createAreaModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
-            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
-            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'name': (_e = request.getName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -291,18 +291,18 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getAreaModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -314,20 +314,20 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.updateAreaModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
-            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
+            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -343,18 +343,18 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteAreaModelMaster = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -366,18 +366,18 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.describeLayerModels = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -389,19 +389,19 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getLayerModel = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -413,20 +413,20 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.describeLayerModelMasters = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
+            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -438,21 +438,21 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.createLayerModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
-            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
-            'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'name': (_g = request.getName()) !== null && _g !== void 0 ? _g : null,
+            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
+            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -468,19 +468,19 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getLayerModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -492,21 +492,21 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.updateLayerModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
-            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
+            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -522,19 +522,19 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteLayerModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/area/{areaModelName}/layer/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -546,17 +546,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.exportMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -568,17 +568,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.getCurrentFieldMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -590,17 +590,17 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.preUpdateCurrentFieldMaster = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -616,20 +616,20 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.updateCurrentFieldMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'mode': (_d = request.getMode()) !== null && _d !== void 0 ? _d : null,
-            'settings': (_e = request.getSettings()) !== null && _e !== void 0 ? _e : null,
-            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'mode': (_e = request.getMode()) !== null && _e !== void 0 ? _e : null,
+            'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
+            'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -645,18 +645,18 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.updateCurrentFieldMasterFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var _a, _b, _c, _d, _e, _f;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -672,28 +672,28 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.putPosition = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'position': (_l = (_k = request.getPosition()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'vector': (_o = (_m = request.getVector()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'r': (_p = request.getR()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'position': (_m = (_l = request.getPosition()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'vector': (_p = (_o = request.getVector()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'r': (_q = request.getR()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -709,29 +709,29 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.putPositionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{areaModelName}', String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getAreaModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{layerModelName}', String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getLayerModelName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{areaModelName}', String((_f = request.getAreaModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getAreaModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{layerModelName}', String((_h = request.getLayerModelName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getLayerModelName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'position': (_o = (_m = request.getPosition()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'vector': (_q = (_p = request.getVector()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'r': (_r = request.getR()) !== null && _r !== void 0 ? _r : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'position': (_p = (_o = request.getPosition()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'vector': (_r = (_q = request.getVector()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'r': (_s = request.getR()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -747,26 +747,26 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.fetchPosition = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}/spatial/fetch')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}/spatial/fetch')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'userIds': (_k = request.getUserIds()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'userIds': (_l = request.getUserIds()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -782,23 +782,23 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.fetchPositionFromSystem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/system/area/{areaModelName}/layer/{layerModelName}/spatial/fetch')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/system/area/{areaModelName}/layer/{layerModelName}/spatial/fetch')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'userIds': (_j = request.getUserIds()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'userIds': (_k = request.getUserIds()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -814,28 +814,28 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.nearUserIds = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}/spatial/near')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/area/{areaModelName}/layer/{layerModelName}/spatial/near')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'point': (_l = (_k = request.getPoint()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'r': (_m = request.getR()) !== null && _m !== void 0 ? _m : null,
-            'limit': (_o = request.getLimit()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'point': (_m = (_l = request.getPoint()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'r': (_o = request.getR()) !== null && _o !== void 0 ? _o : null,
+            'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -851,25 +851,25 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.nearUserIdsFromSystem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/system/area/{areaModelName}/layer/{layerModelName}/spatial/near')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/system/area/{areaModelName}/layer/{layerModelName}/spatial/near')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'point': (_k = (_j = request.getPoint()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'r': (_l = request.getR()) !== null && _l !== void 0 ? _l : null,
-            'limit': (_m = request.getLimit()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'point': (_l = (_k = request.getPoint()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'r': (_m = request.getR()) !== null && _m !== void 0 ? _m : null,
+            'limit': (_o = request.getLimit()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -885,27 +885,27 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.action = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}/action')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{areaModelName}', String((_c = request.getAreaModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{layerModelName}', String((_e = request.getLayerModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{areaModelName}', String((_d = request.getAreaModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{layerModelName}', String((_f = request.getLayerModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'position': (_l = (_k = request.getPosition()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'scopes': (_o = (_m = request.getScopes()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'position': (_m = (_l = request.getPosition()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'scopes': (_p = (_o = request.getScopes()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -921,28 +921,28 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MegaFieldRestClient.prototype.actionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}/action')
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = ((_a = Gs2MegaFieldRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{areaModelName}', String((_e = request.getAreaModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getAreaModelName()) !== null && _f !== void 0 ? _f : 'null'))
-            .replace('{layerModelName}', String((_g = request.getLayerModelName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getLayerModelName()) !== null && _h !== void 0 ? _h : 'null'));
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{areaModelName}', String((_f = request.getAreaModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getAreaModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{layerModelName}', String((_h = request.getLayerModelName()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getLayerModelName()) !== null && _j !== void 0 ? _j : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
         }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
         }
         var body = {
-            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'position': (_o = (_m = request.getPosition()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'scopes': (_q = (_p = request.getScopes()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'position': (_p = (_o = request.getPosition()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'scopes': (_r = (_q = request.getScopes()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -957,6 +957,7 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2MegaFieldRestClient.ENDPOINT_HOST = null;
     return Gs2MegaFieldRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2MegaFieldRestClient;

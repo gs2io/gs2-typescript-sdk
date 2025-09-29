@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2VersionRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region);
     
@@ -92,7 +94,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +120,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +146,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -180,7 +182,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -206,7 +208,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region);
     
@@ -231,7 +233,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -264,7 +266,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -293,7 +295,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -326,7 +328,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -355,7 +357,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -388,7 +390,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -422,7 +424,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -452,7 +454,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public describeVersionModelMasters(request: Request.DescribeVersionModelMastersRequest): Promise<Result.DescribeVersionModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -481,7 +483,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public createVersionModelMaster(request: Request.CreateVersionModelMasterRequest): Promise<Result.CreateVersionModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -523,7 +525,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getVersionModelMaster(request: Request.GetVersionModelMasterRequest): Promise<Result.GetVersionModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -550,7 +552,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public updateVersionModelMaster(request: Request.UpdateVersionModelMasterRequest): Promise<Result.UpdateVersionModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -592,7 +594,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteVersionModelMaster(request: Request.DeleteVersionModelMasterRequest): Promise<Result.DeleteVersionModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -619,7 +621,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public describeVersionModels(request: Request.DescribeVersionModelsRequest): Promise<Result.DescribeVersionModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -645,7 +647,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getVersionModel(request: Request.GetVersionModelRequest): Promise<Result.GetVersionModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -672,7 +674,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public describeAcceptVersions(request: Request.DescribeAcceptVersionsRequest): Promise<Result.DescribeAcceptVersionsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -703,7 +705,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public describeAcceptVersionsByUserId(request: Request.DescribeAcceptVersionsByUserIdRequest): Promise<Result.DescribeAcceptVersionsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/acceptVersion')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -735,7 +737,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public accept(request: Request.AcceptRequest): Promise<Result.AcceptResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -773,7 +775,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public acceptByUserId(request: Request.AcceptByUserIdRequest): Promise<Result.AcceptByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -812,7 +814,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public reject(request: Request.RejectRequest): Promise<Result.RejectResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion/reject')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/acceptVersion/reject')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -850,7 +852,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public rejectByUserId(request: Request.RejectByUserIdRequest): Promise<Result.RejectByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion/reject')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion/reject')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -889,7 +891,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getAcceptVersion(request: Request.GetAcceptVersionRequest): Promise<Result.GetAcceptVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -919,7 +921,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getAcceptVersionByUserId(request: Request.GetAcceptVersionByUserIdRequest): Promise<Result.GetAcceptVersionByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -950,7 +952,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAcceptVersion(request: Request.DeleteAcceptVersionRequest): Promise<Result.DeleteAcceptVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -983,7 +985,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAcceptVersionByUserId(request: Request.DeleteAcceptVersionByUserIdRequest): Promise<Result.DeleteAcceptVersionByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{versionName}')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1017,7 +1019,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public checkVersion(request: Request.CheckVersionRequest): Promise<Result.CheckVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/check')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/check')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1054,7 +1056,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public checkVersionByUserId(request: Request.CheckVersionByUserIdRequest): Promise<Result.CheckVersionByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/check')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/check')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1092,7 +1094,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public calculateSignature(request: Request.CalculateSignatureRequest): Promise<Result.CalculateSignatureResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version/{versionName}/calculate/signature')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/version/{versionName}/calculate/signature')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1124,7 +1126,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1150,7 +1152,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentVersionMaster(request: Request.GetCurrentVersionMasterRequest): Promise<Result.GetCurrentVersionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1176,7 +1178,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentVersionMaster(request: Request.PreUpdateCurrentVersionMasterRequest): Promise<Result.PreUpdateCurrentVersionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1206,7 +1208,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentVersionMaster(request: Request.UpdateCurrentVersionMasterRequest): Promise<Result.UpdateCurrentVersionMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1239,7 +1241,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentVersionMasterFromGitHub(request: Request.UpdateCurrentVersionMasterFromGitHubRequest): Promise<Result.UpdateCurrentVersionMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2VersionRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

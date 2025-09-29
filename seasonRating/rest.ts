@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region);
     
@@ -89,7 +91,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -115,7 +117,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -141,7 +143,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +176,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +202,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region);
     
@@ -225,7 +227,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -258,7 +260,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -287,7 +289,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -320,7 +322,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -349,7 +351,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -382,7 +384,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -416,7 +418,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -446,7 +448,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public describeMatchSessions(request: Request.DescribeMatchSessionsRequest): Promise<Result.DescribeMatchSessionsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -474,7 +476,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public createMatchSession(request: Request.CreateMatchSessionRequest): Promise<Result.CreateMatchSessionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -506,7 +508,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getMatchSession(request: Request.GetMatchSessionRequest): Promise<Result.GetMatchSessionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/{sessionName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/{sessionName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -533,7 +535,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMatchSession(request: Request.DeleteMatchSessionRequest): Promise<Result.DeleteMatchSessionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/{sessionName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/{sessionName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -560,7 +562,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public describeSeasonModelMasters(request: Request.DescribeSeasonModelMastersRequest): Promise<Result.DescribeSeasonModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -589,7 +591,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public createSeasonModelMaster(request: Request.CreateSeasonModelMasterRequest): Promise<Result.CreateSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -625,7 +627,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getSeasonModelMaster(request: Request.GetSeasonModelMasterRequest): Promise<Result.GetSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -652,7 +654,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public updateSeasonModelMaster(request: Request.UpdateSeasonModelMasterRequest): Promise<Result.UpdateSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -688,7 +690,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSeasonModelMaster(request: Request.DeleteSeasonModelMasterRequest): Promise<Result.DeleteSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -715,7 +717,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public describeSeasonModels(request: Request.DescribeSeasonModelsRequest): Promise<Result.DescribeSeasonModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -741,7 +743,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getSeasonModel(request: Request.GetSeasonModelRequest): Promise<Result.GetSeasonModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{seasonName}')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/rating/{seasonName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -768,7 +770,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -794,7 +796,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentSeasonModelMaster(request: Request.GetCurrentSeasonModelMasterRequest): Promise<Result.GetCurrentSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -820,7 +822,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentSeasonModelMaster(request: Request.PreUpdateCurrentSeasonModelMasterRequest): Promise<Result.PreUpdateCurrentSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -850,7 +852,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentSeasonModelMaster(request: Request.UpdateCurrentSeasonModelMasterRequest): Promise<Result.UpdateCurrentSeasonModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -883,7 +885,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentSeasonModelMasterFromGitHub(request: Request.UpdateCurrentSeasonModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentSeasonModelMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -914,7 +916,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getBallot(request: Request.GetBallotRequest): Promise<Result.GetBallotResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/vote/{seasonName}/{sessionName}/ballot')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/vote/{seasonName}/{sessionName}/ballot')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -951,7 +953,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public getBallotByUserId(request: Request.GetBallotByUserIdRequest): Promise<Result.GetBallotByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/vote/{seasonName}/{sessionName}/ballot')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/vote/{seasonName}/{sessionName}/ballot')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -989,7 +991,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public vote(request: Request.VoteRequest): Promise<Result.VoteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1023,7 +1025,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public voteMultiple(request: Request.VoteMultipleRequest): Promise<Result.VoteMultipleResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote/multiple')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/action/vote/multiple')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1056,7 +1058,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
     }
 
     public commitVote(request: Request.CommitVoteRequest): Promise<Result.CommitVoteResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/vote/{seasonName}/{sessionName}/action/vote/commit')
+        const url = (Gs2SeasonRatingRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/vote/{seasonName}/{sessionName}/action/vote/commit')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

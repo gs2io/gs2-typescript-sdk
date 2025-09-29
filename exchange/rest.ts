@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -96,7 +98,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -122,7 +124,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -148,7 +150,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -188,7 +190,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -214,7 +216,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -239,7 +241,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -272,7 +274,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -301,7 +303,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -334,7 +336,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -363,7 +365,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -396,7 +398,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -430,7 +432,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -460,7 +462,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeRateModels(request: Request.DescribeRateModelsRequest): Promise<Result.DescribeRateModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -486,7 +488,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getRateModel(request: Request.GetRateModelRequest): Promise<Result.GetRateModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -513,7 +515,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeRateModelMasters(request: Request.DescribeRateModelMastersRequest): Promise<Result.DescribeRateModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -542,7 +544,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public createRateModelMaster(request: Request.CreateRateModelMasterRequest): Promise<Result.CreateRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -580,7 +582,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getRateModelMaster(request: Request.GetRateModelMasterRequest): Promise<Result.GetRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -607,7 +609,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public updateRateModelMaster(request: Request.UpdateRateModelMasterRequest): Promise<Result.UpdateRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -645,7 +647,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRateModelMaster(request: Request.DeleteRateModelMasterRequest): Promise<Result.DeleteRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -672,7 +674,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeIncrementalRateModels(request: Request.DescribeIncrementalRateModelsRequest): Promise<Result.DescribeIncrementalRateModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -698,7 +700,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getIncrementalRateModel(request: Request.GetIncrementalRateModelRequest): Promise<Result.GetIncrementalRateModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -725,7 +727,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeIncrementalRateModelMasters(request: Request.DescribeIncrementalRateModelMastersRequest): Promise<Result.DescribeIncrementalRateModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -754,7 +756,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public createIncrementalRateModelMaster(request: Request.CreateIncrementalRateModelMasterRequest): Promise<Result.CreateIncrementalRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -795,7 +797,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getIncrementalRateModelMaster(request: Request.GetIncrementalRateModelMasterRequest): Promise<Result.GetIncrementalRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -822,7 +824,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public updateIncrementalRateModelMaster(request: Request.UpdateIncrementalRateModelMasterRequest): Promise<Result.UpdateIncrementalRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -863,7 +865,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteIncrementalRateModelMaster(request: Request.DeleteIncrementalRateModelMasterRequest): Promise<Result.DeleteIncrementalRateModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -890,7 +892,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public exchange(request: Request.ExchangeRequest): Promise<Result.ExchangeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -929,7 +931,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public exchangeByUserId(request: Request.ExchangeByUserIdRequest): Promise<Result.ExchangeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -969,7 +971,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public exchangeByStampSheet(request: Request.ExchangeByStampSheetRequest): Promise<Result.ExchangeByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/exchange')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/exchange')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -1000,7 +1002,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public incrementalExchange(request: Request.IncrementalExchangeRequest): Promise<Result.IncrementalExchangeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/incremental/exchange/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/incremental/exchange/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1039,7 +1041,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public incrementalExchangeByUserId(request: Request.IncrementalExchangeByUserIdRequest): Promise<Result.IncrementalExchangeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/incremental/exchange/{rateName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/incremental/exchange/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1079,7 +1081,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public incrementalExchangeByStampSheet(request: Request.IncrementalExchangeByStampSheetRequest): Promise<Result.IncrementalExchangeByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/incremental/exchange')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/incremental/exchange')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -1110,7 +1112,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1136,7 +1138,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentRateMaster(request: Request.GetCurrentRateMasterRequest): Promise<Result.GetCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1162,7 +1164,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentRateMaster(request: Request.PreUpdateCurrentRateMasterRequest): Promise<Result.PreUpdateCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1192,7 +1194,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRateMaster(request: Request.UpdateCurrentRateMasterRequest): Promise<Result.UpdateCurrentRateMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1225,7 +1227,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentRateMasterFromGitHub(request: Request.UpdateCurrentRateMasterFromGitHubRequest): Promise<Result.UpdateCurrentRateMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1256,7 +1258,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public createAwaitByUserId(request: Request.CreateAwaitByUserIdRequest): Promise<Result.CreateAwaitByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1296,7 +1298,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeAwaits(request: Request.DescribeAwaitsRequest): Promise<Result.DescribeAwaitsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1328,7 +1330,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public describeAwaitsByUserId(request: Request.DescribeAwaitsByUserIdRequest): Promise<Result.DescribeAwaitsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1361,7 +1363,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getAwait(request: Request.GetAwaitRequest): Promise<Result.GetAwaitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1391,7 +1393,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getAwaitByUserId(request: Request.GetAwaitByUserIdRequest): Promise<Result.GetAwaitByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1422,7 +1424,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquire(request: Request.AcquireRequest): Promise<Result.AcquireResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1460,7 +1462,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquireByUserId(request: Request.AcquireByUserIdRequest): Promise<Result.AcquireByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1499,7 +1501,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquireForceByUserId(request: Request.AcquireForceByUserIdRequest): Promise<Result.AcquireForceByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/force')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/force')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1538,7 +1540,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public skipByUserId(request: Request.SkipByUserIdRequest): Promise<Result.SkipByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/skip')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/skip')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1579,7 +1581,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAwait(request: Request.DeleteAwaitRequest): Promise<Result.DeleteAwaitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1612,7 +1614,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAwaitByUserId(request: Request.DeleteAwaitByUserIdRequest): Promise<Result.DeleteAwaitByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1646,7 +1648,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public createAwaitByStampSheet(request: Request.CreateAwaitByStampSheetRequest): Promise<Result.CreateAwaitByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/await/create')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/await/create')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -1677,7 +1679,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquireForceByStampSheet(request: Request.AcquireForceByStampSheetRequest): Promise<Result.AcquireForceByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/await/acquire/force')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/await/acquire/force')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -1708,7 +1710,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public skipByStampSheet(request: Request.SkipByStampSheetRequest): Promise<Result.SkipByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/await/skip')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/await/skip')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     
@@ -1739,7 +1741,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAwaitByStampTask(request: Request.DeleteAwaitByStampTaskRequest): Promise<Result.DeleteAwaitByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/await/delete')
+        const url = (Gs2ExchangeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/await/delete')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
     

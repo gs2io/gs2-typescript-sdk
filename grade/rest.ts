@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2GradeRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -56,7 +58,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -90,7 +92,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -116,7 +118,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -142,7 +144,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -176,7 +178,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -202,7 +204,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -227,7 +229,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -260,7 +262,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -289,7 +291,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -322,7 +324,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -351,7 +353,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -384,7 +386,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -418,7 +420,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -448,7 +450,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public describeGradeModelMasters(request: Request.DescribeGradeModelMastersRequest): Promise<Result.DescribeGradeModelMastersResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -477,7 +479,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public createGradeModelMaster(request: Request.CreateGradeModelMasterRequest): Promise<Result.CreateGradeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -514,7 +516,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getGradeModelMaster(request: Request.GetGradeModelMasterRequest): Promise<Result.GetGradeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -541,7 +543,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public updateGradeModelMaster(request: Request.UpdateGradeModelMasterRequest): Promise<Result.UpdateGradeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -578,7 +580,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGradeModelMaster(request: Request.DeleteGradeModelMasterRequest): Promise<Result.DeleteGradeModelMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -605,7 +607,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public describeGradeModels(request: Request.DescribeGradeModelsRequest): Promise<Result.DescribeGradeModelsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -631,7 +633,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getGradeModel(request: Request.GetGradeModelRequest): Promise<Result.GetGradeModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{gradeName}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -658,7 +660,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -690,7 +692,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -723,7 +725,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -754,7 +756,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -786,7 +788,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public addGradeByUserId(request: Request.AddGradeByUserIdRequest): Promise<Result.AddGradeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -826,7 +828,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public subGrade(request: Request.SubGradeRequest): Promise<Result.SubGradeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/sub')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -865,7 +867,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public subGradeByUserId(request: Request.SubGradeByUserIdRequest): Promise<Result.SubGradeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/sub')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -905,7 +907,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public setGradeByUserId(request: Request.SetGradeByUserIdRequest): Promise<Result.SetGradeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -945,7 +947,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public applyRankCap(request: Request.ApplyRankCapRequest): Promise<Result.ApplyRankCapResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -983,7 +985,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public applyRankCapByUserId(request: Request.ApplyRankCapByUserIdRequest): Promise<Result.ApplyRankCapByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1022,7 +1024,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStatusByUserId(request: Request.DeleteStatusByUserIdRequest): Promise<Result.DeleteStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1057,7 +1059,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGrade(request: Request.VerifyGradeRequest): Promise<Result.VerifyGradeResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/grade/{verifyType}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/grade/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1098,7 +1100,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGradeByUserId(request: Request.VerifyGradeByUserIdRequest): Promise<Result.VerifyGradeByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/grade/{verifyType}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/grade/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1140,7 +1142,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGradeUpMaterial(request: Request.VerifyGradeUpMaterialRequest): Promise<Result.VerifyGradeUpMaterialResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/material/{verifyType}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/material/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1180,7 +1182,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGradeUpMaterialByUserId(request: Request.VerifyGradeUpMaterialByUserIdRequest): Promise<Result.VerifyGradeUpMaterialByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/material/{verifyType}')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/material/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1221,7 +1223,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public addGradeByStampSheet(request: Request.AddGradeByStampSheetRequest): Promise<Result.AddGradeByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/grade/add')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/grade/add')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1252,7 +1254,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public applyRankCapByStampSheet(request: Request.ApplyRankCapByStampSheetRequest): Promise<Result.ApplyRankCapByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/apply/rank/cap')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1283,7 +1285,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public subGradeByStampTask(request: Request.SubGradeByStampTaskRequest): Promise<Result.SubGradeByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/grade/sub')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/grade/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1314,7 +1316,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public multiplyAcquireActionsByUserId(request: Request.MultiplyAcquireActionsByUserIdRequest): Promise<Result.MultiplyAcquireActionsByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1355,7 +1357,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public multiplyAcquireActionsByStampSheet(request: Request.MultiplyAcquireActionsByStampSheetRequest): Promise<Result.MultiplyAcquireActionsByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1386,7 +1388,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGradeByStampTask(request: Request.VerifyGradeByStampTaskRequest): Promise<Result.VerifyGradeByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/grade/verify')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/grade/verify')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1417,7 +1419,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public verifyGradeUpMaterialByStampTask(request: Request.VerifyGradeUpMaterialByStampTaskRequest): Promise<Result.VerifyGradeUpMaterialByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/material/verify')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/material/verify')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
     
@@ -1448,7 +1450,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1474,7 +1476,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentGradeMaster(request: Request.GetCurrentGradeMasterRequest): Promise<Result.GetCurrentGradeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1500,7 +1502,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentGradeMaster(request: Request.PreUpdateCurrentGradeMasterRequest): Promise<Result.PreUpdateCurrentGradeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1530,7 +1532,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentGradeMaster(request: Request.UpdateCurrentGradeMasterRequest): Promise<Result.UpdateCurrentGradeMasterResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1563,7 +1565,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentGradeMasterFromGitHub(request: Request.UpdateCurrentGradeMasterFromGitHubRequest): Promise<Result.UpdateCurrentGradeMasterFromGitHubResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = (Gs2GradeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

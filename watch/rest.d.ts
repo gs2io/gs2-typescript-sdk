@@ -3,6 +3,7 @@ import { Gs2RestSession } from '../core/model';
 import * as Request from './request';
 import * as Result from './result';
 export default class Gs2WatchRestClient extends AbstractGs2RestClient {
+    static ENDPOINT_HOST: string | null;
     constructor(session: Gs2RestSession);
     getChart(request: Request.GetChartRequest): Promise<Result.GetChartResult>;
     getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;

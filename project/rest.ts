@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public createAccount(request: Request.CreateAccountRequest): Promise<Result.CreateAccountResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -62,7 +64,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public verify(request: Request.VerifyRequest): Promise<Result.VerifyResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/verify')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/verify')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -92,7 +94,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public signIn(request: Request.SignInRequest): Promise<Result.SignInResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/signIn')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/signIn')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -124,7 +126,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public forget(request: Request.ForgetRequest): Promise<Result.ForgetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/forget')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/forget')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -155,7 +157,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public issuePassword(request: Request.IssuePasswordRequest): Promise<Result.IssuePasswordResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/password/issue')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/password/issue')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -185,7 +187,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public updateAccount(request: Request.UpdateAccountRequest): Promise<Result.UpdateAccountResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -219,7 +221,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public enableMfa(request: Request.EnableMfaRequest): Promise<Result.EnableMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/mfa')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -249,7 +251,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/mfa/challenge')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/mfa/challenge')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -280,7 +282,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/mfa')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -306,7 +308,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -332,7 +334,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -357,7 +359,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeProjects(request: Request.DescribeProjectsRequest): Promise<Result.DescribeProjectsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -385,7 +387,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public createProject(request: Request.CreateProjectRequest): Promise<Result.CreateProjectResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -424,7 +426,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getProject(request: Request.GetProjectRequest): Promise<Result.GetProjectResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
@@ -451,7 +453,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getProjectToken(request: Request.GetProjectTokenRequest): Promise<Result.GetProjectTokenResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/project/{projectName}/projectToken')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/project/{projectName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
@@ -482,7 +484,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getProjectTokenByIdentifier(request: Request.GetProjectTokenByIdentifierRequest): Promise<Result.GetProjectTokenByIdentifierResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{accountName}', String(request.getAccountName() ?? 'null') === "" ? "null" : String(request.getAccountName() ?? 'null'))
@@ -516,7 +518,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public updateProject(request: Request.UpdateProjectRequest): Promise<Result.UpdateProjectResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
@@ -553,7 +555,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public activateRegion(request: Request.ActivateRegionRequest): Promise<Result.ActivateRegionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
@@ -585,7 +587,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitActivateRegion(request: Request.WaitActivateRegionRequest): Promise<Result.WaitActivateRegionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/region/{regionName}/activate/wait')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/region/{regionName}/activate/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -617,7 +619,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProject(request: Request.DeleteProjectRequest): Promise<Result.DeleteProjectResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
@@ -644,7 +646,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeBillingMethods(request: Request.DescribeBillingMethodsRequest): Promise<Result.DescribeBillingMethodsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -672,7 +674,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public createBillingMethod(request: Request.CreateBillingMethodRequest): Promise<Result.CreateBillingMethodResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -706,7 +708,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getBillingMethod(request: Request.GetBillingMethodRequest): Promise<Result.GetBillingMethodResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
@@ -733,7 +735,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public updateBillingMethod(request: Request.UpdateBillingMethodRequest): Promise<Result.UpdateBillingMethodResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
@@ -765,7 +767,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public deleteBillingMethod(request: Request.DeleteBillingMethodRequest): Promise<Result.DeleteBillingMethodResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
@@ -792,7 +794,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceipts(request: Request.DescribeReceiptsRequest): Promise<Result.DescribeReceiptsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/receipt')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/receipt')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -820,7 +822,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeBillings(request: Request.DescribeBillingsRequest): Promise<Result.DescribeBillingsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billing/{projectName}/{year}/{month}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/billing/{projectName}/{year}/{month}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
@@ -851,7 +853,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeDumpProgresses(request: Request.DescribeDumpProgressesRequest): Promise<Result.DescribeDumpProgressesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -878,7 +880,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getDumpProgress(request: Request.GetDumpProgressRequest): Promise<Result.GetDumpProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress/{transactionId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
@@ -904,7 +906,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitDumpUserData(request: Request.WaitDumpUserDataRequest): Promise<Result.WaitDumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -943,7 +945,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public archiveDumpUserData(request: Request.ArchiveDumpUserDataRequest): Promise<Result.ArchiveDumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/archive')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/archive')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -974,7 +976,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserData(request: Request.DumpUserDataRequest): Promise<Result.DumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{userId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1010,7 +1012,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getDumpUserData(request: Request.GetDumpUserDataRequest): Promise<Result.GetDumpUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{transactionId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
@@ -1036,7 +1038,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeCleanProgresses(request: Request.DescribeCleanProgressesRequest): Promise<Result.DescribeCleanProgressesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -1063,7 +1065,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getCleanProgress(request: Request.GetCleanProgressRequest): Promise<Result.GetCleanProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress/{transactionId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
@@ -1089,7 +1091,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitCleanUserData(request: Request.WaitCleanUserDataRequest): Promise<Result.WaitCleanUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -1128,7 +1130,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserData(request: Request.CleanUserDataRequest): Promise<Result.CleanUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/{userId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1164,7 +1166,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeImportProgresses(request: Request.DescribeImportProgressesRequest): Promise<Result.DescribeImportProgressesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
     
@@ -1191,7 +1193,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getImportProgress(request: Request.GetImportProgressRequest): Promise<Result.GetImportProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
@@ -1217,7 +1219,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public waitImportUserData(request: Request.WaitImportUserDataRequest): Promise<Result.WaitImportUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -1256,7 +1258,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserData(request: Request.PrepareImportUserDataRequest): Promise<Result.PrepareImportUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}/prepare')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}/prepare')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1292,7 +1294,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public importUserData(request: Request.ImportUserDataRequest): Promise<Result.ImportUserDataResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -1329,7 +1331,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public describeImportErrorLogs(request: Request.DescribeImportErrorLogsRequest): Promise<Result.DescribeImportErrorLogsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
@@ -1357,7 +1359,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     }
 
     public getImportErrorLog(request: Request.GetImportErrorLogRequest): Promise<Result.GetImportErrorLogResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
+        const url = (Gs2ProjectRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'))

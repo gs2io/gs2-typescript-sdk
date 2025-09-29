@@ -23,12 +23,14 @@ import axios from 'axios';
 
 export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
 
+    public static ENDPOINT_HOST: string|null = null;
+
     constructor(session: Gs2RestSession) {
         super(session);
     }
 
     public describeStages(request: Request.DescribeStagesRequest): Promise<Result.DescribeStagesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region);
     
@@ -53,7 +55,7 @@ export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
     }
 
     public getStage(request: Request.GetStageRequest): Promise<Result.GetStageResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{stageName}')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{stageName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String(request.getStageName() ?? 'null') === "" ? "null" : String(request.getStageName() ?? 'null'));
@@ -79,7 +81,7 @@ export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
     }
 
     public promoteStage(request: Request.PromoteStageRequest): Promise<Result.PromoteStageResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{stageName}/promote')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{stageName}/promote')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String(request.getStageName() ?? 'null') === "" ? "null" : String(request.getStageName() ?? 'null'));
@@ -109,7 +111,7 @@ export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
     }
 
     public rollbackStage(request: Request.RollbackStageRequest): Promise<Result.RollbackStageResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{stageName}/rollback')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{stageName}/rollback')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String(request.getStageName() ?? 'null') === "" ? "null" : String(request.getStageName() ?? 'null'));
@@ -139,7 +141,7 @@ export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
     }
 
     public describeOutputs(request: Request.DescribeOutputsRequest): Promise<Result.DescribeOutputsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String(request.getStageName() ?? 'null') === "" ? "null" : String(request.getStageName() ?? 'null'));
@@ -167,7 +169,7 @@ export default class Gs2FreezeRestClient extends AbstractGs2RestClient {
     }
 
     public getOutput(request: Request.GetOutputRequest): Promise<Result.GetOutputResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output/{outputName}')
+        const url = (Gs2FreezeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output/{outputName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String(request.getStageName() ?? 'null') === "" ? "null" : String(request.getStageName() ?? 'null'))
