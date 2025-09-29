@@ -27,7 +27,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     }
     Gs2ScriptRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -80,7 +80,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -102,7 +102,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -124,7 +124,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -153,7 +153,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -175,7 +175,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -196,7 +196,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.describeScripts = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -221,7 +221,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.createScript = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -251,7 +251,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.createScriptFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/from_git_hub')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -281,7 +281,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.getScript = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -304,7 +304,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.updateScript = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -334,7 +334,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.updateScriptFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}/from_git_hub')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -364,7 +364,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.deleteScript = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -387,7 +387,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.invokeScript = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/invoke')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -422,7 +422,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.debugInvoke = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/debug/invoke')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/debug/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -458,7 +458,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
     };
     Gs2ScriptRestClient.prototype.invokeByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/script/invoke')
+        var url = (((_a = Gs2ScriptRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/script/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

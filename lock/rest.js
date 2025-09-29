@@ -27,7 +27,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     }
     Gs2LockRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -79,7 +79,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -101,7 +101,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -123,7 +123,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -151,7 +151,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -173,7 +173,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -194,7 +194,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.lock = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}/lock')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}/lock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -229,7 +229,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.lockByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}/lock')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}/lock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -265,7 +265,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.unlock = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}/unlock')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}/unlock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -299,7 +299,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.unlockByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}/unlock')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}/unlock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -334,7 +334,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.getMutex = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -360,7 +360,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.getMutexByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -387,7 +387,7 @@ var Gs2LockRestClient = /** @class */ (function (_super) {
     };
     Gs2LockRestClient.prototype.deleteMutexByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
+        var url = (((_a = Gs2LockRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

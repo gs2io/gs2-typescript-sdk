@@ -27,7 +27,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     }
     Gs2GradeRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -81,7 +81,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -103,7 +103,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -125,7 +125,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -155,7 +155,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -177,7 +177,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -198,7 +198,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -227,7 +227,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -252,7 +252,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -281,7 +281,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -306,7 +306,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -335,7 +335,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -365,7 +365,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -391,7 +391,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.describeGradeModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -416,7 +416,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.createGradeModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -449,7 +449,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getGradeModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -472,7 +472,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.updateGradeModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -505,7 +505,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.deleteGradeModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{gradeName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -528,7 +528,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.describeGradeModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -550,7 +550,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getGradeModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{gradeName}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/{gradeName}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -573,7 +573,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.describeStatuses = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -601,7 +601,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.describeStatusesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -630,7 +630,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getStatus = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -657,7 +657,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -685,7 +685,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.addGradeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -721,7 +721,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.subGrade = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/sub')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -756,7 +756,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.subGradeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/sub')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -792,7 +792,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.setGradeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -828,7 +828,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.applyRankCap = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -862,7 +862,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.applyRankCapByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -897,7 +897,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.deleteStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -928,7 +928,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGrade = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/grade/{verifyType}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/{gradeName}/verify/grade/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -965,7 +965,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGradeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/grade/{verifyType}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/grade/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1003,7 +1003,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterial = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{gradeName}/verify/material/{verifyType}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/{gradeName}/verify/material/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1039,7 +1039,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterialByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/material/{verifyType}')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/{gradeName}/verify/material/{verifyType}')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1076,7 +1076,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.addGradeByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/grade/add')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/grade/add')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1103,7 +1103,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.applyRankCapByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/apply/rank/cap')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/apply/rank/cap')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1130,7 +1130,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.subGradeByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/grade/sub')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/grade/sub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1157,7 +1157,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.multiplyAcquireActionsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/model/{gradeName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1194,7 +1194,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.multiplyAcquireActionsByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/form/acquire')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1221,7 +1221,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGradeByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/grade/verify')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/grade/verify')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1248,7 +1248,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterialByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/material/verify')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/material/verify')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1275,7 +1275,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1297,7 +1297,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.getCurrentGradeMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1319,7 +1319,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.preUpdateCurrentGradeMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1345,7 +1345,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.updateCurrentGradeMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1374,7 +1374,7 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
     };
     Gs2GradeRestClient.prototype.updateCurrentGradeMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2GradeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'grade')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));

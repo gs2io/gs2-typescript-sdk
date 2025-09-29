@@ -27,7 +27,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     }
     Gs2RealtimeRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -83,7 +83,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -105,7 +105,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -127,7 +127,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -159,7 +159,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -181,7 +181,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.now = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/now')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/now')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -205,7 +205,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -226,7 +226,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.describeRooms = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -250,7 +250,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.wantRoom = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -278,7 +278,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getRoom = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -301,7 +301,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.deleteRoom = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

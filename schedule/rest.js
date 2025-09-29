@@ -27,7 +27,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     }
     Gs2ScheduleRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -80,7 +80,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -102,7 +102,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -124,7 +124,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -153,7 +153,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -175,7 +175,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -196,7 +196,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -225,7 +225,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -250,7 +250,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -279,7 +279,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -304,7 +304,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -333,7 +333,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -363,7 +363,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -389,7 +389,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEventMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -414,7 +414,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.createEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -455,7 +455,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -478,7 +478,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -519,7 +519,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -542,7 +542,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeTriggers = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/trigger')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -569,7 +569,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeTriggersByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -597,7 +597,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getTrigger = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -623,7 +623,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -650,7 +650,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.triggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -687,7 +687,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.extendTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}/extend')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger/{triggerName}/extend')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -722,7 +722,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.triggerByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/trigger')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/trigger')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -749,7 +749,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.extendTriggerByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/trigger/extend')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/trigger/extend')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -776,7 +776,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteTrigger = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -805,7 +805,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -835,7 +835,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyTrigger = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}/verify/{verifyType}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/trigger/{triggerName}/verify/{verifyType}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -870,7 +870,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}/verify/{verifyType}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/trigger/{triggerName}/verify/{verifyType}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -906,7 +906,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteTriggerByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/trigger/delete')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/trigger/delete')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -933,7 +933,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyTriggerByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/trigger/verify')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/trigger/verify')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -960,7 +960,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEvents = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -985,7 +985,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEventsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1011,7 +1011,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeRawEvents = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1033,7 +1033,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEvent = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1060,7 +1060,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEventByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1088,7 +1088,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getRawEvent = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{eventName}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1111,7 +1111,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyEvent = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event/{eventName}/verify/{verifyType}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/event/{eventName}/verify/{verifyType}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1145,7 +1145,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyEventByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event/{eventName}/verify/{verifyType}')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/event/{eventName}/verify/{verifyType}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1180,7 +1180,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.verifyEventByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/event/verify')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/event/verify')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1207,7 +1207,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1229,7 +1229,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getCurrentEventMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1251,7 +1251,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.preUpdateCurrentEventMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1277,7 +1277,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateCurrentEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1306,7 +1306,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateCurrentEventMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2ScheduleRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));

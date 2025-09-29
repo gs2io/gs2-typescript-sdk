@@ -30,7 +30,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -92,7 +92,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +118,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +144,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -178,7 +178,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +204,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -229,7 +229,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -262,7 +262,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -291,7 +291,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -324,7 +324,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -353,7 +353,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -386,7 +386,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -420,7 +420,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -450,7 +450,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminaModelMasters(request: Request.DescribeStaminaModelMastersRequest): Promise<Result.DescribeStaminaModelMastersResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -479,7 +479,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public createStaminaModelMaster(request: Request.CreateStaminaModelMasterRequest): Promise<Result.CreateStaminaModelMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -520,7 +520,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getStaminaModelMaster(request: Request.GetStaminaModelMasterRequest): Promise<Result.GetStaminaModelMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -547,7 +547,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateStaminaModelMaster(request: Request.UpdateStaminaModelMasterRequest): Promise<Result.UpdateStaminaModelMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -588,7 +588,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStaminaModelMaster(request: Request.DeleteStaminaModelMasterRequest): Promise<Result.DeleteStaminaModelMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -615,7 +615,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeMaxStaminaTableMasters(request: Request.DescribeMaxStaminaTableMastersRequest): Promise<Result.DescribeMaxStaminaTableMastersResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/maxStaminaTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/maxStaminaTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -643,7 +643,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public createMaxStaminaTableMaster(request: Request.CreateMaxStaminaTableMasterRequest): Promise<Result.CreateMaxStaminaTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/maxStaminaTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/maxStaminaTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -678,7 +678,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getMaxStaminaTableMaster(request: Request.GetMaxStaminaTableMasterRequest): Promise<Result.GetMaxStaminaTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -705,7 +705,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateMaxStaminaTableMaster(request: Request.UpdateMaxStaminaTableMasterRequest): Promise<Result.UpdateMaxStaminaTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -740,7 +740,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMaxStaminaTableMaster(request: Request.DeleteMaxStaminaTableMasterRequest): Promise<Result.DeleteMaxStaminaTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/maxStaminaTable/{maxStaminaTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -767,7 +767,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeRecoverIntervalTableMasters(request: Request.DescribeRecoverIntervalTableMastersRequest): Promise<Result.DescribeRecoverIntervalTableMastersResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverIntervalTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverIntervalTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -796,7 +796,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public createRecoverIntervalTableMaster(request: Request.CreateRecoverIntervalTableMasterRequest): Promise<Result.CreateRecoverIntervalTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverIntervalTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverIntervalTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -831,7 +831,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getRecoverIntervalTableMaster(request: Request.GetRecoverIntervalTableMasterRequest): Promise<Result.GetRecoverIntervalTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -858,7 +858,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateRecoverIntervalTableMaster(request: Request.UpdateRecoverIntervalTableMasterRequest): Promise<Result.UpdateRecoverIntervalTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -893,7 +893,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRecoverIntervalTableMaster(request: Request.DeleteRecoverIntervalTableMasterRequest): Promise<Result.DeleteRecoverIntervalTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverIntervalTable/{recoverIntervalTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -920,7 +920,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeRecoverValueTableMasters(request: Request.DescribeRecoverValueTableMastersRequest): Promise<Result.DescribeRecoverValueTableMastersResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverValueTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverValueTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -949,7 +949,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public createRecoverValueTableMaster(request: Request.CreateRecoverValueTableMasterRequest): Promise<Result.CreateRecoverValueTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverValueTable')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverValueTable')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -984,7 +984,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getRecoverValueTableMaster(request: Request.GetRecoverValueTableMasterRequest): Promise<Result.GetRecoverValueTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1011,7 +1011,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateRecoverValueTableMaster(request: Request.UpdateRecoverValueTableMasterRequest): Promise<Result.UpdateRecoverValueTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1046,7 +1046,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRecoverValueTableMaster(request: Request.DeleteRecoverValueTableMasterRequest): Promise<Result.DeleteRecoverValueTableMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/recoverValueTable/{recoverValueTableName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1073,7 +1073,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1099,7 +1099,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentStaminaMaster(request: Request.GetCurrentStaminaMasterRequest): Promise<Result.GetCurrentStaminaMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1125,7 +1125,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentStaminaMaster(request: Request.PreUpdateCurrentStaminaMasterRequest): Promise<Result.PreUpdateCurrentStaminaMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1155,7 +1155,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentStaminaMaster(request: Request.UpdateCurrentStaminaMasterRequest): Promise<Result.UpdateCurrentStaminaMasterResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1188,7 +1188,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentStaminaMasterFromGitHub(request: Request.UpdateCurrentStaminaMasterFromGitHubRequest): Promise<Result.UpdateCurrentStaminaMasterFromGitHubResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1219,7 +1219,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminaModels(request: Request.DescribeStaminaModelsRequest): Promise<Result.DescribeStaminaModelsResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1245,7 +1245,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getStaminaModel(request: Request.GetStaminaModelRequest): Promise<Result.GetStaminaModelResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1272,7 +1272,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminas(request: Request.DescribeStaminasRequest): Promise<Result.DescribeStaminasResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1303,7 +1303,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminasByUserId(request: Request.DescribeStaminasByUserIdRequest): Promise<Result.DescribeStaminasByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1335,7 +1335,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getStamina(request: Request.GetStaminaRequest): Promise<Result.GetStaminaResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1365,7 +1365,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public getStaminaByUserId(request: Request.GetStaminaByUserIdRequest): Promise<Result.GetStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1396,7 +1396,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public updateStaminaByUserId(request: Request.UpdateStaminaByUserIdRequest): Promise<Result.UpdateStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1438,7 +1438,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public consumeStamina(request: Request.ConsumeStaminaRequest): Promise<Result.ConsumeStaminaResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/consume')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/consume')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1476,7 +1476,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public consumeStaminaByUserId(request: Request.ConsumeStaminaByUserIdRequest): Promise<Result.ConsumeStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/consume')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/consume')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1515,7 +1515,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public applyStamina(request: Request.ApplyStaminaRequest): Promise<Result.ApplyStaminaResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/apply')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/apply')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1552,7 +1552,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public applyStaminaByUserId(request: Request.ApplyStaminaByUserIdRequest): Promise<Result.ApplyStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/apply')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/apply')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1590,7 +1590,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public recoverStaminaByUserId(request: Request.RecoverStaminaByUserIdRequest): Promise<Result.RecoverStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1629,7 +1629,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public raiseMaxValueByUserId(request: Request.RaiseMaxValueByUserIdRequest): Promise<Result.RaiseMaxValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/raise')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/raise')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1668,7 +1668,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaxValue(request: Request.DecreaseMaxValueRequest): Promise<Result.DecreaseMaxValueResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/decrease')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/decrease')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1706,7 +1706,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaxValueByUserId(request: Request.DecreaseMaxValueByUserIdRequest): Promise<Result.DecreaseMaxValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/decrease')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/decrease')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1745,7 +1745,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setMaxValueByUserId(request: Request.SetMaxValueByUserIdRequest): Promise<Result.SetMaxValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1784,7 +1784,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverIntervalByUserId(request: Request.SetRecoverIntervalByUserIdRequest): Promise<Result.SetRecoverIntervalByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverInterval/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverInterval/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1823,7 +1823,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverValueByUserId(request: Request.SetRecoverValueByUserIdRequest): Promise<Result.SetRecoverValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverValue/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverValue/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1862,7 +1862,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setMaxValueByStatus(request: Request.SetMaxValueByStatusRequest): Promise<Result.SetMaxValueByStatusResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1902,7 +1902,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverIntervalByStatus(request: Request.SetRecoverIntervalByStatusRequest): Promise<Result.SetRecoverIntervalByStatusResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recoverInterval/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/recoverInterval/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1942,7 +1942,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverValueByStatus(request: Request.SetRecoverValueByStatusRequest): Promise<Result.SetRecoverValueByStatusResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recoverValue/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/recoverValue/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1982,7 +1982,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStaminaByUserId(request: Request.DeleteStaminaByUserIdRequest): Promise<Result.DeleteStaminaByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2016,7 +2016,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaValue(request: Request.VerifyStaminaValueRequest): Promise<Result.VerifyStaminaValueResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2056,7 +2056,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaValueByUserId(request: Request.VerifyStaminaValueByUserIdRequest): Promise<Result.VerifyStaminaValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2097,7 +2097,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaMaxValue(request: Request.VerifyStaminaMaxValueRequest): Promise<Result.VerifyStaminaMaxValueResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/max/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/max/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2137,7 +2137,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaMaxValueByUserId(request: Request.VerifyStaminaMaxValueByUserIdRequest): Promise<Result.VerifyStaminaMaxValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/max/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/max/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2178,7 +2178,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverIntervalMinutes(request: Request.VerifyStaminaRecoverIntervalMinutesRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recover/interval/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/recover/interval/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2218,7 +2218,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverIntervalMinutesByUserId(request: Request.VerifyStaminaRecoverIntervalMinutesByUserIdRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover/interval/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover/interval/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2259,7 +2259,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverValue(request: Request.VerifyStaminaRecoverValueRequest): Promise<Result.VerifyStaminaRecoverValueResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recover/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/recover/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2299,7 +2299,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverValueByUserId(request: Request.VerifyStaminaRecoverValueByUserIdRequest): Promise<Result.VerifyStaminaRecoverValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2340,7 +2340,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaOverflowValue(request: Request.VerifyStaminaOverflowValueRequest): Promise<Result.VerifyStaminaOverflowValueResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/overflow/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stamina/{staminaName}/overflow/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2380,7 +2380,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaOverflowValueByUserId(request: Request.VerifyStaminaOverflowValueByUserIdRequest): Promise<Result.VerifyStaminaOverflowValueByUserIdResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/overflow/value/verify/{verifyType}')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stamina/{staminaName}/overflow/value/verify/{verifyType}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2421,7 +2421,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public recoverStaminaByStampSheet(request: Request.RecoverStaminaByStampSheetRequest): Promise<Result.RecoverStaminaByStampSheetResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/recover')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/recover')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2452,7 +2452,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public raiseMaxValueByStampSheet(request: Request.RaiseMaxValueByStampSheetRequest): Promise<Result.RaiseMaxValueByStampSheetResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/raise')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/raise')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2483,7 +2483,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public decreaseMaxValueByStampTask(request: Request.DecreaseMaxValueByStampTaskRequest): Promise<Result.DecreaseMaxValueByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/decrease')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/decrease')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2514,7 +2514,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setMaxValueByStampSheet(request: Request.SetMaxValueByStampSheetRequest): Promise<Result.SetMaxValueByStampSheetResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/max/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/max/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2545,7 +2545,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverIntervalByStampSheet(request: Request.SetRecoverIntervalByStampSheetRequest): Promise<Result.SetRecoverIntervalByStampSheetResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/recoverInterval/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/recoverInterval/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2576,7 +2576,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public setRecoverValueByStampSheet(request: Request.SetRecoverValueByStampSheetRequest): Promise<Result.SetRecoverValueByStampSheetResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/recoverValue/set')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/recoverValue/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2607,7 +2607,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public consumeStaminaByStampTask(request: Request.ConsumeStaminaByStampTaskRequest): Promise<Result.ConsumeStaminaByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/consume')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/consume')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2638,7 +2638,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaValueByStampTask(request: Request.VerifyStaminaValueByStampTaskRequest): Promise<Result.VerifyStaminaValueByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/value/verify')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/value/verify')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2669,7 +2669,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaMaxValueByStampTask(request: Request.VerifyStaminaMaxValueByStampTaskRequest): Promise<Result.VerifyStaminaMaxValueByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/max/verify')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/max/verify')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2700,7 +2700,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverIntervalMinutesByStampTask(request: Request.VerifyStaminaRecoverIntervalMinutesByStampTaskRequest): Promise<Result.VerifyStaminaRecoverIntervalMinutesByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/recover/interval/verify')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/recover/interval/verify')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2731,7 +2731,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaRecoverValueByStampTask(request: Request.VerifyStaminaRecoverValueByStampTaskRequest): Promise<Result.VerifyStaminaRecoverValueByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/recover/value/verify')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/recover/value/verify')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     
@@ -2762,7 +2762,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     }
 
     public verifyStaminaOverflowValueByStampTask(request: Request.VerifyStaminaOverflowValueByStampTaskRequest): Promise<Result.VerifyStaminaOverflowValueByStampTaskResult> {
-        const url = (Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamina/overflow/value/verify')
+        const url = ((Gs2StaminaRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamina/overflow/value/verify')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region);
     

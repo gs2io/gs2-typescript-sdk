@@ -27,7 +27,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     }
     Gs2ShowcaseRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -83,7 +83,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -105,7 +105,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -127,7 +127,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -159,7 +159,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -181,7 +181,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -202,7 +202,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -231,7 +231,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -256,7 +256,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -285,7 +285,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -310,7 +310,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -339,7 +339,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -369,7 +369,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -395,7 +395,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeSalesItemMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -420,7 +420,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.createSalesItemMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -452,7 +452,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getSalesItemMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -475,7 +475,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateSalesItemMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -507,7 +507,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.deleteSalesItemMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -530,7 +530,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeSalesItemGroupMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -555,7 +555,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.createSalesItemGroupMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -585,7 +585,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getSalesItemGroupMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -608,7 +608,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateSalesItemGroupMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -638,7 +638,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.deleteSalesItemGroupMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -661,7 +661,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeShowcaseMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -686,7 +686,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.createShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -717,7 +717,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -740,7 +740,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -771,7 +771,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.deleteShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -794,7 +794,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -816,7 +816,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getCurrentShowcaseMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -838,7 +838,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.preUpdateCurrentShowcaseMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -864,7 +864,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateCurrentShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -893,7 +893,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateCurrentShowcaseMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -920,7 +920,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeShowcases = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -945,7 +945,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeShowcasesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -971,7 +971,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getShowcase = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -997,7 +997,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getShowcaseByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1024,7 +1024,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.buy = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase/{showcaseName}/{displayItemId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1060,7 +1060,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.buyByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1097,7 +1097,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeRandomShowcaseMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1122,7 +1122,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.createRandomShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1156,7 +1156,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getRandomShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1179,7 +1179,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.updateRandomShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1213,7 +1213,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.deleteRandomShowcaseMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1236,7 +1236,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.incrementPurchaseCount = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/me/status/{showcaseName}/{displayItemName}/purchase/count')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/me/status/{showcaseName}/{displayItemName}/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1271,7 +1271,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.incrementPurchaseCountByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1307,7 +1307,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.decrementPurchaseCountByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1343,7 +1343,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.incrementPurchaseCountByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1370,7 +1370,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.decrementPurchaseCountByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count/decrease')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/purchase/count/decrease')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1397,7 +1397,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.forceReDrawByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/{showcaseName}/user/{userId}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/{showcaseName}/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1427,7 +1427,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.forceReDrawByUserIdByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/redraw')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/redraw')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1454,7 +1454,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeRandomDisplayItems = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1480,7 +1480,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.describeRandomDisplayItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1507,7 +1507,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getRandomDisplayItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/displayItem/{displayItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}/displayItem/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1534,7 +1534,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.getRandomDisplayItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/displayItem/{displayItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/displayItem/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1562,7 +1562,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.randomShowcaseBuy = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1598,7 +1598,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
     };
     Gs2ShowcaseRestClient.prototype.randomShowcaseBuyByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
+        var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

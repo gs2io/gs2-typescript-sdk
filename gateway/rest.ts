@@ -30,7 +30,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
     
@@ -92,7 +92,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +118,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +144,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -178,7 +178,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +204,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
     
@@ -229,7 +229,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -262,7 +262,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -291,7 +291,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -324,7 +324,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -353,7 +353,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -386,7 +386,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -420,7 +420,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -450,7 +450,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public describeWebSocketSessions(request: Request.DescribeWebSocketSessionsRequest): Promise<Result.DescribeWebSocketSessionsResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/me')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -481,7 +481,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public describeWebSocketSessionsByUserId(request: Request.DescribeWebSocketSessionsByUserIdRequest): Promise<Result.DescribeWebSocketSessionsByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -513,7 +513,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public setUserId(request: Request.SetUserIdRequest): Promise<Result.SetUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me/user')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/me/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -552,7 +552,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public setUserIdByUserId(request: Request.SetUserIdByUserIdRequest): Promise<Result.SetUserIdByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -592,7 +592,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public sendNotification(request: Request.SendNotificationRequest): Promise<Result.SendNotificationResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/notification')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -633,7 +633,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public disconnectByUserId(request: Request.DisconnectByUserIdRequest): Promise<Result.DisconnectByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -666,7 +666,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public disconnectAll(request: Request.DisconnectAllRequest): Promise<Result.DisconnectAllResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -692,7 +692,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public setFirebaseToken(request: Request.SetFirebaseTokenRequest): Promise<Result.SetFirebaseTokenResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -729,7 +729,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public setFirebaseTokenByUserId(request: Request.SetFirebaseTokenByUserIdRequest): Promise<Result.SetFirebaseTokenByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -767,7 +767,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public getFirebaseToken(request: Request.GetFirebaseTokenRequest): Promise<Result.GetFirebaseTokenResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -796,7 +796,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public getFirebaseTokenByUserId(request: Request.GetFirebaseTokenByUserIdRequest): Promise<Result.GetFirebaseTokenByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -826,7 +826,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFirebaseToken(request: Request.DeleteFirebaseTokenRequest): Promise<Result.DeleteFirebaseTokenResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -858,7 +858,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFirebaseTokenByUserId(request: Request.DeleteFirebaseTokenByUserIdRequest): Promise<Result.DeleteFirebaseTokenByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -891,7 +891,7 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public sendMobileNotificationByUserId(request: Request.SendMobileNotificationByUserIdRequest): Promise<Result.SendMobileNotificationByUserIdResult> {
-        const url = (Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token/notification')
+        const url = ((Gs2GatewayRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

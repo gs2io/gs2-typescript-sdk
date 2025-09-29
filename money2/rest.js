@@ -27,7 +27,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     }
     Gs2Money2RestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -91,7 +91,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -113,7 +113,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -135,7 +135,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -174,7 +174,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -196,7 +196,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -217,7 +217,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -246,7 +246,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -271,7 +271,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -300,7 +300,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -325,7 +325,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -354,7 +354,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -384,7 +384,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -410,7 +410,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeWallets = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/wallet')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -437,7 +437,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeWalletsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/wallet')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -465,7 +465,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getWallet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/wallet/{slot}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -491,7 +491,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getWalletByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/wallet/{slot}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -518,7 +518,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.depositByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -553,7 +553,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.withdraw = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -588,7 +588,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.withdrawByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -624,7 +624,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.depositByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/deposit')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/deposit')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -651,7 +651,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.withdrawByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/withdraw')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/withdraw')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -678,7 +678,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeEventsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/event/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -708,7 +708,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getEventByTransactionId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{transactionId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/event/{transactionId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -731,7 +731,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.verifyReceipt = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/content/{contentName}/receipt/verify')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/content/{contentName}/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -765,7 +765,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.verifyReceiptByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/content/{contentName}/receipt/verify')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/content/{contentName}/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -800,7 +800,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.verifyReceiptByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/verify')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/receipt/verify')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -827,7 +827,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeSubscriptionStatuses = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -852,7 +852,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeSubscriptionStatusesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -878,7 +878,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getSubscriptionStatus = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscription/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -904,7 +904,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getSubscriptionStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscription/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -931,7 +931,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatus = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/allocate/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -964,7 +964,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/allocate/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/allocate/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -998,7 +998,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatus = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/takeover/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1031,7 +1031,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/takeover/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/takeover/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1065,7 +1065,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeRefundHistoriesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/user/{userId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/refund/user/{userId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1093,7 +1093,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeRefundHistoriesByDate = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/date/{year}/{month}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/refund/date/{year}/{month}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1120,7 +1120,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getRefundHistory = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/refund/{transactionId}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/refund/{transactionId}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1143,7 +1143,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeStoreContentModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/content')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1165,7 +1165,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getStoreContentModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/content/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/content/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1188,7 +1188,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeStoreContentModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1213,7 +1213,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.createStoreContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1244,7 +1244,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getStoreContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1267,7 +1267,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.updateStoreContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1298,7 +1298,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.deleteStoreContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1321,7 +1321,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/subscription/content')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1343,7 +1343,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getStoreSubscriptionContentModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscription/content/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/subscription/content/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1366,7 +1366,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1391,7 +1391,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.createStoreSubscriptionContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/subscription')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1427,7 +1427,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getStoreSubscriptionContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1450,7 +1450,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.updateStoreSubscriptionContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1486,7 +1486,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.deleteStoreSubscriptionContentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/subscription/{contentName}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/subscription/{contentName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1509,7 +1509,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1531,7 +1531,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getCurrentModelMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1553,7 +1553,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.preUpdateCurrentModelMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1579,7 +1579,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.updateCurrentModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1608,7 +1608,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.updateCurrentModelMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1635,7 +1635,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeDailyTransactionHistoriesByCurrency = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1662,7 +1662,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeDailyTransactionHistories = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/transaction/daily/{year}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1689,7 +1689,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getDailyTransactionHistory = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1715,7 +1715,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.describeUnusedBalances = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/balance/unused')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1739,7 +1739,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
     };
     Gs2Money2RestClient.prototype.getUnusedBalance = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused/{currency}')
+        var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/balance/unused/{currency}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

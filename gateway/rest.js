@@ -27,7 +27,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     }
     Gs2GatewayRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -81,7 +81,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -103,7 +103,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -125,7 +125,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -155,7 +155,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -177,7 +177,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -198,7 +198,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -227,7 +227,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -252,7 +252,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -281,7 +281,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -306,7 +306,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -335,7 +335,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -365,7 +365,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -391,7 +391,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.describeWebSocketSessions = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/me')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -418,7 +418,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.describeWebSocketSessionsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -446,7 +446,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.setUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me/user')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/me/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -481,7 +481,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.setUserIdByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -517,7 +517,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.sendNotification = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/notification')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -554,7 +554,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.disconnectByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -583,7 +583,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.disconnectAll = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -605,7 +605,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.setFirebaseToken = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -638,7 +638,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.setFirebaseTokenByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -672,7 +672,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.getFirebaseToken = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -697,7 +697,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.getFirebaseTokenByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -723,7 +723,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.deleteFirebaseToken = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -751,7 +751,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.deleteFirebaseTokenByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -780,7 +780,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
     };
     Gs2GatewayRestClient.prototype.sendMobileNotificationByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token/notification')
+        var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

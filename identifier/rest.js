@@ -27,7 +27,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     }
     Gs2IdentifierRestClient.prototype.describeUsers = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -50,7 +50,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.createUser = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -77,7 +77,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.updateUser = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -104,7 +104,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getUser = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -126,7 +126,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.deleteUser = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -148,7 +148,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.describeSecurityPolicies = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -171,7 +171,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.describeCommonSecurityPolicies = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/common')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy/common')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -194,7 +194,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.createSecurityPolicy = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -222,7 +222,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.updateSecurityPolicy = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -250,7 +250,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getSecurityPolicy = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -272,7 +272,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.deleteSecurityPolicy = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{securityPolicyName}', String((_b = request.getSecurityPolicyName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getSecurityPolicyName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -294,7 +294,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.describeIdentifiers = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -318,7 +318,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.createIdentifier = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -344,7 +344,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getIdentifier = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -367,7 +367,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.deleteIdentifier = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -390,7 +390,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.describeAttachedGuards = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{clientId}', String((_b = request.getClientId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getClientId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -413,7 +413,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.attachGuard = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier/{clientId}/guard')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -441,7 +441,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.detachGuard = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -465,7 +465,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -486,7 +486,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.createPassword = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/password')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -513,7 +513,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getPassword = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -535,7 +535,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.enableMfa = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -561,7 +561,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.challengeMfa = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/mfa/challenge')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -588,7 +588,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.disableMfa = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/mfa')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -610,7 +610,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.deletePassword = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -632,7 +632,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.getHasSecurityPolicy = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -654,7 +654,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.attachSecurityPolicy = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -681,7 +681,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.detachSecurityPolicy = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userName}/securityPolicy/{securityPolicyId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
             .replace('{userName}', String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -704,7 +704,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.login = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/projectToken/login')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -731,7 +731,7 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
     };
     Gs2IdentifierRestClient.prototype.loginByUser = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/projectToken/login/user')
+        var url = (((_a = Gs2IdentifierRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/projectToken/login/user')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

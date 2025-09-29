@@ -27,7 +27,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     }
     Gs2DeployRestClient.prototype.describeStacks = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.preCreateStack = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/pre')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -76,7 +76,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.createStack = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -106,7 +106,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.createStackFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -134,7 +134,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.preValidate = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/validate/pre')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/validate/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -159,7 +159,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.validate = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/validate')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/validate')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -187,7 +187,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getStackStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/status')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -209,7 +209,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getStack = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -231,7 +231,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.preUpdateStack = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -257,7 +257,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.updateStack = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -287,7 +287,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.preChangeSet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -313,7 +313,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.changeSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -342,7 +342,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.updateStackFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -370,7 +370,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStack = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -392,7 +392,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.forceDeleteStack = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/force')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -414,7 +414,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStackResources = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resources')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -436,7 +436,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStackEntity = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/entity')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -458,7 +458,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -479,7 +479,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeResources = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resource')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -503,7 +503,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getResource = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resource/{resourceName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -526,7 +526,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeEvents = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/event')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -550,7 +550,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getEvent = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/event/{eventName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -573,7 +573,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeOutputs = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/output')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -597,7 +597,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getOutput = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
+        var url = (((_a = Gs2DeployRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/output/{outputName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStackName()) !== null && _c !== void 0 ? _c : 'null'))

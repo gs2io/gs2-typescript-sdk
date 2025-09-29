@@ -30,7 +30,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -98,7 +98,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -124,7 +124,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -150,7 +150,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -190,7 +190,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -216,7 +216,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -241,7 +241,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -274,7 +274,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -303,7 +303,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -336,7 +336,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -365,7 +365,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -398,7 +398,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -432,7 +432,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -462,7 +462,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public describeMessages(request: Request.DescribeMessagesRequest): Promise<Result.DescribeMessagesResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -494,7 +494,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public describeMessagesByUserId(request: Request.DescribeMessagesByUserIdRequest): Promise<Result.DescribeMessagesByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/message')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -527,7 +527,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public sendMessageByUserId(request: Request.SendMessageByUserIdRequest): Promise<Result.SendMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -568,7 +568,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getMessage(request: Request.GetMessageRequest): Promise<Result.GetMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -598,7 +598,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getMessageByUserId(request: Request.GetMessageByUserIdRequest): Promise<Result.GetMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -629,7 +629,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public receiveGlobalMessage(request: Request.ReceiveGlobalMessageRequest): Promise<Result.ReceiveGlobalMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message/globalMessage/receive')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/message/globalMessage/receive')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -665,7 +665,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public receiveGlobalMessageByUserId(request: Request.ReceiveGlobalMessageByUserIdRequest): Promise<Result.ReceiveGlobalMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message/globalMessage/receive')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/message/globalMessage/receive')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -702,7 +702,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public openMessage(request: Request.OpenMessageRequest): Promise<Result.OpenMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -739,7 +739,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public openMessageByUserId(request: Request.OpenMessageByUserIdRequest): Promise<Result.OpenMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -777,7 +777,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public closeMessageByUserId(request: Request.CloseMessageByUserIdRequest): Promise<Result.CloseMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}/close')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/{messageName}/close')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -815,7 +815,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public readMessage(request: Request.ReadMessageRequest): Promise<Result.ReadMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}/read')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/{messageName}/read')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -853,7 +853,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public readMessageByUserId(request: Request.ReadMessageByUserIdRequest): Promise<Result.ReadMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}/read')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/{messageName}/read')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -892,7 +892,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public batchReadMessages(request: Request.BatchReadMessagesRequest): Promise<Result.BatchReadMessagesResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/messages/read/batch')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/messages/read/batch')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -930,7 +930,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public batchReadMessagesByUserId(request: Request.BatchReadMessagesByUserIdRequest): Promise<Result.BatchReadMessagesByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/messages/read/batch')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/messages/read/batch')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -969,7 +969,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMessage(request: Request.DeleteMessageRequest): Promise<Result.DeleteMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1002,7 +1002,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMessageByUserId(request: Request.DeleteMessageByUserIdRequest): Promise<Result.DeleteMessageByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1036,7 +1036,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public sendByStampSheet(request: Request.SendByStampSheetRequest): Promise<Result.SendByStampSheetResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/send')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/send')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -1067,7 +1067,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public openByStampTask(request: Request.OpenByStampTaskRequest): Promise<Result.OpenByStampTaskResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/open')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/open')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -1098,7 +1098,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMessageByStampTask(request: Request.DeleteMessageByStampTaskRequest): Promise<Result.DeleteMessageByStampTaskResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/delete')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/delete')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
     
@@ -1129,7 +1129,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1155,7 +1155,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentMessageMaster(request: Request.GetCurrentMessageMasterRequest): Promise<Result.GetCurrentMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1181,7 +1181,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentMessageMaster(request: Request.PreUpdateCurrentMessageMasterRequest): Promise<Result.PreUpdateCurrentMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1211,7 +1211,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentMessageMaster(request: Request.UpdateCurrentMessageMasterRequest): Promise<Result.UpdateCurrentMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1244,7 +1244,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentMessageMasterFromGitHub(request: Request.UpdateCurrentMessageMasterFromGitHubRequest): Promise<Result.UpdateCurrentMessageMasterFromGitHubResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1275,7 +1275,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalMessageMasters(request: Request.DescribeGlobalMessageMastersRequest): Promise<Result.DescribeGlobalMessageMastersResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1304,7 +1304,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public createGlobalMessageMaster(request: Request.CreateGlobalMessageMasterRequest): Promise<Result.CreateGlobalMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1340,7 +1340,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalMessageMaster(request: Request.GetGlobalMessageMasterRequest): Promise<Result.GetGlobalMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1367,7 +1367,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public updateGlobalMessageMaster(request: Request.UpdateGlobalMessageMasterRequest): Promise<Result.UpdateGlobalMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1403,7 +1403,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteGlobalMessageMaster(request: Request.DeleteGlobalMessageMasterRequest): Promise<Result.DeleteGlobalMessageMasterResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1430,7 +1430,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public describeGlobalMessages(request: Request.DescribeGlobalMessagesRequest): Promise<Result.DescribeGlobalMessagesResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1456,7 +1456,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getGlobalMessage(request: Request.GetGlobalMessageRequest): Promise<Result.GetGlobalMessageResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage/{globalMessageName}')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1483,7 +1483,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public getReceivedByUserId(request: Request.GetReceivedByUserIdRequest): Promise<Result.GetReceivedByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1513,7 +1513,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public updateReceivedByUserId(request: Request.UpdateReceivedByUserIdRequest): Promise<Result.UpdateReceivedByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1551,7 +1551,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     }
 
     public deleteReceivedByUserId(request: Request.DeleteReceivedByUserIdRequest): Promise<Result.DeleteReceivedByUserIdResult> {
-        const url = (Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        const url = ((Gs2InboxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

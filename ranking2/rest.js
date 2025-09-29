@@ -27,7 +27,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     }
     Gs2Ranking2RestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -80,7 +80,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -102,7 +102,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -124,7 +124,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -153,7 +153,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -175,7 +175,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -196,7 +196,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -225,7 +225,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -250,7 +250,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -279,7 +279,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -304,7 +304,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -333,7 +333,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -363,7 +363,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -389,7 +389,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -411,7 +411,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -434,7 +434,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -459,7 +459,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -496,7 +496,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -519,7 +519,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateGlobalRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -556,7 +556,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteGlobalRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -579,7 +579,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingScores = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -607,7 +607,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingScoresByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -636,7 +636,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putGlobalRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -671,7 +671,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putGlobalRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -707,7 +707,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -734,7 +734,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -762,7 +762,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteGlobalRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/{season}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -793,7 +793,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyGlobalRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -830,7 +830,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyGlobalRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -868,7 +868,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyGlobalRankingScoreByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/global/score/verify')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/global/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -895,7 +895,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingReceivedRewards = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/global/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -924,7 +924,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingReceivedRewardsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/global/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -954,7 +954,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -988,7 +988,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1023,7 +1023,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.receiveGlobalRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}/{season}/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/global/reward/received/{rankingName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1058,7 +1058,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.receiveGlobalRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1094,7 +1094,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1121,7 +1121,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1149,7 +1149,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteGlobalRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1180,7 +1180,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingReceivedRewardByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/global/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/ranking/global/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1207,7 +1207,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankings = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/global/{rankingName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1236,7 +1236,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1266,7 +1266,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRanking = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/me/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/global/{rankingName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1293,7 +1293,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getGlobalRankingByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/global/{rankingName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1321,7 +1321,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1343,7 +1343,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/cluster/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1366,7 +1366,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1391,7 +1391,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1429,7 +1429,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1452,7 +1452,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateClusterRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1490,7 +1490,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteClusterRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/cluster/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/cluster/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1513,7 +1513,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingScores = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1543,7 +1543,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingScoresByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1574,7 +1574,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putClusterRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1610,7 +1610,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putClusterRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1647,7 +1647,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1675,7 +1675,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1704,7 +1704,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteClusterRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/{season}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1736,7 +1736,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyClusterRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1774,7 +1774,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyClusterRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1813,7 +1813,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifyClusterRankingScoreByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/cluster/score/verify')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/cluster/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1840,7 +1840,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingReceivedRewards = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/cluster/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1870,7 +1870,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingReceivedRewardsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/cluster/reward/received')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1901,7 +1901,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1936,7 +1936,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1972,7 +1972,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.receiveClusterRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2008,7 +2008,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.receiveClusterRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2045,7 +2045,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingReceivedReward = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2073,7 +2073,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2102,7 +2102,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteClusterRankingReceivedRewardByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2134,7 +2134,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingReceivedRewardByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/ranking/cluster/reward/receive')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/ranking/cluster/reward/receive')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2161,7 +2161,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankings = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2191,7 +2191,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2222,7 +2222,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRanking = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2250,7 +2250,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getClusterRankingByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/cluster/{rankingName}/{clusterName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2279,7 +2279,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankingModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -2301,7 +2301,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRankingModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2324,7 +2324,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankingModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -2349,7 +2349,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.createSubscribeRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -2384,7 +2384,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2407,7 +2407,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateSubscribeRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2442,7 +2442,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteSubscribeRankingModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2465,7 +2465,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribes = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/score')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscribe/score')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -2493,7 +2493,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/score')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscribe/score')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2522,7 +2522,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.addSubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2556,7 +2556,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.addSubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2591,7 +2591,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankingScores = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -2619,7 +2619,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankingScoresByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2648,7 +2648,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putSubscribeRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2683,7 +2683,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.putSubscribeRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2719,7 +2719,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2746,7 +2746,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2774,7 +2774,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteSubscribeRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/{season}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/{season}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2805,7 +2805,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifySubscribeRankingScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2842,7 +2842,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifySubscribeRankingScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2880,7 +2880,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.verifySubscribeRankingScoreByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/subscribe/score/verify')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/subscribe/score/verify')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2907,7 +2907,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankings = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2936,7 +2936,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankingsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2966,7 +2966,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRanking = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/subscribe/{rankingName}/user/me/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2994,7 +2994,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeRankingByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}/rank')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ranking/subscribe/{rankingName}/user/{userId}/rank')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3023,7 +3023,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -3045,7 +3045,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getCurrentRankingMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -3067,7 +3067,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.preUpdateCurrentRankingMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -3093,7 +3093,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateCurrentRankingMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -3122,7 +3122,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.updateCurrentRankingMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -3149,7 +3149,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3176,7 +3176,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.getSubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3204,7 +3204,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteSubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3234,7 +3234,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
     };
     Gs2Ranking2RestClient.prototype.deleteSubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
+        var url = (((_a = Gs2Ranking2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/subscribe/{rankingName}/target/{targetUserId}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

@@ -27,7 +27,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     }
     Gs2DistributorRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -83,7 +83,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -105,7 +105,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -127,7 +127,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -159,7 +159,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -181,7 +181,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -202,7 +202,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.describeDistributorModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -227,7 +227,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.createDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -258,7 +258,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -281,7 +281,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -312,7 +312,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.deleteDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -335,7 +335,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.describeDistributorModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -357,7 +357,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getDistributorModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor/{distributorName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -380,7 +380,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -402,7 +402,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getCurrentDistributorMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -424,7 +424,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.preUpdateCurrentDistributorMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -450,7 +450,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateCurrentDistributorMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -479,7 +479,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateCurrentDistributorMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -506,7 +506,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.distribute = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/{distributorName}')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -541,7 +541,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.distributeWithoutOverflowProcess = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/distribute')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/distribute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -574,7 +574,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runVerifyTask = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/verifyTask/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/verifyTask/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -602,7 +602,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampTask = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/task/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -630,7 +630,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheet = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/sheet/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -658,7 +658,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetExpress = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -686,7 +686,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runVerifyTaskWithoutNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/verifyTask/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/verifyTask/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -713,7 +713,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampTaskWithoutNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/task/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -740,7 +740,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetWithoutNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/sheet/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -767,7 +767,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetExpressWithoutNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -794,7 +794,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.setTransactionDefaultConfig = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/transaction/user/me/config')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/transaction/user/me/config')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -826,7 +826,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.setTransactionDefaultConfigByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/transaction/user/{userId}/config')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/transaction/user/{userId}/config')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -859,7 +859,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.freezeMasterData = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -888,7 +888,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/masterdata/freeze')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -918,7 +918,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.signFreezeMasterDataTimestamp = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/masterdata/freeze/timestamp')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/masterdata/freeze/timestamp')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -946,7 +946,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataBySignedTimestamp = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze/timestamp')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -978,7 +978,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.freezeMasterDataByTimestamp = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp/raw')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze/timestamp/raw')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1008,7 +1008,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.batchExecuteApi = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/batch/execute')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/batch/execute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1034,7 +1034,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.ifExpressionByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/if')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1071,7 +1071,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.andExpressionByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/and')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/and')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1105,7 +1105,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.orExpressionByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/or')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/or')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1139,7 +1139,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.ifExpressionByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/if')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1166,7 +1166,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.andExpressionByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/and')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/and')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1193,7 +1193,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.orExpressionByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/or')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/or')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1220,7 +1220,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getStampSheetResult = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1246,7 +1246,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getStampSheetResultByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1273,7 +1273,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runTransaction = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/{namespaceName}/user/{userId}/transaction/run')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/{namespaceName}/user/{userId}/transaction/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1308,7 +1308,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getTransactionResult = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/transaction/{transactionId}/result')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/transaction/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1334,7 +1334,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getTransactionResultByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/transaction/{transactionId}/result')
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/transaction/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))

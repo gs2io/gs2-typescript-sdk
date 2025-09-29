@@ -30,7 +30,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     
@@ -92,7 +92,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +118,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +144,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -178,7 +178,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +204,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     
@@ -229,7 +229,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -262,7 +262,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -291,7 +291,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -324,7 +324,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -353,7 +353,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -386,7 +386,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -420,7 +420,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -450,7 +450,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public describeBonusModelMasters(request: Request.DescribeBonusModelMastersRequest): Promise<Result.DescribeBonusModelMastersResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/bonusModel')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -479,7 +479,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public createBonusModelMaster(request: Request.CreateBonusModelMasterRequest): Promise<Result.CreateBonusModelMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/bonusModel')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -520,7 +520,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getBonusModelMaster(request: Request.GetBonusModelMasterRequest): Promise<Result.GetBonusModelMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -547,7 +547,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public updateBonusModelMaster(request: Request.UpdateBonusModelMasterRequest): Promise<Result.UpdateBonusModelMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -588,7 +588,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public deleteBonusModelMaster(request: Request.DeleteBonusModelMasterRequest): Promise<Result.DeleteBonusModelMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -615,7 +615,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -641,7 +641,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentBonusMaster(request: Request.GetCurrentBonusMasterRequest): Promise<Result.GetCurrentBonusMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -667,7 +667,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentBonusMaster(request: Request.PreUpdateCurrentBonusMasterRequest): Promise<Result.PreUpdateCurrentBonusMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -697,7 +697,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentBonusMaster(request: Request.UpdateCurrentBonusMasterRequest): Promise<Result.UpdateCurrentBonusMasterResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -730,7 +730,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentBonusMasterFromGitHub(request: Request.UpdateCurrentBonusMasterFromGitHubRequest): Promise<Result.UpdateCurrentBonusMasterFromGitHubResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -761,7 +761,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public describeBonusModels(request: Request.DescribeBonusModelsRequest): Promise<Result.DescribeBonusModelsResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/bonusModel')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/bonusModel')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -787,7 +787,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getBonusModel(request: Request.GetBonusModelRequest): Promise<Result.GetBonusModelResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/bonusModel/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -814,7 +814,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public receive(request: Request.ReceiveRequest): Promise<Result.ReceiveResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/bonus/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/bonus/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -852,7 +852,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/bonus/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/bonus/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -891,7 +891,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public missedReceive(request: Request.MissedReceiveRequest): Promise<Result.MissedReceiveResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/bonus/{bonusModelName}/missed')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/bonus/{bonusModelName}/missed')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -930,7 +930,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public missedReceiveByUserId(request: Request.MissedReceiveByUserIdRequest): Promise<Result.MissedReceiveByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/bonus/{bonusModelName}/missed')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/bonus/{bonusModelName}/missed')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -970,7 +970,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveStatuses(request: Request.DescribeReceiveStatusesRequest): Promise<Result.DescribeReceiveStatusesResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/login_reward')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/login_reward')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1001,7 +1001,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveStatusesByUserId(request: Request.DescribeReceiveStatusesByUserIdRequest): Promise<Result.DescribeReceiveStatusesByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/login_reward')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/login_reward')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1033,7 +1033,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveStatus(request: Request.GetReceiveStatusRequest): Promise<Result.GetReceiveStatusResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/receiveStatus/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/receiveStatus/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1063,7 +1063,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveStatusByUserId(request: Request.GetReceiveStatusByUserIdRequest): Promise<Result.GetReceiveStatusByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1094,7 +1094,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public deleteReceiveStatusByUserId(request: Request.DeleteReceiveStatusByUserIdRequest): Promise<Result.DeleteReceiveStatusByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/delete')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/delete')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1132,7 +1132,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public deleteReceiveStatusByStampSheet(request: Request.DeleteReceiveStatusByStampSheetRequest): Promise<Result.DeleteReceiveStatusByStampSheetResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/receiveStatus/delete')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/receiveStatus/delete')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     
@@ -1163,7 +1163,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public markReceived(request: Request.MarkReceivedRequest): Promise<Result.MarkReceivedResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/receiveStatus/{bonusModelName}/mark')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/receiveStatus/{bonusModelName}/mark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1201,7 +1201,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public markReceivedByUserId(request: Request.MarkReceivedByUserIdRequest): Promise<Result.MarkReceivedByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/mark')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/mark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1240,7 +1240,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public unmarkReceivedByUserId(request: Request.UnmarkReceivedByUserIdRequest): Promise<Result.UnmarkReceivedByUserIdResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/unmark')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/unmark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1279,7 +1279,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public markReceivedByStampTask(request: Request.MarkReceivedByStampTaskRequest): Promise<Result.MarkReceivedByStampTaskResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/receiveStatus/mark')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/receiveStatus/mark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     
@@ -1310,7 +1310,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     }
 
     public unmarkReceivedByStampSheet(request: Request.UnmarkReceivedByStampSheetRequest): Promise<Result.UnmarkReceivedByStampSheetResult> {
-        const url = (Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/receiveStatus/unmark')
+        const url = ((Gs2LoginRewardRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/receiveStatus/unmark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region);
     

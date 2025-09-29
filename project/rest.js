@@ -27,7 +27,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     }
     Gs2ProjectRestClient.prototype.createAccount = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -57,7 +57,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.verify = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/verify')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/verify')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -83,7 +83,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.signIn = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/signIn')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/signIn')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -111,7 +111,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.forget = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/forget')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/forget')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -138,7 +138,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.issuePassword = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/password/issue')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/password/issue')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -164,7 +164,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.updateAccount = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -194,7 +194,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.enableMfa = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/mfa')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -220,7 +220,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.challengeMfa = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa/challenge')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/mfa/challenge')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -247,7 +247,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.disableMfa = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/mfa')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -269,7 +269,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.deleteAccount = function (request) {
         var _a, _b, _c;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -291,7 +291,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -312,7 +312,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeProjects = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -336,7 +336,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.createProject = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -371,7 +371,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getProject = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -394,7 +394,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getProjectToken = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/project/{projectName}/projectToken')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/project/{projectName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -421,7 +421,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getProjectTokenByIdentifier = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{accountName}', String((_b = request.getAccountName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getAccountName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -451,7 +451,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.updateProject = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -484,7 +484,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.activateRegion = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/{projectName}/region/{regionName}/activate')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -512,7 +512,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.waitActivateRegion = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/region/{regionName}/activate/wait')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/region/{regionName}/activate/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -540,7 +540,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.deleteProject = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -563,7 +563,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeBillingMethods = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billingMethod')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -587,7 +587,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.createBillingMethod = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billingMethod')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -617,7 +617,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getBillingMethod = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getBillingMethodName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -640,7 +640,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.updateBillingMethod = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getBillingMethodName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -668,7 +668,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.deleteBillingMethod = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{billingMethodName}', String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getBillingMethodName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -691,7 +691,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeReceipts = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/receipt')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/receipt')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -715,7 +715,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeBillings = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billing/{projectName}/{year}/{month}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/billing/{projectName}/{year}/{month}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -742,7 +742,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeDumpProgresses = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/dump/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -765,7 +765,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getDumpProgress = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/progress/{transactionId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/dump/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -787,7 +787,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.waitDumpUserData = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -822,7 +822,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.archiveDumpUserData = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/dump/progress/{transactionId}/archive')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/dump/progress/{transactionId}/archive')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -849,7 +849,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.dumpUserData = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{userId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/dump/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -881,7 +881,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getDumpUserData = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/dump/{transactionId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/dump/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -903,7 +903,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeCleanProgresses = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/clean/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -926,7 +926,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getCleanProgress = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/progress/{transactionId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/clean/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -948,7 +948,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.waitCleanUserData = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -983,7 +983,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.cleanUserData = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/clean/{userId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/clean/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1015,7 +1015,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeImportProgresses = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/progress')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1038,7 +1038,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getImportProgress = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/progress/{transactionId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1060,7 +1060,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.waitImportUserData = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getOwnerId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1095,7 +1095,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.prepareImportUserData = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}/prepare')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/{userId}/prepare')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1127,7 +1127,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.importUserData = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1160,7 +1160,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.describeImportErrorLogs = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/progress/{transactionId}/log')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1184,7 +1184,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     Gs2ProjectRestClient.prototype.getImportErrorLog = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
             .replace('{transactionId}', String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null'))

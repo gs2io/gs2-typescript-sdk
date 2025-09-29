@@ -30,7 +30,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -94,7 +94,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -120,7 +120,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -146,7 +146,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -182,7 +182,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +208,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -233,7 +233,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public describeDistributorModelMasters(request: Request.DescribeDistributorModelMastersRequest): Promise<Result.DescribeDistributorModelMastersResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -262,7 +262,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public createDistributorModelMaster(request: Request.CreateDistributorModelMasterRequest): Promise<Result.CreateDistributorModelMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -297,7 +297,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getDistributorModelMaster(request: Request.GetDistributorModelMasterRequest): Promise<Result.GetDistributorModelMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -324,7 +324,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public updateDistributorModelMaster(request: Request.UpdateDistributorModelMasterRequest): Promise<Result.UpdateDistributorModelMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -359,7 +359,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public deleteDistributorModelMaster(request: Request.DeleteDistributorModelMasterRequest): Promise<Result.DeleteDistributorModelMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -386,7 +386,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public describeDistributorModels(request: Request.DescribeDistributorModelsRequest): Promise<Result.DescribeDistributorModelsResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -412,7 +412,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getDistributorModel(request: Request.GetDistributorModelRequest): Promise<Result.GetDistributorModelResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor/{distributorName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -439,7 +439,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -465,7 +465,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentDistributorMaster(request: Request.GetCurrentDistributorMasterRequest): Promise<Result.GetCurrentDistributorMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -491,7 +491,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentDistributorMaster(request: Request.PreUpdateCurrentDistributorMasterRequest): Promise<Result.PreUpdateCurrentDistributorMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -521,7 +521,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentDistributorMaster(request: Request.UpdateCurrentDistributorMasterRequest): Promise<Result.UpdateCurrentDistributorMasterResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -554,7 +554,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentDistributorMasterFromGitHub(request: Request.UpdateCurrentDistributorMasterFromGitHubRequest): Promise<Result.UpdateCurrentDistributorMasterFromGitHubResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -585,7 +585,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public distribute(request: Request.DistributeRequest): Promise<Result.DistributeResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/{distributorName}')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -624,7 +624,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public distributeWithoutOverflowProcess(request: Request.DistributeWithoutOverflowProcessRequest): Promise<Result.DistributeWithoutOverflowProcessResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/distribute')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/distribute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -661,7 +661,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runVerifyTask(request: Request.RunVerifyTaskRequest): Promise<Result.RunVerifyTaskResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/verifyTask/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/verifyTask/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -693,7 +693,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampTask(request: Request.RunStampTaskRequest): Promise<Result.RunStampTaskResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/task/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -725,7 +725,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampSheet(request: Request.RunStampSheetRequest): Promise<Result.RunStampSheetResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/sheet/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -757,7 +757,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampSheetExpress(request: Request.RunStampSheetExpressRequest): Promise<Result.RunStampSheetExpressResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/distribute/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -789,7 +789,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runVerifyTaskWithoutNamespace(request: Request.RunVerifyTaskWithoutNamespaceRequest): Promise<Result.RunVerifyTaskWithoutNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/verifyTask/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/verifyTask/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -820,7 +820,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampTaskWithoutNamespace(request: Request.RunStampTaskWithoutNamespaceRequest): Promise<Result.RunStampTaskWithoutNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/task/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -851,7 +851,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampSheetWithoutNamespace(request: Request.RunStampSheetWithoutNamespaceRequest): Promise<Result.RunStampSheetWithoutNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/sheet/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -882,7 +882,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runStampSheetExpressWithoutNamespace(request: Request.RunStampSheetExpressWithoutNamespaceRequest): Promise<Result.RunStampSheetExpressWithoutNamespaceResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -913,7 +913,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public setTransactionDefaultConfig(request: Request.SetTransactionDefaultConfigRequest): Promise<Result.SetTransactionDefaultConfigResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/transaction/user/me/config')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/transaction/user/me/config')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -949,7 +949,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public setTransactionDefaultConfigByUserId(request: Request.SetTransactionDefaultConfigByUserIdRequest): Promise<Result.SetTransactionDefaultConfigByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/transaction/user/{userId}/config')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/transaction/user/{userId}/config')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -986,7 +986,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public freezeMasterData(request: Request.FreezeMasterDataRequest): Promise<Result.FreezeMasterDataResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1019,7 +1019,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public freezeMasterDataByUserId(request: Request.FreezeMasterDataByUserIdRequest): Promise<Result.FreezeMasterDataByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/masterdata/freeze')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/masterdata/freeze')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1053,7 +1053,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public signFreezeMasterDataTimestamp(request: Request.SignFreezeMasterDataTimestampRequest): Promise<Result.SignFreezeMasterDataTimestampResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/masterdata/freeze/timestamp')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/masterdata/freeze/timestamp')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1085,7 +1085,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public freezeMasterDataBySignedTimestamp(request: Request.FreezeMasterDataBySignedTimestampRequest): Promise<Result.FreezeMasterDataBySignedTimestampResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze/timestamp')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1121,7 +1121,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public freezeMasterDataByTimestamp(request: Request.FreezeMasterDataByTimestampRequest): Promise<Result.FreezeMasterDataByTimestampResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze/timestamp/raw')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/masterdata/freeze/timestamp/raw')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1155,7 +1155,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public batchExecuteApi(request: Request.BatchExecuteApiRequest): Promise<Result.BatchExecuteApiResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/batch/execute')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/batch/execute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -1185,7 +1185,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public ifExpressionByUserId(request: Request.IfExpressionByUserIdRequest): Promise<Result.IfExpressionByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/if')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1226,7 +1226,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public andExpressionByUserId(request: Request.AndExpressionByUserIdRequest): Promise<Result.AndExpressionByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/and')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/and')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1264,7 +1264,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public orExpressionByUserId(request: Request.OrExpressionByUserIdRequest): Promise<Result.OrExpressionByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/or')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/or')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1302,7 +1302,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public ifExpressionByStampTask(request: Request.IfExpressionByStampTaskRequest): Promise<Result.IfExpressionByStampTaskResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/expression/if')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -1333,7 +1333,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public andExpressionByStampTask(request: Request.AndExpressionByStampTaskRequest): Promise<Result.AndExpressionByStampTaskResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/expression/and')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/and')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -1364,7 +1364,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public orExpressionByStampTask(request: Request.OrExpressionByStampTaskRequest): Promise<Result.OrExpressionByStampTaskResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/expression/or')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/expression/or')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
     
@@ -1395,7 +1395,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1425,7 +1425,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1456,7 +1456,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public runTransaction(request: Request.RunTransactionRequest): Promise<Result.RunTransactionResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/{namespaceName}/user/{userId}/transaction/run')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/{namespaceName}/user/{userId}/transaction/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{ownerId}', String(request.getOwnerId() ?? 'null') === "" ? "null" : String(request.getOwnerId() ?? 'null'))
@@ -1495,7 +1495,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getTransactionResult(request: Request.GetTransactionResultRequest): Promise<Result.GetTransactionResultResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/transaction/{transactionId}/result')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/transaction/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1525,7 +1525,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     }
 
     public getTransactionResultByUserId(request: Request.GetTransactionResultByUserIdRequest): Promise<Result.GetTransactionResultByUserIdResult> {
-        const url = (Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/transaction/{transactionId}/result')
+        const url = ((Gs2DistributorRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/transaction/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

@@ -30,7 +30,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -93,7 +93,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -119,7 +119,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -145,7 +145,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -180,7 +180,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -206,7 +206,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -231,7 +231,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -264,7 +264,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -293,7 +293,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -326,7 +326,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -355,7 +355,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -388,7 +388,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -422,7 +422,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -452,7 +452,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeEntryModels(request: Request.DescribeEntryModelsRequest): Promise<Result.DescribeEntryModelsResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -478,7 +478,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntryModel(request: Request.GetEntryModelRequest): Promise<Result.GetEntryModelResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{entryName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/{entryName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -505,7 +505,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeEntryModelMasters(request: Request.DescribeEntryModelMastersRequest): Promise<Result.DescribeEntryModelMastersResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -534,7 +534,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public createEntryModelMaster(request: Request.CreateEntryModelMasterRequest): Promise<Result.CreateEntryModelMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -567,7 +567,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntryModelMaster(request: Request.GetEntryModelMasterRequest): Promise<Result.GetEntryModelMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{entryName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{entryName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -594,7 +594,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public updateEntryModelMaster(request: Request.UpdateEntryModelMasterRequest): Promise<Result.UpdateEntryModelMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{entryName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{entryName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -627,7 +627,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteEntryModelMaster(request: Request.DeleteEntryModelMasterRequest): Promise<Result.DeleteEntryModelMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{entryName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{entryName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -654,7 +654,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeEntries(request: Request.DescribeEntriesRequest): Promise<Result.DescribeEntriesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/entry')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -685,7 +685,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeEntriesByUserId(request: Request.DescribeEntriesByUserIdRequest): Promise<Result.DescribeEntriesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -717,7 +717,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public addEntriesByUserId(request: Request.AddEntriesByUserIdRequest): Promise<Result.AddEntriesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -755,7 +755,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntry(request: Request.GetEntryRequest): Promise<Result.GetEntryResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/entry/{entryModelName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entry/{entryModelName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -785,7 +785,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntryByUserId(request: Request.GetEntryByUserIdRequest): Promise<Result.GetEntryByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry/{entryModelName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry/{entryModelName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -816,7 +816,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntryWithSignature(request: Request.GetEntryWithSignatureRequest): Promise<Result.GetEntryWithSignatureResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/entry/{entryModelName}/signature')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entry/{entryModelName}/signature')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -847,7 +847,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getEntryWithSignatureByUserId(request: Request.GetEntryWithSignatureByUserIdRequest): Promise<Result.GetEntryWithSignatureByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry/{entryModelName}/signature')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry/{entryModelName}/signature')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -879,7 +879,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -912,7 +912,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public verifyEntry(request: Request.VerifyEntryRequest): Promise<Result.VerifyEntryResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/entry/{entryModelName}/verify/{verifyType}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entry/{entryModelName}/verify/{verifyType}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -950,7 +950,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public verifyEntryByUserId(request: Request.VerifyEntryByUserIdRequest): Promise<Result.VerifyEntryByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry/{entryModelName}/verify/{verifyType}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry/{entryModelName}/verify/{verifyType}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -989,7 +989,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteEntries(request: Request.DeleteEntriesRequest): Promise<Result.DeleteEntriesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/entry/delete')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entry/delete')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1026,7 +1026,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteEntriesByUserId(request: Request.DeleteEntriesByUserIdRequest): Promise<Result.DeleteEntriesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry/delete')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entry/delete')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1064,7 +1064,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/entry/add')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/entry/add')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -1095,7 +1095,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteEntriesByStampTask(request: Request.DeleteEntriesByStampTaskRequest): Promise<Result.DeleteEntriesByStampTaskResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/entry/delete')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/entry/delete')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -1126,7 +1126,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public verifyEntryByStampTask(request: Request.VerifyEntryByStampTaskRequest): Promise<Result.VerifyEntryByStampTaskResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/entry/verify')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/entry/verify')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region);
     
@@ -1157,7 +1157,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeLikes(request: Request.DescribeLikesRequest): Promise<Result.DescribeLikesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1188,7 +1188,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public describeLikesByUserId(request: Request.DescribeLikesByUserIdRequest): Promise<Result.DescribeLikesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1220,7 +1220,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public addLikes(request: Request.AddLikesRequest): Promise<Result.AddLikesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1257,7 +1257,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public addLikesByUserId(request: Request.AddLikesByUserIdRequest): Promise<Result.AddLikesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1295,7 +1295,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getLike(request: Request.GetLikeRequest): Promise<Result.GetLikeResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/like/{entryModelName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like/{entryModelName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1325,7 +1325,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getLikeByUserId(request: Request.GetLikeByUserIdRequest): Promise<Result.GetLikeByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/like/{entryModelName}')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/like/{entryModelName}')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1356,7 +1356,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public resetLikes(request: Request.ResetLikesRequest): Promise<Result.ResetLikesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1388,7 +1388,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public resetLikesByUserId(request: Request.ResetLikesByUserIdRequest): Promise<Result.ResetLikesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/like')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/like')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1421,7 +1421,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteLikes(request: Request.DeleteLikesRequest): Promise<Result.DeleteLikesResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/like/delete')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like/delete')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1458,7 +1458,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteLikesByUserId(request: Request.DeleteLikesByUserIdRequest): Promise<Result.DeleteLikesByUserIdResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/like/delete')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/like/delete')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1496,7 +1496,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1522,7 +1522,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentEntryMaster(request: Request.GetCurrentEntryMasterRequest): Promise<Result.GetCurrentEntryMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1548,7 +1548,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentEntryMaster(request: Request.PreUpdateCurrentEntryMasterRequest): Promise<Result.PreUpdateCurrentEntryMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1578,7 +1578,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentEntryMaster(request: Request.UpdateCurrentEntryMasterRequest): Promise<Result.UpdateCurrentEntryMasterResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1611,7 +1611,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentEntryMasterFromGitHub(request: Request.UpdateCurrentEntryMasterFromGitHubRequest): Promise<Result.UpdateCurrentEntryMasterFromGitHubResult> {
-        const url = (Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2DictionaryRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

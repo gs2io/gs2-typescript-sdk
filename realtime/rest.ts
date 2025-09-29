@@ -30,7 +30,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
     
@@ -94,7 +94,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -120,7 +120,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -146,7 +146,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -182,7 +182,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +208,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public now(request: Request.NowRequest): Promise<Result.NowResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/now')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/now')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
     
@@ -236,7 +236,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
     
@@ -261,7 +261,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public describeRooms(request: Request.DescribeRoomsRequest): Promise<Result.DescribeRoomsResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -289,7 +289,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public wantRoom(request: Request.WantRoomRequest): Promise<Result.WantRoomResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -321,7 +321,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public getRoom(request: Request.GetRoomRequest): Promise<Result.GetRoomResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -348,7 +348,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRoom(request: Request.DeleteRoomRequest): Promise<Result.DeleteRoomResult> {
-        const url = (Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = ((Gs2RealtimeRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

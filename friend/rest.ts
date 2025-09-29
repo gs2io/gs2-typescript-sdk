@@ -30,7 +30,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
     
@@ -105,7 +105,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -131,7 +131,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -157,7 +157,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +204,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -230,7 +230,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
     
@@ -255,7 +255,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -288,7 +288,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -317,7 +317,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -350,7 +350,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -379,7 +379,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -412,7 +412,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -446,7 +446,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -476,7 +476,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getProfile(request: Request.GetProfileRequest): Promise<Result.GetProfileResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -505,7 +505,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getProfileByUserId(request: Request.GetProfileByUserIdRequest): Promise<Result.GetProfileByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -535,7 +535,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public updateProfile(request: Request.UpdateProfileRequest): Promise<Result.UpdateProfileResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -574,7 +574,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public updateProfileByUserId(request: Request.UpdateProfileByUserIdRequest): Promise<Result.UpdateProfileByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -614,7 +614,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProfileByUserId(request: Request.DeleteProfileByUserIdRequest): Promise<Result.DeleteProfileByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/profile')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -647,7 +647,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public updateProfileByStampSheet(request: Request.UpdateProfileByStampSheetRequest): Promise<Result.UpdateProfileByStampSheetResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/profile/update')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/profile/update')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
     
@@ -678,7 +678,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeFriends(request: Request.DescribeFriendsRequest): Promise<Result.DescribeFriendsResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/friend')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -710,7 +710,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeFriendsByUserId(request: Request.DescribeFriendsByUserIdRequest): Promise<Result.DescribeFriendsByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/friend')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -743,7 +743,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeBlackList(request: Request.DescribeBlackListRequest): Promise<Result.DescribeBlackListResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/blackList')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -774,7 +774,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeBlackListByUserId(request: Request.DescribeBlackListByUserIdRequest): Promise<Result.DescribeBlackListByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/blackList')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -806,7 +806,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public registerBlackList(request: Request.RegisterBlackListRequest): Promise<Result.RegisterBlackListResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -843,7 +843,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public registerBlackListByUserId(request: Request.RegisterBlackListByUserIdRequest): Promise<Result.RegisterBlackListByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -881,7 +881,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public unregisterBlackList(request: Request.UnregisterBlackListRequest): Promise<Result.UnregisterBlackListResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/blackList/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -914,7 +914,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public unregisterBlackListByUserId(request: Request.UnregisterBlackListByUserIdRequest): Promise<Result.UnregisterBlackListByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/blackList/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -948,7 +948,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeFollows(request: Request.DescribeFollowsRequest): Promise<Result.DescribeFollowsResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/follow')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -980,7 +980,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeFollowsByUserId(request: Request.DescribeFollowsByUserIdRequest): Promise<Result.DescribeFollowsByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/follow')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1013,7 +1013,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getFollow(request: Request.GetFollowRequest): Promise<Result.GetFollowResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1044,7 +1044,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getFollowByUserId(request: Request.GetFollowByUserIdRequest): Promise<Result.GetFollowByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1076,7 +1076,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public follow(request: Request.FollowRequest): Promise<Result.FollowResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1113,7 +1113,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public followByUserId(request: Request.FollowByUserIdRequest): Promise<Result.FollowByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1151,7 +1151,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public unfollow(request: Request.UnfollowRequest): Promise<Result.UnfollowResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1184,7 +1184,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public unfollowByUserId(request: Request.UnfollowByUserIdRequest): Promise<Result.UnfollowByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/follow/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1218,7 +1218,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getFriend(request: Request.GetFriendRequest): Promise<Result.GetFriendResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1249,7 +1249,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getFriendByUserId(request: Request.GetFriendByUserIdRequest): Promise<Result.GetFriendByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1281,7 +1281,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public addFriend(request: Request.AddFriendRequest): Promise<Result.AddFriendResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1318,7 +1318,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public addFriendByUserId(request: Request.AddFriendByUserIdRequest): Promise<Result.AddFriendByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1356,7 +1356,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFriend(request: Request.DeleteFriendRequest): Promise<Result.DeleteFriendResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1389,7 +1389,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFriendByUserId(request: Request.DeleteFriendByUserIdRequest): Promise<Result.DeleteFriendByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/friend/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1423,7 +1423,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeSendRequests(request: Request.DescribeSendRequestsRequest): Promise<Result.DescribeSendRequestsResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1455,7 +1455,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeSendRequestsByUserId(request: Request.DescribeSendRequestsByUserIdRequest): Promise<Result.DescribeSendRequestsByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/sendBox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1488,7 +1488,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getSendRequest(request: Request.GetSendRequestRequest): Promise<Result.GetSendRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1519,7 +1519,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getSendRequestByUserId(request: Request.GetSendRequestByUserIdRequest): Promise<Result.GetSendRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1551,7 +1551,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public sendRequest(request: Request.SendRequestRequest): Promise<Result.SendRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1588,7 +1588,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public sendRequestByUserId(request: Request.SendRequestByUserIdRequest): Promise<Result.SendRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1626,7 +1626,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRequest(request: Request.DeleteRequestRequest): Promise<Result.DeleteRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1659,7 +1659,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRequestByUserId(request: Request.DeleteRequestByUserIdRequest): Promise<Result.DeleteRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1693,7 +1693,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveRequests(request: Request.DescribeReceiveRequestsRequest): Promise<Result.DescribeReceiveRequestsResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1725,7 +1725,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public describeReceiveRequestsByUserId(request: Request.DescribeReceiveRequestsByUserIdRequest): Promise<Result.DescribeReceiveRequestsByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inbox')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1758,7 +1758,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveRequest(request: Request.GetReceiveRequestRequest): Promise<Result.GetReceiveRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1789,7 +1789,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getReceiveRequestByUserId(request: Request.GetReceiveRequestByUserIdRequest): Promise<Result.GetReceiveRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1821,7 +1821,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public acceptRequest(request: Request.AcceptRequestRequest): Promise<Result.AcceptRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1858,7 +1858,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public acceptRequestByUserId(request: Request.AcceptRequestByUserIdRequest): Promise<Result.AcceptRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1896,7 +1896,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public rejectRequest(request: Request.RejectRequestRequest): Promise<Result.RejectRequestResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1929,7 +1929,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public rejectRequestByUserId(request: Request.RejectRequestByUserIdRequest): Promise<Result.RejectRequestByUserIdResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inbox/{fromUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1963,7 +1963,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     }
 
     public getPublicProfile(request: Request.GetPublicProfileRequest): Promise<Result.GetPublicProfileResult> {
-        const url = (Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/profile/public')
+        const url = ((Gs2FriendRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/profile/public')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

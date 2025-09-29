@@ -30,7 +30,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -94,7 +94,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -120,7 +120,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -146,7 +146,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -182,7 +182,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +208,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -233,7 +233,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -266,7 +266,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -295,7 +295,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -328,7 +328,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -357,7 +357,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -390,7 +390,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -424,7 +424,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -454,7 +454,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormModel(request: Request.GetFormModelRequest): Promise<Result.GetFormModelResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{moldModelName}/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -481,7 +481,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormModelMasters(request: Request.DescribeFormModelMastersRequest): Promise<Result.DescribeFormModelMastersResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -510,7 +510,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public createFormModelMaster(request: Request.CreateFormModelMasterRequest): Promise<Result.CreateFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -544,7 +544,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormModelMaster(request: Request.GetFormModelMasterRequest): Promise<Result.GetFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -571,7 +571,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updateFormModelMaster(request: Request.UpdateFormModelMasterRequest): Promise<Result.UpdateFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -605,7 +605,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFormModelMaster(request: Request.DeleteFormModelMasterRequest): Promise<Result.DeleteFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -632,7 +632,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoldModels(request: Request.DescribeMoldModelsRequest): Promise<Result.DescribeMoldModelsResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -658,7 +658,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getMoldModel(request: Request.GetMoldModelRequest): Promise<Result.GetMoldModelResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -685,7 +685,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoldModelMasters(request: Request.DescribeMoldModelMastersRequest): Promise<Result.DescribeMoldModelMastersResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -714,7 +714,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public createMoldModelMaster(request: Request.CreateMoldModelMasterRequest): Promise<Result.CreateMoldModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -750,7 +750,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getMoldModelMaster(request: Request.GetMoldModelMasterRequest): Promise<Result.GetMoldModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -777,7 +777,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updateMoldModelMaster(request: Request.UpdateMoldModelMasterRequest): Promise<Result.UpdateMoldModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -813,7 +813,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMoldModelMaster(request: Request.DeleteMoldModelMasterRequest): Promise<Result.DeleteMoldModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -840,7 +840,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describePropertyFormModels(request: Request.DescribePropertyFormModelsRequest): Promise<Result.DescribePropertyFormModelsResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/propertyForm')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/propertyForm')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -866,7 +866,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyFormModel(request: Request.GetPropertyFormModelRequest): Promise<Result.GetPropertyFormModelResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/propertyForm/{propertyFormModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/propertyForm/{propertyFormModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -893,7 +893,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describePropertyFormModelMasters(request: Request.DescribePropertyFormModelMastersRequest): Promise<Result.DescribePropertyFormModelMastersResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/propertyForm')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -922,7 +922,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public createPropertyFormModelMaster(request: Request.CreatePropertyFormModelMasterRequest): Promise<Result.CreatePropertyFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/propertyForm')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -956,7 +956,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyFormModelMaster(request: Request.GetPropertyFormModelMasterRequest): Promise<Result.GetPropertyFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -983,7 +983,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updatePropertyFormModelMaster(request: Request.UpdatePropertyFormModelMasterRequest): Promise<Result.UpdatePropertyFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1017,7 +1017,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deletePropertyFormModelMaster(request: Request.DeletePropertyFormModelMasterRequest): Promise<Result.DeletePropertyFormModelMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1044,7 +1044,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1070,7 +1070,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentFormMaster(request: Request.GetCurrentFormMasterRequest): Promise<Result.GetCurrentFormMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1096,7 +1096,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentFormMaster(request: Request.PreUpdateCurrentFormMasterRequest): Promise<Result.PreUpdateCurrentFormMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1126,7 +1126,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentFormMaster(request: Request.UpdateCurrentFormMasterRequest): Promise<Result.UpdateCurrentFormMasterResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1159,7 +1159,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentFormMasterFromGitHub(request: Request.UpdateCurrentFormMasterFromGitHubRequest): Promise<Result.UpdateCurrentFormMasterFromGitHubResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1190,7 +1190,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeMolds(request: Request.DescribeMoldsRequest): Promise<Result.DescribeMoldsResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1221,7 +1221,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoldsByUserId(request: Request.DescribeMoldsByUserIdRequest): Promise<Result.DescribeMoldsByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1253,7 +1253,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getMold(request: Request.GetMoldRequest): Promise<Result.GetMoldResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1283,7 +1283,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getMoldByUserId(request: Request.GetMoldByUserIdRequest): Promise<Result.GetMoldByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1314,7 +1314,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setMoldCapacityByUserId(request: Request.SetMoldCapacityByUserIdRequest): Promise<Result.SetMoldCapacityByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1353,7 +1353,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public addMoldCapacityByUserId(request: Request.AddMoldCapacityByUserIdRequest): Promise<Result.AddMoldCapacityByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1392,7 +1392,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public subMoldCapacity(request: Request.SubMoldCapacityRequest): Promise<Result.SubMoldCapacityResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/sub')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/sub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1430,7 +1430,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public subMoldCapacityByUserId(request: Request.SubMoldCapacityByUserIdRequest): Promise<Result.SubMoldCapacityByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/sub')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/sub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1469,7 +1469,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMold(request: Request.DeleteMoldRequest): Promise<Result.DeleteMoldResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1502,7 +1502,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMoldByUserId(request: Request.DeleteMoldByUserIdRequest): Promise<Result.DeleteMoldByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1536,7 +1536,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public addCapacityByStampSheet(request: Request.AddCapacityByStampSheetRequest): Promise<Result.AddCapacityByStampSheetResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/add')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/mold/capacity/add')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -1567,7 +1567,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public subCapacityByStampTask(request: Request.SubCapacityByStampTaskRequest): Promise<Result.SubCapacityByStampTaskResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/sub')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/mold/capacity/sub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -1598,7 +1598,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setCapacityByStampSheet(request: Request.SetCapacityByStampSheetRequest): Promise<Result.SetCapacityByStampSheetResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/set')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/mold/capacity/set')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -1629,7 +1629,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeForms(request: Request.DescribeFormsRequest): Promise<Result.DescribeFormsResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1661,7 +1661,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormsByUserId(request: Request.DescribeFormsByUserIdRequest): Promise<Result.DescribeFormsByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1694,7 +1694,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getForm(request: Request.GetFormRequest): Promise<Result.GetFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1725,7 +1725,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormByUserId(request: Request.GetFormByUserIdRequest): Promise<Result.GetFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1757,7 +1757,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormWithSignature(request: Request.GetFormWithSignatureRequest): Promise<Result.GetFormWithSignatureResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/signature')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1789,7 +1789,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormWithSignatureByUserId(request: Request.GetFormWithSignatureByUserIdRequest): Promise<Result.GetFormWithSignatureByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/signature')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1822,7 +1822,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setForm(request: Request.SetFormRequest): Promise<Result.SetFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/raw')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1861,7 +1861,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setFormByUserId(request: Request.SetFormByUserIdRequest): Promise<Result.SetFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1901,7 +1901,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setFormWithSignature(request: Request.SetFormWithSignatureRequest): Promise<Result.SetFormWithSignatureResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1941,7 +1941,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public acquireActionsToFormProperties(request: Request.AcquireActionsToFormPropertiesRequest): Promise<Result.AcquireActionsToFormPropertiesResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/stamp/delegate')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1982,7 +1982,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteForm(request: Request.DeleteFormRequest): Promise<Result.DeleteFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2016,7 +2016,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deleteFormByUserId(request: Request.DeleteFormByUserIdRequest): Promise<Result.DeleteFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2051,7 +2051,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public acquireActionToFormPropertiesByStampSheet(request: Request.AcquireActionToFormPropertiesByStampSheetRequest): Promise<Result.AcquireActionToFormPropertiesByStampSheetResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/form/acquire')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -2082,7 +2082,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setFormByStampSheet(request: Request.SetFormByStampSheetRequest): Promise<Result.SetFormByStampSheetResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/form/set')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/form/set')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     
@@ -2113,7 +2113,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describePropertyForms(request: Request.DescribePropertyFormsRequest): Promise<Result.DescribePropertyFormsResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2145,7 +2145,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public describePropertyFormsByUserId(request: Request.DescribePropertyFormsByUserIdRequest): Promise<Result.DescribePropertyFormsByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2178,7 +2178,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyForm(request: Request.GetPropertyFormRequest): Promise<Result.GetPropertyFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2209,7 +2209,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyFormByUserId(request: Request.GetPropertyFormByUserIdRequest): Promise<Result.GetPropertyFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2241,7 +2241,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyFormWithSignature(request: Request.GetPropertyFormWithSignatureRequest): Promise<Result.GetPropertyFormWithSignatureResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/signature')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2273,7 +2273,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getPropertyFormWithSignatureByUserId(request: Request.GetPropertyFormWithSignatureByUserIdRequest): Promise<Result.GetPropertyFormWithSignatureByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/signature')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2306,7 +2306,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setPropertyForm(request: Request.SetPropertyFormRequest): Promise<Result.SetPropertyFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/raw')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/raw')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2345,7 +2345,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setPropertyFormByUserId(request: Request.SetPropertyFormByUserIdRequest): Promise<Result.SetPropertyFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2385,7 +2385,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public setPropertyFormWithSignature(request: Request.SetPropertyFormWithSignatureRequest): Promise<Result.SetPropertyFormWithSignatureResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2425,7 +2425,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public acquireActionsToPropertyFormProperties(request: Request.AcquireActionsToPropertyFormPropertiesRequest): Promise<Result.AcquireActionsToPropertyFormPropertiesResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/stamp/delegate')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2466,7 +2466,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deletePropertyForm(request: Request.DeletePropertyFormRequest): Promise<Result.DeletePropertyFormResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2500,7 +2500,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public deletePropertyFormByUserId(request: Request.DeletePropertyFormByUserIdRequest): Promise<Result.DeletePropertyFormByUserIdResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2535,7 +2535,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public acquireActionToPropertyFormPropertiesByStampSheet(request: Request.AcquireActionToPropertyFormPropertiesByStampSheetRequest): Promise<Result.AcquireActionToPropertyFormPropertiesByStampSheetResult> {
-        const url = (Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/property/form/acquire')
+        const url = ((Gs2FormationRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/property/form/acquire')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
     

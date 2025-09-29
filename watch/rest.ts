@@ -30,7 +30,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getChart(request: Request.GetChartRequest): Promise<Result.GetChartResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/chart/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{measure}', String(request.getMeasure() ?? 'null') === "" ? "null" : String(request.getMeasure() ?? 'null'));
@@ -69,7 +69,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -94,7 +94,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getDistribution(request: Request.GetDistributionRequest): Promise<Result.GetDistributionResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/distribution/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{measure}', String(request.getMeasure() ?? 'null') === "" ? "null" : String(request.getMeasure() ?? 'null'));
@@ -131,7 +131,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getCumulative(request: Request.GetCumulativeRequest): Promise<Result.GetCumulativeResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/cumulative/{name}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{name}', String(request.getName() ?? 'null') === "" ? "null" : String(request.getName() ?? 'null'));
@@ -162,7 +162,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeBillingActivities(request: Request.DescribeBillingActivitiesRequest): Promise<Result.DescribeBillingActivitiesResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/billingActivity/{year}/{month}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
@@ -192,7 +192,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getBillingActivity(request: Request.GetBillingActivityRequest): Promise<Result.GetBillingActivityResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/billingActivity/{year}/{month}/{service}/{activityType}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
@@ -225,7 +225,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getGeneralMetrics(request: Request.GetGeneralMetricsRequest): Promise<Result.GetGeneralMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/general')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/general')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -250,7 +250,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeAccountNamespaceMetrics(request: Request.DescribeAccountNamespaceMetricsRequest): Promise<Result.DescribeAccountNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/account/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -275,7 +275,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getAccountNamespaceMetrics(request: Request.GetAccountNamespaceMetricsRequest): Promise<Result.GetAccountNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/account/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/account/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -301,7 +301,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeChatNamespaceMetrics(request: Request.DescribeChatNamespaceMetricsRequest): Promise<Result.DescribeChatNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/chat/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -326,7 +326,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getChatNamespaceMetrics(request: Request.GetChatNamespaceMetricsRequest): Promise<Result.GetChatNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/chat/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/chat/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -352,7 +352,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeDatastoreNamespaceMetrics(request: Request.DescribeDatastoreNamespaceMetricsRequest): Promise<Result.DescribeDatastoreNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/datastore/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -377,7 +377,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getDatastoreNamespaceMetrics(request: Request.GetDatastoreNamespaceMetricsRequest): Promise<Result.GetDatastoreNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/datastore/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/datastore/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -403,7 +403,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeDictionaryNamespaceMetrics(request: Request.DescribeDictionaryNamespaceMetricsRequest): Promise<Result.DescribeDictionaryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/dictionary/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -428,7 +428,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getDictionaryNamespaceMetrics(request: Request.GetDictionaryNamespaceMetricsRequest): Promise<Result.GetDictionaryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/dictionary/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -454,7 +454,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExchangeRateModelMetrics(request: Request.DescribeExchangeRateModelMetricsRequest): Promise<Result.DescribeExchangeRateModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/exchange/namespace/{namespaceName}/rateModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -480,7 +480,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getExchangeRateModelMetrics(request: Request.GetExchangeRateModelMetricsRequest): Promise<Result.GetExchangeRateModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel/{rateName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/exchange/namespace/{namespaceName}/rateModel/{rateName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -507,7 +507,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExchangeNamespaceMetrics(request: Request.DescribeExchangeNamespaceMetricsRequest): Promise<Result.DescribeExchangeNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/exchange/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -532,7 +532,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getExchangeNamespaceMetrics(request: Request.GetExchangeNamespaceMetricsRequest): Promise<Result.GetExchangeNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/exchange/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -558,7 +558,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExperienceStatusMetrics(request: Request.DescribeExperienceStatusMetricsRequest): Promise<Result.DescribeExperienceStatusMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}/status')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}/status')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -585,7 +585,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExperienceExperienceModelMetrics(request: Request.DescribeExperienceExperienceModelMetricsRequest): Promise<Result.DescribeExperienceExperienceModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/experience/namespace/{namespaceName}/experienceModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -611,7 +611,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getExperienceExperienceModelMetrics(request: Request.GetExperienceExperienceModelMetricsRequest): Promise<Result.GetExperienceExperienceModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -638,7 +638,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExperienceNamespaceMetrics(request: Request.DescribeExperienceNamespaceMetricsRequest): Promise<Result.DescribeExperienceNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/experience/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -663,7 +663,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getExperienceNamespaceMetrics(request: Request.GetExperienceNamespaceMetricsRequest): Promise<Result.GetExperienceNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/experience/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -689,7 +689,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormationFormMetrics(request: Request.DescribeFormationFormMetricsRequest): Promise<Result.DescribeFormationFormMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -716,7 +716,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormationMoldMetrics(request: Request.DescribeFormationMoldMetricsRequest): Promise<Result.DescribeFormationMoldMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/formation/namespace/{namespaceName}/mold')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -742,7 +742,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormationNamespaceMetrics(request: Request.DescribeFormationNamespaceMetricsRequest): Promise<Result.DescribeFormationNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/formation/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -767,7 +767,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getFormationNamespaceMetrics(request: Request.GetFormationNamespaceMetricsRequest): Promise<Result.GetFormationNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/formation/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -793,7 +793,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeFriendNamespaceMetrics(request: Request.DescribeFriendNamespaceMetricsRequest): Promise<Result.DescribeFriendNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/friend/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -818,7 +818,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getFriendNamespaceMetrics(request: Request.GetFriendNamespaceMetricsRequest): Promise<Result.GetFriendNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/friend/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/friend/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -844,7 +844,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeInboxNamespaceMetrics(request: Request.DescribeInboxNamespaceMetricsRequest): Promise<Result.DescribeInboxNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inbox/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -869,7 +869,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getInboxNamespaceMetrics(request: Request.GetInboxNamespaceMetricsRequest): Promise<Result.GetInboxNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inbox/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inbox/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -895,7 +895,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeInventoryItemSetMetrics(request: Request.DescribeInventoryItemSetMetricsRequest): Promise<Result.DescribeInventoryItemSetMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory/{inventoryName}/itemSet')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inventory/namespace/{namespaceName}/inventory/{inventoryName}/itemSet')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -922,7 +922,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeInventoryInventoryMetrics(request: Request.DescribeInventoryInventoryMetricsRequest): Promise<Result.DescribeInventoryInventoryMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}/inventory')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inventory/namespace/{namespaceName}/inventory')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -948,7 +948,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeInventoryNamespaceMetrics(request: Request.DescribeInventoryNamespaceMetricsRequest): Promise<Result.DescribeInventoryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inventory/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -973,7 +973,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getInventoryNamespaceMetrics(request: Request.GetInventoryNamespaceMetricsRequest): Promise<Result.GetInventoryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/inventory/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/inventory/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -999,7 +999,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeKeyNamespaceMetrics(request: Request.DescribeKeyNamespaceMetricsRequest): Promise<Result.DescribeKeyNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/key/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1024,7 +1024,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getKeyNamespaceMetrics(request: Request.GetKeyNamespaceMetricsRequest): Promise<Result.GetKeyNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/key/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/key/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1050,7 +1050,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitCounterMetrics(request: Request.DescribeLimitCounterMetricsRequest): Promise<Result.DescribeLimitCounterMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}/counter')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}/counter')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1077,7 +1077,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitLimitModelMetrics(request: Request.DescribeLimitLimitModelMetricsRequest): Promise<Result.DescribeLimitLimitModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/limit/namespace/{namespaceName}/limitModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1103,7 +1103,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getLimitLimitModelMetrics(request: Request.GetLimitLimitModelMetricsRequest): Promise<Result.GetLimitLimitModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1130,7 +1130,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitNamespaceMetrics(request: Request.DescribeLimitNamespaceMetricsRequest): Promise<Result.DescribeLimitNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/limit/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1155,7 +1155,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getLimitNamespaceMetrics(request: Request.GetLimitNamespaceMetricsRequest): Promise<Result.GetLimitNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/limit/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1181,7 +1181,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLotteryLotteryMetrics(request: Request.DescribeLotteryLotteryMetricsRequest): Promise<Result.DescribeLotteryLotteryMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lottery')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/lottery/namespace/{namespaceName}/lottery')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1207,7 +1207,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getLotteryLotteryMetrics(request: Request.GetLotteryLotteryMetricsRequest): Promise<Result.GetLotteryLotteryMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}/lotteryModel/{lotteryName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/lottery/namespace/{namespaceName}/lotteryModel/{lotteryName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1234,7 +1234,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLotteryNamespaceMetrics(request: Request.DescribeLotteryNamespaceMetricsRequest): Promise<Result.DescribeLotteryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/lottery/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1259,7 +1259,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getLotteryNamespaceMetrics(request: Request.GetLotteryNamespaceMetricsRequest): Promise<Result.GetLotteryNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/lottery/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/lottery/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1285,7 +1285,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMatchmakingNamespaceMetrics(request: Request.DescribeMatchmakingNamespaceMetricsRequest): Promise<Result.DescribeMatchmakingNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/matchmaking/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1310,7 +1310,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getMatchmakingNamespaceMetrics(request: Request.GetMatchmakingNamespaceMetricsRequest): Promise<Result.GetMatchmakingNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/matchmaking/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/matchmaking/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1336,7 +1336,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionCounterMetrics(request: Request.DescribeMissionCounterMetricsRequest): Promise<Result.DescribeMissionCounterMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/counter')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/mission/namespace/{namespaceName}/counter')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1362,7 +1362,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionMissionGroupModelMetrics(request: Request.DescribeMissionMissionGroupModelMetricsRequest): Promise<Result.DescribeMissionMissionGroupModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/mission/namespace/{namespaceName}/missionGroupModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1388,7 +1388,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionMissionGroupModelMetrics(request: Request.GetMissionMissionGroupModelMetricsRequest): Promise<Result.GetMissionMissionGroupModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}/missionGroupModel/{missionGroupName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/mission/namespace/{namespaceName}/missionGroupModel/{missionGroupName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1415,7 +1415,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMissionNamespaceMetrics(request: Request.DescribeMissionNamespaceMetricsRequest): Promise<Result.DescribeMissionNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/mission/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1440,7 +1440,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getMissionNamespaceMetrics(request: Request.GetMissionNamespaceMetricsRequest): Promise<Result.GetMissionNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/mission/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/mission/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1466,7 +1466,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoneyWalletMetrics(request: Request.DescribeMoneyWalletMetricsRequest): Promise<Result.DescribeMoneyWalletMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/wallet')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/money/namespace/{namespaceName}/wallet')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1492,7 +1492,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoneyReceiptMetrics(request: Request.DescribeMoneyReceiptMetricsRequest): Promise<Result.DescribeMoneyReceiptMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}/receipt')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/money/namespace/{namespaceName}/receipt')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1518,7 +1518,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeMoneyNamespaceMetrics(request: Request.DescribeMoneyNamespaceMetricsRequest): Promise<Result.DescribeMoneyNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/money/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1543,7 +1543,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getMoneyNamespaceMetrics(request: Request.GetMoneyNamespaceMetricsRequest): Promise<Result.GetMoneyNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/money/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/money/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1569,7 +1569,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestQuestModelMetrics(request: Request.DescribeQuestQuestModelMetricsRequest): Promise<Result.DescribeQuestQuestModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1596,7 +1596,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestQuestModelMetrics(request: Request.GetQuestQuestModelMetricsRequest): Promise<Result.GetQuestQuestModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel/{questName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}/questModel/{questName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1624,7 +1624,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestQuestGroupModelMetrics(request: Request.DescribeQuestQuestGroupModelMetricsRequest): Promise<Result.DescribeQuestQuestGroupModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace/{namespaceName}/questGroupModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1650,7 +1650,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestQuestGroupModelMetrics(request: Request.GetQuestQuestGroupModelMetricsRequest): Promise<Result.GetQuestQuestGroupModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace/{namespaceName}/questGroupModel/{questGroupName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1677,7 +1677,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeQuestNamespaceMetrics(request: Request.DescribeQuestNamespaceMetricsRequest): Promise<Result.DescribeQuestNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1702,7 +1702,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getQuestNamespaceMetrics(request: Request.GetQuestNamespaceMetricsRequest): Promise<Result.GetQuestNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/quest/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/quest/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1728,7 +1728,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeRankingCategoryModelMetrics(request: Request.DescribeRankingCategoryModelMetricsRequest): Promise<Result.DescribeRankingCategoryModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/ranking/namespace/{namespaceName}/categoryModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1754,7 +1754,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getRankingCategoryModelMetrics(request: Request.GetRankingCategoryModelMetricsRequest): Promise<Result.GetRankingCategoryModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}/categoryModel/{categoryName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/ranking/namespace/{namespaceName}/categoryModel/{categoryName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1781,7 +1781,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeRankingNamespaceMetrics(request: Request.DescribeRankingNamespaceMetricsRequest): Promise<Result.DescribeRankingNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/ranking/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1806,7 +1806,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getRankingNamespaceMetrics(request: Request.GetRankingNamespaceMetricsRequest): Promise<Result.GetRankingNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/ranking/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/ranking/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1832,7 +1832,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcaseDisplayItemMetrics(request: Request.DescribeShowcaseDisplayItemMetricsRequest): Promise<Result.DescribeShowcaseDisplayItemMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1859,7 +1859,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseDisplayItemMetrics(request: Request.GetShowcaseDisplayItemMetricsRequest): Promise<Result.GetShowcaseDisplayItemMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1887,7 +1887,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcaseShowcaseMetrics(request: Request.DescribeShowcaseShowcaseMetricsRequest): Promise<Result.DescribeShowcaseShowcaseMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace/{namespaceName}/showcase')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1913,7 +1913,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseShowcaseMetrics(request: Request.GetShowcaseShowcaseMetricsRequest): Promise<Result.GetShowcaseShowcaseMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1940,7 +1940,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcaseNamespaceMetrics(request: Request.DescribeShowcaseNamespaceMetricsRequest): Promise<Result.DescribeShowcaseNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -1965,7 +1965,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseNamespaceMetrics(request: Request.GetShowcaseNamespaceMetricsRequest): Promise<Result.GetShowcaseNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/showcase/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1991,7 +1991,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminaStaminaModelMetrics(request: Request.DescribeStaminaStaminaModelMetricsRequest): Promise<Result.DescribeStaminaStaminaModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/stamina/namespace/{namespaceName}/staminaModel')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -2017,7 +2017,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getStaminaStaminaModelMetrics(request: Request.GetStaminaStaminaModelMetricsRequest): Promise<Result.GetStaminaStaminaModelMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}/staminaModel/{staminaName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/stamina/namespace/{namespaceName}/staminaModel/{staminaName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -2044,7 +2044,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeStaminaNamespaceMetrics(request: Request.DescribeStaminaNamespaceMetricsRequest): Promise<Result.DescribeStaminaNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/stamina/namespace')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
@@ -2069,7 +2069,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getStaminaNamespaceMetrics(request: Request.GetStaminaNamespaceMetricsRequest): Promise<Result.GetStaminaNamespaceMetricsResult> {
-        const url = (Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/metrics/stamina/namespace/{namespaceName}')
+        const url = ((Gs2WatchRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/metrics/stamina/namespace/{namespaceName}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));

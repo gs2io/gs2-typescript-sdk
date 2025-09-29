@@ -27,7 +27,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     }
     Gs2AuthRestClient.prototype.login = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/login')
+        var url = (((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/login')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -57,7 +57,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     Gs2AuthRestClient.prototype.loginBySignature = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/login/signed')
+        var url = (((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/login/signed')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -85,7 +85,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     Gs2AuthRestClient.prototype.federation = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/federation')
+        var url = (((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/federation')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -117,7 +117,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     Gs2AuthRestClient.prototype.issueTimeOffsetTokenByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
+        var url = (((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/timeoffset/token')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -147,7 +147,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     Gs2AuthRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2AuthRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

@@ -27,7 +27,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     }
     Gs2InventoryRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -51,7 +51,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -87,7 +87,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -109,7 +109,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -131,7 +131,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -167,7 +167,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -189,7 +189,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getServiceVersion = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/version')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -210,7 +210,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -239,7 +239,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -264,7 +264,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -293,7 +293,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -318,7 +318,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -347,7 +347,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
@@ -377,7 +377,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'))
@@ -403,7 +403,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoryModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -428,7 +428,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -460,7 +460,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -483,7 +483,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -515,7 +515,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -538,7 +538,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoryModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -560,7 +560,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -583,7 +583,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -608,7 +608,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -641,7 +641,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -665,7 +665,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -698,7 +698,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -722,7 +722,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemModels = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -745,7 +745,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemModel = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -769,7 +769,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -794,7 +794,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createSimpleInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -823,7 +823,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -846,7 +846,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateSimpleInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -875,7 +875,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteSimpleInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -898,7 +898,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/simple/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -920,7 +920,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -943,7 +943,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -969,7 +969,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createSimpleItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -999,7 +999,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1023,7 +1023,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateSimpleItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1053,7 +1053,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1077,7 +1077,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModels = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1100,7 +1100,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModel = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1124,7 +1124,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1149,7 +1149,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createBigInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1178,7 +1178,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1201,7 +1201,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateBigInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1230,7 +1230,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteBigInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1253,7 +1253,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModels = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/big/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1275,7 +1275,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModel = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/big/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1298,7 +1298,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigItemModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1324,7 +1324,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createBigItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1354,7 +1354,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1378,7 +1378,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateBigItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1408,7 +1408,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteBigItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1432,7 +1432,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigItemModels = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1455,7 +1455,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigItemModel = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1479,7 +1479,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1501,7 +1501,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getCurrentItemModelMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1523,7 +1523,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.preUpdateCurrentItemModelMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1549,7 +1549,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1578,7 +1578,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1605,7 +1605,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventories = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -1632,7 +1632,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoriesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1660,7 +1660,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventory = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1686,7 +1686,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1713,7 +1713,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1748,7 +1748,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1783,7 +1783,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteInventoryByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1813,7 +1813,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacity = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1849,7 +1849,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1886,7 +1886,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/verify')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/inventory/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1913,7 +1913,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addCapacityByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/inventory/capacity/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1940,7 +1940,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setCapacityByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/inventory/capacity/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1967,7 +1967,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemSets = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -1995,7 +1995,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemSetsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2024,7 +2024,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2052,7 +2052,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2081,7 +2081,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2110,7 +2110,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2140,7 +2140,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2179,7 +2179,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire/grade')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire/grade')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2216,7 +2216,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2252,7 +2252,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2289,7 +2289,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2321,7 +2321,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyItemSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2359,7 +2359,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2398,7 +2398,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2425,7 +2425,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire/grade')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/acquire/grade')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2452,7 +2452,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2479,7 +2479,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2506,7 +2506,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2534,7 +2534,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2563,7 +2563,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2592,7 +2592,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2622,7 +2622,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2659,7 +2659,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2697,7 +2697,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2733,7 +2733,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2770,7 +2770,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2802,7 +2802,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2835,7 +2835,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOfItemSetByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/reference/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2862,7 +2862,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfItemSetByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/reference/delete')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2889,7 +2889,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/verify')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/item/reference/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -2916,7 +2916,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleItems = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2944,7 +2944,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -2973,7 +2973,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3000,7 +3000,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3028,7 +3028,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3056,7 +3056,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3085,7 +3085,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3120,7 +3120,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItems = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3154,7 +3154,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3189,7 +3189,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3224,7 +3224,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3254,7 +3254,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifySimpleItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3291,7 +3291,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3329,7 +3329,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/simple/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3356,7 +3356,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/simple/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3383,7 +3383,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/set')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/simple/item/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3410,7 +3410,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/simple/item/verify')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/simple/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3437,7 +3437,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigItems = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3465,7 +3465,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeBigItemsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3494,7 +3494,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3521,7 +3521,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3549,7 +3549,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3585,7 +3585,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeBigItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3620,7 +3620,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3656,7 +3656,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3692,7 +3692,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3723,7 +3723,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyBigItem = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3760,7 +3760,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
@@ -3798,7 +3798,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/acquire')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/big/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3825,7 +3825,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/consume')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/big/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3852,7 +3852,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setBigItemByStampSheet = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/set')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/big/item/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -3879,7 +3879,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByStampTask = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/big/item/verify')
+        var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/big/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

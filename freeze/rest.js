@@ -27,7 +27,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     }
     Gs2FreezeRestClient.prototype.describeStages = function (request) {
         var _a, _b;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -48,7 +48,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     };
     Gs2FreezeRestClient.prototype.getStage = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{stageName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -70,7 +70,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     };
     Gs2FreezeRestClient.prototype.promoteStage = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/promote')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{stageName}/promote')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -96,7 +96,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     };
     Gs2FreezeRestClient.prototype.rollbackStage = function (request) {
         var _a, _b, _c, _d;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/rollback')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{stageName}/rollback')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -122,7 +122,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     };
     Gs2FreezeRestClient.prototype.describeOutputs = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{stageName}/progress/output')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'));
@@ -146,7 +146,7 @@ var Gs2FreezeRestClient = /** @class */ (function (_super) {
     };
     Gs2FreezeRestClient.prototype.getOutput = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = ((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST + '/{stageName}/progress/output/{outputName}')
+        var url = (((_a = Gs2FreezeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{stageName}/progress/output/{outputName}')
             .replace('{service}', 'freeze')
             .replace('{region}', this.session.region)
             .replace('{stageName}', String((_b = request.getStageName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getStageName()) !== null && _c !== void 0 ? _c : 'null'))

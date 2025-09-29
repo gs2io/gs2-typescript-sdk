@@ -30,7 +30,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public describeStacks(request: Request.DescribeStacksRequest): Promise<Result.DescribeStacksResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public preCreateStack(request: Request.PreCreateStackRequest): Promise<Result.PreCreateStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/pre')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -87,7 +87,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public createStack(request: Request.CreateStackRequest): Promise<Result.CreateStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -121,7 +121,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public createStackFromGitHub(request: Request.CreateStackFromGitHubRequest): Promise<Result.CreateStackFromGitHubResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -153,7 +153,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public preValidate(request: Request.PreValidateRequest): Promise<Result.PreValidateResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/validate/pre')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/validate/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -182,7 +182,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public validate(request: Request.ValidateRequest): Promise<Result.ValidateResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/validate')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/validate')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -214,7 +214,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getStackStatus(request: Request.GetStackStatusRequest): Promise<Result.GetStackStatusResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/status')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -240,7 +240,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getStack(request: Request.GetStackRequest): Promise<Result.GetStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -266,7 +266,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateStack(request: Request.PreUpdateStackRequest): Promise<Result.PreUpdateStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -296,7 +296,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public updateStack(request: Request.UpdateStackRequest): Promise<Result.UpdateStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -330,7 +330,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public preChangeSet(request: Request.PreChangeSetRequest): Promise<Result.PreChangeSetResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/pre')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/pre')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -360,7 +360,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public changeSet(request: Request.ChangeSetRequest): Promise<Result.ChangeSetResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -393,7 +393,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public updateStackFromGitHub(request: Request.UpdateStackFromGitHubRequest): Promise<Result.UpdateStackFromGitHubResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -425,7 +425,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStack(request: Request.DeleteStackRequest): Promise<Result.DeleteStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -451,7 +451,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public forceDeleteStack(request: Request.ForceDeleteStackRequest): Promise<Result.ForceDeleteStackResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/force')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -477,7 +477,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStackResources(request: Request.DeleteStackResourcesRequest): Promise<Result.DeleteStackResourcesResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resources')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -503,7 +503,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public deleteStackEntity(request: Request.DeleteStackEntityRequest): Promise<Result.DeleteStackEntityResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/entity')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -529,7 +529,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
     
@@ -554,7 +554,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public describeResources(request: Request.DescribeResourcesRequest): Promise<Result.DescribeResourcesResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resource')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -582,7 +582,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getResource(request: Request.GetResourceRequest): Promise<Result.GetResourceResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/resource/{resourceName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))
@@ -609,7 +609,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public describeEvents(request: Request.DescribeEventsRequest): Promise<Result.DescribeEventsResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/event')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -637,7 +637,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getEvent(request: Request.GetEventRequest): Promise<Result.GetEventResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/event/{eventName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))
@@ -664,7 +664,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public describeOutputs(request: Request.DescribeOutputsRequest): Promise<Result.DescribeOutputsResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/output')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
@@ -692,7 +692,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     }
 
     public getOutput(request: Request.GetOutputRequest): Promise<Result.GetOutputResult> {
-        const url = (Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
+        const url = ((Gs2DeployRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stack/{stackName}/output/{outputName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))

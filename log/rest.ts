@@ -30,7 +30,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
     
@@ -57,7 +57,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
     
@@ -97,7 +97,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -123,7 +123,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -149,7 +149,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -189,7 +189,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -215,7 +215,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
     
@@ -240,7 +240,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryAccessLog(request: Request.QueryAccessLogRequest): Promise<Result.QueryAccessLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/access')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -277,7 +277,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public countAccessLog(request: Request.CountAccessLogRequest): Promise<Result.CountAccessLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/count')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/access/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -314,7 +314,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryIssueStampSheetLog(request: Request.QueryIssueStampSheetLogRequest): Promise<Result.QueryIssueStampSheetLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/issue/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -352,7 +352,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public countIssueStampSheetLog(request: Request.CountIssueStampSheetLogRequest): Promise<Result.CountIssueStampSheetLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet/count')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/issue/stamp/sheet/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -390,7 +390,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryExecuteStampSheetLog(request: Request.QueryExecuteStampSheetLogRequest): Promise<Result.QueryExecuteStampSheetLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/execute/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -428,7 +428,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public countExecuteStampSheetLog(request: Request.CountExecuteStampSheetLogRequest): Promise<Result.CountExecuteStampSheetLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet/count')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/execute/stamp/sheet/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -466,7 +466,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryExecuteStampTaskLog(request: Request.QueryExecuteStampTaskLogRequest): Promise<Result.QueryExecuteStampTaskLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/execute/stamp/task')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -504,7 +504,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public countExecuteStampTaskLog(request: Request.CountExecuteStampTaskLogRequest): Promise<Result.CountExecuteStampTaskLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task/count')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/execute/stamp/task/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -542,7 +542,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryInGameLog(request: Request.QueryInGameLogRequest): Promise<Result.QueryInGameLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ingame/log')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -585,7 +585,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public sendInGameLog(request: Request.SendInGameLogRequest): Promise<Result.SendInGameLogResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log/user/me/send')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ingame/log/user/me/send')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -623,7 +623,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public sendInGameLogByUserId(request: Request.SendInGameLogByUserIdRequest): Promise<Result.SendInGameLogByUserIdResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log/user/{userId}/send')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/ingame/log/user/{userId}/send')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -662,7 +662,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public queryAccessLogWithTelemetry(request: Request.QueryAccessLogWithTelemetryRequest): Promise<Result.QueryAccessLogWithTelemetryResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/telemetry')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/access/telemetry')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -697,7 +697,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public describeInsights(request: Request.DescribeInsightsRequest): Promise<Result.DescribeInsightsResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/insight')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -725,7 +725,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public createInsight(request: Request.CreateInsightRequest): Promise<Result.CreateInsightResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/insight')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -755,7 +755,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public getInsight(request: Request.GetInsightRequest): Promise<Result.GetInsightResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight/{insightName}')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/insight/{insightName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -782,7 +782,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public deleteInsight(request: Request.DeleteInsightRequest): Promise<Result.DeleteInsightResult> {
-        const url = (Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight/{insightName}')
+        const url = ((Gs2LogRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/insight/{insightName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

@@ -30,7 +30,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -94,7 +94,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -120,7 +120,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -146,7 +146,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -182,7 +182,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -208,7 +208,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -233,7 +233,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -266,7 +266,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -295,7 +295,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -328,7 +328,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -357,7 +357,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -390,7 +390,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -424,7 +424,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -454,7 +454,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeSalesItemMasters(request: Request.DescribeSalesItemMastersRequest): Promise<Result.DescribeSalesItemMastersResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -483,7 +483,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public createSalesItemMaster(request: Request.CreateSalesItemMasterRequest): Promise<Result.CreateSalesItemMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -519,7 +519,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getSalesItemMaster(request: Request.GetSalesItemMasterRequest): Promise<Result.GetSalesItemMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -546,7 +546,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateSalesItemMaster(request: Request.UpdateSalesItemMasterRequest): Promise<Result.UpdateSalesItemMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -582,7 +582,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSalesItemMaster(request: Request.DeleteSalesItemMasterRequest): Promise<Result.DeleteSalesItemMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -609,7 +609,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeSalesItemGroupMasters(request: Request.DescribeSalesItemGroupMastersRequest): Promise<Result.DescribeSalesItemGroupMastersResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -638,7 +638,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public createSalesItemGroupMaster(request: Request.CreateSalesItemGroupMasterRequest): Promise<Result.CreateSalesItemGroupMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -672,7 +672,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getSalesItemGroupMaster(request: Request.GetSalesItemGroupMasterRequest): Promise<Result.GetSalesItemGroupMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -699,7 +699,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateSalesItemGroupMaster(request: Request.UpdateSalesItemGroupMasterRequest): Promise<Result.UpdateSalesItemGroupMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -733,7 +733,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public deleteSalesItemGroupMaster(request: Request.DeleteSalesItemGroupMasterRequest): Promise<Result.DeleteSalesItemGroupMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{salesItemGroupName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/group/{salesItemGroupName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -760,7 +760,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcaseMasters(request: Request.DescribeShowcaseMastersRequest): Promise<Result.DescribeShowcaseMastersResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -789,7 +789,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public createShowcaseMaster(request: Request.CreateShowcaseMasterRequest): Promise<Result.CreateShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -824,7 +824,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseMaster(request: Request.GetShowcaseMasterRequest): Promise<Result.GetShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -851,7 +851,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateShowcaseMaster(request: Request.UpdateShowcaseMasterRequest): Promise<Result.UpdateShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -886,7 +886,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public deleteShowcaseMaster(request: Request.DeleteShowcaseMasterRequest): Promise<Result.DeleteShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -913,7 +913,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/export')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -939,7 +939,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getCurrentShowcaseMaster(request: Request.GetCurrentShowcaseMasterRequest): Promise<Result.GetCurrentShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -965,7 +965,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public preUpdateCurrentShowcaseMaster(request: Request.PreUpdateCurrentShowcaseMasterRequest): Promise<Result.PreUpdateCurrentShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -995,7 +995,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentShowcaseMaster(request: Request.UpdateCurrentShowcaseMasterRequest): Promise<Result.UpdateCurrentShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1028,7 +1028,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateCurrentShowcaseMasterFromGitHub(request: Request.UpdateCurrentShowcaseMasterFromGitHubRequest): Promise<Result.UpdateCurrentShowcaseMasterFromGitHubResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1059,7 +1059,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcases(request: Request.DescribeShowcasesRequest): Promise<Result.DescribeShowcasesResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1088,7 +1088,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcasesByUserId(request: Request.DescribeShowcasesByUserIdRequest): Promise<Result.DescribeShowcasesByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1118,7 +1118,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcase(request: Request.GetShowcaseRequest): Promise<Result.GetShowcaseResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1148,7 +1148,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseByUserId(request: Request.GetShowcaseByUserIdRequest): Promise<Result.GetShowcaseByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1179,7 +1179,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public buy(request: Request.BuyRequest): Promise<Result.BuyResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/showcase/{showcaseName}/{displayItemId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1219,7 +1219,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public buyByUserId(request: Request.BuyByUserIdRequest): Promise<Result.BuyByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1260,7 +1260,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeRandomShowcaseMasters(request: Request.DescribeRandomShowcaseMastersRequest): Promise<Result.DescribeRandomShowcaseMastersResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1289,7 +1289,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public createRandomShowcaseMaster(request: Request.CreateRandomShowcaseMasterRequest): Promise<Result.CreateRandomShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1327,7 +1327,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getRandomShowcaseMaster(request: Request.GetRandomShowcaseMasterRequest): Promise<Result.GetRandomShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1354,7 +1354,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public updateRandomShowcaseMaster(request: Request.UpdateRandomShowcaseMasterRequest): Promise<Result.UpdateRandomShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1392,7 +1392,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1419,7 +1419,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public incrementPurchaseCount(request: Request.IncrementPurchaseCountRequest): Promise<Result.IncrementPurchaseCountResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/me/status/{showcaseName}/{displayItemName}/purchase/count')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/me/status/{showcaseName}/{displayItemName}/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1458,7 +1458,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1498,7 +1498,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public decrementPurchaseCountByUserId(request: Request.DecrementPurchaseCountByUserIdRequest): Promise<Result.DecrementPurchaseCountByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1538,7 +1538,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/purchase/count')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -1569,7 +1569,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public decrementPurchaseCountByStampSheet(request: Request.DecrementPurchaseCountByStampSheetRequest): Promise<Result.DecrementPurchaseCountByStampSheetResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count/decrease')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/purchase/count/decrease')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -1600,7 +1600,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public forceReDrawByUserId(request: Request.ForceReDrawByUserIdRequest): Promise<Result.ForceReDrawByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/{showcaseName}/user/{userId}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/random/showcase/{showcaseName}/user/{userId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1634,7 +1634,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public forceReDrawByUserIdByStampSheet(request: Request.ForceReDrawByUserIdByStampSheetRequest): Promise<Result.ForceReDrawByUserIdByStampSheetResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/redraw')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/random/showcase/status/redraw')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region);
     
@@ -1665,7 +1665,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeRandomDisplayItems(request: Request.DescribeRandomDisplayItemsRequest): Promise<Result.DescribeRandomDisplayItemsResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1695,7 +1695,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public describeRandomDisplayItemsByUserId(request: Request.DescribeRandomDisplayItemsByUserIdRequest): Promise<Result.DescribeRandomDisplayItemsByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1726,7 +1726,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getRandomDisplayItem(request: Request.GetRandomDisplayItemRequest): Promise<Result.GetRandomDisplayItemResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/displayItem/{displayItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}/displayItem/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1757,7 +1757,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public getRandomDisplayItemByUserId(request: Request.GetRandomDisplayItemByUserIdRequest): Promise<Result.GetRandomDisplayItemByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/displayItem/{displayItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/displayItem/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1789,7 +1789,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public randomShowcaseBuy(request: Request.RandomShowcaseBuyRequest): Promise<Result.RandomShowcaseBuyResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1829,7 +1829,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     }
 
     public randomShowcaseBuyByUserId(request: Request.RandomShowcaseBuyByUserIdRequest): Promise<Result.RandomShowcaseBuyByUserIdResult> {
-        const url = (Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
+        const url = ((Gs2ShowcaseRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

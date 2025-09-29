@@ -30,7 +30,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     
@@ -91,7 +91,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -117,7 +117,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -143,7 +143,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -176,7 +176,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -202,7 +202,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     
@@ -227,7 +227,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public describeScripts(request: Request.DescribeScriptsRequest): Promise<Result.DescribeScriptsResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -256,7 +256,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public createScript(request: Request.CreateScriptRequest): Promise<Result.CreateScriptResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -290,7 +290,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public createScriptFromGitHub(request: Request.CreateScriptFromGitHubRequest): Promise<Result.CreateScriptFromGitHubResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/from_git_hub')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -324,7 +324,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public getScript(request: Request.GetScriptRequest): Promise<Result.GetScriptResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -351,7 +351,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public updateScript(request: Request.UpdateScriptRequest): Promise<Result.UpdateScriptResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -385,7 +385,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public updateScriptFromGitHub(request: Request.UpdateScriptFromGitHubRequest): Promise<Result.UpdateScriptFromGitHubResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}/from_git_hub')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -419,7 +419,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public deleteScript(request: Request.DeleteScriptRequest): Promise<Result.DeleteScriptResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -446,7 +446,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public invokeScript(request: Request.InvokeScriptRequest): Promise<Result.InvokeScriptResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/invoke')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     
@@ -485,7 +485,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public debugInvoke(request: Request.DebugInvokeRequest): Promise<Result.DebugInvokeResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/debug/invoke')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/debug/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     
@@ -525,7 +525,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     }
 
     public invokeByStampSheet(request: Request.InvokeByStampSheetRequest): Promise<Result.InvokeByStampSheetResult> {
-        const url = (Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/stamp/script/invoke')
+        const url = ((Gs2ScriptRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/stamp/script/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
     

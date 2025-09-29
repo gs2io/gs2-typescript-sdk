@@ -30,7 +30,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region);
     
@@ -92,7 +92,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -118,7 +118,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -144,7 +144,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -178,7 +178,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -204,7 +204,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region);
     
@@ -229,7 +229,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -262,7 +262,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/dump/user/{userId}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -291,7 +291,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -324,7 +324,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/clean/user/{userId}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -353,7 +353,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -386,7 +386,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
@@ -420,7 +420,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
@@ -450,7 +450,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public describeDataObjects(request: Request.DescribeDataObjectsRequest): Promise<Result.DescribeDataObjectsResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -482,7 +482,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public describeDataObjectsByUserId(request: Request.DescribeDataObjectsByUserIdRequest): Promise<Result.DescribeDataObjectsByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -515,7 +515,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareUpload(request: Request.PrepareUploadRequest): Promise<Result.PrepareUploadResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -556,7 +556,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareUploadByUserId(request: Request.PrepareUploadByUserIdRequest): Promise<Result.PrepareUploadByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -598,7 +598,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public updateDataObject(request: Request.UpdateDataObjectRequest): Promise<Result.UpdateDataObjectResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -637,7 +637,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public updateDataObjectByUserId(request: Request.UpdateDataObjectByUserIdRequest): Promise<Result.UpdateDataObjectByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -677,7 +677,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareReUpload(request: Request.PrepareReUploadRequest): Promise<Result.PrepareReUploadResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file/reUpload')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/file/reUpload')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -715,7 +715,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareReUploadByUserId(request: Request.PrepareReUploadByUserIdRequest): Promise<Result.PrepareReUploadByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file/reUpload')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file/reUpload')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -754,7 +754,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public doneUpload(request: Request.DoneUploadRequest): Promise<Result.DoneUploadResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/done')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/done')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -791,7 +791,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public doneUploadByUserId(request: Request.DoneUploadByUserIdRequest): Promise<Result.DoneUploadByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/done')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/done')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -829,7 +829,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public deleteDataObject(request: Request.DeleteDataObjectRequest): Promise<Result.DeleteDataObjectResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -862,7 +862,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public deleteDataObjectByUserId(request: Request.DeleteDataObjectByUserIdRequest): Promise<Result.DeleteDataObjectByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -896,7 +896,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownload(request: Request.PrepareDownloadRequest): Promise<Result.PrepareDownloadResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -933,7 +933,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadByUserId(request: Request.PrepareDownloadByUserIdRequest): Promise<Result.PrepareDownloadByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -971,7 +971,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadByGeneration(request: Request.PrepareDownloadByGenerationRequest): Promise<Result.PrepareDownloadByGenerationResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/generation/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/file/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1009,7 +1009,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadByGenerationAndUserId(request: Request.PrepareDownloadByGenerationAndUserIdRequest): Promise<Result.PrepareDownloadByGenerationAndUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file/generation/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/file/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1048,7 +1048,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadOwnData(request: Request.PrepareDownloadOwnDataRequest): Promise<Result.PrepareDownloadOwnDataResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1085,7 +1085,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadByUserIdAndDataObjectName(request: Request.PrepareDownloadByUserIdAndDataObjectNameRequest): Promise<Result.PrepareDownloadByUserIdAndDataObjectNameResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1119,7 +1119,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadOwnDataByGeneration(request: Request.PrepareDownloadOwnDataByGenerationRequest): Promise<Result.PrepareDownloadOwnDataByGenerationResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/generation/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1157,7 +1157,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public prepareDownloadByUserIdAndDataObjectNameAndGeneration(request: Request.PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest): Promise<Result.PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/generation/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1196,7 +1196,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public restoreDataObject(request: Request.RestoreDataObjectRequest): Promise<Result.RestoreDataObjectResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/restore')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/file/restore')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -1227,7 +1227,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public describeDataObjectHistories(request: Request.DescribeDataObjectHistoriesRequest): Promise<Result.DescribeDataObjectHistoriesResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/history')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1259,7 +1259,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public describeDataObjectHistoriesByUserId(request: Request.DescribeDataObjectHistoriesByUserIdRequest): Promise<Result.DescribeDataObjectHistoriesByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1292,7 +1292,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public getDataObjectHistory(request: Request.GetDataObjectHistoryRequest): Promise<Result.GetDataObjectHistoryResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/data/{dataObjectName}/history/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1327,7 +1327,7 @@ export default class Gs2DatastoreRestClient extends AbstractGs2RestClient {
     }
 
     public getDataObjectHistoryByUserId(request: Request.GetDataObjectHistoryByUserIdRequest): Promise<Result.GetDataObjectHistoryByUserIdResult> {
-        const url = (Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history/{generation}')
+        const url = ((Gs2DatastoreRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

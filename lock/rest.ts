@@ -30,7 +30,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
     
@@ -58,7 +58,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
     
@@ -90,7 +90,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/status')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -116,7 +116,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -142,7 +142,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -174,7 +174,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
@@ -200,7 +200,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/system/version')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/system/version')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region);
     
@@ -225,7 +225,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public lock(request: Request.LockRequest): Promise<Result.LockResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}/lock')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}/lock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -264,7 +264,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public lockByUserId(request: Request.LockByUserIdRequest): Promise<Result.LockByUserIdResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}/lock')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}/lock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -304,7 +304,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public unlock(request: Request.UnlockRequest): Promise<Result.UnlockResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}/unlock')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}/unlock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -342,7 +342,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public unlockByUserId(request: Request.UnlockByUserIdRequest): Promise<Result.UnlockByUserIdResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}/unlock')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}/unlock')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -381,7 +381,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public getMutex(request: Request.GetMutexRequest): Promise<Result.GetMutexResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mutex/{propertyId}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -411,7 +411,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public getMutexByUserId(request: Request.GetMutexByUserIdRequest): Promise<Result.GetMutexByUserIdResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -442,7 +442,7 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     }
 
     public deleteMutexByUserId(request: Request.DeleteMutexByUserIdRequest): Promise<Result.DeleteMutexByUserIdResult> {
-        const url = (Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
+        const url = ((Gs2LockRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mutex/{propertyId}')
             .replace('{service}', 'lock')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
