@@ -29,6 +29,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private joinNotification: Gs2Guild.NotificationSetting|null = null;
     private leaveNotification: Gs2Guild.NotificationSetting|null = null;
     private changeMemberNotification: Gs2Guild.NotificationSetting|null = null;
+    private changeMemberNotificationIgnoreChangeMetadata: boolean|null = null;
     private receiveRequestNotification: Gs2Guild.NotificationSetting|null = null;
     private removeRequestNotification: Gs2Guild.NotificationSetting|null = null;
     private createGuildScript: Gs2Guild.ScriptSetting|null = null;
@@ -142,6 +143,17 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withChangeMemberNotification(changeMemberNotification: Gs2Guild.NotificationSetting|null): this {
         this.changeMemberNotification = changeMemberNotification;
+        return this;
+    }
+    public getChangeMemberNotificationIgnoreChangeMetadata(): boolean|null {
+        return this.changeMemberNotificationIgnoreChangeMetadata;
+    }
+    public setChangeMemberNotificationIgnoreChangeMetadata(changeMemberNotificationIgnoreChangeMetadata: boolean|null) {
+        this.changeMemberNotificationIgnoreChangeMetadata = changeMemberNotificationIgnoreChangeMetadata;
+        return this;
+    }
+    public withChangeMemberNotificationIgnoreChangeMetadata(changeMemberNotificationIgnoreChangeMetadata: boolean|null): this {
+        this.changeMemberNotificationIgnoreChangeMetadata = changeMemberNotificationIgnoreChangeMetadata;
         return this;
     }
     public getReceiveRequestNotification(): Gs2Guild.NotificationSetting|null {
@@ -264,6 +276,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
             .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
+            .withChangeMemberNotificationIgnoreChangeMetadata(data["changeMemberNotificationIgnoreChangeMetadata"])
             .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
             .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
@@ -285,6 +298,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "changeMemberNotification": this.getChangeMemberNotification()?.toDict(),
+            "changeMemberNotificationIgnoreChangeMetadata": this.getChangeMemberNotificationIgnoreChangeMetadata(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
             "removeRequestNotification": this.getRemoveRequestNotification()?.toDict(),
             "createGuildScript": this.getCreateGuildScript()?.toDict(),

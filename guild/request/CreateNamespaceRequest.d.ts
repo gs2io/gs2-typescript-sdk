@@ -10,6 +10,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private joinNotification;
     private leaveNotification;
     private changeMemberNotification;
+    private changeMemberNotificationIgnoreChangeMetadata;
     private receiveRequestNotification;
     private removeRequestNotification;
     private createGuildScript;
@@ -47,6 +48,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getChangeMemberNotification(): Gs2Guild.NotificationSetting | null;
     setChangeMemberNotification(changeMemberNotification: Gs2Guild.NotificationSetting | null): this;
     withChangeMemberNotification(changeMemberNotification: Gs2Guild.NotificationSetting | null): this;
+    getChangeMemberNotificationIgnoreChangeMetadata(): boolean | null;
+    setChangeMemberNotificationIgnoreChangeMetadata(changeMemberNotificationIgnoreChangeMetadata: boolean | null): this;
+    withChangeMemberNotificationIgnoreChangeMetadata(changeMemberNotificationIgnoreChangeMetadata: boolean | null): this;
     getReceiveRequestNotification(): Gs2Guild.NotificationSetting | null;
     setReceiveRequestNotification(receiveRequestNotification: Gs2Guild.NotificationSetting | null): this;
     withReceiveRequestNotification(receiveRequestNotification: Gs2Guild.NotificationSetting | null): this;

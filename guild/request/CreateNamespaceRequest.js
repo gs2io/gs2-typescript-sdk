@@ -28,6 +28,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.joinNotification = null;
         this.leaveNotification = null;
         this.changeMemberNotification = null;
+        this.changeMemberNotificationIgnoreChangeMetadata = null;
         this.receiveRequestNotification = null;
         this.removeRequestNotification = null;
         this.createGuildScript = null;
@@ -136,6 +137,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withChangeMemberNotification = function (changeMemberNotification) {
         this.changeMemberNotification = changeMemberNotification;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getChangeMemberNotificationIgnoreChangeMetadata = function () {
+        return this.changeMemberNotificationIgnoreChangeMetadata;
+    };
+    CreateNamespaceRequest.prototype.setChangeMemberNotificationIgnoreChangeMetadata = function (changeMemberNotificationIgnoreChangeMetadata) {
+        this.changeMemberNotificationIgnoreChangeMetadata = changeMemberNotificationIgnoreChangeMetadata;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withChangeMemberNotificationIgnoreChangeMetadata = function (changeMemberNotificationIgnoreChangeMetadata) {
+        this.changeMemberNotificationIgnoreChangeMetadata = changeMemberNotificationIgnoreChangeMetadata;
         return this;
     };
     CreateNamespaceRequest.prototype.getReceiveRequestNotification = function () {
@@ -257,6 +269,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
             .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
+            .withChangeMemberNotificationIgnoreChangeMetadata(data["changeMemberNotificationIgnoreChangeMetadata"])
             .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
             .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
@@ -278,6 +291,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "joinNotification": (_c = this.getJoinNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "leaveNotification": (_d = this.getLeaveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "changeMemberNotification": (_e = this.getChangeMemberNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeMemberNotificationIgnoreChangeMetadata": this.getChangeMemberNotificationIgnoreChangeMetadata(),
             "receiveRequestNotification": (_f = this.getReceiveRequestNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "removeRequestNotification": (_g = this.getRemoveRequestNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "createGuildScript": (_h = this.getCreateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
