@@ -20,6 +20,7 @@ var NotificationSetting = /** @class */ (function () {
         this.gatewayNamespaceId = null;
         this.enableTransferMobileNotification = null;
         this.sound = null;
+        this.enable = null;
     }
     NotificationSetting.prototype.getGatewayNamespaceId = function () {
         return this.gatewayNamespaceId;
@@ -54,6 +55,17 @@ var NotificationSetting = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    NotificationSetting.prototype.getEnable = function () {
+        return this.enable;
+    };
+    NotificationSetting.prototype.setEnable = function (enable) {
+        this.enable = enable;
+        return this;
+    };
+    NotificationSetting.prototype.withEnable = function (enable) {
+        this.enable = enable;
+        return this;
+    };
     NotificationSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -61,13 +73,15 @@ var NotificationSetting = /** @class */ (function () {
         return new NotificationSetting()
             .withGatewayNamespaceId(data["gatewayNamespaceId"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withEnable(data["enable"]);
     };
     NotificationSetting.prototype.toDict = function () {
         return {
             "gatewayNamespaceId": this.getGatewayNamespaceId(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "enable": this.getEnable(),
         };
     };
     return NotificationSetting;

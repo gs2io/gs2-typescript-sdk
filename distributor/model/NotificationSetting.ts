@@ -22,6 +22,7 @@ export default class NotificationSetting implements IModel {
     private gatewayNamespaceId: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;
     private sound: string|null = null;
+    private enable: string|null = null;
     public getGatewayNamespaceId(): string|null {
         return this.gatewayNamespaceId;
     }
@@ -55,6 +56,17 @@ export default class NotificationSetting implements IModel {
         this.sound = sound;
         return this;
     }
+    public getEnable(): string|null {
+        return this.enable;
+    }
+    public setEnable(enable: string|null) {
+        this.enable = enable;
+        return this;
+    }
+    public withEnable(enable: string|null): this {
+        this.enable = enable;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): NotificationSetting|null {
         if (data == undefined || data == null) {
@@ -63,7 +75,8 @@ export default class NotificationSetting implements IModel {
         return new NotificationSetting()
             .withGatewayNamespaceId(data["gatewayNamespaceId"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withEnable(data["enable"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -71,6 +84,7 @@ export default class NotificationSetting implements IModel {
             "gatewayNamespaceId": this.getGatewayNamespaceId(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "enable": this.getEnable(),
         };
     }
 }
