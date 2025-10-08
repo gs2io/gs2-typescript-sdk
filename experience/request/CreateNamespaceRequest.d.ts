@@ -1,0 +1,54 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Experience from '../model';
+export default class CreateNamespaceRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private name;
+    private description;
+    private transactionSetting;
+    private rankCapScriptId;
+    private changeExperienceScript;
+    private changeRankScript;
+    private changeRankCapScript;
+    private overflowExperienceScript;
+    private logSetting;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Experience.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
+    getRankCapScriptId(): string | null;
+    setRankCapScriptId(rankCapScriptId: string | null): this;
+    withRankCapScriptId(rankCapScriptId: string | null): this;
+    getChangeExperienceScript(): Gs2Experience.ScriptSetting | null;
+    setChangeExperienceScript(changeExperienceScript: Gs2Experience.ScriptSetting | null): this;
+    withChangeExperienceScript(changeExperienceScript: Gs2Experience.ScriptSetting | null): this;
+    getChangeRankScript(): Gs2Experience.ScriptSetting | null;
+    setChangeRankScript(changeRankScript: Gs2Experience.ScriptSetting | null): this;
+    withChangeRankScript(changeRankScript: Gs2Experience.ScriptSetting | null): this;
+    getChangeRankCapScript(): Gs2Experience.ScriptSetting | null;
+    setChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting | null): this;
+    withChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting | null): this;
+    getOverflowExperienceScript(): string | null;
+    setOverflowExperienceScript(overflowExperienceScript: string | null): this;
+    withOverflowExperienceScript(overflowExperienceScript: string | null): this;
+    getLogSetting(): Gs2Experience.LogSetting | null;
+    setLogSetting(logSetting: Gs2Experience.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Experience.LogSetting | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateNamespaceRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

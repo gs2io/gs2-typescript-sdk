@@ -1,0 +1,40 @@
+import IModel from '../../core/interface/IModel';
+export default class ItemModel implements IModel {
+    private itemModelId;
+    private name;
+    private metadata;
+    private stackingLimit;
+    private allowMultipleStacks;
+    private sortValue;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getInventoryName(grn: string): string | null;
+    static getItemName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, inventoryName: string | null, itemName: string | null): string | null;
+    getItemModelId(): string | null;
+    setItemModelId(itemModelId: string | null): this;
+    withItemModelId(itemModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getStackingLimit(): number | null;
+    setStackingLimit(stackingLimit: number | null): this;
+    withStackingLimit(stackingLimit: number | null): this;
+    getAllowMultipleStacks(): boolean | null;
+    setAllowMultipleStacks(allowMultipleStacks: boolean | null): this;
+    withAllowMultipleStacks(allowMultipleStacks: boolean | null): this;
+    getSortValue(): number | null;
+    setSortValue(sortValue: number | null): this;
+    withSortValue(sortValue: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): ItemModel | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

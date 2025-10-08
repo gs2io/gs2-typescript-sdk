@@ -1,0 +1,55 @@
+import IModel from '../../core/interface/IModel';
+export default class SerialKey implements IModel {
+    private serialKeyId;
+    private campaignModelName;
+    private code;
+    private metadata;
+    private status;
+    private usedUserId;
+    private createdAt;
+    private usedAt;
+    private updatedAt;
+    private revision;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getSerialKeyCode(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, serialKeyCode: string | null): string | null;
+    getSerialKeyId(): string | null;
+    setSerialKeyId(serialKeyId: string | null): this;
+    withSerialKeyId(serialKeyId: string | null): this;
+    getCampaignModelName(): string | null;
+    setCampaignModelName(campaignModelName: string | null): this;
+    withCampaignModelName(campaignModelName: string | null): this;
+    getCode(): string | null;
+    setCode(code: string | null): this;
+    withCode(code: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getStatus(): string | null;
+    setStatus(status: string | null): this;
+    withStatus(status: string | null): this;
+    getUsedUserId(): string | null;
+    setUsedUserId(usedUserId: string | null): this;
+    withUsedUserId(usedUserId: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUsedAt(): number | null;
+    setUsedAt(usedAt: number | null): this;
+    withUsedAt(usedAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): SerialKey | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

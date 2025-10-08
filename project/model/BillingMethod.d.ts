@@ -1,0 +1,57 @@
+import IModel from '../../core/interface/IModel';
+export default class BillingMethod implements IModel {
+    private billingMethodId;
+    private accountName;
+    private name;
+    private description;
+    private methodType;
+    private cardSignatureName;
+    private cardBrand;
+    private cardLast4;
+    private partnerId;
+    private createdAt;
+    private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static getBillingMethodName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null, billingMethodName: string | null): string | null;
+    getBillingMethodId(): string | null;
+    setBillingMethodId(billingMethodId: string | null): this;
+    withBillingMethodId(billingMethodId: string | null): this;
+    getAccountName(): string | null;
+    setAccountName(accountName: string | null): this;
+    withAccountName(accountName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMethodType(): string | null;
+    setMethodType(methodType: string | null): this;
+    withMethodType(methodType: string | null): this;
+    getCardSignatureName(): string | null;
+    setCardSignatureName(cardSignatureName: string | null): this;
+    withCardSignatureName(cardSignatureName: string | null): this;
+    getCardBrand(): string | null;
+    setCardBrand(cardBrand: string | null): this;
+    withCardBrand(cardBrand: string | null): this;
+    getCardLast4(): string | null;
+    setCardLast4(cardLast4: string | null): this;
+    withCardLast4(cardLast4: string | null): this;
+    getPartnerId(): string | null;
+    setPartnerId(partnerId: string | null): this;
+    withPartnerId(partnerId: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): BillingMethod | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

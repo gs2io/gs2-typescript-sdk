@@ -1,0 +1,18 @@
+import IResult from '../../core/interface/IResult';
+import * as Gs2Stamina from '../model';
+export default class DescribeStaminasResult implements IResult {
+    private items;
+    private nextPageToken;
+    getItems(): Gs2Stamina.Stamina[] | null;
+    setItems(items: Gs2Stamina.Stamina[] | null): this;
+    withItems(items: Gs2Stamina.Stamina[] | null): this;
+    getNextPageToken(): string | null;
+    setNextPageToken(nextPageToken: string | null): this;
+    withNextPageToken(nextPageToken: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): DescribeStaminasResult;
+    toDict(): {
+        [key: string]: any;
+    };
+}

@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Matchmaking from '../model';
+export default class CreateGatheringByUserIdRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private userId;
+    private player;
+    private attributeRanges;
+    private capacityOfRoles;
+    private allowUserIds;
+    private expiresAt;
+    private expiresAtTimeSpan;
+    private timeOffsetToken;
+    private duplicationAvoider;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getPlayer(): Gs2Matchmaking.Player | null;
+    setPlayer(player: Gs2Matchmaking.Player | null): this;
+    withPlayer(player: Gs2Matchmaking.Player | null): this;
+    getAttributeRanges(): Gs2Matchmaking.AttributeRange[] | null;
+    setAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[] | null): this;
+    withAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[] | null): this;
+    getCapacityOfRoles(): Gs2Matchmaking.CapacityOfRole[] | null;
+    setCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[] | null): this;
+    withCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[] | null): this;
+    getAllowUserIds(): string[] | null;
+    setAllowUserIds(allowUserIds: string[] | null): this;
+    withAllowUserIds(allowUserIds: string[] | null): this;
+    getExpiresAt(): number | null;
+    setExpiresAt(expiresAt: number | null): this;
+    withExpiresAt(expiresAt: number | null): this;
+    getExpiresAtTimeSpan(): Gs2Matchmaking.TimeSpan | null;
+    setExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan | null): this;
+    withExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateGatheringByUserIdRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

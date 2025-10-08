@@ -1,0 +1,38 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
+    static ENDPOINT_HOST: string | null;
+    constructor(session: Gs2RestSession);
+    describeUsers(request: Request.DescribeUsersRequest): Promise<Result.DescribeUsersResult>;
+    createUser(request: Request.CreateUserRequest): Promise<Result.CreateUserResult>;
+    updateUser(request: Request.UpdateUserRequest): Promise<Result.UpdateUserResult>;
+    getUser(request: Request.GetUserRequest): Promise<Result.GetUserResult>;
+    deleteUser(request: Request.DeleteUserRequest): Promise<Result.DeleteUserResult>;
+    describeSecurityPolicies(request: Request.DescribeSecurityPoliciesRequest): Promise<Result.DescribeSecurityPoliciesResult>;
+    describeCommonSecurityPolicies(request: Request.DescribeCommonSecurityPoliciesRequest): Promise<Result.DescribeCommonSecurityPoliciesResult>;
+    createSecurityPolicy(request: Request.CreateSecurityPolicyRequest): Promise<Result.CreateSecurityPolicyResult>;
+    updateSecurityPolicy(request: Request.UpdateSecurityPolicyRequest): Promise<Result.UpdateSecurityPolicyResult>;
+    getSecurityPolicy(request: Request.GetSecurityPolicyRequest): Promise<Result.GetSecurityPolicyResult>;
+    deleteSecurityPolicy(request: Request.DeleteSecurityPolicyRequest): Promise<Result.DeleteSecurityPolicyResult>;
+    describeIdentifiers(request: Request.DescribeIdentifiersRequest): Promise<Result.DescribeIdentifiersResult>;
+    createIdentifier(request: Request.CreateIdentifierRequest): Promise<Result.CreateIdentifierResult>;
+    getIdentifier(request: Request.GetIdentifierRequest): Promise<Result.GetIdentifierResult>;
+    deleteIdentifier(request: Request.DeleteIdentifierRequest): Promise<Result.DeleteIdentifierResult>;
+    describeAttachedGuards(request: Request.DescribeAttachedGuardsRequest): Promise<Result.DescribeAttachedGuardsResult>;
+    attachGuard(request: Request.AttachGuardRequest): Promise<Result.AttachGuardResult>;
+    detachGuard(request: Request.DetachGuardRequest): Promise<Result.DetachGuardResult>;
+    getServiceVersion(request: Request.GetServiceVersionRequest): Promise<Result.GetServiceVersionResult>;
+    createPassword(request: Request.CreatePasswordRequest): Promise<Result.CreatePasswordResult>;
+    getPassword(request: Request.GetPasswordRequest): Promise<Result.GetPasswordResult>;
+    enableMfa(request: Request.EnableMfaRequest): Promise<Result.EnableMfaResult>;
+    challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult>;
+    disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult>;
+    deletePassword(request: Request.DeletePasswordRequest): Promise<Result.DeletePasswordResult>;
+    getHasSecurityPolicy(request: Request.GetHasSecurityPolicyRequest): Promise<Result.GetHasSecurityPolicyResult>;
+    attachSecurityPolicy(request: Request.AttachSecurityPolicyRequest): Promise<Result.AttachSecurityPolicyResult>;
+    detachSecurityPolicy(request: Request.DetachSecurityPolicyRequest): Promise<Result.DetachSecurityPolicyResult>;
+    login(request: Request.LoginRequest): Promise<Result.LoginResult>;
+    loginByUser(request: Request.LoginByUserRequest): Promise<Result.LoginByUserResult>;
+}

@@ -1,0 +1,37 @@
+import IRequest from '../../core/interface/IRequest';
+export default class DescribeRarityParameterStatusesRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private accessToken;
+    private parameterName;
+    private pageToken;
+    private limit;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getAccessToken(): string | null;
+    setAccessToken(accessToken: string | null): this;
+    withAccessToken(accessToken: string | null): this;
+    getParameterName(): string | null;
+    setParameterName(parameterName: string | null): this;
+    withParameterName(parameterName: string | null): this;
+    getPageToken(): string | null;
+    setPageToken(pageToken: string | null): this;
+    withPageToken(pageToken: string | null): this;
+    getLimit(): number | null;
+    setLimit(limit: number | null): this;
+    withLimit(limit: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): DescribeRarityParameterStatusesRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

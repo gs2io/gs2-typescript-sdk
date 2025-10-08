@@ -1,0 +1,177 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DescribeMissionCounterMetricsResult = exports.GetMatchmakingNamespaceMetricsResult = exports.DescribeMatchmakingNamespaceMetricsResult = exports.GetLotteryNamespaceMetricsResult = exports.DescribeLotteryNamespaceMetricsResult = exports.GetLotteryLotteryMetricsResult = exports.DescribeLotteryLotteryMetricsResult = exports.GetLimitNamespaceMetricsResult = exports.DescribeLimitNamespaceMetricsResult = exports.GetLimitLimitModelMetricsResult = exports.DescribeLimitLimitModelMetricsResult = exports.DescribeLimitCounterMetricsResult = exports.GetKeyNamespaceMetricsResult = exports.DescribeKeyNamespaceMetricsResult = exports.GetInventoryNamespaceMetricsResult = exports.DescribeInventoryNamespaceMetricsResult = exports.DescribeInventoryInventoryMetricsResult = exports.DescribeInventoryItemSetMetricsResult = exports.GetInboxNamespaceMetricsResult = exports.DescribeInboxNamespaceMetricsResult = exports.GetFriendNamespaceMetricsResult = exports.DescribeFriendNamespaceMetricsResult = exports.GetFormationNamespaceMetricsResult = exports.DescribeFormationNamespaceMetricsResult = exports.DescribeFormationMoldMetricsResult = exports.DescribeFormationFormMetricsResult = exports.GetExperienceNamespaceMetricsResult = exports.DescribeExperienceNamespaceMetricsResult = exports.GetExperienceExperienceModelMetricsResult = exports.DescribeExperienceExperienceModelMetricsResult = exports.DescribeExperienceStatusMetricsResult = exports.GetExchangeNamespaceMetricsResult = exports.DescribeExchangeNamespaceMetricsResult = exports.GetExchangeRateModelMetricsResult = exports.DescribeExchangeRateModelMetricsResult = exports.GetDictionaryNamespaceMetricsResult = exports.DescribeDictionaryNamespaceMetricsResult = exports.GetDatastoreNamespaceMetricsResult = exports.DescribeDatastoreNamespaceMetricsResult = exports.GetChatNamespaceMetricsResult = exports.DescribeChatNamespaceMetricsResult = exports.GetAccountNamespaceMetricsResult = exports.DescribeAccountNamespaceMetricsResult = exports.GetGeneralMetricsResult = exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetDistributionResult = exports.GetServiceVersionResult = exports.GetChartResult = void 0;
+exports.GetStaminaNamespaceMetricsResult = exports.DescribeStaminaNamespaceMetricsResult = exports.GetStaminaStaminaModelMetricsResult = exports.DescribeStaminaStaminaModelMetricsResult = exports.GetShowcaseNamespaceMetricsResult = exports.DescribeShowcaseNamespaceMetricsResult = exports.GetShowcaseShowcaseMetricsResult = exports.DescribeShowcaseShowcaseMetricsResult = exports.GetShowcaseDisplayItemMetricsResult = exports.DescribeShowcaseDisplayItemMetricsResult = exports.GetRankingNamespaceMetricsResult = exports.DescribeRankingNamespaceMetricsResult = exports.GetRankingCategoryModelMetricsResult = exports.DescribeRankingCategoryModelMetricsResult = exports.GetQuestNamespaceMetricsResult = exports.DescribeQuestNamespaceMetricsResult = exports.GetQuestQuestGroupModelMetricsResult = exports.DescribeQuestQuestGroupModelMetricsResult = exports.GetQuestQuestModelMetricsResult = exports.DescribeQuestQuestModelMetricsResult = exports.GetMoneyNamespaceMetricsResult = exports.DescribeMoneyNamespaceMetricsResult = exports.DescribeMoneyReceiptMetricsResult = exports.DescribeMoneyWalletMetricsResult = exports.GetMissionNamespaceMetricsResult = exports.DescribeMissionNamespaceMetricsResult = exports.GetMissionMissionGroupModelMetricsResult = exports.DescribeMissionMissionGroupModelMetricsResult = void 0;
+var tslib_1 = require("tslib");
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+var GetChartResult_1 = tslib_1.__importDefault(require("./GetChartResult"));
+exports.GetChartResult = GetChartResult_1.default;
+var GetServiceVersionResult_1 = tslib_1.__importDefault(require("./GetServiceVersionResult"));
+exports.GetServiceVersionResult = GetServiceVersionResult_1.default;
+var GetDistributionResult_1 = tslib_1.__importDefault(require("./GetDistributionResult"));
+exports.GetDistributionResult = GetDistributionResult_1.default;
+var GetCumulativeResult_1 = tslib_1.__importDefault(require("./GetCumulativeResult"));
+exports.GetCumulativeResult = GetCumulativeResult_1.default;
+var DescribeBillingActivitiesResult_1 = tslib_1.__importDefault(require("./DescribeBillingActivitiesResult"));
+exports.DescribeBillingActivitiesResult = DescribeBillingActivitiesResult_1.default;
+var GetBillingActivityResult_1 = tslib_1.__importDefault(require("./GetBillingActivityResult"));
+exports.GetBillingActivityResult = GetBillingActivityResult_1.default;
+var GetGeneralMetricsResult_1 = tslib_1.__importDefault(require("./GetGeneralMetricsResult"));
+exports.GetGeneralMetricsResult = GetGeneralMetricsResult_1.default;
+var DescribeAccountNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeAccountNamespaceMetricsResult"));
+exports.DescribeAccountNamespaceMetricsResult = DescribeAccountNamespaceMetricsResult_1.default;
+var GetAccountNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetAccountNamespaceMetricsResult"));
+exports.GetAccountNamespaceMetricsResult = GetAccountNamespaceMetricsResult_1.default;
+var DescribeChatNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeChatNamespaceMetricsResult"));
+exports.DescribeChatNamespaceMetricsResult = DescribeChatNamespaceMetricsResult_1.default;
+var GetChatNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetChatNamespaceMetricsResult"));
+exports.GetChatNamespaceMetricsResult = GetChatNamespaceMetricsResult_1.default;
+var DescribeDatastoreNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeDatastoreNamespaceMetricsResult"));
+exports.DescribeDatastoreNamespaceMetricsResult = DescribeDatastoreNamespaceMetricsResult_1.default;
+var GetDatastoreNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetDatastoreNamespaceMetricsResult"));
+exports.GetDatastoreNamespaceMetricsResult = GetDatastoreNamespaceMetricsResult_1.default;
+var DescribeDictionaryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeDictionaryNamespaceMetricsResult"));
+exports.DescribeDictionaryNamespaceMetricsResult = DescribeDictionaryNamespaceMetricsResult_1.default;
+var GetDictionaryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetDictionaryNamespaceMetricsResult"));
+exports.GetDictionaryNamespaceMetricsResult = GetDictionaryNamespaceMetricsResult_1.default;
+var DescribeExchangeRateModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeExchangeRateModelMetricsResult"));
+exports.DescribeExchangeRateModelMetricsResult = DescribeExchangeRateModelMetricsResult_1.default;
+var GetExchangeRateModelMetricsResult_1 = tslib_1.__importDefault(require("./GetExchangeRateModelMetricsResult"));
+exports.GetExchangeRateModelMetricsResult = GetExchangeRateModelMetricsResult_1.default;
+var DescribeExchangeNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeExchangeNamespaceMetricsResult"));
+exports.DescribeExchangeNamespaceMetricsResult = DescribeExchangeNamespaceMetricsResult_1.default;
+var GetExchangeNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetExchangeNamespaceMetricsResult"));
+exports.GetExchangeNamespaceMetricsResult = GetExchangeNamespaceMetricsResult_1.default;
+var DescribeExperienceStatusMetricsResult_1 = tslib_1.__importDefault(require("./DescribeExperienceStatusMetricsResult"));
+exports.DescribeExperienceStatusMetricsResult = DescribeExperienceStatusMetricsResult_1.default;
+var DescribeExperienceExperienceModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeExperienceExperienceModelMetricsResult"));
+exports.DescribeExperienceExperienceModelMetricsResult = DescribeExperienceExperienceModelMetricsResult_1.default;
+var GetExperienceExperienceModelMetricsResult_1 = tslib_1.__importDefault(require("./GetExperienceExperienceModelMetricsResult"));
+exports.GetExperienceExperienceModelMetricsResult = GetExperienceExperienceModelMetricsResult_1.default;
+var DescribeExperienceNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeExperienceNamespaceMetricsResult"));
+exports.DescribeExperienceNamespaceMetricsResult = DescribeExperienceNamespaceMetricsResult_1.default;
+var GetExperienceNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetExperienceNamespaceMetricsResult"));
+exports.GetExperienceNamespaceMetricsResult = GetExperienceNamespaceMetricsResult_1.default;
+var DescribeFormationFormMetricsResult_1 = tslib_1.__importDefault(require("./DescribeFormationFormMetricsResult"));
+exports.DescribeFormationFormMetricsResult = DescribeFormationFormMetricsResult_1.default;
+var DescribeFormationMoldMetricsResult_1 = tslib_1.__importDefault(require("./DescribeFormationMoldMetricsResult"));
+exports.DescribeFormationMoldMetricsResult = DescribeFormationMoldMetricsResult_1.default;
+var DescribeFormationNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeFormationNamespaceMetricsResult"));
+exports.DescribeFormationNamespaceMetricsResult = DescribeFormationNamespaceMetricsResult_1.default;
+var GetFormationNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetFormationNamespaceMetricsResult"));
+exports.GetFormationNamespaceMetricsResult = GetFormationNamespaceMetricsResult_1.default;
+var DescribeFriendNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeFriendNamespaceMetricsResult"));
+exports.DescribeFriendNamespaceMetricsResult = DescribeFriendNamespaceMetricsResult_1.default;
+var GetFriendNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetFriendNamespaceMetricsResult"));
+exports.GetFriendNamespaceMetricsResult = GetFriendNamespaceMetricsResult_1.default;
+var DescribeInboxNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeInboxNamespaceMetricsResult"));
+exports.DescribeInboxNamespaceMetricsResult = DescribeInboxNamespaceMetricsResult_1.default;
+var GetInboxNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetInboxNamespaceMetricsResult"));
+exports.GetInboxNamespaceMetricsResult = GetInboxNamespaceMetricsResult_1.default;
+var DescribeInventoryItemSetMetricsResult_1 = tslib_1.__importDefault(require("./DescribeInventoryItemSetMetricsResult"));
+exports.DescribeInventoryItemSetMetricsResult = DescribeInventoryItemSetMetricsResult_1.default;
+var DescribeInventoryInventoryMetricsResult_1 = tslib_1.__importDefault(require("./DescribeInventoryInventoryMetricsResult"));
+exports.DescribeInventoryInventoryMetricsResult = DescribeInventoryInventoryMetricsResult_1.default;
+var DescribeInventoryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeInventoryNamespaceMetricsResult"));
+exports.DescribeInventoryNamespaceMetricsResult = DescribeInventoryNamespaceMetricsResult_1.default;
+var GetInventoryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetInventoryNamespaceMetricsResult"));
+exports.GetInventoryNamespaceMetricsResult = GetInventoryNamespaceMetricsResult_1.default;
+var DescribeKeyNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeKeyNamespaceMetricsResult"));
+exports.DescribeKeyNamespaceMetricsResult = DescribeKeyNamespaceMetricsResult_1.default;
+var GetKeyNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetKeyNamespaceMetricsResult"));
+exports.GetKeyNamespaceMetricsResult = GetKeyNamespaceMetricsResult_1.default;
+var DescribeLimitCounterMetricsResult_1 = tslib_1.__importDefault(require("./DescribeLimitCounterMetricsResult"));
+exports.DescribeLimitCounterMetricsResult = DescribeLimitCounterMetricsResult_1.default;
+var DescribeLimitLimitModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeLimitLimitModelMetricsResult"));
+exports.DescribeLimitLimitModelMetricsResult = DescribeLimitLimitModelMetricsResult_1.default;
+var GetLimitLimitModelMetricsResult_1 = tslib_1.__importDefault(require("./GetLimitLimitModelMetricsResult"));
+exports.GetLimitLimitModelMetricsResult = GetLimitLimitModelMetricsResult_1.default;
+var DescribeLimitNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeLimitNamespaceMetricsResult"));
+exports.DescribeLimitNamespaceMetricsResult = DescribeLimitNamespaceMetricsResult_1.default;
+var GetLimitNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetLimitNamespaceMetricsResult"));
+exports.GetLimitNamespaceMetricsResult = GetLimitNamespaceMetricsResult_1.default;
+var DescribeLotteryLotteryMetricsResult_1 = tslib_1.__importDefault(require("./DescribeLotteryLotteryMetricsResult"));
+exports.DescribeLotteryLotteryMetricsResult = DescribeLotteryLotteryMetricsResult_1.default;
+var GetLotteryLotteryMetricsResult_1 = tslib_1.__importDefault(require("./GetLotteryLotteryMetricsResult"));
+exports.GetLotteryLotteryMetricsResult = GetLotteryLotteryMetricsResult_1.default;
+var DescribeLotteryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeLotteryNamespaceMetricsResult"));
+exports.DescribeLotteryNamespaceMetricsResult = DescribeLotteryNamespaceMetricsResult_1.default;
+var GetLotteryNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetLotteryNamespaceMetricsResult"));
+exports.GetLotteryNamespaceMetricsResult = GetLotteryNamespaceMetricsResult_1.default;
+var DescribeMatchmakingNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMatchmakingNamespaceMetricsResult"));
+exports.DescribeMatchmakingNamespaceMetricsResult = DescribeMatchmakingNamespaceMetricsResult_1.default;
+var GetMatchmakingNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetMatchmakingNamespaceMetricsResult"));
+exports.GetMatchmakingNamespaceMetricsResult = GetMatchmakingNamespaceMetricsResult_1.default;
+var DescribeMissionCounterMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMissionCounterMetricsResult"));
+exports.DescribeMissionCounterMetricsResult = DescribeMissionCounterMetricsResult_1.default;
+var DescribeMissionMissionGroupModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMissionMissionGroupModelMetricsResult"));
+exports.DescribeMissionMissionGroupModelMetricsResult = DescribeMissionMissionGroupModelMetricsResult_1.default;
+var GetMissionMissionGroupModelMetricsResult_1 = tslib_1.__importDefault(require("./GetMissionMissionGroupModelMetricsResult"));
+exports.GetMissionMissionGroupModelMetricsResult = GetMissionMissionGroupModelMetricsResult_1.default;
+var DescribeMissionNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMissionNamespaceMetricsResult"));
+exports.DescribeMissionNamespaceMetricsResult = DescribeMissionNamespaceMetricsResult_1.default;
+var GetMissionNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetMissionNamespaceMetricsResult"));
+exports.GetMissionNamespaceMetricsResult = GetMissionNamespaceMetricsResult_1.default;
+var DescribeMoneyWalletMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMoneyWalletMetricsResult"));
+exports.DescribeMoneyWalletMetricsResult = DescribeMoneyWalletMetricsResult_1.default;
+var DescribeMoneyReceiptMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMoneyReceiptMetricsResult"));
+exports.DescribeMoneyReceiptMetricsResult = DescribeMoneyReceiptMetricsResult_1.default;
+var DescribeMoneyNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeMoneyNamespaceMetricsResult"));
+exports.DescribeMoneyNamespaceMetricsResult = DescribeMoneyNamespaceMetricsResult_1.default;
+var GetMoneyNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetMoneyNamespaceMetricsResult"));
+exports.GetMoneyNamespaceMetricsResult = GetMoneyNamespaceMetricsResult_1.default;
+var DescribeQuestQuestModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeQuestQuestModelMetricsResult"));
+exports.DescribeQuestQuestModelMetricsResult = DescribeQuestQuestModelMetricsResult_1.default;
+var GetQuestQuestModelMetricsResult_1 = tslib_1.__importDefault(require("./GetQuestQuestModelMetricsResult"));
+exports.GetQuestQuestModelMetricsResult = GetQuestQuestModelMetricsResult_1.default;
+var DescribeQuestQuestGroupModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeQuestQuestGroupModelMetricsResult"));
+exports.DescribeQuestQuestGroupModelMetricsResult = DescribeQuestQuestGroupModelMetricsResult_1.default;
+var GetQuestQuestGroupModelMetricsResult_1 = tslib_1.__importDefault(require("./GetQuestQuestGroupModelMetricsResult"));
+exports.GetQuestQuestGroupModelMetricsResult = GetQuestQuestGroupModelMetricsResult_1.default;
+var DescribeQuestNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeQuestNamespaceMetricsResult"));
+exports.DescribeQuestNamespaceMetricsResult = DescribeQuestNamespaceMetricsResult_1.default;
+var GetQuestNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetQuestNamespaceMetricsResult"));
+exports.GetQuestNamespaceMetricsResult = GetQuestNamespaceMetricsResult_1.default;
+var DescribeRankingCategoryModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeRankingCategoryModelMetricsResult"));
+exports.DescribeRankingCategoryModelMetricsResult = DescribeRankingCategoryModelMetricsResult_1.default;
+var GetRankingCategoryModelMetricsResult_1 = tslib_1.__importDefault(require("./GetRankingCategoryModelMetricsResult"));
+exports.GetRankingCategoryModelMetricsResult = GetRankingCategoryModelMetricsResult_1.default;
+var DescribeRankingNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeRankingNamespaceMetricsResult"));
+exports.DescribeRankingNamespaceMetricsResult = DescribeRankingNamespaceMetricsResult_1.default;
+var GetRankingNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetRankingNamespaceMetricsResult"));
+exports.GetRankingNamespaceMetricsResult = GetRankingNamespaceMetricsResult_1.default;
+var DescribeShowcaseDisplayItemMetricsResult_1 = tslib_1.__importDefault(require("./DescribeShowcaseDisplayItemMetricsResult"));
+exports.DescribeShowcaseDisplayItemMetricsResult = DescribeShowcaseDisplayItemMetricsResult_1.default;
+var GetShowcaseDisplayItemMetricsResult_1 = tslib_1.__importDefault(require("./GetShowcaseDisplayItemMetricsResult"));
+exports.GetShowcaseDisplayItemMetricsResult = GetShowcaseDisplayItemMetricsResult_1.default;
+var DescribeShowcaseShowcaseMetricsResult_1 = tslib_1.__importDefault(require("./DescribeShowcaseShowcaseMetricsResult"));
+exports.DescribeShowcaseShowcaseMetricsResult = DescribeShowcaseShowcaseMetricsResult_1.default;
+var GetShowcaseShowcaseMetricsResult_1 = tslib_1.__importDefault(require("./GetShowcaseShowcaseMetricsResult"));
+exports.GetShowcaseShowcaseMetricsResult = GetShowcaseShowcaseMetricsResult_1.default;
+var DescribeShowcaseNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeShowcaseNamespaceMetricsResult"));
+exports.DescribeShowcaseNamespaceMetricsResult = DescribeShowcaseNamespaceMetricsResult_1.default;
+var GetShowcaseNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetShowcaseNamespaceMetricsResult"));
+exports.GetShowcaseNamespaceMetricsResult = GetShowcaseNamespaceMetricsResult_1.default;
+var DescribeStaminaStaminaModelMetricsResult_1 = tslib_1.__importDefault(require("./DescribeStaminaStaminaModelMetricsResult"));
+exports.DescribeStaminaStaminaModelMetricsResult = DescribeStaminaStaminaModelMetricsResult_1.default;
+var GetStaminaStaminaModelMetricsResult_1 = tslib_1.__importDefault(require("./GetStaminaStaminaModelMetricsResult"));
+exports.GetStaminaStaminaModelMetricsResult = GetStaminaStaminaModelMetricsResult_1.default;
+var DescribeStaminaNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./DescribeStaminaNamespaceMetricsResult"));
+exports.DescribeStaminaNamespaceMetricsResult = DescribeStaminaNamespaceMetricsResult_1.default;
+var GetStaminaNamespaceMetricsResult_1 = tslib_1.__importDefault(require("./GetStaminaNamespaceMetricsResult"));
+exports.GetStaminaNamespaceMetricsResult = GetStaminaNamespaceMetricsResult_1.default;
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,51 @@
+import IModel from '../../core/interface/IModel';
+export default class SubscribeRankingModel implements IModel {
+    private subscribeRankingModelId;
+    private name;
+    private metadata;
+    private minimumValue;
+    private maximumValue;
+    private sum;
+    private orderDirection;
+    private entryPeriodEventId;
+    private accessPeriodEventId;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRankingName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rankingName: string | null): string | null;
+    getSubscribeRankingModelId(): string | null;
+    setSubscribeRankingModelId(subscribeRankingModelId: string | null): this;
+    withSubscribeRankingModelId(subscribeRankingModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getMinimumValue(): number | null;
+    setMinimumValue(minimumValue: number | null): this;
+    withMinimumValue(minimumValue: number | null): this;
+    getMaximumValue(): number | null;
+    setMaximumValue(maximumValue: number | null): this;
+    withMaximumValue(maximumValue: number | null): this;
+    getSum(): boolean | null;
+    setSum(sum: boolean | null): this;
+    withSum(sum: boolean | null): this;
+    getOrderDirection(): string | null;
+    setOrderDirection(orderDirection: string | null): this;
+    withOrderDirection(orderDirection: string | null): this;
+    getEntryPeriodEventId(): string | null;
+    setEntryPeriodEventId(entryPeriodEventId: string | null): this;
+    withEntryPeriodEventId(entryPeriodEventId: string | null): this;
+    getAccessPeriodEventId(): string | null;
+    setAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): SubscribeRankingModel | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

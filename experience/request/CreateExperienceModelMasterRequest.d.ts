@@ -1,0 +1,54 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Experience from '../model';
+export default class CreateExperienceModelMasterRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private name;
+    private description;
+    private metadata;
+    private defaultExperience;
+    private defaultRankCap;
+    private maxRankCap;
+    private rankThresholdName;
+    private acquireActionRates;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDefaultExperience(): number | null;
+    setDefaultExperience(defaultExperience: number | null): this;
+    withDefaultExperience(defaultExperience: number | null): this;
+    getDefaultRankCap(): number | null;
+    setDefaultRankCap(defaultRankCap: number | null): this;
+    withDefaultRankCap(defaultRankCap: number | null): this;
+    getMaxRankCap(): number | null;
+    setMaxRankCap(maxRankCap: number | null): this;
+    withMaxRankCap(maxRankCap: number | null): this;
+    getRankThresholdName(): string | null;
+    setRankThresholdName(rankThresholdName: string | null): this;
+    withRankThresholdName(rankThresholdName: string | null): this;
+    getAcquireActionRates(): Gs2Experience.AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateExperienceModelMasterRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

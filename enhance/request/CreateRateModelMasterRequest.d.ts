@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Enhance from '../model';
+export default class CreateRateModelMasterRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private name;
+    private description;
+    private metadata;
+    private targetInventoryModelId;
+    private acquireExperienceSuffix;
+    private materialInventoryModelId;
+    private acquireExperienceHierarchy;
+    private experienceModelId;
+    private bonusRates;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getTargetInventoryModelId(): string | null;
+    setTargetInventoryModelId(targetInventoryModelId: string | null): this;
+    withTargetInventoryModelId(targetInventoryModelId: string | null): this;
+    getAcquireExperienceSuffix(): string | null;
+    setAcquireExperienceSuffix(acquireExperienceSuffix: string | null): this;
+    withAcquireExperienceSuffix(acquireExperienceSuffix: string | null): this;
+    getMaterialInventoryModelId(): string | null;
+    setMaterialInventoryModelId(materialInventoryModelId: string | null): this;
+    withMaterialInventoryModelId(materialInventoryModelId: string | null): this;
+    getAcquireExperienceHierarchy(): string[] | null;
+    setAcquireExperienceHierarchy(acquireExperienceHierarchy: string[] | null): this;
+    withAcquireExperienceHierarchy(acquireExperienceHierarchy: string[] | null): this;
+    getExperienceModelId(): string | null;
+    setExperienceModelId(experienceModelId: string | null): this;
+    withExperienceModelId(experienceModelId: string | null): this;
+    getBonusRates(): Gs2Enhance.BonusRate[] | null;
+    setBonusRates(bonusRates: Gs2Enhance.BonusRate[] | null): this;
+    withBonusRates(bonusRates: Gs2Enhance.BonusRate[] | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateRateModelMasterRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

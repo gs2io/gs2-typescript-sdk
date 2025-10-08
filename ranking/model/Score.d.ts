@@ -1,0 +1,54 @@
+import IModel from '../../core/interface/IModel';
+export default class Score implements IModel {
+    private scoreId;
+    private categoryName;
+    private userId;
+    private uniqueId;
+    private scorerUserId;
+    private score;
+    private metadata;
+    private createdAt;
+    private revision;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getCategoryName(grn: string): string | null;
+    static getScorerUserId(grn: string): string | null;
+    static getUniqueId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, categoryName: string | null, scorerUserId: string | null, uniqueId: string | null): string | null;
+    getScoreId(): string | null;
+    setScoreId(scoreId: string | null): this;
+    withScoreId(scoreId: string | null): this;
+    getCategoryName(): string | null;
+    setCategoryName(categoryName: string | null): this;
+    withCategoryName(categoryName: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getUniqueId(): string | null;
+    setUniqueId(uniqueId: string | null): this;
+    withUniqueId(uniqueId: string | null): this;
+    getScorerUserId(): string | null;
+    setScorerUserId(scorerUserId: string | null): this;
+    withScorerUserId(scorerUserId: string | null): this;
+    getScore(): number | null;
+    setScore(score: number | null): this;
+    withScore(score: number | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Score | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

@@ -1,0 +1,51 @@
+import IModel from '../../core/interface/IModel';
+export default class Room implements IModel {
+    private roomId;
+    private name;
+    private userId;
+    private metadata;
+    private password;
+    private whiteListUserIds;
+    private createdAt;
+    private updatedAt;
+    private revision;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRoomName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, roomName: string | null): string | null;
+    getRoomId(): string | null;
+    setRoomId(roomId: string | null): this;
+    withRoomId(roomId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getPassword(): string | null;
+    setPassword(password: string | null): this;
+    withPassword(password: string | null): this;
+    getWhiteListUserIds(): string[] | null;
+    setWhiteListUserIds(whiteListUserIds: string[] | null): this;
+    withWhiteListUserIds(whiteListUserIds: string[] | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Room | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}
