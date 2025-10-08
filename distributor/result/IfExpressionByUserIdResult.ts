@@ -15,15 +15,50 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Distributor from '../model'
 
 export default class IfExpressionByUserIdResult implements IResult {
+    private item: Gs2Distributor.TransactionResult|null = null;
+    private expressionResult: boolean|null = null;
+
+    public getItem(): Gs2Distributor.TransactionResult|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Distributor.TransactionResult|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Distributor.TransactionResult|null): this {
+        this.item = item;
+        return this;
+    }
+
+    public getExpressionResult(): boolean|null {
+        return this.expressionResult;
+    }
+
+    public setExpressionResult(expressionResult: boolean|null) {
+        this.expressionResult = expressionResult;
+        return this;
+    }
+
+    public withExpressionResult(expressionResult: boolean|null): this {
+        this.expressionResult = expressionResult;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): IfExpressionByUserIdResult {
-        return new IfExpressionByUserIdResult();
+        return new IfExpressionByUserIdResult()
+            .withItem(Gs2Distributor.TransactionResult.fromDict(data["item"]))
+            .withExpressionResult(data["expressionResult"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
+            "expressionResult": this.getExpressionResult(),
         };
     }
 }

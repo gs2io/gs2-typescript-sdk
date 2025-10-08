@@ -15,9 +15,40 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Distributor from '../model'
 
 export default class IfExpressionByStampTaskResult implements IResult {
+    private item: Gs2Distributor.TransactionResult|null = null;
+    private expressionResult: boolean|null = null;
     private newContextStack: string|null = null;
+
+    public getItem(): Gs2Distributor.TransactionResult|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Distributor.TransactionResult|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Distributor.TransactionResult|null): this {
+        this.item = item;
+        return this;
+    }
+
+    public getExpressionResult(): boolean|null {
+        return this.expressionResult;
+    }
+
+    public setExpressionResult(expressionResult: boolean|null) {
+        this.expressionResult = expressionResult;
+        return this;
+    }
+
+    public withExpressionResult(expressionResult: boolean|null): this {
+        this.expressionResult = expressionResult;
+        return this;
+    }
 
     public getNewContextStack(): string|null {
         return this.newContextStack;
@@ -35,11 +66,15 @@ export default class IfExpressionByStampTaskResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): IfExpressionByStampTaskResult {
         return new IfExpressionByStampTaskResult()
+            .withItem(Gs2Distributor.TransactionResult.fromDict(data["item"]))
+            .withExpressionResult(data["expressionResult"])
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
+            "expressionResult": this.getExpressionResult(),
             "newContextStack": this.getNewContextStack(),
         };
     }
