@@ -4,6 +4,7 @@ import LimitModelMaster from "./LimitModelMaster";
 import CurrentLimitMaster from "./CurrentLimitMaster";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
+import ScriptSetting from "./ScriptSetting";
 import TransactionSetting from "./TransactionSetting";
 import LimitModel from "./LimitModel";
-export { Namespace, Counter, LimitModelMaster, CurrentLimitMaster, GitHubCheckoutSetting, LogSetting, TransactionSetting, LimitModel, };
+export { Namespace, Counter, LimitModelMaster, CurrentLimitMaster, GitHubCheckoutSetting, LogSetting, ScriptSetting, TransactionSetting, LimitModel, };

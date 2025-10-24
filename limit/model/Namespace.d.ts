@@ -5,6 +5,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private transactionSetting;
+    private countUpScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -26,6 +27,9 @@ export default class Namespace implements IModel {
     getTransactionSetting(): Gs2Limit.TransactionSetting | null;
     setTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting | null): this;
     withTransactionSetting(transactionSetting: Gs2Limit.TransactionSetting | null): this;
+    getCountUpScript(): Gs2Limit.ScriptSetting | null;
+    setCountUpScript(countUpScript: Gs2Limit.ScriptSetting | null): this;
+    withCountUpScript(countUpScript: Gs2Limit.ScriptSetting | null): this;
     getLogSetting(): Gs2Limit.LogSetting | null;
     setLogSetting(logSetting: Gs2Limit.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Limit.LogSetting | null): this;

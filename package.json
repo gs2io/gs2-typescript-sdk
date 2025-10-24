@@ -1,6 +1,6 @@
 {
   "name": "gs2",
-  "version": "1.4.108",
+  "version": "1.4.109",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
-    "@types/node": "^18.19.129",
+    "@types/node": "^18.19.130",
     "@types/uuid": "^8.3.4",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3",

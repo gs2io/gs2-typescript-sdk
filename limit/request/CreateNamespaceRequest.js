@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.countUpScript = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -81,6 +82,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    CreateNamespaceRequest.prototype.getCountUpScript = function () {
+        return this.countUpScript;
+    };
+    CreateNamespaceRequest.prototype.setCountUpScript = function (countUpScript) {
+        this.countUpScript = countUpScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withCountUpScript = function (countUpScript) {
+        this.countUpScript = countUpScript;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -97,15 +109,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Limit.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withCountUpScript(Gs2Limit.ScriptSetting.fromDict(data["countUpScript"]))
             .withLogSetting(Gs2Limit.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "countUpScript": (_b = this.getCountUpScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return CreateNamespaceRequest;
