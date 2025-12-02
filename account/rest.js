@@ -1365,7 +1365,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.findPlatformIdByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/account/{userId}/platformId/type/{type}/userIdentifier/{userIdentifier}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1382,6 +1382,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'dontResolveDataOwner': String((_m = request.getDontResolveDataOwner()) !== null && _m !== void 0 ? _m : null),
         };
         return axios_1.default.get(url, {
             params: params,

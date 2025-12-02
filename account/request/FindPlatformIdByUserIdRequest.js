@@ -23,6 +23,7 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.type = null;
         this.userIdentifier = null;
+        this.dontResolveDataOwner = null;
         this.timeOffsetToken = null;
     }
     FindPlatformIdByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
         this.userIdentifier = userIdentifier;
         return this;
     };
+    FindPlatformIdByUserIdRequest.prototype.getDontResolveDataOwner = function () {
+        return this.dontResolveDataOwner;
+    };
+    FindPlatformIdByUserIdRequest.prototype.setDontResolveDataOwner = function (dontResolveDataOwner) {
+        this.dontResolveDataOwner = dontResolveDataOwner;
+        return this;
+    };
+    FindPlatformIdByUserIdRequest.prototype.withDontResolveDataOwner = function (dontResolveDataOwner) {
+        this.dontResolveDataOwner = dontResolveDataOwner;
+        return this;
+    };
     FindPlatformIdByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -108,6 +120,7 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withType(data["type"])
             .withUserIdentifier(data["userIdentifier"])
+            .withDontResolveDataOwner(data["dontResolveDataOwner"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     FindPlatformIdByUserIdRequest.prototype.toDict = function () {
@@ -116,6 +129,7 @@ var FindPlatformIdByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "type": this.getType(),
             "userIdentifier": this.getUserIdentifier(),
+            "dontResolveDataOwner": this.getDontResolveDataOwner(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

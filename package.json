@@ -1,6 +1,6 @@
 {
   "name": "gs2",
-  "version": "1.4.109",
+  "version": "1.4.110",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"

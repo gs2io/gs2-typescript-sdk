@@ -6,6 +6,7 @@ export default class FindPlatformIdByUserIdRequest implements IRequest {
     private userId;
     private type;
     private userIdentifier;
+    private dontResolveDataOwner;
     private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class FindPlatformIdByUserIdRequest implements IRequest {
     getUserIdentifier(): string | null;
     setUserIdentifier(userIdentifier: string | null): this;
     withUserIdentifier(userIdentifier: string | null): this;
+    getDontResolveDataOwner(): boolean | null;
+    setDontResolveDataOwner(dontResolveDataOwner: boolean | null): this;
+    withDontResolveDataOwner(dontResolveDataOwner: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
