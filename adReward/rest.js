@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2AdRewardRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2AdRewardRestClient, _super);
     function Gs2AdRewardRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.createNamespace = function (request) {
@@ -71,17 +65,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'changePointNotification': (_t = (_s = request.getChangePointNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
             'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.getNamespaceStatus = function (request) {
@@ -97,13 +82,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.getNamespace = function (request) {
@@ -119,13 +99,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.updateNamespace = function (request) {
@@ -150,17 +125,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'changePointNotification': (_u = (_t = request.getChangePointNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
             'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.deleteNamespace = function (request) {
@@ -176,13 +142,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.getServiceVersion = function (request) {
@@ -197,13 +158,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -222,17 +178,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -251,13 +198,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -276,17 +218,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -305,13 +238,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -330,17 +258,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.importUserDataByUserId = function (request) {
@@ -360,17 +279,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -390,13 +300,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.getPoint = function (request) {
@@ -415,13 +320,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPointResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPointResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.getPointByUserId = function (request) {
@@ -441,13 +341,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPointByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPointByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.acquirePointByUserId = function (request) {
@@ -471,17 +366,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'point': (_j = request.getPoint()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquirePointByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquirePointByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.consumePoint = function (request) {
@@ -504,17 +390,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'point': (_g = request.getPoint()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumePointResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumePointResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.consumePointByUserId = function (request) {
@@ -538,17 +415,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'point': (_j = request.getPoint()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumePointByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumePointByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.deletePointByUserId = function (request) {
@@ -571,17 +439,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePointByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DeletePointByUserIdResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.consumePointByStampTask = function (request) {
@@ -598,17 +457,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumePointByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumePointByStampTaskResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.prototype.acquirePointByStampSheet = function (request) {
@@ -625,17 +475,8 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquirePointByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquirePointByStampSheetResult.fromDict(data);
         });
     };
     Gs2AdRewardRestClient.ENDPOINT_HOST = null;

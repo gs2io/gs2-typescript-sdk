@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2Money2RestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2Money2RestClient, _super);
     function Gs2Money2RestClient(session) {
@@ -40,13 +39,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.createNamespace = function (request) {
@@ -76,17 +70,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'changeSubscriptionStatusNotification': (_y = (_x = request.getChangeSubscriptionStatusNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
             'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getNamespaceStatus = function (request) {
@@ -102,13 +87,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getNamespace = function (request) {
@@ -124,13 +104,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.updateNamespace = function (request) {
@@ -159,17 +134,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'changeSubscriptionStatusNotification': (_y = (_x = request.getChangeSubscriptionStatusNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
             'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.deleteNamespace = function (request) {
@@ -185,13 +151,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getServiceVersion = function (request) {
@@ -206,13 +167,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -231,17 +187,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -260,13 +207,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -285,17 +227,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -314,13 +247,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -339,17 +267,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.importUserDataByUserId = function (request) {
@@ -369,17 +288,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -399,13 +309,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeWallets = function (request) {
@@ -426,13 +331,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeWalletsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeWalletsResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeWalletsByUserId = function (request) {
@@ -454,13 +354,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeWalletsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeWalletsByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getWallet = function (request) {
@@ -480,13 +375,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetWalletResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetWalletResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getWalletByUserId = function (request) {
@@ -507,13 +397,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetWalletByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetWalletByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.depositByUserId = function (request) {
@@ -538,17 +423,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'depositTransactions': (_m = (_l = request.getDepositTransactions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DepositByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DepositByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.withdraw = function (request) {
@@ -573,17 +449,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'withdrawCount': (_j = request.getWithdrawCount()) !== null && _j !== void 0 ? _j : null,
             'paidOnly': (_k = request.getPaidOnly()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WithdrawResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WithdrawResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.withdrawByUserId = function (request) {
@@ -609,17 +476,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'withdrawCount': (_l = request.getWithdrawCount()) !== null && _l !== void 0 ? _l : null,
             'paidOnly': (_m = request.getPaidOnly()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WithdrawByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WithdrawByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.depositByStampSheet = function (request) {
@@ -636,17 +494,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DepositByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DepositByStampSheetResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.withdrawByStampTask = function (request) {
@@ -663,17 +512,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WithdrawByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WithdrawByStampTaskResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeEventsByUserId = function (request) {
@@ -697,13 +537,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeEventsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeEventsByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getEventByTransactionId = function (request) {
@@ -720,13 +555,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetEventByTransactionIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetEventByTransactionIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.verifyReceipt = function (request) {
@@ -750,17 +580,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'receipt': (_k = (_j = request.getReceipt()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReceiptResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReceiptResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.verifyReceiptByUserId = function (request) {
@@ -785,17 +606,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'receipt': (_m = (_l = request.getReceipt()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReceiptByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReceiptByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.verifyReceiptByStampTask = function (request) {
@@ -812,17 +624,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReceiptByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReceiptByStampTaskResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeSubscriptionStatuses = function (request) {
@@ -841,13 +644,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSubscriptionStatusesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSubscriptionStatusesResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeSubscriptionStatusesByUserId = function (request) {
@@ -867,13 +665,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSubscriptionStatusesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSubscriptionStatusesByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getSubscriptionStatus = function (request) {
@@ -893,13 +686,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSubscriptionStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSubscriptionStatusResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getSubscriptionStatusByUserId = function (request) {
@@ -920,13 +708,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSubscriptionStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSubscriptionStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatus = function (request) {
@@ -949,17 +732,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'receipt': (_g = request.getReceipt()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AllocateSubscriptionStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AllocateSubscriptionStatusResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.allocateSubscriptionStatusByUserId = function (request) {
@@ -983,17 +757,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'receipt': (_j = request.getReceipt()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AllocateSubscriptionStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AllocateSubscriptionStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatus = function (request) {
@@ -1016,17 +781,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'receipt': (_g = request.getReceipt()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.TakeoverSubscriptionStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.TakeoverSubscriptionStatusResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.takeoverSubscriptionStatusByUserId = function (request) {
@@ -1050,17 +806,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'receipt': (_j = request.getReceipt()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.TakeoverSubscriptionStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.TakeoverSubscriptionStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeRefundHistoriesByUserId = function (request) {
@@ -1082,13 +829,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRefundHistoriesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRefundHistoriesByUserIdResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeRefundHistoriesByDate = function (request) {
@@ -1109,13 +851,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRefundHistoriesByDateResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRefundHistoriesByDateResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getRefundHistory = function (request) {
@@ -1132,13 +869,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRefundHistoryResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRefundHistoryResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeStoreContentModels = function (request) {
@@ -1154,13 +886,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStoreContentModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStoreContentModelsResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getStoreContentModel = function (request) {
@@ -1177,13 +904,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStoreContentModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStoreContentModelResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeStoreContentModelMasters = function (request) {
@@ -1202,13 +924,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStoreContentModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStoreContentModelMastersResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.createStoreContentModelMaster = function (request) {
@@ -1229,17 +946,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'appleAppStore': (_j = (_h = request.getAppleAppStore()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'googlePlay': (_l = (_k = request.getGooglePlay()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateStoreContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateStoreContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getStoreContentModelMaster = function (request) {
@@ -1256,13 +964,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStoreContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStoreContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.updateStoreContentModelMaster = function (request) {
@@ -1283,17 +986,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'appleAppStore': (_k = (_j = request.getAppleAppStore()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'googlePlay': (_m = (_l = request.getGooglePlay()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateStoreContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateStoreContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.deleteStoreContentModelMaster = function (request) {
@@ -1310,13 +1004,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteStoreContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteStoreContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModels = function (request) {
@@ -1332,13 +1021,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStoreSubscriptionContentModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStoreSubscriptionContentModelsResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getStoreSubscriptionContentModel = function (request) {
@@ -1355,13 +1039,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStoreSubscriptionContentModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStoreSubscriptionContentModelResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeStoreSubscriptionContentModelMasters = function (request) {
@@ -1380,13 +1059,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStoreSubscriptionContentModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStoreSubscriptionContentModelMastersResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.createStoreSubscriptionContentModelMaster = function (request) {
@@ -1412,17 +1086,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'appleAppStore': (_p = (_o = request.getAppleAppStore()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'googlePlay': (_r = (_q = request.getGooglePlay()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateStoreSubscriptionContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getStoreSubscriptionContentModelMaster = function (request) {
@@ -1439,13 +1104,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStoreSubscriptionContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStoreSubscriptionContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.updateStoreSubscriptionContentModelMaster = function (request) {
@@ -1471,17 +1131,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'appleAppStore': (_q = (_p = request.getAppleAppStore()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
             'googlePlay': (_s = (_r = request.getGooglePlay()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateStoreSubscriptionContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateStoreSubscriptionContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.deleteStoreSubscriptionContentModelMaster = function (request) {
@@ -1498,13 +1149,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteStoreSubscriptionContentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteStoreSubscriptionContentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.exportMaster = function (request) {
@@ -1520,13 +1166,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getCurrentModelMaster = function (request) {
@@ -1542,13 +1183,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.preUpdateCurrentModelMaster = function (request) {
@@ -1564,17 +1200,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.updateCurrentModelMaster = function (request) {
@@ -1593,17 +1220,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.updateCurrentModelMasterFromGitHub = function (request) {
@@ -1620,17 +1238,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeDailyTransactionHistoriesByCurrency = function (request) {
@@ -1651,13 +1260,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeDailyTransactionHistoriesByCurrencyResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDailyTransactionHistoriesByCurrencyResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeDailyTransactionHistories = function (request) {
@@ -1678,13 +1282,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeDailyTransactionHistoriesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDailyTransactionHistoriesResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getDailyTransactionHistory = function (request) {
@@ -1704,13 +1303,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDailyTransactionHistoryResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDailyTransactionHistoryResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.describeUnusedBalances = function (request) {
@@ -1728,13 +1322,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeUnusedBalancesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeUnusedBalancesResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.prototype.getUnusedBalance = function (request) {
@@ -1751,13 +1340,8 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetUnusedBalanceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetUnusedBalanceResult.fromDict(data);
         });
     };
     Gs2Money2RestClient.ENDPOINT_HOST = null;

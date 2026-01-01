@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2ProjectRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2ProjectRestClient, _super);
     function Gs2ProjectRestClient(session) {
@@ -42,17 +41,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'password': (_f = request.getPassword()) !== null && _f !== void 0 ? _f : null,
             'lang': (_g = request.getLang()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateAccountResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.verify = function (request) {
@@ -68,17 +58,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'verifyToken': (_c = request.getVerifyToken()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.signIn = function (request) {
@@ -96,17 +77,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'password': (_d = request.getPassword()) !== null && _d !== void 0 ? _d : null,
             'otp': (_e = request.getOtp()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SignInResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SignInResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.forget = function (request) {
@@ -123,17 +95,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'email': (_c = request.getEmail()) !== null && _c !== void 0 ? _c : null,
             'lang': (_d = request.getLang()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ForgetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ForgetResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.issuePassword = function (request) {
@@ -149,17 +112,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'issuePasswordToken': (_c = request.getIssuePasswordToken()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssuePasswordResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssuePasswordResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.updateAccount = function (request) {
@@ -179,17 +133,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'password': (_f = request.getPassword()) !== null && _f !== void 0 ? _f : null,
             'accountToken': (_g = request.getAccountToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateAccountResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.enableMfa = function (request) {
@@ -205,17 +150,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'accountToken': (_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.EnableMfaResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.EnableMfaResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.challengeMfa = function (request) {
@@ -232,17 +168,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'accountToken': (_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null,
             'passcode': (_d = request.getPasscode()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ChallengeMfaResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ChallengeMfaResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.disableMfa = function (request) {
@@ -258,13 +185,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DisableMfaResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DisableMfaResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.deleteAccount = function (request) {
@@ -280,13 +202,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteAccountResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getServiceVersion = function (request) {
@@ -301,13 +218,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeProjects = function (request) {
@@ -325,13 +237,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeProjectsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeProjectsResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.createProject = function (request) {
@@ -356,17 +263,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'eventBridgeAwsAccountId': (_l = request.getEventBridgeAwsAccountId()) !== null && _l !== void 0 ? _l : null,
             'eventBridgeAwsRegion': (_m = request.getEventBridgeAwsRegion()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateProjectResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateProjectResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getProject = function (request) {
@@ -383,13 +281,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'accountToken': String((_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetProjectResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetProjectResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getProjectToken = function (request) {
@@ -406,17 +299,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'accountToken': (_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetProjectTokenResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetProjectTokenResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getProjectTokenByIdentifier = function (request) {
@@ -436,17 +320,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'password': (_j = request.getPassword()) !== null && _j !== void 0 ? _j : null,
             'otp': (_k = request.getOtp()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetProjectTokenByIdentifierResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetProjectTokenByIdentifierResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.updateProject = function (request) {
@@ -469,17 +344,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'eventBridgeAwsAccountId': (_k = request.getEventBridgeAwsAccountId()) !== null && _k !== void 0 ? _k : null,
             'eventBridgeAwsRegion': (_l = request.getEventBridgeAwsRegion()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateProjectResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateProjectResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.activateRegion = function (request) {
@@ -497,17 +363,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'accountToken': (_g = request.getAccountToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ActivateRegionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.ActivateRegionResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.waitActivateRegion = function (request) {
@@ -525,17 +382,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WaitActivateRegionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.WaitActivateRegionResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.deleteProject = function (request) {
@@ -552,13 +400,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'accountToken': String((_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteProjectResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteProjectResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeBillingMethods = function (request) {
@@ -576,13 +419,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBillingMethodsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBillingMethodsResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.createBillingMethod = function (request) {
@@ -602,17 +440,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'cardCustomerId': (_f = request.getCardCustomerId()) !== null && _f !== void 0 ? _f : null,
             'partnerId': (_g = request.getPartnerId()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateBillingMethodResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateBillingMethodResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getBillingMethod = function (request) {
@@ -629,13 +458,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'accountToken': String((_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBillingMethodResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBillingMethodResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.updateBillingMethod = function (request) {
@@ -653,17 +477,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'accountToken': (_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateBillingMethodResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateBillingMethodResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.deleteBillingMethod = function (request) {
@@ -680,13 +495,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'accountToken': String((_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteBillingMethodResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteBillingMethodResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeReceipts = function (request) {
@@ -704,13 +514,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeReceiptsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeReceiptsResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeBillings = function (request) {
@@ -731,13 +536,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'region': String((_k = request.getRegion()) !== null && _k !== void 0 ? _k : null),
             'service': String((_l = request.getService()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBillingsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBillingsResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeDumpProgresses = function (request) {
@@ -754,13 +554,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeDumpProgressesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDumpProgressesResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getDumpProgress = function (request) {
@@ -776,17 +571,12 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDumpProgressResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDumpProgressResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.waitDumpUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/dump/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
@@ -805,19 +595,9 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'userId': (_j = request.getUserId()) !== null && _j !== void 0 ? _j : null,
-            'microserviceName': (_k = request.getMicroserviceName()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WaitDumpUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WaitDumpUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.archiveDumpUserData = function (request) {
@@ -834,17 +614,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ArchiveDumpUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ArchiveDumpUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.dumpUserData = function (request) {
@@ -866,17 +637,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getDumpUserData = function (request) {
@@ -892,13 +654,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDumpUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDumpUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeCleanProgresses = function (request) {
@@ -915,13 +672,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCleanProgressesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCleanProgressesResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getCleanProgress = function (request) {
@@ -937,17 +689,12 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCleanProgressResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCleanProgressResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.waitCleanUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
@@ -966,19 +713,9 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'userId': (_j = request.getUserId()) !== null && _j !== void 0 ? _j : null,
-            'microserviceName': (_k = request.getMicroserviceName()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WaitCleanUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WaitCleanUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.cleanUserData = function (request) {
@@ -1000,17 +737,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeImportProgresses = function (request) {
@@ -1027,13 +755,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeImportProgressesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeImportProgressesResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getImportProgress = function (request) {
@@ -1049,17 +772,12 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetImportProgressResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetImportProgressResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.waitImportUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/import/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
@@ -1078,19 +796,9 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'userId': (_j = request.getUserId()) !== null && _j !== void 0 ? _j : null,
-            'microserviceName': (_k = request.getMicroserviceName()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.WaitImportUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.WaitImportUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.prepareImportUserData = function (request) {
@@ -1112,17 +820,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.importUserData = function (request) {
@@ -1145,17 +844,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.describeImportErrorLogs = function (request) {
@@ -1173,13 +863,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeImportErrorLogsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeImportErrorLogsResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.getImportErrorLog = function (request) {
@@ -1196,13 +881,8 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetImportErrorLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetImportErrorLogResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.ENDPOINT_HOST = null;

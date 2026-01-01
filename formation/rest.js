@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2FormationRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2FormationRestClient, _super);
     function Gs2FormationRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.createNamespace = function (request) {
@@ -68,17 +62,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'updatePropertyFormScript': (_m = (_l = request.getUpdatePropertyFormScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getNamespaceStatus = function (request) {
@@ -94,13 +79,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getNamespace = function (request) {
@@ -116,13 +96,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updateNamespace = function (request) {
@@ -144,17 +119,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'updatePropertyFormScript': (_o = (_m = request.getUpdatePropertyFormScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
             'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteNamespace = function (request) {
@@ -170,13 +136,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getServiceVersion = function (request) {
@@ -191,13 +152,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -216,17 +172,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -245,13 +192,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -270,17 +212,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -299,13 +232,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -324,17 +252,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.importUserDataByUserId = function (request) {
@@ -354,17 +273,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -384,13 +294,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getFormModel = function (request) {
@@ -407,13 +312,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormModelResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeFormModelMasters = function (request) {
@@ -432,13 +332,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormModelMastersResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.createFormModelMaster = function (request) {
@@ -458,17 +353,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'slots': (_j = (_h = request.getSlots()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getFormModelMaster = function (request) {
@@ -485,13 +371,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updateFormModelMaster = function (request) {
@@ -511,17 +392,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'slots': (_k = (_j = request.getSlots()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteFormModelMaster = function (request) {
@@ -538,13 +410,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeMoldModels = function (request) {
@@ -560,13 +427,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoldModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoldModelsResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getMoldModel = function (request) {
@@ -583,13 +445,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMoldModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMoldModelResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeMoldModelMasters = function (request) {
@@ -608,13 +465,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoldModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoldModelMastersResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.createMoldModelMaster = function (request) {
@@ -636,17 +488,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'initialMaxCapacity': (_j = request.getInitialMaxCapacity()) !== null && _j !== void 0 ? _j : null,
             'maxCapacity': (_k = request.getMaxCapacity()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateMoldModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateMoldModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getMoldModelMaster = function (request) {
@@ -663,13 +506,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMoldModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMoldModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updateMoldModelMaster = function (request) {
@@ -691,17 +529,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'initialMaxCapacity': (_k = request.getInitialMaxCapacity()) !== null && _k !== void 0 ? _k : null,
             'maxCapacity': (_l = request.getMaxCapacity()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMoldModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMoldModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteMoldModelMaster = function (request) {
@@ -718,13 +547,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMoldModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteMoldModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describePropertyFormModels = function (request) {
@@ -740,13 +564,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePropertyFormModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePropertyFormModelsResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyFormModel = function (request) {
@@ -763,13 +582,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormModelResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describePropertyFormModelMasters = function (request) {
@@ -788,13 +602,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePropertyFormModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePropertyFormModelMastersResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.createPropertyFormModelMaster = function (request) {
@@ -814,17 +623,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'slots': (_j = (_h = request.getSlots()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreatePropertyFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreatePropertyFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyFormModelMaster = function (request) {
@@ -841,13 +641,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updatePropertyFormModelMaster = function (request) {
@@ -867,17 +662,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'slots': (_k = (_j = request.getSlots()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdatePropertyFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdatePropertyFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deletePropertyFormModelMaster = function (request) {
@@ -894,13 +680,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePropertyFormModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePropertyFormModelMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.exportMaster = function (request) {
@@ -916,13 +697,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getCurrentFormMaster = function (request) {
@@ -938,13 +714,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentFormMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentFormMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.preUpdateCurrentFormMaster = function (request) {
@@ -960,17 +731,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentFormMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentFormMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updateCurrentFormMaster = function (request) {
@@ -989,17 +751,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentFormMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentFormMasterResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.updateCurrentFormMasterFromGitHub = function (request) {
@@ -1016,17 +769,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentFormMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentFormMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeMolds = function (request) {
@@ -1047,13 +791,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoldsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoldsResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeMoldsByUserId = function (request) {
@@ -1075,13 +814,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoldsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoldsByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getMold = function (request) {
@@ -1101,13 +835,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMoldResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMoldResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getMoldByUserId = function (request) {
@@ -1128,13 +857,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMoldByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMoldByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setMoldCapacityByUserId = function (request) {
@@ -1159,17 +883,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'capacity': (_l = request.getCapacity()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMoldCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetMoldCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.addMoldCapacityByUserId = function (request) {
@@ -1194,17 +909,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'capacity': (_l = request.getCapacity()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddMoldCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddMoldCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.subMoldCapacity = function (request) {
@@ -1228,17 +934,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'capacity': (_j = request.getCapacity()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubMoldCapacityResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubMoldCapacityResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.subMoldCapacityByUserId = function (request) {
@@ -1263,17 +960,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'capacity': (_l = request.getCapacity()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubMoldCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubMoldCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteMold = function (request) {
@@ -1296,13 +984,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMoldResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteMoldResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteMoldByUserId = function (request) {
@@ -1326,13 +1009,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMoldByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteMoldByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.addCapacityByStampSheet = function (request) {
@@ -1349,17 +1027,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddCapacityByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddCapacityByStampSheetResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.subCapacityByStampTask = function (request) {
@@ -1376,17 +1045,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubCapacityByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubCapacityByStampTaskResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setCapacityByStampSheet = function (request) {
@@ -1403,17 +1063,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetCapacityByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetCapacityByStampSheetResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeForms = function (request) {
@@ -1435,13 +1086,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormsResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describeFormsByUserId = function (request) {
@@ -1464,13 +1110,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormsByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getForm = function (request) {
@@ -1491,13 +1132,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getFormByUserId = function (request) {
@@ -1519,13 +1155,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getFormWithSignature = function (request) {
@@ -1547,13 +1178,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormWithSignatureResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getFormWithSignatureByUserId = function (request) {
@@ -1576,13 +1202,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'keyId': String((_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormWithSignatureByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormWithSignatureByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setForm = function (request) {
@@ -1607,17 +1228,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'slots': (_m = (_l = request.getSlots()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setFormByUserId = function (request) {
@@ -1643,17 +1255,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'slots': (_p = (_o = request.getSlots()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setFormWithSignature = function (request) {
@@ -1679,17 +1282,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'slots': (_m = (_l = request.getSlots()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
             'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetFormWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetFormWithSignatureResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.acquireActionsToFormProperties = function (request) {
@@ -1716,17 +1310,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'acquireAction': (_p = (_o = request.getAcquireAction()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'config': (_r = (_q = request.getConfig()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireActionsToFormPropertiesResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireActionsToFormPropertiesResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteForm = function (request) {
@@ -1750,13 +1335,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deleteFormByUserId = function (request) {
@@ -1781,13 +1361,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.acquireActionToFormPropertiesByStampSheet = function (request) {
@@ -1804,17 +1379,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireActionToFormPropertiesByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireActionToFormPropertiesByStampSheetResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setFormByStampSheet = function (request) {
@@ -1831,17 +1397,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetFormByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetFormByStampSheetResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describePropertyForms = function (request) {
@@ -1863,13 +1420,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePropertyFormsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePropertyFormsResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.describePropertyFormsByUserId = function (request) {
@@ -1892,13 +1444,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePropertyFormsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePropertyFormsByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyForm = function (request) {
@@ -1919,13 +1466,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyFormByUserId = function (request) {
@@ -1947,13 +1489,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyFormWithSignature = function (request) {
@@ -1975,13 +1512,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormWithSignatureResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.getPropertyFormWithSignatureByUserId = function (request) {
@@ -2004,13 +1536,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'keyId': String((_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPropertyFormWithSignatureByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPropertyFormWithSignatureByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setPropertyForm = function (request) {
@@ -2035,17 +1562,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'slots': (_m = (_l = request.getSlots()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetPropertyFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetPropertyFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setPropertyFormByUserId = function (request) {
@@ -2071,17 +1589,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'slots': (_p = (_o = request.getSlots()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetPropertyFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetPropertyFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.setPropertyFormWithSignature = function (request) {
@@ -2107,17 +1616,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'slots': (_m = (_l = request.getSlots()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
             'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetPropertyFormWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetPropertyFormWithSignatureResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.acquireActionsToPropertyFormProperties = function (request) {
@@ -2144,17 +1644,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'acquireAction': (_p = (_o = request.getAcquireAction()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'config': (_r = (_q = request.getConfig()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireActionsToPropertyFormPropertiesResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireActionsToPropertyFormPropertiesResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deletePropertyForm = function (request) {
@@ -2178,13 +1669,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePropertyFormResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePropertyFormResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.deletePropertyFormByUserId = function (request) {
@@ -2209,13 +1695,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePropertyFormByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePropertyFormByUserIdResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.prototype.acquireActionToPropertyFormPropertiesByStampSheet = function (request) {
@@ -2232,17 +1713,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireActionToPropertyFormPropertiesByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireActionToPropertyFormPropertiesByStampSheetResult.fromDict(data);
         });
     };
     Gs2FormationRestClient.ENDPOINT_HOST = null;

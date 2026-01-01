@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2SerialKeyRestClient, _super);
     function Gs2SerialKeyRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.createNamespace = function (request) {
@@ -65,17 +59,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getNamespaceStatus = function (request) {
@@ -91,13 +76,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getNamespace = function (request) {
@@ -113,13 +93,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.updateNamespace = function (request) {
@@ -138,17 +113,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.deleteNamespace = function (request) {
@@ -164,13 +130,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getServiceVersion = function (request) {
@@ -185,13 +146,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -210,17 +166,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -239,13 +186,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -264,17 +206,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -293,13 +226,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -318,17 +246,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.importUserDataByUserId = function (request) {
@@ -348,17 +267,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -378,13 +288,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.describeIssueJobs = function (request) {
@@ -403,13 +308,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeIssueJobsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeIssueJobsResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getIssueJob = function (request) {
@@ -427,13 +327,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetIssueJobResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetIssueJobResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.issue = function (request) {
@@ -452,17 +347,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'issueRequestCount': (_h = request.getIssueRequestCount()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.describeSerialKeys = function (request) {
@@ -482,13 +368,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSerialKeysResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSerialKeysResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.downloadSerialCodes = function (request) {
@@ -506,13 +387,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DownloadSerialCodesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DownloadSerialCodesResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.issueOnce = function (request) {
@@ -530,17 +406,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssueOnceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueOnceResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getSerialKey = function (request) {
@@ -557,13 +424,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSerialKeyResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSerialKeyResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.verifyCode = function (request) {
@@ -588,17 +450,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'campaignModelName': (_h = request.getCampaignModelName()) !== null && _h !== void 0 ? _h : null,
             'verifyType': (_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCodeResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCodeResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.verifyCodeByUserId = function (request) {
@@ -624,17 +477,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'campaignModelName': (_k = request.getCampaignModelName()) !== null && _k !== void 0 ? _k : null,
             'verifyType': (_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCodeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCodeByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.use = function (request) {
@@ -657,17 +501,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'code': (_g = request.getCode()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UseResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UseResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.useByUserId = function (request) {
@@ -691,17 +526,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'code': (_j = request.getCode()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UseByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UseByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.revertUseByUserId = function (request) {
@@ -725,17 +551,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'code': (_j = request.getCode()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RevertUseByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RevertUseByUserIdResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.useByStampTask = function (request) {
@@ -752,17 +569,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UseByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UseByStampTaskResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.revertUseByStampSheet = function (request) {
@@ -779,17 +587,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RevertUseByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RevertUseByStampSheetResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.verifyByStampTask = function (request) {
@@ -806,17 +605,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyByStampTaskResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.issueOnceByStampSheet = function (request) {
@@ -833,17 +623,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssueOnceByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueOnceByStampSheetResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.describeCampaignModels = function (request) {
@@ -859,13 +640,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCampaignModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCampaignModelsResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getCampaignModel = function (request) {
@@ -882,13 +658,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCampaignModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCampaignModelResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.describeCampaignModelMasters = function (request) {
@@ -907,13 +678,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCampaignModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCampaignModelMastersResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.createCampaignModelMaster = function (request) {
@@ -933,17 +699,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'enableCampaignCode': (_h = request.getEnableCampaignCode()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateCampaignModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateCampaignModelMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getCampaignModelMaster = function (request) {
@@ -960,13 +717,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCampaignModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCampaignModelMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.updateCampaignModelMaster = function (request) {
@@ -986,17 +738,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'enableCampaignCode': (_j = request.getEnableCampaignCode()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCampaignModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCampaignModelMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.deleteCampaignModelMaster = function (request) {
@@ -1013,13 +756,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteCampaignModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteCampaignModelMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.exportMaster = function (request) {
@@ -1035,13 +773,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.getCurrentCampaignMaster = function (request) {
@@ -1057,13 +790,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentCampaignMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentCampaignMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.preUpdateCurrentCampaignMaster = function (request) {
@@ -1079,17 +807,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentCampaignMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentCampaignMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.updateCurrentCampaignMaster = function (request) {
@@ -1108,17 +827,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentCampaignMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentCampaignMasterResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.prototype.updateCurrentCampaignMasterFromGitHub = function (request) {
@@ -1135,17 +845,8 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentCampaignMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentCampaignMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2SerialKeyRestClient.ENDPOINT_HOST = null;

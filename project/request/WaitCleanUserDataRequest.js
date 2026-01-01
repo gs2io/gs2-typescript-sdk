@@ -22,7 +22,6 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
         this.ownerId = null;
         this.transactionId = null;
         this.userId = null;
-        this.microserviceName = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -81,17 +80,6 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    WaitCleanUserDataRequest.prototype.getMicroserviceName = function () {
-        return this.microserviceName;
-    };
-    WaitCleanUserDataRequest.prototype.setMicroserviceName = function (microserviceName) {
-        this.microserviceName = microserviceName;
-        return this;
-    };
-    WaitCleanUserDataRequest.prototype.withMicroserviceName = function (microserviceName) {
-        this.microserviceName = microserviceName;
-        return this;
-    };
     WaitCleanUserDataRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -119,7 +107,6 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
             .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
-            .withMicroserviceName(data["microserviceName"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     WaitCleanUserDataRequest.prototype.toDict = function () {
@@ -127,7 +114,6 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
             "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
             "userId": this.getUserId(),
-            "microserviceName": this.getMicroserviceName(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

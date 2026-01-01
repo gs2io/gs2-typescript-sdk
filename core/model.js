@@ -30,11 +30,14 @@ var BasicGs2Credential = /** @class */ (function () {
 }());
 exports.BasicGs2Credential = BasicGs2Credential;
 var Gs2RestSession = /** @class */ (function () {
-    function Gs2RestSession(credential, region) {
+    function Gs2RestSession(credential, region, options) {
+        var _a, _b;
         this.credential = credential;
         this.region = region;
         this.projectToken = null;
         this.expiresAt = null;
+        this.compressRequest = (_a = options === null || options === void 0 ? void 0 : options.compressRequest) !== null && _a !== void 0 ? _a : true;
+        this.acceptGzipResponse = (_b = options === null || options === void 0 ? void 0 : options.acceptGzipResponse) !== null && _b !== void 0 ? _b : true;
     }
     Gs2RestSession.prototype.connect = function () {
         var _this = this;

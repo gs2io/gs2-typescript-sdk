@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2LimitRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2LimitRestClient, _super);
     function Gs2LimitRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.createNamespace = function (request) {
@@ -66,17 +60,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'countUpScript': (_h = (_g = request.getCountUpScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getNamespaceStatus = function (request) {
@@ -92,13 +77,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getNamespace = function (request) {
@@ -114,13 +94,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.updateNamespace = function (request) {
@@ -140,17 +115,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'countUpScript': (_j = (_h = request.getCountUpScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.deleteNamespace = function (request) {
@@ -166,13 +132,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getServiceVersion = function (request) {
@@ -187,13 +148,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -212,17 +168,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -241,13 +188,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -266,17 +208,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -295,13 +228,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -320,17 +248,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.importUserDataByUserId = function (request) {
@@ -350,17 +269,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -380,13 +290,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.describeCounters = function (request) {
@@ -408,13 +313,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCountersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCountersResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.describeCountersByUserId = function (request) {
@@ -437,13 +337,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCountersByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCountersByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getCounter = function (request) {
@@ -464,13 +359,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCounterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCounterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getCounterByUserId = function (request) {
@@ -492,13 +382,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCounterByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCounterByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.countUp = function (request) {
@@ -524,17 +409,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'countUpValue': (_l = request.getCountUpValue()) !== null && _l !== void 0 ? _l : null,
             'maxValue': (_m = request.getMaxValue()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountUpResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CountUpResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.countUpByUserId = function (request) {
@@ -561,17 +437,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'countUpValue': (_o = request.getCountUpValue()) !== null && _o !== void 0 ? _o : null,
             'maxValue': (_p = request.getMaxValue()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountUpByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CountUpByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.countDownByUserId = function (request) {
@@ -597,17 +464,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'countDownValue': (_o = request.getCountDownValue()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountDownByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CountDownByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.deleteCounterByUserId = function (request) {
@@ -632,13 +490,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteCounterByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteCounterByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.verifyCounter = function (request) {
@@ -665,17 +518,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCounterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCounterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.verifyCounterByUserId = function (request) {
@@ -703,17 +547,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
             'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCounterByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCounterByUserIdResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.countUpByStampTask = function (request) {
@@ -730,17 +565,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountUpByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CountUpByStampTaskResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.countDownByStampSheet = function (request) {
@@ -757,17 +583,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountDownByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CountDownByStampSheetResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.deleteByStampSheet = function (request) {
@@ -784,17 +601,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DeleteByStampSheetResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.verifyCounterByStampTask = function (request) {
@@ -811,17 +619,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCounterByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCounterByStampTaskResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.describeLimitModelMasters = function (request) {
@@ -840,13 +639,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLimitModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLimitModelMastersResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.createLimitModelMaster = function (request) {
@@ -871,17 +665,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'anchorTimestamp': (_m = request.getAnchorTimestamp()) !== null && _m !== void 0 ? _m : null,
             'days': (_o = request.getDays()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateLimitModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateLimitModelMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getLimitModelMaster = function (request) {
@@ -898,13 +683,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLimitModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLimitModelMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.updateLimitModelMaster = function (request) {
@@ -929,17 +709,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'anchorTimestamp': (_o = request.getAnchorTimestamp()) !== null && _o !== void 0 ? _o : null,
             'days': (_p = request.getDays()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateLimitModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateLimitModelMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.deleteLimitModelMaster = function (request) {
@@ -956,13 +727,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteLimitModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteLimitModelMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.exportMaster = function (request) {
@@ -978,13 +744,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getCurrentLimitMaster = function (request) {
@@ -1000,13 +761,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentLimitMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentLimitMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.preUpdateCurrentLimitMaster = function (request) {
@@ -1022,17 +778,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentLimitMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentLimitMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.updateCurrentLimitMaster = function (request) {
@@ -1051,17 +798,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentLimitMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentLimitMasterResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.updateCurrentLimitMasterFromGitHub = function (request) {
@@ -1078,17 +816,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentLimitMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentLimitMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.describeLimitModels = function (request) {
@@ -1104,13 +833,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLimitModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLimitModelsResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.prototype.getLimitModel = function (request) {
@@ -1127,13 +851,8 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLimitModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLimitModelResult.fromDict(data);
         });
     };
     Gs2LimitRestClient.ENDPOINT_HOST = null;

@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2IdleRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2IdleRestClient, _super);
     function Gs2IdleRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.createNamespace = function (request) {
@@ -67,17 +61,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'overrideAcquireActionsScriptId': (_j = request.getOverrideAcquireActionsScriptId()) !== null && _j !== void 0 ? _j : null,
             'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getNamespaceStatus = function (request) {
@@ -93,13 +78,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getNamespace = function (request) {
@@ -115,13 +95,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.updateNamespace = function (request) {
@@ -142,17 +117,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'overrideAcquireActionsScriptId': (_k = request.getOverrideAcquireActionsScriptId()) !== null && _k !== void 0 ? _k : null,
             'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.deleteNamespace = function (request) {
@@ -168,13 +134,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getServiceVersion = function (request) {
@@ -189,13 +150,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -214,17 +170,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -243,13 +190,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -268,17 +210,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -297,13 +230,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -322,17 +250,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.importUserDataByUserId = function (request) {
@@ -352,17 +271,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -382,13 +292,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.describeCategoryModelMasters = function (request) {
@@ -407,13 +312,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCategoryModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCategoryModelMastersResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.createCategoryModelMaster = function (request) {
@@ -438,17 +338,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'idlePeriodScheduleId': (_o = request.getIdlePeriodScheduleId()) !== null && _o !== void 0 ? _o : null,
             'receivePeriodScheduleId': (_p = request.getReceivePeriodScheduleId()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateCategoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateCategoryModelMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getCategoryModelMaster = function (request) {
@@ -465,13 +356,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCategoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCategoryModelMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.updateCategoryModelMaster = function (request) {
@@ -496,17 +382,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'idlePeriodScheduleId': (_p = request.getIdlePeriodScheduleId()) !== null && _p !== void 0 ? _p : null,
             'receivePeriodScheduleId': (_q = request.getReceivePeriodScheduleId()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCategoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCategoryModelMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.deleteCategoryModelMaster = function (request) {
@@ -523,13 +400,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteCategoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteCategoryModelMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.describeCategoryModels = function (request) {
@@ -545,13 +417,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeCategoryModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeCategoryModelsResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getCategoryModel = function (request) {
@@ -568,13 +435,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCategoryModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCategoryModelResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.describeStatuses = function (request) {
@@ -595,13 +457,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStatusesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStatusesResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.describeStatusesByUserId = function (request) {
@@ -623,13 +480,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStatusesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStatusesByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getStatus = function (request) {
@@ -649,13 +501,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStatusResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getStatusByUserId = function (request) {
@@ -676,13 +523,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.prediction = function (request) {
@@ -702,17 +544,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PredictionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PredictionResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.predictionByUserId = function (request) {
@@ -733,17 +566,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PredictionByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PredictionByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.receive = function (request) {
@@ -767,17 +591,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'config': (_k = (_j = request.getConfig()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ReceiveResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ReceiveResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.receiveByUserId = function (request) {
@@ -802,17 +617,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'config': (_m = (_l = request.getConfig()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ReceiveByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ReceiveByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.increaseMaximumIdleMinutesByUserId = function (request) {
@@ -837,17 +643,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'increaseMinutes': (_l = request.getIncreaseMinutes()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IncreaseMaximumIdleMinutesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IncreaseMaximumIdleMinutesByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.decreaseMaximumIdleMinutes = function (request) {
@@ -871,17 +668,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'decreaseMinutes': (_j = request.getDecreaseMinutes()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumIdleMinutesResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumIdleMinutesResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.decreaseMaximumIdleMinutesByUserId = function (request) {
@@ -906,17 +694,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'decreaseMinutes': (_l = request.getDecreaseMinutes()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumIdleMinutesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumIdleMinutesByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.setMaximumIdleMinutesByUserId = function (request) {
@@ -941,17 +720,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'maximumIdleMinutes': (_l = request.getMaximumIdleMinutes()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaximumIdleMinutesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaximumIdleMinutesByUserIdResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.increaseMaximumIdleMinutesByStampSheet = function (request) {
@@ -968,17 +738,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IncreaseMaximumIdleMinutesByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IncreaseMaximumIdleMinutesByStampSheetResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.decreaseMaximumIdleMinutesByStampTask = function (request) {
@@ -995,17 +756,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumIdleMinutesByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumIdleMinutesByStampTaskResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.setMaximumIdleMinutesByStampSheet = function (request) {
@@ -1022,17 +774,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaximumIdleMinutesByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaximumIdleMinutesByStampSheetResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.receiveByStampSheet = function (request) {
@@ -1049,17 +792,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ReceiveByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ReceiveByStampSheetResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.exportMaster = function (request) {
@@ -1075,13 +809,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.getCurrentCategoryMaster = function (request) {
@@ -1097,13 +826,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentCategoryMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentCategoryMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.preUpdateCurrentCategoryMaster = function (request) {
@@ -1119,17 +843,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentCategoryMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentCategoryMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.updateCurrentCategoryMaster = function (request) {
@@ -1148,17 +863,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentCategoryMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentCategoryMasterResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.prototype.updateCurrentCategoryMasterFromGitHub = function (request) {
@@ -1175,17 +881,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentCategoryMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentCategoryMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2IdleRestClient.ENDPOINT_HOST = null;

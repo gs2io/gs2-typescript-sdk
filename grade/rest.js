@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2GradeRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2GradeRestClient, _super);
     function Gs2GradeRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.createNamespace = function (request) {
@@ -66,17 +60,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'changeGradeScript': (_h = (_g = request.getChangeGradeScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getNamespaceStatus = function (request) {
@@ -92,13 +77,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getNamespace = function (request) {
@@ -114,13 +94,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.updateNamespace = function (request) {
@@ -140,17 +115,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'changeGradeScript': (_j = (_h = request.getChangeGradeScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.deleteNamespace = function (request) {
@@ -166,13 +132,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getServiceVersion = function (request) {
@@ -187,13 +148,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -212,17 +168,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -241,13 +188,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -266,17 +208,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -295,13 +228,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -320,17 +248,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.importUserDataByUserId = function (request) {
@@ -350,17 +269,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -380,13 +290,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.describeGradeModelMasters = function (request) {
@@ -405,13 +310,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeGradeModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeGradeModelMastersResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.createGradeModelMaster = function (request) {
@@ -434,17 +334,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'gradeEntries': (_m = (_l = request.getGradeEntries()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
             'acquireActionRates': (_p = (_o = request.getAcquireActionRates()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGradeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGradeModelMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getGradeModelMaster = function (request) {
@@ -461,13 +352,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGradeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGradeModelMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.updateGradeModelMaster = function (request) {
@@ -490,17 +376,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'gradeEntries': (_o = (_m = request.getGradeEntries()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
             'acquireActionRates': (_q = (_p = request.getAcquireActionRates()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGradeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGradeModelMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.deleteGradeModelMaster = function (request) {
@@ -517,13 +394,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteGradeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteGradeModelMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.describeGradeModels = function (request) {
@@ -539,13 +411,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeGradeModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeGradeModelsResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getGradeModel = function (request) {
@@ -562,13 +429,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGradeModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGradeModelResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.describeStatuses = function (request) {
@@ -590,13 +452,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStatusesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStatusesResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.describeStatusesByUserId = function (request) {
@@ -619,13 +476,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStatusesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStatusesByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getStatus = function (request) {
@@ -646,13 +498,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStatusResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getStatusByUserId = function (request) {
@@ -674,13 +521,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.addGradeByUserId = function (request) {
@@ -706,17 +548,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'gradeValue': (_o = request.getGradeValue()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddGradeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddGradeByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.subGrade = function (request) {
@@ -741,17 +574,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'gradeValue': (_l = request.getGradeValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubGradeResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubGradeResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.subGradeByUserId = function (request) {
@@ -777,17 +601,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'gradeValue': (_o = request.getGradeValue()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubGradeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubGradeByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.setGradeByUserId = function (request) {
@@ -813,17 +628,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'gradeValue': (_o = request.getGradeValue()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetGradeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetGradeByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.applyRankCap = function (request) {
@@ -847,17 +653,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ApplyRankCapResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.ApplyRankCapResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.applyRankCapByUserId = function (request) {
@@ -882,17 +679,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ApplyRankCapByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.ApplyRankCapByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.deleteStatusByUserId = function (request) {
@@ -917,13 +705,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteStatusByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteStatusByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGrade = function (request) {
@@ -950,17 +733,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'gradeValue': (_m = request.getGradeValue()) !== null && _m !== void 0 ? _m : null,
             'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGradeByUserId = function (request) {
@@ -988,17 +762,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'gradeValue': (_p = request.getGradeValue()) !== null && _p !== void 0 ? _p : null,
             'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterial = function (request) {
@@ -1024,17 +789,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'propertyId': (_l = request.getPropertyId()) !== null && _l !== void 0 ? _l : null,
             'materialPropertyId': (_m = request.getMaterialPropertyId()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeUpMaterialResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeUpMaterialResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterialByUserId = function (request) {
@@ -1061,17 +817,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'propertyId': (_o = request.getPropertyId()) !== null && _o !== void 0 ? _o : null,
             'materialPropertyId': (_p = request.getMaterialPropertyId()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeUpMaterialByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeUpMaterialByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.addGradeByStampSheet = function (request) {
@@ -1088,17 +835,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddGradeByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddGradeByStampSheetResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.applyRankCapByStampSheet = function (request) {
@@ -1115,17 +853,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ApplyRankCapByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ApplyRankCapByStampSheetResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.subGradeByStampTask = function (request) {
@@ -1142,17 +871,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SubGradeByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SubGradeByStampTaskResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.multiplyAcquireActionsByUserId = function (request) {
@@ -1179,17 +899,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
             'acquireActions': (_r = (_q = request.getAcquireActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.MultiplyAcquireActionsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.MultiplyAcquireActionsByUserIdResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.multiplyAcquireActionsByStampSheet = function (request) {
@@ -1206,17 +917,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.MultiplyAcquireActionsByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.MultiplyAcquireActionsByStampSheetResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGradeByStampTask = function (request) {
@@ -1233,17 +935,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeByStampTaskResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.verifyGradeUpMaterialByStampTask = function (request) {
@@ -1260,17 +953,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyGradeUpMaterialByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyGradeUpMaterialByStampTaskResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.exportMaster = function (request) {
@@ -1286,13 +970,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.getCurrentGradeMaster = function (request) {
@@ -1308,13 +987,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentGradeMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentGradeMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.preUpdateCurrentGradeMaster = function (request) {
@@ -1330,17 +1004,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentGradeMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentGradeMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.updateCurrentGradeMaster = function (request) {
@@ -1359,17 +1024,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentGradeMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentGradeMasterResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.prototype.updateCurrentGradeMasterFromGitHub = function (request) {
@@ -1386,17 +1042,8 @@ var Gs2GradeRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentGradeMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentGradeMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2GradeRestClient.ENDPOINT_HOST = null;

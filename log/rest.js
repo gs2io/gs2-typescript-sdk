@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2LogRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2LogRestClient, _super);
     function Gs2LogRestClient(session) {
@@ -39,13 +38,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.createNamespace = function (request) {
@@ -71,17 +65,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'firehoseStreamName': (_m = request.getFirehoseStreamName()) !== null && _m !== void 0 ? _m : null,
             'firehoseCompressData': (_o = request.getFirehoseCompressData()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.getNamespaceStatus = function (request) {
@@ -97,13 +82,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.getNamespace = function (request) {
@@ -119,13 +99,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.updateNamespace = function (request) {
@@ -151,17 +126,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'firehoseStreamName': (_o = request.getFirehoseStreamName()) !== null && _o !== void 0 ? _o : null,
             'firehoseCompressData': (_p = request.getFirehoseCompressData()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.deleteNamespace = function (request) {
@@ -177,13 +143,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.getServiceVersion = function (request) {
@@ -198,13 +159,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryAccessLog = function (request) {
@@ -231,13 +187,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null),
             'limit': String((_o = request.getLimit()) !== null && _o !== void 0 ? _o : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryAccessLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.QueryAccessLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.countAccessLog = function (request) {
@@ -264,13 +215,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null),
             'limit': String((_o = request.getLimit()) !== null && _o !== void 0 ? _o : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountAccessLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CountAccessLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryIssueStampSheetLog = function (request) {
@@ -298,13 +244,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryIssueStampSheetLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.QueryIssueStampSheetLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.countIssueStampSheetLog = function (request) {
@@ -332,13 +273,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountIssueStampSheetLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CountIssueStampSheetLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryExecuteStampSheetLog = function (request) {
@@ -366,13 +302,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryExecuteStampSheetLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.QueryExecuteStampSheetLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.countExecuteStampSheetLog = function (request) {
@@ -400,13 +331,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountExecuteStampSheetLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CountExecuteStampSheetLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryExecuteStampTaskLog = function (request) {
@@ -434,13 +360,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryExecuteStampTaskLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.QueryExecuteStampTaskLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.countExecuteStampTaskLog = function (request) {
@@ -468,13 +389,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null),
             'limit': String((_p = request.getLimit()) !== null && _p !== void 0 ? _p : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CountExecuteStampTaskLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CountExecuteStampTaskLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryInGameLog = function (request) {
@@ -503,17 +419,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': (_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null,
             'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryInGameLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.QueryInGameLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.sendInGameLog = function (request) {
@@ -537,17 +444,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'tags': (_h = (_g = request.getTags()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'payload': (_j = request.getPayload()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SendInGameLogResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SendInGameLogResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.sendInGameLogByUserId = function (request) {
@@ -572,17 +470,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'tags': (_k = (_j = request.getTags()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
             'payload': (_l = request.getPayload()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SendInGameLogByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SendInGameLogByUserIdResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.queryAccessLogWithTelemetry = function (request) {
@@ -607,13 +496,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.QueryAccessLogWithTelemetryResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.QueryAccessLogWithTelemetryResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.describeInsights = function (request) {
@@ -631,13 +515,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInsightsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInsightsResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.createInsight = function (request) {
@@ -653,17 +532,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateInsightResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateInsightResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.getInsight = function (request) {
@@ -680,13 +550,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInsightResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInsightResult.fromDict(data);
         });
     };
     Gs2LogRestClient.prototype.deleteInsight = function (request) {
@@ -703,13 +568,8 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteInsightResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteInsightResult.fromDict(data);
         });
     };
     Gs2LogRestClient.ENDPOINT_HOST = null;

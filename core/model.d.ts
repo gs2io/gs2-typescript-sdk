@@ -5,12 +5,20 @@ export declare class BasicGs2Credential implements IGs2Credential {
     clientSecret: string;
     constructor(clientId: string, clientSecret: string);
 }
+export interface Gs2RestSessionOptions {
+    /** リクエストボディをgzip圧縮して送信するかどうか（デフォルト: true） */
+    compressRequest?: boolean;
+    /** レスポンスのgzip展開を受け入れるかどうか（デフォルト: true） */
+    acceptGzipResponse?: boolean;
+}
 export declare class Gs2RestSession {
     credential: IGs2Credential;
     region: string;
     projectToken: string | null;
     expiresAt: number | null;
-    constructor(credential: IGs2Credential, region: string);
+    compressRequest: boolean;
+    acceptGzipResponse: boolean;
+    constructor(credential: IGs2Credential, region: string, options?: Gs2RestSessionOptions);
     connect(): Promise<LoginResult> | undefined;
     disconnect(): void;
 }

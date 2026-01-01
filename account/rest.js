@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2AccountRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2AccountRestClient, _super);
     function Gs2AccountRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createNamespace = function (request) {
@@ -73,17 +67,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'unBanScript': (_v = (_u = request.getUnBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
             'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getNamespaceStatus = function (request) {
@@ -99,13 +84,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getNamespace = function (request) {
@@ -121,13 +101,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateNamespace = function (request) {
@@ -153,17 +128,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'unBanScript': (_v = (_u = request.getUnBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
             'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteNamespace = function (request) {
@@ -179,13 +145,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getServiceVersion = function (request) {
@@ -200,13 +161,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -225,17 +181,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -254,13 +201,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -279,17 +221,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -308,13 +241,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -333,17 +261,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.importUserDataByUserId = function (request) {
@@ -363,17 +282,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -393,13 +303,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describeAccounts = function (request) {
@@ -417,13 +322,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeAccountsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeAccountsResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createAccount = function (request) {
@@ -439,17 +339,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateAccountResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateTimeOffset = function (request) {
@@ -473,17 +364,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'timeOffset': (_j = request.getTimeOffset()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateTimeOffsetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateTimeOffsetResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateBanned = function (request) {
@@ -507,17 +389,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'banned': (_j = request.getBanned()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateBannedResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateBannedResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.addBan = function (request) {
@@ -541,17 +414,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'banStatus': (_k = (_j = request.getBanStatus()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddBanResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddBanResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.removeBan = function (request) {
@@ -575,13 +439,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.RemoveBanResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.RemoveBanResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getAccount = function (request) {
@@ -602,13 +461,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'includeLastAuthenticatedAt': String((_h = request.getIncludeLastAuthenticatedAt()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetAccountResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteAccount = function (request) {
@@ -631,13 +485,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteAccountResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteAccountResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.authentication = function (request) {
@@ -662,17 +511,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'keyId': (_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null,
             'password': (_k = request.getPassword()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AuthenticationResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.AuthenticationResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describeTakeOvers = function (request) {
@@ -693,13 +533,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeTakeOversResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeTakeOversResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describeTakeOversByUserId = function (request) {
@@ -721,13 +556,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeTakeOversByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeTakeOversByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createTakeOver = function (request) {
@@ -752,17 +582,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'userIdentifier': (_h = request.getUserIdentifier()) !== null && _h !== void 0 ? _h : null,
             'password': (_j = request.getPassword()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateTakeOverResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateTakeOverResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createTakeOverByUserId = function (request) {
@@ -788,17 +609,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'userIdentifier': (_k = request.getUserIdentifier()) !== null && _k !== void 0 ? _k : null,
             'password': (_l = request.getPassword()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateTakeOverByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateTakeOverByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createTakeOverOpenIdConnect = function (request) {
@@ -822,17 +634,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'type': (_g = request.getType()) !== null && _g !== void 0 ? _g : null,
             'idToken': (_h = request.getIdToken()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateTakeOverOpenIdConnectResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateTakeOverOpenIdConnectResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createTakeOverOpenIdConnectAndByUserId = function (request) {
@@ -857,17 +660,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'type': (_j = request.getType()) !== null && _j !== void 0 ? _j : null,
             'idToken': (_k = request.getIdToken()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateTakeOverOpenIdConnectAndByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateTakeOverOpenIdConnectAndByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getTakeOver = function (request) {
@@ -887,13 +681,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetTakeOverResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetTakeOverResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getTakeOverByUserId = function (request) {
@@ -914,13 +703,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetTakeOverByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetTakeOverByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateTakeOver = function (request) {
@@ -945,17 +729,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'oldPassword': (_j = request.getOldPassword()) !== null && _j !== void 0 ? _j : null,
             'password': (_k = request.getPassword()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateTakeOverResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateTakeOverResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateTakeOverByUserId = function (request) {
@@ -981,17 +756,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'oldPassword': (_l = request.getOldPassword()) !== null && _l !== void 0 ? _l : null,
             'password': (_m = request.getPassword()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateTakeOverByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateTakeOverByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOver = function (request) {
@@ -1014,13 +780,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteTakeOverResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteTakeOverResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOverByUserIdentifier = function (request) {
@@ -1041,13 +802,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteTakeOverByUserIdentifierResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteTakeOverByUserIdentifierResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOverByUserId = function (request) {
@@ -1071,13 +827,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteTakeOverByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteTakeOverByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.doTakeOver = function (request) {
@@ -1096,17 +847,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'userIdentifier': (_g = request.getUserIdentifier()) !== null && _g !== void 0 ? _g : null,
             'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoTakeOverResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoTakeOverResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.doTakeOverOpenIdConnect = function (request) {
@@ -1124,17 +866,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'idToken': (_g = request.getIdToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoTakeOverOpenIdConnectResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoTakeOverOpenIdConnectResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getAuthorizationUrl = function (request) {
@@ -1151,13 +884,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetAuthorizationUrlResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetAuthorizationUrlResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describePlatformIds = function (request) {
@@ -1178,13 +906,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePlatformIdsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePlatformIdsResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describePlatformIdsByUserId = function (request) {
@@ -1206,13 +929,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePlatformIdsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribePlatformIdsByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createPlatformId = function (request) {
@@ -1236,17 +954,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'type': (_g = request.getType()) !== null && _g !== void 0 ? _g : null,
             'userIdentifier': (_h = request.getUserIdentifier()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreatePlatformIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreatePlatformIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createPlatformIdByUserId = function (request) {
@@ -1271,17 +980,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'type': (_j = request.getType()) !== null && _j !== void 0 ? _j : null,
             'userIdentifier': (_k = request.getUserIdentifier()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreatePlatformIdByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreatePlatformIdByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getPlatformId = function (request) {
@@ -1301,13 +1001,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPlatformIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPlatformIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getPlatformIdByUserId = function (request) {
@@ -1328,13 +1023,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetPlatformIdByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetPlatformIdByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.findPlatformId = function (request) {
@@ -1355,13 +1045,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.FindPlatformIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.FindPlatformIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.findPlatformIdByUserId = function (request) {
@@ -1384,13 +1069,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'dontResolveDataOwner': String((_m = request.getDontResolveDataOwner()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.FindPlatformIdByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.FindPlatformIdByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deletePlatformId = function (request) {
@@ -1414,13 +1094,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'userIdentifier': String((_j = request.getUserIdentifier()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePlatformIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePlatformIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deletePlatformIdByUserIdentifier = function (request) {
@@ -1441,13 +1116,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePlatformIdByUserIdentifierResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePlatformIdByUserIdentifierResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deletePlatformIdByUserId = function (request) {
@@ -1471,13 +1141,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeletePlatformIdByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeletePlatformIdByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getDataOwnerByUserId = function (request) {
@@ -1497,13 +1162,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDataOwnerByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDataOwnerByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateDataOwnerByUserId = function (request) {
@@ -1527,17 +1187,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'dataOwnerName': (_j = request.getDataOwnerName()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateDataOwnerByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateDataOwnerByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteDataOwnerByUserId = function (request) {
@@ -1560,13 +1211,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteDataOwnerByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteDataOwnerByUserIdResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describeTakeOverTypeModels = function (request) {
@@ -1582,13 +1228,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeTakeOverTypeModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeTakeOverTypeModelsResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getTakeOverTypeModel = function (request) {
@@ -1605,13 +1246,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetTakeOverTypeModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetTakeOverTypeModelResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.describeTakeOverTypeModelMasters = function (request) {
@@ -1629,13 +1265,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeTakeOverTypeModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeTakeOverTypeModelMastersResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.createTakeOverTypeModelMaster = function (request) {
@@ -1655,17 +1286,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'openIdConnectSetting': (_j = (_h = request.getOpenIdConnectSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateTakeOverTypeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateTakeOverTypeModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getTakeOverTypeModelMaster = function (request) {
@@ -1682,13 +1304,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetTakeOverTypeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetTakeOverTypeModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateTakeOverTypeModelMaster = function (request) {
@@ -1708,17 +1325,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'openIdConnectSetting': (_k = (_j = request.getOpenIdConnectSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateTakeOverTypeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateTakeOverTypeModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOverTypeModelMaster = function (request) {
@@ -1735,13 +1343,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteTakeOverTypeModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteTakeOverTypeModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.exportMaster = function (request) {
@@ -1757,13 +1360,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.getCurrentModelMaster = function (request) {
@@ -1779,13 +1377,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.preUpdateCurrentModelMaster = function (request) {
@@ -1801,17 +1394,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateCurrentModelMaster = function (request) {
@@ -1830,17 +1414,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.prototype.updateCurrentModelMasterFromGitHub = function (request) {
@@ -1857,17 +1432,8 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2AccountRestClient.ENDPOINT_HOST = null;

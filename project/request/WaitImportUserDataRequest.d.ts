@@ -5,7 +5,6 @@ export default class WaitImportUserDataRequest implements IRequest {
     private ownerId;
     private transactionId;
     private userId;
-    private microserviceName;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -23,9 +22,6 @@ export default class WaitImportUserDataRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getMicroserviceName(): string | null;
-    setMicroserviceName(microserviceName: string | null): this;
-    withMicroserviceName(microserviceName: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

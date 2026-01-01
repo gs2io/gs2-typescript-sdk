@@ -5,4 +5,13 @@ export default class {
     protected createAuthorizedHeaders(): {
         [key: string]: any;
     };
+    private prepareRequestConfig;
+    private compressBody;
+    protected request<T>(method: 'GET' | 'POST' | 'PUT' | 'DELETE', url: string, headers: {
+        [key: string]: any;
+    }, params?: {
+        [key: string]: any;
+    }, body?: {
+        [key: string]: any;
+    }): Promise<T>;
 }

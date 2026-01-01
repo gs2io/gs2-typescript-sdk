@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2GuildRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2GuildRestClient, _super);
     function Gs2GuildRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.createNamespace = function (request) {
@@ -79,17 +73,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'deleteGuildScript': (_8 = (_7 = request.getDeleteGuildScript()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
             'logSetting': (_10 = (_9 = request.getLogSetting()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getNamespaceStatus = function (request) {
@@ -105,13 +90,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getNamespace = function (request) {
@@ -127,13 +107,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateNamespace = function (request) {
@@ -166,17 +141,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'deleteGuildScript': (_9 = (_8 = request.getDeleteGuildScript()) === null || _8 === void 0 ? void 0 : _8.toDict()) !== null && _9 !== void 0 ? _9 : null,
             'logSetting': (_11 = (_10 = request.getLogSetting()) === null || _10 === void 0 ? void 0 : _10.toDict()) !== null && _11 !== void 0 ? _11 : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteNamespace = function (request) {
@@ -192,13 +158,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getServiceVersion = function (request) {
@@ -213,13 +174,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -238,17 +194,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -267,13 +214,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -292,17 +234,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -321,13 +254,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -346,17 +274,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.importUserDataByUserId = function (request) {
@@ -376,17 +295,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -406,13 +316,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeGuildModelMasters = function (request) {
@@ -431,13 +336,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeGuildModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeGuildModelMastersResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.createGuildModelMaster = function (request) {
@@ -465,17 +365,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'maxConcurrentJoinGuilds': (_r = request.getMaxConcurrentJoinGuilds()) !== null && _r !== void 0 ? _r : null,
             'maxConcurrentGuildMasterCount': (_s = request.getMaxConcurrentGuildMasterCount()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGuildModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGuildModelMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getGuildModelMaster = function (request) {
@@ -492,13 +383,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGuildModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGuildModelMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateGuildModelMaster = function (request) {
@@ -526,17 +412,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'maxConcurrentJoinGuilds': (_s = request.getMaxConcurrentJoinGuilds()) !== null && _s !== void 0 ? _s : null,
             'maxConcurrentGuildMasterCount': (_t = request.getMaxConcurrentGuildMasterCount()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGuildModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGuildModelMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteGuildModelMaster = function (request) {
@@ -553,13 +430,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteGuildModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteGuildModelMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeGuildModels = function (request) {
@@ -575,13 +447,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeGuildModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeGuildModelsResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getGuildModel = function (request) {
@@ -598,13 +465,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGuildModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGuildModelResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.searchGuilds = function (request) {
@@ -638,17 +500,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': (_t = request.getPageToken()) !== null && _t !== void 0 ? _t : null,
             'limit': (_u = request.getLimit()) !== null && _u !== void 0 ? _u : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SearchGuildsResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SearchGuildsResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.searchGuildsByUserId = function (request) {
@@ -683,17 +536,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': (_v = request.getPageToken()) !== null && _v !== void 0 ? _v : null,
             'limit': (_w = request.getLimit()) !== null && _w !== void 0 ? _w : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SearchGuildsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SearchGuildsByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.createGuild = function (request) {
@@ -727,17 +571,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'customRoles': (_u = (_t = request.getCustomRoles()) === null || _t === void 0 ? void 0 : _t.map(function (item) { return item.toDict(); })) !== null && _u !== void 0 ? _u : null,
             'guildMemberDefaultRole': (_v = request.getGuildMemberDefaultRole()) !== null && _v !== void 0 ? _v : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGuildResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.createGuildByUserId = function (request) {
@@ -772,17 +607,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'customRoles': (_w = (_v = request.getCustomRoles()) === null || _v === void 0 ? void 0 : _v.map(function (item) { return item.toDict(); })) !== null && _w !== void 0 ? _w : null,
             'guildMemberDefaultRole': (_x = request.getGuildMemberDefaultRole()) !== null && _x !== void 0 ? _x : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGuildByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGuildByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getGuild = function (request) {
@@ -803,13 +629,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGuildResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getGuildByUserId = function (request) {
@@ -831,13 +652,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGuildByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGuildByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateGuild = function (request) {
@@ -870,17 +686,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'customRoles': (_t = (_s = request.getCustomRoles()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
             'guildMemberDefaultRole': (_u = request.getGuildMemberDefaultRole()) !== null && _u !== void 0 ? _u : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGuildResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateGuildByGuildName = function (request) {
@@ -911,17 +718,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'customRoles': (_u = (_t = request.getCustomRoles()) === null || _t === void 0 ? void 0 : _t.map(function (item) { return item.toDict(); })) !== null && _u !== void 0 ? _u : null,
             'guildMemberDefaultRole': (_v = request.getGuildMemberDefaultRole()) !== null && _v !== void 0 ? _v : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGuildByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGuildByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteMember = function (request) {
@@ -945,13 +743,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMemberResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteMemberResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteMemberByGuildName = function (request) {
@@ -973,17 +766,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMemberByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.DeleteMemberByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateMemberRole = function (request) {
@@ -1008,17 +792,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'roleName': (_l = request.getRoleName()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMemberRoleResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMemberRoleResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateMemberRoleByGuildName = function (request) {
@@ -1041,17 +816,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'roleName': (_m = request.getRoleName()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMemberRoleByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMemberRoleByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.batchUpdateMemberRole = function (request) {
@@ -1075,17 +841,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'members': (_k = (_j = request.getMembers()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.BatchUpdateMemberRoleResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.BatchUpdateMemberRoleResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.batchUpdateMemberRoleByGuildName = function (request) {
@@ -1107,17 +864,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'members': (_l = (_k = request.getMembers()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.BatchUpdateMemberRoleByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.BatchUpdateMemberRoleByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteGuild = function (request) {
@@ -1140,13 +888,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteGuildResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteGuildByGuildName = function (request) {
@@ -1167,13 +910,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteGuildByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteGuildByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.increaseMaximumCurrentMaximumMemberCountByGuildName = function (request) {
@@ -1195,17 +933,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCount = function (request) {
@@ -1229,17 +958,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumCurrentMaximumMemberCountResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumCurrentMaximumMemberCountResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCountByGuildName = function (request) {
@@ -1261,17 +981,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCount = function (request) {
@@ -1297,17 +1008,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
             'multiplyValueSpecifyingQuantity': (_l = request.getMultiplyValueSpecifyingQuantity()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCurrentMaximumMemberCountResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCurrentMaximumMemberCountResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCountByGuildName = function (request) {
@@ -1331,17 +1033,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCurrentMaximumMemberCountByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCurrentMaximumMemberCountByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMember = function (request) {
@@ -1366,17 +1059,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'verifyType': (_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeMemberResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeMemberResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMemberByUserId = function (request) {
@@ -1402,17 +1086,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'verifyType': (_o = request.getVerifyType()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeMemberByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeMemberByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.setMaximumCurrentMaximumMemberCountByGuildName = function (request) {
@@ -1434,17 +1109,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'value': (_k = request.getValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaximumCurrentMaximumMemberCountByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.assume = function (request) {
@@ -1468,17 +1134,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AssumeResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AssumeResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.assumeByUserId = function (request) {
@@ -1503,17 +1160,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AssumeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AssumeByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.increaseMaximumCurrentMaximumMemberCountByStampSheet = function (request) {
@@ -1530,17 +1178,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.decreaseMaximumCurrentMaximumMemberCountByStampTask = function (request) {
@@ -1557,17 +1196,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.setMaximumCurrentMaximumMemberCountByStampSheet = function (request) {
@@ -1584,17 +1214,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaximumCurrentMaximumMemberCountByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaximumCurrentMaximumMemberCountByStampSheetResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyCurrentMaximumMemberCountByStampTask = function (request) {
@@ -1611,17 +1232,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyCurrentMaximumMemberCountByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyCurrentMaximumMemberCountByStampTaskResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.verifyIncludeMemberByStampTask = function (request) {
@@ -1638,17 +1250,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeMemberByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeMemberByStampTaskResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeJoinedGuilds = function (request) {
@@ -1670,13 +1273,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeJoinedGuildsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeJoinedGuildsResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeJoinedGuildsByUserId = function (request) {
@@ -1699,13 +1297,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeJoinedGuildsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeJoinedGuildsByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getJoinedGuild = function (request) {
@@ -1726,13 +1319,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetJoinedGuildResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetJoinedGuildResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getJoinedGuildByUserId = function (request) {
@@ -1754,13 +1342,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetJoinedGuildByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetJoinedGuildByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateMemberMetadata = function (request) {
@@ -1785,17 +1368,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'metadata': (_l = request.getMetadata()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMemberMetadataResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMemberMetadataResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateMemberMetadataByUserId = function (request) {
@@ -1821,17 +1395,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'metadata': (_o = request.getMetadata()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMemberMetadataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMemberMetadataByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.withdrawal = function (request) {
@@ -1855,13 +1420,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.WithdrawalResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.WithdrawalResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.withdrawalByUserId = function (request) {
@@ -1886,13 +1446,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.WithdrawalByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.WithdrawalByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getLastGuildMasterActivity = function (request) {
@@ -1912,13 +1467,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLastGuildMasterActivityResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLastGuildMasterActivityResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getLastGuildMasterActivityByGuildName = function (request) {
@@ -1936,13 +1486,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLastGuildMasterActivityByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLastGuildMasterActivityByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.promoteSeniorMember = function (request) {
@@ -1965,17 +1510,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PromoteSeniorMemberResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PromoteSeniorMemberResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.promoteSeniorMemberByGuildName = function (request) {
@@ -1996,17 +1532,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PromoteSeniorMemberByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PromoteSeniorMemberByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.exportMaster = function (request) {
@@ -2022,13 +1549,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getCurrentGuildMaster = function (request) {
@@ -2044,13 +1566,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentGuildMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentGuildMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.preUpdateCurrentGuildMaster = function (request) {
@@ -2066,17 +1583,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentGuildMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentGuildMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateCurrentGuildMaster = function (request) {
@@ -2095,17 +1603,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentGuildMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentGuildMasterResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.updateCurrentGuildMasterFromGitHub = function (request) {
@@ -2122,17 +1621,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentGuildMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentGuildMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeReceiveRequests = function (request) {
@@ -2154,13 +1644,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeReceiveRequestsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeReceiveRequestsResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeReceiveRequestsByGuildName = function (request) {
@@ -2180,13 +1665,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeReceiveRequestsByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeReceiveRequestsByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getReceiveRequest = function (request) {
@@ -2207,13 +1687,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetReceiveRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetReceiveRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getReceiveRequestByGuildName = function (request) {
@@ -2232,13 +1707,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetReceiveRequestByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetReceiveRequestByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.acceptRequest = function (request) {
@@ -2262,17 +1732,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcceptRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.AcceptRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.acceptRequestByGuildName = function (request) {
@@ -2294,17 +1755,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcceptRequestByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.AcceptRequestByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.rejectRequest = function (request) {
@@ -2328,13 +1780,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.RejectRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.RejectRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.rejectRequestByGuildName = function (request) {
@@ -2356,13 +1803,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.RejectRequestByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.RejectRequestByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeSendRequests = function (request) {
@@ -2384,13 +1826,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSendRequestsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSendRequestsResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeSendRequestsByUserId = function (request) {
@@ -2413,13 +1850,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSendRequestsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSendRequestsByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getSendRequest = function (request) {
@@ -2440,13 +1872,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSendRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSendRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getSendRequestByUserId = function (request) {
@@ -2468,13 +1895,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSendRequestByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSendRequestByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.sendRequest = function (request) {
@@ -2499,17 +1921,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'metadata': (_l = request.getMetadata()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SendRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SendRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.sendRequestByUserId = function (request) {
@@ -2535,17 +1948,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'metadata': (_o = request.getMetadata()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SendRequestByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SendRequestByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteRequest = function (request) {
@@ -2569,13 +1973,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRequestResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRequestResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteRequestByUserId = function (request) {
@@ -2600,13 +1999,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRequestByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRequestByUserIdResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeIgnoreUsers = function (request) {
@@ -2628,13 +2022,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeIgnoreUsersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeIgnoreUsersResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.describeIgnoreUsersByGuildName = function (request) {
@@ -2654,13 +2043,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeIgnoreUsersByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeIgnoreUsersByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getIgnoreUser = function (request) {
@@ -2681,13 +2065,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetIgnoreUserResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetIgnoreUserResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.getIgnoreUserByGuildName = function (request) {
@@ -2709,13 +2088,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetIgnoreUserByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetIgnoreUserByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.addIgnoreUser = function (request) {
@@ -2739,17 +2113,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddIgnoreUserResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.AddIgnoreUserResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.addIgnoreUserByGuildName = function (request) {
@@ -2774,17 +2139,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddIgnoreUserByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.AddIgnoreUserByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteIgnoreUser = function (request) {
@@ -2808,13 +2164,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteIgnoreUserResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteIgnoreUserResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.prototype.deleteIgnoreUserByGuildName = function (request) {
@@ -2839,13 +2190,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteIgnoreUserByGuildNameResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteIgnoreUserByGuildNameResult.fromDict(data);
         });
     };
     Gs2GuildRestClient.ENDPOINT_HOST = null;

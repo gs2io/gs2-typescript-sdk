@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2InventoryRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2InventoryRestClient, _super);
     function Gs2InventoryRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
@@ -72,17 +66,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'bigItemConsumeScript': (_v = (_u = request.getBigItemConsumeScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
             'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getNamespaceStatus = function (request) {
@@ -98,13 +83,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getNamespace = function (request) {
@@ -120,13 +100,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
@@ -152,17 +127,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'bigItemConsumeScript': (_w = (_v = request.getBigItemConsumeScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
             'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteNamespace = function (request) {
@@ -178,13 +144,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getServiceVersion = function (request) {
@@ -199,13 +160,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -224,17 +180,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -253,13 +200,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -278,17 +220,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -307,13 +240,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -332,17 +260,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.importUserDataByUserId = function (request) {
@@ -362,17 +281,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -392,13 +302,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoryModelMasters = function (request) {
@@ -417,13 +322,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoryModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoryModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createInventoryModelMaster = function (request) {
@@ -445,17 +345,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'maxCapacity': (_j = request.getMaxCapacity()) !== null && _j !== void 0 ? _j : null,
             'protectReferencedItem': (_k = request.getProtectReferencedItem()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryModelMaster = function (request) {
@@ -472,13 +363,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateInventoryModelMaster = function (request) {
@@ -500,17 +386,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'maxCapacity': (_k = request.getMaxCapacity()) !== null && _k !== void 0 ? _k : null,
             'protectReferencedItem': (_l = request.getProtectReferencedItem()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteInventoryModelMaster = function (request) {
@@ -527,13 +404,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoryModels = function (request) {
@@ -549,13 +421,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoryModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoryModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryModel = function (request) {
@@ -572,13 +439,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInventoryModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInventoryModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeItemModelMasters = function (request) {
@@ -597,13 +459,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeItemModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeItemModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createItemModelMaster = function (request) {
@@ -626,17 +483,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'allowMultipleStacks': (_l = request.getAllowMultipleStacks()) !== null && _l !== void 0 ? _l : null,
             'sortValue': (_m = request.getSortValue()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemModelMaster = function (request) {
@@ -654,13 +502,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateItemModelMaster = function (request) {
@@ -683,17 +526,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'allowMultipleStacks': (_m = request.getAllowMultipleStacks()) !== null && _m !== void 0 ? _m : null,
             'sortValue': (_o = request.getSortValue()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteItemModelMaster = function (request) {
@@ -711,13 +545,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeItemModels = function (request) {
@@ -734,13 +563,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeItemModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeItemModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemModel = function (request) {
@@ -758,13 +582,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModelMasters = function (request) {
@@ -783,13 +602,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleInventoryModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleInventoryModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createSimpleInventoryModelMaster = function (request) {
@@ -808,17 +622,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateSimpleInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateSimpleInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModelMaster = function (request) {
@@ -835,13 +640,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateSimpleInventoryModelMaster = function (request) {
@@ -860,17 +660,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateSimpleInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateSimpleInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleInventoryModelMaster = function (request) {
@@ -887,13 +678,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteSimpleInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteSimpleInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleInventoryModels = function (request) {
@@ -909,13 +695,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleInventoryModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleInventoryModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleInventoryModel = function (request) {
@@ -932,13 +713,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleInventoryModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleInventoryModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModelMasters = function (request) {
@@ -958,13 +734,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleItemModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleItemModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createSimpleItemModelMaster = function (request) {
@@ -984,17 +755,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
             'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateSimpleItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateSimpleItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModelMaster = function (request) {
@@ -1012,13 +774,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateSimpleItemModelMaster = function (request) {
@@ -1038,17 +795,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
             'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateSimpleItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateSimpleItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemModelMaster = function (request) {
@@ -1066,13 +814,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteSimpleItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteSimpleItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemModels = function (request) {
@@ -1089,13 +832,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleItemModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleItemModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemModel = function (request) {
@@ -1113,13 +851,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModelMasters = function (request) {
@@ -1138,13 +871,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigInventoryModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigInventoryModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createBigInventoryModelMaster = function (request) {
@@ -1163,17 +891,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateBigInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateBigInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModelMaster = function (request) {
@@ -1190,13 +909,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateBigInventoryModelMaster = function (request) {
@@ -1215,17 +929,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateBigInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateBigInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigInventoryModelMaster = function (request) {
@@ -1242,13 +947,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteBigInventoryModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteBigInventoryModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigInventoryModels = function (request) {
@@ -1264,13 +964,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigInventoryModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigInventoryModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigInventoryModel = function (request) {
@@ -1287,13 +982,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigInventoryModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigInventoryModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemModelMasters = function (request) {
@@ -1313,13 +1003,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigItemModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigItemModelMastersResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.createBigItemModelMaster = function (request) {
@@ -1339,17 +1024,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
             'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateBigItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateBigItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemModelMaster = function (request) {
@@ -1367,13 +1043,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateBigItemModelMaster = function (request) {
@@ -1393,17 +1064,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
             'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateBigItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateBigItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigItemModelMaster = function (request) {
@@ -1421,13 +1083,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteBigItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteBigItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemModels = function (request) {
@@ -1444,13 +1101,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigItemModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigItemModelsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemModel = function (request) {
@@ -1468,13 +1120,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigItemModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigItemModelResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.exportMaster = function (request) {
@@ -1490,13 +1137,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getCurrentItemModelMaster = function (request) {
@@ -1512,13 +1154,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.preUpdateCurrentItemModelMaster = function (request) {
@@ -1534,17 +1171,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMaster = function (request) {
@@ -1563,17 +1191,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentItemModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentItemModelMasterResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMasterFromGitHub = function (request) {
@@ -1590,17 +1209,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentItemModelMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentItemModelMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeInventories = function (request) {
@@ -1621,13 +1231,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoriesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoriesResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeInventoriesByUserId = function (request) {
@@ -1649,13 +1254,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoriesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoriesByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getInventory = function (request) {
@@ -1675,13 +1275,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInventoryResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInventoryResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getInventoryByUserId = function (request) {
@@ -1702,13 +1297,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInventoryByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInventoryByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.addCapacityByUserId = function (request) {
@@ -1733,17 +1323,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'addCapacityValue': (_l = request.getAddCapacityValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setCapacityByUserId = function (request) {
@@ -1768,17 +1349,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'newCapacityValue': (_l = request.getNewCapacityValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteInventoryByUserId = function (request) {
@@ -1802,13 +1374,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteInventoryByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteInventoryByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacity = function (request) {
@@ -1834,17 +1401,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'currentInventoryMaxCapacity': (_l = request.getCurrentInventoryMaxCapacity()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyInventoryCurrentMaxCapacityResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyInventoryCurrentMaxCapacityResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByUserId = function (request) {
@@ -1871,17 +1429,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'currentInventoryMaxCapacity': (_o = request.getCurrentInventoryMaxCapacity()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyInventoryCurrentMaxCapacityByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyInventoryCurrentMaxCapacityByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByStampTask = function (request) {
@@ -1898,17 +1447,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyInventoryCurrentMaxCapacityByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyInventoryCurrentMaxCapacityByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.addCapacityByStampSheet = function (request) {
@@ -1925,17 +1465,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddCapacityByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddCapacityByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setCapacityByStampSheet = function (request) {
@@ -1952,17 +1483,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetCapacityByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetCapacityByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeItemSets = function (request) {
@@ -1984,13 +1506,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeItemSetsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeItemSetsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeItemSetsByUserId = function (request) {
@@ -2013,13 +1530,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeItemSetsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeItemSetsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemSet = function (request) {
@@ -2041,13 +1553,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemSetResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemSetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemSetByUserId = function (request) {
@@ -2070,13 +1577,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'itemSetName': String((_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemSetByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemSetByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemWithSignature = function (request) {
@@ -2099,13 +1601,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
             'keyId': String((_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemWithSignatureResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getItemWithSignatureByUserId = function (request) {
@@ -2129,13 +1626,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'itemSetName': String((_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null),
             'keyId': String((_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetItemWithSignatureByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetItemWithSignatureByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByUserId = function (request) {
@@ -2164,17 +1656,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'createNewItemSet': (_q = request.getCreateNewItemSet()) !== null && _q !== void 0 ? _q : null,
             'itemSetName': (_r = request.getItemSetName()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireItemSetByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireItemSetByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByUserId = function (request) {
@@ -2201,17 +1684,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'gradeModelId': (_o = request.getGradeModelId()) !== null && _o !== void 0 ? _o : null,
             'gradeValue': (_p = request.getGradeValue()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireItemSetWithGradeByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireItemSetWithGradeByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSet = function (request) {
@@ -2237,17 +1711,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeCount': (_l = request.getConsumeCount()) !== null && _l !== void 0 ? _l : null,
             'itemSetName': (_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeItemSetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeItemSetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByUserId = function (request) {
@@ -2274,17 +1739,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeCount': (_o = request.getConsumeCount()) !== null && _o !== void 0 ? _o : null,
             'itemSetName': (_p = request.getItemSetName()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeItemSetByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeItemSetByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteItemSetByUserId = function (request) {
@@ -2310,13 +1766,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'itemSetName': String((_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null),
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteItemSetByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteItemSetByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSet = function (request) {
@@ -2344,17 +1795,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
             'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyItemSetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyItemSetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByUserId = function (request) {
@@ -2383,17 +1825,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_r = request.getCount()) !== null && _r !== void 0 ? _r : null,
             'multiplyValueSpecifyingQuantity': (_s = request.getMultiplyValueSpecifyingQuantity()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyItemSetByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyItemSetByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByStampSheet = function (request) {
@@ -2410,17 +1843,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireItemSetByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireItemSetByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireItemSetWithGradeByStampSheet = function (request) {
@@ -2437,17 +1861,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireItemSetWithGradeByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireItemSetWithGradeByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByStampTask = function (request) {
@@ -2464,17 +1879,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeItemSetByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeItemSetByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByStampTask = function (request) {
@@ -2491,17 +1897,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyItemSetByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyItemSetByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeReferenceOf = function (request) {
@@ -2523,13 +1920,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeReferenceOfResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeReferenceOfResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeReferenceOfByUserId = function (request) {
@@ -2552,13 +1944,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeReferenceOfByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeReferenceOfByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getReferenceOf = function (request) {
@@ -2581,13 +1968,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetReferenceOfResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetReferenceOfResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getReferenceOfByUserId = function (request) {
@@ -2611,13 +1993,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_q = request.getContextStack()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetReferenceOfByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetReferenceOfByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOf = function (request) {
@@ -2644,17 +2021,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_r = request.getContextStack()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReferenceOfResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReferenceOfResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByUserId = function (request) {
@@ -2682,17 +2050,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_t = request.getContextStack()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReferenceOfByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReferenceOfByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOf = function (request) {
@@ -2718,17 +2077,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'referenceOf': (_o = request.getReferenceOf()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddReferenceOfResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddReferenceOfResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOfByUserId = function (request) {
@@ -2755,17 +2105,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
             'referenceOf': (_q = request.getReferenceOf()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddReferenceOfByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddReferenceOfByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOf = function (request) {
@@ -2791,13 +2132,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteReferenceOfResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteReferenceOfResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfByUserId = function (request) {
@@ -2824,13 +2160,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_r = request.getContextStack()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteReferenceOfByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteReferenceOfByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.addReferenceOfItemSetByStampSheet = function (request) {
@@ -2847,17 +2178,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AddReferenceOfItemSetByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AddReferenceOfItemSetByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfItemSetByStampSheet = function (request) {
@@ -2874,17 +2196,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteReferenceOfItemSetByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DeleteReferenceOfItemSetByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByStampTask = function (request) {
@@ -2901,17 +2214,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyReferenceOfByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyReferenceOfByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItems = function (request) {
@@ -2933,13 +2237,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleItemsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleItemsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeSimpleItemsByUserId = function (request) {
@@ -2962,13 +2261,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSimpleItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSimpleItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItem = function (request) {
@@ -2989,13 +2283,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemByUserId = function (request) {
@@ -3017,13 +2306,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignature = function (request) {
@@ -3045,13 +2329,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemWithSignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemWithSignatureResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getSimpleItemWithSignatureByUserId = function (request) {
@@ -3074,13 +2353,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'keyId': String((_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSimpleItemWithSignatureByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSimpleItemWithSignatureByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByUserId = function (request) {
@@ -3105,17 +2379,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'acquireCounts': (_m = (_l = request.getAcquireCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireSimpleItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireSimpleItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItems = function (request) {
@@ -3139,17 +2404,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'consumeCounts': (_k = (_j = request.getConsumeCounts()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeSimpleItemsResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeSimpleItemsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByUserId = function (request) {
@@ -3174,17 +2430,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'consumeCounts': (_m = (_l = request.getConsumeCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeSimpleItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeSimpleItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByUserId = function (request) {
@@ -3209,17 +2456,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'counts': (_m = (_l = request.getCounts()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetSimpleItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetSimpleItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteSimpleItemsByUserId = function (request) {
@@ -3243,13 +2481,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteSimpleItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteSimpleItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItem = function (request) {
@@ -3276,17 +2509,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifySimpleItemResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifySimpleItemResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByUserId = function (request) {
@@ -3314,17 +2538,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
             'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifySimpleItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifySimpleItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireSimpleItemsByStampSheet = function (request) {
@@ -3341,17 +2556,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireSimpleItemsByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireSimpleItemsByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeSimpleItemsByStampTask = function (request) {
@@ -3368,17 +2574,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeSimpleItemsByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeSimpleItemsByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setSimpleItemsByStampSheet = function (request) {
@@ -3395,17 +2592,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetSimpleItemsByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetSimpleItemsByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByStampTask = function (request) {
@@ -3422,17 +2610,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifySimpleItemByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifySimpleItemByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItems = function (request) {
@@ -3454,13 +2633,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigItemsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigItemsResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.describeBigItemsByUserId = function (request) {
@@ -3483,13 +2657,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBigItemsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBigItemsByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigItem = function (request) {
@@ -3510,13 +2679,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigItemResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigItemResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.getBigItemByUserId = function (request) {
@@ -3538,13 +2702,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByUserId = function (request) {
@@ -3570,17 +2729,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'acquireCount': (_o = request.getAcquireCount()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItem = function (request) {
@@ -3605,17 +2755,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'consumeCount': (_l = request.getConsumeCount()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeBigItemResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeBigItemResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByUserId = function (request) {
@@ -3641,17 +2782,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'consumeCount': (_o = request.getConsumeCount()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setBigItemByUserId = function (request) {
@@ -3677,17 +2809,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.SetBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.deleteBigItemByUserId = function (request) {
@@ -3712,13 +2835,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItem = function (request) {
@@ -3745,17 +2863,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyBigItemResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBigItemResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByUserId = function (request) {
@@ -3783,17 +2892,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'count': (_q = request.getCount()) !== null && _q !== void 0 ? _q : null,
             'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyBigItemByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBigItemByUserIdResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.acquireBigItemByStampSheet = function (request) {
@@ -3810,17 +2910,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.AcquireBigItemByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.AcquireBigItemByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.consumeBigItemByStampTask = function (request) {
@@ -3837,17 +2928,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeBigItemByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeBigItemByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.setBigItemByStampSheet = function (request) {
@@ -3864,17 +2946,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetBigItemByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetBigItemByStampSheetResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByStampTask = function (request) {
@@ -3891,17 +2964,8 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyBigItemByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBigItemByStampTaskResult.fromDict(data);
         });
     };
     Gs2InventoryRestClient.ENDPOINT_HOST = null;

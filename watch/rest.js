@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2WatchRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2WatchRestClient, _super);
     function Gs2WatchRestClient(session) {
@@ -47,17 +46,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'pageToken': (_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null,
             'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetChartResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetChartResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getServiceVersion = function (request) {
@@ -72,13 +62,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getDistribution = function (request) {
@@ -101,17 +86,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'pageToken': (_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null,
             'limit': (_m = request.getLimit()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDistributionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetDistributionResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getCumulative = function (request) {
@@ -128,17 +104,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'resourceGrn': (_e = request.getResourceGrn()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCumulativeResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetCumulativeResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeBillingActivities = function (request) {
@@ -158,13 +125,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeBillingActivitiesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeBillingActivitiesResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getBillingActivity = function (request) {
@@ -183,17 +145,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBillingActivityResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetBillingActivityResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getGeneralMetrics = function (request) {
@@ -208,13 +161,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGeneralMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGeneralMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeAccountNamespaceMetrics = function (request) {
@@ -229,13 +177,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeAccountNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeAccountNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getAccountNamespaceMetrics = function (request) {
@@ -251,13 +194,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetAccountNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetAccountNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeChatNamespaceMetrics = function (request) {
@@ -272,13 +210,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeChatNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeChatNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getChatNamespaceMetrics = function (request) {
@@ -294,13 +227,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetChatNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetChatNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeDatastoreNamespaceMetrics = function (request) {
@@ -315,13 +243,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeDatastoreNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDatastoreNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getDatastoreNamespaceMetrics = function (request) {
@@ -337,13 +260,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDatastoreNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDatastoreNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeDictionaryNamespaceMetrics = function (request) {
@@ -358,13 +276,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeDictionaryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDictionaryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getDictionaryNamespaceMetrics = function (request) {
@@ -380,13 +293,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetDictionaryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDictionaryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeExchangeRateModelMetrics = function (request) {
@@ -402,13 +310,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeExchangeRateModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeExchangeRateModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getExchangeRateModelMetrics = function (request) {
@@ -425,13 +328,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetExchangeRateModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetExchangeRateModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeExchangeNamespaceMetrics = function (request) {
@@ -446,13 +344,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeExchangeNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeExchangeNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getExchangeNamespaceMetrics = function (request) {
@@ -468,13 +361,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetExchangeNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetExchangeNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceStatusMetrics = function (request) {
@@ -491,13 +379,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeExperienceStatusMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeExperienceStatusMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceExperienceModelMetrics = function (request) {
@@ -513,13 +396,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeExperienceExperienceModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeExperienceExperienceModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getExperienceExperienceModelMetrics = function (request) {
@@ -536,13 +414,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetExperienceExperienceModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetExperienceExperienceModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeExperienceNamespaceMetrics = function (request) {
@@ -557,13 +430,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeExperienceNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeExperienceNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getExperienceNamespaceMetrics = function (request) {
@@ -579,13 +447,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetExperienceNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetExperienceNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeFormationFormMetrics = function (request) {
@@ -602,13 +465,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormationFormMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormationFormMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeFormationMoldMetrics = function (request) {
@@ -624,13 +482,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormationMoldMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormationMoldMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeFormationNamespaceMetrics = function (request) {
@@ -645,13 +498,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormationNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFormationNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getFormationNamespaceMetrics = function (request) {
@@ -667,13 +515,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFormationNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFormationNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeFriendNamespaceMetrics = function (request) {
@@ -688,13 +531,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFriendNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFriendNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getFriendNamespaceMetrics = function (request) {
@@ -710,13 +548,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetFriendNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFriendNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeInboxNamespaceMetrics = function (request) {
@@ -731,13 +564,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInboxNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInboxNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getInboxNamespaceMetrics = function (request) {
@@ -753,13 +581,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInboxNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInboxNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryItemSetMetrics = function (request) {
@@ -776,13 +599,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoryItemSetMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoryItemSetMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryInventoryMetrics = function (request) {
@@ -798,13 +616,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoryInventoryMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoryInventoryMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeInventoryNamespaceMetrics = function (request) {
@@ -819,13 +632,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeInventoryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeInventoryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getInventoryNamespaceMetrics = function (request) {
@@ -841,13 +649,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetInventoryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetInventoryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeKeyNamespaceMetrics = function (request) {
@@ -862,13 +665,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeKeyNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeKeyNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getKeyNamespaceMetrics = function (request) {
@@ -884,13 +682,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetKeyNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetKeyNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeLimitCounterMetrics = function (request) {
@@ -907,13 +700,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLimitCounterMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLimitCounterMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeLimitLimitModelMetrics = function (request) {
@@ -929,13 +717,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLimitLimitModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLimitLimitModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getLimitLimitModelMetrics = function (request) {
@@ -952,13 +735,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLimitLimitModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLimitLimitModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeLimitNamespaceMetrics = function (request) {
@@ -973,13 +751,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLimitNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLimitNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getLimitNamespaceMetrics = function (request) {
@@ -995,13 +768,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLimitNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLimitNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeLotteryLotteryMetrics = function (request) {
@@ -1017,13 +785,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLotteryLotteryMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLotteryLotteryMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getLotteryLotteryMetrics = function (request) {
@@ -1040,13 +803,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLotteryLotteryMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLotteryLotteryMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeLotteryNamespaceMetrics = function (request) {
@@ -1061,13 +819,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLotteryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLotteryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getLotteryNamespaceMetrics = function (request) {
@@ -1083,13 +836,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLotteryNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLotteryNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMatchmakingNamespaceMetrics = function (request) {
@@ -1104,13 +852,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMatchmakingNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMatchmakingNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getMatchmakingNamespaceMetrics = function (request) {
@@ -1126,13 +869,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMatchmakingNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMatchmakingNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMissionCounterMetrics = function (request) {
@@ -1148,13 +886,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMissionCounterMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMissionCounterMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMissionMissionGroupModelMetrics = function (request) {
@@ -1170,13 +903,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMissionMissionGroupModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMissionMissionGroupModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getMissionMissionGroupModelMetrics = function (request) {
@@ -1193,13 +921,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMissionMissionGroupModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMissionMissionGroupModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMissionNamespaceMetrics = function (request) {
@@ -1214,13 +937,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMissionNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMissionNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getMissionNamespaceMetrics = function (request) {
@@ -1236,13 +954,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMissionNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMissionNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyWalletMetrics = function (request) {
@@ -1258,13 +971,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoneyWalletMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoneyWalletMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyReceiptMetrics = function (request) {
@@ -1280,13 +988,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoneyReceiptMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoneyReceiptMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeMoneyNamespaceMetrics = function (request) {
@@ -1301,13 +1004,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMoneyNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMoneyNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getMoneyNamespaceMetrics = function (request) {
@@ -1323,13 +1021,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMoneyNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMoneyNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeQuestQuestModelMetrics = function (request) {
@@ -1346,13 +1039,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeQuestQuestModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeQuestQuestModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getQuestQuestModelMetrics = function (request) {
@@ -1370,13 +1058,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetQuestQuestModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetQuestQuestModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeQuestQuestGroupModelMetrics = function (request) {
@@ -1392,13 +1075,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeQuestQuestGroupModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeQuestQuestGroupModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getQuestQuestGroupModelMetrics = function (request) {
@@ -1415,13 +1093,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetQuestQuestGroupModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetQuestQuestGroupModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeQuestNamespaceMetrics = function (request) {
@@ -1436,13 +1109,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeQuestNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeQuestNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getQuestNamespaceMetrics = function (request) {
@@ -1458,13 +1126,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetQuestNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetQuestNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeRankingCategoryModelMetrics = function (request) {
@@ -1480,13 +1143,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRankingCategoryModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRankingCategoryModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getRankingCategoryModelMetrics = function (request) {
@@ -1503,13 +1161,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRankingCategoryModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRankingCategoryModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeRankingNamespaceMetrics = function (request) {
@@ -1524,13 +1177,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRankingNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRankingNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getRankingNamespaceMetrics = function (request) {
@@ -1546,13 +1194,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRankingNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRankingNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseDisplayItemMetrics = function (request) {
@@ -1569,13 +1212,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeShowcaseDisplayItemMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeShowcaseDisplayItemMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseDisplayItemMetrics = function (request) {
@@ -1593,13 +1231,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetShowcaseDisplayItemMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetShowcaseDisplayItemMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseShowcaseMetrics = function (request) {
@@ -1615,13 +1248,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeShowcaseShowcaseMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeShowcaseShowcaseMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseShowcaseMetrics = function (request) {
@@ -1638,13 +1266,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetShowcaseShowcaseMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetShowcaseShowcaseMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeShowcaseNamespaceMetrics = function (request) {
@@ -1659,13 +1282,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeShowcaseNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeShowcaseNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getShowcaseNamespaceMetrics = function (request) {
@@ -1681,13 +1299,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetShowcaseNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetShowcaseNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeStaminaStaminaModelMetrics = function (request) {
@@ -1703,13 +1316,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminaStaminaModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminaStaminaModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getStaminaStaminaModelMetrics = function (request) {
@@ -1726,13 +1334,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaStaminaModelMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaStaminaModelMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.describeStaminaNamespaceMetrics = function (request) {
@@ -1747,13 +1350,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminaNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminaNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.prototype.getStaminaNamespaceMetrics = function (request) {
@@ -1769,13 +1367,8 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaNamespaceMetricsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaNamespaceMetricsResult.fromDict(data);
         });
     };
     Gs2WatchRestClient.ENDPOINT_HOST = null;

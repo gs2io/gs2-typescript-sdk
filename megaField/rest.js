@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2MegaFieldRestClient, _super);
     function Gs2MegaFieldRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.createNamespace = function (request) {
@@ -64,17 +58,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getNamespaceStatus = function (request) {
@@ -90,13 +75,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getNamespace = function (request) {
@@ -112,13 +92,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.updateNamespace = function (request) {
@@ -136,17 +111,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'logSetting': (_g = (_f = request.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteNamespace = function (request) {
@@ -162,13 +128,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getServiceVersion = function (request) {
@@ -183,13 +144,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.describeAreaModels = function (request) {
@@ -205,13 +161,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeAreaModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeAreaModelsResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getAreaModel = function (request) {
@@ -228,13 +179,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetAreaModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetAreaModelResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.describeAreaModelMasters = function (request) {
@@ -252,13 +198,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeAreaModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeAreaModelMastersResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.createAreaModelMaster = function (request) {
@@ -277,17 +218,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateAreaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateAreaModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getAreaModelMaster = function (request) {
@@ -304,13 +236,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetAreaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetAreaModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.updateAreaModelMaster = function (request) {
@@ -329,17 +256,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateAreaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateAreaModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteAreaModelMaster = function (request) {
@@ -356,13 +274,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteAreaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteAreaModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.describeLayerModels = function (request) {
@@ -379,13 +292,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLayerModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLayerModelsResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getLayerModel = function (request) {
@@ -403,13 +311,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLayerModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLayerModelResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.describeLayerModelMasters = function (request) {
@@ -428,13 +331,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeLayerModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLayerModelMastersResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.createLayerModelMaster = function (request) {
@@ -454,17 +352,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
             'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateLayerModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateLayerModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getLayerModelMaster = function (request) {
@@ -482,13 +371,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetLayerModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLayerModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.updateLayerModelMaster = function (request) {
@@ -508,17 +392,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
             'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateLayerModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateLayerModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.deleteLayerModelMaster = function (request) {
@@ -536,13 +411,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteLayerModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteLayerModelMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.exportMaster = function (request) {
@@ -558,13 +428,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.getCurrentFieldMaster = function (request) {
@@ -580,13 +445,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentFieldMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentFieldMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.preUpdateCurrentFieldMaster = function (request) {
@@ -602,17 +462,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentFieldMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentFieldMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.updateCurrentFieldMaster = function (request) {
@@ -631,17 +482,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentFieldMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentFieldMasterResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.updateCurrentFieldMasterFromGitHub = function (request) {
@@ -658,17 +500,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentFieldMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentFieldMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.putPosition = function (request) {
@@ -695,17 +528,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'vector': (_p = (_o = request.getVector()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'r': (_q = request.getR()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PutPositionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PutPositionResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.putPositionByUserId = function (request) {
@@ -733,17 +557,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'vector': (_r = (_q = request.getVector()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
             'r': (_s = request.getR()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PutPositionByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PutPositionByUserIdResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.fetchPosition = function (request) {
@@ -768,17 +583,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'userIds': (_l = request.getUserIds()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.FetchPositionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.FetchPositionResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.fetchPositionFromSystem = function (request) {
@@ -800,17 +606,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'userIds': (_k = request.getUserIds()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.FetchPositionFromSystemResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.FetchPositionFromSystemResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.nearUserIds = function (request) {
@@ -837,17 +634,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'r': (_o = request.getR()) !== null && _o !== void 0 ? _o : null,
             'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.NearUserIdsResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.NearUserIdsResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.nearUserIdsFromSystem = function (request) {
@@ -871,17 +659,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'r': (_m = request.getR()) !== null && _m !== void 0 ? _m : null,
             'limit': (_o = request.getLimit()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.NearUserIdsFromSystemResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.NearUserIdsFromSystemResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.action = function (request) {
@@ -907,17 +686,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'position': (_m = (_l = request.getPosition()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'scopes': (_p = (_o = request.getScopes()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ActionResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ActionResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.prototype.actionByUserId = function (request) {
@@ -944,17 +714,8 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
             'position': (_p = (_o = request.getPosition()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'scopes': (_r = (_q = request.getScopes()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ActionByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ActionByUserIdResult.fromDict(data);
         });
     };
     Gs2MegaFieldRestClient.ENDPOINT_HOST = null;

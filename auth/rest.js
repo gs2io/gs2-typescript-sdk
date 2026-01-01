@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2AuthRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2AuthRestClient, _super);
     function Gs2AuthRestClient(session) {
@@ -42,17 +41,8 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'userId': (_d = request.getUserId()) !== null && _d !== void 0 ? _d : null,
             'timeOffset': (_e = request.getTimeOffset()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.LoginResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.LoginResult.fromDict(data);
         });
     };
     Gs2AuthRestClient.prototype.loginBySignature = function (request) {
@@ -70,17 +60,8 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'body': (_d = request.getBody()) !== null && _d !== void 0 ? _d : null,
             'signature': (_e = request.getSignature()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.LoginBySignatureResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.LoginBySignatureResult.fromDict(data);
         });
     };
     Gs2AuthRestClient.prototype.federation = function (request) {
@@ -102,17 +83,8 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'policyDocument': (_f = request.getPolicyDocument()) !== null && _f !== void 0 ? _f : null,
             'timeOffset': (_g = request.getTimeOffset()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.FederationResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.FederationResult.fromDict(data);
         });
     };
     Gs2AuthRestClient.prototype.issueTimeOffsetTokenByUserId = function (request) {
@@ -132,17 +104,8 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'userId': (_d = request.getUserId()) !== null && _d !== void 0 ? _d : null,
             'timeOffset': (_e = request.getTimeOffset()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssueTimeOffsetTokenByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueTimeOffsetTokenByUserIdResult.fromDict(data);
         });
     };
     Gs2AuthRestClient.prototype.getServiceVersion = function (request) {
@@ -157,13 +120,8 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2AuthRestClient.ENDPOINT_HOST = null;

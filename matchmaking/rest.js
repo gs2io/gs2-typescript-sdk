@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2MatchmakingRestClient, _super);
     function Gs2MatchmakingRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.createNamespace = function (request) {
@@ -82,17 +76,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'changeRatingNotification': (_3 = (_2 = request.getChangeRatingNotification()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
             'logSetting': (_5 = (_4 = request.getLogSetting()) === null || _4 === void 0 ? void 0 : _4.toDict()) !== null && _5 !== void 0 ? _5 : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getNamespaceStatus = function (request) {
@@ -108,13 +93,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getNamespace = function (request) {
@@ -130,13 +110,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateNamespace = function (request) {
@@ -172,17 +147,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'changeRatingNotification': (_4 = (_3 = request.getChangeRatingNotification()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
             'logSetting': (_6 = (_5 = request.getLogSetting()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteNamespace = function (request) {
@@ -198,13 +164,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getServiceVersion = function (request) {
@@ -219,13 +180,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -244,17 +200,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -273,13 +220,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -298,17 +240,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -327,13 +260,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -352,17 +280,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.importUserDataByUserId = function (request) {
@@ -382,17 +301,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -412,13 +322,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeGatherings = function (request) {
@@ -436,13 +341,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeGatheringsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeGatheringsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.createGathering = function (request) {
@@ -470,17 +370,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'expiresAt': (_p = request.getExpiresAt()) !== null && _p !== void 0 ? _p : null,
             'expiresAtTimeSpan': (_r = (_q = request.getExpiresAtTimeSpan()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.createGatheringByUserId = function (request) {
@@ -509,17 +400,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'expiresAt': (_r = request.getExpiresAt()) !== null && _r !== void 0 ? _r : null,
             'expiresAtTimeSpan': (_t = (_s = request.getExpiresAtTimeSpan()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateGatheringByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateGatheringByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateGathering = function (request) {
@@ -543,17 +425,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'attributeRanges': (_k = (_j = request.getAttributeRanges()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateGatheringByUserId = function (request) {
@@ -578,17 +451,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'attributeRanges': (_m = (_l = request.getAttributeRanges()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateGatheringByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateGatheringByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.doMatchmakingByPlayer = function (request) {
@@ -606,17 +470,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'player': (_f = (_e = request.getPlayer()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'matchmakingContextToken': (_g = request.getMatchmakingContextToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoMatchmakingByPlayerResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoMatchmakingByPlayerResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.doMatchmaking = function (request) {
@@ -640,17 +495,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'player': (_h = (_g = request.getPlayer()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'matchmakingContextToken': (_j = request.getMatchmakingContextToken()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoMatchmakingResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoMatchmakingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.doMatchmakingByUserId = function (request) {
@@ -675,17 +521,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'player': (_k = (_j = request.getPlayer()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'matchmakingContextToken': (_l = request.getMatchmakingContextToken()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoMatchmakingByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoMatchmakingByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.ping = function (request) {
@@ -708,17 +545,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PingResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.pingByUserId = function (request) {
@@ -742,17 +570,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PingByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PingByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getGathering = function (request) {
@@ -769,13 +588,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.cancelMatchmaking = function (request) {
@@ -798,13 +612,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CancelMatchmakingResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.CancelMatchmakingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.cancelMatchmakingByUserId = function (request) {
@@ -828,13 +637,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CancelMatchmakingByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.CancelMatchmakingByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.earlyComplete = function (request) {
@@ -857,13 +661,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.EarlyCompleteResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.EarlyCompleteResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.earlyCompleteByUserId = function (request) {
@@ -887,13 +686,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.EarlyCompleteByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.EarlyCompleteByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteGathering = function (request) {
@@ -910,13 +704,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeRatingModelMasters = function (request) {
@@ -935,13 +724,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRatingModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRatingModelMastersResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.createRatingModelMaster = function (request) {
@@ -962,17 +746,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'initialValue': (_h = request.getInitialValue()) !== null && _h !== void 0 ? _h : null,
             'volatility': (_j = request.getVolatility()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateRatingModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateRatingModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getRatingModelMaster = function (request) {
@@ -989,13 +764,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRatingModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRatingModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateRatingModelMaster = function (request) {
@@ -1016,17 +786,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'initialValue': (_j = request.getInitialValue()) !== null && _j !== void 0 ? _j : null,
             'volatility': (_k = request.getVolatility()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateRatingModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateRatingModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteRatingModelMaster = function (request) {
@@ -1043,13 +804,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRatingModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRatingModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeRatingModels = function (request) {
@@ -1065,13 +821,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRatingModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRatingModelsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getRatingModel = function (request) {
@@ -1088,13 +839,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRatingModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRatingModelResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.exportMaster = function (request) {
@@ -1110,13 +856,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getCurrentModelMaster = function (request) {
@@ -1132,13 +873,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.preUpdateCurrentModelMaster = function (request) {
@@ -1154,17 +890,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateCurrentModelMaster = function (request) {
@@ -1183,17 +910,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateCurrentModelMasterFromGitHub = function (request) {
@@ -1210,17 +928,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeSeasonModels = function (request) {
@@ -1236,13 +945,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSeasonModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSeasonModelsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getSeasonModel = function (request) {
@@ -1259,13 +963,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSeasonModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSeasonModelResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeSeasonModelMasters = function (request) {
@@ -1284,13 +983,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSeasonModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSeasonModelMastersResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.createSeasonModelMaster = function (request) {
@@ -1312,17 +1006,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_j = request.getExperienceModelId()) !== null && _j !== void 0 ? _j : null,
             'challengePeriodEventId': (_k = request.getChallengePeriodEventId()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateSeasonModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateSeasonModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getSeasonModelMaster = function (request) {
@@ -1339,13 +1024,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSeasonModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSeasonModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.updateSeasonModelMaster = function (request) {
@@ -1367,17 +1047,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_k = request.getExperienceModelId()) !== null && _k !== void 0 ? _k : null,
             'challengePeriodEventId': (_l = request.getChallengePeriodEventId()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateSeasonModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateSeasonModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteSeasonModelMaster = function (request) {
@@ -1394,13 +1065,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteSeasonModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteSeasonModelMasterResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeSeasonGatherings = function (request) {
@@ -1421,13 +1087,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeSeasonGatheringsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeSeasonGatheringsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeMatchmakingSeasonGatherings = function (request) {
@@ -1448,13 +1109,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMatchmakingSeasonGatheringsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMatchmakingSeasonGatheringsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.doSeasonMatchmaking = function (request) {
@@ -1478,17 +1134,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'matchmakingContextToken': (_j = request.getMatchmakingContextToken()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoSeasonMatchmakingResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoSeasonMatchmakingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.doSeasonMatchmakingByUserId = function (request) {
@@ -1513,17 +1160,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'matchmakingContextToken': (_l = request.getMatchmakingContextToken()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DoSeasonMatchmakingByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DoSeasonMatchmakingByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getSeasonGathering = function (request) {
@@ -1543,13 +1181,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetSeasonGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetSeasonGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.verifyIncludeParticipant = function (request) {
@@ -1576,17 +1209,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
             'verifyType': (_q = request.getVerifyType()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeParticipantResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeParticipantResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.verifyIncludeParticipantByUserId = function (request) {
@@ -1614,17 +1238,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_r = request.getContextStack()) !== null && _r !== void 0 ? _r : null,
             'verifyType': (_s = request.getVerifyType()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeParticipantByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeParticipantByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteSeasonGathering = function (request) {
@@ -1644,13 +1259,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteSeasonGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteSeasonGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.verifyIncludeParticipantByStampTask = function (request) {
@@ -1667,17 +1277,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyIncludeParticipantByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyIncludeParticipantByStampTaskResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeJoinedSeasonGatherings = function (request) {
@@ -1699,13 +1300,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeJoinedSeasonGatheringsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeJoinedSeasonGatheringsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeJoinedSeasonGatheringsByUserId = function (request) {
@@ -1728,13 +1324,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeJoinedSeasonGatheringsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeJoinedSeasonGatheringsByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getJoinedSeasonGathering = function (request) {
@@ -1755,13 +1346,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetJoinedSeasonGatheringResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetJoinedSeasonGatheringResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getJoinedSeasonGatheringByUserId = function (request) {
@@ -1783,13 +1369,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetJoinedSeasonGatheringByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetJoinedSeasonGatheringByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeRatings = function (request) {
@@ -1810,13 +1391,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRatingsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRatingsResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.describeRatingsByUserId = function (request) {
@@ -1838,13 +1414,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRatingsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRatingsByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getRating = function (request) {
@@ -1864,13 +1435,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRatingResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRatingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getRatingByUserId = function (request) {
@@ -1891,13 +1457,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRatingByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRatingByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.putResult = function (request) {
@@ -1915,17 +1476,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'gameResults': (_h = (_g = request.getGameResults()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PutResultResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PutResultResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.deleteRating = function (request) {
@@ -1949,13 +1501,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRatingResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRatingResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getBallot = function (request) {
@@ -1978,17 +1525,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'numberOfPlayer': (_k = request.getNumberOfPlayer()) !== null && _k !== void 0 ? _k : null,
             'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBallotResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetBallotResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getBallotByUserId = function (request) {
@@ -2012,17 +1550,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'numberOfPlayer': (_m = request.getNumberOfPlayer()) !== null && _m !== void 0 ? _m : null,
             'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBallotByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.GetBallotByUserIdResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.vote = function (request) {
@@ -2042,17 +1571,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'gameResults': (_h = (_g = request.getGameResults()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'keyId': (_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VoteResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VoteResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.voteMultiple = function (request) {
@@ -2071,17 +1591,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'gameResults': (_h = (_g = request.getGameResults()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'keyId': (_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VoteMultipleResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VoteMultipleResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.commitVote = function (request) {
@@ -2099,17 +1610,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CommitVoteResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CommitVoteResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.ENDPOINT_HOST = null;

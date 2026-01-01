@@ -19,7 +19,6 @@ var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
 var Result = tslib_1.__importStar(require("./result"));
-var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2StaminaRestClient = /** @class */ (function (_super) {
     tslib_1.__extends(Gs2StaminaRestClient, _super);
     function Gs2StaminaRestClient(session) {
@@ -40,13 +39,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeNamespacesResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeNamespacesResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.createNamespace = function (request) {
@@ -66,17 +60,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'overflowTriggerScript': (_g = request.getOverflowTriggerScript()) !== null && _g !== void 0 ? _g : null,
             'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateNamespaceResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getNamespaceStatus = function (request) {
@@ -92,13 +77,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceStatusResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getNamespace = function (request) {
@@ -114,13 +94,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetNamespaceResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateNamespace = function (request) {
@@ -140,17 +115,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'overflowTriggerScript': (_h = request.getOverflowTriggerScript()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateNamespaceResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteNamespace = function (request) {
@@ -166,13 +132,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteNamespaceResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteNamespaceResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getServiceVersion = function (request) {
@@ -187,13 +148,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetServiceVersionResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetServiceVersionResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.dumpUserDataByUserId = function (request) {
@@ -212,17 +168,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.checkDumpUserDataByUserId = function (request) {
@@ -241,13 +188,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckDumpUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckDumpUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.cleanUserDataByUserId = function (request) {
@@ -266,17 +208,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.checkCleanUserDataByUserId = function (request) {
@@ -295,13 +228,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckCleanUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckCleanUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.prepareImportUserDataByUserId = function (request) {
@@ -320,17 +248,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PrepareImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PrepareImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.importUserDataByUserId = function (request) {
@@ -350,17 +269,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.checkImportUserDataByUserId = function (request) {
@@ -380,13 +290,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.CheckImportUserDataByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.CheckImportUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeStaminaModelMasters = function (request) {
@@ -405,13 +310,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminaModelMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminaModelMastersResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.createStaminaModelMaster = function (request) {
@@ -438,17 +338,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'recoverIntervalTableName': (_p = request.getRecoverIntervalTableName()) !== null && _p !== void 0 ? _p : null,
             'recoverValueTableName': (_q = request.getRecoverValueTableName()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateStaminaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateStaminaModelMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getStaminaModelMaster = function (request) {
@@ -465,13 +356,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaModelMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateStaminaModelMaster = function (request) {
@@ -498,17 +384,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'recoverIntervalTableName': (_q = request.getRecoverIntervalTableName()) !== null && _q !== void 0 ? _q : null,
             'recoverValueTableName': (_r = request.getRecoverValueTableName()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateStaminaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateStaminaModelMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteStaminaModelMaster = function (request) {
@@ -525,13 +402,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteStaminaModelMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteStaminaModelMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeMaxStaminaTableMasters = function (request) {
@@ -549,13 +421,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeMaxStaminaTableMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMaxStaminaTableMastersResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.createMaxStaminaTableMaster = function (request) {
@@ -576,17 +443,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_h = request.getExperienceModelId()) !== null && _h !== void 0 ? _h : null,
             'values': (_j = request.getValues()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateMaxStaminaTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateMaxStaminaTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getMaxStaminaTableMaster = function (request) {
@@ -603,13 +461,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetMaxStaminaTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetMaxStaminaTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateMaxStaminaTableMaster = function (request) {
@@ -630,17 +483,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_j = request.getExperienceModelId()) !== null && _j !== void 0 ? _j : null,
             'values': (_k = request.getValues()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateMaxStaminaTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateMaxStaminaTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteMaxStaminaTableMaster = function (request) {
@@ -657,13 +501,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteMaxStaminaTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteMaxStaminaTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeRecoverIntervalTableMasters = function (request) {
@@ -682,13 +521,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRecoverIntervalTableMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRecoverIntervalTableMastersResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.createRecoverIntervalTableMaster = function (request) {
@@ -709,17 +543,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_h = request.getExperienceModelId()) !== null && _h !== void 0 ? _h : null,
             'values': (_j = request.getValues()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateRecoverIntervalTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateRecoverIntervalTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getRecoverIntervalTableMaster = function (request) {
@@ -736,13 +561,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRecoverIntervalTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRecoverIntervalTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateRecoverIntervalTableMaster = function (request) {
@@ -763,17 +583,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_j = request.getExperienceModelId()) !== null && _j !== void 0 ? _j : null,
             'values': (_k = request.getValues()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateRecoverIntervalTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateRecoverIntervalTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteRecoverIntervalTableMaster = function (request) {
@@ -790,13 +601,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRecoverIntervalTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRecoverIntervalTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeRecoverValueTableMasters = function (request) {
@@ -815,13 +621,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeRecoverValueTableMastersResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeRecoverValueTableMastersResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.createRecoverValueTableMaster = function (request) {
@@ -842,17 +643,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_h = request.getExperienceModelId()) !== null && _h !== void 0 ? _h : null,
             'values': (_j = request.getValues()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.CreateRecoverValueTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateRecoverValueTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getRecoverValueTableMaster = function (request) {
@@ -869,13 +661,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetRecoverValueTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetRecoverValueTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateRecoverValueTableMaster = function (request) {
@@ -896,17 +683,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'experienceModelId': (_j = request.getExperienceModelId()) !== null && _j !== void 0 ? _j : null,
             'values': (_k = request.getValues()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateRecoverValueTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateRecoverValueTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteRecoverValueTableMaster = function (request) {
@@ -923,13 +701,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteRecoverValueTableMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteRecoverValueTableMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.exportMaster = function (request) {
@@ -945,13 +718,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.ExportMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.ExportMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getCurrentStaminaMaster = function (request) {
@@ -967,13 +735,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetCurrentStaminaMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetCurrentStaminaMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.preUpdateCurrentStaminaMaster = function (request) {
@@ -989,17 +752,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.PreUpdateCurrentStaminaMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreUpdateCurrentStaminaMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateCurrentStaminaMaster = function (request) {
@@ -1018,17 +772,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'settings': (_f = request.getSettings()) !== null && _f !== void 0 ? _f : null,
             'uploadToken': (_g = request.getUploadToken()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentStaminaMasterResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentStaminaMasterResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateCurrentStaminaMasterFromGitHub = function (request) {
@@ -1045,17 +790,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.put(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateCurrentStaminaMasterFromGitHubResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateCurrentStaminaMasterFromGitHubResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeStaminaModels = function (request) {
@@ -1071,13 +807,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminaModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminaModelsResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getStaminaModel = function (request) {
@@ -1094,13 +825,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaModelResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeStaminas = function (request) {
@@ -1121,13 +847,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminasResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminasResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.describeStaminasByUserId = function (request) {
@@ -1149,13 +870,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeStaminasByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeStaminasByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getStamina = function (request) {
@@ -1175,13 +891,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.getStaminaByUserId = function (request) {
@@ -1202,13 +913,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.updateStaminaByUserId = function (request) {
@@ -1236,17 +942,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'recoverIntervalMinutes': (_o = request.getRecoverIntervalMinutes()) !== null && _o !== void 0 ? _o : null,
             'recoverValue': (_p = request.getRecoverValue()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.UpdateStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.consumeStamina = function (request) {
@@ -1270,17 +967,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'consumeValue': (_j = request.getConsumeValue()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeStaminaResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeStaminaResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.consumeStaminaByUserId = function (request) {
@@ -1305,17 +993,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'consumeValue': (_l = request.getConsumeValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.applyStamina = function (request) {
@@ -1338,17 +1017,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ApplyStaminaResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ApplyStaminaResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.applyStaminaByUserId = function (request) {
@@ -1372,17 +1042,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ApplyStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ApplyStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.recoverStaminaByUserId = function (request) {
@@ -1407,17 +1068,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'recoverValue': (_l = request.getRecoverValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RecoverStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RecoverStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.raiseMaxValueByUserId = function (request) {
@@ -1442,17 +1094,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'raiseValue': (_l = request.getRaiseValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RaiseMaxValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RaiseMaxValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.decreaseMaxValue = function (request) {
@@ -1476,17 +1119,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'decreaseValue': (_j = request.getDecreaseValue()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaxValueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaxValueResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.decreaseMaxValueByUserId = function (request) {
@@ -1511,17 +1145,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'decreaseValue': (_l = request.getDecreaseValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaxValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaxValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setMaxValueByUserId = function (request) {
@@ -1546,17 +1171,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'maxValue': (_l = request.getMaxValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaxValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaxValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverIntervalByUserId = function (request) {
@@ -1581,17 +1197,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'recoverIntervalMinutes': (_l = request.getRecoverIntervalMinutes()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverIntervalByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverIntervalByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverValueByUserId = function (request) {
@@ -1616,17 +1223,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'recoverValue': (_l = request.getRecoverValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setMaxValueByStatus = function (request) {
@@ -1652,17 +1250,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'signedStatusBody': (_k = request.getSignedStatusBody()) !== null && _k !== void 0 ? _k : null,
             'signedStatusSignature': (_l = request.getSignedStatusSignature()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaxValueByStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaxValueByStatusResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverIntervalByStatus = function (request) {
@@ -1688,17 +1277,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'signedStatusBody': (_k = request.getSignedStatusBody()) !== null && _k !== void 0 ? _k : null,
             'signedStatusSignature': (_l = request.getSignedStatusSignature()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverIntervalByStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverIntervalByStatusResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverValueByStatus = function (request) {
@@ -1724,17 +1304,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'signedStatusBody': (_k = request.getSignedStatusBody()) !== null && _k !== void 0 ? _k : null,
             'signedStatusSignature': (_l = request.getSignedStatusSignature()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverValueByStatusResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverValueByStatusResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.deleteStaminaByUserId = function (request) {
@@ -1758,13 +1329,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios_1.default.delete(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DeleteStaminaByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteStaminaByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaValue = function (request) {
@@ -1790,17 +1356,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaValueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaValueResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaValueByUserId = function (request) {
@@ -1827,17 +1384,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaMaxValue = function (request) {
@@ -1863,17 +1411,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaMaxValueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaMaxValueResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaMaxValueByUserId = function (request) {
@@ -1900,17 +1439,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaMaxValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaMaxValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverIntervalMinutes = function (request) {
@@ -1936,17 +1466,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverIntervalMinutesResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverIntervalMinutesResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverIntervalMinutesByUserId = function (request) {
@@ -1973,17 +1494,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverIntervalMinutesByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverIntervalMinutesByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverValue = function (request) {
@@ -2009,17 +1521,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverValueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverValueResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverValueByUserId = function (request) {
@@ -2046,17 +1549,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaOverflowValue = function (request) {
@@ -2082,17 +1576,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
             'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaOverflowValueResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaOverflowValueResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaOverflowValueByUserId = function (request) {
@@ -2119,17 +1604,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
             'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaOverflowValueByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaOverflowValueByUserIdResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.recoverStaminaByStampSheet = function (request) {
@@ -2146,17 +1622,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RecoverStaminaByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RecoverStaminaByStampSheetResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.raiseMaxValueByStampSheet = function (request) {
@@ -2173,17 +1640,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.RaiseMaxValueByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.RaiseMaxValueByStampSheetResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.decreaseMaxValueByStampTask = function (request) {
@@ -2200,17 +1658,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.DecreaseMaxValueByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DecreaseMaxValueByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setMaxValueByStampSheet = function (request) {
@@ -2227,17 +1676,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetMaxValueByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetMaxValueByStampSheetResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverIntervalByStampSheet = function (request) {
@@ -2254,17 +1694,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverIntervalByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverIntervalByStampSheetResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverValueByStampSheet = function (request) {
@@ -2281,17 +1712,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampSheet': (_c = request.getStampSheet()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.SetRecoverValueByStampSheetResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.SetRecoverValueByStampSheetResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.consumeStaminaByStampTask = function (request) {
@@ -2308,17 +1730,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.ConsumeStaminaByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.ConsumeStaminaByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaValueByStampTask = function (request) {
@@ -2335,17 +1748,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaValueByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaValueByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaMaxValueByStampTask = function (request) {
@@ -2362,17 +1766,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaMaxValueByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaMaxValueByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverIntervalMinutesByStampTask = function (request) {
@@ -2389,17 +1784,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverIntervalMinutesByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverIntervalMinutesByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaRecoverValueByStampTask = function (request) {
@@ -2416,17 +1802,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaRecoverValueByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaRecoverValueByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.prototype.verifyStaminaOverflowValueByStampTask = function (request) {
@@ -2443,17 +1820,8 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
             'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
             'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.VerifyStaminaOverflowValueByStampTaskResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyStaminaOverflowValueByStampTaskResult.fromDict(data);
         });
     };
     Gs2StaminaRestClient.ENDPOINT_HOST = null;
