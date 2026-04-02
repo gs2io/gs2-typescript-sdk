@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var axios_1 = tslib_1.__importDefault(require("axios"));
-var zlib = tslib_1.__importStar(require("zlib"));
+var pako_1 = tslib_1.__importDefault(require("pako"));
 var default_1 = /** @class */ (function () {
     function default_1(session) {
         this.session = session;
@@ -32,7 +32,7 @@ var default_1 = /** @class */ (function () {
         var config = {
             headers: headers,
         };
-        if (this.session.acceptGzipResponse) {
+        if (this.session.acceptGzipResponse && typeof window === 'undefined') {
             headers['Accept-Encoding'] = 'gzip';
         }
         return config;
@@ -40,7 +40,7 @@ var default_1 = /** @class */ (function () {
     default_1.prototype.compressBody = function (body, headers) {
         if (this.session.compressRequest) {
             var jsonString = JSON.stringify(body);
-            var compressed = zlib.gzipSync(jsonString);
+            var compressed = pako_1.default.gzip(jsonString);
             headers['Content-Encoding'] = 'gzip';
             headers['Content-Type'] = 'application/json';
             return compressed;
