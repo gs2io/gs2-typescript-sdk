@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Log from '../model';
+export default class QueryMetricsTimeseriesRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private begin;
+    private end;
+    private query;
+    private groupBy;
+    private aggregations;
+    private interval;
+    private seriesLimit;
+    private orderKey;
+    private orderBy;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getBegin(): number | null;
+    setBegin(begin: number | null): this;
+    withBegin(begin: number | null): this;
+    getEnd(): number | null;
+    setEnd(end: number | null): this;
+    withEnd(end: number | null): this;
+    getQuery(): string | null;
+    setQuery(query: string | null): this;
+    withQuery(query: string | null): this;
+    getGroupBy(): string[] | null;
+    setGroupBy(groupBy: string[] | null): this;
+    withGroupBy(groupBy: string[] | null): this;
+    getAggregations(): Gs2Log.AggregationConfig[] | null;
+    setAggregations(aggregations: Gs2Log.AggregationConfig[] | null): this;
+    withAggregations(aggregations: Gs2Log.AggregationConfig[] | null): this;
+    getInterval(): number | null;
+    setInterval(interval: number | null): this;
+    withInterval(interval: number | null): this;
+    getSeriesLimit(): number | null;
+    setSeriesLimit(seriesLimit: number | null): this;
+    withSeriesLimit(seriesLimit: number | null): this;
+    getOrderKey(): string | null;
+    setOrderKey(orderKey: string | null): this;
+    withOrderKey(orderKey: string | null): this;
+    getOrderBy(): string | null;
+    setOrderBy(orderBy: string | null): this;
+    withOrderBy(orderBy: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): QueryMetricsTimeseriesRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

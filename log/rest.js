@@ -572,6 +572,393 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             return Result.DeleteInsightResult.fromDict(data);
         });
     };
+    Gs2LogRestClient.prototype.describeFacetModels = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/facet')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeFacetModelsResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.createFacetModel = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/facet')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'field': (_e = request.getField()) !== null && _e !== void 0 ? _e : null,
+            'type': (_f = request.getType()) !== null && _f !== void 0 ? _f : null,
+            'displayName': (_g = request.getDisplayName()) !== null && _g !== void 0 ? _g : null,
+            'order': (_h = request.getOrder()) !== null && _h !== void 0 ? _h : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateFacetModelResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.getFacetModel = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/facet/{field}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{field}', String((_d = request.getField()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getField()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetFacetModelResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.updateFacetModel = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/facet/{field}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{field}', String((_d = request.getField()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getField()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'type': (_g = request.getType()) !== null && _g !== void 0 ? _g : null,
+            'displayName': (_h = request.getDisplayName()) !== null && _h !== void 0 ? _h : null,
+            'order': (_j = request.getOrder()) !== null && _j !== void 0 ? _j : null,
+        };
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateFacetModelResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.deleteFacetModel = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/facet/{field}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{field}', String((_d = request.getField()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getField()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteFacetModelResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.describeDashboards = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeDashboardsResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.createDashboard = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'displayName': (_e = request.getDisplayName()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.CreateDashboardResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.getDashboard = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard/{dashboardName}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{dashboardName}', String((_d = request.getDashboardName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getDashboardName()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetDashboardResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.updateDashboard = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard/{dashboardName}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{dashboardName}', String((_d = request.getDashboardName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getDashboardName()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'displayName': (_g = request.getDisplayName()) !== null && _g !== void 0 ? _g : null,
+            'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
+            'payload': (_j = request.getPayload()) !== null && _j !== void 0 ? _j : null,
+        };
+        return this.request('PUT', url, headers, undefined, body).then(function (data) {
+            return Result.UpdateDashboardResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.duplicateDashboard = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard/{dashboardName}/copy')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{dashboardName}', String((_d = request.getDashboardName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getDashboardName()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.DuplicateDashboardResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.deleteDashboard = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/dashboard/{dashboardName}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{dashboardName}', String((_d = request.getDashboardName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getDashboardName()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return this.request('DELETE', url, headers, params, undefined).then(function (data) {
+            return Result.DeleteDashboardResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.queryLog = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/v2/query')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'begin': (_e = request.getBegin()) !== null && _e !== void 0 ? _e : null,
+            'end': (_f = request.getEnd()) !== null && _f !== void 0 ? _f : null,
+            'query': (_g = request.getQuery()) !== null && _g !== void 0 ? _g : null,
+            'pageToken': (_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null,
+            'limit': (_j = request.getLimit()) !== null && _j !== void 0 ? _j : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.QueryLogResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.getLog = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/v2/query/{logRequestId}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{logRequestId}', String((_d = request.getLogRequestId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getLogRequestId()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'begin': String((_g = request.getBegin()) !== null && _g !== void 0 ? _g : null),
+            'end': String((_h = request.getEnd()) !== null && _h !== void 0 ? _h : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetLogResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.queryFacets = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/v2/query/facet')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'begin': (_e = request.getBegin()) !== null && _e !== void 0 ? _e : null,
+            'end': (_f = request.getEnd()) !== null && _f !== void 0 ? _f : null,
+            'query': (_g = request.getQuery()) !== null && _g !== void 0 ? _g : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.QueryFacetsResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.queryTimeseries = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/v2/timeseries')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'begin': (_e = request.getBegin()) !== null && _e !== void 0 ? _e : null,
+            'end': (_f = request.getEnd()) !== null && _f !== void 0 ? _f : null,
+            'query': (_g = request.getQuery()) !== null && _g !== void 0 ? _g : null,
+            'groupBy': (_h = request.getGroupBy()) !== null && _h !== void 0 ? _h : null,
+            'aggregation': (_k = (_j = request.getAggregation()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'interval': (_l = request.getInterval()) !== null && _l !== void 0 ? _l : null,
+            'seriesLimit': (_m = request.getSeriesLimit()) !== null && _m !== void 0 ? _m : null,
+            'pageToken': (_o = request.getPageToken()) !== null && _o !== void 0 ? _o : null,
+            'limit': (_p = request.getLimit()) !== null && _p !== void 0 ? _p : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.QueryTimeseriesResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.getTrace = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/log/v2/trace/{traceId}')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{traceId}', String((_d = request.getTraceId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getTraceId()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'begin': String((_g = request.getBegin()) !== null && _g !== void 0 ? _g : null),
+            'end': String((_h = request.getEnd()) !== null && _h !== void 0 ? _h : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetTraceResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.queryMetricsTimeseries = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/metrics/timeseries')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'begin': (_e = request.getBegin()) !== null && _e !== void 0 ? _e : null,
+            'end': (_f = request.getEnd()) !== null && _f !== void 0 ? _f : null,
+            'query': (_g = request.getQuery()) !== null && _g !== void 0 ? _g : null,
+            'groupBy': (_h = request.getGroupBy()) !== null && _h !== void 0 ? _h : null,
+            'aggregations': (_k = (_j = request.getAggregations()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'interval': (_l = request.getInterval()) !== null && _l !== void 0 ? _l : null,
+            'seriesLimit': (_m = request.getSeriesLimit()) !== null && _m !== void 0 ? _m : null,
+            'orderKey': (_o = request.getOrderKey()) !== null && _o !== void 0 ? _o : null,
+            'orderBy': (_p = request.getOrderBy()) !== null && _p !== void 0 ? _p : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.QueryMetricsTimeseriesResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.describeMetrics = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/metrics')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'namePrefix': String((_e = request.getNamePrefix()) !== null && _e !== void 0 ? _e : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeMetricsResult.fromDict(data);
+        });
+    };
+    Gs2LogRestClient.prototype.describeLabelValues = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (((_a = Gs2LogRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/model/metrics/{metricName}/label')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{metricName}', String((_d = request.getMetricName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMetricName()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'labelNamePrefix': String((_g = request.getLabelNamePrefix()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeLabelValuesResult.fromDict(data);
+        });
+    };
     Gs2LogRestClient.ENDPOINT_HOST = null;
     return Gs2LogRestClient;
 }(AbstractGs2RestClient_1.default));

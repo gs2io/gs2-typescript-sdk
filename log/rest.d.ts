@@ -28,4 +28,23 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     createInsight(request: Request.CreateInsightRequest): Promise<Result.CreateInsightResult>;
     getInsight(request: Request.GetInsightRequest): Promise<Result.GetInsightResult>;
     deleteInsight(request: Request.DeleteInsightRequest): Promise<Result.DeleteInsightResult>;
+    describeFacetModels(request: Request.DescribeFacetModelsRequest): Promise<Result.DescribeFacetModelsResult>;
+    createFacetModel(request: Request.CreateFacetModelRequest): Promise<Result.CreateFacetModelResult>;
+    getFacetModel(request: Request.GetFacetModelRequest): Promise<Result.GetFacetModelResult>;
+    updateFacetModel(request: Request.UpdateFacetModelRequest): Promise<Result.UpdateFacetModelResult>;
+    deleteFacetModel(request: Request.DeleteFacetModelRequest): Promise<Result.DeleteFacetModelResult>;
+    describeDashboards(request: Request.DescribeDashboardsRequest): Promise<Result.DescribeDashboardsResult>;
+    createDashboard(request: Request.CreateDashboardRequest): Promise<Result.CreateDashboardResult>;
+    getDashboard(request: Request.GetDashboardRequest): Promise<Result.GetDashboardResult>;
+    updateDashboard(request: Request.UpdateDashboardRequest): Promise<Result.UpdateDashboardResult>;
+    duplicateDashboard(request: Request.DuplicateDashboardRequest): Promise<Result.DuplicateDashboardResult>;
+    deleteDashboard(request: Request.DeleteDashboardRequest): Promise<Result.DeleteDashboardResult>;
+    queryLog(request: Request.QueryLogRequest): Promise<Result.QueryLogResult>;
+    getLog(request: Request.GetLogRequest): Promise<Result.GetLogResult>;
+    queryFacets(request: Request.QueryFacetsRequest): Promise<Result.QueryFacetsResult>;
+    queryTimeseries(request: Request.QueryTimeseriesRequest): Promise<Result.QueryTimeseriesResult>;
+    getTrace(request: Request.GetTraceRequest): Promise<Result.GetTraceResult>;
+    queryMetricsTimeseries(request: Request.QueryMetricsTimeseriesRequest): Promise<Result.QueryMetricsTimeseriesResult>;
+    describeMetrics(request: Request.DescribeMetricsRequest): Promise<Result.DescribeMetricsResult>;
+    describeLabelValues(request: Request.DescribeLabelValuesRequest): Promise<Result.DescribeLabelValuesResult>;
 }

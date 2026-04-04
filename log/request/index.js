@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteInsightRequest = exports.GetInsightRequest = exports.CreateInsightRequest = exports.DescribeInsightsRequest = exports.QueryAccessLogWithTelemetryRequest = exports.SendInGameLogByUserIdRequest = exports.SendInGameLogRequest = exports.QueryInGameLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DescribeLabelValuesRequest = exports.DescribeMetricsRequest = exports.QueryMetricsTimeseriesRequest = exports.GetTraceRequest = exports.QueryTimeseriesRequest = exports.QueryFacetsRequest = exports.GetLogRequest = exports.QueryLogRequest = exports.DeleteDashboardRequest = exports.DuplicateDashboardRequest = exports.UpdateDashboardRequest = exports.GetDashboardRequest = exports.CreateDashboardRequest = exports.DescribeDashboardsRequest = exports.DeleteFacetModelRequest = exports.UpdateFacetModelRequest = exports.GetFacetModelRequest = exports.CreateFacetModelRequest = exports.DescribeFacetModelsRequest = exports.DeleteInsightRequest = exports.GetInsightRequest = exports.CreateInsightRequest = exports.DescribeInsightsRequest = exports.QueryAccessLogWithTelemetryRequest = exports.SendInGameLogByUserIdRequest = exports.SendInGameLogRequest = exports.QueryInGameLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -63,4 +63,42 @@ var GetInsightRequest_1 = tslib_1.__importDefault(require("./GetInsightRequest")
 exports.GetInsightRequest = GetInsightRequest_1.default;
 var DeleteInsightRequest_1 = tslib_1.__importDefault(require("./DeleteInsightRequest"));
 exports.DeleteInsightRequest = DeleteInsightRequest_1.default;
+var DescribeFacetModelsRequest_1 = tslib_1.__importDefault(require("./DescribeFacetModelsRequest"));
+exports.DescribeFacetModelsRequest = DescribeFacetModelsRequest_1.default;
+var CreateFacetModelRequest_1 = tslib_1.__importDefault(require("./CreateFacetModelRequest"));
+exports.CreateFacetModelRequest = CreateFacetModelRequest_1.default;
+var GetFacetModelRequest_1 = tslib_1.__importDefault(require("./GetFacetModelRequest"));
+exports.GetFacetModelRequest = GetFacetModelRequest_1.default;
+var UpdateFacetModelRequest_1 = tslib_1.__importDefault(require("./UpdateFacetModelRequest"));
+exports.UpdateFacetModelRequest = UpdateFacetModelRequest_1.default;
+var DeleteFacetModelRequest_1 = tslib_1.__importDefault(require("./DeleteFacetModelRequest"));
+exports.DeleteFacetModelRequest = DeleteFacetModelRequest_1.default;
+var DescribeDashboardsRequest_1 = tslib_1.__importDefault(require("./DescribeDashboardsRequest"));
+exports.DescribeDashboardsRequest = DescribeDashboardsRequest_1.default;
+var CreateDashboardRequest_1 = tslib_1.__importDefault(require("./CreateDashboardRequest"));
+exports.CreateDashboardRequest = CreateDashboardRequest_1.default;
+var GetDashboardRequest_1 = tslib_1.__importDefault(require("./GetDashboardRequest"));
+exports.GetDashboardRequest = GetDashboardRequest_1.default;
+var UpdateDashboardRequest_1 = tslib_1.__importDefault(require("./UpdateDashboardRequest"));
+exports.UpdateDashboardRequest = UpdateDashboardRequest_1.default;
+var DuplicateDashboardRequest_1 = tslib_1.__importDefault(require("./DuplicateDashboardRequest"));
+exports.DuplicateDashboardRequest = DuplicateDashboardRequest_1.default;
+var DeleteDashboardRequest_1 = tslib_1.__importDefault(require("./DeleteDashboardRequest"));
+exports.DeleteDashboardRequest = DeleteDashboardRequest_1.default;
+var QueryLogRequest_1 = tslib_1.__importDefault(require("./QueryLogRequest"));
+exports.QueryLogRequest = QueryLogRequest_1.default;
+var GetLogRequest_1 = tslib_1.__importDefault(require("./GetLogRequest"));
+exports.GetLogRequest = GetLogRequest_1.default;
+var QueryFacetsRequest_1 = tslib_1.__importDefault(require("./QueryFacetsRequest"));
+exports.QueryFacetsRequest = QueryFacetsRequest_1.default;
+var QueryTimeseriesRequest_1 = tslib_1.__importDefault(require("./QueryTimeseriesRequest"));
+exports.QueryTimeseriesRequest = QueryTimeseriesRequest_1.default;
+var GetTraceRequest_1 = tslib_1.__importDefault(require("./GetTraceRequest"));
+exports.GetTraceRequest = GetTraceRequest_1.default;
+var QueryMetricsTimeseriesRequest_1 = tslib_1.__importDefault(require("./QueryMetricsTimeseriesRequest"));
+exports.QueryMetricsTimeseriesRequest = QueryMetricsTimeseriesRequest_1.default;
+var DescribeMetricsRequest_1 = tslib_1.__importDefault(require("./DescribeMetricsRequest"));
+exports.DescribeMetricsRequest = DescribeMetricsRequest_1.default;
+var DescribeLabelValuesRequest_1 = tslib_1.__importDefault(require("./DescribeLabelValuesRequest"));
+exports.DescribeLabelValuesRequest = DescribeLabelValuesRequest_1.default;
 //# sourceMappingURL=index.js.map

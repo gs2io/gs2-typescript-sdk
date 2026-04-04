@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InGameLogTag = exports.Insight = exports.AccessLogWithTelemetry = exports.InGameLog = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.Namespace = void 0;
+exports.InGameLogTag = exports.MetricModel = exports.Trace = exports.TimeseriesValue = exports.TimeseriesPoint = exports.TimeseriesMetadata = exports.NumericRange = exports.LogEntry = exports.Label = exports.FacetValueCount = exports.Facet = exports.AggregationConfig = exports.Dashboard = exports.FacetModel = exports.Insight = exports.AccessLogWithTelemetry = exports.InGameLog = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -41,6 +41,32 @@ var AccessLogWithTelemetry_1 = tslib_1.__importDefault(require("./AccessLogWithT
 exports.AccessLogWithTelemetry = AccessLogWithTelemetry_1.default;
 var Insight_1 = tslib_1.__importDefault(require("./Insight"));
 exports.Insight = Insight_1.default;
+var FacetModel_1 = tslib_1.__importDefault(require("./FacetModel"));
+exports.FacetModel = FacetModel_1.default;
+var Dashboard_1 = tslib_1.__importDefault(require("./Dashboard"));
+exports.Dashboard = Dashboard_1.default;
+var AggregationConfig_1 = tslib_1.__importDefault(require("./AggregationConfig"));
+exports.AggregationConfig = AggregationConfig_1.default;
+var Facet_1 = tslib_1.__importDefault(require("./Facet"));
+exports.Facet = Facet_1.default;
+var FacetValueCount_1 = tslib_1.__importDefault(require("./FacetValueCount"));
+exports.FacetValueCount = FacetValueCount_1.default;
+var Label_1 = tslib_1.__importDefault(require("./Label"));
+exports.Label = Label_1.default;
+var LogEntry_1 = tslib_1.__importDefault(require("./LogEntry"));
+exports.LogEntry = LogEntry_1.default;
+var NumericRange_1 = tslib_1.__importDefault(require("./NumericRange"));
+exports.NumericRange = NumericRange_1.default;
+var TimeseriesMetadata_1 = tslib_1.__importDefault(require("./TimeseriesMetadata"));
+exports.TimeseriesMetadata = TimeseriesMetadata_1.default;
+var TimeseriesPoint_1 = tslib_1.__importDefault(require("./TimeseriesPoint"));
+exports.TimeseriesPoint = TimeseriesPoint_1.default;
+var TimeseriesValue_1 = tslib_1.__importDefault(require("./TimeseriesValue"));
+exports.TimeseriesValue = TimeseriesValue_1.default;
+var Trace_1 = tslib_1.__importDefault(require("./Trace"));
+exports.Trace = Trace_1.default;
+var MetricModel_1 = tslib_1.__importDefault(require("./MetricModel"));
+exports.MetricModel = MetricModel_1.default;
 var InGameLogTag_1 = tslib_1.__importDefault(require("./InGameLogTag"));
 exports.InGameLogTag = InGameLogTag_1.default;
 //# sourceMappingURL=index.js.map
