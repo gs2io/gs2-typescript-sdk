@@ -8,7 +8,7 @@
   "dependencies": {
     "@types/websocket": "^1.0.5",
     "async-wait-until": "^2.0.12",
-    "axios": "1.13.5",
+    "axios": "1.15.0",
     "pako": "^2.1.0",
     "uuid": "^8.3.2",
     "websocket": "^1.0.34",
