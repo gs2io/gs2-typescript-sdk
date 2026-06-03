@@ -3,6 +3,7 @@ export default class GitHubApiKey implements IModel {
     private apiKeyId;
     private name;
     private description;
+    private apiKey;
     private encryptionKeyName;
     private createdAt;
     private updatedAt;
@@ -22,6 +23,9 @@ export default class GitHubApiKey implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getApiKey(): string | null;
+    setApiKey(apiKey: string | null): this;
+    withApiKey(apiKey: string | null): this;
     getEncryptionKeyName(): string | null;
     setEncryptionKeyName(encryptionKeyName: string | null): this;
     withEncryptionKeyName(encryptionKeyName: string | null): this;

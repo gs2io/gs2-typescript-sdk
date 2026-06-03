@@ -21,6 +21,7 @@ var GitHubApiKey = /** @class */ (function () {
         this.apiKeyId = null;
         this.name = null;
         this.description = null;
+        this.apiKey = null;
         this.encryptionKeyName = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -125,6 +126,17 @@ var GitHubApiKey = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    GitHubApiKey.prototype.getApiKey = function () {
+        return this.apiKey;
+    };
+    GitHubApiKey.prototype.setApiKey = function (apiKey) {
+        this.apiKey = apiKey;
+        return this;
+    };
+    GitHubApiKey.prototype.withApiKey = function (apiKey) {
+        this.apiKey = apiKey;
+        return this;
+    };
     GitHubApiKey.prototype.getEncryptionKeyName = function () {
         return this.encryptionKeyName;
     };
@@ -177,6 +189,7 @@ var GitHubApiKey = /** @class */ (function () {
             .withApiKeyId(data["apiKeyId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withApiKey(data["apiKey"])
             .withEncryptionKeyName(data["encryptionKeyName"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -187,6 +200,7 @@ var GitHubApiKey = /** @class */ (function () {
             "apiKeyId": this.getApiKeyId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "apiKey": this.getApiKey(),
             "encryptionKeyName": this.getEncryptionKeyName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
