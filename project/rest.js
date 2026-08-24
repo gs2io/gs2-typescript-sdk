@@ -540,6 +540,25 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             return Result.DescribeBillingsResult.fromDict(data);
         });
     };
+    Gs2ProjectRestClient.prototype.getBillings = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/billing/{year}/{month}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{year}', String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{month}', String((_d = request.getMonth()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMonth()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'service': String((_g = request.getService()) !== null && _g !== void 0 ? _g : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.GetBillingsResult.fromDict(data);
+        });
+    };
     Gs2ProjectRestClient.prototype.describeDumpProgresses = function (request) {
         var _a, _b, _c, _d;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/dump/progress')

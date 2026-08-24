@@ -32,6 +32,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     deleteBillingMethod(request: Request.DeleteBillingMethodRequest): Promise<Result.DeleteBillingMethodResult>;
     describeReceipts(request: Request.DescribeReceiptsRequest): Promise<Result.DescribeReceiptsResult>;
     describeBillings(request: Request.DescribeBillingsRequest): Promise<Result.DescribeBillingsResult>;
+    getBillings(request: Request.GetBillingsRequest): Promise<Result.GetBillingsResult>;
     describeDumpProgresses(request: Request.DescribeDumpProgressesRequest): Promise<Result.DescribeDumpProgressesResult>;
     getDumpProgress(request: Request.GetDumpProgressRequest): Promise<Result.GetDumpProgressResult>;
     waitDumpUserData(request: Request.WaitDumpUserDataRequest): Promise<Result.WaitDumpUserDataResult>;
