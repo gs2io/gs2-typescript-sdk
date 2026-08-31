@@ -20,6 +20,7 @@ var LastGuildMasterActivity = /** @class */ (function () {
     function LastGuildMasterActivity() {
         this.userId = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     LastGuildMasterActivity.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -129,18 +130,31 @@ var LastGuildMasterActivity = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    LastGuildMasterActivity.prototype.getRevision = function () {
+        return this.revision;
+    };
+    LastGuildMasterActivity.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    LastGuildMasterActivity.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     LastGuildMasterActivity.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new LastGuildMasterActivity()
             .withUserId(data["userId"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     LastGuildMasterActivity.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return LastGuildMasterActivity;

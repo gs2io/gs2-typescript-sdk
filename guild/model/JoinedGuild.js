@@ -23,6 +23,7 @@ var JoinedGuild = /** @class */ (function () {
         this.guildName = null;
         this.userId = null;
         this.createdAt = null;
+        this.revision = null;
     }
     JoinedGuild.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -187,6 +188,17 @@ var JoinedGuild = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    JoinedGuild.prototype.getRevision = function () {
+        return this.revision;
+    };
+    JoinedGuild.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    JoinedGuild.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     JoinedGuild.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var JoinedGuild = /** @class */ (function () {
             .withGuildModelName(data["guildModelName"])
             .withGuildName(data["guildName"])
             .withUserId(data["userId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     JoinedGuild.prototype.toDict = function () {
         return {
@@ -205,6 +218,7 @@ var JoinedGuild = /** @class */ (function () {
             "guildName": this.getGuildName(),
             "userId": this.getUserId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return JoinedGuild;
