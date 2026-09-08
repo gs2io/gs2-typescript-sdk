@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.acquireScript = null;
         this.overflowScript = null;
         this.consumeScript = null;
@@ -77,15 +78,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getAcquireScript = function () {
@@ -181,6 +196,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Inventory.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Inventory.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["acquireScript"]))
             .withOverflowScript(Gs2Inventory.ScriptSetting.fromDict(data["overflowScript"]))
             .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
@@ -191,19 +207,20 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Inventory.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "acquireScript": (_b = this.getAcquireScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "overflowScript": (_c = this.getOverflowScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "consumeScript": (_d = this.getConsumeScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "simpleItemAcquireScript": (_e = this.getSimpleItemAcquireScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "simpleItemConsumeScript": (_f = this.getSimpleItemConsumeScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "bigItemAcquireScript": (_g = this.getBigItemAcquireScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "bigItemConsumeScript": (_h = this.getBigItemConsumeScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "acquireScript": (_c = this.getAcquireScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "overflowScript": (_d = this.getOverflowScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "consumeScript": (_e = this.getConsumeScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "simpleItemAcquireScript": (_f = this.getSimpleItemAcquireScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "simpleItemConsumeScript": (_g = this.getSimpleItemConsumeScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "bigItemAcquireScript": (_h = this.getBigItemAcquireScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "bigItemConsumeScript": (_j = this.getBigItemConsumeScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "logSetting": (_k = this.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict(),
         };
     };
     return CreateNamespaceRequest;

@@ -20,4 +20,5 @@ import LogSetting from "./LogSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Complete, NotificationSetting, CounterModelMaster, CounterScopeModel, MissionGroupModelMaster, Namespace, Counter, CurrentMissionMaster, CounterModel, MissionGroupModel, MissionTaskModel, MissionTaskModelMaster, ScopedValue, TargetCounterModel, AcquireAction, ConsumeAction, VerifyAction, Config, LogSetting, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Complete, NotificationSetting, CounterModelMaster, CounterScopeModel, MissionGroupModelMaster, Namespace, Counter, CurrentMissionMaster, CounterModel, MissionGroupModel, MissionTaskModel, MissionTaskModelMaster, ScopedValue, TargetCounterModel, AcquireAction, ConsumeAction, VerifyAction, Config, LogSetting, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, TransactionSettingV2, };

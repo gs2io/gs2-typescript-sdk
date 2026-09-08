@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private lotteryTriggerScriptId;
     private logSetting;
     private queueNamespaceId;
@@ -22,9 +23,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Lottery.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Lottery.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Lottery.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Lottery.TransactionSettingV2 | null): this;
     getLotteryTriggerScriptId(): string | null;
     setLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
     withLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;

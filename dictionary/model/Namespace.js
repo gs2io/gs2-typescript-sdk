@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.entryScript = null;
         this.duplicateEntryScript = null;
         this.logSetting = null;
@@ -112,15 +113,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getEntryScript = function () {
@@ -198,6 +213,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Dictionary.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Dictionary.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
             .withDuplicateEntryScript(data["duplicateEntryScript"])
             .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]))
@@ -206,15 +222,16 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "entryScript": (_b = this.getEntryScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "entryScript": (_c = this.getEntryScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "duplicateEntryScript": this.getDuplicateEntryScript(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

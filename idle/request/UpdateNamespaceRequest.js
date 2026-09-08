@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.receiveScript = null;
         this.overrideAcquireActionsScriptId = null;
         this.logSetting = null;
@@ -72,15 +73,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getReceiveScript = function () {
@@ -121,19 +136,21 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Idle.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Idle.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withReceiveScript(Gs2Idle.ScriptSetting.fromDict(data["receiveScript"]))
             .withOverrideAcquireActionsScriptId(data["overrideAcquireActionsScriptId"])
             .withLogSetting(Gs2Idle.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "receiveScript": (_b = this.getReceiveScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "receiveScript": (_c = this.getReceiveScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "overrideAcquireActionsScriptId": this.getOverrideAcquireActionsScriptId(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
         };
     };
     return UpdateNamespaceRequest;

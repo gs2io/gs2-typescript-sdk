@@ -5,6 +5,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private updateMoldScript;
     private updateFormScript;
     private updatePropertyFormScript;
@@ -26,9 +27,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Formation.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Formation.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Formation.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Formation.TransactionSettingV2 | null): this;
     getUpdateMoldScript(): Gs2Formation.ScriptSetting | null;
     setUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting | null): this;
     withUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting | null): this;

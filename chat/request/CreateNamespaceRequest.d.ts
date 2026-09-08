@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private allowCreateRoom;
     private messageLifeTimeDays;
     private postMessageScript;
@@ -27,9 +28,15 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Chat.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Chat.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Chat.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Chat.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Chat.TransactionSettingV2 | null): this;
     getAllowCreateRoom(): boolean | null;
     setAllowCreateRoom(allowCreateRoom: boolean | null): this;
     withAllowCreateRoom(allowCreateRoom: boolean | null): this;

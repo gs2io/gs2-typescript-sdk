@@ -44,7 +44,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13;
         var url = (((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region);
@@ -57,21 +57,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'followScript': (_h = (_g = request.getFollowScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'unfollowScript': (_k = (_j = request.getUnfollowScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'sendRequestScript': (_m = (_l = request.getSendRequestScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'cancelRequestScript': (_p = (_o = request.getCancelRequestScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'acceptRequestScript': (_r = (_q = request.getAcceptRequestScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'rejectRequestScript': (_t = (_s = request.getRejectRequestScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'deleteFriendScript': (_v = (_u = request.getDeleteFriendScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'updateProfileScript': (_x = (_w = request.getUpdateProfileScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
-            'followNotification': (_z = (_y = request.getFollowNotification()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
-            'receiveRequestNotification': (_1 = (_0 = request.getReceiveRequestNotification()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
-            'cancelRequestNotification': (_3 = (_2 = request.getCancelRequestNotification()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
-            'acceptRequestNotification': (_5 = (_4 = request.getAcceptRequestNotification()) === null || _4 === void 0 ? void 0 : _4.toDict()) !== null && _5 !== void 0 ? _5 : null,
-            'rejectRequestNotification': (_7 = (_6 = request.getRejectRequestNotification()) === null || _6 === void 0 ? void 0 : _6.toDict()) !== null && _7 !== void 0 ? _7 : null,
-            'deleteFriendNotification': (_9 = (_8 = request.getDeleteFriendNotification()) === null || _8 === void 0 ? void 0 : _8.toDict()) !== null && _9 !== void 0 ? _9 : null,
-            'logSetting': (_11 = (_10 = request.getLogSetting()) === null || _10 === void 0 ? void 0 : _10.toDict()) !== null && _11 !== void 0 ? _11 : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'followScript': (_k = (_j = request.getFollowScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'unfollowScript': (_m = (_l = request.getUnfollowScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'sendRequestScript': (_p = (_o = request.getSendRequestScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'cancelRequestScript': (_r = (_q = request.getCancelRequestScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'acceptRequestScript': (_t = (_s = request.getAcceptRequestScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'rejectRequestScript': (_v = (_u = request.getRejectRequestScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'deleteFriendScript': (_x = (_w = request.getDeleteFriendScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'updateProfileScript': (_z = (_y = request.getUpdateProfileScript()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
+            'followNotification': (_1 = (_0 = request.getFollowNotification()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
+            'receiveRequestNotification': (_3 = (_2 = request.getReceiveRequestNotification()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
+            'cancelRequestNotification': (_5 = (_4 = request.getCancelRequestNotification()) === null || _4 === void 0 ? void 0 : _4.toDict()) !== null && _5 !== void 0 ? _5 : null,
+            'acceptRequestNotification': (_7 = (_6 = request.getAcceptRequestNotification()) === null || _6 === void 0 ? void 0 : _6.toDict()) !== null && _7 !== void 0 ? _7 : null,
+            'rejectRequestNotification': (_9 = (_8 = request.getRejectRequestNotification()) === null || _8 === void 0 ? void 0 : _8.toDict()) !== null && _9 !== void 0 ? _9 : null,
+            'deleteFriendNotification': (_11 = (_10 = request.getDeleteFriendNotification()) === null || _10 === void 0 ? void 0 : _10.toDict()) !== null && _11 !== void 0 ? _11 : null,
+            'logSetting': (_13 = (_12 = request.getLogSetting()) === null || _12 === void 0 ? void 0 : _12.toDict()) !== null && _13 !== void 0 ? _13 : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -112,7 +113,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14;
         var url = (((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -125,21 +126,22 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'followScript': (_j = (_h = request.getFollowScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'unfollowScript': (_l = (_k = request.getUnfollowScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'sendRequestScript': (_o = (_m = request.getSendRequestScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'cancelRequestScript': (_q = (_p = request.getCancelRequestScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'acceptRequestScript': (_s = (_r = request.getAcceptRequestScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'rejectRequestScript': (_u = (_t = request.getRejectRequestScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'deleteFriendScript': (_w = (_v = request.getDeleteFriendScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'updateProfileScript': (_y = (_x = request.getUpdateProfileScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'followNotification': (_0 = (_z = request.getFollowNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
-            'receiveRequestNotification': (_2 = (_1 = request.getReceiveRequestNotification()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
-            'cancelRequestNotification': (_4 = (_3 = request.getCancelRequestNotification()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
-            'acceptRequestNotification': (_6 = (_5 = request.getAcceptRequestNotification()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
-            'rejectRequestNotification': (_8 = (_7 = request.getRejectRequestNotification()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
-            'deleteFriendNotification': (_10 = (_9 = request.getDeleteFriendNotification()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
-            'logSetting': (_12 = (_11 = request.getLogSetting()) === null || _11 === void 0 ? void 0 : _11.toDict()) !== null && _12 !== void 0 ? _12 : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'followScript': (_l = (_k = request.getFollowScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'unfollowScript': (_o = (_m = request.getUnfollowScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'sendRequestScript': (_q = (_p = request.getSendRequestScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'cancelRequestScript': (_s = (_r = request.getCancelRequestScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'acceptRequestScript': (_u = (_t = request.getAcceptRequestScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'rejectRequestScript': (_w = (_v = request.getRejectRequestScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'deleteFriendScript': (_y = (_x = request.getDeleteFriendScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'updateProfileScript': (_0 = (_z = request.getUpdateProfileScript()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'followNotification': (_2 = (_1 = request.getFollowNotification()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
+            'receiveRequestNotification': (_4 = (_3 = request.getReceiveRequestNotification()) === null || _3 === void 0 ? void 0 : _3.toDict()) !== null && _4 !== void 0 ? _4 : null,
+            'cancelRequestNotification': (_6 = (_5 = request.getCancelRequestNotification()) === null || _5 === void 0 ? void 0 : _5.toDict()) !== null && _6 !== void 0 ? _6 : null,
+            'acceptRequestNotification': (_8 = (_7 = request.getAcceptRequestNotification()) === null || _7 === void 0 ? void 0 : _7.toDict()) !== null && _8 !== void 0 ? _8 : null,
+            'rejectRequestNotification': (_10 = (_9 = request.getRejectRequestNotification()) === null || _9 === void 0 ? void 0 : _9.toDict()) !== null && _10 !== void 0 ? _10 : null,
+            'deleteFriendNotification': (_12 = (_11 = request.getDeleteFriendNotification()) === null || _11 === void 0 ? void 0 : _11.toDict()) !== null && _12 !== void 0 ? _12 : null,
+            'logSetting': (_14 = (_13 = request.getLogSetting()) === null || _13 === void 0 ? void 0 : _13.toDict()) !== null && _14 !== void 0 ? _14 : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

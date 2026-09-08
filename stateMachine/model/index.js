@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScriptSetting = exports.LogSetting = exports.RandomUsed = exports.RandomStatus = exports.EmitEvent = exports.ChangeStateEvent = exports.Event = exports.TransactionSetting = exports.Variable = exports.StackEntry = exports.Status = exports.StateMachineMaster = exports.Namespace = void 0;
+exports.ScriptSetting = exports.LogSetting = exports.RandomUsed = exports.RandomStatus = exports.EmitEvent = exports.ChangeStateEvent = exports.Event = exports.TransactionSettingV2 = exports.TransactionSetting = exports.Variable = exports.StackEntry = exports.Status = exports.StateMachineMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var Variable_1 = tslib_1.__importDefault(require("./Variable"));
 exports.Variable = Variable_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
+var TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 var Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
 var ChangeStateEvent_1 = tslib_1.__importDefault(require("./ChangeStateEvent"));

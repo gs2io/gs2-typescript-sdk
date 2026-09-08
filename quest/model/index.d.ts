@@ -16,4 +16,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, QuestGroupModelMaster, QuestModelMaster, CurrentQuestMaster, Contents, Reward, Progress, CompletedQuestList, QuestGroupModel, QuestModel, AcquireAction, ConsumeAction, VerifyAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, QuestGroupModelMaster, QuestModelMaster, CurrentQuestMaster, Contents, Reward, Progress, CompletedQuestList, QuestGroupModel, QuestModel, AcquireAction, ConsumeAction, VerifyAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

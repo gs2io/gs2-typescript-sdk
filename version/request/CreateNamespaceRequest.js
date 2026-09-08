@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.assumeUserId = null;
         this.acceptVersionScript = null;
         this.checkVersionTriggerScriptId = null;
@@ -73,15 +74,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getAssumeUserId = function () {
@@ -133,21 +148,23 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Version.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Version.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withAssumeUserId(data["assumeUserId"])
             .withAcceptVersionScript(Gs2Version.ScriptSetting.fromDict(data["acceptVersionScript"]))
             .withCheckVersionTriggerScriptId(data["checkVersionTriggerScriptId"])
             .withLogSetting(Gs2Version.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "assumeUserId": this.getAssumeUserId(),
-            "acceptVersionScript": (_b = this.getAcceptVersionScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "acceptVersionScript": (_c = this.getAcceptVersionScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "checkVersionTriggerScriptId": this.getCheckVersionTriggerScriptId(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
         };
     };
     return CreateNamespaceRequest;

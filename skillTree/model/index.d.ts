@@ -10,5 +10,6 @@ import AcquireAction from "./AcquireAction";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import LogSetting from "./LogSetting";
-export { Namespace, NodeModel, NodeModelMaster, Status, CurrentTreeMaster, Config, ConsumeAction, VerifyAction, AcquireAction, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, LogSetting, };
+export { Namespace, NodeModel, NodeModelMaster, Status, CurrentTreeMaster, Config, ConsumeAction, VerifyAction, AcquireAction, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, TransactionSettingV2, LogSetting, };

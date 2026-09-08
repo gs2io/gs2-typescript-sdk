@@ -11,4 +11,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, ExperienceModelMaster, ExperienceModel, ThresholdMaster, Threshold, AcquireActionRate, CurrentExperienceMaster, Status, AcquireAction, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, ExperienceModelMaster, ExperienceModel, ThresholdMaster, Threshold, AcquireActionRate, CurrentExperienceMaster, Status, AcquireAction, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

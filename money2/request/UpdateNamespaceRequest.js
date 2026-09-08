@@ -25,6 +25,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.currencyUsagePriority = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.platformSetting = null;
         this.depositBalanceScript = null;
         this.withdrawBalanceScript = null;
@@ -91,15 +92,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getPlatformSetting = function () {
@@ -218,6 +233,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Money2.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
             .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
             .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
@@ -230,22 +246,23 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         return {
             "namespaceName": this.getNamespaceName(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "platformSetting": (_b = this.getPlatformSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "depositBalanceScript": (_c = this.getDepositBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "withdrawBalanceScript": (_d = this.getWithdrawBalanceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "verifyReceiptScript": (_e = this.getVerifyReceiptScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "platformSetting": (_c = this.getPlatformSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "depositBalanceScript": (_d = this.getDepositBalanceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "withdrawBalanceScript": (_e = this.getWithdrawBalanceScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "verifyReceiptScript": (_f = this.getVerifyReceiptScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "subscribeScript": this.getSubscribeScript(),
             "renewScript": this.getRenewScript(),
             "unsubscribeScript": this.getUnsubscribeScript(),
-            "takeOverScript": (_f = this.getTakeOverScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "changeSubscriptionStatusNotification": (_g = this.getChangeSubscriptionStatusNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "takeOverScript": (_g = this.getTakeOverScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "changeSubscriptionStatusNotification": (_h = this.getChangeSubscriptionStatusNotification()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
         };
     };
     return UpdateNamespaceRequest;

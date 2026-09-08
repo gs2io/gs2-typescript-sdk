@@ -18,4 +18,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, FormModel, FormModelMaster, MoldModel, MoldModelMaster, PropertyFormModel, PropertyFormModelMaster, CurrentFormMaster, Mold, Form, PropertyForm, Slot, SlotModel, SlotWithSignature, AcquireAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, FormModel, FormModelMaster, MoldModel, MoldModelMaster, PropertyFormModel, PropertyFormModelMaster, CurrentFormMaster, Mold, Form, PropertyForm, Slot, SlotModel, SlotWithSignature, AcquireAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

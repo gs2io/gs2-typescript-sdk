@@ -44,7 +44,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (((_a = Gs2MoneyRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
@@ -57,16 +57,17 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'priority': (_g = request.getPriority()) !== null && _g !== void 0 ? _g : null,
-            'shareFree': (_h = request.getShareFree()) !== null && _h !== void 0 ? _h : null,
-            'currency': (_j = request.getCurrency()) !== null && _j !== void 0 ? _j : null,
-            'appleKey': (_k = request.getAppleKey()) !== null && _k !== void 0 ? _k : null,
-            'googleKey': (_l = request.getGoogleKey()) !== null && _l !== void 0 ? _l : null,
-            'enableFakeReceipt': (_m = request.getEnableFakeReceipt()) !== null && _m !== void 0 ? _m : null,
-            'createWalletScript': (_p = (_o = request.getCreateWalletScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'depositScript': (_r = (_q = request.getDepositScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'withdrawScript': (_t = (_s = request.getWithdrawScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'priority': (_j = request.getPriority()) !== null && _j !== void 0 ? _j : null,
+            'shareFree': (_k = request.getShareFree()) !== null && _k !== void 0 ? _k : null,
+            'currency': (_l = request.getCurrency()) !== null && _l !== void 0 ? _l : null,
+            'appleKey': (_m = request.getAppleKey()) !== null && _m !== void 0 ? _m : null,
+            'googleKey': (_o = request.getGoogleKey()) !== null && _o !== void 0 ? _o : null,
+            'enableFakeReceipt': (_p = request.getEnableFakeReceipt()) !== null && _p !== void 0 ? _p : null,
+            'createWalletScript': (_r = (_q = request.getCreateWalletScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'depositScript': (_t = (_s = request.getDepositScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'withdrawScript': (_v = (_u = request.getWithdrawScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -107,7 +108,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (((_a = Gs2MoneyRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
@@ -120,14 +121,15 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'priority': (_h = request.getPriority()) !== null && _h !== void 0 ? _h : null,
-            'appleKey': (_j = request.getAppleKey()) !== null && _j !== void 0 ? _j : null,
-            'googleKey': (_k = request.getGoogleKey()) !== null && _k !== void 0 ? _k : null,
-            'enableFakeReceipt': (_l = request.getEnableFakeReceipt()) !== null && _l !== void 0 ? _l : null,
-            'createWalletScript': (_o = (_m = request.getCreateWalletScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'depositScript': (_q = (_p = request.getDepositScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'withdrawScript': (_s = (_r = request.getWithdrawScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'priority': (_k = request.getPriority()) !== null && _k !== void 0 ? _k : null,
+            'appleKey': (_l = request.getAppleKey()) !== null && _l !== void 0 ? _l : null,
+            'googleKey': (_m = request.getGoogleKey()) !== null && _m !== void 0 ? _m : null,
+            'enableFakeReceipt': (_o = request.getEnableFakeReceipt()) !== null && _o !== void 0 ? _o : null,
+            'createWalletScript': (_q = (_p = request.getCreateWalletScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'depositScript': (_s = (_r = request.getDepositScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'withdrawScript': (_u = (_t = request.getWithdrawScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

@@ -44,7 +44,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
@@ -57,14 +57,15 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'acquireScript': (_h = (_g = request.getAcquireScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'overflowScript': (_k = (_j = request.getOverflowScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'consumeScript': (_m = (_l = request.getConsumeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'simpleItemAcquireScript': (_p = (_o = request.getSimpleItemAcquireScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'simpleItemConsumeScript': (_r = (_q = request.getSimpleItemConsumeScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'bigItemAcquireScript': (_t = (_s = request.getBigItemAcquireScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'bigItemConsumeScript': (_v = (_u = request.getBigItemConsumeScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'acquireScript': (_k = (_j = request.getAcquireScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'overflowScript': (_m = (_l = request.getOverflowScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'consumeScript': (_p = (_o = request.getConsumeScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'simpleItemAcquireScript': (_r = (_q = request.getSimpleItemAcquireScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'simpleItemConsumeScript': (_t = (_s = request.getSimpleItemConsumeScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'bigItemAcquireScript': (_v = (_u = request.getBigItemAcquireScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'bigItemConsumeScript': (_x = (_w = request.getBigItemConsumeScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'logSetting': (_z = (_y = request.getLogSetting()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -105,7 +106,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
         var url = (((_a = Gs2InventoryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -118,14 +119,15 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'acquireScript': (_j = (_h = request.getAcquireScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'overflowScript': (_l = (_k = request.getOverflowScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'consumeScript': (_o = (_m = request.getConsumeScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'simpleItemAcquireScript': (_q = (_p = request.getSimpleItemAcquireScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'simpleItemConsumeScript': (_s = (_r = request.getSimpleItemConsumeScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'bigItemAcquireScript': (_u = (_t = request.getBigItemAcquireScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'bigItemConsumeScript': (_w = (_v = request.getBigItemConsumeScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'acquireScript': (_l = (_k = request.getAcquireScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'overflowScript': (_o = (_m = request.getOverflowScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'consumeScript': (_q = (_p = request.getConsumeScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'simpleItemAcquireScript': (_s = (_r = request.getSimpleItemAcquireScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'simpleItemConsumeScript': (_u = (_t = request.getSimpleItemConsumeScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'bigItemAcquireScript': (_w = (_v = request.getBigItemAcquireScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'bigItemConsumeScript': (_y = (_x = request.getBigItemConsumeScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

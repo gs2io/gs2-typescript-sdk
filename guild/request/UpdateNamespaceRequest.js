@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.changeNotification = null;
         this.joinNotification = null;
         this.leaveNotification = null;
@@ -84,15 +85,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getChangeNotification = function () {
@@ -265,6 +280,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Guild.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Guild.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
             .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -282,26 +298,27 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "changeNotification": (_b = this.getChangeNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "joinNotification": (_c = this.getJoinNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "leaveNotification": (_d = this.getLeaveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "changeMemberNotification": (_e = this.getChangeMemberNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "changeNotification": (_c = this.getChangeNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "joinNotification": (_d = this.getJoinNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "leaveNotification": (_e = this.getLeaveNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeMemberNotification": (_f = this.getChangeMemberNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "changeMemberNotificationIgnoreChangeMetadata": this.getChangeMemberNotificationIgnoreChangeMetadata(),
-            "receiveRequestNotification": (_f = this.getReceiveRequestNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "removeRequestNotification": (_g = this.getRemoveRequestNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "createGuildScript": (_h = this.getCreateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "updateGuildScript": (_j = this.getUpdateGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
-            "joinGuildScript": (_k = this.getJoinGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "receiveJoinRequestScript": (_l = this.getReceiveJoinRequestScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "leaveGuildScript": (_m = this.getLeaveGuildScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
-            "changeRoleScript": (_o = this.getChangeRoleScript()) === null || _o === void 0 ? void 0 : _o.toDict(),
-            "deleteGuildScript": (_p = this.getDeleteGuildScript()) === null || _p === void 0 ? void 0 : _p.toDict(),
-            "logSetting": (_q = this.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict(),
+            "receiveRequestNotification": (_g = this.getReceiveRequestNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "removeRequestNotification": (_h = this.getRemoveRequestNotification()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "createGuildScript": (_j = this.getCreateGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "updateGuildScript": (_k = this.getUpdateGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "joinGuildScript": (_l = this.getJoinGuildScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "receiveJoinRequestScript": (_m = this.getReceiveJoinRequestScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "leaveGuildScript": (_o = this.getLeaveGuildScript()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "changeRoleScript": (_p = this.getChangeRoleScript()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "deleteGuildScript": (_q = this.getDeleteGuildScript()) === null || _q === void 0 ? void 0 : _q.toDict(),
+            "logSetting": (_r = this.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict(),
         };
     };
     return UpdateNamespaceRequest;

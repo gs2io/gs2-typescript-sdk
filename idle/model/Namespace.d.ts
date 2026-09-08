@@ -5,6 +5,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private receiveScript;
     private overrideAcquireActionsScriptId;
     private logSetting;
@@ -25,9 +26,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Idle.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Idle.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Idle.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Idle.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Idle.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Idle.TransactionSettingV2 | null): this;
     getReceiveScript(): Gs2Idle.ScriptSetting | null;
     setReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;
     withReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;

@@ -11,4 +11,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, GradeModelMaster, GradeModel, Status, DefaultGradeModel, GradeEntryModel, AcquireActionRate, CurrentGradeMaster, AcquireAction, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, GradeModelMaster, GradeModel, Status, DefaultGradeModel, GradeEntryModel, AcquireActionRate, CurrentGradeMaster, AcquireAction, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

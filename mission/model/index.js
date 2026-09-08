@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -61,4 +61,6 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
+var TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 //# sourceMappingURL=index.js.map

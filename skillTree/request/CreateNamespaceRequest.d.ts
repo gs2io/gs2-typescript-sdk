@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private releaseScript;
     private restrainScript;
     private logSetting;
@@ -21,9 +22,15 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2SkillTree.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2SkillTree.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2SkillTree.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2SkillTree.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2SkillTree.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2SkillTree.TransactionSettingV2 | null): this;
     getReleaseScript(): Gs2SkillTree.ScriptSetting | null;
     setReleaseScript(releaseScript: Gs2SkillTree.ScriptSetting | null): this;
     withReleaseScript(releaseScript: Gs2SkillTree.ScriptSetting | null): this;

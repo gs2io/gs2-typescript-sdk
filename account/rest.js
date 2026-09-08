@@ -44,7 +44,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region);
@@ -57,15 +57,16 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'changePasswordIfTakeOver': (_g = request.getChangePasswordIfTakeOver()) !== null && _g !== void 0 ? _g : null,
-            'differentUserIdForLoginAndDataRetention': (_h = request.getDifferentUserIdForLoginAndDataRetention()) !== null && _h !== void 0 ? _h : null,
-            'createAccountScript': (_k = (_j = request.getCreateAccountScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'authenticationScript': (_m = (_l = request.getAuthenticationScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'createTakeOverScript': (_p = (_o = request.getCreateTakeOverScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'doTakeOverScript': (_r = (_q = request.getDoTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'banScript': (_t = (_s = request.getBanScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'unBanScript': (_v = (_u = request.getUnBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'changePasswordIfTakeOver': (_j = request.getChangePasswordIfTakeOver()) !== null && _j !== void 0 ? _j : null,
+            'differentUserIdForLoginAndDataRetention': (_k = request.getDifferentUserIdForLoginAndDataRetention()) !== null && _k !== void 0 ? _k : null,
+            'createAccountScript': (_m = (_l = request.getCreateAccountScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'authenticationScript': (_p = (_o = request.getAuthenticationScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'createTakeOverScript': (_r = (_q = request.getCreateTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'doTakeOverScript': (_t = (_s = request.getDoTakeOverScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'banScript': (_v = (_u = request.getBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'unBanScript': (_x = (_w = request.getUnBanScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'logSetting': (_z = (_y = request.getLogSetting()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -106,7 +107,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -119,14 +120,15 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'changePasswordIfTakeOver': (_h = request.getChangePasswordIfTakeOver()) !== null && _h !== void 0 ? _h : null,
-            'createAccountScript': (_k = (_j = request.getCreateAccountScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'authenticationScript': (_m = (_l = request.getAuthenticationScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'createTakeOverScript': (_p = (_o = request.getCreateTakeOverScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'doTakeOverScript': (_r = (_q = request.getDoTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'banScript': (_t = (_s = request.getBanScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'unBanScript': (_v = (_u = request.getUnBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'changePasswordIfTakeOver': (_k = request.getChangePasswordIfTakeOver()) !== null && _k !== void 0 ? _k : null,
+            'createAccountScript': (_m = (_l = request.getCreateAccountScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'authenticationScript': (_p = (_o = request.getAuthenticationScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'createTakeOverScript': (_r = (_q = request.getCreateTakeOverScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'doTakeOverScript': (_t = (_s = request.getDoTakeOverScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'banScript': (_v = (_u = request.getBanScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'unBanScript': (_x = (_w = request.getUnBanScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'logSetting': (_z = (_y = request.getLogSetting()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

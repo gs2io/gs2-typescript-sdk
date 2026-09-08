@@ -4,4 +4,5 @@ import FirebaseToken from "./FirebaseToken";
 import SendNotificationEntry from "./SendNotificationEntry";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, WebSocketSession, FirebaseToken, SendNotificationEntry, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, WebSocketSession, FirebaseToken, SendNotificationEntry, LogSetting, TransactionSetting, TransactionSettingV2, };

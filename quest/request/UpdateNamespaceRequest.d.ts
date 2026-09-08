@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private startQuestScript;
     private completeQuestScript;
     private failedQuestScript;
@@ -24,9 +25,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Quest.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Quest.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Quest.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Quest.TransactionSettingV2 | null): this;
     getStartQuestScript(): Gs2Quest.ScriptSetting | null;
     setStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;
     withStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;

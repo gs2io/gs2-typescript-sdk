@@ -44,7 +44,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (((_a = Gs2ExchangeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
@@ -59,12 +59,13 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'enableAwaitExchange': (_e = request.getEnableAwaitExchange()) !== null && _e !== void 0 ? _e : null,
             'enableDirectExchange': (_f = request.getEnableDirectExchange()) !== null && _f !== void 0 ? _f : null,
             'transactionSetting': (_h = (_g = request.getTransactionSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'exchangeScript': (_k = (_j = request.getExchangeScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'incrementalExchangeScript': (_m = (_l = request.getIncrementalExchangeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'acquireAwaitScript': (_p = (_o = request.getAcquireAwaitScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'queueNamespaceId': (_s = request.getQueueNamespaceId()) !== null && _s !== void 0 ? _s : null,
-            'keyId': (_t = request.getKeyId()) !== null && _t !== void 0 ? _t : null,
+            'transactionSettingV2': (_k = (_j = request.getTransactionSettingV2()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'exchangeScript': (_m = (_l = request.getExchangeScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'incrementalExchangeScript': (_p = (_o = request.getIncrementalExchangeScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'acquireAwaitScript': (_r = (_q = request.getAcquireAwaitScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'queueNamespaceId': (_u = request.getQueueNamespaceId()) !== null && _u !== void 0 ? _u : null,
+            'keyId': (_v = request.getKeyId()) !== null && _v !== void 0 ? _v : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -105,7 +106,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (((_a = Gs2ExchangeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -120,12 +121,13 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'enableAwaitExchange': (_f = request.getEnableAwaitExchange()) !== null && _f !== void 0 ? _f : null,
             'enableDirectExchange': (_g = request.getEnableDirectExchange()) !== null && _g !== void 0 ? _g : null,
             'transactionSetting': (_j = (_h = request.getTransactionSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'exchangeScript': (_l = (_k = request.getExchangeScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'incrementalExchangeScript': (_o = (_m = request.getIncrementalExchangeScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'acquireAwaitScript': (_q = (_p = request.getAcquireAwaitScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'queueNamespaceId': (_t = request.getQueueNamespaceId()) !== null && _t !== void 0 ? _t : null,
-            'keyId': (_u = request.getKeyId()) !== null && _u !== void 0 ? _u : null,
+            'transactionSettingV2': (_l = (_k = request.getTransactionSettingV2()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'exchangeScript': (_o = (_m = request.getExchangeScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'incrementalExchangeScript': (_q = (_p = request.getIncrementalExchangeScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'acquireAwaitScript': (_s = (_r = request.getAcquireAwaitScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'queueNamespaceId': (_v = request.getQueueNamespaceId()) !== null && _v !== void 0 ? _v : null,
+            'keyId': (_w = request.getKeyId()) !== null && _w !== void 0 ? _w : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

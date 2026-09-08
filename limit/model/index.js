@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LimitModel = exports.TransactionSetting = exports.ScriptSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentLimitMaster = exports.LimitModelMaster = exports.Counter = exports.Namespace = void 0;
+exports.LimitModel = exports.TransactionSettingV2 = exports.TransactionSetting = exports.ScriptSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentLimitMaster = exports.LimitModelMaster = exports.Counter = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
+var TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 var LimitModel_1 = tslib_1.__importDefault(require("./LimitModel"));
 exports.LimitModel = LimitModel_1.default;
 //# sourceMappingURL=index.js.map

@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.releaseScript = null;
         this.restrainScript = null;
         this.logSetting = null;
@@ -72,15 +73,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getReleaseScript = function () {
@@ -121,19 +136,21 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2SkillTree.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2SkillTree.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withReleaseScript(Gs2SkillTree.ScriptSetting.fromDict(data["releaseScript"]))
             .withRestrainScript(Gs2SkillTree.ScriptSetting.fromDict(data["restrainScript"]))
             .withLogSetting(Gs2SkillTree.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "releaseScript": (_b = this.getReleaseScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "restrainScript": (_c = this.getRestrainScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "releaseScript": (_c = this.getReleaseScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "restrainScript": (_d = this.getRestrainScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return CreateNamespaceRequest;

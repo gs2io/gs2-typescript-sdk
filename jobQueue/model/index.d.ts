@@ -4,6 +4,7 @@ import JobResult from "./JobResult";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import JobEntry from "./JobEntry";
 import JobResultBody from "./JobResultBody";
-export { Namespace, Job, JobResult, NotificationSetting, LogSetting, TransactionSetting, JobEntry, JobResultBody, };
+export { Namespace, Job, JobResult, NotificationSetting, LogSetting, TransactionSetting, TransactionSettingV2, JobEntry, JobResultBody, };

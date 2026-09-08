@@ -12,4 +12,5 @@ import NotificationSetting from "./NotificationSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, Message, CurrentMessageMaster, GlobalMessageMaster, GlobalMessage, Received, TimeSpan, AcquireAction, Config, ScriptSetting, NotificationSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, Message, CurrentMessageMaster, GlobalMessageMaster, GlobalMessage, Received, TimeSpan, AcquireAction, Config, ScriptSetting, NotificationSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

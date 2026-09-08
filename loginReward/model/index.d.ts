@@ -11,5 +11,6 @@ import Config from "./Config";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "./ScriptSetting";
-export { Namespace, BonusModelMaster, CurrentBonusMaster, BonusModel, Reward, ReceiveStatus, ConsumeAction, AcquireAction, VerifyAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, ScriptSetting, };
+export { Namespace, BonusModelMaster, CurrentBonusMaster, BonusModel, Reward, ReceiveStatus, ConsumeAction, AcquireAction, VerifyAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, ScriptSetting, };

@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private missionCompleteScript;
     private counterIncrementScript;
     private receiveRewardsScript;
@@ -25,9 +26,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Mission.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Mission.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Mission.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Mission.TransactionSettingV2 | null): this;
     getMissionCompleteScript(): Gs2Mission.ScriptSetting | null;
     setMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting | null): this;
     withMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting | null): this;

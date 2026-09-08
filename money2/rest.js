@@ -44,7 +44,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
         var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region);
@@ -58,17 +58,18 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'currencyUsagePriority': (_d = request.getCurrencyUsagePriority()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'sharedFreeCurrency': (_h = request.getSharedFreeCurrency()) !== null && _h !== void 0 ? _h : null,
-            'platformSetting': (_k = (_j = request.getPlatformSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'depositBalanceScript': (_m = (_l = request.getDepositBalanceScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'withdrawBalanceScript': (_p = (_o = request.getWithdrawBalanceScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'verifyReceiptScript': (_r = (_q = request.getVerifyReceiptScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'subscribeScript': (_s = request.getSubscribeScript()) !== null && _s !== void 0 ? _s : null,
-            'renewScript': (_t = request.getRenewScript()) !== null && _t !== void 0 ? _t : null,
-            'unsubscribeScript': (_u = request.getUnsubscribeScript()) !== null && _u !== void 0 ? _u : null,
-            'takeOverScript': (_w = (_v = request.getTakeOverScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'changeSubscriptionStatusNotification': (_y = (_x = request.getChangeSubscriptionStatusNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'sharedFreeCurrency': (_k = request.getSharedFreeCurrency()) !== null && _k !== void 0 ? _k : null,
+            'platformSetting': (_m = (_l = request.getPlatformSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'depositBalanceScript': (_p = (_o = request.getDepositBalanceScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'withdrawBalanceScript': (_r = (_q = request.getWithdrawBalanceScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'verifyReceiptScript': (_t = (_s = request.getVerifyReceiptScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'subscribeScript': (_u = request.getSubscribeScript()) !== null && _u !== void 0 ? _u : null,
+            'renewScript': (_v = request.getRenewScript()) !== null && _v !== void 0 ? _v : null,
+            'unsubscribeScript': (_w = request.getUnsubscribeScript()) !== null && _w !== void 0 ? _w : null,
+            'takeOverScript': (_y = (_x = request.getTakeOverScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'changeSubscriptionStatusNotification': (_0 = (_z = request.getChangeSubscriptionStatusNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'logSetting': (_2 = (_1 = request.getLogSetting()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -109,7 +110,7 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Money2RestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
         var url = (((_a = Gs2Money2RestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'money2')
             .replace('{region}', this.session.region)
@@ -123,16 +124,17 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             'currencyUsagePriority': (_e = request.getCurrencyUsagePriority()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'transactionSetting': (_h = (_g = request.getTransactionSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'platformSetting': (_k = (_j = request.getPlatformSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'depositBalanceScript': (_m = (_l = request.getDepositBalanceScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'withdrawBalanceScript': (_p = (_o = request.getWithdrawBalanceScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'verifyReceiptScript': (_r = (_q = request.getVerifyReceiptScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'subscribeScript': (_s = request.getSubscribeScript()) !== null && _s !== void 0 ? _s : null,
-            'renewScript': (_t = request.getRenewScript()) !== null && _t !== void 0 ? _t : null,
-            'unsubscribeScript': (_u = request.getUnsubscribeScript()) !== null && _u !== void 0 ? _u : null,
-            'takeOverScript': (_w = (_v = request.getTakeOverScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'changeSubscriptionStatusNotification': (_y = (_x = request.getChangeSubscriptionStatusNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'transactionSettingV2': (_k = (_j = request.getTransactionSettingV2()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'platformSetting': (_m = (_l = request.getPlatformSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'depositBalanceScript': (_p = (_o = request.getDepositBalanceScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'withdrawBalanceScript': (_r = (_q = request.getWithdrawBalanceScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'verifyReceiptScript': (_t = (_s = request.getVerifyReceiptScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'subscribeScript': (_u = request.getSubscribeScript()) !== null && _u !== void 0 ? _u : null,
+            'renewScript': (_v = request.getRenewScript()) !== null && _v !== void 0 ? _v : null,
+            'unsubscribeScript': (_w = request.getUnsubscribeScript()) !== null && _w !== void 0 ? _w : null,
+            'takeOverScript': (_y = (_x = request.getTakeOverScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'changeSubscriptionStatusNotification': (_0 = (_z = request.getChangeSubscriptionStatusNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'logSetting': (_2 = (_1 = request.getLogSetting()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private priority;
     private appleKey;
     private googleKey;
@@ -26,9 +27,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Money.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Money.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Money.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Money.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Money.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Money.TransactionSettingV2 | null): this;
     getPriority(): string | null;
     setPriority(priority: string | null): this;
     withPriority(priority: string | null): this;

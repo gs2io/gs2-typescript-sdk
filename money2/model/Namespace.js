@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.currencyUsagePriority = null;
         this.sharedFreeCurrency = null;
         this.platformSetting = null;
@@ -121,15 +122,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getCurrencyUsagePriority = function () {
@@ -306,6 +321,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Money2.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Money2.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
@@ -323,24 +339,25 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
-            "platformSetting": (_b = this.getPlatformSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "depositBalanceScript": (_c = this.getDepositBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "withdrawBalanceScript": (_d = this.getWithdrawBalanceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "verifyReceiptScript": (_e = this.getVerifyReceiptScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "platformSetting": (_c = this.getPlatformSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "depositBalanceScript": (_d = this.getDepositBalanceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "withdrawBalanceScript": (_e = this.getWithdrawBalanceScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "verifyReceiptScript": (_f = this.getVerifyReceiptScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "subscribeScript": this.getSubscribeScript(),
             "renewScript": this.getRenewScript(),
             "unsubscribeScript": this.getUnsubscribeScript(),
-            "takeOverScript": (_f = this.getTakeOverScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "changeSubscriptionStatusNotification": (_g = this.getChangeSubscriptionStatusNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "takeOverScript": (_g = this.getTakeOverScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "changeSubscriptionStatusNotification": (_h = this.getChangeSubscriptionStatusNotification()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

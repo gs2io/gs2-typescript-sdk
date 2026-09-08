@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private rankCapScriptId;
     private changeExperienceScript;
     private changeRankScript;
@@ -24,9 +25,15 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Experience.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Experience.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Experience.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Experience.TransactionSettingV2 | null): this;
     getRankCapScriptId(): string | null;
     setRankCapScriptId(rankCapScriptId: string | null): this;
     withRankCapScriptId(rankCapScriptId: string | null): this;

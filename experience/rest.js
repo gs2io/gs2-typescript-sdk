@@ -44,7 +44,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (((_a = Gs2ExperienceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
@@ -57,12 +57,13 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'rankCapScriptId': (_g = request.getRankCapScriptId()) !== null && _g !== void 0 ? _g : null,
-            'changeExperienceScript': (_j = (_h = request.getChangeExperienceScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'changeRankScript': (_l = (_k = request.getChangeRankScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'changeRankCapScript': (_o = (_m = request.getChangeRankCapScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'overflowExperienceScript': (_p = request.getOverflowExperienceScript()) !== null && _p !== void 0 ? _p : null,
-            'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'rankCapScriptId': (_j = request.getRankCapScriptId()) !== null && _j !== void 0 ? _j : null,
+            'changeExperienceScript': (_l = (_k = request.getChangeExperienceScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'changeRankScript': (_o = (_m = request.getChangeRankScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'changeRankCapScript': (_q = (_p = request.getChangeRankCapScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'overflowExperienceScript': (_r = request.getOverflowExperienceScript()) !== null && _r !== void 0 ? _r : null,
+            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -103,7 +104,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (((_a = Gs2ExperienceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -116,12 +117,13 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'rankCapScriptId': (_h = request.getRankCapScriptId()) !== null && _h !== void 0 ? _h : null,
-            'changeExperienceScript': (_k = (_j = request.getChangeExperienceScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'changeRankScript': (_m = (_l = request.getChangeRankScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'changeRankCapScript': (_p = (_o = request.getChangeRankCapScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'overflowExperienceScript': (_q = request.getOverflowExperienceScript()) !== null && _q !== void 0 ? _q : null,
-            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'rankCapScriptId': (_k = request.getRankCapScriptId()) !== null && _k !== void 0 ? _k : null,
+            'changeExperienceScript': (_m = (_l = request.getChangeExperienceScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'changeRankScript': (_p = (_o = request.getChangeRankScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'changeRankCapScript': (_r = (_q = request.getChangeRankCapScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'overflowExperienceScript': (_s = request.getOverflowExperienceScript()) !== null && _s !== void 0 ? _s : null,
+            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

@@ -4,4 +4,5 @@ import DataObject from "./DataObject";
 import DataObjectHistory from "./DataObjectHistory";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, ScriptSetting, DataObject, DataObjectHistory, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, ScriptSetting, DataObject, DataObjectHistory, LogSetting, TransactionSetting, TransactionSettingV2, };

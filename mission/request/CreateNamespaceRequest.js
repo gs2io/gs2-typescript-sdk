@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.missionCompleteScript = null;
         this.counterIncrementScript = null;
         this.receiveRewardsScript = null;
@@ -76,15 +77,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getMissionCompleteScript = function () {
@@ -175,6 +190,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Mission.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Mission.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withMissionCompleteScript(Gs2Mission.ScriptSetting.fromDict(data["missionCompleteScript"]))
             .withCounterIncrementScript(Gs2Mission.ScriptSetting.fromDict(data["counterIncrementScript"]))
             .withReceiveRewardsScript(Gs2Mission.ScriptSetting.fromDict(data["receiveRewardsScript"]))
@@ -184,16 +200,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "missionCompleteScript": (_b = this.getMissionCompleteScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "counterIncrementScript": (_c = this.getCounterIncrementScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "receiveRewardsScript": (_d = this.getReceiveRewardsScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "completeNotification": (_e = this.getCompleteNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "missionCompleteScript": (_c = this.getMissionCompleteScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "counterIncrementScript": (_d = this.getCounterIncrementScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "receiveRewardsScript": (_e = this.getReceiveRewardsScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "completeNotification": (_f = this.getCompleteNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

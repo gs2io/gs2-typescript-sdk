@@ -10,6 +10,7 @@ import ScriptSetting from "./ScriptSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import Version from "./Version";
 import ScheduleVersion from "./ScheduleVersion";
-export { Namespace, VersionModelMaster, VersionModel, AcceptVersion, Status, TargetVersion, SignTargetVersion, CurrentVersionMaster, ScriptSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, Version, ScheduleVersion, };
+export { Namespace, VersionModelMaster, VersionModel, AcceptVersion, Status, TargetVersion, SignTargetVersion, CurrentVersionMaster, ScriptSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, Version, ScheduleVersion, };

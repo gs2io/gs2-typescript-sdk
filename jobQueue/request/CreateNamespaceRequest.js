@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.enableAutoRun = null;
         this.pushNotification = null;
         this.runNotification = null;
@@ -73,15 +74,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getEnableAutoRun = function () {
@@ -133,21 +148,23 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2JobQueue.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
-            "pushNotification": (_b = this.getPushNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "runNotification": (_c = this.getRunNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "pushNotification": (_c = this.getPushNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "runNotification": (_d = this.getRunNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return CreateNamespaceRequest;

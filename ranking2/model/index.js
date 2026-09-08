@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Config = exports.AcquireAction = exports.GitHubCheckoutSetting = exports.LogSetting = exports.TransactionSetting = exports.RankingReward = exports.SubscribeUser = exports.CurrentRankingMaster = exports.SubscribeRankingData = exports.SubscribeRankingScore = exports.Subscribe = exports.SubscribeRankingModelMaster = exports.SubscribeRankingModel = exports.ClusterRankingData = exports.ClusterRankingReceivedReward = exports.ClusterRankingScore = exports.ClusterRankingModelMaster = exports.ClusterRankingModel = exports.GlobalRankingData = exports.GlobalRankingReceivedReward = exports.GlobalRankingScore = exports.GlobalRankingModelMaster = exports.GlobalRankingModel = exports.Namespace = void 0;
+exports.Config = exports.AcquireAction = exports.GitHubCheckoutSetting = exports.LogSetting = exports.TransactionSettingV2 = exports.TransactionSetting = exports.RankingReward = exports.SubscribeUser = exports.CurrentRankingMaster = exports.SubscribeRankingData = exports.SubscribeRankingScore = exports.Subscribe = exports.SubscribeRankingModelMaster = exports.SubscribeRankingModel = exports.ClusterRankingData = exports.ClusterRankingReceivedReward = exports.ClusterRankingScore = exports.ClusterRankingModelMaster = exports.ClusterRankingModel = exports.GlobalRankingData = exports.GlobalRankingReceivedReward = exports.GlobalRankingScore = exports.GlobalRankingModelMaster = exports.GlobalRankingModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -57,6 +57,8 @@ var RankingReward_1 = tslib_1.__importDefault(require("./RankingReward"));
 exports.RankingReward = RankingReward_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
+var TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

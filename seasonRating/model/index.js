@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.TransactionSetting = exports.CurrentSeasonModelMaster = exports.TierModel = exports.SeasonModel = exports.SeasonModelMaster = exports.MatchSession = exports.Namespace = void 0;
+exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.TransactionSettingV2 = exports.TransactionSetting = exports.CurrentSeasonModelMaster = exports.TierModel = exports.SeasonModel = exports.SeasonModelMaster = exports.MatchSession = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var CurrentSeasonModelMaster_1 = tslib_1.__importDefault(require("./CurrentSeaso
 exports.CurrentSeasonModelMaster = CurrentSeasonModelMaster_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
+var TransactionSettingV2_1 = tslib_1.__importDefault(require("./TransactionSettingV2"));
+exports.TransactionSettingV2 = TransactionSettingV2_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

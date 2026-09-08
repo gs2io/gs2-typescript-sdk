@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.enableAutoRun = null;
         this.runNotification = null;
         this.pushNotification = null;
@@ -113,15 +114,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getEnableAutoRun = function () {
@@ -210,6 +225,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2JobQueue.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2JobQueue.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withEnableAutoRun(data["enableAutoRun"])
             .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
@@ -219,16 +235,17 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "enableAutoRun": this.getEnableAutoRun(),
-            "runNotification": (_b = this.getRunNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "pushNotification": (_c = this.getPushNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "runNotification": (_c = this.getRunNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "pushNotification": (_d = this.getPushNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

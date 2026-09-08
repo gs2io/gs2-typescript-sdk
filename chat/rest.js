@@ -44,7 +44,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         var url = (((_a = Gs2ChatRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
@@ -57,15 +57,16 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'allowCreateRoom': (_g = request.getAllowCreateRoom()) !== null && _g !== void 0 ? _g : null,
-            'messageLifeTimeDays': (_h = request.getMessageLifeTimeDays()) !== null && _h !== void 0 ? _h : null,
-            'postMessageScript': (_k = (_j = request.getPostMessageScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'createRoomScript': (_m = (_l = request.getCreateRoomScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'deleteRoomScript': (_p = (_o = request.getDeleteRoomScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'subscribeRoomScript': (_r = (_q = request.getSubscribeRoomScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'unsubscribeRoomScript': (_t = (_s = request.getUnsubscribeRoomScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'postNotification': (_v = (_u = request.getPostNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'allowCreateRoom': (_j = request.getAllowCreateRoom()) !== null && _j !== void 0 ? _j : null,
+            'messageLifeTimeDays': (_k = request.getMessageLifeTimeDays()) !== null && _k !== void 0 ? _k : null,
+            'postMessageScript': (_m = (_l = request.getPostMessageScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'createRoomScript': (_p = (_o = request.getCreateRoomScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'deleteRoomScript': (_r = (_q = request.getDeleteRoomScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'subscribeRoomScript': (_t = (_s = request.getSubscribeRoomScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'unsubscribeRoomScript': (_v = (_u = request.getUnsubscribeRoomScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'postNotification': (_x = (_w = request.getPostNotification()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'logSetting': (_z = (_y = request.getLogSetting()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -106,7 +107,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ChatRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
         var url = (((_a = Gs2ChatRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
@@ -119,15 +120,16 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'allowCreateRoom': (_h = request.getAllowCreateRoom()) !== null && _h !== void 0 ? _h : null,
-            'messageLifeTimeDays': (_j = request.getMessageLifeTimeDays()) !== null && _j !== void 0 ? _j : null,
-            'postMessageScript': (_l = (_k = request.getPostMessageScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'createRoomScript': (_o = (_m = request.getCreateRoomScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'deleteRoomScript': (_q = (_p = request.getDeleteRoomScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'subscribeRoomScript': (_s = (_r = request.getSubscribeRoomScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'unsubscribeRoomScript': (_u = (_t = request.getUnsubscribeRoomScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'postNotification': (_w = (_v = request.getPostNotification()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'allowCreateRoom': (_k = request.getAllowCreateRoom()) !== null && _k !== void 0 ? _k : null,
+            'messageLifeTimeDays': (_l = request.getMessageLifeTimeDays()) !== null && _l !== void 0 ? _l : null,
+            'postMessageScript': (_o = (_m = request.getPostMessageScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'createRoomScript': (_q = (_p = request.getCreateRoomScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'deleteRoomScript': (_s = (_r = request.getDeleteRoomScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'subscribeRoomScript': (_u = (_t = request.getSubscribeRoomScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'unsubscribeRoomScript': (_w = (_v = request.getUnsubscribeRoomScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'postNotification': (_y = (_x = request.getPostNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

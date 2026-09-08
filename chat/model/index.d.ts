@@ -10,5 +10,6 @@ import ScriptSetting from "./ScriptSetting";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-export { Namespace, Room, Message, Subscribe, CategoryModel, CategoryModelMaster, CurrentModelMaster, NotificationType, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, GitHubCheckoutSetting, };
+export { Namespace, Room, Message, Subscribe, CategoryModel, CategoryModelMaster, CurrentModelMaster, NotificationType, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, TransactionSettingV2, GitHubCheckoutSetting, };

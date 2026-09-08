@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.priority = null;
         this.appleKey = null;
         this.googleKey = null;
@@ -77,15 +78,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getPriority = function () {
@@ -181,6 +196,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Money.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Money.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withPriority(data["priority"])
             .withAppleKey(data["appleKey"])
             .withGoogleKey(data["googleKey"])
@@ -191,19 +207,20 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Money.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "priority": this.getPriority(),
             "appleKey": this.getAppleKey(),
             "googleKey": this.getGoogleKey(),
             "enableFakeReceipt": this.getEnableFakeReceipt(),
-            "createWalletScript": (_b = this.getCreateWalletScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "depositScript": (_c = this.getDepositScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "withdrawScript": (_d = this.getWithdrawScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "createWalletScript": (_c = this.getCreateWalletScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "depositScript": (_d = this.getDepositScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "withdrawScript": (_e = this.getWithdrawScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return UpdateNamespaceRequest;

@@ -21,6 +21,7 @@ var TransactionSetting = /** @class */ (function () {
         this.transactionUseDistributor = null;
         this.commitScriptResultInUseDistributor = null;
         this.acquireActionUseJobQueue = null;
+        this.enableSequentialExecution = null;
         this.distributorNamespaceId = null;
         this.queueNamespaceId = null;
     }
@@ -68,6 +69,17 @@ var TransactionSetting = /** @class */ (function () {
         this.acquireActionUseJobQueue = acquireActionUseJobQueue;
         return this;
     };
+    TransactionSetting.prototype.getEnableSequentialExecution = function () {
+        return this.enableSequentialExecution;
+    };
+    TransactionSetting.prototype.setEnableSequentialExecution = function (enableSequentialExecution) {
+        this.enableSequentialExecution = enableSequentialExecution;
+        return this;
+    };
+    TransactionSetting.prototype.withEnableSequentialExecution = function (enableSequentialExecution) {
+        this.enableSequentialExecution = enableSequentialExecution;
+        return this;
+    };
     TransactionSetting.prototype.getDistributorNamespaceId = function () {
         return this.distributorNamespaceId;
     };
@@ -99,6 +111,7 @@ var TransactionSetting = /** @class */ (function () {
             .withTransactionUseDistributor(data["transactionUseDistributor"])
             .withCommitScriptResultInUseDistributor(data["commitScriptResultInUseDistributor"])
             .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
+            .withEnableSequentialExecution(data["enableSequentialExecution"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
     };
@@ -108,6 +121,7 @@ var TransactionSetting = /** @class */ (function () {
             "transactionUseDistributor": this.getTransactionUseDistributor(),
             "commitScriptResultInUseDistributor": this.getCommitScriptResultInUseDistributor(),
             "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
+            "enableSequentialExecution": this.getEnableSequentialExecution(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "queueNamespaceId": this.getQueueNamespaceId(),
         };

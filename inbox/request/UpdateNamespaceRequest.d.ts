@@ -7,6 +7,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private description;
     private isAutomaticDeletingEnabled;
     private transactionSetting;
+    private transactionSettingV2;
     private receiveMessageScript;
     private readMessageScript;
     private deleteMessageScript;
@@ -29,9 +30,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getIsAutomaticDeletingEnabled(): boolean | null;
     setIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean | null): this;
     withIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Inbox.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Inbox.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Inbox.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Inbox.TransactionSettingV2 | null): this;
     getReceiveMessageScript(): Gs2Inbox.ScriptSetting | null;
     setReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting | null): this;
     withReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting | null): this;

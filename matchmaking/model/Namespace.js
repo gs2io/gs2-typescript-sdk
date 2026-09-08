@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.enableRating = null;
         this.enableDisconnectDetection = null;
         this.disconnectDetectionTimeoutSeconds = null;
@@ -127,15 +128,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getEnableRating = function () {
@@ -378,6 +393,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Matchmaking.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Matchmaking.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withEnableRating(data["enableRating"])
             .withEnableDisconnectDetection(data["enableDisconnectDetection"])
             .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
@@ -401,12 +417,13 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "enableRating": this.getEnableRating(),
             "enableDisconnectDetection": this.getEnableDisconnectDetection(),
             "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),
@@ -419,12 +436,12 @@ var Namespace = /** @class */ (function () {
             "enableCollaborateSeasonRating": this.getEnableCollaborateSeasonRating(),
             "collaborateSeasonRatingNamespaceId": this.getCollaborateSeasonRatingNamespaceId(),
             "collaborateSeasonRatingTtl": this.getCollaborateSeasonRatingTtl(),
-            "changeRatingScript": (_b = this.getChangeRatingScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "joinNotification": (_c = this.getJoinNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "leaveNotification": (_d = this.getLeaveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "completeNotification": (_e = this.getCompleteNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "changeRatingNotification": (_f = this.getChangeRatingNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "changeRatingScript": (_c = this.getChangeRatingScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "joinNotification": (_d = this.getJoinNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "leaveNotification": (_e = this.getLeaveNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "completeNotification": (_f = this.getCompleteNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "changeRatingNotification": (_g = this.getChangeRatingNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

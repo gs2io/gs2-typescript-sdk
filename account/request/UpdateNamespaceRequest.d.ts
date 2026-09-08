@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private changePasswordIfTakeOver;
     private createAccountScript;
     private authenticationScript;
@@ -26,9 +27,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Account.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Account.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Account.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Account.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Account.TransactionSettingV2 | null): this;
     getChangePasswordIfTakeOver(): boolean | null;
     setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
     withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;

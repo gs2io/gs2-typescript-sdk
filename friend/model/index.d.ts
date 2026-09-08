@@ -15,4 +15,5 @@ import ScriptSetting from "./ScriptSetting";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, Profile, Follow, Friend, SendBox, Inbox, BlackList, FollowUser, FriendUser, FriendRequest, SendFriendRequest, ReceiveFriendRequest, PublicProfile, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, Profile, Follow, Friend, SendBox, Inbox, BlackList, FollowUser, FriendUser, FriendRequest, SendFriendRequest, ReceiveFriendRequest, PublicProfile, ScriptSetting, NotificationSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

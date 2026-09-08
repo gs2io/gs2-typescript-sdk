@@ -20,5 +20,6 @@ import Config from "./Config";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import ScriptSetting from "./ScriptSetting";
-export { Namespace, SalesItemMaster, SalesItemGroupMaster, ShowcaseMaster, CurrentShowcaseMaster, SalesItem, SalesItemGroup, Showcase, DisplayItem, DisplayItemMaster, RandomShowcaseMaster, RandomShowcase, PurchaseCount, RandomDisplayItem, RandomDisplayItemModel, ConsumeAction, VerifyAction, AcquireAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, ScriptSetting, };
+export { Namespace, SalesItemMaster, SalesItemGroupMaster, ShowcaseMaster, CurrentShowcaseMaster, SalesItem, SalesItemGroup, Showcase, DisplayItem, DisplayItemMaster, RandomShowcaseMaster, RandomShowcase, PurchaseCount, RandomDisplayItem, RandomDisplayItemModel, ConsumeAction, VerifyAction, AcquireAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, ScriptSetting, };

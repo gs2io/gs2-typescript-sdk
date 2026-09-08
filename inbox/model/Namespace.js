@@ -25,6 +25,7 @@ var Namespace = /** @class */ (function () {
         this.description = null;
         this.isAutomaticDeletingEnabled = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.receiveMessageScript = null;
         this.readMessageScript = null;
         this.deleteMessageScript = null;
@@ -128,15 +129,29 @@ var Namespace = /** @class */ (function () {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getReceiveMessageScript = function () {
@@ -265,6 +280,7 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
             .withTransactionSetting(Gs2Inbox.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Inbox.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withReceiveMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["receiveMessageScript"]))
             .withReadMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["readMessageScript"]))
             .withDeleteMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["deleteMessageScript"]))
@@ -277,18 +293,19 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "isAutomaticDeletingEnabled": this.getIsAutomaticDeletingEnabled(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "receiveMessageScript": (_b = this.getReceiveMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "readMessageScript": (_c = this.getReadMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "deleteMessageScript": (_d = this.getDeleteMessageScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "receiveNotification": (_e = this.getReceiveNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "receiveMessageScript": (_c = this.getReceiveMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "readMessageScript": (_d = this.getReadMessageScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "deleteMessageScript": (_e = this.getDeleteMessageScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "receiveNotification": (_f = this.getReceiveNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "queueNamespaceId": this.getQueueNamespaceId(),

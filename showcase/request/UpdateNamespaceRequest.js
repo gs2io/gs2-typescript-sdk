@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.buyScript = null;
         this.logSetting = null;
         this.queueNamespaceId = null;
@@ -73,15 +74,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getBuyScript = function () {
@@ -139,19 +154,21 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Showcase.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
             .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "buyScript": (_b = this.getBuyScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "buyScript": (_c = this.getBuyScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

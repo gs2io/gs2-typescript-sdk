@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -19,9 +20,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Script.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Script.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Script.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Script.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Script.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Script.TransactionSettingV2 | null): this;
     getLogSetting(): Gs2Script.LogSetting | null;
     setLogSetting(logSetting: Gs2Script.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Script.LogSetting | null): this;

@@ -5,6 +5,7 @@ export default class TransactionSetting implements IModel {
     private transactionUseDistributor;
     private commitScriptResultInUseDistributor;
     private acquireActionUseJobQueue;
+    private enableSequentialExecution;
     private distributorNamespaceId;
     private keyId;
     private queueNamespaceId;
@@ -23,6 +24,9 @@ export default class TransactionSetting implements IModel {
     getAcquireActionUseJobQueue(): boolean | null;
     setAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean | null): this;
     withAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean | null): this;
+    getEnableSequentialExecution(): boolean | null;
+    setEnableSequentialExecution(enableSequentialExecution: boolean | null): this;
+    withEnableSequentialExecution(enableSequentialExecution: boolean | null): this;
     getDistributorNamespaceId(): string | null;
     setDistributorNamespaceId(distributorNamespaceId: string | null): this;
     withDistributorNamespaceId(distributorNamespaceId: string | null): this;

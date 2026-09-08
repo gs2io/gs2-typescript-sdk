@@ -44,7 +44,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (((_a = Gs2InboxRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
@@ -58,13 +58,14 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'isAutomaticDeletingEnabled': (_e = request.getIsAutomaticDeletingEnabled()) !== null && _e !== void 0 ? _e : null,
             'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'receiveMessageScript': (_j = (_h = request.getReceiveMessageScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'readMessageScript': (_l = (_k = request.getReadMessageScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'deleteMessageScript': (_o = (_m = request.getDeleteMessageScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'receiveNotification': (_q = (_p = request.getReceiveNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'queueNamespaceId': (_t = request.getQueueNamespaceId()) !== null && _t !== void 0 ? _t : null,
-            'keyId': (_u = request.getKeyId()) !== null && _u !== void 0 ? _u : null,
+            'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'receiveMessageScript': (_l = (_k = request.getReceiveMessageScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'readMessageScript': (_o = (_m = request.getReadMessageScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'deleteMessageScript': (_q = (_p = request.getDeleteMessageScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'receiveNotification': (_s = (_r = request.getReceiveNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'queueNamespaceId': (_v = request.getQueueNamespaceId()) !== null && _v !== void 0 ? _v : null,
+            'keyId': (_w = request.getKeyId()) !== null && _w !== void 0 ? _w : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -105,7 +106,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (((_a = Gs2InboxRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
@@ -119,13 +120,14 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'isAutomaticDeletingEnabled': (_f = request.getIsAutomaticDeletingEnabled()) !== null && _f !== void 0 ? _f : null,
             'transactionSetting': (_h = (_g = request.getTransactionSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'receiveMessageScript': (_k = (_j = request.getReceiveMessageScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'readMessageScript': (_m = (_l = request.getReadMessageScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'deleteMessageScript': (_p = (_o = request.getDeleteMessageScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'receiveNotification': (_r = (_q = request.getReceiveNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'queueNamespaceId': (_u = request.getQueueNamespaceId()) !== null && _u !== void 0 ? _u : null,
-            'keyId': (_v = request.getKeyId()) !== null && _v !== void 0 ? _v : null,
+            'transactionSettingV2': (_k = (_j = request.getTransactionSettingV2()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'receiveMessageScript': (_m = (_l = request.getReceiveMessageScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'readMessageScript': (_p = (_o = request.getReadMessageScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'deleteMessageScript': (_r = (_q = request.getDeleteMessageScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'receiveNotification': (_t = (_s = request.getReceiveNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'queueNamespaceId': (_w = request.getQueueNamespaceId()) !== null && _w !== void 0 ? _w : null,
+            'keyId': (_x = request.getKeyId()) !== null && _x !== void 0 ? _x : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

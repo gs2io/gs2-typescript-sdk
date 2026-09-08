@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private transactionSetting;
+    private transactionSettingV2;
     private assumeUserId;
     private acceptVersionScript;
     private checkVersionTriggerScriptId;
@@ -22,9 +23,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Version.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Version.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Version.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Version.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Version.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Version.TransactionSettingV2 | null): this;
     getAssumeUserId(): string | null;
     setAssumeUserId(assumeUserId: string | null): this;
     withAssumeUserId(assumeUserId: string | null): this;

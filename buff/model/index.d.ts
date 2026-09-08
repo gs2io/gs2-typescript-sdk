@@ -10,4 +10,5 @@ import ScriptSetting from "./ScriptSetting";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, BuffTargetModel, BuffTargetAction, BuffTargetGrn, BuffEntryModel, BuffEntryModelMaster, CurrentBuffMaster, OverrideBuffRate, ScriptSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, BuffTargetModel, BuffTargetAction, BuffTargetGrn, BuffEntryModel, BuffEntryModelMaster, CurrentBuffMaster, OverrideBuffRate, ScriptSetting, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

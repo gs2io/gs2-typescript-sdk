@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.startQuestScript = null;
         this.completeQuestScript = null;
         this.failedQuestScript = null;
@@ -75,15 +76,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getStartQuestScript = function () {
@@ -163,6 +178,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Quest.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Quest.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withStartQuestScript(Gs2Quest.ScriptSetting.fromDict(data["startQuestScript"]))
             .withCompleteQuestScript(Gs2Quest.ScriptSetting.fromDict(data["completeQuestScript"]))
             .withFailedQuestScript(Gs2Quest.ScriptSetting.fromDict(data["failedQuestScript"]))
@@ -171,15 +187,16 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "startQuestScript": (_b = this.getStartQuestScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "completeQuestScript": (_c = this.getCompleteQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "failedQuestScript": (_d = this.getFailedQuestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "startQuestScript": (_c = this.getStartQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "completeQuestScript": (_d = this.getCompleteQuestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "failedQuestScript": (_e = this.getFailedQuestScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

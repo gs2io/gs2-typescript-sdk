@@ -26,6 +26,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.enableAwaitExchange = null;
         this.enableDirectExchange = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.exchangeScript = null;
         this.incrementalExchangeScript = null;
         this.acquireAwaitScript = null;
@@ -99,15 +100,29 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.enableDirectExchange = enableDirectExchange;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     CreateNamespaceRequest.prototype.getExchangeScript = function () {
@@ -189,6 +204,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withEnableAwaitExchange(data["enableAwaitExchange"])
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Exchange.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
             .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
             .withAcquireAwaitScript(Gs2Exchange.ScriptSetting.fromDict(data["acquireAwaitScript"]))
@@ -197,17 +213,18 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "enableAwaitExchange": this.getEnableAwaitExchange(),
             "enableDirectExchange": this.getEnableDirectExchange(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "incrementalExchangeScript": (_c = this.getIncrementalExchangeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "acquireAwaitScript": (_d = this.getAcquireAwaitScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "exchangeScript": (_c = this.getExchangeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "incrementalExchangeScript": (_d = this.getIncrementalExchangeScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "acquireAwaitScript": (_e = this.getAcquireAwaitScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

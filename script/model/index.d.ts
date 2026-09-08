@@ -7,6 +7,7 @@ import ConsumeAction from "./ConsumeAction";
 import VerifyAction from "./VerifyAction";
 import Transaction from "./Transaction";
 import TransactionSetting from "./TransactionSetting";
+import TransactionSettingV2 from "./TransactionSettingV2";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
-export { Namespace, Script, RandomStatus, RandomUsed, AcquireAction, ConsumeAction, VerifyAction, Transaction, TransactionSetting, GitHubCheckoutSetting, LogSetting, };
+export { Namespace, Script, RandomStatus, RandomUsed, AcquireAction, ConsumeAction, VerifyAction, Transaction, TransactionSetting, TransactionSettingV2, GitHubCheckoutSetting, LogSetting, };

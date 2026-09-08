@@ -15,4 +15,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, RateModel, RateModelMaster, IncrementalRateModel, IncrementalRateModelMaster, CurrentRateMaster, Await, LogCost, LogRate, AcquireAction, ConsumeAction, VerifyAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, RateModel, RateModelMaster, IncrementalRateModel, IncrementalRateModelMaster, CurrentRateMaster, Await, LogCost, LogRate, AcquireAction, ConsumeAction, VerifyAction, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

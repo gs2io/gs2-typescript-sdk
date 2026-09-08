@@ -16,4 +16,5 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, BalanceParameterModel, BalanceParameterModelMaster, RarityParameterModel, RarityParameterModelMaster, CurrentParameterMaster, BalanceParameterStatus, RarityParameterStatus, BalanceParameterValueModel, RarityParameterCountModel, RarityParameterValueModel, BalanceParameterValue, RarityParameterValue, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, BalanceParameterModel, BalanceParameterModelMaster, RarityParameterModel, RarityParameterModelMaster, CurrentParameterMaster, BalanceParameterStatus, RarityParameterStatus, BalanceParameterValueModel, RarityParameterCountModel, RarityParameterValueModel, BalanceParameterValue, RarityParameterValue, Config, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

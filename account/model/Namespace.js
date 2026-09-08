@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.changePasswordIfTakeOver = null;
         this.differentUserIdForLoginAndDataRetention = null;
         this.createAccountScript = null;
@@ -118,15 +119,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getChangePasswordIfTakeOver = function () {
@@ -270,6 +285,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Account.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Account.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
@@ -284,21 +300,22 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
             "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
-            "createAccountScript": (_b = this.getCreateAccountScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "authenticationScript": (_c = this.getAuthenticationScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "createTakeOverScript": (_d = this.getCreateTakeOverScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "doTakeOverScript": (_e = this.getDoTakeOverScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "banScript": (_f = this.getBanScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "unBanScript": (_g = this.getUnBanScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "createAccountScript": (_c = this.getCreateAccountScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "authenticationScript": (_d = this.getAuthenticationScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "createTakeOverScript": (_e = this.getCreateTakeOverScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "doTakeOverScript": (_f = this.getDoTakeOverScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "banScript": (_g = this.getBanScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "unBanScript": (_h = this.getUnBanScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

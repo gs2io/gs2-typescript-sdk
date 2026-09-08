@@ -15,4 +15,5 @@ import Config from "./Config";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, LotteryModelMaster, PrizeTableMaster, LotteryModel, PrizeTable, Probability, CurrentLotteryMaster, Prize, PrizeLimit, DrawnPrize, BoxItem, BoxItems, AcquireAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, LotteryModelMaster, PrizeTableMaster, LotteryModel, PrizeTable, Probability, CurrentLotteryMaster, Prize, PrizeLimit, DrawnPrize, BoxItem, BoxItems, AcquireAction, Config, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

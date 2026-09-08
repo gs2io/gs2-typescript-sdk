@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.admob = null;
         this.unityAd = null;
         this.appLovinMaxes = null;
@@ -76,15 +77,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     UpdateNamespaceRequest.prototype.getAdmob = function () {
@@ -169,6 +184,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2AdReward.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2AdReward.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
             .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
             .withAppLovinMaxes(data.appLovinMaxes ?
@@ -181,21 +197,22 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "admob": (_b = this.getAdmob()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "unityAd": (_c = this.getUnityAd()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "admob": (_c = this.getAdmob()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "unityAd": (_d = this.getUnityAd()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "appLovinMaxes": this.getAppLovinMaxes() ?
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
                 }) : null,
-            "acquirePointScript": (_d = this.getAcquirePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "consumePointScript": (_e = this.getConsumePointScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "changePointNotification": (_f = this.getChangePointNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "acquirePointScript": (_e = this.getAcquirePointScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "consumePointScript": (_f = this.getConsumePointScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "changePointNotification": (_g = this.getChangePointNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
         };
     };
     return UpdateNamespaceRequest;

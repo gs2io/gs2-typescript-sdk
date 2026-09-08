@@ -8,4 +8,5 @@ import CurrentEventMaster from "./CurrentEventMaster";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, EventMaster, Trigger, Event, RepeatSetting, RepeatSchedule, CurrentEventMaster, GitHubCheckoutSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, EventMaster, Trigger, Event, RepeatSetting, RepeatSchedule, CurrentEventMaster, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

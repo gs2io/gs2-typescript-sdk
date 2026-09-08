@@ -7,6 +7,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private description;
     private supportSpeculativeExecution;
     private transactionSetting;
+    private transactionSettingV2;
     private startScript;
     private passScript;
     private errorScript;
@@ -27,9 +28,15 @@ export default class CreateNamespaceRequest implements IRequest {
     getSupportSpeculativeExecution(): string | null;
     setSupportSpeculativeExecution(supportSpeculativeExecution: string | null): this;
     withSupportSpeculativeExecution(supportSpeculativeExecution: string | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2StateMachine.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2StateMachine.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2StateMachine.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2StateMachine.TransactionSettingV2 | null): this;
     getStartScript(): Gs2StateMachine.ScriptSetting | null;
     setStartScript(startScript: Gs2StateMachine.ScriptSetting | null): this;
     withStartScript(startScript: Gs2StateMachine.ScriptSetting | null): this;

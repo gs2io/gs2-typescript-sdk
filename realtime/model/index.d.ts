@@ -3,4 +3,5 @@ import Room from "./Room";
 import NotificationSetting from "./NotificationSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, Room, NotificationSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, Room, NotificationSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

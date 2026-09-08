@@ -8,6 +8,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private enableAwaitExchange;
     private enableDirectExchange;
     private transactionSetting;
+    private transactionSettingV2;
     private exchangeScript;
     private incrementalExchangeScript;
     private acquireAwaitScript;
@@ -32,9 +33,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getEnableDirectExchange(): boolean | null;
     setEnableDirectExchange(enableDirectExchange: boolean | null): this;
     withEnableDirectExchange(enableDirectExchange: boolean | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Exchange.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Exchange.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Exchange.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Exchange.TransactionSettingV2 | null): this;
     getExchangeScript(): Gs2Exchange.ScriptSetting | null;
     setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;
     withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;

@@ -24,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.transactionSettingV2 = null;
         this.allowCreateRoom = null;
         this.messageLifeTimeDays = null;
         this.postMessageScript = null;
@@ -118,15 +119,29 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
+    /** @deprecated */
     Namespace.prototype.setTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withTransactionSetting = function (transactionSetting) {
         this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.getTransactionSettingV2 = function () {
+        return this.transactionSettingV2;
+    };
+    Namespace.prototype.setTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
+        return this;
+    };
+    Namespace.prototype.withTransactionSettingV2 = function (transactionSettingV2) {
+        this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
     Namespace.prototype.getAllowCreateRoom = function () {
@@ -270,6 +285,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Chat.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSettingV2(Gs2Chat.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withAllowCreateRoom(data["allowCreateRoom"])
             .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
@@ -284,21 +300,22 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "allowCreateRoom": this.getAllowCreateRoom(),
             "messageLifeTimeDays": this.getMessageLifeTimeDays(),
-            "postMessageScript": (_b = this.getPostMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "createRoomScript": (_c = this.getCreateRoomScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "deleteRoomScript": (_d = this.getDeleteRoomScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "subscribeRoomScript": (_e = this.getSubscribeRoomScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "unsubscribeRoomScript": (_f = this.getUnsubscribeRoomScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "postNotification": (_g = this.getPostNotification()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "logSetting": (_h = this.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "postMessageScript": (_c = this.getPostMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "createRoomScript": (_d = this.getCreateRoomScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "deleteRoomScript": (_e = this.getDeleteRoomScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "subscribeRoomScript": (_f = this.getSubscribeRoomScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "unsubscribeRoomScript": (_g = this.getUnsubscribeRoomScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "postNotification": (_h = this.getPostNotification()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

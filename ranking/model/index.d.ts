@@ -13,4 +13,5 @@ import SubscribeUser from "./SubscribeUser";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
-export { Namespace, CategoryModel, CategoryModelMaster, Subscribe, Score, Ranking, CurrentRankingMaster, Scope, GlobalRankingSetting, FixedTiming, CalculatedAt, SubscribeUser, GitHubCheckoutSetting, LogSetting, TransactionSetting, };
+import TransactionSettingV2 from "./TransactionSettingV2";
+export { Namespace, CategoryModel, CategoryModelMaster, Subscribe, Score, Ranking, CurrentRankingMaster, Scope, GlobalRankingSetting, FixedTiming, CalculatedAt, SubscribeUser, GitHubCheckoutSetting, LogSetting, TransactionSetting, TransactionSettingV2, };

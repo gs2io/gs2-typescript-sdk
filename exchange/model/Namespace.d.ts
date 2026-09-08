@@ -7,6 +7,7 @@ export default class Namespace implements IModel {
     private enableDirectExchange;
     private enableAwaitExchange;
     private transactionSetting;
+    private transactionSettingV2;
     private exchangeScript;
     private incrementalExchangeScript;
     private acquireAwaitScript;
@@ -36,9 +37,15 @@ export default class Namespace implements IModel {
     getEnableAwaitExchange(): boolean | null;
     setEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
     withEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
+    /** @deprecated */
     getTransactionSetting(): Gs2Exchange.TransactionSetting | null;
+    /** @deprecated */
     setTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting | null): this;
+    /** @deprecated */
     withTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting | null): this;
+    getTransactionSettingV2(): Gs2Exchange.TransactionSettingV2 | null;
+    setTransactionSettingV2(transactionSettingV2: Gs2Exchange.TransactionSettingV2 | null): this;
+    withTransactionSettingV2(transactionSettingV2: Gs2Exchange.TransactionSettingV2 | null): this;
     getExchangeScript(): Gs2Exchange.ScriptSetting | null;
     setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;
     withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;
