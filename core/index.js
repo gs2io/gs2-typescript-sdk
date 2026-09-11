@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionResult = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.Region = exports.ProjectTokenGs2Credential = exports.BasicGs2Credential = exports.Gs2WebSocketSession = exports.Gs2RestSession = exports.AbstractGs2Client = void 0;
+exports.TransactionResult = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.isConnectFailure = exports.STEADY_CONNECT_TIMEOUT_MS = exports.Region = exports.ProjectTokenGs2Credential = exports.BasicGs2Credential = exports.Gs2WebSocketSession = exports.Gs2RestSession = exports.AbstractGs2Client = void 0;
 var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("./AbstractGs2RestClient"));
 exports.AbstractGs2Client = AbstractGs2RestClient_1.default;
@@ -25,6 +25,8 @@ Object.defineProperty(exports, "Gs2WebSocketSession", { enumerable: true, get: f
 Object.defineProperty(exports, "BasicGs2Credential", { enumerable: true, get: function () { return model_1.BasicGs2Credential; } });
 Object.defineProperty(exports, "ProjectTokenGs2Credential", { enumerable: true, get: function () { return model_1.ProjectTokenGs2Credential; } });
 Object.defineProperty(exports, "Region", { enumerable: true, get: function () { return model_1.Region; } });
+Object.defineProperty(exports, "STEADY_CONNECT_TIMEOUT_MS", { enumerable: true, get: function () { return model_1.STEADY_CONNECT_TIMEOUT_MS; } });
+Object.defineProperty(exports, "isConnectFailure", { enumerable: true, get: function () { return model_1.isConnectFailure; } });
 var AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
 exports.AcquireActionResult = AcquireActionResult_1.default;
 var ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
