@@ -15,11 +15,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2AdReward = tslib_1.__importStar(require("../../adReward/model"));
 var NotificationSetting = /** @class */ (function () {
     function NotificationSetting() {
         this.gatewayNamespaceId = null;
         this.enableTransferMobileNotification = null;
         this.sound = null;
+        this.mobileNotificationMessages = null;
         this.enable = null;
     }
     NotificationSetting.prototype.getGatewayNamespaceId = function () {
@@ -55,6 +58,17 @@ var NotificationSetting = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    NotificationSetting.prototype.getMobileNotificationMessages = function () {
+        return this.mobileNotificationMessages;
+    };
+    NotificationSetting.prototype.setMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
+    NotificationSetting.prototype.withMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
     NotificationSetting.prototype.getEnable = function () {
         return this.enable;
     };
@@ -74,6 +88,10 @@ var NotificationSetting = /** @class */ (function () {
             .withGatewayNamespaceId(data["gatewayNamespaceId"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
             .withSound(data["sound"])
+            .withMobileNotificationMessages(data.mobileNotificationMessages ?
+            data.mobileNotificationMessages.map(function (item) {
+                return Gs2AdReward.MobileNotificationMessage.fromDict(item);
+            }) : null)
             .withEnable(data["enable"]);
     };
     NotificationSetting.prototype.toDict = function () {
@@ -81,6 +99,10 @@ var NotificationSetting = /** @class */ (function () {
             "gatewayNamespaceId": this.getGatewayNamespaceId(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "mobileNotificationMessages": this.getMobileNotificationMessages() ?
+                this.getMobileNotificationMessages().map(function (item) {
+                    return item.toDict();
+                }) : null,
             "enable": this.getEnable(),
         };
     };

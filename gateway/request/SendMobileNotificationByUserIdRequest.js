@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Gateway = tslib_1.__importStar(require("../model"));
 var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
     function SendMobileNotificationByUserIdRequest() {
         this.requestId = null;
@@ -24,6 +26,7 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
         this.subject = null;
         this.payload = null;
         this.sound = null;
+        this.mobileNotificationMessages = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -104,6 +107,17 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    SendMobileNotificationByUserIdRequest.prototype.getMobileNotificationMessages = function () {
+        return this.mobileNotificationMessages;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.setMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.withMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
     SendMobileNotificationByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -133,6 +147,10 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
             .withSubject(data["subject"])
             .withPayload(data["payload"])
             .withSound(data["sound"])
+            .withMobileNotificationMessages(data.mobileNotificationMessages ?
+            data.mobileNotificationMessages.map(function (item) {
+                return Gs2Gateway.MobileNotificationMessage.fromDict(item);
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SendMobileNotificationByUserIdRequest.prototype.toDict = function () {
@@ -142,6 +160,10 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
             "subject": this.getSubject(),
             "payload": this.getPayload(),
             "sound": this.getSound(),
+            "mobileNotificationMessages": this.getMobileNotificationMessages() ?
+                this.getMobileNotificationMessages().map(function (item) {
+                    return item.toDict();
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

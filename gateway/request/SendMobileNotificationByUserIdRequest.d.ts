@@ -1,4 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Gateway from '../model';
 export default class SendMobileNotificationByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -7,6 +8,7 @@ export default class SendMobileNotificationByUserIdRequest implements IRequest {
     private subject;
     private payload;
     private sound;
+    private mobileNotificationMessages;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -30,6 +32,9 @@ export default class SendMobileNotificationByUserIdRequest implements IRequest {
     getSound(): string | null;
     setSound(sound: string | null): this;
     withSound(sound: string | null): this;
+    getMobileNotificationMessages(): Gs2Gateway.MobileNotificationMessage[] | null;
+    setMobileNotificationMessages(mobileNotificationMessages: Gs2Gateway.MobileNotificationMessage[] | null): this;
+    withMobileNotificationMessages(mobileNotificationMessages: Gs2Gateway.MobileNotificationMessage[] | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

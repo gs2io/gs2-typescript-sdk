@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.MobileNotificationMessage = exports.NotificationSetting = exports.Complete = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ var Complete_1 = tslib_1.__importDefault(require("./Complete"));
 exports.Complete = Complete_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
+var MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 var CounterModelMaster_1 = tslib_1.__importDefault(require("./CounterModelMaster"));
 exports.CounterModelMaster = CounterModelMaster_1.default;
 var CounterScopeModel_1 = tslib_1.__importDefault(require("./CounterScopeModel"));

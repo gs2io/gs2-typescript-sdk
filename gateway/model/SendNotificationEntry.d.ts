@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import * as Gs2Gateway from '../../gateway/model';
 export default class SendNotificationEntry implements IModel {
     private userId;
     private issuer;
@@ -6,6 +7,7 @@ export default class SendNotificationEntry implements IModel {
     private payload;
     private enableTransferMobileNotification;
     private sound;
+    private mobileNotificationMessages;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
@@ -24,6 +26,9 @@ export default class SendNotificationEntry implements IModel {
     getSound(): string | null;
     setSound(sound: string | null): this;
     withSound(sound: string | null): this;
+    getMobileNotificationMessages(): Gs2Gateway.MobileNotificationMessage[] | null;
+    setMobileNotificationMessages(mobileNotificationMessages: Gs2Gateway.MobileNotificationMessage[] | null): this;
+    withMobileNotificationMessages(mobileNotificationMessages: Gs2Gateway.MobileNotificationMessage[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SendNotificationEntry | null;

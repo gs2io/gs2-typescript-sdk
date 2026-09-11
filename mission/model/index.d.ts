@@ -1,5 +1,6 @@
 import Complete from "./Complete";
 import NotificationSetting from "./NotificationSetting";
+import MobileNotificationMessage from "./MobileNotificationMessage";
 import CounterModelMaster from "./CounterModelMaster";
 import CounterScopeModel from "./CounterScopeModel";
 import MissionGroupModelMaster from "./MissionGroupModelMaster";
@@ -21,4 +22,4 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import TransactionSetting from "./TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
-export { Complete, NotificationSetting, CounterModelMaster, CounterScopeModel, MissionGroupModelMaster, Namespace, Counter, CurrentMissionMaster, CounterModel, MissionGroupModel, MissionTaskModel, MissionTaskModelMaster, ScopedValue, TargetCounterModel, AcquireAction, ConsumeAction, VerifyAction, Config, LogSetting, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, TransactionSettingV2, };
+export { Complete, NotificationSetting, MobileNotificationMessage, CounterModelMaster, CounterScopeModel, MissionGroupModelMaster, Namespace, Counter, CurrentMissionMaster, CounterModel, MissionGroupModel, MissionTaskModel, MissionTaskModelMaster, ScopedValue, TargetCounterModel, AcquireAction, ConsumeAction, VerifyAction, Config, LogSetting, GitHubCheckoutSetting, ScriptSetting, TransactionSetting, TransactionSettingV2, };

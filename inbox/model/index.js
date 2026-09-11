@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.AcquireAction = exports.TimeSpan = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.MobileNotificationMessage = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.AcquireAction = exports.TimeSpan = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -39,6 +39,8 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
+var MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

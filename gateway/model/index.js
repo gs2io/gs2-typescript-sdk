@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.SendNotificationEntry = exports.FirebaseToken = exports.WebSocketSession = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.MobileNotificationMessage = exports.SendNotificationEntry = exports.FirebaseToken = exports.WebSocketSession = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ var FirebaseToken_1 = tslib_1.__importDefault(require("./FirebaseToken"));
 exports.FirebaseToken = FirebaseToken_1.default;
 var SendNotificationEntry_1 = tslib_1.__importDefault(require("./SendNotificationEntry"));
 exports.SendNotificationEntry = SendNotificationEntry_1.default;
+var MobileNotificationMessage_1 = tslib_1.__importDefault(require("./MobileNotificationMessage"));
+exports.MobileNotificationMessage = MobileNotificationMessage_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));

@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Gateway = tslib_1.__importStar(require("../../gateway/model"));
 var SendNotificationEntry = /** @class */ (function () {
     function SendNotificationEntry() {
         this.userId = null;
@@ -23,6 +25,7 @@ var SendNotificationEntry = /** @class */ (function () {
         this.payload = null;
         this.enableTransferMobileNotification = null;
         this.sound = null;
+        this.mobileNotificationMessages = null;
     }
     SendNotificationEntry.prototype.getUserId = function () {
         return this.userId;
@@ -90,6 +93,17 @@ var SendNotificationEntry = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    SendNotificationEntry.prototype.getMobileNotificationMessages = function () {
+        return this.mobileNotificationMessages;
+    };
+    SendNotificationEntry.prototype.setMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
+    SendNotificationEntry.prototype.withMobileNotificationMessages = function (mobileNotificationMessages) {
+        this.mobileNotificationMessages = mobileNotificationMessages;
+        return this;
+    };
     SendNotificationEntry.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -100,7 +114,11 @@ var SendNotificationEntry = /** @class */ (function () {
             .withSubject(data["subject"])
             .withPayload(data["payload"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withMobileNotificationMessages(data.mobileNotificationMessages ?
+            data.mobileNotificationMessages.map(function (item) {
+                return Gs2Gateway.MobileNotificationMessage.fromDict(item);
+            }) : null);
     };
     SendNotificationEntry.prototype.toDict = function () {
         return {
@@ -110,6 +128,10 @@ var SendNotificationEntry = /** @class */ (function () {
             "payload": this.getPayload(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "mobileNotificationMessages": this.getMobileNotificationMessages() ?
+                this.getMobileNotificationMessages().map(function (item) {
+                    return item.toDict();
+                }) : null,
         };
     };
     return SendNotificationEntry;

@@ -397,7 +397,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.sendNotification = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/session/user/{userId}/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -419,6 +419,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
             'payload': (_k = request.getPayload()) !== null && _k !== void 0 ? _k : null,
             'enableTransferMobileNotification': (_l = request.getEnableTransferMobileNotification()) !== null && _l !== void 0 ? _l : null,
             'sound': (_m = request.getSound()) !== null && _m !== void 0 ? _m : null,
+            'mobileNotificationMessages': (_p = (_o = request.getMobileNotificationMessages()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.SendNotificationResult.fromDict(data);
@@ -605,7 +606,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.sendMobileNotificationByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (((_a = Gs2GatewayRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/firebase/token/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -626,6 +627,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
             'subject': (_j = request.getSubject()) !== null && _j !== void 0 ? _j : null,
             'payload': (_k = request.getPayload()) !== null && _k !== void 0 ? _k : null,
             'sound': (_l = request.getSound()) !== null && _l !== void 0 ? _l : null,
+            'mobileNotificationMessages': (_o = (_m = request.getMobileNotificationMessages()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.SendMobileNotificationByUserIdResult.fromDict(data);
