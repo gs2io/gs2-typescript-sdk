@@ -22,6 +22,7 @@ var SetFirebaseTokenRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.token = null;
+        this.locale = null;
         this.duplicationAvoider = null;
     }
     SetFirebaseTokenRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var SetFirebaseTokenRequest = /** @class */ (function () {
         this.token = token;
         return this;
     };
+    SetFirebaseTokenRequest.prototype.getLocale = function () {
+        return this.locale;
+    };
+    SetFirebaseTokenRequest.prototype.setLocale = function (locale) {
+        this.locale = locale;
+        return this;
+    };
+    SetFirebaseTokenRequest.prototype.withLocale = function (locale) {
+        this.locale = locale;
+        return this;
+    };
     SetFirebaseTokenRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var SetFirebaseTokenRequest = /** @class */ (function () {
         return new SetFirebaseTokenRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withToken(data["token"]);
+            .withToken(data["token"])
+            .withLocale(data["locale"]);
     };
     SetFirebaseTokenRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "token": this.getToken(),
+            "locale": this.getLocale(),
         };
     };
     return SetFirebaseTokenRequest;

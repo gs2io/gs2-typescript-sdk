@@ -7,6 +7,7 @@ export default class Namespace implements IModel {
     private transactionSetting;
     private transactionSettingV2;
     private firebaseSecret;
+    private firebaseProjectId;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -34,9 +35,15 @@ export default class Namespace implements IModel {
     getTransactionSettingV2(): Gs2Gateway.TransactionSettingV2 | null;
     setTransactionSettingV2(transactionSettingV2: Gs2Gateway.TransactionSettingV2 | null): this;
     withTransactionSettingV2(transactionSettingV2: Gs2Gateway.TransactionSettingV2 | null): this;
+    /** @deprecated */
     getFirebaseSecret(): string | null;
+    /** @deprecated */
     setFirebaseSecret(firebaseSecret: string | null): this;
+    /** @deprecated */
     withFirebaseSecret(firebaseSecret: string | null): this;
+    getFirebaseProjectId(): string | null;
+    setFirebaseProjectId(firebaseProjectId: string | null): this;
+    withFirebaseProjectId(firebaseProjectId: string | null): this;
     getLogSetting(): Gs2Gateway.LogSetting | null;
     setLogSetting(logSetting: Gs2Gateway.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Gateway.LogSetting | null): this;

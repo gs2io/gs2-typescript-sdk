@@ -26,6 +26,7 @@ var Namespace = /** @class */ (function () {
         this.transactionSetting = null;
         this.transactionSettingV2 = null;
         this.firebaseSecret = null;
+        this.firebaseProjectId = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -137,15 +138,29 @@ var Namespace = /** @class */ (function () {
         this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getFirebaseSecret = function () {
         return this.firebaseSecret;
     };
+    /** @deprecated */
     Namespace.prototype.setFirebaseSecret = function (firebaseSecret) {
         this.firebaseSecret = firebaseSecret;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withFirebaseSecret = function (firebaseSecret) {
         this.firebaseSecret = firebaseSecret;
+        return this;
+    };
+    Namespace.prototype.getFirebaseProjectId = function () {
+        return this.firebaseProjectId;
+    };
+    Namespace.prototype.setFirebaseProjectId = function (firebaseProjectId) {
+        this.firebaseProjectId = firebaseProjectId;
+        return this;
+    };
+    Namespace.prototype.withFirebaseProjectId = function (firebaseProjectId) {
+        this.firebaseProjectId = firebaseProjectId;
         return this;
     };
     Namespace.prototype.getLogSetting = function () {
@@ -203,6 +218,7 @@ var Namespace = /** @class */ (function () {
             .withTransactionSetting(Gs2Gateway.TransactionSetting.fromDict(data["transactionSetting"]))
             .withTransactionSettingV2(Gs2Gateway.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withFirebaseSecret(data["firebaseSecret"])
+            .withFirebaseProjectId(data["firebaseProjectId"])
             .withLogSetting(Gs2Gateway.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -217,6 +233,7 @@ var Namespace = /** @class */ (function () {
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "firebaseSecret": this.getFirebaseSecret(),
+            "firebaseProjectId": this.getFirebaseProjectId(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

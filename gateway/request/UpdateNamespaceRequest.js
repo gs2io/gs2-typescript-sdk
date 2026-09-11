@@ -26,6 +26,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = null;
         this.transactionSettingV2 = null;
         this.firebaseSecret = null;
+        this.firebaseProjectId = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -97,15 +98,29 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.transactionSettingV2 = transactionSettingV2;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getFirebaseSecret = function () {
         return this.firebaseSecret;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.setFirebaseSecret = function (firebaseSecret) {
         this.firebaseSecret = firebaseSecret;
         return this;
     };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.withFirebaseSecret = function (firebaseSecret) {
         this.firebaseSecret = firebaseSecret;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getFirebaseProjectId = function () {
+        return this.firebaseProjectId;
+    };
+    UpdateNamespaceRequest.prototype.setFirebaseProjectId = function (firebaseProjectId) {
+        this.firebaseProjectId = firebaseProjectId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withFirebaseProjectId = function (firebaseProjectId) {
+        this.firebaseProjectId = firebaseProjectId;
         return this;
     };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
@@ -126,6 +141,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withTransactionSetting(Gs2Gateway.TransactionSetting.fromDict(data["transactionSetting"]))
             .withTransactionSettingV2(Gs2Gateway.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withFirebaseSecret(data["firebaseSecret"])
+            .withFirebaseProjectId(data["firebaseProjectId"])
             .withLogSetting(Gs2Gateway.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
@@ -136,6 +152,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "firebaseSecret": this.getFirebaseSecret(),
+            "firebaseProjectId": this.getFirebaseProjectId(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };

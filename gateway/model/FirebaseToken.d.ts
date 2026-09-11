@@ -3,6 +3,7 @@ export default class FirebaseToken implements IModel {
     private firebaseTokenId;
     private userId;
     private token;
+    private locale;
     private createdAt;
     private updatedAt;
     private revision;
@@ -21,6 +22,9 @@ export default class FirebaseToken implements IModel {
     getToken(): string | null;
     setToken(token: string | null): this;
     withToken(token: string | null): this;
+    getLocale(): string | null;
+    setLocale(locale: string | null): this;
+    withLocale(locale: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

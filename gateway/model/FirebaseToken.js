@@ -21,6 +21,7 @@ var FirebaseToken = /** @class */ (function () {
         this.firebaseTokenId = null;
         this.userId = null;
         this.token = null;
+        this.locale = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -124,6 +125,17 @@ var FirebaseToken = /** @class */ (function () {
         this.token = token;
         return this;
     };
+    FirebaseToken.prototype.getLocale = function () {
+        return this.locale;
+    };
+    FirebaseToken.prototype.setLocale = function (locale) {
+        this.locale = locale;
+        return this;
+    };
+    FirebaseToken.prototype.withLocale = function (locale) {
+        this.locale = locale;
+        return this;
+    };
     FirebaseToken.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -165,6 +177,7 @@ var FirebaseToken = /** @class */ (function () {
             .withFirebaseTokenId(data["firebaseTokenId"])
             .withUserId(data["userId"])
             .withToken(data["token"])
+            .withLocale(data["locale"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -174,6 +187,7 @@ var FirebaseToken = /** @class */ (function () {
             "firebaseTokenId": this.getFirebaseTokenId(),
             "userId": this.getUserId(),
             "token": this.getToken(),
+            "locale": this.getLocale(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

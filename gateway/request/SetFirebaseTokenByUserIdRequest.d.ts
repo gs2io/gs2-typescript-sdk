@@ -5,6 +5,7 @@ export default class SetFirebaseTokenByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private token;
+    private locale;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -22,6 +23,9 @@ export default class SetFirebaseTokenByUserIdRequest implements IRequest {
     getToken(): string | null;
     setToken(token: string | null): this;
     withToken(token: string | null): this;
+    getLocale(): string | null;
+    setLocale(locale: string | null): this;
+    withLocale(locale: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
