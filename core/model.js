@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.Gs2RestSession = exports.steadyAgents = exports.isConnectFailure = exports.steadyRestUrl = exports.isSteadyUrl = exports.steadyWebSocketUrl = exports.steadyRestTemplate = exports.normalizeSteadyEndpoint = exports.STEADY_CONNECT_TIMEOUT_CODE = exports.STEADY_CONNECT_TIMEOUT_MS = exports.BasicGs2Credential = void 0;
+exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.ConnectionBrokenError = exports.Gs2RestSession = exports.steadyAgents = exports.isConnectFailure = exports.steadyRestUrl = exports.isSteadyUrl = exports.steadyWebSocketUrl = exports.steadyRestTemplate = exports.normalizeSteadyEndpoint = exports.STEADY_CONNECT_TIMEOUT_CODE = exports.STEADY_CONNECT_TIMEOUT_MS = exports.BasicGs2Credential = void 0;
 var tslib_1 = require("tslib");
 var axios_1 = tslib_1.__importDefault(require("axios"));
 var async_wait_until_1 = tslib_1.__importDefault(require("async-wait-until"));
@@ -318,11 +318,65 @@ var Gs2RestSession = /** @class */ (function () {
     return Gs2RestSession;
 }());
 exports.Gs2RestSession = Gs2RestSession;
+// ---------------------------------------------------------------- WebSocket が切れたときの誤り
+//
+// ★サーバーは応答を返す前に接続を閉じることがある
+// （gateway の setUserId を force=true で呼ぶと呼び手自身の接続が切られる／ノードの停止／
+//  ネットワーク断）。そのとき待ち中の要求を決着させないと、呼び手は永久に await したままになる。
+// 切れたら待ち中の要求すべてをこの誤りで落とし、繋ぎ直すまで以後の send も即座にこの誤りで落とす。
+var ConnectionBrokenError = /** @class */ (function (_super) {
+    tslib_1.__extends(ConnectionBrokenError, _super);
+    function ConnectionBrokenError(detail) {
+        var _this = _super.call(this, detail == null ? 'connection broken' : 'connection broken (' + detail + ')') || this;
+        _this.name = 'ConnectionBrokenError';
+        // ★target: es5 では Error を継承すると prototype が失われ instanceof が偽になるので繋ぎ直す。
+        Object.setPrototypeOf(_this, ConnectionBrokenError.prototype);
+        return _this;
+    }
+    return ConnectionBrokenError;
+}(Error));
+exports.ConnectionBrokenError = ConnectionBrokenError;
+/** readyState（Node の `ws` もブラウザの WebSocket も同じ値） */
+var WS_OPEN = 1;
+var WS_CLOSED = 3;
+/** 閉じる挨拶を送る（既に閉じている接続でも安全。例外は握る） */
+function closeQuietly(client) {
+    try {
+        if (client != null && client.readyState !== WS_CLOSED) {
+            client.close();
+        }
+    }
+    catch (e) {
+        // 既に閉じている / 閉じ途中 ―― 何もしない。
+    }
+}
+/**
+ * 接続を叩き落とす（★相手がもう居ない接続に close() を送ると、`ws` は閉じる挨拶の返事を
+ * 30 秒待つタイマーを置くので、socket もタイマーも残さないようにこちらを使う）。
+ * terminate を持たないブラウザの WebSocket では close() に落とす。
+ */
+function terminateQuietly(client) {
+    try {
+        if (client != null && typeof client.terminate === 'function') {
+            client.terminate();
+            return;
+        }
+    }
+    catch (e) {
+        // 何もしない。
+    }
+    closeQuietly(client);
+}
 var Gs2WebSocketSession = /** @class */ (function () {
     function Gs2WebSocketSession(credential, region, options) {
         var _a;
         this.client = null;
-        this.inflightRequest = {};
+        /**
+         * 応答待ちの要求（requestId → Promise の決着口）。
+         * ★応答が来たもの・接続が切れたものは必ず取り除く。以前は応答の無い要求が残り続け、
+         *  呼び手は「応答も誤りも来ない」まま待っていた（送信の成否も見ていなかった）。
+         */
+        this.pendingRequests = {};
         this.onOpenHandlers = [];
         this.onErrorHandlers = [];
         this.onCloseHandlers = [];
@@ -362,11 +416,17 @@ var Gs2WebSocketSession = /** @class */ (function () {
     };
     Gs2WebSocketSession.prototype.connect = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var url, data, response, result, wsUrl;
+            var url, data, response, result, wsUrl, client;
             var _this = this;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        // ★繋ぎ直す前に古い接続を片付ける（そこに残した要求が決着しないまま忘れられないように）。
+                        //  ログインより前に済ませる ―― dropConnection は projectToken も捨てるので、
+                        //  この後で取り直したトークンを消させない。
+                        if (this.client != null) {
+                            this.dropConnection(this.client, 'reconnect');
+                        }
                         url = this.endpointHost('identifier') + '/projectToken/login';
                         if (!(this.credential instanceof BasicGs2Credential)) return [3 /*break*/, 2];
                         data = {
@@ -388,62 +448,113 @@ var Gs2WebSocketSession = /** @class */ (function () {
                     case 3:
                         wsUrl = this.webSocketUrl();
                         if (typeof window === 'undefined') {
-                            this.client = new NodeWebSocket(wsUrl, this.webSocketOptions());
+                            client = new NodeWebSocket(wsUrl, this.webSocketOptions());
                         }
                         else {
-                            this.client = new WebSocket(wsUrl);
+                            client = new WebSocket(wsUrl);
                         }
-                        this.client.onopen = function (event) {
+                        this.client = client;
+                        client.onopen = function (event) {
                             for (var i = 0; i < _this.onOpenHandlers.length; i++) {
                                 _this.onOpenHandlers[i]();
                             }
                         };
-                        this.client.onmessage = function (message) {
+                        client.onmessage = function (message) {
                             var payload = JSON.parse(message.data);
                             if (payload.type == 'notification') {
                                 for (var i = 0; i < _this.onNotificationHandlers.length; i++) {
                                     _this.onNotificationHandlers[i](payload.body);
                                 }
+                                return;
                             }
-                            else {
-                                _this.inflightRequest[payload.requestId] = payload;
+                            var pending = _this.takePending(payload.requestId);
+                            // ★待ち行列に無い requestId（既に決着した要求への応答など）は捨てる。
+                            if (pending != null) {
+                                pending.resolve(payload);
                             }
                         };
-                        this.client.onerror = function (error) {
+                        client.onerror = function (error) {
+                            // ★close が来ないまま error だけ来ることがある（TCP が黙って切れた・handshake が失敗した）。
+                            //  ここでも待ち中の要求を決着させる（dropConnection は同じ接続に何度呼んでも無害）。
+                            _this.dropConnection(client, 'error');
                             for (var i = 0; i < _this.onErrorHandlers.length; i++) {
                                 _this.onErrorHandlers[i](error);
                             }
                         };
-                        this.client.onclose = function () {
+                        client.onclose = function () {
+                            // ★応答を返す前にサーバーが閉じても、待ち中の要求は必ず ConnectionBrokenError で決着させる。
+                            _this.dropConnection(client, 'closed by peer');
                             for (var i = 0; i < _this.onCloseHandlers.length; i++) {
                                 _this.onCloseHandlers[i]();
                             }
                         };
-                        if (!(typeof window === 'undefined')) return [3 /*break*/, 5];
-                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == NodeWebSocket.CLOSED || _this.client.readyState == NodeWebSocket.OPEN; })];
+                        // 開くか閉じるまで待つ（this.client が差し替わった・捨てられた場合も抜ける）。
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client !== client || client.readyState == WS_CLOSED || client.readyState == WS_OPEN; })];
                     case 4:
+                        // 開くか閉じるまで待つ（this.client が差し替わった・捨てられた場合も抜ける）。
                         _a.sent();
-                        return [3 /*break*/, 7];
-                    case 5: return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED || _this.client.readyState == WebSocket.OPEN; })];
-                    case 6:
-                        _a.sent();
-                        _a.label = 7;
-                    case 7: return [2 /*return*/];
+                        return [2 /*return*/];
                 }
             });
         });
     };
+    /** requestId の要求を待ち行列から外して返す（無ければ null） */
+    Gs2WebSocketSession.prototype.takePending = function (requestId) {
+        if (requestId == null) {
+            return null;
+        }
+        var pending = this.pendingRequests[requestId];
+        if (pending == null) {
+            return null;
+        }
+        delete this.pendingRequests[requestId];
+        return pending;
+    };
+    /** 待ち中の要求すべてを ConnectionBrokenError で決着させ、待ち行列を空にする */
+    Gs2WebSocketSession.prototype.failPending = function (detail) {
+        var pendingRequests = this.pendingRequests;
+        this.pendingRequests = {};
+        var error = new ConnectionBrokenError(detail);
+        // ★先に待ち行列を空にしてから落とす（reject の先で send が呼ばれても混ざらない）。
+        Object.keys(pendingRequests).forEach(function (requestId) {
+            pendingRequests[requestId].reject(error);
+        });
+    };
+    /**
+     * 切れた接続を捨て、待ち中の要求すべてを ConnectionBrokenError で決着させる。
+     * ★既に別の接続へ差し替わっていたら（disconnect → connect の後の古い接続）何もしない。
+     * ★同じ接続に二度呼ばれても 2 回目は待ち行列が空なので無害（close と error の両方から来る）。
+     */
+    Gs2WebSocketSession.prototype.dropConnection = function (client, detail) {
+        if (this.client !== client) {
+            terminateQuietly(client);
+            return;
+        }
+        this.client = null;
+        this.projectToken = null;
+        this.expiresAt = null;
+        this.failPending(detail);
+        // ★相手はもう居ないので閉じる挨拶はしない（socket もタイマーも残さない）。
+        terminateQuietly(client);
+    };
     Gs2WebSocketSession.prototype.send = function (service, component, func, payload) {
-        var _a;
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var requestId, result;
+            var client, requestId, body, result;
             var _this = this;
-            return tslib_1.__generator(this, function (_b) {
-                switch (_b.label) {
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
+                        client = this.client;
+                        // ★接続が無い／閉じかけ・閉じた接続への送信は、待たずにその場で落とす
+                        //  （以前は送ったつもりになって応答を待ち続けていた）。
+                        if (client == null) {
+                            throw new ConnectionBrokenError('not connected');
+                        }
+                        if (client.readyState !== WS_OPEN) {
+                            throw new ConnectionBrokenError('readyState=' + client.readyState);
+                        }
                         requestId = (0, uuid_1.v4)();
-                        this.inflightRequest[requestId] = null;
-                        (_a = this.client) === null || _a === void 0 ? void 0 : _a.send(JSON.stringify(Object.assign({}, payload, {
+                        body = JSON.stringify(Object.assign({}, payload, {
                             xGs2ClientId: this.credential.clientId,
                             xGs2ProjectToken: this.projectToken,
                             x_gs2: {
@@ -453,12 +564,32 @@ var Gs2WebSocketSession = /** @class */ (function () {
                                 contentType: "application/json",
                                 requestId: requestId,
                             },
-                        })));
-                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.inflightRequest[requestId] != null; })];
+                        }));
+                        return [4 /*yield*/, new Promise(function (resolve, reject) {
+                                // ★送信の前に待ち行列へ載せる（応答が先に届いても取り落とさない）。
+                                _this.pendingRequests[requestId] = { resolve: resolve, reject: reject };
+                                try {
+                                    // ★Node の `ws` は第 2 引数に書き込みの結果を受ける口を取る（ブラウザの WebSocket は
+                                    //  余分な引数を無視する）。送れなかった要求は届いていないので、その場で落とす。
+                                    client.send(body, function (error) {
+                                        if (error == null) {
+                                            return;
+                                        }
+                                        var pending = _this.takePending(requestId);
+                                        if (pending != null) {
+                                            pending.reject(new ConnectionBrokenError(error.message));
+                                        }
+                                    });
+                                }
+                                catch (error) {
+                                    var pending_1 = _this.takePending(requestId);
+                                    if (pending_1 != null) {
+                                        pending_1.reject(error);
+                                    }
+                                }
+                            })];
                     case 1:
-                        _b.sent();
-                        result = this.inflightRequest[requestId];
-                        delete this.inflightRequest[requestId];
+                        result = _a.sent();
                         if (result.status != 200) {
                             throw result.body;
                         }
@@ -479,29 +610,38 @@ var Gs2WebSocketSession = /** @class */ (function () {
     Gs2WebSocketSession.prototype.onNotification = function (func) {
         this.onNotificationHandlers.push(func);
     };
+    /** 接続を閉じる。★待ち中の要求には ConnectionBrokenError が返る（close を待たずに決着させる） */
     Gs2WebSocketSession.prototype.disconnect = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var _this = this;
+            var client, e_1;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!(this.client != null)) return [3 /*break*/, 5];
-                        this.client.close();
-                        if (!(typeof window === 'undefined')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == NodeWebSocket.CLOSED; })];
+                        client = this.client;
+                        this.client = null;
+                        this.projectToken = null;
+                        this.expiresAt = null;
+                        // ★close イベントを待たない（来ないこともある）。
+                        this.failPending('disconnected');
+                        if (!(client != null)) return [3 /*break*/, 5];
+                        closeQuietly(client);
+                        _a.label = 1;
                     case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return client.readyState == WS_CLOSED; }, { timeout: 1000 })];
+                    case 2:
                         _a.sent();
                         return [3 /*break*/, 4];
-                    case 2: return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED; })];
                     case 3:
-                        _a.sent();
-                        _a.label = 4;
+                        e_1 = _a.sent();
+                        return [3 /*break*/, 4];
                     case 4:
-                        this.client = null;
+                        if (client.readyState !== WS_CLOSED) {
+                            // ★閉じ切らないまま抜けると socket とタイマーが残るので叩き落とす。
+                            terminateQuietly(client);
+                        }
                         _a.label = 5;
-                    case 5:
-                        this.projectToken = null;
-                        return [2 /*return*/];
+                    case 5: return [2 /*return*/];
                 }
             });
         });

@@ -88,6 +88,9 @@ export declare class Gs2RestSession {
     connect(): Promise<LoginResult> | undefined;
     disconnect(): void;
 }
+export declare class ConnectionBrokenError extends Error {
+    constructor(detail?: string);
+}
 export interface Gs2WebSocketSessionOptions {
     /**
      * Steady（専用フリート）の基点 `https://<host>`。接続先は `wss://<host>/`（基点が `http://` なら
@@ -107,7 +110,12 @@ export declare class Gs2WebSocketSession {
     steadyEndpoint: string;
     /** Steady の handshake タイムアウト（ms） */
     steadyConnectTimeoutMs: number;
-    private inflightRequest;
+    /**
+     * 応答待ちの要求（requestId → Promise の決着口）。
+     * ★応答が来たもの・接続が切れたものは必ず取り除く。以前は応答の無い要求が残り続け、
+     *  呼び手は「応答も誤りも来ない」まま待っていた（送信の成否も見ていなかった）。
+     */
+    private pendingRequests;
     private onOpenHandlers;
     private onErrorHandlers;
     private onCloseHandlers;
@@ -126,6 +134,16 @@ export declare class Gs2WebSocketSession {
     /** ログイン（identifier）の REST 接続先。steady があれば `<steady>/identifier`、無ければ従来 */
     endpointHost(service: string): string;
     connect(): Promise<any>;
+    /** requestId の要求を待ち行列から外して返す（無ければ null） */
+    private takePending;
+    /** 待ち中の要求すべてを ConnectionBrokenError で決着させ、待ち行列を空にする */
+    private failPending;
+    /**
+     * 切れた接続を捨て、待ち中の要求すべてを ConnectionBrokenError で決着させる。
+     * ★既に別の接続へ差し替わっていたら（disconnect → connect の後の古い接続）何もしない。
+     * ★同じ接続に二度呼ばれても 2 回目は待ち行列が空なので無害（close と error の両方から来る）。
+     */
+    private dropConnection;
     send(service: string, component: string, func: string, payload: any): Promise<any>;
     onOpen(func: (ev: Event) => any): void;
     onError(func: (ev: Event) => any): void;
@@ -135,6 +153,7 @@ export declare class Gs2WebSocketSession {
         issuer: string;
         payload: any;
     }) => any): void;
+    /** 接続を閉じる。★待ち中の要求には ConnectionBrokenError が返る（close を待たずに決着させる） */
     disconnect(): Promise<any>;
 }
 declare class LoginResult {
