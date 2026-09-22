@@ -242,7 +242,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.createProject = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -262,6 +262,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'enableEventBridge': (_k = request.getEnableEventBridge()) !== null && _k !== void 0 ? _k : null,
             'eventBridgeAwsAccountId': (_l = request.getEventBridgeAwsAccountId()) !== null && _l !== void 0 ? _l : null,
             'eventBridgeAwsRegion': (_m = request.getEventBridgeAwsRegion()) !== null && _m !== void 0 ? _m : null,
+            'dataStoreKeyScheme': (_o = request.getDataStoreKeyScheme()) !== null && _o !== void 0 ? _o : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateProjectResult.fromDict(data);

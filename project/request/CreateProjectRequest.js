@@ -29,6 +29,7 @@ var CreateProjectRequest = /** @class */ (function () {
         this.enableEventBridge = null;
         this.eventBridgeAwsAccountId = null;
         this.eventBridgeAwsRegion = null;
+        this.dataStoreKeyScheme = null;
     }
     CreateProjectRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -162,6 +163,17 @@ var CreateProjectRequest = /** @class */ (function () {
         this.eventBridgeAwsRegion = eventBridgeAwsRegion;
         return this;
     };
+    CreateProjectRequest.prototype.getDataStoreKeyScheme = function () {
+        return this.dataStoreKeyScheme;
+    };
+    CreateProjectRequest.prototype.setDataStoreKeyScheme = function (dataStoreKeyScheme) {
+        this.dataStoreKeyScheme = dataStoreKeyScheme;
+        return this;
+    };
+    CreateProjectRequest.prototype.withDataStoreKeyScheme = function (dataStoreKeyScheme) {
+        this.dataStoreKeyScheme = dataStoreKeyScheme;
+        return this;
+    };
     CreateProjectRequest.fromDict = function (data) {
         return new CreateProjectRequest()
             .withAccountToken(data["accountToken"])
@@ -173,7 +185,8 @@ var CreateProjectRequest = /** @class */ (function () {
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
-            .withEventBridgeAwsRegion(data["eventBridgeAwsRegion"]);
+            .withEventBridgeAwsRegion(data["eventBridgeAwsRegion"])
+            .withDataStoreKeyScheme(data["dataStoreKeyScheme"]);
     };
     CreateProjectRequest.prototype.toDict = function () {
         return {
@@ -187,6 +200,7 @@ var CreateProjectRequest = /** @class */ (function () {
             "enableEventBridge": this.getEnableEventBridge(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),
             "eventBridgeAwsRegion": this.getEventBridgeAwsRegion(),
+            "dataStoreKeyScheme": this.getDataStoreKeyScheme(),
         };
     };
     return CreateProjectRequest;

@@ -31,6 +31,7 @@ var Project = /** @class */ (function () {
         this.currency = null;
         this.eventBridgeAwsAccountId = null;
         this.eventBridgeAwsRegion = null;
+        this.dataStoreKeyScheme = null;
         this.createdAt = null;
         this.updatedAt = null;
     }
@@ -187,6 +188,17 @@ var Project = /** @class */ (function () {
         this.eventBridgeAwsRegion = eventBridgeAwsRegion;
         return this;
     };
+    Project.prototype.getDataStoreKeyScheme = function () {
+        return this.dataStoreKeyScheme;
+    };
+    Project.prototype.setDataStoreKeyScheme = function (dataStoreKeyScheme) {
+        this.dataStoreKeyScheme = dataStoreKeyScheme;
+        return this;
+    };
+    Project.prototype.withDataStoreKeyScheme = function (dataStoreKeyScheme) {
+        this.dataStoreKeyScheme = dataStoreKeyScheme;
+        return this;
+    };
     Project.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -228,6 +240,7 @@ var Project = /** @class */ (function () {
             .withCurrency(data["currency"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
             .withEventBridgeAwsRegion(data["eventBridgeAwsRegion"])
+            .withDataStoreKeyScheme(data["dataStoreKeyScheme"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -247,6 +260,7 @@ var Project = /** @class */ (function () {
             "currency": this.getCurrency(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),
             "eventBridgeAwsRegion": this.getEventBridgeAwsRegion(),
+            "dataStoreKeyScheme": this.getDataStoreKeyScheme(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

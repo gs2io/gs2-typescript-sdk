@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MobileNotificationMessage = exports.NotificationSetting = exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.BatchResultPayload = exports.BatchRequestPayload = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.MobileNotificationMessage = exports.NotificationSetting = exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.UserDataEntry = exports.BatchResultPayload = exports.BatchRequestPayload = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var BatchRequestPayload_1 = tslib_1.__importDefault(require("./BatchRequestPaylo
 exports.BatchRequestPayload = BatchRequestPayload_1.default;
 var BatchResultPayload_1 = tslib_1.__importDefault(require("./BatchResultPayload"));
 exports.BatchResultPayload = BatchResultPayload_1.default;
+var UserDataEntry_1 = tslib_1.__importDefault(require("./UserDataEntry"));
+exports.UserDataEntry = UserDataEntry_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));

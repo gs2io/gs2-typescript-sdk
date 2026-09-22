@@ -12,6 +12,7 @@ export default class CreateProjectRequest implements IRequest {
     private enableEventBridge;
     private eventBridgeAwsAccountId;
     private eventBridgeAwsRegion;
+    private dataStoreKeyScheme;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -48,6 +49,9 @@ export default class CreateProjectRequest implements IRequest {
     getEventBridgeAwsRegion(): string | null;
     setEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
     withEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
+    getDataStoreKeyScheme(): string | null;
+    setDataStoreKeyScheme(dataStoreKeyScheme: string | null): this;
+    withDataStoreKeyScheme(dataStoreKeyScheme: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateProjectRequest;

@@ -19,6 +19,7 @@ var grnFormat = "";
 var SendMemberRequest = /** @class */ (function () {
     function SendMemberRequest() {
         this.userId = null;
+        this.targetGuildModelName = null;
         this.targetGuildName = null;
         this.metadata = null;
         this.createdAt = null;
@@ -38,6 +39,17 @@ var SendMemberRequest = /** @class */ (function () {
     };
     SendMemberRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    SendMemberRequest.prototype.getTargetGuildModelName = function () {
+        return this.targetGuildModelName;
+    };
+    SendMemberRequest.prototype.setTargetGuildModelName = function (targetGuildModelName) {
+        this.targetGuildModelName = targetGuildModelName;
+        return this;
+    };
+    SendMemberRequest.prototype.withTargetGuildModelName = function (targetGuildModelName) {
+        this.targetGuildModelName = targetGuildModelName;
         return this;
     };
     SendMemberRequest.prototype.getTargetGuildName = function () {
@@ -79,6 +91,7 @@ var SendMemberRequest = /** @class */ (function () {
         }
         return new SendMemberRequest()
             .withUserId(data["userId"])
+            .withTargetGuildModelName(data["targetGuildModelName"])
             .withTargetGuildName(data["targetGuildName"])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"]);
@@ -86,6 +99,7 @@ var SendMemberRequest = /** @class */ (function () {
     SendMemberRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "targetGuildModelName": this.getTargetGuildModelName(),
             "targetGuildName": this.getTargetGuildName(),
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),

@@ -12,6 +12,7 @@ export default class Project implements IModel {
     private currency;
     private eventBridgeAwsAccountId;
     private eventBridgeAwsRegion;
+    private dataStoreKeyScheme;
     private createdAt;
     private updatedAt;
     static getAccountName(grn: string): string | null;
@@ -51,6 +52,9 @@ export default class Project implements IModel {
     getEventBridgeAwsRegion(): string | null;
     setEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
     withEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
+    getDataStoreKeyScheme(): string | null;
+    setDataStoreKeyScheme(dataStoreKeyScheme: string | null): this;
+    withDataStoreKeyScheme(dataStoreKeyScheme: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

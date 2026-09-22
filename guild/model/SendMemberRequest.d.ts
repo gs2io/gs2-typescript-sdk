@@ -1,6 +1,7 @@
 import IModel from '../../core/interface/IModel';
 export default class SendMemberRequest implements IModel {
     private userId;
+    private targetGuildModelName;
     private targetGuildName;
     private metadata;
     private createdAt;
@@ -9,6 +10,9 @@ export default class SendMemberRequest implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getTargetGuildModelName(): string | null;
+    setTargetGuildModelName(targetGuildModelName: string | null): this;
+    withTargetGuildModelName(targetGuildModelName: string | null): this;
     getTargetGuildName(): string | null;
     setTargetGuildName(targetGuildName: string | null): this;
     withTargetGuildName(targetGuildName: string | null): this;
