@@ -748,49 +748,6 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             return Result.BatchExecuteApiResult.fromDict(data);
         });
     };
-    Gs2DistributorRestClient.prototype.describeUserData = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/me/data')
-            .replace('{service}', 'distributor')
-            .replace('{region}', this.session.region);
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_b = request.getAccessToken()) !== null && _b !== void 0 ? _b : null;
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
-        };
-        return this.request('GET', url, headers, params, undefined).then(function (data) {
-            return Result.DescribeUserDataResult.fromDict(data);
-        });
-    };
-    Gs2DistributorRestClient.prototype.describeUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userId}/data')
-            .replace('{service}', 'distributor')
-            .replace('{region}', this.session.region)
-            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
-        }
-        var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
-        };
-        return this.request('GET', url, headers, params, undefined).then(function (data) {
-            return Result.DescribeUserDataByUserIdResult.fromDict(data);
-        });
-    };
     Gs2DistributorRestClient.prototype.ifExpressionByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/expression/if')
@@ -964,6 +921,49 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         };
         return this.request('GET', url, headers, params, undefined).then(function (data) {
             return Result.GetStampSheetResultByUserIdResult.fromDict(data);
+        });
+    };
+    Gs2DistributorRestClient.prototype.describeUserData = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/me/data')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_b = request.getAccessToken()) !== null && _b !== void 0 ? _b : null;
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeUserDataResult.fromDict(data);
+        });
+    };
+    Gs2DistributorRestClient.prototype.describeUserDataByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2DistributorRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/user/{userId}/data')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+        };
+        return this.request('GET', url, headers, params, undefined).then(function (data) {
+            return Result.DescribeUserDataByUserIdResult.fromDict(data);
         });
     };
     Gs2DistributorRestClient.prototype.runTransaction = function (request) {
