@@ -16,7 +16,14 @@ permissions and limitations under the License.
  */
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.ConnectionBrokenError = exports.Gs2RestSession = exports.steadyAgents = exports.isConnectFailure = exports.steadyRestUrl = exports.isSteadyUrl = exports.steadyWebSocketUrl = exports.steadyRestTemplate = exports.normalizeSteadyEndpoint = exports.STEADY_CONNECT_TIMEOUT_CODE = exports.STEADY_CONNECT_TIMEOUT_MS = exports.BasicGs2Credential = void 0;
+exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.ConnectionBrokenError = exports.Gs2RestSession = exports.STEADY_CONNECT_TIMEOUT_CODE = exports.STEADY_CONNECT_TIMEOUT_MS = exports.BasicGs2Credential = void 0;
+exports.normalizeSteadyEndpoint = normalizeSteadyEndpoint;
+exports.steadyRestTemplate = steadyRestTemplate;
+exports.steadyWebSocketUrl = steadyWebSocketUrl;
+exports.isSteadyUrl = isSteadyUrl;
+exports.steadyRestUrl = steadyRestUrl;
+exports.isConnectFailure = isConnectFailure;
+exports.steadyAgents = steadyAgents;
 var tslib_1 = require("tslib");
 var axios_1 = tslib_1.__importDefault(require("axios"));
 var async_wait_until_1 = tslib_1.__importDefault(require("async-wait-until"));
@@ -30,32 +37,14 @@ var BasicGs2Credential = /** @class */ (function () {
     return BasicGs2Credential;
 }());
 exports.BasicGs2Credential = BasicGs2Credential;
-// ---------------------------------------------------------------- Steady（専用フリート）の基点
-//
-// フリートは 1 つの名前（steadyEndpoint、例 https://bs-dev.ap-northeast-1.dev.gen2.gs2io.com）で受け、
-// REST は <steady>/<service>/...、WebSocket は wss://<host>/ を使う。名前はフリートのノードへ直接
-// 解決される（間に ALB は無い）ので、フリートが手放した公開 IP に当たると SYN が落ちる。
-// そのため Steady のときだけ接続段階に上限（steadyConnectTimeoutMs）を置き、接続段階の失敗
-// （1 バイトも送っていない）だけは同じ要求をもう 1 回だけ送る。送信後の失敗は届いたかもしれない
-// ので再送しない（非冪等要求の二重実行を作らない）。
-/**
- * Steady の基点への接続（DNS / TCP / TLS handshake）の上限（ms）。
- * フリートが手放した公開 IP は SYN を落とすので、OS 既定（数十秒〜数分）に任せない。
- * ★ブラウザでは接続だけの上限を持てない（XHR / fetch の timeout は要求全体にかかり、
- *  GS2 の長い API を殺す）ので、ブラウザでは上限を置かず 1 回の再送だけが効く。
- */
 exports.STEADY_CONNECT_TIMEOUT_MS = 5000;
-/** 接続段階の上限で落としたときに載せる code（Node だけ。再送の判定に使う） */
 exports.STEADY_CONNECT_TIMEOUT_CODE = 'GS2_STEADY_CONNECT_TIMEOUT';
-/** 末尾の / と空白を落とす。未設定なら '' */
 function normalizeSteadyEndpoint(value) {
     if (value == null) {
         return '';
     }
     return value.trim().replace(/\/+$/, '');
 }
-exports.normalizeSteadyEndpoint = normalizeSteadyEndpoint;
-/** steadyEndpoint から REST の template（{service} 付き）を作る。未設定なら '' */
 function steadyRestTemplate(steadyEndpoint) {
     var steady = normalizeSteadyEndpoint(steadyEndpoint);
     if (steady === '') {
@@ -63,17 +52,11 @@ function steadyRestTemplate(steadyEndpoint) {
     }
     return steady + '/{service}';
 }
-exports.steadyRestTemplate = steadyRestTemplate;
-/**
- * steadyEndpoint から WebSocket の接続先を作る。未設定・壊れた基点なら ''。
- * http:// の基点（ローカルの試験・開発）は ws:// に、https:// は wss:// に。
- */
 function steadyWebSocketUrl(steadyEndpoint) {
     var base = normalizeSteadyEndpoint(steadyEndpoint);
     if (base === '') {
         return '';
     }
-    // 基点に path が付いていても host だけを見る（Go の url.Parse と同じ）。
     var match = /^(https?):\/\/([^/]+)/i.exec(base);
     if (match == null) {
         return '';
@@ -81,8 +64,6 @@ function steadyWebSocketUrl(steadyEndpoint) {
     var scheme = match[1].toLowerCase() === 'http' ? 'ws' : 'wss';
     return scheme + '://' + match[2] + '/';
 }
-exports.steadyWebSocketUrl = steadyWebSocketUrl;
-/** 要求 URL が Steady の基点宛か */
 function isSteadyUrl(steadyEndpoint, url) {
     var base = normalizeSteadyEndpoint(steadyEndpoint);
     if (base === '') {
@@ -90,20 +71,9 @@ function isSteadyUrl(steadyEndpoint, url) {
     }
     return url === base || url.indexOf(base + '/') === 0;
 }
-exports.isSteadyUrl = isSteadyUrl;
 function escapeRegExp(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
-/**
- * 生成クライアントが組んだ URL を Steady の基点配下へ書き換える。
- *
- * 生成クライアントは `(Gs2XxxRestClient.ENDPOINT_HOST ?? Gs2Constant.ENDPOINT_HOST) + <path>` で
- * URL を組む。★共有クラウドの template（Gs2Constant.ENDPOINT_HOST）から組まれた URL だけを
- * `<steady>/<service><path>` に書き換えるので、優先順は
- * サービスごとの override ＞ steadyEndpoint ＞ 共有クラウドの template になる
- * （override の URL は template に当たらないので、そのまま残る）。
- * steadyEndpoint が未設定なら URL は従来と byte 単位で同じ。
- */
 function steadyRestUrl(steadyEndpoint, region, url) {
     var steady = normalizeSteadyEndpoint(steadyEndpoint);
     if (steady === '' || isSteadyUrl(steady, url)) {
@@ -118,17 +88,10 @@ function steadyRestUrl(steadyEndpoint, region, url) {
         .replace('\\{region\\}', escapeRegExp(region)) + '(?=$|/)');
     var match = pattern.exec(url);
     if (match == null) {
-        // サービスごとの override（または region 違い）―― 触らない。
         return url;
     }
     return steady + '/' + match[1] + url.substring(match[0].length);
 }
-exports.steadyRestUrl = steadyRestUrl;
-/**
- * 「1 バイトも送っていない」接続段階の失敗のエラーコード。これだけが再送の対象。
- * 送信後の失敗（ECONNRESET / socket hang up / 読み取りタイムアウト / 5xx）は届いたかもしれないので
- * 再送しない（非冪等要求の二重実行を作らない）。
- */
 var CONNECT_FAILURE_CODES = (_a = {
         'ECONNREFUSED': true,
         'ENOTFOUND': true,
@@ -141,11 +104,6 @@ var CONNECT_FAILURE_CODES = (_a = {
     _a['DEPTH_ZERO_SELF_SIGNED_CERT'] = true,
     _a['SELF_SIGNED_CERT_IN_CHAIN'] = true,
     _a);
-/**
- * 接続段階の失敗か（応答が無く、code が接続系）。
- * ★ブラウザの axios は接続失敗も送信後の切断もまとめて ERR_NETWORK（応答無し）にするので、
- *  ブラウザでは両者を見分けられない ―― 再送が効くのは Node だけ。
- */
 function isConnectFailure(error) {
     var _a, _b;
     if (error == null || error.response) {
@@ -154,7 +112,6 @@ function isConnectFailure(error) {
     var code = (_a = error.code) !== null && _a !== void 0 ? _a : (_b = error.cause) === null || _b === void 0 ? void 0 : _b.code;
     return typeof code === 'string' && CONNECT_FAILURE_CODES[code] === true;
 }
-exports.isConnectFailure = isConnectFailure;
 var steadyAgentCache = {};
 function withConnectTimeout(socket, timeoutMs, connectedEvent) {
     var timer = setTimeout(function () {
@@ -168,11 +125,6 @@ function withConnectTimeout(socket, timeoutMs, connectedEvent) {
     socket.once('close', clear);
     return socket;
 }
-/**
- * Node のときだけ: 接続（DNS / TCP / TLS handshake）に上限を置く Agent を作る（timeout ごとに使い回す）。
- * ★要求全体の timeout は使わない ―― GS2 には応答まで長くかかる API があるので殺せない。
- * ブラウザ（window がある）では接続だけの上限を持てないので null を返す（再送だけが効く）。
- */
 function steadyAgents(timeoutMs) {
     if (typeof window !== 'undefined' || typeof require !== 'function') {
         return null;
@@ -213,8 +165,6 @@ function steadyAgents(timeoutMs) {
         };
         return SteadyHttpsAgent;
     }(https.Agent));
-    // ★接続は使い回す（Node 既定の globalAgent と同じ keepAlive）。Steady だけ毎回 3-way handshake に
-    // なると、接続段階の上限を付けた意味（速く諦める）と引き換えに遅くなってしまう。
     var options = { keepAlive: true, scheduling: 'lifo', timeout: 5000 };
     var agents = {
         http: new SteadyHttpAgent(options),
@@ -223,12 +173,6 @@ function steadyAgents(timeoutMs) {
     steadyAgentCache[timeoutMs] = agents;
     return agents;
 }
-exports.steadyAgents = steadyAgents;
-/**
- * Steady のときだけ、接続段階に上限を置いた POST を投げ、接続段階の失敗なら
- * 同じ要求をもう 1 回だけ送る（プロジェクトトークンのログイン用）。
- * steadyEndpoint が未設定なら従来どおり素の axios.post。
- */
 function postWithSteadyResilience(url, data, steadyEndpoint, steadyConnectTimeoutMs) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
         var agents, config, error_1;
@@ -251,10 +195,7 @@ function postWithSteadyResilience(url, data, steadyEndpoint, steadyConnectTimeou
                         throw error_1;
                     }
                     return [4 /*yield*/, axios_1.default.post(url, data, config)];
-                case 4: 
-                // ★接続段階の失敗（DNS / dial / TLS。1 バイトも送っていない）だけ、同じ要求をもう 1 回だけ。
-                // フリートが手放した IP に当たったとき、名前を引き直して別のノードへ着く機会を 1 回だけ作る。
-                return [2 /*return*/, _a.sent()];
+                case 4: return [2 /*return*/, _a.sent()];
                 case 5: return [2 /*return*/];
             }
         });
@@ -272,11 +213,6 @@ var Gs2RestSession = /** @class */ (function () {
         this.steadyEndpoint = normalizeSteadyEndpoint(options === null || options === void 0 ? void 0 : options.steadyEndpoint);
         this.steadyConnectTimeoutMs = (_c = options === null || options === void 0 ? void 0 : options.steadyConnectTimeoutMs) !== null && _c !== void 0 ? _c : exports.STEADY_CONNECT_TIMEOUT_MS;
     }
-    /**
-     * サービスの接続先。優先順: steadyEndpoint ＞ 共有クラウドの `Gs2Constant.ENDPOINT_HOST`。
-     * steadyEndpoint が未設定なら従来の文字列と byte 単位で一致する
-     * （生成クライアントのサービスごとの override はこれより強い。`steadyRestUrl` の説明）。
-     */
     Gs2RestSession.prototype.endpointHost = function (service) {
         var template = steadyRestTemplate(this.steadyEndpoint) || exports.Gs2Constant.ENDPOINT_HOST;
         return template
@@ -285,8 +221,6 @@ var Gs2RestSession = /** @class */ (function () {
     };
     Gs2RestSession.prototype.connect = function () {
         var _this = this;
-        // ★プロジェクトトークンのログインも Steady 配下（<steady>/identifier）へ向ける
-        // ―― 放置すると Steady のアプリの identifier だけ共有クラウドへ行く。
         var url = this.endpointHost('identifier') + '/projectToken/login';
         if (this.credential instanceof BasicGs2Credential) {
             var data = {
@@ -300,8 +234,6 @@ var Gs2RestSession = /** @class */ (function () {
                 _this.expiresAt = new Date().getTime() + result.expiresIn * 1000;
                 return result;
             }).catch(function (error) {
-                // ★応答が無い失敗（接続段階の失敗・切断）では error.response が無いので、
-                // 元の誤りをそのまま投げる（従来はここで TypeError になっていた）。
                 if ((error === null || error === void 0 ? void 0 : error.response) == null) {
                     throw error;
                 }
@@ -318,28 +250,19 @@ var Gs2RestSession = /** @class */ (function () {
     return Gs2RestSession;
 }());
 exports.Gs2RestSession = Gs2RestSession;
-// ---------------------------------------------------------------- WebSocket が切れたときの誤り
-//
-// ★サーバーは応答を返す前に接続を閉じることがある
-// （gateway の setUserId を force=true で呼ぶと呼び手自身の接続が切られる／ノードの停止／
-//  ネットワーク断）。そのとき待ち中の要求を決着させないと、呼び手は永久に await したままになる。
-// 切れたら待ち中の要求すべてをこの誤りで落とし、繋ぎ直すまで以後の send も即座にこの誤りで落とす。
 var ConnectionBrokenError = /** @class */ (function (_super) {
     tslib_1.__extends(ConnectionBrokenError, _super);
     function ConnectionBrokenError(detail) {
         var _this = _super.call(this, detail == null ? 'connection broken' : 'connection broken (' + detail + ')') || this;
         _this.name = 'ConnectionBrokenError';
-        // ★target: es5 では Error を継承すると prototype が失われ instanceof が偽になるので繋ぎ直す。
         Object.setPrototypeOf(_this, ConnectionBrokenError.prototype);
         return _this;
     }
     return ConnectionBrokenError;
 }(Error));
 exports.ConnectionBrokenError = ConnectionBrokenError;
-/** readyState（Node の `ws` もブラウザの WebSocket も同じ値） */
 var WS_OPEN = 1;
 var WS_CLOSED = 3;
-/** 閉じる挨拶を送る（既に閉じている接続でも安全。例外は握る） */
 function closeQuietly(client) {
     try {
         if (client != null && client.readyState !== WS_CLOSED) {
@@ -347,14 +270,8 @@ function closeQuietly(client) {
         }
     }
     catch (e) {
-        // 既に閉じている / 閉じ途中 ―― 何もしない。
     }
 }
-/**
- * 接続を叩き落とす（★相手がもう居ない接続に close() を送ると、`ws` は閉じる挨拶の返事を
- * 30 秒待つタイマーを置くので、socket もタイマーも残さないようにこちらを使う）。
- * terminate を持たないブラウザの WebSocket では close() に落とす。
- */
 function terminateQuietly(client) {
     try {
         if (client != null && typeof client.terminate === 'function') {
@@ -363,7 +280,6 @@ function terminateQuietly(client) {
         }
     }
     catch (e) {
-        // 何もしない。
     }
     closeQuietly(client);
 }
@@ -371,11 +287,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
     function Gs2WebSocketSession(credential, region, options) {
         var _a;
         this.client = null;
-        /**
-         * 応答待ちの要求（requestId → Promise の決着口）。
-         * ★応答が来たもの・接続が切れたものは必ず取り除く。以前は応答の無い要求が残り続け、
-         *  呼び手は「応答も誤りも来ない」まま待っていた（送信の成否も見ていなかった）。
-         */
         this.pendingRequests = {};
         this.onOpenHandlers = [];
         this.onErrorHandlers = [];
@@ -388,7 +299,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
         this.steadyEndpoint = normalizeSteadyEndpoint(options === null || options === void 0 ? void 0 : options.steadyEndpoint);
         this.steadyConnectTimeoutMs = (_a = options === null || options === void 0 ? void 0 : options.steadyConnectTimeoutMs) !== null && _a !== void 0 ? _a : exports.STEADY_CONNECT_TIMEOUT_MS;
     }
-    /** 接続先。steadyEndpoint ＞ 共有クラウドの `Gs2Constant.WS_ENDPOINT_HOST` */
     Gs2WebSocketSession.prototype.webSocketUrl = function () {
         var url = steadyWebSocketUrl(this.steadyEndpoint);
         if (url !== '') {
@@ -396,18 +306,12 @@ var Gs2WebSocketSession = /** @class */ (function () {
         }
         return exports.Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region);
     };
-    /**
-     * Node の `ws` に渡す接続オプション。Steady のときだけ handshake に上限を置く。
-     * ★ブラウザの WebSocket は handshake の上限を持てない（オプションが無い）ので、
-     *  ブラウザでは上限が効かない。共有クラウドは従来どおりオプション無し（undefined）。
-     */
     Gs2WebSocketSession.prototype.webSocketOptions = function () {
         if (normalizeSteadyEndpoint(this.steadyEndpoint) === '') {
             return undefined;
         }
         return { handshakeTimeout: this.steadyConnectTimeoutMs };
     };
-    /** ログイン（identifier）の REST 接続先。steady があれば `<steady>/identifier`、無ければ従来 */
     Gs2WebSocketSession.prototype.endpointHost = function (service) {
         var template = steadyRestTemplate(this.steadyEndpoint) || exports.Gs2Constant.ENDPOINT_HOST;
         return template
@@ -421,9 +325,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        // ★繋ぎ直す前に古い接続を片付ける（そこに残した要求が決着しないまま忘れられないように）。
-                        //  ログインより前に済ませる ―― dropConnection は projectToken も捨てるので、
-                        //  この後で取り直したトークンを消させない。
                         if (this.client != null) {
                             this.dropConnection(this.client, 'reconnect');
                         }
@@ -468,37 +369,30 @@ var Gs2WebSocketSession = /** @class */ (function () {
                                 return;
                             }
                             var pending = _this.takePending(payload.requestId);
-                            // ★待ち行列に無い requestId（既に決着した要求への応答など）は捨てる。
                             if (pending != null) {
                                 pending.resolve(payload);
                             }
                         };
                         client.onerror = function (error) {
-                            // ★close が来ないまま error だけ来ることがある（TCP が黙って切れた・handshake が失敗した）。
-                            //  ここでも待ち中の要求を決着させる（dropConnection は同じ接続に何度呼んでも無害）。
                             _this.dropConnection(client, 'error');
                             for (var i = 0; i < _this.onErrorHandlers.length; i++) {
                                 _this.onErrorHandlers[i](error);
                             }
                         };
                         client.onclose = function () {
-                            // ★応答を返す前にサーバーが閉じても、待ち中の要求は必ず ConnectionBrokenError で決着させる。
                             _this.dropConnection(client, 'closed by peer');
                             for (var i = 0; i < _this.onCloseHandlers.length; i++) {
                                 _this.onCloseHandlers[i]();
                             }
                         };
-                        // 開くか閉じるまで待つ（this.client が差し替わった・捨てられた場合も抜ける）。
                         return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client !== client || client.readyState == WS_CLOSED || client.readyState == WS_OPEN; })];
                     case 4:
-                        // 開くか閉じるまで待つ（this.client が差し替わった・捨てられた場合も抜ける）。
                         _a.sent();
                         return [2 /*return*/];
                 }
             });
         });
     };
-    /** requestId の要求を待ち行列から外して返す（無ければ null） */
     Gs2WebSocketSession.prototype.takePending = function (requestId) {
         if (requestId == null) {
             return null;
@@ -510,21 +404,14 @@ var Gs2WebSocketSession = /** @class */ (function () {
         delete this.pendingRequests[requestId];
         return pending;
     };
-    /** 待ち中の要求すべてを ConnectionBrokenError で決着させ、待ち行列を空にする */
     Gs2WebSocketSession.prototype.failPending = function (detail) {
         var pendingRequests = this.pendingRequests;
         this.pendingRequests = {};
         var error = new ConnectionBrokenError(detail);
-        // ★先に待ち行列を空にしてから落とす（reject の先で send が呼ばれても混ざらない）。
         Object.keys(pendingRequests).forEach(function (requestId) {
             pendingRequests[requestId].reject(error);
         });
     };
-    /**
-     * 切れた接続を捨て、待ち中の要求すべてを ConnectionBrokenError で決着させる。
-     * ★既に別の接続へ差し替わっていたら（disconnect → connect の後の古い接続）何もしない。
-     * ★同じ接続に二度呼ばれても 2 回目は待ち行列が空なので無害（close と error の両方から来る）。
-     */
     Gs2WebSocketSession.prototype.dropConnection = function (client, detail) {
         if (this.client !== client) {
             terminateQuietly(client);
@@ -534,7 +421,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
         this.projectToken = null;
         this.expiresAt = null;
         this.failPending(detail);
-        // ★相手はもう居ないので閉じる挨拶はしない（socket もタイマーも残さない）。
         terminateQuietly(client);
     };
     Gs2WebSocketSession.prototype.send = function (service, component, func, payload) {
@@ -545,8 +431,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         client = this.client;
-                        // ★接続が無い／閉じかけ・閉じた接続への送信は、待たずにその場で落とす
-                        //  （以前は送ったつもりになって応答を待ち続けていた）。
                         if (client == null) {
                             throw new ConnectionBrokenError('not connected');
                         }
@@ -566,11 +450,8 @@ var Gs2WebSocketSession = /** @class */ (function () {
                             },
                         }));
                         return [4 /*yield*/, new Promise(function (resolve, reject) {
-                                // ★送信の前に待ち行列へ載せる（応答が先に届いても取り落とさない）。
                                 _this.pendingRequests[requestId] = { resolve: resolve, reject: reject };
                                 try {
-                                    // ★Node の `ws` は第 2 引数に書き込みの結果を受ける口を取る（ブラウザの WebSocket は
-                                    //  余分な引数を無視する）。送れなかった要求は届いていないので、その場で落とす。
                                     client.send(body, function (error) {
                                         if (error == null) {
                                             return;
@@ -610,7 +491,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
     Gs2WebSocketSession.prototype.onNotification = function (func) {
         this.onNotificationHandlers.push(func);
     };
-    /** 接続を閉じる。★待ち中の要求には ConnectionBrokenError が返る（close を待たずに決着させる） */
     Gs2WebSocketSession.prototype.disconnect = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var client, e_1;
@@ -621,7 +501,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
                         this.client = null;
                         this.projectToken = null;
                         this.expiresAt = null;
-                        // ★close イベントを待たない（来ないこともある）。
                         this.failPending('disconnected');
                         if (!(client != null)) return [3 /*break*/, 5];
                         closeQuietly(client);
@@ -637,7 +516,6 @@ var Gs2WebSocketSession = /** @class */ (function () {
                         return [3 /*break*/, 4];
                     case 4:
                         if (client.readyState !== WS_CLOSED) {
-                            // ★閉じ切らないまま抜けると socket とタイマーが残るので叩き落とす。
                             terminateQuietly(client);
                         }
                         _a.label = 5;

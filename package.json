@@ -1,28 +1,27 @@
 {
   "name": "gs2",
-  "version": "1.4.130",
+  "version": "1.4.131",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@types/websocket": "^1.0.5",
-    "async-wait-until": "^2.0.12",
-    "axios": "^1.15.0",
+    "@types/websocket": "^1.0.10",
+    "async-wait-until": "^2.0.31",
+    "axios": "^1.20.0",
     "pako": "^2.1.0",
-    "uuid": "^8.3.2",
-    "websocket": "^1.0.34",
-    "ws": "^8.0.0"
+    "uuid": "^11.1.1",
+    "websocket": "^1.0.35",
+    "ws": "^8.22.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^18.19.130",
     "@types/pako": "^2.0.4",
-    "@types/uuid": "^8.3.4",
-    "jest": "^30.3.0",
-    "ts-jest": "^29.4.6",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.5"
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.14",
+    "tslib": "^2.8.1",
+    "typescript": "^5.0.4"
   },
   "types": "index.d.ts",
   "postcss": {
@@ -35,5 +34,8 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "test": "jest"
+  "test": "jest",
+  "engines": {
+    "node": ">=16"
+  }
 }

@@ -24,9 +24,9 @@ var Gs2GatewayWebSocketClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2GatewayWebSocketClient.prototype.setUserId = function (request) {
-        var _a, _b, _c, _d;
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var result;
+            var _a, _b, _c, _d;
             return tslib_1.__generator(this, function (_e) {
                 switch (_e.label) {
                     case 0: return [4 /*yield*/, this.session.send("gateway", "webSocketSession", "setUserId", {
@@ -43,9 +43,9 @@ var Gs2GatewayWebSocketClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayWebSocketClient.prototype.setUserIdByUserId = function (request) {
-        var _a, _b, _c, _d;
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var result;
+            var _a, _b, _c, _d;
             return tslib_1.__generator(this, function (_e) {
                 switch (_e.label) {
                     case 0: return [4 /*yield*/, this.session.send("gateway", "webSocketSession", "setUserIdByUserId", {

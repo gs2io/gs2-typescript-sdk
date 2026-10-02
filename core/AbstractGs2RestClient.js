@@ -48,10 +48,7 @@ var default_1 = /** @class */ (function () {
         }
         return body;
     };
-    /** 既存の要求と同じ写像: 応答があれば message（JSON 文字列）を展開、無ければ [] */
     default_1.prototype.mapError = function (error) {
-        // ★応答が無い失敗（接続段階の失敗・切断）では error.response が無い
-        // ―― 従来 GET / DELETE はここで TypeError になっていた。
         if (error != null && error.response) {
             return JSON.parse(error.response.data.message);
         }
@@ -60,8 +57,6 @@ var default_1 = /** @class */ (function () {
     default_1.prototype.request = function (method, url, headers, params, body) {
         var _this = this;
         var config = this.prepareRequestConfig(headers);
-        // Steady: 生成クライアントが共有クラウドの template から組んだ URL を `<steady>/<service>...` へ。
-        // steadyEndpoint が未設定なら target は url と byte 単位で同じ。
         var target = (0, model_1.steadyRestUrl)(this.session.steadyEndpoint, this.session.region, url);
         var viaSteady = (0, model_1.isSteadyUrl)(this.session.steadyEndpoint, target);
         var data = undefined;
@@ -69,7 +64,6 @@ var default_1 = /** @class */ (function () {
             config.params = params;
         }
         else {
-            // ★本文は先に作って持つ（接続失敗の再送で同じ要求をもう一度組むため）。
             data = body ? this.compressBody(body, headers) : undefined;
         }
         var requestConfig = config;
@@ -98,10 +92,6 @@ var default_1 = /** @class */ (function () {
         };
         return send()
             .catch(function (error) {
-            // ★Steady の再送: 基点への**接続段階**の失敗（DNS / dial / TLS。1 バイトも送っていない）だけ、
-            // 同じ要求をもう 1 回だけ送る。フリートが手放した IP に当たったとき、名前を引き直して
-            // 別のノードへ着く機会を 1 回だけ作る。送信後の失敗（5xx・切断・読み取りタイムアウト）は
-            // 届いたかもしれないので再送しない。再送は 1 回だけ（3 回目は無い）。
             if (viaSteady && (0, model_1.isConnectFailure)(error)) {
                 return send();
             }
