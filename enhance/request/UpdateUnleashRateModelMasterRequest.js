@@ -27,6 +27,7 @@ var UpdateUnleashRateModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.targetInventoryModelId = null;
         this.gradeModelId = null;
+        this.groupKeyHierarchy = null;
         this.gradeEntries = null;
     }
     UpdateUnleashRateModelMasterRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var UpdateUnleashRateModelMasterRequest = /** @class */ (function () {
         this.gradeModelId = gradeModelId;
         return this;
     };
+    UpdateUnleashRateModelMasterRequest.prototype.getGroupKeyHierarchy = function () {
+        return this.groupKeyHierarchy;
+    };
+    UpdateUnleashRateModelMasterRequest.prototype.setGroupKeyHierarchy = function (groupKeyHierarchy) {
+        this.groupKeyHierarchy = groupKeyHierarchy;
+        return this;
+    };
+    UpdateUnleashRateModelMasterRequest.prototype.withGroupKeyHierarchy = function (groupKeyHierarchy) {
+        this.groupKeyHierarchy = groupKeyHierarchy;
+        return this;
+    };
     UpdateUnleashRateModelMasterRequest.prototype.getGradeEntries = function () {
         return this.gradeEntries;
     };
@@ -136,6 +148,10 @@ var UpdateUnleashRateModelMasterRequest = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withTargetInventoryModelId(data["targetInventoryModelId"])
             .withGradeModelId(data["gradeModelId"])
+            .withGroupKeyHierarchy(data.groupKeyHierarchy ?
+            data.groupKeyHierarchy.map(function (item) {
+                return item;
+            }) : null)
             .withGradeEntries(data.gradeEntries ?
             data.gradeEntries.map(function (item) {
                 return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
@@ -149,6 +165,10 @@ var UpdateUnleashRateModelMasterRequest = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "targetInventoryModelId": this.getTargetInventoryModelId(),
             "gradeModelId": this.getGradeModelId(),
+            "groupKeyHierarchy": this.getGroupKeyHierarchy() ?
+                this.getGroupKeyHierarchy().map(function (item) {
+                    return item;
+                }) : null,
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries().map(function (item) {
                     return item.toDict();

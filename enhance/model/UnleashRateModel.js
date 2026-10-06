@@ -26,6 +26,7 @@ var UnleashRateModel = /** @class */ (function () {
         this.metadata = null;
         this.targetInventoryModelId = null;
         this.gradeModelId = null;
+        this.groupKeyHierarchy = null;
         this.gradeEntries = null;
     }
     UnleashRateModel.getRegion = function (grn) {
@@ -160,6 +161,17 @@ var UnleashRateModel = /** @class */ (function () {
         this.gradeModelId = gradeModelId;
         return this;
     };
+    UnleashRateModel.prototype.getGroupKeyHierarchy = function () {
+        return this.groupKeyHierarchy;
+    };
+    UnleashRateModel.prototype.setGroupKeyHierarchy = function (groupKeyHierarchy) {
+        this.groupKeyHierarchy = groupKeyHierarchy;
+        return this;
+    };
+    UnleashRateModel.prototype.withGroupKeyHierarchy = function (groupKeyHierarchy) {
+        this.groupKeyHierarchy = groupKeyHierarchy;
+        return this;
+    };
     UnleashRateModel.prototype.getGradeEntries = function () {
         return this.gradeEntries;
     };
@@ -182,6 +194,10 @@ var UnleashRateModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withTargetInventoryModelId(data["targetInventoryModelId"])
             .withGradeModelId(data["gradeModelId"])
+            .withGroupKeyHierarchy(data.groupKeyHierarchy ?
+            data.groupKeyHierarchy.map(function (item) {
+                return item;
+            }) : null)
             .withGradeEntries(data.gradeEntries ?
             data.gradeEntries.map(function (item) {
                 return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
@@ -195,6 +211,10 @@ var UnleashRateModel = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "targetInventoryModelId": this.getTargetInventoryModelId(),
             "gradeModelId": this.getGradeModelId(),
+            "groupKeyHierarchy": this.getGroupKeyHierarchy() ?
+                this.getGroupKeyHierarchy().map(function (item) {
+                    return item;
+                }) : null,
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries().map(function (item) {
                     return item.toDict();

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.UnleashRateEntryModel = exports.Material = exports.BonusRate = exports.CurrentRateMaster = exports.Progress = exports.UnleashRateModelMaster = exports.UnleashRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.UnleashMaterialSelection = exports.UnleashQuantityMaterialSetting = exports.UnleashIndividualMaterialSetting = exports.UnleashMaterial = exports.UnleashRecipe = exports.UnleashRateEntryModel = exports.Material = exports.BonusRate = exports.CurrentRateMaster = exports.Progress = exports.UnleashRateModelMaster = exports.UnleashRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,16 @@ var Material_1 = tslib_1.__importDefault(require("./Material"));
 exports.Material = Material_1.default;
 var UnleashRateEntryModel_1 = tslib_1.__importDefault(require("./UnleashRateEntryModel"));
 exports.UnleashRateEntryModel = UnleashRateEntryModel_1.default;
+var UnleashRecipe_1 = tslib_1.__importDefault(require("./UnleashRecipe"));
+exports.UnleashRecipe = UnleashRecipe_1.default;
+var UnleashMaterial_1 = tslib_1.__importDefault(require("./UnleashMaterial"));
+exports.UnleashMaterial = UnleashMaterial_1.default;
+var UnleashIndividualMaterialSetting_1 = tslib_1.__importDefault(require("./UnleashIndividualMaterialSetting"));
+exports.UnleashIndividualMaterialSetting = UnleashIndividualMaterialSetting_1.default;
+var UnleashQuantityMaterialSetting_1 = tslib_1.__importDefault(require("./UnleashQuantityMaterialSetting"));
+exports.UnleashQuantityMaterialSetting = UnleashQuantityMaterialSetting_1.default;
+var UnleashMaterialSelection_1 = tslib_1.__importDefault(require("./UnleashMaterialSelection"));
+exports.UnleashMaterialSelection = UnleashMaterialSelection_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

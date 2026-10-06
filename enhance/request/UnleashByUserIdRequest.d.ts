@@ -8,6 +8,8 @@ export default class UnleashByUserIdRequest implements IRequest {
     private userId;
     private targetItemSetId;
     private materials;
+    private recipeName;
+    private recipeMaterials;
     private config;
     private timeOffsetToken;
     private duplicationAvoider;
@@ -32,6 +34,12 @@ export default class UnleashByUserIdRequest implements IRequest {
     getMaterials(): string[] | null;
     setMaterials(materials: string[] | null): this;
     withMaterials(materials: string[] | null): this;
+    getRecipeName(): string | null;
+    setRecipeName(recipeName: string | null): this;
+    withRecipeName(recipeName: string | null): this;
+    getRecipeMaterials(): Gs2Enhance.UnleashMaterialSelection[] | null;
+    setRecipeMaterials(recipeMaterials: Gs2Enhance.UnleashMaterialSelection[] | null): this;
+    withRecipeMaterials(recipeMaterials: Gs2Enhance.UnleashMaterialSelection[] | null): this;
     getConfig(): Gs2Enhance.Config[] | null;
     setConfig(config: Gs2Enhance.Config[] | null): this;
     withConfig(config: Gs2Enhance.Config[] | null): this;

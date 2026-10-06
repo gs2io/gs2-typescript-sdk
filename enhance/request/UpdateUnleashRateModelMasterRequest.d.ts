@@ -9,6 +9,7 @@ export default class UpdateUnleashRateModelMasterRequest implements IRequest {
     private metadata;
     private targetInventoryModelId;
     private gradeModelId;
+    private groupKeyHierarchy;
     private gradeEntries;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -34,6 +35,9 @@ export default class UpdateUnleashRateModelMasterRequest implements IRequest {
     getGradeModelId(): string | null;
     setGradeModelId(gradeModelId: string | null): this;
     withGradeModelId(gradeModelId: string | null): this;
+    getGroupKeyHierarchy(): string[] | null;
+    setGroupKeyHierarchy(groupKeyHierarchy: string[] | null): this;
+    withGroupKeyHierarchy(groupKeyHierarchy: string[] | null): this;
     getGradeEntries(): Gs2Enhance.UnleashRateEntryModel[] | null;
     setGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
     withGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;

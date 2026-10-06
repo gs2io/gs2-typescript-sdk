@@ -26,6 +26,8 @@ var UnleashByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.targetItemSetId = null;
         this.materials = null;
+        this.recipeName = null;
+        this.recipeMaterials = null;
         this.config = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
@@ -107,6 +109,28 @@ var UnleashByUserIdRequest = /** @class */ (function () {
         this.materials = materials;
         return this;
     };
+    UnleashByUserIdRequest.prototype.getRecipeName = function () {
+        return this.recipeName;
+    };
+    UnleashByUserIdRequest.prototype.setRecipeName = function (recipeName) {
+        this.recipeName = recipeName;
+        return this;
+    };
+    UnleashByUserIdRequest.prototype.withRecipeName = function (recipeName) {
+        this.recipeName = recipeName;
+        return this;
+    };
+    UnleashByUserIdRequest.prototype.getRecipeMaterials = function () {
+        return this.recipeMaterials;
+    };
+    UnleashByUserIdRequest.prototype.setRecipeMaterials = function (recipeMaterials) {
+        this.recipeMaterials = recipeMaterials;
+        return this;
+    };
+    UnleashByUserIdRequest.prototype.withRecipeMaterials = function (recipeMaterials) {
+        this.recipeMaterials = recipeMaterials;
+        return this;
+    };
     UnleashByUserIdRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -150,6 +174,11 @@ var UnleashByUserIdRequest = /** @class */ (function () {
             data.materials.map(function (item) {
                 return item;
             }) : null)
+            .withRecipeName(data["recipeName"])
+            .withRecipeMaterials(data.recipeMaterials ?
+            data.recipeMaterials.map(function (item) {
+                return Gs2Enhance.UnleashMaterialSelection.fromDict(item);
+            }) : null)
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
@@ -165,6 +194,11 @@ var UnleashByUserIdRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item;
+                }) : null,
+            "recipeName": this.getRecipeName(),
+            "recipeMaterials": this.getRecipeMaterials() ?
+                this.getRecipeMaterials().map(function (item) {
+                    return item.toDict();
                 }) : null,
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {

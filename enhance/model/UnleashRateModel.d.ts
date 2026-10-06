@@ -7,6 +7,7 @@ export default class UnleashRateModel implements IModel {
     private metadata;
     private targetInventoryModelId;
     private gradeModelId;
+    private groupKeyHierarchy;
     private gradeEntries;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -32,6 +33,9 @@ export default class UnleashRateModel implements IModel {
     getGradeModelId(): string | null;
     setGradeModelId(gradeModelId: string | null): this;
     withGradeModelId(gradeModelId: string | null): this;
+    getGroupKeyHierarchy(): string[] | null;
+    setGroupKeyHierarchy(groupKeyHierarchy: string[] | null): this;
+    withGroupKeyHierarchy(groupKeyHierarchy: string[] | null): this;
     getGradeEntries(): Gs2Enhance.UnleashRateEntryModel[] | null;
     setGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
     withGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;

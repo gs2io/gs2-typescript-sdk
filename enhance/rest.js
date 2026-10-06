@@ -501,7 +501,7 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnhanceRestClient.prototype.createUnleashRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (((_a = Gs2EnhanceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/unleash/model')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
@@ -517,7 +517,8 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'targetInventoryModelId': (_h = request.getTargetInventoryModelId()) !== null && _h !== void 0 ? _h : null,
             'gradeModelId': (_j = request.getGradeModelId()) !== null && _j !== void 0 ? _j : null,
-            'gradeEntries': (_l = (_k = request.getGradeEntries()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'groupKeyHierarchy': (_k = request.getGroupKeyHierarchy()) !== null && _k !== void 0 ? _k : null,
+            'gradeEntries': (_m = (_l = request.getGradeEntries()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateUnleashRateModelMasterResult.fromDict(data);
@@ -542,7 +543,7 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnhanceRestClient.prototype.updateUnleashRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (((_a = Gs2EnhanceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/unleash/model/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
@@ -558,7 +559,8 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'targetInventoryModelId': (_j = request.getTargetInventoryModelId()) !== null && _j !== void 0 ? _j : null,
             'gradeModelId': (_k = request.getGradeModelId()) !== null && _k !== void 0 ? _k : null,
-            'gradeEntries': (_m = (_l = request.getGradeEntries()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'groupKeyHierarchy': (_l = request.getGroupKeyHierarchy()) !== null && _l !== void 0 ? _l : null,
+            'gradeEntries': (_o = (_m = request.getGradeEntries()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateUnleashRateModelMasterResult.fromDict(data);
@@ -656,7 +658,7 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnhanceRestClient.prototype.unleash = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (((_a = Gs2EnhanceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/unleash/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
@@ -676,14 +678,16 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'targetItemSetId': (_j = request.getTargetItemSetId()) !== null && _j !== void 0 ? _j : null,
             'materials': (_k = request.getMaterials()) !== null && _k !== void 0 ? _k : null,
-            'config': (_m = (_l = request.getConfig()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'recipeName': (_l = request.getRecipeName()) !== null && _l !== void 0 ? _l : null,
+            'recipeMaterials': (_o = (_m = request.getRecipeMaterials()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'config': (_q = (_p = request.getConfig()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.UnleashResult.fromDict(data);
         });
     };
     Gs2EnhanceRestClient.prototype.unleashByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (((_a = Gs2EnhanceRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/unleash/{rateName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
@@ -704,7 +708,9 @@ var Gs2EnhanceRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'targetItemSetId': (_l = request.getTargetItemSetId()) !== null && _l !== void 0 ? _l : null,
             'materials': (_m = request.getMaterials()) !== null && _m !== void 0 ? _m : null,
-            'config': (_p = (_o = request.getConfig()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'recipeName': (_o = request.getRecipeName()) !== null && _o !== void 0 ? _o : null,
+            'recipeMaterials': (_q = (_p = request.getRecipeMaterials()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'config': (_s = (_r = request.getConfig()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.UnleashByUserIdResult.fromDict(data);

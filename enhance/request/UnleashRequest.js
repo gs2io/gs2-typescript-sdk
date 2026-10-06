@@ -26,6 +26,8 @@ var UnleashRequest = /** @class */ (function () {
         this.accessToken = null;
         this.targetItemSetId = null;
         this.materials = null;
+        this.recipeName = null;
+        this.recipeMaterials = null;
         this.config = null;
         this.duplicationAvoider = null;
     }
@@ -106,6 +108,28 @@ var UnleashRequest = /** @class */ (function () {
         this.materials = materials;
         return this;
     };
+    UnleashRequest.prototype.getRecipeName = function () {
+        return this.recipeName;
+    };
+    UnleashRequest.prototype.setRecipeName = function (recipeName) {
+        this.recipeName = recipeName;
+        return this;
+    };
+    UnleashRequest.prototype.withRecipeName = function (recipeName) {
+        this.recipeName = recipeName;
+        return this;
+    };
+    UnleashRequest.prototype.getRecipeMaterials = function () {
+        return this.recipeMaterials;
+    };
+    UnleashRequest.prototype.setRecipeMaterials = function (recipeMaterials) {
+        this.recipeMaterials = recipeMaterials;
+        return this;
+    };
+    UnleashRequest.prototype.withRecipeMaterials = function (recipeMaterials) {
+        this.recipeMaterials = recipeMaterials;
+        return this;
+    };
     UnleashRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -138,6 +162,11 @@ var UnleashRequest = /** @class */ (function () {
             data.materials.map(function (item) {
                 return item;
             }) : null)
+            .withRecipeName(data["recipeName"])
+            .withRecipeMaterials(data.recipeMaterials ?
+            data.recipeMaterials.map(function (item) {
+                return Gs2Enhance.UnleashMaterialSelection.fromDict(item);
+            }) : null)
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
@@ -152,6 +181,11 @@ var UnleashRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item;
+                }) : null,
+            "recipeName": this.getRecipeName(),
+            "recipeMaterials": this.getRecipeMaterials() ?
+                this.getRecipeMaterials().map(function (item) {
+                    return item.toDict();
                 }) : null,
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
