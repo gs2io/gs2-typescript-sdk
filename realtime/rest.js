@@ -44,7 +44,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RealtimeRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
@@ -60,11 +60,10 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'transactionSettingV2': (_h = (_g = request.getTransactionSettingV2()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'serverType': (_j = request.getServerType()) !== null && _j !== void 0 ? _j : null,
             'serverSpec': (_k = request.getServerSpec()) !== null && _k !== void 0 ? _k : null,
-            'objectCatalog': (_l = request.getObjectCatalog()) !== null && _l !== void 0 ? _l : null,
-            'stateMachineNamespaceId': (_m = request.getStateMachineNamespaceId()) !== null && _m !== void 0 ? _m : null,
-            'stateMachineVersion': (_o = request.getStateMachineVersion()) !== null && _o !== void 0 ? _o : null,
-            'createNotification': (_q = (_p = request.getCreateNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'syncSetting': (_m = (_l = request.getSyncSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'stateMachineSetting': (_p = (_o = request.getStateMachineSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'createNotification': (_r = (_q = request.getCreateNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateNamespaceResult.fromDict(data);
@@ -105,7 +104,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RealtimeRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (((_a = Gs2RealtimeRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
@@ -121,11 +120,10 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'transactionSettingV2': (_j = (_h = request.getTransactionSettingV2()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'serverType': (_k = request.getServerType()) !== null && _k !== void 0 ? _k : null,
             'serverSpec': (_l = request.getServerSpec()) !== null && _l !== void 0 ? _l : null,
-            'objectCatalog': (_m = request.getObjectCatalog()) !== null && _m !== void 0 ? _m : null,
-            'stateMachineNamespaceId': (_o = request.getStateMachineNamespaceId()) !== null && _o !== void 0 ? _o : null,
-            'stateMachineVersion': (_p = request.getStateMachineVersion()) !== null && _p !== void 0 ? _p : null,
-            'createNotification': (_r = (_q = request.getCreateNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'syncSetting': (_o = (_m = request.getSyncSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'stateMachineSetting': (_q = (_p = request.getStateMachineSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'createNotification': (_s = (_r = request.getCreateNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateNamespaceResult.fromDict(data);

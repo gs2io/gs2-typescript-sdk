@@ -27,9 +27,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSettingV2 = null;
         this.serverType = null;
         this.serverSpec = null;
-        this.objectCatalog = null;
-        this.stateMachineNamespaceId = null;
-        this.stateMachineVersion = null;
+        this.syncSetting = null;
+        this.stateMachineSetting = null;
         this.createNotification = null;
         this.logSetting = null;
     }
@@ -124,37 +123,26 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.serverSpec = serverSpec;
         return this;
     };
-    CreateNamespaceRequest.prototype.getObjectCatalog = function () {
-        return this.objectCatalog;
+    CreateNamespaceRequest.prototype.getSyncSetting = function () {
+        return this.syncSetting;
     };
-    CreateNamespaceRequest.prototype.setObjectCatalog = function (objectCatalog) {
-        this.objectCatalog = objectCatalog;
+    CreateNamespaceRequest.prototype.setSyncSetting = function (syncSetting) {
+        this.syncSetting = syncSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.withObjectCatalog = function (objectCatalog) {
-        this.objectCatalog = objectCatalog;
+    CreateNamespaceRequest.prototype.withSyncSetting = function (syncSetting) {
+        this.syncSetting = syncSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.getStateMachineNamespaceId = function () {
-        return this.stateMachineNamespaceId;
+    CreateNamespaceRequest.prototype.getStateMachineSetting = function () {
+        return this.stateMachineSetting;
     };
-    CreateNamespaceRequest.prototype.setStateMachineNamespaceId = function (stateMachineNamespaceId) {
-        this.stateMachineNamespaceId = stateMachineNamespaceId;
+    CreateNamespaceRequest.prototype.setStateMachineSetting = function (stateMachineSetting) {
+        this.stateMachineSetting = stateMachineSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.withStateMachineNamespaceId = function (stateMachineNamespaceId) {
-        this.stateMachineNamespaceId = stateMachineNamespaceId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.getStateMachineVersion = function () {
-        return this.stateMachineVersion;
-    };
-    CreateNamespaceRequest.prototype.setStateMachineVersion = function (stateMachineVersion) {
-        this.stateMachineVersion = stateMachineVersion;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.withStateMachineVersion = function (stateMachineVersion) {
-        this.stateMachineVersion = stateMachineVersion;
+    CreateNamespaceRequest.prototype.withStateMachineSetting = function (stateMachineSetting) {
+        this.stateMachineSetting = stateMachineSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getCreateNotification = function () {
@@ -187,14 +175,13 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withTransactionSettingV2(Gs2Realtime.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
-            .withObjectCatalog(data["objectCatalog"])
-            .withStateMachineNamespaceId(data["stateMachineNamespaceId"])
-            .withStateMachineVersion(data["stateMachineVersion"])
+            .withSyncSetting(Gs2Realtime.SyncSetting.fromDict(data["syncSetting"]))
+            .withStateMachineSetting(Gs2Realtime.StateMachineSetting.fromDict(data["stateMachineSetting"]))
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
             .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -202,11 +189,10 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "serverType": this.getServerType(),
             "serverSpec": this.getServerSpec(),
-            "objectCatalog": this.getObjectCatalog(),
-            "stateMachineNamespaceId": this.getStateMachineNamespaceId(),
-            "stateMachineVersion": this.getStateMachineVersion(),
-            "createNotification": (_c = this.getCreateNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "syncSetting": (_c = this.getSyncSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "stateMachineSetting": (_d = this.getStateMachineSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "createNotification": (_e = this.getCreateNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return CreateNamespaceRequest;

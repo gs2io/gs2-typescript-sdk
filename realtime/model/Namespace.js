@@ -27,9 +27,8 @@ var Namespace = /** @class */ (function () {
         this.transactionSettingV2 = null;
         this.serverType = null;
         this.serverSpec = null;
-        this.objectCatalog = null;
-        this.stateMachineNamespaceId = null;
-        this.stateMachineVersion = null;
+        this.syncSetting = null;
+        this.stateMachineSetting = null;
         this.createNotification = null;
         this.logSetting = null;
         this.createdAt = null;
@@ -164,37 +163,26 @@ var Namespace = /** @class */ (function () {
         this.serverSpec = serverSpec;
         return this;
     };
-    Namespace.prototype.getObjectCatalog = function () {
-        return this.objectCatalog;
+    Namespace.prototype.getSyncSetting = function () {
+        return this.syncSetting;
     };
-    Namespace.prototype.setObjectCatalog = function (objectCatalog) {
-        this.objectCatalog = objectCatalog;
+    Namespace.prototype.setSyncSetting = function (syncSetting) {
+        this.syncSetting = syncSetting;
         return this;
     };
-    Namespace.prototype.withObjectCatalog = function (objectCatalog) {
-        this.objectCatalog = objectCatalog;
+    Namespace.prototype.withSyncSetting = function (syncSetting) {
+        this.syncSetting = syncSetting;
         return this;
     };
-    Namespace.prototype.getStateMachineNamespaceId = function () {
-        return this.stateMachineNamespaceId;
+    Namespace.prototype.getStateMachineSetting = function () {
+        return this.stateMachineSetting;
     };
-    Namespace.prototype.setStateMachineNamespaceId = function (stateMachineNamespaceId) {
-        this.stateMachineNamespaceId = stateMachineNamespaceId;
+    Namespace.prototype.setStateMachineSetting = function (stateMachineSetting) {
+        this.stateMachineSetting = stateMachineSetting;
         return this;
     };
-    Namespace.prototype.withStateMachineNamespaceId = function (stateMachineNamespaceId) {
-        this.stateMachineNamespaceId = stateMachineNamespaceId;
-        return this;
-    };
-    Namespace.prototype.getStateMachineVersion = function () {
-        return this.stateMachineVersion;
-    };
-    Namespace.prototype.setStateMachineVersion = function (stateMachineVersion) {
-        this.stateMachineVersion = stateMachineVersion;
-        return this;
-    };
-    Namespace.prototype.withStateMachineVersion = function (stateMachineVersion) {
-        this.stateMachineVersion = stateMachineVersion;
+    Namespace.prototype.withStateMachineSetting = function (stateMachineSetting) {
+        this.stateMachineSetting = stateMachineSetting;
         return this;
     };
     Namespace.prototype.getCreateNotification = function () {
@@ -264,9 +252,8 @@ var Namespace = /** @class */ (function () {
             .withTransactionSettingV2(Gs2Realtime.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
-            .withObjectCatalog(data["objectCatalog"])
-            .withStateMachineNamespaceId(data["stateMachineNamespaceId"])
-            .withStateMachineVersion(data["stateMachineVersion"])
+            .withSyncSetting(Gs2Realtime.SyncSetting.fromDict(data["syncSetting"]))
+            .withStateMachineSetting(Gs2Realtime.StateMachineSetting.fromDict(data["stateMachineSetting"]))
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
             .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -274,7 +261,7 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -283,11 +270,10 @@ var Namespace = /** @class */ (function () {
             "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "serverType": this.getServerType(),
             "serverSpec": this.getServerSpec(),
-            "objectCatalog": this.getObjectCatalog(),
-            "stateMachineNamespaceId": this.getStateMachineNamespaceId(),
-            "stateMachineVersion": this.getStateMachineVersion(),
-            "createNotification": (_c = this.getCreateNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "syncSetting": (_c = this.getSyncSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "stateMachineSetting": (_d = this.getStateMachineSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "createNotification": (_e = this.getCreateNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

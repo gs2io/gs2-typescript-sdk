@@ -5,4 +5,6 @@ import MobileNotificationMessage from "./MobileNotificationMessage";
 import LogSetting from "./LogSetting";
 import TransactionSetting from "./TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
-export { Namespace, Room, NotificationSetting, MobileNotificationMessage, LogSetting, TransactionSetting, TransactionSettingV2, };
+import SyncSetting from "./SyncSetting";
+import StateMachineSetting from "./StateMachineSetting";
+export { Namespace, Room, NotificationSetting, MobileNotificationMessage, LogSetting, TransactionSetting, TransactionSettingV2, SyncSetting, StateMachineSetting, };
