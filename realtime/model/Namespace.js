@@ -27,6 +27,9 @@ var Namespace = /** @class */ (function () {
         this.transactionSettingV2 = null;
         this.serverType = null;
         this.serverSpec = null;
+        this.objectCatalog = null;
+        this.stateMachineNamespaceId = null;
+        this.stateMachineVersion = null;
         this.createNotification = null;
         this.logSetting = null;
         this.createdAt = null;
@@ -161,6 +164,39 @@ var Namespace = /** @class */ (function () {
         this.serverSpec = serverSpec;
         return this;
     };
+    Namespace.prototype.getObjectCatalog = function () {
+        return this.objectCatalog;
+    };
+    Namespace.prototype.setObjectCatalog = function (objectCatalog) {
+        this.objectCatalog = objectCatalog;
+        return this;
+    };
+    Namespace.prototype.withObjectCatalog = function (objectCatalog) {
+        this.objectCatalog = objectCatalog;
+        return this;
+    };
+    Namespace.prototype.getStateMachineNamespaceId = function () {
+        return this.stateMachineNamespaceId;
+    };
+    Namespace.prototype.setStateMachineNamespaceId = function (stateMachineNamespaceId) {
+        this.stateMachineNamespaceId = stateMachineNamespaceId;
+        return this;
+    };
+    Namespace.prototype.withStateMachineNamespaceId = function (stateMachineNamespaceId) {
+        this.stateMachineNamespaceId = stateMachineNamespaceId;
+        return this;
+    };
+    Namespace.prototype.getStateMachineVersion = function () {
+        return this.stateMachineVersion;
+    };
+    Namespace.prototype.setStateMachineVersion = function (stateMachineVersion) {
+        this.stateMachineVersion = stateMachineVersion;
+        return this;
+    };
+    Namespace.prototype.withStateMachineVersion = function (stateMachineVersion) {
+        this.stateMachineVersion = stateMachineVersion;
+        return this;
+    };
     Namespace.prototype.getCreateNotification = function () {
         return this.createNotification;
     };
@@ -228,6 +264,9 @@ var Namespace = /** @class */ (function () {
             .withTransactionSettingV2(Gs2Realtime.TransactionSettingV2.fromDict(data["transactionSettingV2"]))
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
+            .withObjectCatalog(data["objectCatalog"])
+            .withStateMachineNamespaceId(data["stateMachineNamespaceId"])
+            .withStateMachineVersion(data["stateMachineVersion"])
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
             .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -244,6 +283,9 @@ var Namespace = /** @class */ (function () {
             "transactionSettingV2": (_b = this.getTransactionSettingV2()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "serverType": this.getServerType(),
             "serverSpec": this.getServerSpec(),
+            "objectCatalog": this.getObjectCatalog(),
+            "stateMachineNamespaceId": this.getStateMachineNamespaceId(),
+            "stateMachineVersion": this.getStateMachineVersion(),
             "createNotification": (_c = this.getCreateNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),

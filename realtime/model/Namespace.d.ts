@@ -8,6 +8,9 @@ export default class Namespace implements IModel {
     private transactionSettingV2;
     private serverType;
     private serverSpec;
+    private objectCatalog;
+    private stateMachineNamespaceId;
+    private stateMachineVersion;
     private createNotification;
     private logSetting;
     private createdAt;
@@ -42,6 +45,15 @@ export default class Namespace implements IModel {
     getServerSpec(): string | null;
     setServerSpec(serverSpec: string | null): this;
     withServerSpec(serverSpec: string | null): this;
+    getObjectCatalog(): string | null;
+    setObjectCatalog(objectCatalog: string | null): this;
+    withObjectCatalog(objectCatalog: string | null): this;
+    getStateMachineNamespaceId(): string | null;
+    setStateMachineNamespaceId(stateMachineNamespaceId: string | null): this;
+    withStateMachineNamespaceId(stateMachineNamespaceId: string | null): this;
+    getStateMachineVersion(): number | null;
+    setStateMachineVersion(stateMachineVersion: number | null): this;
+    withStateMachineVersion(stateMachineVersion: number | null): this;
     getCreateNotification(): Gs2Realtime.NotificationSetting | null;
     setCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;
     withCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;
