@@ -28,6 +28,7 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
         this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
+        this.bonuses = null;
     }
     CreateSalesItemMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -128,6 +129,17 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    CreateSalesItemMasterRequest.prototype.getBonuses = function () {
+        return this.bonuses;
+    };
+    CreateSalesItemMasterRequest.prototype.setBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
+    CreateSalesItemMasterRequest.prototype.withBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
     CreateSalesItemMasterRequest.fromDict = function (data) {
         return new CreateSalesItemMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -145,6 +157,10 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Showcase.AcquireAction.fromDict(item);
+            }) : null)
+            .withBonuses(data.bonuses ?
+            data.bonuses.map(function (item) {
+                return Gs2Showcase.Bonus.fromDict(item);
             }) : null);
     };
     CreateSalesItemMasterRequest.prototype.toDict = function () {
@@ -163,6 +179,10 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
                 }) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
+            "bonuses": this.getBonuses() ?
+                this.getBonuses().map(function (item) {
                     return item.toDict();
                 }) : null,
         };

@@ -8,6 +8,7 @@ export default class SalesItemMaster implements IModel {
     private verifyActions;
     private consumeActions;
     private acquireActions;
+    private bonuses;
     private createdAt;
     private updatedAt;
     private revision;
@@ -38,6 +39,9 @@ export default class SalesItemMaster implements IModel {
     getAcquireActions(): Gs2Showcase.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
+    getBonuses(): Gs2Showcase.Bonus[] | null;
+    setBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
+    withBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

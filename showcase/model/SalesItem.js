@@ -24,6 +24,7 @@ var SalesItem = /** @class */ (function () {
         this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
+        this.bonuses = null;
     }
     SalesItem.prototype.getName = function () {
         return this.name;
@@ -80,6 +81,17 @@ var SalesItem = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    SalesItem.prototype.getBonuses = function () {
+        return this.bonuses;
+    };
+    SalesItem.prototype.setBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
+    SalesItem.prototype.withBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
     SalesItem.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -98,6 +110,10 @@ var SalesItem = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Showcase.AcquireAction.fromDict(item);
+            }) : null)
+            .withBonuses(data.bonuses ?
+            data.bonuses.map(function (item) {
+                return Gs2Showcase.Bonus.fromDict(item);
             }) : null);
     };
     SalesItem.prototype.toDict = function () {
@@ -114,6 +130,10 @@ var SalesItem = /** @class */ (function () {
                 }) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
+            "bonuses": this.getBonuses() ?
+                this.getBonuses().map(function (item) {
                     return item.toDict();
                 }) : null,
         };

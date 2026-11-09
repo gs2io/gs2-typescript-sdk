@@ -321,7 +321,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.createSalesItemMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -338,6 +338,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             'verifyActions': (_j = (_h = request.getVerifyActions()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
             'consumeActions': (_l = (_k = request.getConsumeActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
             'acquireActions': (_o = (_m = request.getAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'bonuses': (_q = (_p = request.getBonuses()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateSalesItemMasterResult.fromDict(data);
@@ -362,7 +363,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.updateSalesItemMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -379,6 +380,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             'verifyActions': (_k = (_j = request.getVerifyActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
             'consumeActions': (_m = (_l = request.getConsumeActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
             'acquireActions': (_p = (_o = request.getAcquireActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'bonuses': (_r = (_q = request.getBonuses()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateSalesItemMasterResult.fromDict(data);
@@ -801,7 +803,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.buyByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (((_a = Gs2ShowcaseRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -823,6 +825,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'quantity': (_o = request.getQuantity()) !== null && _o !== void 0 ? _o : null,
             'config': (_q = (_p = request.getConfig()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'routeKey': (_r = request.getRouteKey()) !== null && _r !== void 0 ? _r : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.BuyByUserIdResult.fromDict(data);

@@ -10,6 +10,7 @@ export default class CreateSalesItemMasterRequest implements IRequest {
     private verifyActions;
     private consumeActions;
     private acquireActions;
+    private bonuses;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -37,6 +38,9 @@ export default class CreateSalesItemMasterRequest implements IRequest {
     getAcquireActions(): Gs2Showcase.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
+    getBonuses(): Gs2Showcase.Bonus[] | null;
+    setBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
+    withBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateSalesItemMasterRequest;

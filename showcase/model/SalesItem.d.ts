@@ -6,6 +6,7 @@ export default class SalesItem implements IModel {
     private verifyActions;
     private consumeActions;
     private acquireActions;
+    private bonuses;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
@@ -21,6 +22,9 @@ export default class SalesItem implements IModel {
     getAcquireActions(): Gs2Showcase.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Showcase.AcquireAction[] | null): this;
+    getBonuses(): Gs2Showcase.Bonus[] | null;
+    setBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
+    withBonuses(bonuses: Gs2Showcase.Bonus[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SalesItem | null;

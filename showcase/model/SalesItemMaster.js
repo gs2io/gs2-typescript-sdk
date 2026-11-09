@@ -27,6 +27,7 @@ var SalesItemMaster = /** @class */ (function () {
         this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
+        this.bonuses = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -174,6 +175,17 @@ var SalesItemMaster = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    SalesItemMaster.prototype.getBonuses = function () {
+        return this.bonuses;
+    };
+    SalesItemMaster.prototype.setBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
+    SalesItemMaster.prototype.withBonuses = function (bonuses) {
+        this.bonuses = bonuses;
+        return this;
+    };
     SalesItemMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -228,6 +240,10 @@ var SalesItemMaster = /** @class */ (function () {
             data.acquireActions.map(function (item) {
                 return Gs2Showcase.AcquireAction.fromDict(item);
             }) : null)
+            .withBonuses(data.bonuses ?
+            data.bonuses.map(function (item) {
+                return Gs2Showcase.Bonus.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -248,6 +264,10 @@ var SalesItemMaster = /** @class */ (function () {
                 }) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
+            "bonuses": this.getBonuses() ?
+                this.getBonuses().map(function (item) {
                     return item.toDict();
                 }) : null,
             "createdAt": this.getCreatedAt(),

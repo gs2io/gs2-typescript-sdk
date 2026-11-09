@@ -9,6 +9,7 @@ export default class BuyByUserIdRequest implements IRequest {
     private userId;
     private quantity;
     private config;
+    private routeKey;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -35,6 +36,9 @@ export default class BuyByUserIdRequest implements IRequest {
     getConfig(): Gs2Showcase.Config[] | null;
     setConfig(config: Gs2Showcase.Config[] | null): this;
     withConfig(config: Gs2Showcase.Config[] | null): this;
+    getRouteKey(): string | null;
+    setRouteKey(routeKey: string | null): this;
+    withRouteKey(routeKey: string | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

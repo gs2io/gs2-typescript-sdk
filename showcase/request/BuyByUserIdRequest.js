@@ -27,6 +27,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.quantity = null;
         this.config = null;
+        this.routeKey = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -118,6 +119,17 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    BuyByUserIdRequest.prototype.getRouteKey = function () {
+        return this.routeKey;
+    };
+    BuyByUserIdRequest.prototype.setRouteKey = function (routeKey) {
+        this.routeKey = routeKey;
+        return this;
+    };
+    BuyByUserIdRequest.prototype.withRouteKey = function (routeKey) {
+        this.routeKey = routeKey;
+        return this;
+    };
     BuyByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -151,6 +163,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
             }) : null)
+            .withRouteKey(data["routeKey"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     BuyByUserIdRequest.prototype.toDict = function () {
@@ -164,6 +177,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : null,
+            "routeKey": this.getRouteKey(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
