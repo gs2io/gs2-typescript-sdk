@@ -1074,7 +1074,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FriendRestClient.prototype.sendRequest = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1092,13 +1092,14 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'withProfile': (_j = request.getWithProfile()) !== null && _j !== void 0 ? _j : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.SendRequestResult.fromDict(data);
         });
     };
     Gs2FriendRestClient.prototype.sendRequestByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (((_a = Gs2FriendRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/sendBox/{targetUserId}')
             .replace('{service}', 'friend')
             .replace('{region}', this.session.region)
@@ -1117,6 +1118,7 @@ var Gs2FriendRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'withProfile': (_l = request.getWithProfile()) !== null && _l !== void 0 ? _l : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.SendRequestByUserIdResult.fromDict(data);
