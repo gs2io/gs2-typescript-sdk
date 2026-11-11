@@ -29,6 +29,7 @@ var Namespace = /** @class */ (function () {
         this.serverSpec = null;
         this.syncSetting = null;
         this.stateMachineSetting = null;
+        this.participantSetting = null;
         this.createNotification = null;
         this.logSetting = null;
         this.createdAt = null;
@@ -185,6 +186,17 @@ var Namespace = /** @class */ (function () {
         this.stateMachineSetting = stateMachineSetting;
         return this;
     };
+    Namespace.prototype.getParticipantSetting = function () {
+        return this.participantSetting;
+    };
+    Namespace.prototype.setParticipantSetting = function (participantSetting) {
+        this.participantSetting = participantSetting;
+        return this;
+    };
+    Namespace.prototype.withParticipantSetting = function (participantSetting) {
+        this.participantSetting = participantSetting;
+        return this;
+    };
     Namespace.prototype.getCreateNotification = function () {
         return this.createNotification;
     };
@@ -254,6 +266,7 @@ var Namespace = /** @class */ (function () {
             .withServerSpec(data["serverSpec"])
             .withSyncSetting(Gs2Realtime.SyncSetting.fromDict(data["syncSetting"]))
             .withStateMachineSetting(Gs2Realtime.StateMachineSetting.fromDict(data["stateMachineSetting"]))
+            .withParticipantSetting(Gs2Realtime.ParticipantSetting.fromDict(data["participantSetting"]))
             .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
             .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -261,7 +274,7 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -272,8 +285,9 @@ var Namespace = /** @class */ (function () {
             "serverSpec": this.getServerSpec(),
             "syncSetting": (_c = this.getSyncSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "stateMachineSetting": (_d = this.getStateMachineSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "createNotification": (_e = this.getCreateNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "participantSetting": (_e = this.getParticipantSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "createNotification": (_f = this.getCreateNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "logSetting": (_g = this.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -11,6 +11,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private serverSpec;
     private syncSetting;
     private stateMachineSetting;
+    private participantSetting;
     private createNotification;
     private logSetting;
     getRequestId(): string | null;
@@ -46,6 +47,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getStateMachineSetting(): Gs2Realtime.StateMachineSetting | null;
     setStateMachineSetting(stateMachineSetting: Gs2Realtime.StateMachineSetting | null): this;
     withStateMachineSetting(stateMachineSetting: Gs2Realtime.StateMachineSetting | null): this;
+    getParticipantSetting(): Gs2Realtime.ParticipantSetting | null;
+    setParticipantSetting(participantSetting: Gs2Realtime.ParticipantSetting | null): this;
+    withParticipantSetting(participantSetting: Gs2Realtime.ParticipantSetting | null): this;
     getCreateNotification(): Gs2Realtime.NotificationSetting | null;
     setCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;
     withCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;

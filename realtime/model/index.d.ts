@@ -7,4 +7,5 @@ import TransactionSetting from "./TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
 import SyncSetting from "./SyncSetting";
 import StateMachineSetting from "./StateMachineSetting";
-export { Namespace, Room, NotificationSetting, MobileNotificationMessage, LogSetting, TransactionSetting, TransactionSettingV2, SyncSetting, StateMachineSetting, };
+import ParticipantSetting from "./ParticipantSetting";
+export { Namespace, Room, NotificationSetting, MobileNotificationMessage, LogSetting, TransactionSetting, TransactionSettingV2, SyncSetting, StateMachineSetting, ParticipantSetting, };
