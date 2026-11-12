@@ -525,6 +525,45 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             return Result.AuthenticationResult.fromDict(data);
         });
     };
+    Gs2AccountRestClient.prototype.previewTakeOver = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/takeover/type/{type}/preview')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{type}', String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getType()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'userIdentifier': (_g = request.getUserIdentifier()) !== null && _g !== void 0 ? _g : null,
+            'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreviewTakeOverResult.fromDict(data);
+        });
+    };
+    Gs2AccountRestClient.prototype.previewTakeOverOpenIdConnect = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/takeover/type/{type}/openIdConnect/preview')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{type}', String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getType()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'idToken': (_g = request.getIdToken()) !== null && _g !== void 0 ? _g : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.PreviewTakeOverOpenIdConnectResult.fromDict(data);
+        });
+    };
     Gs2AccountRestClient.prototype.requestDeletion = function (request) {
         var _a, _b, _c, _d, _e, _f;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/account/me/deletion')
