@@ -20,6 +20,7 @@ var CleanUserDataRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.userId = null;
+        this.excludeMicroservices = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -56,6 +57,17 @@ var CleanUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    CleanUserDataRequest.prototype.getExcludeMicroservices = function () {
+        return this.excludeMicroservices;
+    };
+    CleanUserDataRequest.prototype.setExcludeMicroservices = function (excludeMicroservices) {
+        this.excludeMicroservices = excludeMicroservices;
+        return this;
+    };
+    CleanUserDataRequest.prototype.withExcludeMicroservices = function (excludeMicroservices) {
+        this.excludeMicroservices = excludeMicroservices;
+        return this;
+    };
     CleanUserDataRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -81,11 +93,19 @@ var CleanUserDataRequest = /** @class */ (function () {
     CleanUserDataRequest.fromDict = function (data) {
         return new CleanUserDataRequest()
             .withUserId(data["userId"])
+            .withExcludeMicroservices(data.excludeMicroservices ?
+            data.excludeMicroservices.map(function (item) {
+                return item;
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CleanUserDataRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "excludeMicroservices": this.getExcludeMicroservices() ?
+                this.getExcludeMicroservices().map(function (item) {
+                    return item;
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

@@ -32,6 +32,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.doTakeOverScript = null;
         this.banScript = null;
         this.unBanScript = null;
+        this.accountDeletionSetting = null;
+        this.requestDeletionScript = null;
+        this.cancelDeletionScript = null;
+        this.executeDeletionScript = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -180,6 +184,50 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.unBanScript = unBanScript;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getAccountDeletionSetting = function () {
+        return this.accountDeletionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setAccountDeletionSetting = function (accountDeletionSetting) {
+        this.accountDeletionSetting = accountDeletionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withAccountDeletionSetting = function (accountDeletionSetting) {
+        this.accountDeletionSetting = accountDeletionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getRequestDeletionScript = function () {
+        return this.requestDeletionScript;
+    };
+    UpdateNamespaceRequest.prototype.setRequestDeletionScript = function (requestDeletionScript) {
+        this.requestDeletionScript = requestDeletionScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withRequestDeletionScript = function (requestDeletionScript) {
+        this.requestDeletionScript = requestDeletionScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getCancelDeletionScript = function () {
+        return this.cancelDeletionScript;
+    };
+    UpdateNamespaceRequest.prototype.setCancelDeletionScript = function (cancelDeletionScript) {
+        this.cancelDeletionScript = cancelDeletionScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withCancelDeletionScript = function (cancelDeletionScript) {
+        this.cancelDeletionScript = cancelDeletionScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getExecuteDeletionScript = function () {
+        return this.executeDeletionScript;
+    };
+    UpdateNamespaceRequest.prototype.setExecuteDeletionScript = function (executeDeletionScript) {
+        this.executeDeletionScript = executeDeletionScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withExecuteDeletionScript = function (executeDeletionScript) {
+        this.executeDeletionScript = executeDeletionScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -204,10 +252,14 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
             .withBanScript(Gs2Account.ScriptSetting.fromDict(data["banScript"]))
             .withUnBanScript(Gs2Account.ScriptSetting.fromDict(data["unBanScript"]))
+            .withAccountDeletionSetting(Gs2Account.AccountDeletionSetting.fromDict(data["accountDeletionSetting"]))
+            .withRequestDeletionScript(Gs2Account.ScriptSetting.fromDict(data["requestDeletionScript"]))
+            .withCancelDeletionScript(Gs2Account.ScriptSetting.fromDict(data["cancelDeletionScript"]))
+            .withExecuteDeletionScript(Gs2Account.ScriptSetting.fromDict(data["executeDeletionScript"]))
             .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
@@ -220,7 +272,11 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "doTakeOverScript": (_f = this.getDoTakeOverScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "banScript": (_g = this.getBanScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
             "unBanScript": (_h = this.getUnBanScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "logSetting": (_j = this.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "accountDeletionSetting": (_j = this.getAccountDeletionSetting()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "requestDeletionScript": (_k = this.getRequestDeletionScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "cancelDeletionScript": (_l = this.getCancelDeletionScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "executeDeletionScript": (_m = this.getExecuteDeletionScript()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "logSetting": (_o = this.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict(),
         };
     };
     return UpdateNamespaceRequest;

@@ -714,7 +714,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.waitCleanUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/system/{ownerId}/project/clean/progress/{transactionId}/wait')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
@@ -733,13 +733,14 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'userId': (_j = request.getUserId()) !== null && _j !== void 0 ? _j : null,
+            'excludeMicroservices': (_k = request.getExcludeMicroservices()) !== null && _k !== void 0 ? _k : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.WaitCleanUserDataResult.fromDict(data);
         });
     };
     Gs2ProjectRestClient.prototype.cleanUserData = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (((_a = Gs2ProjectRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/account/me/project/clean/{userId}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
@@ -756,6 +757,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'excludeMicroservices': (_g = request.getExcludeMicroservices()) !== null && _g !== void 0 ? _g : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CleanUserDataResult.fromDict(data);

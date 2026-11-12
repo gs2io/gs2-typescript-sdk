@@ -8,6 +8,8 @@ export default class Account implements IModel {
     private banStatuses;
     private banned;
     private lastAuthenticatedAt;
+    private deletionRequestedAt;
+    private deletionScheduledAt;
     private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -37,6 +39,12 @@ export default class Account implements IModel {
     getLastAuthenticatedAt(): number | null;
     setLastAuthenticatedAt(lastAuthenticatedAt: number | null): this;
     withLastAuthenticatedAt(lastAuthenticatedAt: number | null): this;
+    getDeletionRequestedAt(): number | null;
+    setDeletionRequestedAt(deletionRequestedAt: number | null): this;
+    withDeletionRequestedAt(deletionRequestedAt: number | null): this;
+    getDeletionScheduledAt(): number | null;
+    setDeletionScheduledAt(deletionScheduledAt: number | null): this;
+    withDeletionScheduledAt(deletionScheduledAt: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

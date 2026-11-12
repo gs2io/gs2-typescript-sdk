@@ -22,6 +22,7 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
         this.ownerId = null;
         this.transactionId = null;
         this.userId = null;
+        this.excludeMicroservices = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -80,6 +81,17 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    WaitCleanUserDataRequest.prototype.getExcludeMicroservices = function () {
+        return this.excludeMicroservices;
+    };
+    WaitCleanUserDataRequest.prototype.setExcludeMicroservices = function (excludeMicroservices) {
+        this.excludeMicroservices = excludeMicroservices;
+        return this;
+    };
+    WaitCleanUserDataRequest.prototype.withExcludeMicroservices = function (excludeMicroservices) {
+        this.excludeMicroservices = excludeMicroservices;
+        return this;
+    };
     WaitCleanUserDataRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -107,6 +119,10 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
             .withOwnerId(data["ownerId"])
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
+            .withExcludeMicroservices(data.excludeMicroservices ?
+            data.excludeMicroservices.map(function (item) {
+                return item;
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     WaitCleanUserDataRequest.prototype.toDict = function () {
@@ -114,6 +130,10 @@ var WaitCleanUserDataRequest = /** @class */ (function () {
             "ownerId": this.getOwnerId(),
             "transactionId": this.getTransactionId(),
             "userId": this.getUserId(),
+            "excludeMicroservices": this.getExcludeMicroservices() ?
+                this.getExcludeMicroservices().map(function (item) {
+                    return item;
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

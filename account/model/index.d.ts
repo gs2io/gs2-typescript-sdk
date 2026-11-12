@@ -13,6 +13,7 @@ import BanStatus from "./BanStatus";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
+import AccountDeletionSetting from "./AccountDeletionSetting";
 import TransactionSetting from "./TransactionSetting";
 import TransactionSettingV2 from "./TransactionSettingV2";
-export { Namespace, Account, TakeOver, PlatformId, DataOwner, TakeOverTypeModel, TakeOverTypeModelMaster, CurrentModelMaster, OpenIdConnectSetting, ScopeValue, PlatformUser, BanStatus, GitHubCheckoutSetting, ScriptSetting, LogSetting, TransactionSetting, TransactionSettingV2, };
+export { Namespace, Account, TakeOver, PlatformId, DataOwner, TakeOverTypeModel, TakeOverTypeModelMaster, CurrentModelMaster, OpenIdConnectSetting, ScopeValue, PlatformUser, BanStatus, GitHubCheckoutSetting, ScriptSetting, LogSetting, AccountDeletionSetting, TransactionSetting, TransactionSettingV2, };

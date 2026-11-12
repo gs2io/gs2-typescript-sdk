@@ -28,6 +28,11 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     getAccount(request: Request.GetAccountRequest): Promise<Result.GetAccountResult>;
     deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult>;
     authentication(request: Request.AuthenticationRequest): Promise<Result.AuthenticationResult>;
+    requestDeletion(request: Request.RequestDeletionRequest): Promise<Result.RequestDeletionResult>;
+    requestDeletionByUserId(request: Request.RequestDeletionByUserIdRequest): Promise<Result.RequestDeletionByUserIdResult>;
+    cancelDeletion(request: Request.CancelDeletionRequest): Promise<Result.CancelDeletionResult>;
+    cancelDeletionByUserId(request: Request.CancelDeletionByUserIdRequest): Promise<Result.CancelDeletionByUserIdResult>;
+    executeDeletionByUserId(request: Request.ExecuteDeletionByUserIdRequest): Promise<Result.ExecuteDeletionByUserIdResult>;
     describeTakeOvers(request: Request.DescribeTakeOversRequest): Promise<Result.DescribeTakeOversResult>;
     describeTakeOversByUserId(request: Request.DescribeTakeOversByUserIdRequest): Promise<Result.DescribeTakeOversByUserIdResult>;
     createTakeOver(request: Request.CreateTakeOverRequest): Promise<Result.CreateTakeOverResult>;

@@ -27,6 +27,8 @@ var Account = /** @class */ (function () {
         this.banStatuses = null;
         this.banned = null;
         this.lastAuthenticatedAt = null;
+        this.deletionRequestedAt = null;
+        this.deletionScheduledAt = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -173,6 +175,28 @@ var Account = /** @class */ (function () {
         this.lastAuthenticatedAt = lastAuthenticatedAt;
         return this;
     };
+    Account.prototype.getDeletionRequestedAt = function () {
+        return this.deletionRequestedAt;
+    };
+    Account.prototype.setDeletionRequestedAt = function (deletionRequestedAt) {
+        this.deletionRequestedAt = deletionRequestedAt;
+        return this;
+    };
+    Account.prototype.withDeletionRequestedAt = function (deletionRequestedAt) {
+        this.deletionRequestedAt = deletionRequestedAt;
+        return this;
+    };
+    Account.prototype.getDeletionScheduledAt = function () {
+        return this.deletionScheduledAt;
+    };
+    Account.prototype.setDeletionScheduledAt = function (deletionScheduledAt) {
+        this.deletionScheduledAt = deletionScheduledAt;
+        return this;
+    };
+    Account.prototype.withDeletionScheduledAt = function (deletionScheduledAt) {
+        this.deletionScheduledAt = deletionScheduledAt;
+        return this;
+    };
     Account.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -210,6 +234,8 @@ var Account = /** @class */ (function () {
             }) : null)
             .withBanned(data["banned"])
             .withLastAuthenticatedAt(data["lastAuthenticatedAt"])
+            .withDeletionRequestedAt(data["deletionRequestedAt"])
+            .withDeletionScheduledAt(data["deletionScheduledAt"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -225,6 +251,8 @@ var Account = /** @class */ (function () {
                 }) : null,
             "banned": this.getBanned(),
             "lastAuthenticatedAt": this.getLastAuthenticatedAt(),
+            "deletionRequestedAt": this.getDeletionRequestedAt(),
+            "deletionScheduledAt": this.getDeletionScheduledAt(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

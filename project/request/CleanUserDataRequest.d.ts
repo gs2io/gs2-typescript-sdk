@@ -3,6 +3,7 @@ export default class CleanUserDataRequest implements IRequest {
     private requestId;
     private contextStack;
     private userId;
+    private excludeMicroservices;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -14,6 +15,9 @@ export default class CleanUserDataRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getExcludeMicroservices(): string[] | null;
+    setExcludeMicroservices(excludeMicroservices: string[] | null): this;
+    withExcludeMicroservices(excludeMicroservices: string[] | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;
