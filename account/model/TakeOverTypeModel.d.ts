@@ -4,7 +4,9 @@ export default class TakeOverTypeModel implements IModel {
     private takeOverTypeModelId;
     private type;
     private metadata;
+    private takeOverMethod;
     private openIdConnectSetting;
+    private issuedCodeSetting;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -20,9 +22,15 @@ export default class TakeOverTypeModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getTakeOverMethod(): string | null;
+    setTakeOverMethod(takeOverMethod: string | null): this;
+    withTakeOverMethod(takeOverMethod: string | null): this;
     getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting | null;
     setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
     withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
+    getIssuedCodeSetting(): Gs2Account.IssuedCodeSetting | null;
+    setIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
+    withIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): TakeOverTypeModel | null;

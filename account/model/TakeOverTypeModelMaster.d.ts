@@ -5,7 +5,9 @@ export default class TakeOverTypeModelMaster implements IModel {
     private type;
     private description;
     private metadata;
+    private takeOverMethod;
     private openIdConnectSetting;
+    private issuedCodeSetting;
     private createdAt;
     private updatedAt;
     private revision;
@@ -27,9 +29,15 @@ export default class TakeOverTypeModelMaster implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getTakeOverMethod(): string | null;
+    setTakeOverMethod(takeOverMethod: string | null): this;
+    withTakeOverMethod(takeOverMethod: string | null): this;
     getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting | null;
     setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
     withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
+    getIssuedCodeSetting(): Gs2Account.IssuedCodeSetting | null;
+    setIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
+    withIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

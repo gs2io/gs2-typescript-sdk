@@ -6,6 +6,8 @@ export default class TakeOver implements IModel {
     private userIdentifier;
     private password;
     private createdAt;
+    private expiresAt;
+    private failedAttempts;
     private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -32,6 +34,12 @@ export default class TakeOver implements IModel {
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
+    getExpiresAt(): number | null;
+    setExpiresAt(expiresAt: number | null): this;
+    withExpiresAt(expiresAt: number | null): this;
+    getFailedAttempts(): number | null;
+    setFailedAttempts(failedAttempts: number | null): this;
+    withFailedAttempts(failedAttempts: number | null): this;
     getRevision(): number | null;
     setRevision(revision: number | null): this;
     withRevision(revision: number | null): this;

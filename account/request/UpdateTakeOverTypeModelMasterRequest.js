@@ -25,7 +25,9 @@ var UpdateTakeOverTypeModelMasterRequest = /** @class */ (function () {
         this.type = null;
         this.description = null;
         this.metadata = null;
+        this.takeOverMethod = null;
         this.openIdConnectSetting = null;
+        this.issuedCodeSetting = null;
     }
     UpdateTakeOverTypeModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -93,6 +95,17 @@ var UpdateTakeOverTypeModelMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    UpdateTakeOverTypeModelMasterRequest.prototype.getTakeOverMethod = function () {
+        return this.takeOverMethod;
+    };
+    UpdateTakeOverTypeModelMasterRequest.prototype.setTakeOverMethod = function (takeOverMethod) {
+        this.takeOverMethod = takeOverMethod;
+        return this;
+    };
+    UpdateTakeOverTypeModelMasterRequest.prototype.withTakeOverMethod = function (takeOverMethod) {
+        this.takeOverMethod = takeOverMethod;
+        return this;
+    };
     UpdateTakeOverTypeModelMasterRequest.prototype.getOpenIdConnectSetting = function () {
         return this.openIdConnectSetting;
     };
@@ -104,22 +117,37 @@ var UpdateTakeOverTypeModelMasterRequest = /** @class */ (function () {
         this.openIdConnectSetting = openIdConnectSetting;
         return this;
     };
+    UpdateTakeOverTypeModelMasterRequest.prototype.getIssuedCodeSetting = function () {
+        return this.issuedCodeSetting;
+    };
+    UpdateTakeOverTypeModelMasterRequest.prototype.setIssuedCodeSetting = function (issuedCodeSetting) {
+        this.issuedCodeSetting = issuedCodeSetting;
+        return this;
+    };
+    UpdateTakeOverTypeModelMasterRequest.prototype.withIssuedCodeSetting = function (issuedCodeSetting) {
+        this.issuedCodeSetting = issuedCodeSetting;
+        return this;
+    };
     UpdateTakeOverTypeModelMasterRequest.fromDict = function (data) {
         return new UpdateTakeOverTypeModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
             .withType(data["type"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
-            .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]));
+            .withTakeOverMethod(data["takeOverMethod"])
+            .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]))
+            .withIssuedCodeSetting(Gs2Account.IssuedCodeSetting.fromDict(data["issuedCodeSetting"]));
     };
     UpdateTakeOverTypeModelMasterRequest.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceName": this.getNamespaceName(),
             "type": this.getType(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "takeOverMethod": this.getTakeOverMethod(),
             "openIdConnectSetting": (_a = this.getOpenIdConnectSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "issuedCodeSetting": (_b = this.getIssuedCodeSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return UpdateTakeOverTypeModelMasterRequest;

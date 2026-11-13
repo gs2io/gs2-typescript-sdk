@@ -782,6 +782,49 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             return Result.CreateTakeOverByUserIdResult.fromDict(data);
         });
     };
+    Gs2AccountRestClient.prototype.issueTakeOverCode = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/account/me/takeover/type/{type}/issue')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{type}', String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getType()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueTakeOverCodeResult.fromDict(data);
+        });
+    };
+    Gs2AccountRestClient.prototype.issueTakeOverCodeByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/account/{userId}/takeover/type/{type}/issue')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{type}', String((_f = request.getType()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getType()) !== null && _g !== void 0 ? _g : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.IssueTakeOverCodeByUserIdResult.fromDict(data);
+        });
+    };
     Gs2AccountRestClient.prototype.createTakeOverOpenIdConnect = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/account/me/takeover/openIdConnect')
@@ -1439,7 +1482,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.createTakeOverTypeModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1453,7 +1496,9 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'type': (_e = request.getType()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'openIdConnectSetting': (_j = (_h = request.getOpenIdConnectSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'takeOverMethod': (_h = request.getTakeOverMethod()) !== null && _h !== void 0 ? _h : null,
+            'openIdConnectSetting': (_k = (_j = request.getOpenIdConnectSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'issuedCodeSetting': (_m = (_l = request.getIssuedCodeSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateTakeOverTypeModelMasterResult.fromDict(data);
@@ -1478,7 +1523,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.updateTakeOverTypeModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (((_a = Gs2AccountRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/model/{type}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -1492,7 +1537,9 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
-            'openIdConnectSetting': (_k = (_j = request.getOpenIdConnectSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'takeOverMethod': (_j = request.getTakeOverMethod()) !== null && _j !== void 0 ? _j : null,
+            'openIdConnectSetting': (_l = (_k = request.getOpenIdConnectSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'issuedCodeSetting': (_o = (_m = request.getIssuedCodeSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateTakeOverTypeModelMasterResult.fromDict(data);

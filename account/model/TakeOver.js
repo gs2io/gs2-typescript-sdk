@@ -24,6 +24,8 @@ var TakeOver = /** @class */ (function () {
         this.userIdentifier = null;
         this.password = null;
         this.createdAt = null;
+        this.expiresAt = null;
+        this.failedAttempts = null;
         this.revision = null;
     }
     TakeOver.getRegion = function (grn) {
@@ -178,6 +180,28 @@ var TakeOver = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    TakeOver.prototype.getExpiresAt = function () {
+        return this.expiresAt;
+    };
+    TakeOver.prototype.setExpiresAt = function (expiresAt) {
+        this.expiresAt = expiresAt;
+        return this;
+    };
+    TakeOver.prototype.withExpiresAt = function (expiresAt) {
+        this.expiresAt = expiresAt;
+        return this;
+    };
+    TakeOver.prototype.getFailedAttempts = function () {
+        return this.failedAttempts;
+    };
+    TakeOver.prototype.setFailedAttempts = function (failedAttempts) {
+        this.failedAttempts = failedAttempts;
+        return this;
+    };
+    TakeOver.prototype.withFailedAttempts = function (failedAttempts) {
+        this.failedAttempts = failedAttempts;
+        return this;
+    };
     TakeOver.prototype.getRevision = function () {
         return this.revision;
     };
@@ -200,6 +224,8 @@ var TakeOver = /** @class */ (function () {
             .withUserIdentifier(data["userIdentifier"])
             .withPassword(data["password"])
             .withCreatedAt(data["createdAt"])
+            .withExpiresAt(data["expiresAt"])
+            .withFailedAttempts(data["failedAttempts"])
             .withRevision(data["revision"]);
     };
     TakeOver.prototype.toDict = function () {
@@ -210,6 +236,8 @@ var TakeOver = /** @class */ (function () {
             "userIdentifier": this.getUserIdentifier(),
             "password": this.getPassword(),
             "createdAt": this.getCreatedAt(),
+            "expiresAt": this.getExpiresAt(),
+            "failedAttempts": this.getFailedAttempts(),
             "revision": this.getRevision(),
         };
     };

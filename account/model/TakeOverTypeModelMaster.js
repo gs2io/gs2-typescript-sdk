@@ -24,7 +24,9 @@ var TakeOverTypeModelMaster = /** @class */ (function () {
         this.type = null;
         this.description = null;
         this.metadata = null;
+        this.takeOverMethod = null;
         this.openIdConnectSetting = null;
+        this.issuedCodeSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -139,6 +141,17 @@ var TakeOverTypeModelMaster = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    TakeOverTypeModelMaster.prototype.getTakeOverMethod = function () {
+        return this.takeOverMethod;
+    };
+    TakeOverTypeModelMaster.prototype.setTakeOverMethod = function (takeOverMethod) {
+        this.takeOverMethod = takeOverMethod;
+        return this;
+    };
+    TakeOverTypeModelMaster.prototype.withTakeOverMethod = function (takeOverMethod) {
+        this.takeOverMethod = takeOverMethod;
+        return this;
+    };
     TakeOverTypeModelMaster.prototype.getOpenIdConnectSetting = function () {
         return this.openIdConnectSetting;
     };
@@ -148,6 +161,17 @@ var TakeOverTypeModelMaster = /** @class */ (function () {
     };
     TakeOverTypeModelMaster.prototype.withOpenIdConnectSetting = function (openIdConnectSetting) {
         this.openIdConnectSetting = openIdConnectSetting;
+        return this;
+    };
+    TakeOverTypeModelMaster.prototype.getIssuedCodeSetting = function () {
+        return this.issuedCodeSetting;
+    };
+    TakeOverTypeModelMaster.prototype.setIssuedCodeSetting = function (issuedCodeSetting) {
+        this.issuedCodeSetting = issuedCodeSetting;
+        return this;
+    };
+    TakeOverTypeModelMaster.prototype.withIssuedCodeSetting = function (issuedCodeSetting) {
+        this.issuedCodeSetting = issuedCodeSetting;
         return this;
     };
     TakeOverTypeModelMaster.prototype.getCreatedAt = function () {
@@ -192,19 +216,23 @@ var TakeOverTypeModelMaster = /** @class */ (function () {
             .withType(data["type"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withTakeOverMethod(data["takeOverMethod"])
             .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]))
+            .withIssuedCodeSetting(Gs2Account.IssuedCodeSetting.fromDict(data["issuedCodeSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     TakeOverTypeModelMaster.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "takeOverTypeModelId": this.getTakeOverTypeModelId(),
             "type": this.getType(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "takeOverMethod": this.getTakeOverMethod(),
             "openIdConnectSetting": (_a = this.getOpenIdConnectSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "issuedCodeSetting": (_b = this.getIssuedCodeSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

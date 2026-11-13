@@ -39,6 +39,8 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     describeTakeOversByUserId(request: Request.DescribeTakeOversByUserIdRequest): Promise<Result.DescribeTakeOversByUserIdResult>;
     createTakeOver(request: Request.CreateTakeOverRequest): Promise<Result.CreateTakeOverResult>;
     createTakeOverByUserId(request: Request.CreateTakeOverByUserIdRequest): Promise<Result.CreateTakeOverByUserIdResult>;
+    issueTakeOverCode(request: Request.IssueTakeOverCodeRequest): Promise<Result.IssueTakeOverCodeResult>;
+    issueTakeOverCodeByUserId(request: Request.IssueTakeOverCodeByUserIdRequest): Promise<Result.IssueTakeOverCodeByUserIdResult>;
     createTakeOverOpenIdConnect(request: Request.CreateTakeOverOpenIdConnectRequest): Promise<Result.CreateTakeOverOpenIdConnectResult>;
     createTakeOverOpenIdConnectAndByUserId(request: Request.CreateTakeOverOpenIdConnectAndByUserIdRequest): Promise<Result.CreateTakeOverOpenIdConnectAndByUserIdResult>;
     getTakeOver(request: Request.GetTakeOverRequest): Promise<Result.GetTakeOverResult>;

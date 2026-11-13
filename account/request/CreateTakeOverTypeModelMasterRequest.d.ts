@@ -7,7 +7,9 @@ export default class CreateTakeOverTypeModelMasterRequest implements IRequest {
     private type;
     private description;
     private metadata;
+    private takeOverMethod;
     private openIdConnectSetting;
+    private issuedCodeSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -26,9 +28,15 @@ export default class CreateTakeOverTypeModelMasterRequest implements IRequest {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getTakeOverMethod(): string | null;
+    setTakeOverMethod(takeOverMethod: string | null): this;
+    withTakeOverMethod(takeOverMethod: string | null): this;
     getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting | null;
     setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
     withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
+    getIssuedCodeSetting(): Gs2Account.IssuedCodeSetting | null;
+    setIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
+    withIssuedCodeSetting(issuedCodeSetting: Gs2Account.IssuedCodeSetting | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateTakeOverTypeModelMasterRequest;
