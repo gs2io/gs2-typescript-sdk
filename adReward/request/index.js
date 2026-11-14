@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquirePointByStampSheetRequest = exports.ConsumePointByStampTaskRequest = exports.DeletePointByUserIdRequest = exports.ConsumePointByUserIdRequest = exports.ConsumePointRequest = exports.AcquirePointByUserIdRequest = exports.GetPointByUserIdRequest = exports.GetPointRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.AcquirePointByStampSheetRequest = exports.VerifyPointByStampTaskRequest = exports.ConsumePointByStampTaskRequest = exports.DeletePointByUserIdRequest = exports.VerifyPointByUserIdRequest = exports.VerifyPointRequest = exports.ConsumePointByUserIdRequest = exports.ConsumePointRequest = exports.AcquirePointByUserIdRequest = exports.GetPointByUserIdRequest = exports.GetPointRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -55,10 +55,16 @@ var ConsumePointRequest_1 = tslib_1.__importDefault(require("./ConsumePointReque
 exports.ConsumePointRequest = ConsumePointRequest_1.default;
 var ConsumePointByUserIdRequest_1 = tslib_1.__importDefault(require("./ConsumePointByUserIdRequest"));
 exports.ConsumePointByUserIdRequest = ConsumePointByUserIdRequest_1.default;
+var VerifyPointRequest_1 = tslib_1.__importDefault(require("./VerifyPointRequest"));
+exports.VerifyPointRequest = VerifyPointRequest_1.default;
+var VerifyPointByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyPointByUserIdRequest"));
+exports.VerifyPointByUserIdRequest = VerifyPointByUserIdRequest_1.default;
 var DeletePointByUserIdRequest_1 = tslib_1.__importDefault(require("./DeletePointByUserIdRequest"));
 exports.DeletePointByUserIdRequest = DeletePointByUserIdRequest_1.default;
 var ConsumePointByStampTaskRequest_1 = tslib_1.__importDefault(require("./ConsumePointByStampTaskRequest"));
 exports.ConsumePointByStampTaskRequest = ConsumePointByStampTaskRequest_1.default;
+var VerifyPointByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyPointByStampTaskRequest"));
+exports.VerifyPointByStampTaskRequest = VerifyPointByStampTaskRequest_1.default;
 var AcquirePointByStampSheetRequest_1 = tslib_1.__importDefault(require("./AcquirePointByStampSheetRequest"));
 exports.AcquirePointByStampSheetRequest = AcquirePointByStampSheetRequest_1.default;
 //# sourceMappingURL=index.js.map

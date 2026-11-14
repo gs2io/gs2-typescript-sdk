@@ -24,7 +24,10 @@ export default class Gs2AdRewardRestClient extends AbstractGs2RestClient {
     acquirePointByUserId(request: Request.AcquirePointByUserIdRequest): Promise<Result.AcquirePointByUserIdResult>;
     consumePoint(request: Request.ConsumePointRequest): Promise<Result.ConsumePointResult>;
     consumePointByUserId(request: Request.ConsumePointByUserIdRequest): Promise<Result.ConsumePointByUserIdResult>;
+    verifyPoint(request: Request.VerifyPointRequest): Promise<Result.VerifyPointResult>;
+    verifyPointByUserId(request: Request.VerifyPointByUserIdRequest): Promise<Result.VerifyPointByUserIdResult>;
     deletePointByUserId(request: Request.DeletePointByUserIdRequest): Promise<Result.DeletePointByUserIdResult>;
     consumePointByStampTask(request: Request.ConsumePointByStampTaskRequest): Promise<Result.ConsumePointByStampTaskResult>;
+    verifyPointByStampTask(request: Request.VerifyPointByStampTaskRequest): Promise<Result.VerifyPointByStampTaskResult>;
     acquirePointByStampSheet(request: Request.AcquirePointByStampSheetRequest): Promise<Result.AcquirePointByStampSheetResult>;
 }
