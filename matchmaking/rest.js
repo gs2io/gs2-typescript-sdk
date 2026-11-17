@@ -1463,6 +1463,59 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             return Result.GetRatingByUserIdResult.fromDict(data);
         });
     };
+    Gs2MatchmakingRestClient.prototype.verifyRating = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = (((_a = Gs2MatchmakingRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/rating/{ratingName}/verify/{verifyType}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{ratingName}', String((_d = request.getRatingName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getRatingName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{verifyType}', String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_h = request.getAccessToken()) !== null && _h !== void 0 ? _h : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'rateValue': (_l = request.getRateValue()) !== null && _l !== void 0 ? _l : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyRatingResult.fromDict(data);
+        });
+    };
+    Gs2MatchmakingRestClient.prototype.verifyRatingByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = (((_a = Gs2MatchmakingRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/rating/{ratingName}/verify/{verifyType}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{ratingName}', String((_f = request.getRatingName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getRatingName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_l = request.getTimeOffsetToken()) !== null && _l !== void 0 ? _l : null;
+        }
+        var body = {
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'rateValue': (_o = request.getRateValue()) !== null && _o !== void 0 ? _o : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyRatingByUserIdResult.fromDict(data);
+        });
+    };
     Gs2MatchmakingRestClient.prototype.putResult = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (((_a = Gs2MatchmakingRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/rating/{ratingName}/vote')
@@ -1505,6 +1558,24 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         };
         return this.request('DELETE', url, headers, params, undefined).then(function (data) {
             return Result.DeleteRatingResult.fromDict(data);
+        });
+    };
+    Gs2MatchmakingRestClient.prototype.verifyRatingByStampTask = function (request) {
+        var _a, _b, _c, _d;
+        var url = (((_a = Gs2MatchmakingRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/rating/verify')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyRatingByStampTaskResult.fromDict(data);
         });
     };
     Gs2MatchmakingRestClient.prototype.getBallot = function (request) {

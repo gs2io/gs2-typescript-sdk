@@ -71,8 +71,11 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     describeRatingsByUserId(request: Request.DescribeRatingsByUserIdRequest): Promise<Result.DescribeRatingsByUserIdResult>;
     getRating(request: Request.GetRatingRequest): Promise<Result.GetRatingResult>;
     getRatingByUserId(request: Request.GetRatingByUserIdRequest): Promise<Result.GetRatingByUserIdResult>;
+    verifyRating(request: Request.VerifyRatingRequest): Promise<Result.VerifyRatingResult>;
+    verifyRatingByUserId(request: Request.VerifyRatingByUserIdRequest): Promise<Result.VerifyRatingByUserIdResult>;
     putResult(request: Request.PutResultRequest): Promise<Result.PutResultResult>;
     deleteRating(request: Request.DeleteRatingRequest): Promise<Result.DeleteRatingResult>;
+    verifyRatingByStampTask(request: Request.VerifyRatingByStampTaskRequest): Promise<Result.VerifyRatingByStampTaskResult>;
     getBallot(request: Request.GetBallotRequest): Promise<Result.GetBallotResult>;
     getBallotByUserId(request: Request.GetBallotByUserIdRequest): Promise<Result.GetBallotByUserIdResult>;
     vote(request: Request.VoteRequest): Promise<Result.VoteResult>;
