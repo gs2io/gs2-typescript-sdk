@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentTreeMasterFromGitHubRequest = exports.UpdateCurrentTreeMasterRequest = exports.PreUpdateCurrentTreeMasterRequest = exports.GetCurrentTreeMasterRequest = exports.ExportMasterRequest = exports.MarkRestrainByStampTaskRequest = exports.MarkReleaseByStampSheetRequest = exports.ResetByUserIdRequest = exports.ResetRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.RestrainByUserIdRequest = exports.RestrainRequest = exports.MarkRestrainByUserIdRequest = exports.MarkRestrainRequest = exports.ReleaseByUserIdRequest = exports.ReleaseRequest = exports.MarkReleaseByUserIdRequest = exports.DeleteNodeModelMasterRequest = exports.UpdateNodeModelMasterRequest = exports.GetNodeModelMasterRequest = exports.CreateNodeModelMasterRequest = exports.DescribeNodeModelMastersRequest = exports.GetNodeModelRequest = exports.DescribeNodeModelsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentTreeMasterFromGitHubRequest = exports.UpdateCurrentTreeMasterRequest = exports.PreUpdateCurrentTreeMasterRequest = exports.GetCurrentTreeMasterRequest = exports.ExportMasterRequest = exports.VerifyStatusByStampTaskRequest = exports.MarkRestrainByStampTaskRequest = exports.MarkReleaseByStampSheetRequest = exports.ResetByUserIdRequest = exports.ResetRequest = exports.VerifyStatusByUserIdRequest = exports.VerifyStatusRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.RestrainByUserIdRequest = exports.RestrainRequest = exports.MarkRestrainByUserIdRequest = exports.MarkRestrainRequest = exports.ReleaseByUserIdRequest = exports.ReleaseRequest = exports.MarkReleaseByUserIdRequest = exports.DeleteNodeModelMasterRequest = exports.UpdateNodeModelMasterRequest = exports.GetNodeModelMasterRequest = exports.CreateNodeModelMasterRequest = exports.DescribeNodeModelMastersRequest = exports.GetNodeModelRequest = exports.DescribeNodeModelsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.GetServiceVersionRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -81,6 +81,10 @@ var GetStatusRequest_1 = tslib_1.__importDefault(require("./GetStatusRequest"));
 exports.GetStatusRequest = GetStatusRequest_1.default;
 var GetStatusByUserIdRequest_1 = tslib_1.__importDefault(require("./GetStatusByUserIdRequest"));
 exports.GetStatusByUserIdRequest = GetStatusByUserIdRequest_1.default;
+var VerifyStatusRequest_1 = tslib_1.__importDefault(require("./VerifyStatusRequest"));
+exports.VerifyStatusRequest = VerifyStatusRequest_1.default;
+var VerifyStatusByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyStatusByUserIdRequest"));
+exports.VerifyStatusByUserIdRequest = VerifyStatusByUserIdRequest_1.default;
 var ResetRequest_1 = tslib_1.__importDefault(require("./ResetRequest"));
 exports.ResetRequest = ResetRequest_1.default;
 var ResetByUserIdRequest_1 = tslib_1.__importDefault(require("./ResetByUserIdRequest"));
@@ -89,6 +93,8 @@ var MarkReleaseByStampSheetRequest_1 = tslib_1.__importDefault(require("./MarkRe
 exports.MarkReleaseByStampSheetRequest = MarkReleaseByStampSheetRequest_1.default;
 var MarkRestrainByStampTaskRequest_1 = tslib_1.__importDefault(require("./MarkRestrainByStampTaskRequest"));
 exports.MarkRestrainByStampTaskRequest = MarkRestrainByStampTaskRequest_1.default;
+var VerifyStatusByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyStatusByStampTaskRequest"));
+exports.VerifyStatusByStampTaskRequest = VerifyStatusByStampTaskRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentTreeMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentTreeMasterRequest"));

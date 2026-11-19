@@ -37,10 +37,13 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult>;
     getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
     getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
+    verifyStatus(request: Request.VerifyStatusRequest): Promise<Result.VerifyStatusResult>;
+    verifyStatusByUserId(request: Request.VerifyStatusByUserIdRequest): Promise<Result.VerifyStatusByUserIdResult>;
     reset(request: Request.ResetRequest): Promise<Result.ResetResult>;
     resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult>;
     markReleaseByStampSheet(request: Request.MarkReleaseByStampSheetRequest): Promise<Result.MarkReleaseByStampSheetResult>;
     markRestrainByStampTask(request: Request.MarkRestrainByStampTaskRequest): Promise<Result.MarkRestrainByStampTaskResult>;
+    verifyStatusByStampTask(request: Request.VerifyStatusByStampTaskRequest): Promise<Result.VerifyStatusByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentTreeMaster(request: Request.GetCurrentTreeMasterRequest): Promise<Result.GetCurrentTreeMasterResult>;
     preUpdateCurrentTreeMaster(request: Request.PreUpdateCurrentTreeMasterRequest): Promise<Result.PreUpdateCurrentTreeMasterResult>;
