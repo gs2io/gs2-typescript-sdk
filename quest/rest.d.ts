@@ -50,7 +50,10 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     describeCompletedQuestListsByUserId(request: Request.DescribeCompletedQuestListsByUserIdRequest): Promise<Result.DescribeCompletedQuestListsByUserIdResult>;
     getCompletedQuestList(request: Request.GetCompletedQuestListRequest): Promise<Result.GetCompletedQuestListResult>;
     getCompletedQuestListByUserId(request: Request.GetCompletedQuestListByUserIdRequest): Promise<Result.GetCompletedQuestListByUserIdResult>;
+    verifyCompletedQuestList(request: Request.VerifyCompletedQuestListRequest): Promise<Result.VerifyCompletedQuestListResult>;
+    verifyCompletedQuestListByUserId(request: Request.VerifyCompletedQuestListByUserIdRequest): Promise<Result.VerifyCompletedQuestListByUserIdResult>;
     deleteCompletedQuestListByUserId(request: Request.DeleteCompletedQuestListByUserIdRequest): Promise<Result.DeleteCompletedQuestListByUserIdResult>;
+    verifyCompletedQuestListByStampTask(request: Request.VerifyCompletedQuestListByStampTaskRequest): Promise<Result.VerifyCompletedQuestListByStampTaskResult>;
     describeQuestGroupModels(request: Request.DescribeQuestGroupModelsRequest): Promise<Result.DescribeQuestGroupModelsResult>;
     getQuestGroupModel(request: Request.GetQuestGroupModelRequest): Promise<Result.GetQuestGroupModelResult>;
     describeQuestModels(request: Request.DescribeQuestModelsRequest): Promise<Result.DescribeQuestModelsResult>;
