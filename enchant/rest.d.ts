@@ -42,11 +42,14 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     describeBalanceParameterStatusesByUserId(request: Request.DescribeBalanceParameterStatusesByUserIdRequest): Promise<Result.DescribeBalanceParameterStatusesByUserIdResult>;
     getBalanceParameterStatus(request: Request.GetBalanceParameterStatusRequest): Promise<Result.GetBalanceParameterStatusResult>;
     getBalanceParameterStatusByUserId(request: Request.GetBalanceParameterStatusByUserIdRequest): Promise<Result.GetBalanceParameterStatusByUserIdResult>;
+    verifyBalanceParameterStatus(request: Request.VerifyBalanceParameterStatusRequest): Promise<Result.VerifyBalanceParameterStatusResult>;
+    verifyBalanceParameterStatusByUserId(request: Request.VerifyBalanceParameterStatusByUserIdRequest): Promise<Result.VerifyBalanceParameterStatusByUserIdResult>;
     deleteBalanceParameterStatusByUserId(request: Request.DeleteBalanceParameterStatusByUserIdRequest): Promise<Result.DeleteBalanceParameterStatusByUserIdResult>;
     reDrawBalanceParameterStatusByUserId(request: Request.ReDrawBalanceParameterStatusByUserIdRequest): Promise<Result.ReDrawBalanceParameterStatusByUserIdResult>;
     reDrawBalanceParameterStatusByStampSheet(request: Request.ReDrawBalanceParameterStatusByStampSheetRequest): Promise<Result.ReDrawBalanceParameterStatusByStampSheetResult>;
     setBalanceParameterStatusByUserId(request: Request.SetBalanceParameterStatusByUserIdRequest): Promise<Result.SetBalanceParameterStatusByUserIdResult>;
     setBalanceParameterStatusByStampSheet(request: Request.SetBalanceParameterStatusByStampSheetRequest): Promise<Result.SetBalanceParameterStatusByStampSheetResult>;
+    verifyBalanceParameterStatusByStampTask(request: Request.VerifyBalanceParameterStatusByStampTaskRequest): Promise<Result.VerifyBalanceParameterStatusByStampTaskResult>;
     describeRarityParameterStatuses(request: Request.DescribeRarityParameterStatusesRequest): Promise<Result.DescribeRarityParameterStatusesResult>;
     describeRarityParameterStatusesByUserId(request: Request.DescribeRarityParameterStatusesByUserIdRequest): Promise<Result.DescribeRarityParameterStatusesByUserIdResult>;
     getRarityParameterStatus(request: Request.GetRarityParameterStatusRequest): Promise<Result.GetRarityParameterStatusResult>;

@@ -748,6 +748,63 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             return Result.GetBalanceParameterStatusByUserIdResult.fromDict(data);
         });
     };
+    Gs2EnchantRestClient.prototype.verifyBalanceParameterStatus = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/status/balance/{parameterName}/{propertyId}/verify/{verifyType}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{parameterName}', String((_d = request.getParameterName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{propertyId}', String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+        }
+        var body = {
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'parameterValueName': (_o = request.getParameterValueName()) !== null && _o !== void 0 ? _o : null,
+            'parameterValue': (_p = request.getParameterValue()) !== null && _p !== void 0 ? _p : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBalanceParameterStatusResult.fromDict(data);
+        });
+    };
+    Gs2EnchantRestClient.prototype.verifyBalanceParameterStatusByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = (((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}/verify/{verifyType}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{parameterName}', String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getParameterName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{propertyId}', String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getPropertyId()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
+        }
+        var body = {
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'parameterValueName': (_q = request.getParameterValueName()) !== null && _q !== void 0 ? _q : null,
+            'parameterValue': (_r = request.getParameterValue()) !== null && _r !== void 0 ? _r : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBalanceParameterStatusByUserIdResult.fromDict(data);
+        });
+    };
     Gs2EnchantRestClient.prototype.deleteBalanceParameterStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
@@ -862,6 +919,24 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.SetBalanceParameterStatusByStampSheetResult.fromDict(data);
+        });
+    };
+    Gs2EnchantRestClient.prototype.verifyBalanceParameterStatusByStampTask = function (request) {
+        var _a, _b, _c, _d;
+        var url = (((_a = Gs2EnchantRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/balance/parameter/verify')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyBalanceParameterStatusByStampTaskResult.fromDict(data);
         });
     };
     Gs2EnchantRestClient.prototype.describeRarityParameterStatuses = function (request) {
