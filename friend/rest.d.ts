@@ -25,8 +25,17 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     updateProfileByUserId(request: Request.UpdateProfileByUserIdRequest): Promise<Result.UpdateProfileByUserIdResult>;
     deleteProfileByUserId(request: Request.DeleteProfileByUserIdRequest): Promise<Result.DeleteProfileByUserIdResult>;
     updateProfileByStampSheet(request: Request.UpdateProfileByStampSheetRequest): Promise<Result.UpdateProfileByStampSheetResult>;
+    verifyFollow(request: Request.VerifyFollowRequest): Promise<Result.VerifyFollowResult>;
+    verifyFollowByUserId(request: Request.VerifyFollowByUserIdRequest): Promise<Result.VerifyFollowByUserIdResult>;
+    verifyFollowByStampTask(request: Request.VerifyFollowByStampTaskRequest): Promise<Result.VerifyFollowByStampTaskResult>;
     describeFriends(request: Request.DescribeFriendsRequest): Promise<Result.DescribeFriendsResult>;
     describeFriendsByUserId(request: Request.DescribeFriendsByUserIdRequest): Promise<Result.DescribeFriendsByUserIdResult>;
+    verifyFriend(request: Request.VerifyFriendRequest): Promise<Result.VerifyFriendResult>;
+    verifyFriendByUserId(request: Request.VerifyFriendByUserIdRequest): Promise<Result.VerifyFriendByUserIdResult>;
+    verifyFriendByStampTask(request: Request.VerifyFriendByStampTaskRequest): Promise<Result.VerifyFriendByStampTaskResult>;
+    verifyFriendCount(request: Request.VerifyFriendCountRequest): Promise<Result.VerifyFriendCountResult>;
+    verifyFriendCountByUserId(request: Request.VerifyFriendCountByUserIdRequest): Promise<Result.VerifyFriendCountByUserIdResult>;
+    verifyFriendCountByStampTask(request: Request.VerifyFriendCountByStampTaskRequest): Promise<Result.VerifyFriendCountByStampTaskResult>;
     describeBlackList(request: Request.DescribeBlackListRequest): Promise<Result.DescribeBlackListResult>;
     describeBlackListByUserId(request: Request.DescribeBlackListByUserIdRequest): Promise<Result.DescribeBlackListByUserIdResult>;
     registerBlackList(request: Request.RegisterBlackListRequest): Promise<Result.RegisterBlackListResult>;

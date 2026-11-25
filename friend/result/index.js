@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteRequestByUserIdResult = exports.DeleteRequestResult = exports.SendRequestByUserIdResult = exports.SendRequestResult = exports.GetSendRequestByUserIdResult = exports.GetSendRequestResult = exports.DescribeSendRequestsByUserIdResult = exports.DescribeSendRequestsResult = exports.DeleteFriendByUserIdResult = exports.DeleteFriendResult = exports.AddFriendByUserIdResult = exports.AddFriendResult = exports.GetFriendByUserIdResult = exports.GetFriendResult = exports.UnfollowByUserIdResult = exports.UnfollowResult = exports.FollowByUserIdResult = exports.FollowResult = exports.GetFollowByUserIdResult = exports.GetFollowResult = exports.DescribeFollowsByUserIdResult = exports.DescribeFollowsResult = exports.UnregisterBlackListByUserIdResult = exports.UnregisterBlackListResult = exports.RegisterBlackListByUserIdResult = exports.RegisterBlackListResult = exports.DescribeBlackListByUserIdResult = exports.DescribeBlackListResult = exports.DescribeFriendsByUserIdResult = exports.DescribeFriendsResult = exports.UpdateProfileByStampSheetResult = exports.DeleteProfileByUserIdResult = exports.UpdateProfileByUserIdResult = exports.UpdateProfileResult = exports.GetProfileByUserIdResult = exports.GetProfileResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.GetServiceVersionResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
-exports.GetPublicProfileResult = exports.RejectRequestByUserIdResult = exports.RejectRequestResult = exports.AcceptRequestByUserIdResult = exports.AcceptRequestResult = exports.GetReceiveRequestByUserIdResult = exports.GetReceiveRequestResult = exports.DescribeReceiveRequestsByUserIdResult = exports.DescribeReceiveRequestsResult = void 0;
+exports.DeleteFriendResult = exports.AddFriendByUserIdResult = exports.AddFriendResult = exports.GetFriendByUserIdResult = exports.GetFriendResult = exports.UnfollowByUserIdResult = exports.UnfollowResult = exports.FollowByUserIdResult = exports.FollowResult = exports.GetFollowByUserIdResult = exports.GetFollowResult = exports.DescribeFollowsByUserIdResult = exports.DescribeFollowsResult = exports.UnregisterBlackListByUserIdResult = exports.UnregisterBlackListResult = exports.RegisterBlackListByUserIdResult = exports.RegisterBlackListResult = exports.DescribeBlackListByUserIdResult = exports.DescribeBlackListResult = exports.VerifyFriendCountByStampTaskResult = exports.VerifyFriendCountByUserIdResult = exports.VerifyFriendCountResult = exports.VerifyFriendByStampTaskResult = exports.VerifyFriendByUserIdResult = exports.VerifyFriendResult = exports.DescribeFriendsByUserIdResult = exports.DescribeFriendsResult = exports.VerifyFollowByStampTaskResult = exports.VerifyFollowByUserIdResult = exports.VerifyFollowResult = exports.UpdateProfileByStampSheetResult = exports.DeleteProfileByUserIdResult = exports.UpdateProfileByUserIdResult = exports.UpdateProfileResult = exports.GetProfileByUserIdResult = exports.GetProfileResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.GetServiceVersionResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetPublicProfileResult = exports.RejectRequestByUserIdResult = exports.RejectRequestResult = exports.AcceptRequestByUserIdResult = exports.AcceptRequestResult = exports.GetReceiveRequestByUserIdResult = exports.GetReceiveRequestResult = exports.DescribeReceiveRequestsByUserIdResult = exports.DescribeReceiveRequestsResult = exports.DeleteRequestByUserIdResult = exports.DeleteRequestResult = exports.SendRequestByUserIdResult = exports.SendRequestResult = exports.GetSendRequestByUserIdResult = exports.GetSendRequestResult = exports.DescribeSendRequestsByUserIdResult = exports.DescribeSendRequestsResult = exports.DeleteFriendByUserIdResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -58,10 +58,28 @@ var DeleteProfileByUserIdResult_1 = tslib_1.__importDefault(require("./DeletePro
 exports.DeleteProfileByUserIdResult = DeleteProfileByUserIdResult_1.default;
 var UpdateProfileByStampSheetResult_1 = tslib_1.__importDefault(require("./UpdateProfileByStampSheetResult"));
 exports.UpdateProfileByStampSheetResult = UpdateProfileByStampSheetResult_1.default;
+var VerifyFollowResult_1 = tslib_1.__importDefault(require("./VerifyFollowResult"));
+exports.VerifyFollowResult = VerifyFollowResult_1.default;
+var VerifyFollowByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyFollowByUserIdResult"));
+exports.VerifyFollowByUserIdResult = VerifyFollowByUserIdResult_1.default;
+var VerifyFollowByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyFollowByStampTaskResult"));
+exports.VerifyFollowByStampTaskResult = VerifyFollowByStampTaskResult_1.default;
 var DescribeFriendsResult_1 = tslib_1.__importDefault(require("./DescribeFriendsResult"));
 exports.DescribeFriendsResult = DescribeFriendsResult_1.default;
 var DescribeFriendsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeFriendsByUserIdResult"));
 exports.DescribeFriendsByUserIdResult = DescribeFriendsByUserIdResult_1.default;
+var VerifyFriendResult_1 = tslib_1.__importDefault(require("./VerifyFriendResult"));
+exports.VerifyFriendResult = VerifyFriendResult_1.default;
+var VerifyFriendByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyFriendByUserIdResult"));
+exports.VerifyFriendByUserIdResult = VerifyFriendByUserIdResult_1.default;
+var VerifyFriendByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyFriendByStampTaskResult"));
+exports.VerifyFriendByStampTaskResult = VerifyFriendByStampTaskResult_1.default;
+var VerifyFriendCountResult_1 = tslib_1.__importDefault(require("./VerifyFriendCountResult"));
+exports.VerifyFriendCountResult = VerifyFriendCountResult_1.default;
+var VerifyFriendCountByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyFriendCountByUserIdResult"));
+exports.VerifyFriendCountByUserIdResult = VerifyFriendCountByUserIdResult_1.default;
+var VerifyFriendCountByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyFriendCountByStampTaskResult"));
+exports.VerifyFriendCountByStampTaskResult = VerifyFriendCountByStampTaskResult_1.default;
 var DescribeBlackListResult_1 = tslib_1.__importDefault(require("./DescribeBlackListResult"));
 exports.DescribeBlackListResult = DescribeBlackListResult_1.default;
 var DescribeBlackListByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeBlackListByUserIdResult"));
