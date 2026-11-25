@@ -765,6 +765,77 @@ var Gs2DictionaryRestClient = /** @class */ (function (_super) {
             return Result.VerifyEntryByStampTaskResult.fromDict(data);
         });
     };
+    Gs2DictionaryRestClient.prototype.verifyEntryCount = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (((_a = Gs2DictionaryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/entryCount/verify/{verifyType}')
+            .replace('{service}', 'dictionary')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{verifyType}', String((_d = request.getVerifyType()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getVerifyType()) !== null && _e !== void 0 ? _e : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_f = request.getAccessToken()) !== null && _f !== void 0 ? _f : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        var body = {
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'entryModelNames': (_j = request.getEntryModelNames()) !== null && _j !== void 0 ? _j : null,
+            'count': (_k = request.getCount()) !== null && _k !== void 0 ? _k : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyEntryCountResult.fromDict(data);
+        });
+    };
+    Gs2DictionaryRestClient.prototype.verifyEntryCountByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (((_a = Gs2DictionaryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/entryCount/verify/{verifyType}')
+            .replace('{service}', 'dictionary')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{verifyType}', String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'entryModelNames': (_l = request.getEntryModelNames()) !== null && _l !== void 0 ? _l : null,
+            'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyEntryCountByUserIdResult.fromDict(data);
+        });
+    };
+    Gs2DictionaryRestClient.prototype.verifyEntryCountByStampTask = function (request) {
+        var _a, _b, _c, _d;
+        var url = (((_a = Gs2DictionaryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/entry/count/verify')
+            .replace('{service}', 'dictionary')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyEntryCountByStampTaskResult.fromDict(data);
+        });
+    };
     Gs2DictionaryRestClient.prototype.describeLikes = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
         var url = (((_a = Gs2DictionaryRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/like')

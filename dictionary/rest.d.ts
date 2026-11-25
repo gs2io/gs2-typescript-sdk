@@ -41,6 +41,9 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult>;
     deleteEntriesByStampTask(request: Request.DeleteEntriesByStampTaskRequest): Promise<Result.DeleteEntriesByStampTaskResult>;
     verifyEntryByStampTask(request: Request.VerifyEntryByStampTaskRequest): Promise<Result.VerifyEntryByStampTaskResult>;
+    verifyEntryCount(request: Request.VerifyEntryCountRequest): Promise<Result.VerifyEntryCountResult>;
+    verifyEntryCountByUserId(request: Request.VerifyEntryCountByUserIdRequest): Promise<Result.VerifyEntryCountByUserIdResult>;
+    verifyEntryCountByStampTask(request: Request.VerifyEntryCountByStampTaskRequest): Promise<Result.VerifyEntryCountByStampTaskResult>;
     describeLikes(request: Request.DescribeLikesRequest): Promise<Result.DescribeLikesResult>;
     describeLikesByUserId(request: Request.DescribeLikesByUserIdRequest): Promise<Result.DescribeLikesByUserIdResult>;
     addLikes(request: Request.AddLikesRequest): Promise<Result.AddLikesResult>;
