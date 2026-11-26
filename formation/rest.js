@@ -1403,6 +1403,85 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             return Result.SetFormByStampSheetResult.fromDict(data);
         });
     };
+    Gs2FormationRestClient.prototype.verifyForm = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = (((_a = Gs2FormationRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/verify/{verifyType}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{moldModelName}', String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{index}', String((_f = request.getIndex()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{verifyType}', String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_k = request.getAccessToken()) !== null && _k !== void 0 ? _k : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+        }
+        var body = {
+            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
+            'slotName': (_o = request.getSlotName()) !== null && _o !== void 0 ? _o : null,
+            'propertyIdRegex': (_p = request.getPropertyIdRegex()) !== null && _p !== void 0 ? _p : null,
+            'countType': (_q = request.getCountType()) !== null && _q !== void 0 ? _q : null,
+            'count': (_r = request.getCount()) !== null && _r !== void 0 ? _r : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyFormResult.fromDict(data);
+        });
+    };
+    Gs2FormationRestClient.prototype.verifyFormByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var url = (((_a = Gs2FormationRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/verify/{verifyType}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null') === "" ? "null" : String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null'))
+            .replace('{userId}', String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null') === "" ? "null" : String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null'))
+            .replace('{moldModelName}', String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null') === "" ? "null" : String((_g = request.getMoldModelName()) !== null && _g !== void 0 ? _g : 'null'))
+            .replace('{index}', String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null') === "" ? "null" : String((_j = request.getIndex()) !== null && _j !== void 0 ? _j : 'null'))
+            .replace('{verifyType}', String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null') === "" ? "null" : String((_l = request.getVerifyType()) !== null && _l !== void 0 ? _l : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_m = request.getDuplicationAvoider()) !== null && _m !== void 0 ? _m : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_o = request.getTimeOffsetToken()) !== null && _o !== void 0 ? _o : null;
+        }
+        var body = {
+            'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
+            'slotName': (_q = request.getSlotName()) !== null && _q !== void 0 ? _q : null,
+            'propertyIdRegex': (_r = request.getPropertyIdRegex()) !== null && _r !== void 0 ? _r : null,
+            'countType': (_s = request.getCountType()) !== null && _s !== void 0 ? _s : null,
+            'count': (_t = request.getCount()) !== null && _t !== void 0 ? _t : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyFormByUserIdResult.fromDict(data);
+        });
+    };
+    Gs2FormationRestClient.prototype.verifyFormByStampTask = function (request) {
+        var _a, _b, _c, _d;
+        var url = (((_a = Gs2FormationRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/stamp/form/verify')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'stampTask': (_c = request.getStampTask()) !== null && _c !== void 0 ? _c : null,
+            'keyId': (_d = request.getKeyId()) !== null && _d !== void 0 ? _d : null,
+        };
+        return this.request('POST', url, headers, undefined, body).then(function (data) {
+            return Result.VerifyFormByStampTaskResult.fromDict(data);
+        });
+    };
     Gs2FormationRestClient.prototype.describePropertyForms = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (((_a = Gs2FormationRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/user/me/property/{propertyFormModelName}/form')

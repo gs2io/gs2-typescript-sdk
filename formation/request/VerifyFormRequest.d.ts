@@ -1,0 +1,57 @@
+import IRequest from '../../core/interface/IRequest';
+export default class VerifyFormRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private accessToken;
+    private moldModelName;
+    private index;
+    private slotName;
+    private propertyIdRegex;
+    private countType;
+    private verifyType;
+    private count;
+    private duplicationAvoider;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getAccessToken(): string | null;
+    setAccessToken(accessToken: string | null): this;
+    withAccessToken(accessToken: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
+    getIndex(): number | null;
+    setIndex(index: number | null): this;
+    withIndex(index: number | null): this;
+    getSlotName(): string | null;
+    setSlotName(slotName: string | null): this;
+    withSlotName(slotName: string | null): this;
+    getPropertyIdRegex(): string | null;
+    setPropertyIdRegex(propertyIdRegex: string | null): this;
+    withPropertyIdRegex(propertyIdRegex: string | null): this;
+    getCountType(): string | null;
+    setCountType(countType: string | null): this;
+    withCountType(countType: string | null): this;
+    getVerifyType(): string | null;
+    setVerifyType(verifyType: string | null): this;
+    withVerifyType(verifyType: string | null): this;
+    getCount(): number | null;
+    setCount(count: number | null): this;
+    withCount(count: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): VerifyFormRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

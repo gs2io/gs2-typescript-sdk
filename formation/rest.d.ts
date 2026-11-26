@@ -71,6 +71,9 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     deleteFormByUserId(request: Request.DeleteFormByUserIdRequest): Promise<Result.DeleteFormByUserIdResult>;
     acquireActionToFormPropertiesByStampSheet(request: Request.AcquireActionToFormPropertiesByStampSheetRequest): Promise<Result.AcquireActionToFormPropertiesByStampSheetResult>;
     setFormByStampSheet(request: Request.SetFormByStampSheetRequest): Promise<Result.SetFormByStampSheetResult>;
+    verifyForm(request: Request.VerifyFormRequest): Promise<Result.VerifyFormResult>;
+    verifyFormByUserId(request: Request.VerifyFormByUserIdRequest): Promise<Result.VerifyFormByUserIdResult>;
+    verifyFormByStampTask(request: Request.VerifyFormByStampTaskRequest): Promise<Result.VerifyFormByStampTaskResult>;
     describePropertyForms(request: Request.DescribePropertyFormsRequest): Promise<Result.DescribePropertyFormsResult>;
     describePropertyFormsByUserId(request: Request.DescribePropertyFormsByUserIdRequest): Promise<Result.DescribePropertyFormsByUserIdResult>;
     getPropertyForm(request: Request.GetPropertyFormRequest): Promise<Result.GetPropertyFormResult>;
