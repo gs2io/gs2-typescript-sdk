@@ -28,6 +28,7 @@ var UpdateGlobalMessageMasterRequest = /** @class */ (function () {
         this.expiresTimeSpan = null;
         this.expiresAt = null;
         this.messageReceptionPeriodEventId = null;
+        this.verifyActions = null;
     }
     UpdateGlobalMessageMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -131,6 +132,17 @@ var UpdateGlobalMessageMasterRequest = /** @class */ (function () {
         this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
         return this;
     };
+    UpdateGlobalMessageMasterRequest.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    UpdateGlobalMessageMasterRequest.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    UpdateGlobalMessageMasterRequest.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     UpdateGlobalMessageMasterRequest.fromDict = function (data) {
         return new UpdateGlobalMessageMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -142,7 +154,11 @@ var UpdateGlobalMessageMasterRequest = /** @class */ (function () {
             }) : null)
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
-            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Inbox.VerifyAction.fromDict(item);
+            }) : null);
     };
     UpdateGlobalMessageMasterRequest.prototype.toDict = function () {
         var _a;
@@ -157,6 +173,10 @@ var UpdateGlobalMessageMasterRequest = /** @class */ (function () {
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
         };
     };
     return UpdateGlobalMessageMasterRequest;

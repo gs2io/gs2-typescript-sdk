@@ -8,6 +8,7 @@ export default class GlobalMessageMaster implements IModel {
     private expiresTimeSpan;
     private expiresAt;
     private messageReceptionPeriodEventId;
+    private verifyActions;
     private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -40,6 +41,9 @@ export default class GlobalMessageMaster implements IModel {
     getMessageReceptionPeriodEventId(): string | null;
     setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
     withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
+    getVerifyActions(): Gs2Inbox.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

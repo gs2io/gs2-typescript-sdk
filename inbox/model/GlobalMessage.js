@@ -27,6 +27,7 @@ var GlobalMessage = /** @class */ (function () {
         this.expiresTimeSpan = null;
         this.expiresAt = null;
         this.messageReceptionPeriodEventId = null;
+        this.verifyActions = null;
     }
     GlobalMessage.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -174,6 +175,17 @@ var GlobalMessage = /** @class */ (function () {
         this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
         return this;
     };
+    GlobalMessage.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    GlobalMessage.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    GlobalMessage.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     GlobalMessage.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -188,7 +200,11 @@ var GlobalMessage = /** @class */ (function () {
             }) : null)
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
-            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Inbox.VerifyAction.fromDict(item);
+            }) : null);
     };
     GlobalMessage.prototype.toDict = function () {
         var _a;
@@ -203,6 +219,10 @@ var GlobalMessage = /** @class */ (function () {
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
         };
     };
     return GlobalMessage;

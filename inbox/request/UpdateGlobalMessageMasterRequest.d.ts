@@ -10,6 +10,7 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
     private expiresTimeSpan;
     private expiresAt;
     private messageReceptionPeriodEventId;
+    private verifyActions;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -40,6 +41,9 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
     getMessageReceptionPeriodEventId(): string | null;
     setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
     withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
+    getVerifyActions(): Gs2Inbox.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UpdateGlobalMessageMasterRequest;

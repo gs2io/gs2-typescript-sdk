@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.MobileNotificationMessage = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.AcquireAction = exports.TimeSpan = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
+exports.TransactionSettingV2 = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.MobileNotificationMessage = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.VerifyAction = exports.AcquireAction = exports.TimeSpan = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ var TimeSpan_1 = tslib_1.__importDefault(require("./TimeSpan"));
 exports.TimeSpan = TimeSpan_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+exports.VerifyAction = VerifyAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));

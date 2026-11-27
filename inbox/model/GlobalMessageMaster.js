@@ -27,6 +27,7 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.expiresTimeSpan = null;
         this.expiresAt = null;
         this.messageReceptionPeriodEventId = null;
+        this.verifyActions = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -176,6 +177,17 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
         return this;
     };
+    GlobalMessageMaster.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    GlobalMessageMaster.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    GlobalMessageMaster.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     GlobalMessageMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -213,6 +225,10 @@ var GlobalMessageMaster = /** @class */ (function () {
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
             .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Inbox.VerifyAction.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -229,6 +245,10 @@ var GlobalMessageMaster = /** @class */ (function () {
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

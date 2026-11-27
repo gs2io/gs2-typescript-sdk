@@ -862,7 +862,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.createGlobalMessageMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (((_a = Gs2InboxRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
@@ -879,6 +879,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'expiresTimeSpan': (_k = (_j = request.getExpiresTimeSpan()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'expiresAt': (_l = request.getExpiresAt()) !== null && _l !== void 0 ? _l : null,
             'messageReceptionPeriodEventId': (_m = request.getMessageReceptionPeriodEventId()) !== null && _m !== void 0 ? _m : null,
+            'verifyActions': (_p = (_o = request.getVerifyActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return this.request('POST', url, headers, undefined, body).then(function (data) {
             return Result.CreateGlobalMessageMasterResult.fromDict(data);
@@ -903,7 +904,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.updateGlobalMessageMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (((_a = Gs2InboxRestClient.ENDPOINT_HOST) !== null && _a !== void 0 ? _a : model_1.Gs2Constant.ENDPOINT_HOST) + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
@@ -920,6 +921,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'expiresTimeSpan': (_l = (_k = request.getExpiresTimeSpan()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'expiresAt': (_m = request.getExpiresAt()) !== null && _m !== void 0 ? _m : null,
             'messageReceptionPeriodEventId': (_o = request.getMessageReceptionPeriodEventId()) !== null && _o !== void 0 ? _o : null,
+            'verifyActions': (_q = (_p = request.getVerifyActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
         return this.request('PUT', url, headers, undefined, body).then(function (data) {
             return Result.UpdateGlobalMessageMasterResult.fromDict(data);

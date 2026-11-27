@@ -8,6 +8,7 @@ export default class GlobalMessage implements IModel {
     private expiresTimeSpan;
     private expiresAt;
     private messageReceptionPeriodEventId;
+    private verifyActions;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -38,6 +39,9 @@ export default class GlobalMessage implements IModel {
     getMessageReceptionPeriodEventId(): string | null;
     setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
     withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
+    getVerifyActions(): Gs2Inbox.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Inbox.VerifyAction[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GlobalMessage | null;
